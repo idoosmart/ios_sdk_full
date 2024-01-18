@@ -2485,11 +2485,12 @@ public protocol IDODataExchangeInterface {
   @objc var reminderQq: Swift.Bool { get }
   @objc var reminderTwitter: Swift.Bool { get }
   @objc var reminderWeixin: Swift.Bool { get }
-  @objc var reminderCalendar: Swift.Bool { get }
+  @objc var reminderCalendarGoogle: Swift.Bool { get }
   @objc var reminderInstagram: Swift.Bool { get }
   @objc var reminderLinkedIn: Swift.Bool { get }
   @objc var reminderMessengre: Swift.Bool { get }
   @objc var reminderSkype: Swift.Bool { get }
+  @objc var reminderCalendar: Swift.Bool { get }
   @objc var reminderWhatsapp: Swift.Bool { get }
   @objc var reminderAlarmClock: Swift.Bool { get }
   @objc var reminderSinaWeibo: Swift.Bool { get }
@@ -2584,6 +2585,7 @@ public protocol IDODataExchangeInterface {
   @objc var sportHighBar: Swift.Bool { get }
   @objc var sportParallelBars: Swift.Bool { get }
   @objc var sportTrailRunning: Swift.Bool { get }
+  @objc var sportPickleBall: Swift.Bool { get }
   @objc var getRealtimeData: Swift.Bool { get }
   @objc var getLangLibraryV3: Swift.Bool { get }
   @objc var getFindPhone: Swift.Bool { get }
@@ -2664,6 +2666,14 @@ public protocol IDODataExchangeInterface {
   @objc var getSupportOnekeyDoubleContact: Swift.Bool { get }
   @objc var getSupportSetVoiceAssistantStatus: Swift.Bool { get }
   @objc var getSupportFlashLogSize: Swift.Bool { get }
+  @objc var getSupportGetUnit: Swift.Bool { get }
+  @objc var getSupportRyzeConnect: Swift.Bool { get }
+  @objc var getSupportLoopsFit: Swift.Bool { get }
+  @objc var getSupportTasSmart: Swift.Bool { get }
+  @objc var getNotSupportSetOvulation: Swift.Bool { get }
+  @objc var getSupportWalkGoalSteps: Swift.Bool { get }
+  @objc var getNotSupportDeleteAddSportSort: Swift.Bool { get }
+  @objc var getSupportSedentaryTensileHabitInfo: Swift.Bool { get }
   @objc var setNoticeMessageStateUseVersion0x20: Swift.Bool { get }
   @objc var setScientificSleepSwitch: Swift.Bool { get }
   @objc var setTemperatureSwitchHealth: Swift.Bool { get }
@@ -2753,6 +2763,13 @@ public protocol IDODataExchangeInterface {
   @objc var setSedentariness: Swift.Bool { get }
   @objc var setScreenBrightness: Swift.Bool { get }
   @objc var setSetPhoneVoice: Swift.Bool { get }
+  @objc var setSupportSetCallQuickReplyOnOff: Swift.Bool { get }
+  @objc var setSupportExchangeSetGpsCoordinates: Swift.Bool { get }
+  @objc var setSupportV3WeatherAddAtmosphericPressure: Swift.Bool { get }
+  @objc var setSupportSetV3WeatcherAddSnowDepth: Swift.Bool { get }
+  @objc var setSupportSetV3WeatcherAddSnowfall: Swift.Bool { get }
+  @objc var setSupportSetV3WeatcherSendStructVersion04: Swift.Bool { get }
+  @objc var getSupportSendGpsLongitudeAndLatitude: Swift.Bool { get }
   @objc var languageCh: Swift.Bool { get }
   @objc var languageCzech: Swift.Bool { get }
   @objc var languageEnglish: Swift.Bool { get }
@@ -2788,6 +2805,10 @@ public protocol IDODataExchangeInterface {
   @objc var languageSweden: Swift.Bool { get }
   @objc var languageNorwegian: Swift.Bool { get }
   @objc var languageFinland: Swift.Bool { get }
+  @objc var languageBengali: Swift.Bool { get }
+  @objc var languageKhmer: Swift.Bool { get }
+  @objc var languageMalay: Swift.Bool { get }
+  @objc var languageBrazilianPortuguese: Swift.Bool { get }
   @objc var syncV3Hr: Swift.Bool { get }
   @objc var syncV3Swim: Swift.Bool { get }
   @objc var syncV3Spo2: Swift.Bool { get }

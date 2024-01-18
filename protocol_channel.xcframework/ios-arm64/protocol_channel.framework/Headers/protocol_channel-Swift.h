@@ -2754,8 +2754,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL reminderTwitter;
 /// Weixin
 @property (nonatomic, readonly) BOOL reminderWeixin;
-/// Calendar
-@property (nonatomic, readonly) BOOL reminderCalendar;
+/// Calendar (Google日历）
+@property (nonatomic, readonly) BOOL reminderCalendarGoogle;
 /// Instagram
 @property (nonatomic, readonly) BOOL reminderInstagram;
 /// linkedIn
@@ -2764,6 +2764,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL reminderMessengre;
 /// Skype
 @property (nonatomic, readonly) BOOL reminderSkype;
+/// Calendar
+@property (nonatomic, readonly) BOOL reminderCalendar;
 /// Whatsapp
 @property (nonatomic, readonly) BOOL reminderWhatsapp;
 /// Alarm clock
@@ -2952,6 +2954,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL sportParallelBars;
 /// 越野跑
 @property (nonatomic, readonly) BOOL sportTrailRunning;
+/// 匹克球
+@property (nonatomic, readonly) BOOL sportPickleBall;
 /// 获取实时数据
 @property (nonatomic, readonly) BOOL getRealtimeData;
 /// 获取v3语言库
@@ -3112,6 +3116,22 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL getSupportSetVoiceAssistantStatus;
 /// 支持获取flash log size
 @property (nonatomic, readonly) BOOL getSupportFlashLogSize;
+/// 支持获取单位
+@property (nonatomic, readonly) BOOL getSupportGetUnit;
+/// 通知支持Ryze Connect
+@property (nonatomic, readonly) BOOL getSupportRyzeConnect;
+/// 通知支持LOOPS FIT
+@property (nonatomic, readonly) BOOL getSupportLoopsFit;
+/// 通知支持TAS Smart
+@property (nonatomic, readonly) BOOL getSupportTasSmart;
+/// 女性经期不支持设置排卵日提醒
+@property (nonatomic, readonly) BOOL getNotSupportSetOvulation;
+/// 固件支持每小时目标步数设置和获取
+@property (nonatomic, readonly) BOOL getSupportWalkGoalSteps;
+/// GTX03/05定制，hamaAPP，功能表开启后，运动列表不支持增删，支持排序
+@property (nonatomic, readonly) BOOL getNotSupportDeleteAddSportSort;
+/// 支持获取用户习惯信息(打点信息)中久坐提醒特性
+@property (nonatomic, readonly) BOOL getSupportSedentaryTensileHabitInfo;
 /// 设置获取消息应用状态使用version0x20版本下发
 @property (nonatomic, readonly) BOOL setNoticeMessageStateUseVersion0x20;
 /// 科学睡眠开关
@@ -3290,6 +3310,20 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL setScreenBrightness;
 /// 设置设备音乐音量
 @property (nonatomic, readonly) BOOL setSetPhoneVoice;
+/// 设置快捷来电回复开关
+@property (nonatomic, readonly) BOOL setSupportSetCallQuickReplyOnOff;
+/// 支持多运动交互中下发GPS坐标
+@property (nonatomic, readonly) BOOL setSupportExchangeSetGpsCoordinates;
+/// 支持v3天气协议下发大气压强
+@property (nonatomic, readonly) BOOL setSupportV3WeatherAddAtmosphericPressure;
+/// 支持v3天气协议下发积雪厚度
+@property (nonatomic, readonly) BOOL setSupportSetV3WeatcherAddSnowDepth;
+/// 支持v3天气协议下发降雪量
+@property (nonatomic, readonly) BOOL setSupportSetV3WeatcherAddSnowfall;
+/// 支持v3天气协议下发协议版本0x4版本
+@property (nonatomic, readonly) BOOL setSupportSetV3WeatcherSendStructVersion04;
+/// 支持固件快速定位，APP下发GPS权限及经纬度给固件
+@property (nonatomic, readonly) BOOL getSupportSendGpsLongitudeAndLatitude;
 /// 中文
 @property (nonatomic, readonly) BOOL languageCh;
 /// 捷克文
@@ -3360,6 +3394,14 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL languageNorwegian;
 /// 芬兰语
 @property (nonatomic, readonly) BOOL languageFinland;
+/// 孟加拉语
+@property (nonatomic, readonly) BOOL languageBengali;
+/// 高棉语
+@property (nonatomic, readonly) BOOL languageKhmer;
+/// 马来语
+@property (nonatomic, readonly) BOOL languageMalay;
+/// 巴西葡语
+@property (nonatomic, readonly) BOOL languageBrazilianPortuguese;
 /// v3 心率
 @property (nonatomic, readonly) BOOL syncV3Hr;
 /// v3 游泳
@@ -7005,7 +7047,9 @@ SWIFT_CLASS("_TtC16protocol_channel20IDOWeatherDataFuture")
 ///
 /// \endcode
 @property (nonatomic, readonly) NSInteger type;
+/// future minimum temperature
 @property (nonatomic, readonly) NSInteger minTemp;
+/// future maximum temperature
 @property (nonatomic, readonly) NSInteger maxTemp;
 - (nonnull instancetype)initWithType:(NSInteger)type minTemp:(NSInteger)minTemp maxTemp:(NSInteger)maxTemp OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
