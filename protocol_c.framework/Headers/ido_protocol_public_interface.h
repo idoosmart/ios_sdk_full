@@ -639,15 +639,23 @@ extern int initType(int motion_type_in);
 extern void initParameter(void);
 
 /**
- * @brief gps数据实时处理入口,需要对输出的数据进行判断，若纬度为-180则为错误值，不应该输出
+ * @brief gps数据实时处理入口,需要对输出的数据进行判断，若纬度为-180则为错误值，不应该输出 ，每次只会传进来一个坐标
  * @param data json字符串
- * @param len 字符串长度
+ * @param len 字符串长度 不超过2MByte
  * json字符串内容:
+ * android:
  * { lon,经度,数据类型double
  *   lat,纬度,数据类型double
  *   timestamp,时间戳,数据类型int
  *   accuracy,定位精度,数据类型double
  *   gpsaccuracystatus,定位等级，0 = 定位未知, 1 = 定位好, 2 = 定位差,数据类型int}
+ *   ios:
+ * { lon,经度,数据类型double
+ *   lat,纬度,数据类型double
+ *   timestamp,时间戳,数据类型int
+ *   hor_accuracy,水平精度,数据类型double
+ *   ver_accuracy,垂直精度,数据类型double
+ * }
  * @return json字符串 内容与上面json字符串内容一致
  */
 extern char *appGpsAlgProcessRealtime(char *data,int len);
@@ -848,6 +856,13 @@ extern int mkPhotoFile(const char * file_path,const char * save_file_path,int fo
 extern char *mkConnactFile(const char * jsondata);
 
 /**
+ * @brief 制作思澈表盘文件,会在输入路径下生成(.watch)表盘文件
+ * @param file_path 素材文件路径
+ * @return 0成功 非0失败 -1: 没有控件 -2: json文件加载失败
+ */
+extern int mkSifliDialFile(const char *file_path);
+
+/**
  * @brief 压缩png图片质量
  * @param inputFilePath   输入文件路径
  * @param outputFilePath 输出文件路径
@@ -951,6 +966,20 @@ extern char *simulatorRespondInfoExec(const char *json_data,int json_data_len,in
  * @return 输出json数据字符串
  */
 extern char *simulatorReceiveBinary2Json(const char *data,int data_len);
+
+/**
+ * @brief 计算长包指令的校验码
+ * @param data 素材字节数据
+ * @param data_len 字节数据长度
+ * @return 输出2个字节的CRC校验码
+ */
+extern uint16_t getCrc16(const char *data,int data_len);
+
+/**
+ * @brief 获取是否支持断点续传的功能表
+ * @return 0不支持 1支持
+ * */
+extern int getIsSupportTranContinue(void);
 
 // ------------------------------ v2闹钟同步 ------------------------------
 
