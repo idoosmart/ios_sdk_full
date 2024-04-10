@@ -742,7 +742,7 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 + (id <IDOCancellable> _Nonnull)getLanguageLibrary:(void (^ _Nonnull)(CmdError * _Nonnull, IDOLanguageLibraryModel * _Nullable))completion;
 /// 获取固件本地提示音文件信息
 /// Getting firmware local beep file information for V3
-+ (id <IDOCancellable> _Nonnull)getBleBeep:(NSInteger)flag completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOBleBeepModel * _Nullable))completion;
++ (id <IDOCancellable> _Nonnull)getBleBeep:(void (^ _Nonnull)(CmdError * _Nonnull, IDOBleBeepModel * _Nullable))completion;
 /// 设置运动城市名称
 /// V3 Setting the Name of a Sports City event number
 /// \param cityName City name Maximum 74 bytes
@@ -786,7 +786,7 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 设置屏幕亮度
 + (id <IDOCancellable> _Nonnull)setScreenBrightness:(IDOScreenBrightnessModel * _Nonnull)screenBrightness completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
 /// 进入升级模式
-+ (id <IDOCancellable> _Nonnull)otaStart:(NSInteger)flag completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdOTAResponseModel * _Nullable))completion;
++ (id <IDOCancellable> _Nonnull)otaStart:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdOTAResponseModel * _Nullable))completion;
 /// 设置心率区间
 + (id <IDOCancellable> _Nonnull)setHeartRateInterval:(IDOHeartRateIntervalModel * _Nonnull)heartRateInterval completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
 /// 设置卡路里和距离目标(设置日常三环)
@@ -2900,6 +2900,19 @@ SWIFT_CLASS("_TtC16protocol_channel26IDODeviceNotificationModel")
 /// 56 固件快速模式切换快速模式
 /// 57 固件更新mtu，APP下发获取mtu更新本地记录的mtu<br />(本地记录的mtu大小大于20Bytes不更新)
 /// 58 固件电量变化，APP下发获取电量信息
+/// 59 当前处于DFU模式(思澈平台)
+/// 60 固件单位切换，通知APP获取单位(0222)
+/// 61 固件修改菜单列表(快捷列表)，通知APP获取(02A8)
+/// 62 固件修改本地语言，通知APP获取(0222)
+/// 63 固件修改当前表盘，通知APP获取
+/// 64 固件测量完成，通知APP获取结果(0606)
+/// 65 固件修改智能心率模式，通知APP获取智能心率模式参数(0263)
+/// 66 固件通知APP升级血压模型算法文件(.bpalgbin)
+/// 67 固件修改压力开关状态，通知APP获取压力开关参数(0245)
+/// 68 固件修改血氧饱和度开关状态，通知APP获取血氧饱和度开关参数(0244)
+/// 69 固件修改电子卡片内容，通知APP获取电子卡片内容
+/// 70 固件修改晨报内容，通知APP获取晨报内容
+/// 71 固件修改语音备忘录，通知APP获取语音备忘录内容
 ///
 /// \endcode
 @property (nonatomic, readonly, strong) NSNumber * _Nullable dataType;
@@ -4158,6 +4171,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL getSupportBloodPressureModelFileUpdate;
 /// 勿扰支持事件范围开关和重复
 @property (nonatomic, readonly) BOOL getSupportDisturbHaveRangRepeat;
+/// 日历提醒
+@property (nonatomic, readonly) BOOL getSupportCalendarReminder;
 /// 设置获取消息应用状态使用version0x20版本下发
 @property (nonatomic, readonly) BOOL setNoticeMessageStateUseVersion0x20;
 /// 科学睡眠开关
@@ -4352,6 +4367,24 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL setSendCalibrationThreshold;
 /// 支持屏蔽跑步计划入口
 @property (nonatomic, readonly) BOOL getNotSupportAppSendRunPlan;
+/// 支持APP展示零星小睡睡眠数据
+@property (nonatomic, readonly) BOOL getSupportDisplayNapSleep;
+/// 支持app获取智能心率
+@property (nonatomic, readonly) BOOL getSupportGetSmartHeartRate;
+/// 支持app获取压力开关
+@property (nonatomic, readonly) BOOL getSupportGetPressureSwitchInfo;
+/// 支持电子卡片功能
+@property (nonatomic, readonly) BOOL getSupportECardOperate;
+/// 支持语音备忘录功能
+@property (nonatomic, readonly) BOOL getSupportVoiceMemoOperate;
+/// 支持晨报功能
+@property (nonatomic, readonly) BOOL getSupportMorningEdition;
+/// 支持app获取血氧饱和度开关
+@property (nonatomic, readonly) BOOL getSupportGetSpo2SwitchInfo;
+/// 支持同步心率使用version字段兼容
+@property (nonatomic, readonly) BOOL getSupportSyncHealthHrUseVersionCompatible;
+/// v3天气设置增加下发48小时天气数据
+@property (nonatomic, readonly) BOOL getSupportSetV3Add48HourWeatherData;
 /// 中文
 @property (nonatomic, readonly) BOOL languageCh;
 /// 捷克文
@@ -8614,6 +8647,7 @@ SWIFT_CLASS("_TtC16protocol_channel27IDOWeatherSunTimeParamModel")
 /// V3设置天气数据
 SWIFT_CLASS("_TtC16protocol_channel22IDOWeatherV3ParamModel")
 @interface IDOWeatherV3ParamModel : NSObject
+@property (nonatomic) NSInteger version;
 @property (nonatomic) NSInteger month;
 @property (nonatomic) NSInteger day;
 @property (nonatomic) NSInteger hour;
@@ -8687,7 +8721,7 @@ SWIFT_CLASS("_TtC16protocol_channel22IDOWeatherV3ParamModel")
 @property (nonatomic, copy) NSArray<IDOHoursWeatherItem *> * _Nonnull hoursWeatherItems;
 @property (nonatomic, copy) NSArray<IDOFutureItem *> * _Nonnull futureItems;
 @property (nonatomic, copy) NSArray<IDOSunriseItem *> * _Nonnull sunriseItem;
-- (nonnull instancetype)initWithMonth:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour min:(NSInteger)min sec:(NSInteger)sec week:(NSInteger)week weatherType:(NSInteger)weatherType todayTmp:(NSInteger)todayTmp todayMaxTemp:(NSInteger)todayMaxTemp todayMinTemp:(NSInteger)todayMinTemp cityName:(NSString * _Nonnull)cityName airQuality:(NSInteger)airQuality precipitationProbability:(NSInteger)precipitationProbability humidity:(NSInteger)humidity todayUvIntensity:(NSInteger)todayUvIntensity windSpeed:(NSInteger)windSpeed sunriseHour:(NSInteger)sunriseHour sunriseMin:(NSInteger)sunriseMin sunsetHour:(NSInteger)sunsetHour sunsetMin:(NSInteger)sunsetMin sunriseItemNum:(NSInteger)sunriseItemNum airGradeItem:(NSString * _Nonnull)airGradeItem hoursWeatherItems:(NSArray<IDOHoursWeatherItem *> * _Nonnull)hoursWeatherItems futureItems:(NSArray<IDOFutureItem *> * _Nonnull)futureItems sunriseItem:(NSArray<IDOSunriseItem *> * _Nonnull)sunriseItem OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithVersion:(NSInteger)version month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour min:(NSInteger)min sec:(NSInteger)sec week:(NSInteger)week weatherType:(NSInteger)weatherType todayTmp:(NSInteger)todayTmp todayMaxTemp:(NSInteger)todayMaxTemp todayMinTemp:(NSInteger)todayMinTemp cityName:(NSString * _Nonnull)cityName airQuality:(NSInteger)airQuality precipitationProbability:(NSInteger)precipitationProbability humidity:(NSInteger)humidity todayUvIntensity:(NSInteger)todayUvIntensity windSpeed:(NSInteger)windSpeed sunriseHour:(NSInteger)sunriseHour sunriseMin:(NSInteger)sunriseMin sunsetHour:(NSInteger)sunsetHour sunsetMin:(NSInteger)sunsetMin sunriseItemNum:(NSInteger)sunriseItemNum airGradeItem:(NSString * _Nonnull)airGradeItem hoursWeatherItems:(NSArray<IDOHoursWeatherItem *> * _Nonnull)hoursWeatherItems futureItems:(NSArray<IDOFutureItem *> * _Nonnull)futureItems sunriseItem:(NSArray<IDOSunriseItem *> * _Nonnull)sunriseItem OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

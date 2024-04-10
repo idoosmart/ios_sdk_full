@@ -1333,7 +1333,7 @@ public struct Cmds {
   @objc @discardableResult
   public static func getLanguageLibrary(_ completion: @escaping (_ err: protocol_channel.CmdError, _ languageLib: protocol_channel.IDOLanguageLibraryModel?) -> ()) -> protocol_channel.IDOCancellable
   @objc @discardableResult
-  public static func getBleBeep(_ flag: Swift.Int, completion: @escaping (_ err: protocol_channel.CmdError, _ bleBeep: protocol_channel.IDOBleBeepModel?) -> ()) -> protocol_channel.IDOCancellable
+  public static func getBleBeep(_ completion: @escaping (_ err: protocol_channel.CmdError, _ bleBeep: protocol_channel.IDOBleBeepModel?) -> ()) -> protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setLongCityNameV3(_ cityName: Swift.String, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> protocol_channel.IDOCancellable
   @objc @discardableResult
@@ -1367,7 +1367,7 @@ public struct Cmds {
   @objc @discardableResult
   public static func setScreenBrightness(_ screenBrightness: protocol_channel.IDOScreenBrightnessModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> protocol_channel.IDOCancellable
   @objc @discardableResult
-  public static func otaStart(_ flag: Swift.Int, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdOTAResponseModel?) -> ()) -> protocol_channel.IDOCancellable
+  public static func otaStart(_ completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdOTAResponseModel?) -> ()) -> protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setHeartRateInterval(_ heartRateInterval: protocol_channel.IDOHeartRateIntervalModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> protocol_channel.IDOCancellable
   @objc @discardableResult
@@ -2930,6 +2930,7 @@ public protocol IDOCmdProtocol {
   @objc var getSupportGetV3DeviceBtConnectPhoneModel: Swift.Bool { get }
   @objc var getSupportBloodPressureModelFileUpdate: Swift.Bool { get }
   @objc var getSupportDisturbHaveRangRepeat: Swift.Bool { get }
+  @objc var getSupportCalendarReminder: Swift.Bool { get }
   @objc var setNoticeMessageStateUseVersion0x20: Swift.Bool { get }
   @objc var setScientificSleepSwitch: Swift.Bool { get }
   @objc var setTemperatureSwitchHealth: Swift.Bool { get }
@@ -3027,6 +3028,15 @@ public protocol IDOCmdProtocol {
   @objc var setSupportSetV3WeatcherSendStructVersion04: Swift.Bool { get }
   @objc var setSendCalibrationThreshold: Swift.Bool { get }
   @objc var getNotSupportAppSendRunPlan: Swift.Bool { get }
+  @objc var getSupportDisplayNapSleep: Swift.Bool { get }
+  @objc var getSupportGetSmartHeartRate: Swift.Bool { get }
+  @objc var getSupportGetPressureSwitchInfo: Swift.Bool { get }
+  @objc var getSupportECardOperate: Swift.Bool { get }
+  @objc var getSupportVoiceMemoOperate: Swift.Bool { get }
+  @objc var getSupportMorningEdition: Swift.Bool { get }
+  @objc var getSupportGetSpo2SwitchInfo: Swift.Bool { get }
+  @objc var getSupportSyncHealthHrUseVersionCompatible: Swift.Bool { get }
+  @objc var getSupportSetV3Add48HourWeatherData: Swift.Bool { get }
   @objc var languageCh: Swift.Bool { get }
   @objc var languageCzech: Swift.Bool { get }
   @objc var languageEnglish: Swift.Bool { get }
@@ -4993,6 +5003,7 @@ public protocol IDOCmdProtocol {
   required public init(from decoder: Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOWeatherV3ParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var version: Swift.Int
   @objc public var month: Swift.Int
   @objc public var day: Swift.Int
   @objc public var hour: Swift.Int
@@ -5018,7 +5029,7 @@ public protocol IDOCmdProtocol {
   @objc public var hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem]
   @objc public var futureItems: [protocol_channel.IDOFutureItem]
   @objc public var sunriseItem: [protocol_channel.IDOSunriseItem]
-  @objc public init(month: Swift.Int, day: Swift.Int, hour: Swift.Int, min: Swift.Int, sec: Swift.Int, week: Swift.Int, weatherType: Swift.Int, todayTmp: Swift.Int, todayMaxTemp: Swift.Int, todayMinTemp: Swift.Int, cityName: Swift.String, airQuality: Swift.Int, precipitationProbability: Swift.Int, humidity: Swift.Int, todayUvIntensity: Swift.Int, windSpeed: Swift.Int, sunriseHour: Swift.Int, sunriseMin: Swift.Int, sunsetHour: Swift.Int, sunsetMin: Swift.Int, sunriseItemNum: Swift.Int, airGradeItem: Swift.String, hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem], futureItems: [protocol_channel.IDOFutureItem], sunriseItem: [protocol_channel.IDOSunriseItem])
+  @objc public init(version: Swift.Int = 1, month: Swift.Int, day: Swift.Int, hour: Swift.Int, min: Swift.Int, sec: Swift.Int, week: Swift.Int, weatherType: Swift.Int, todayTmp: Swift.Int, todayMaxTemp: Swift.Int, todayMinTemp: Swift.Int, cityName: Swift.String, airQuality: Swift.Int, precipitationProbability: Swift.Int, humidity: Swift.Int, todayUvIntensity: Swift.Int, windSpeed: Swift.Int, sunriseHour: Swift.Int, sunriseMin: Swift.Int, sunsetHour: Swift.Int, sunsetMin: Swift.Int, sunriseItemNum: Swift.Int, airGradeItem: Swift.String, hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem], futureItems: [protocol_channel.IDOFutureItem], sunriseItem: [protocol_channel.IDOSunriseItem])
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws

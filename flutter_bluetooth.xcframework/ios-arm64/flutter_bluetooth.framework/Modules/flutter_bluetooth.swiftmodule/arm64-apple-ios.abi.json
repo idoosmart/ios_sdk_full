@@ -48460,30 +48460,37 @@
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Model\/Message.swift",
       "kind": "StringLiteral",
-      "offset": 455,
+      "offset": 515,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Model\/Message.swift",
       "kind": "StringLiteral",
-      "offset": 487,
+      "offset": 547,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Model\/Message.swift",
       "kind": "IntegerLiteral",
-      "offset": 513,
+      "offset": 573,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Model\/Message.swift",
       "kind": "IntegerLiteral",
-      "offset": 540,
+      "offset": 600,
       "length": 1,
       "value": "1"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Model\/Message.swift",
+      "kind": "IntegerLiteral",
+      "offset": 655,
+      "length": 1,
+      "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/iOSDFULibrary\/Implementation\/SecureDFU\/Characteristics\/SecureDFUControlPoint.swift",

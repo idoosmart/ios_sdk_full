@@ -397,6 +397,11 @@ typedef enum
 	VBUS_EVT_FUNC_V3_BP_CAL_CONTROL                        = 5072,  //V3血压校准控制 struct protocol_v3_bp_cal_control struct protocol_v3_bp_cal_control_reply
 	VBUS_EVT_FUNC_V3_BP_CAL_COMPLETE                       = 5073,  //V3血压校准完成
     VBUS_EVT_FUNC_SMART_COMPETITOR_CONFIG_INFO             = 5080,  //智能陪跑配置信息
+    VBUS_EVT_FUNC_V3_ECARD_CONTROL                         = 5081,  //电子卡片
+    VBUS_EVT_FUNC_V3_VOICE_MEMO                            = 5082,  //语音备忘录
+    VBUS_EVT_FUNC_V3_MORNING_EDITION                       = 5083,  //晨报
+    VBUS_EVT_FUNC_V3_CALENDEAR_REMINDER                    = 5084,  //日历提醒
+
 
 	VBUS_EVT_FUNC_MAKE_PHOTO                               = 5500,	//制作照片
 	VBUS_EVT_FUNC_GPS_FILE                                 = 5501,	//制作gps文件
