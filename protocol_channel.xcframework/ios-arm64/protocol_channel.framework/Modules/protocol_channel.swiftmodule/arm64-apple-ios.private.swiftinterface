@@ -5003,7 +5003,6 @@ public protocol IDOCmdProtocol {
   required public init(from decoder: Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOWeatherV3ParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var version: Swift.Int
   @objc public var month: Swift.Int
   @objc public var day: Swift.Int
   @objc public var hour: Swift.Int
@@ -5029,7 +5028,7 @@ public protocol IDOCmdProtocol {
   @objc public var hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem]
   @objc public var futureItems: [protocol_channel.IDOFutureItem]
   @objc public var sunriseItem: [protocol_channel.IDOSunriseItem]
-  @objc public init(version: Swift.Int = 1, month: Swift.Int, day: Swift.Int, hour: Swift.Int, min: Swift.Int, sec: Swift.Int, week: Swift.Int, weatherType: Swift.Int, todayTmp: Swift.Int, todayMaxTemp: Swift.Int, todayMinTemp: Swift.Int, cityName: Swift.String, airQuality: Swift.Int, precipitationProbability: Swift.Int, humidity: Swift.Int, todayUvIntensity: Swift.Int, windSpeed: Swift.Int, sunriseHour: Swift.Int, sunriseMin: Swift.Int, sunsetHour: Swift.Int, sunsetMin: Swift.Int, sunriseItemNum: Swift.Int, airGradeItem: Swift.String, hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem], futureItems: [protocol_channel.IDOFutureItem], sunriseItem: [protocol_channel.IDOSunriseItem])
+  @objc public init(month: Swift.Int, day: Swift.Int, hour: Swift.Int, min: Swift.Int, sec: Swift.Int, week: Swift.Int, weatherType: Swift.Int, todayTmp: Swift.Int, todayMaxTemp: Swift.Int, todayMinTemp: Swift.Int, cityName: Swift.String, airQuality: Swift.Int, precipitationProbability: Swift.Int, humidity: Swift.Int, todayUvIntensity: Swift.Int, windSpeed: Swift.Int, sunriseHour: Swift.Int, sunriseMin: Swift.Int, sunsetHour: Swift.Int, sunsetMin: Swift.Int, sunriseItemNum: Swift.Int, airGradeItem: Swift.String, hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem], futureItems: [protocol_channel.IDOFutureItem], sunriseItem: [protocol_channel.IDOSunriseItem])
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
