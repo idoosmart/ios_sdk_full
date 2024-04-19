@@ -1136,6 +1136,18 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
+  public struct getUnit : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOUnitModel>) -> protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOUnitModel
+  }
+  public struct setHotStartParam : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOGpsHotStartParamModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Cmdoc : ObjectiveC.NSObject {
   @objc @discardableResult
@@ -1406,6 +1418,10 @@ public struct Cmds {
   public static func musicStop(_ completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func sendBindResult(_ isSuccess: Swift.Bool, _ completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getUnit(_ completion: @escaping (_ err: protocol_channel.CmdError, _ unitModel: protocol_channel.IDOUnitModel?) -> ()) -> protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setHotStartParam(_ gpsHotStart: protocol_channel.IDOGpsHotStartParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> protocol_channel.IDOCancellable
   @objc override dynamic public init()
   @objc deinit
 }
@@ -3168,6 +3184,17 @@ public protocol IDOCmdProtocol {
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
+@objc @objcMembers public class IDOGpsHotStartParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var longitude: Swift.Int
+  @objc public var latitude: Swift.Int
+  @objc public var altitude: Swift.Int
+  @objc public var tcxoOffset: Swift.Int
+  @objc public init(longitude: Swift.Int, latitude: Swift.Int, altitude: Swift.Int, tcxoOffset: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
 @objc @objcMembers public class IDOGpsStatusModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var gpsRunStatus: Swift.Int
   @objc public var agpsIsValid: Swift.Int
@@ -4663,6 +4690,17 @@ public protocol IDOCmdProtocol {
   @objc public var cyclingUnit: Swift.Int
   @objc public var walkingRunningUnit: Swift.Int
   @objc public init(distUnit: Swift.Int, weightUnit: Swift.Int, temp: Swift.Int, stride: Swift.Int, language: Swift.Int, is12HourFormat: Swift.Int, strideRun: Swift.Int, strideGpsCal: Swift.Int, weekStartDate: Swift.Int, calorieUnit: Swift.Int, swimPoolUnit: Swift.Int, cyclingUnit: Swift.Int, walkingRunningUnit: Swift.Int = 0)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOUnitModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var distUnit: Swift.Int
+  @objc public var temp: Swift.Int
+  @objc public var language: Swift.Int
+  @objc public var swimPoolUnit: Swift.Int
+  @objc public init(distUnit: Swift.Int, temp: Swift.Int, language: Swift.Int, swimPoolUnit: Swift.Int)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws

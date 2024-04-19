@@ -425,6 +425,8 @@ SWIFT_CLASS("_TtC16protocol_channel8CmdError")
 @class IDOMenuListParamModel;
 @class IDOSportParamModel;
 @class IDOActivitySwitchParamModel;
+@class IDOUnitModel;
+@class IDOGpsHotStartParamModel;
 
 SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 @interface Cmdoc : NSObject
@@ -840,6 +842,12 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// APP下发配对结果
 /// The APP delivers the pairing result
 + (id <IDOCancellable> _Nonnull)sendBindResult:(BOOL)isSuccess :(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
+/// 获取单位
+/// Get Unit event number
++ (id <IDOCancellable> _Nonnull)getUnit:(void (^ _Nonnull)(CmdError * _Nonnull, IDOUnitModel * _Nullable))completion;
+/// 设置热启动参数
+/// Set hot boot parameters
++ (id <IDOCancellable> _Nonnull)setHotStartParam:(IDOGpsHotStartParamModel * _Nonnull)gpsHotStart completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -4651,6 +4659,19 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOGpsControlParamModel")
 @end
 
 
+SWIFT_CLASS("_TtC16protocol_channel24IDOGpsHotStartParamModel")
+@interface IDOGpsHotStartParamModel : NSObject
+@property (nonatomic) NSInteger longitude;
+@property (nonatomic) NSInteger latitude;
+@property (nonatomic) NSInteger altitude;
+@property (nonatomic) NSInteger tcxoOffset;
+- (nonnull instancetype)initWithLongitude:(NSInteger)longitude latitude:(NSInteger)latitude altitude:(NSInteger)altitude tcxoOffset:(NSInteger)tcxoOffset OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 /// Get GPS Information event number
 SWIFT_CLASS("_TtC16protocol_channel15IDOGpsInfoModel")
 @interface IDOGpsInfoModel : NSObject
@@ -7907,6 +7928,73 @@ SWIFT_CLASS("_TtC16protocol_channel26IDOUnerasableMeunListModel")
 /// \endcode
 @property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull itemList;
 - (nonnull instancetype)initWithItemList:(NSArray<NSNumber *> * _Nonnull)itemList OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel12IDOUnitModel")
+@interface IDOUnitModel : NSObject
+/// Distance Unit:
+/// 0: Invalid
+/// 1: km (metric)
+/// 2: mi (imperial)
+@property (nonatomic) NSInteger distUnit;
+/// Temperature Unit:
+/// 0: Invalid<br/>1: ℃
+/// 2: ℉
+@property (nonatomic) NSInteger temp;
+/// Language
+/// | 代码 | 语言         | 功能表                      |
+/// | –– | ———— | ————————— |
+/// | -1   | 无效         | -                           |
+/// | 1    | 中文         | languageCh                  |
+/// | 2    | 英文         | languageEnglish             |
+/// | 3    | 法语         | languageFrench              |
+/// | 4    | 德语         | languageGerman              |
+/// | 5    | 意大利语     | languageItalian             |
+/// | 6    | 西班牙语     | languageSpanish             |
+/// | 7    | 日语         | languageJapanese            |
+/// | 8    | 波兰语       | languagePolish              |
+/// | 9    | 捷克语       | languageCzech               |
+/// | 10   | 罗马尼亚     | languageRomanian            |
+/// | 11   | 立陶宛语     | languageLithuanian          |
+/// | 12   | 荷兰语       | languageDutch               |
+/// | 13   | 斯洛文尼亚语 | languageSlovenian           |
+/// | 14   | 匈牙利语     | languageHungarian           |
+/// | 15   | 俄罗斯语     | languageRussian             |
+/// | 16   | 乌克兰语     | languageUkrainian           |
+/// | 17   | 斯洛伐克语   | languageSlovak              |
+/// | 18   | 丹麦语       | languageDanish              |
+/// | 19   | 克罗地亚语   | languageCroatian            |
+/// | 20   | 印尼语       | languageIndonesian          |
+/// | 21   | 韩语         | languageKorean              |
+/// | 22   | 印地语       | languageHindi               |
+/// | 23   | 葡萄牙语     | languagePortuguese          |
+/// | 24   | 土耳其语     | languageTurkish             |
+/// | 25   | 泰国语       | languageThai                |
+/// | 26   | 越南语       | languageVietnamese          |
+/// | 27   | 缅甸语       | languageBurmese             |
+/// | 28   | 菲律宾语     | languageFilipino            |
+/// | 29   | 繁体中文     | languageTraditionalChinese  |
+/// | 30   | 希腊语       | languageGreek               |
+/// | 31   | 阿拉伯语     | languageArabic              |
+/// | 32   | 瑞典语       | languageSweden              |
+/// | 33   | 芬兰语       | languageFinland             |
+/// | 34   | 波斯语       | languagePersia              |
+/// | 35   | 挪威语       | languageNorwegian           |
+/// | 36   | 马来语       | languageMalay               |
+/// | 37   | 巴西葡语     | languageBrazilianPortuguese |
+/// | 38   | 孟加拉语     | languageBengali             |
+/// | 39   | 高棉语       | languageKhmer               |
+@property (nonatomic) NSInteger language;
+/// Swim pool unit setting:
+/// 0: Invalid
+/// 1: Default meters
+/// 2: yards
+@property (nonatomic) NSInteger swimPoolUnit;
+- (nonnull instancetype)initWithDistUnit:(NSInteger)distUnit temp:(NSInteger)temp language:(NSInteger)language swimPoolUnit:(NSInteger)swimPoolUnit OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
