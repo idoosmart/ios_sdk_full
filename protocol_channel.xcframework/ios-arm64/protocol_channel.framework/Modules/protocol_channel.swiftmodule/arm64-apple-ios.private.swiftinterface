@@ -2947,6 +2947,9 @@ public protocol IDOCmdProtocol {
   @objc var getSupportBloodPressureModelFileUpdate: Swift.Bool { get }
   @objc var getSupportDisturbHaveRangRepeat: Swift.Bool { get }
   @objc var getSupportCalendarReminder: Swift.Bool { get }
+  @objc var getWatchDailSetAddSize: Swift.Bool { get }
+  @objc var getSupportSyncOverHighLowHeartData: Swift.Bool { get }
+  @objc var getSupportPerMinuteOne: Swift.Bool { get }
   @objc var setNoticeMessageStateUseVersion0x20: Swift.Bool { get }
   @objc var setScientificSleepSwitch: Swift.Bool { get }
   @objc var setTemperatureSwitchHealth: Swift.Bool { get }

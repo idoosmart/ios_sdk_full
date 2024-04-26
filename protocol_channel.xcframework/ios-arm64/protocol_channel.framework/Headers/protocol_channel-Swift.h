@@ -4181,6 +4181,12 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL getSupportDisturbHaveRangRepeat;
 /// 日历提醒
 @property (nonatomic, readonly) BOOL getSupportCalendarReminder;
+/// 表盘传输需要对应的传输原始的没有压缩的大小给固件,增加字段watch_file_size
+@property (nonatomic, readonly) BOOL getWatchDailSetAddSize;
+/// 支持同步过高过低时心率数据
+@property (nonatomic, readonly) BOOL getSupportSyncOverHighLowHeartData;
+/// 间隔一分钟同步新增（206设备）
+@property (nonatomic, readonly) BOOL getSupportPerMinuteOne;
 /// 设置获取消息应用状态使用version0x20版本下发
 @property (nonatomic, readonly) BOOL setNoticeMessageStateUseVersion0x20;
 /// 科学睡眠开关
@@ -4661,9 +4667,13 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOGpsControlParamModel")
 
 SWIFT_CLASS("_TtC16protocol_channel24IDOGpsHotStartParamModel")
 @interface IDOGpsHotStartParamModel : NSObject
+/// Longitude (multiplied by 10^6)
 @property (nonatomic) NSInteger longitude;
+/// Latitude (multiplied by 10^6)
 @property (nonatomic) NSInteger latitude;
+/// Altitude (multiplied by 10)
 @property (nonatomic) NSInteger altitude;
+/// TCXO offset
 @property (nonatomic) NSInteger tcxoOffset;
 - (nonnull instancetype)initWithLongitude:(NSInteger)longitude latitude:(NSInteger)latitude altitude:(NSInteger)altitude tcxoOffset:(NSInteger)tcxoOffset OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
