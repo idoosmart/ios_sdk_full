@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'IDOSDK-full'
-  s.version          = '4.0.28'
+  s.version          = '4.0.29'
   s.summary          = 'ido sdk'
   s.description      = <<-DESC
   ido sdk
@@ -23,7 +23,6 @@ Pod::Spec.new do |s|
     'Flutter.xcframework',
     'FlutterPluginRegistrant.xcframework',
     'native_channel.xcframework',
-    'path_provider_foundation.xcframework',
     'protocol_channel.xcframework',
     'protocol_c.framework'
    ]
