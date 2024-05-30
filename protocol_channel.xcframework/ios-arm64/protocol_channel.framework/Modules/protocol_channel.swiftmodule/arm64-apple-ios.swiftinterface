@@ -125,19 +125,45 @@ import _SwiftConcurrencyShims
   }
 }
 @objc @objcMembers public class IDODeviceModel : ObjectiveC.NSObject {
-  @objc final public let rssi: Swift.Int
-  @objc final public let name: Swift.String?
-  @objc final public let state: protocol_channel.IDODeviceStateType
-  @objc final public let uuid: Swift.String?
-  @objc final public let macAddress: Swift.String?
-  @objc final public let otaMacAddress: Swift.String?
-  @objc final public let btMacAddress: Swift.String?
-  @objc final public let deviceId: Swift.Int
-  @objc final public let deviceType: Swift.Int
-  @objc final public let isOta: Swift.Bool
-  @objc final public let isTlwOta: Swift.Bool
-  @objc final public let bltVersion: Swift.Int
-  @objc final public let isPair: Swift.Bool
+  @objc public var rssi: Swift.Int {
+    get
+  }
+  @objc public var name: Swift.String? {
+    get
+  }
+  @objc public var state: protocol_channel.IDODeviceStateType {
+    get
+  }
+  @objc public var uuid: Swift.String? {
+    get
+  }
+  @objc public var macAddress: Swift.String? {
+    get
+  }
+  @objc public var otaMacAddress: Swift.String? {
+    get
+  }
+  @objc public var btMacAddress: Swift.String? {
+    get
+  }
+  @objc public var deviceId: Swift.Int {
+    get
+  }
+  @objc public var deviceType: Swift.Int {
+    get
+  }
+  @objc public var isOta: Swift.Bool {
+    get
+  }
+  @objc public var isTlwOta: Swift.Bool {
+    get
+  }
+  @objc public var bltVersion: Swift.Int {
+    get
+  }
+  @objc public var isPair: Swift.Bool {
+    get
+  }
   @objc public init(rssi: Swift.Int, name: Swift.String?, state: protocol_channel.IDODeviceStateType, uuid: Swift.String?, macAddress: Swift.String?, otaMacAddress: Swift.String?, btMacAddress: Swift.String?, deviceId: Swift.Int, deviceType: Swift.Int, isOta: Swift.Bool, isTlwOta: Swift.Bool, bltVersion: Swift.Int, isPair: Swift.Bool)
   @objc deinit
 }
@@ -1148,6 +1174,30 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
+  public struct getSmartHeartRateMode : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOHeartRateModeSmartModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOHeartRateModeSmartModel
+  }
+  public struct getSpo2Switch : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOSpo2SwitchModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOSpo2SwitchModel
+  }
+  public struct getStressSwitch : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOStressSwitchModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOStressSwitchModel
+  }
+  public struct setDefaultMsgList : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDODefaultMessageConfigParamModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDODefaultMessageConfigModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDODefaultMessageConfigModel
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Cmdoc : ObjectiveC.NSObject {
   @objc @discardableResult
@@ -1422,6 +1472,14 @@ public struct Cmds {
   public static func getUnit(_ completion: @escaping (_ err: protocol_channel.CmdError, _ unitModel: protocol_channel.IDOUnitModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setHotStartParam(_ gpsHotStart: protocol_channel.IDOGpsHotStartParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getSmartHeartRateMode(_ completion: @escaping (_ err: protocol_channel.CmdError, _ heartRateModel: protocol_channel.IDOHeartRateModeSmartModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getSpo2Switch(_ completion: @escaping (_ err: protocol_channel.CmdError, _ spo2Model: protocol_channel.IDOSpo2SwitchModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getStressSwitch(_ completion: @escaping (_ err: protocol_channel.CmdError, _ stressSwitchModel: protocol_channel.IDOStressSwitchModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setDefaultMsgList(_ paramModel: protocol_channel.IDODefaultMessageConfigParamModel, _ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDODefaultMessageConfigModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2252,7 +2310,7 @@ public protocol IDOBaseModel : Swift.Decodable, Swift.Encodable {
 }
 @objc @objcMembers public class IDOBleBeepModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var errCode: Swift.Int
-  @objc public var items: [protocol_channel.IDOBleBeepItem]
+  @objc public var items: [protocol_channel.IDOBleBeepItem]?
   @objc public init(errCode: Swift.Int, items: [protocol_channel.IDOBleBeepItem])
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
@@ -2471,6 +2529,88 @@ public protocol IDOCmdProtocol {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
+@objc @objcMembers public class IDODefaultMessageConfigParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var items: [protocol_channel.IDODefaultMessageItem]?
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case operate
+    case itemsNum
+    case items
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc public init(operate: Swift.Int, items: [protocol_channel.IDODefaultMessageItem]? = nil)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDODefaultMessageConfigModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var errorCode: Swift.Int
+  public var supportMaxAllItemsNum: Swift.Int?
+  public var supportMaxPackNameLen: Swift.Int?
+  @objc public var items: [protocol_channel.IDODefaultMessageItem]?
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case operate
+    case errorCode
+    case supportMaxAllItemsNum
+    case supportMaxPackNameLen
+    case items
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  public init(operate: Swift.Int, errorCode: Swift.Int, supportMaxAllItemsNum: Swift.Int? = nil, supportMaxPackNameLen: Swift.Int? = nil, items: [protocol_channel.IDODefaultMessageItem]? = nil)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDODefaultMessageItem : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var packageName: Swift.String
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case packageName
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc public init(packageName: Swift.String)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 @objc @objcMembers public class IDODefaultSportTypeModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var defaultShowNum: Swift.Int
   @objc public var minShowNum: Swift.Int
@@ -2512,6 +2652,9 @@ public protocol IDOCmdProtocol {
   @objc var otaMode: Swift.Bool { get }
   @objc var uuid: Swift.String { get }
   @objc var macAddressBt: Swift.String { get }
+  @objc var sn: Swift.String? { get }
+  @objc var btName: Swift.String? { get }
+  @objc var gpsPlatform: Swift.Int { get }
   @objc var fwVersion1: Swift.Int { get }
   @objc var fwVersion2: Swift.Int { get }
   @objc var fwVersion3: Swift.Int { get }
@@ -3369,6 +3512,23 @@ public protocol IDOCmdProtocol {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
+@objc @objcMembers public class IDOHeartRateModeSmartModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var mode: Swift.Int
+  @objc public var notifyFlag: Swift.Int
+  @objc public var highHeartMode: Swift.Int
+  @objc public var lowHeartMode: Swift.Int
+  @objc public var highHeartValue: Swift.Int
+  @objc public var lowHeartValue: Swift.Int
+  @objc public var startHour: Swift.Int
+  @objc public var startMinute: Swift.Int
+  @objc public var endHour: Swift.Int
+  @objc public var endMinute: Swift.Int
+  @objc public init(mode: Swift.Int, notifyFlag: Swift.Int, highHeartMode: Swift.Int, lowHeartMode: Swift.Int, highHeartValue: Swift.Int, lowHeartValue: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 @objc @objcMembers public class IDOHeartRateModeSmartParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var mode: Swift.Int
   @objc public var notifyFlag: Swift.Int
@@ -4220,6 +4380,21 @@ public protocol IDOCmdProtocol {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
+@objc @objcMembers public class IDOSpo2SwitchModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var onOff: Swift.Int
+  @objc public var startHour: Swift.Int
+  @objc public var startMinute: Swift.Int
+  @objc public var endHour: Swift.Int
+  @objc public var endMinute: Swift.Int
+  @objc public var lowSpo2OnOff: Swift.Int
+  @objc public var lowSpo2Value: Swift.Int
+  @objc public var notifyFlag: Swift.Int
+  @objc public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, lowSpo2OnOff: Swift.Int = 0, lowSpo2Value: Swift.Int = 0, notifyFlag: Swift.Int = 0)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 @objc @objcMembers public class IDOSportGoalParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var sportStep: Swift.Int
   @objc public var walkGoalSteps: Swift.Int
@@ -4547,6 +4722,42 @@ public protocol IDOCmdProtocol {
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
 }
+@objc public class IDOStressSwitchModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  public var onOff: Swift.Int
+  public var startHour: Swift.Int
+  public var startMinute: Swift.Int
+  public var endHour: Swift.Int
+  public var endMinute: Swift.Int
+  public var remindOnOff: Swift.Int
+  public var interval: Swift.Int
+  public var highThreshold: Swift.Int
+  public var stressThreshold: Swift.Int
+  public var notifyFlag: Swift.Int
+  public var repeats: Swift.Set<protocol_channel.IDOWeek>
+  public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, remindOnOff: Swift.Int, interval: Swift.Int, highThreshold: Swift.Int, stressThreshold: Swift.Int = 0, notifyFlag: Swift.Int, repeats: Swift.Set<protocol_channel.IDOWeek> = [.monday])
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  public func toJsonString() -> Swift.String?
+  @objc deinit
+}
+@objc @objcMembers public class IDOStressSwitchModelObjc : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var onOff: Swift.Int
+  @objc public var startHour: Swift.Int
+  @objc public var startMinute: Swift.Int
+  @objc public var endHour: Swift.Int
+  @objc public var endMinute: Swift.Int
+  @objc public var remindOnOff: Swift.Int
+  @objc public var interval: Swift.Int
+  @objc public var highThreshold: Swift.Int
+  @objc public var stressThreshold: Swift.Int
+  @objc public var notifyFlag: Swift.Int
+  @objc public var repeats: [protocol_channel.IDOWeekObjc]
+  @objc public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, remindOnOff: Swift.Int, interval: Swift.Int, highThreshold: Swift.Int, stressThreshold: Swift.Int = 0, notifyFlag: Swift.Int, repeats: [protocol_channel.IDOWeekObjc])
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+}
 @objc @objcMembers public class IDOStressValModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var stressVal: Swift.Int
   @objc public var threshold: Swift.Int
@@ -4596,7 +4807,13 @@ public protocol IDOCmdProtocol {
 @objc public protocol IDOSyncDataInterface {
   @objc var syncStatus: protocol_channel.IDOSyncStatus { get }
   @objc func startSync(funcProgress: @escaping protocol_channel.BlockDataSyncProgress, funcData: @escaping protocol_channel.BlockDataSyncData, funcCompleted: @escaping protocol_channel.BlockDataSyncCompleted)
+  @objc func startSync(types: [protocol_channel.IDOSyncDataTypeClass], funcData: @escaping protocol_channel.BlockDataSyncData, funcCompleted: @escaping protocol_channel.BlockDataSyncCompleted)
+  @objc func getSupportSyncDataTypeList(completion: @escaping ([protocol_channel.IDOSyncDataTypeClass]) -> Swift.Void)
   @objc func stopSync()
+}
+@objc @objcMembers public class IDOSyncDataTypeClass : ObjectiveC.NSObject {
+  @objc public init(type: protocol_channel.IDOSyncDataType)
+  @objc deinit
 }
 @objc public class IDOTakingMedicineReminderParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   public var takingMedicineId: Swift.Int
@@ -5259,6 +5476,15 @@ extension protocol_channel.IDOWeek : Swift.RawRepresentable {}
 extension protocol_channel.IDOAlarmStatus : Swift.Equatable {}
 extension protocol_channel.IDOAlarmStatus : Swift.Hashable {}
 extension protocol_channel.IDOAlarmStatus : Swift.RawRepresentable {}
+extension protocol_channel.IDODefaultMessageConfigParamModel.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDODefaultMessageConfigParamModel.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDODefaultMessageConfigParamModel.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDODefaultMessageConfigModel.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDODefaultMessageConfigModel.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDODefaultMessageConfigModel.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDODefaultMessageItem.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDODefaultMessageItem.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDODefaultMessageItem.CodingKeys : Swift.RawRepresentable {}
 extension protocol_channel.IDOLanguageType : Swift.Equatable {}
 extension protocol_channel.IDOLanguageType : Swift.Hashable {}
 extension protocol_channel.IDOLanguageType : Swift.RawRepresentable {}

@@ -339,7 +339,7 @@ SWIFT_CLASS("_TtC16protocol_channel8CmdError")
 /// -2 失败
 /// -3 指令已存在队列中
 /// -4 设备断线
-/// -5 ota模式
+/// -5 指令被中断(由于发出的指令不能被实际取消，故存在修改指令被中断后可能还会导致设备修改生效的情况)
 /// -6 未连接设备
 /// -99 json解析失败
 ///
@@ -474,6 +474,11 @@ SWIFT_CLASS("_TtC16protocol_channel8CmdError")
 @class IDOActivitySwitchParamModel;
 @class IDOUnitModel;
 @class IDOGpsHotStartParamModel;
+@class IDOHeartRateModeSmartModel;
+@class IDOSpo2SwitchModel;
+@class IDOStressSwitchModel;
+@class IDODefaultMessageConfigParamModel;
+@class IDODefaultMessageConfigModel;
 
 SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 @interface Cmdoc : NSObject
@@ -895,6 +900,18 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 设置热启动参数
 /// Set hot boot parameters
 + (id <IDOCancellable> _Nonnull)setHotStartParam:(IDOGpsHotStartParamModel * _Nonnull)gpsHotStart completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
+/// 获取智能心率模式
+/// Get Smart Heart Rate Mode
++ (id <IDOCancellable> _Nonnull)getSmartHeartRateMode:(void (^ _Nonnull)(CmdError * _Nonnull, IDOHeartRateModeSmartModel * _Nullable))completion;
+/// 获取血氧开关
+/// Get blood oxygen switch
++ (id <IDOCancellable> _Nonnull)getSpo2Switch:(void (^ _Nonnull)(CmdError * _Nonnull, IDOSpo2SwitchModel * _Nullable))completion;
+/// 获取压力开关
+/// Get the pressure switch
++ (id <IDOCancellable> _Nonnull)getStressSwitch:(void (^ _Nonnull)(CmdError * _Nonnull, IDOStressSwitchModel * _Nullable))completion;
+/// 设置默认的消息应用列表
+/// Set the default messaging app list
++ (id <IDOCancellable> _Nonnull)setDefaultMsgList:(IDODefaultMessageConfigParamModel * _Nonnull)paramModel :(void (^ _Nonnull)(CmdError * _Nonnull, IDODefaultMessageConfigModel * _Nullable))completion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1927,7 +1944,7 @@ SWIFT_CLASS("_TtC16protocol_channel15IDOBleBeepModel")
 @interface IDOBleBeepModel : NSObject
 /// Error code, 0 for success, non-zero for failure
 @property (nonatomic) NSInteger errCode;
-@property (nonatomic, copy) NSArray<IDOBleBeepItem *> * _Nonnull items;
+@property (nonatomic, copy) NSArray<IDOBleBeepItem *> * _Nullable items;
 - (nonnull instancetype)initWithErrCode:(NSInteger)errCode items:(NSArray<IDOBleBeepItem *> * _Nonnull)items OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -2685,6 +2702,48 @@ SWIFT_CLASS("_TtC16protocol_channel21IDODateTimeParamModel")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class IDODefaultMessageItem;
+
+SWIFT_CLASS("_TtC16protocol_channel28IDODefaultMessageConfigModel")
+@interface IDODefaultMessageConfigModel : NSObject
+/// 操作类型 0:无效 1:设置 2:查询
+@property (nonatomic) NSInteger operate;
+/// 错误码 0:成功 非0失败
+@property (nonatomic) NSInteger errorCode;
+@property (nonatomic, copy) NSArray<IDODefaultMessageItem *> * _Nullable items;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel33IDODefaultMessageConfigParamModel")
+@interface IDODefaultMessageConfigParamModel : NSObject
+/// 操作类型 0:无效 1:设置 2:查询
+@property (nonatomic) NSInteger operate;
+/// 包列表
+/// \code
+/// 包名详情个数 最多设置50个详情
+/// operate = 1 时有效
+///
+/// \endcode
+@property (nonatomic, copy) NSArray<IDODefaultMessageItem *> * _Nullable items;
+- (nonnull instancetype)initWithOperate:(NSInteger)operate items:(NSArray<IDODefaultMessageItem *> * _Nullable)items OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel21IDODefaultMessageItem")
+@interface IDODefaultMessageItem : NSObject
+/// 包名
+@property (nonatomic, copy) NSString * _Nonnull packageName;
+- (nonnull instancetype)initWithPackageName:(NSString * _Nonnull)packageName OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @class IDOSportTypeItem;
 
 SWIFT_CLASS("_TtC16protocol_channel24IDODefaultSportTypeModel")
@@ -2743,7 +2802,7 @@ SWIFT_PROTOCOL("_TtP16protocol_channel18IDODeviceInterface_")
 @property (nonatomic, readonly, copy) NSString * _Nonnull macAddress;
 /// 当前设备mac地址 - 带冒号
 @property (nonatomic, readonly, copy) NSString * _Nonnull macAddressFull;
-/// 注意：该名称是由调用 markConnectedDevice(…)传入，sdk不会主去刷新该值
+/// 注意：该名称是由调用 markConnectedDevice(…)传入，sdk不会主动去刷新该值
 /// 需要获取最新值可以使用 Cmds.getDeviceName().send(..) 方法
 @property (nonatomic, readonly, copy) NSString * _Nonnull deviceName;
 /// OTA模式
@@ -2752,6 +2811,12 @@ SWIFT_PROTOCOL("_TtP16protocol_channel18IDODeviceInterface_")
 @property (nonatomic, readonly, copy) NSString * _Nonnull uuid;
 /// BT macAddress - 带冒号
 @property (nonatomic, readonly, copy) NSString * _Nonnull macAddressBt;
+/// 设备SN
+@property (nonatomic, readonly, copy) NSString * _Nullable sn;
+/// BtName
+@property (nonatomic, readonly, copy) NSString * _Nullable btName;
+/// GPS芯片平台 0：无效 1：索尼 sony 2：洛达 Airoh 3：芯与物 icoe
+@property (nonatomic, readonly) NSInteger gpsPlatform;
 /// 固件版本version1
 @property (nonatomic, readonly) NSInteger fwVersion1;
 /// 固件版本version2
@@ -5186,6 +5251,44 @@ SWIFT_CLASS("_TtC16protocol_channel26IDOHeartRateModeParamModel")
 @end
 
 
+/// Smart Heart Rate Mode
+SWIFT_CLASS("_TtC16protocol_channel26IDOHeartRateModeSmartModel")
+@interface IDOHeartRateModeSmartModel : NSObject
+/// Switch
+/// 0:Off
+/// 1:On
+@property (nonatomic) NSInteger mode;
+/// Notification Type
+/// 0: Invalid
+/// 1: Allow Notifications
+/// 2: Silent Notifications
+/// 3: Disable Notifications
+@property (nonatomic) NSInteger notifyFlag;
+/// 1: Enable Smart High Heart Rate Alert
+/// 0: Disable
+@property (nonatomic) NSInteger highHeartMode;
+/// 1: Enable Smart Low Heart Rate Alert
+/// 0: Disable
+@property (nonatomic) NSInteger lowHeartMode;
+/// Smart High Heart Rate Alert Threshold
+@property (nonatomic) NSInteger highHeartValue;
+/// Smart Low Heart Rate Alert Threshold
+@property (nonatomic) NSInteger lowHeartValue;
+/// Start Time of Heart Rate Monitoring (hour)
+@property (nonatomic) NSInteger startHour;
+/// Start Time of Heart Rate Monitoring (minute)
+@property (nonatomic) NSInteger startMinute;
+/// End Time of Heart Rate Monitoring (hour)
+@property (nonatomic) NSInteger endHour;
+/// End Time of Heart Rate Monitoring (minute)
+@property (nonatomic) NSInteger endMinute;
+- (nonnull instancetype)initWithMode:(NSInteger)mode notifyFlag:(NSInteger)notifyFlag highHeartMode:(NSInteger)highHeartMode lowHeartMode:(NSInteger)lowHeartMode highHeartValue:(NSInteger)highHeartValue lowHeartValue:(NSInteger)lowHeartValue startHour:(NSInteger)startHour startMinute:(NSInteger)startMinute endHour:(NSInteger)endHour endMinute:(NSInteger)endMinute OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 /// Set Smart Heart Rate Mode Event
 SWIFT_CLASS("_TtC16protocol_channel31IDOHeartRateModeSmartParamModel")
 @interface IDOHeartRateModeSmartParamModel : NSObject
@@ -6732,6 +6835,42 @@ SWIFT_CLASS("_TtC16protocol_channel24IDOSleepPeriodParamModel")
 @end
 
 
+SWIFT_CLASS("_TtC16protocol_channel18IDOSpo2SwitchModel")
+@interface IDOSpo2SwitchModel : NSObject
+/// SpO2 all-day switch
+/// 1 On
+/// 0 Off
+@property (nonatomic) NSInteger onOff;
+/// Start time (hour)
+@property (nonatomic) NSInteger startHour;
+/// Start time (minute)
+@property (nonatomic) NSInteger startMinute;
+/// End time (hour)
+@property (nonatomic) NSInteger endHour;
+/// End time (minute)
+@property (nonatomic) NSInteger endMinute;
+/// Low SpO2 switch
+/// 1 On
+/// 0 Off
+/// Requires support from the menu <code>setSpo2AllDayOnOff</code>
+@property (nonatomic) NSInteger lowSpo2OnOff;
+/// Low SpO2 threshold
+/// Requires support from the menu <code>v3SupportSetSpo2LowValueRemind</code>
+@property (nonatomic) NSInteger lowSpo2Value;
+/// Notification type
+/// 0: Invalid
+/// 1: Allow notifications
+/// 2: Silent notifications
+/// 3: Disable notifications
+/// Requires support from the menu <code>getSpo2NotifyFlag</code>
+@property (nonatomic) NSInteger notifyFlag;
+- (nonnull instancetype)initOnOff:(NSInteger)onOff startHour:(NSInteger)startHour startMinute:(NSInteger)startMinute endHour:(NSInteger)endHour endMinute:(NSInteger)endMinute lowSpo2OnOff:(NSInteger)lowSpo2OnOff lowSpo2Value:(NSInteger)lowSpo2Value notifyFlag:(NSInteger)notifyFlag OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 /// Set SpO2 switch event
 SWIFT_CLASS("_TtC16protocol_channel23IDOSpo2SwitchParamModel")
 @interface IDOSpo2SwitchParamModel : NSObject
@@ -7389,6 +7528,51 @@ SWIFT_CLASS("_TtC16protocol_channel30IDOStressCalibrationParamModel")
 @end
 
 
+SWIFT_CLASS("_TtC16protocol_channel20IDOStressSwitchModel")
+@interface IDOStressSwitchModel : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel24IDOStressSwitchModelObjc")
+@interface IDOStressSwitchModelObjc : NSObject
+/// Overall switch 1: On 0: Off
+@property (nonatomic) NSInteger onOff;
+/// Start time - hour
+@property (nonatomic) NSInteger startHour;
+/// Start time - minute
+@property (nonatomic) NSInteger startMinute;
+/// End time - hour
+@property (nonatomic) NSInteger endHour;
+/// End time - minute
+@property (nonatomic) NSInteger endMinute;
+/// Stress reminder switch 1: On 0: Off
+/// Doesn’t work if on_off is off
+@property (nonatomic) NSInteger remindOnOff;
+/// Reminder interval in minutes, default is 60 minutes
+@property (nonatomic) NSInteger interval;
+/// High pressure threshold
+@property (nonatomic) NSInteger highThreshold;
+/// Pressure calibration threshold, default is 80
+/// Requires firmware support for setSendCalibrationThreshold
+@property (nonatomic) NSInteger stressThreshold;
+/// Notification type
+/// 0: Invalid
+/// 1: Allow notification
+/// 2: Silent notification
+/// 3: Disable notification
+/// Requires firmware support for getPressureNotifyFlagMode
+@property (nonatomic) NSInteger notifyFlag;
+/// Repeat
+@property (nonatomic, copy) NSArray<IDOWeekObjc *> * _Nonnull repeats;
+- (nonnull instancetype)initOnOff:(NSInteger)onOff startHour:(NSInteger)startHour startMinute:(NSInteger)startMinute endHour:(NSInteger)endHour endMinute:(NSInteger)endMinute remindOnOff:(NSInteger)remindOnOff interval:(NSInteger)interval highThreshold:(NSInteger)highThreshold stressThreshold:(NSInteger)stressThreshold notifyFlag:(NSInteger)notifyFlag repeats:(NSArray<IDOWeekObjc *> * _Nonnull)repeats OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC16protocol_channel25IDOStressSwitchParamModel")
 @interface IDOStressSwitchParamModel : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -7513,6 +7697,7 @@ SWIFT_CLASS("_TtC16protocol_channel24IDOSyncContactParamModel")
 
 enum IDOSyncStatus : NSInteger;
 enum IDOSyncDataType : NSInteger;
+@class IDOSyncDataTypeClass;
 
 /// 数据同步
 SWIFT_PROTOCOL("_TtP16protocol_channel20IDOSyncDataInterface_")
@@ -7521,6 +7706,10 @@ SWIFT_PROTOCOL("_TtP16protocol_channel20IDOSyncDataInterface_")
 @property (nonatomic, readonly) enum IDOSyncStatus syncStatus;
 /// 开始同步所有数据
 - (void)startSyncWithFuncProgress:(void (^ _Nonnull)(double))funcProgress funcData:(void (^ _Nonnull)(enum IDOSyncDataType, NSString * _Nonnull, NSInteger))funcData funcCompleted:(void (^ _Nonnull)(NSInteger))funcCompleted;
+/// 同步指定数据（无进度且不支持的类型不会回调）
+- (void)startSyncWithTypes:(NSArray<IDOSyncDataTypeClass *> * _Nonnull)types funcData:(void (^ _Nonnull)(enum IDOSyncDataType, NSString * _Nonnull, NSInteger))funcData funcCompleted:(void (^ _Nonnull)(NSInteger))funcCompleted;
+/// 获取支持的同步数据类型（该方法稍后启用）
+- (void)getSupportSyncDataTypeListWithCompletion:(void (^ _Nonnull)(NSArray<IDOSyncDataTypeClass *> * _Nonnull))completion;
 /// 停止同步所有数据
 - (void)stopSync;
 @end
@@ -7551,6 +7740,14 @@ typedef SWIFT_ENUM(NSInteger, IDOSyncDataType, open) {
   IDOSyncDataTypeV2GPS = 19,
   IDOSyncDataTypeV2Activity = 20,
 };
+
+
+SWIFT_CLASS("_TtC16protocol_channel20IDOSyncDataTypeClass")
+@interface IDOSyncDataTypeClass : NSObject
+- (nonnull instancetype)initWithType:(enum IDOSyncDataType)type OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 /// 状态
 typedef SWIFT_ENUM(NSInteger, IDOSyncStatus, open) {

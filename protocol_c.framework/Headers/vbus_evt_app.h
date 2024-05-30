@@ -408,6 +408,8 @@ typedef enum
     VBUS_EVT_FUNC_V3_VOICE_MEMO                            = 5086,  //语音备忘录
     VBUS_EVT_FUNC_V3_MORNING_EDITION                       = 5087,  //晨报
     VBUS_EVT_FUNC_V3_CALENDEAR_REMINDER                    = 5088,  //日历提醒
+    VBUS_EVT_FUNC_V3_CONFIG_MES_LIST                       = 5089,  //配置默认的消息应用列表
+    VBUS_EVT_FUNC_V3_SET_ECI                               = 5090,  //设置紧急联系人（ECI）方式
 
 
 	VBUS_EVT_FUNC_MAKE_PHOTO                               = 5500,	//制作照片
