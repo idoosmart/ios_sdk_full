@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'IDOSDK-full'
-  s.version          = '4.0.31'
+  s.version          = '4.0.32'
   s.summary          = 'ido sdk'
   s.description      = <<-DESC
   ido sdk
@@ -28,28 +28,30 @@ Pod::Spec.new do |s|
     'IDOUtils.framework'
    ]
    
+   s.resources = ['protocol_channel.xcframework/ios-arm64/protocol_channel.framework/icon_assets.bundle']
+
    # Flutter.framework does not contain a i386 slice.
-     s.pod_target_xcconfig = {
-       'DEFINES_MODULE' => 'YES',
-       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386'
-     }
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES',
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386'
+  }
 
-     s.xcconfig = {
-         'GCC_PREPROCESSOR_DEFINITIONS' => [
-         'PLATFORM_TYPE=2',
-         'HAVE_INTTYPES_H',
-         'HAVE_PKCRYPT',
-         'HAVE_STDINT_H',
-         'HAVE_WZAES',
-         'HAVE_ZLIB',
-         'VAR_ARRAYS',
-         'USE_ALLOCA',
-         'NONTHREADSAFE_PSEUDOSTACK',
-         'OPUS_BUILD',
-         'STDC_HEADERS'
-         ],
-       }
+  s.xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => [
+      'PLATFORM_TYPE=2',
+      'HAVE_INTTYPES_H',
+      'HAVE_PKCRYPT',
+      'HAVE_STDINT_H',
+      'HAVE_WZAES',
+      'HAVE_ZLIB',
+      'VAR_ARRAYS',
+      'USE_ALLOCA',
+      'NONTHREADSAFE_PSEUDOSTACK',
+      'OPUS_BUILD',
+      'STDC_HEADERS'
+      ],
+    }
 
-     s.swift_version = '5.0'
+  s.swift_version = '5.0'
 
  end
