@@ -2084,6 +2084,8 @@ public typealias BlockFileTransProgress = (_ currentIndex: Swift.Int, _ totalCou
   case bpbin = 17
   case voice = 18
   case ton = 19
+  case app = 20
+  case other = 21
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -5457,12 +5459,6 @@ public typealias BlockDataSyncCompleted = (_ errorCode: Swift.Int) -> Swift.Void
   case activity = 12
   case gPS = 13
   case swim = 14
-  case v2StepCount = 15
-  case v2Sleep = 16
-  case v2HeartRate = 17
-  case v2BloodPressure = 18
-  case v2GPS = 19
-  case v2Activity = 20
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {

@@ -7884,18 +7884,6 @@ typedef SWIFT_ENUM(NSInteger, IDOSyncDataType, open) {
   IDOSyncDataTypeGPS = 13,
 /// 游泳
   IDOSyncDataTypeSwim = 14,
-/// V2步数（旧）
-  IDOSyncDataTypeV2StepCount = 15,
-/// V2睡眠（旧）
-  IDOSyncDataTypeV2Sleep = 16,
-/// V2心率（旧）
-  IDOSyncDataTypeV2HeartRate = 17,
-/// V2血压（旧）
-  IDOSyncDataTypeV2BloodPressure = 18,
-/// V2 GPS
-  IDOSyncDataTypeV2GPS = 19,
-/// V2多运动
-  IDOSyncDataTypeV2Activity = 20,
 };
 
 
@@ -8454,6 +8442,15 @@ typedef SWIFT_ENUM(NSInteger, IDOTransType, open) {
   IDOTransTypeVoice = 18,
 /// 提示音
   IDOTransTypeTon = 19,
+/// 小程序
+  IDOTransTypeApp = 20,
+/// 其它类型：不限后缀，不对文件二次加工，直接上传到设备
+/// \code
+/// hid: 检测引导程序hid更新(android专用)
+/// xx: xxxxx
+///
+/// \endcode
+  IDOTransTypeOther = 21,
 };
 
 
