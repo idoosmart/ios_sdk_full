@@ -479,6 +479,8 @@ SWIFT_CLASS("_TtC16protocol_channel8CmdError")
 @class IDOStressSwitchModel;
 @class IDODefaultMessageConfigParamModel;
 @class IDODefaultMessageConfigModel;
+@class IDOAppletControlModel;
+@class IDOAppletInfoModel;
 
 SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 @interface Cmdoc : NSObject
@@ -915,6 +917,9 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 设置默认的消息应用列表
 /// Set the default messaging app list
 + (id <IDOCancellable> _Nonnull)setDefaultMsgList:(IDODefaultMessageConfigParamModel * _Nonnull)paramModel :(void (^ _Nonnull)(CmdError * _Nonnull, IDODefaultMessageConfigModel * _Nullable))completion;
+/// 操作小程序信息（获取、启动、删除）
+/// Operation of applet information (obtain, start, delete)
++ (id <IDOCancellable> _Nonnull)setAppleControl:(IDOAppletControlModel * _Nonnull)paramModel :(void (^ _Nonnull)(CmdError * _Nonnull, IDOAppletInfoModel * _Nullable))completion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1857,6 +1862,53 @@ SWIFT_CLASS("_TtC16protocol_channel29IDOAppStartReplyExchangeModel")
 /// 4:正在使用Alexa 5:通话中
 @property (nonatomic) NSInteger retCode;
 - (nonnull instancetype)initWithBaseModel:(IDOExchangeBaseModel * _Nullable)baseModel retCode:(NSInteger)retCode OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel21IDOAppletControlModel")
+@interface IDOAppletControlModel : NSObject
+/// 0:无效 1:启动小程序 2:删除小程序 3:获取已安装的小程序列表
+@property (nonatomic) NSInteger operate;
+/// 小程序名称 operate=0/operate=3无效,获取操作不需要下发名称，最大29个字节
+@property (nonatomic, copy) NSString * _Nullable appName;
+- (nonnull instancetype)initWithOperate:(NSInteger)operate appName:(NSString * _Nullable)appName OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel17IDOAppletInfoItem")
+@interface IDOAppletInfoItem : NSObject
+/// 小程序名称 最大值29个字节
+@property (nonatomic, copy) NSString * _Nonnull appName;
+/// 小程序大小 单位Byte
+@property (nonatomic) NSInteger size;
+/// 小程序版本号
+@property (nonatomic, copy) NSString * _Nonnull version;
+- (nonnull instancetype)initWithAppName:(NSString * _Nonnull)appName size:(NSInteger)size version:(NSString * _Nonnull)version OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel18IDOAppletInfoModel")
+@interface IDOAppletInfoModel : NSObject
+/// 0:成功 非0失败
+@property (nonatomic) NSInteger errorCode;
+/// 小程序列表 operate=3有效
+@property (nonatomic, copy) NSArray<IDOAppletInfoItem *> * _Nullable infoItem;
+/// 0:无效 1:启动小程序 2:删除小程序 3:获取已安装的小程序列表
+@property (nonatomic) NSInteger operate;
+/// 剩余空间 单位Byte
+@property (nonatomic) NSInteger residualSpace;
+/// 总空间 单位Byte
+@property (nonatomic) NSInteger totalSpace;
+- (nonnull instancetype)initWithErrorCode:(NSInteger)errorCode infoItem:(NSArray<IDOAppletInfoItem *> * _Nonnull)infoItem miniProgramNum:(NSInteger)miniProgramNum operate:(NSInteger)operate residualSpace:(NSInteger)residualSpace totalSpace:(NSInteger)totalSpace OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -4556,6 +4608,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL setSupportNoiseSetOverWarning;
 /// 支持设置版本信息
 @property (nonatomic, readonly) BOOL setSupportSetVersionInformation;
+/// 小程序操作
+@property (nonatomic, readonly) BOOL setSupportControlMiniProgram;
 /// 中文
 @property (nonatomic, readonly) BOOL languageCh;
 /// 捷克文
@@ -6245,15 +6299,13 @@ SWIFT_CLASS("_TtC16protocol_channel26IDONoticeMessageParamModel")
 /// Support hang up: 1
 /// Do not support hang up: 0
 @property (nonatomic) BOOL supportHangUp;
-/// Mesaage Data
-@property (nonatomic, copy) NSString * _Nonnull msgData;
 /// Contact name (maximum 63 bytes)
 @property (nonatomic, copy) NSString * _Nonnull contact;
 /// Phone number (maximum 31 bytes)
 @property (nonatomic, copy) NSString * _Nonnull phoneNumber;
 /// Message content (maximum 249 bytes)
 @property (nonatomic, copy) NSString * _Nonnull dataText;
-- (nonnull instancetype)initWithEvtType:(NSInteger)evtType msgID:(NSInteger)msgID supportAnswering:(BOOL)supportAnswering supportMute:(BOOL)supportMute supportHangUp:(BOOL)supportHangUp msgData:(NSString * _Nonnull)msgData contact:(NSString * _Nonnull)contact phoneNumber:(NSString * _Nonnull)phoneNumber dataText:(NSString * _Nonnull)dataText OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithEvtType:(NSInteger)evtType msgID:(NSInteger)msgID supportAnswering:(BOOL)supportAnswering supportMute:(BOOL)supportMute supportHangUp:(BOOL)supportHangUp contact:(NSString * _Nonnull)contact phoneNumber:(NSString * _Nonnull)phoneNumber dataText:(NSString * _Nonnull)dataText OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -6713,8 +6765,8 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOSetNoticeStatusModel")
 @property (nonatomic) BOOL isOnSkype;
 /// Alarm 提醒 | Alarm Reminder
 @property (nonatomic) BOOL isOnAlarm;
-/// Pokeman (其他)提醒 | Pokemon Reminder(other)
-@property (nonatomic) BOOL isOnPokeman;
+/// (其他)提醒 |  Reminder(other)
+@property (nonatomic) BOOL isOnOther;
 /// Vkontakte 提醒 | Vkontakte Reminder
 @property (nonatomic) BOOL isOnVkontakte;
 /// Line 提醒 | Line reminder
@@ -6841,6 +6893,20 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOSetNoticeStatusModel")
 @property (nonatomic) BOOL isOnGeneral;
 /// 189email 提醒 |  通知支持阿里巴巴邮箱的功能表 type:0x51
 @property (nonatomic) BOOL isOnAlibabaemail;
+/// Calendario(谷歌日历)
+@property (nonatomic) BOOL isOnGoogleCalendario;
+/// Fastrack Reflex World
+@property (nonatomic) BOOL isOnFastrackReflexWorld;
+/// Hama Fit Move
+@property (nonatomic) BOOL isOnHamaFitMove;
+/// 淘宝
+@property (nonatomic) BOOL isOnTaobao;
+/// 钉钉(DingTalk)
+@property (nonatomic) BOOL isOnDingTalk;
+/// 支付宝(Alipay)
+@property (nonatomic) BOOL isOnAlipay;
+/// 今日头条(Toutiao)
+@property (nonatomic) BOOL isOnToutiao;
 + (IDOSetNoticeStatusModel * _Nonnull)createDefaultModel SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;

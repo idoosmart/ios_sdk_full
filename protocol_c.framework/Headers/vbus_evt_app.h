@@ -400,6 +400,7 @@ typedef enum
 	VBUS_EVT_FUNC_V3_GET_BLE_BEEP                          = 5071,  //获取固件本地提示音文件信息
 	VBUS_EVT_FUNC_V3_BP_CAL_CONTROL                        = 5072,  //V3血压校准控制 struct protocol_v3_bp_cal_control struct protocol_v3_bp_cal_control_reply
 	VBUS_EVT_FUNC_V3_BP_CAL_COMPLETE                       = 5073,  //V3血压校准完成
+    VBUS_EVT_FUNC_SEND_MINI_PROGRAM_CONTROL                = 5078,  //发送小程序操作
     VBUS_EVT_FUNC_SMART_COMPETITOR_CONFIG_INFO             = 5080,  //智能陪跑配置信息
     VBUS_EVT_FUNC_MAKE_SMART_COMPETITOR_FILE               = 5081,  //制作isf & isf.slz文件 泰坦06定制
     VBUS_EVT_FUNC_AI_SEND_TXT                              = 5082,	//发送AI语音转换文本

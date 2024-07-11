@@ -1205,6 +1205,12 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDODefaultMessageConfigModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDODefaultMessageConfigModel
   }
+  public struct setAppleControl : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOAppletControlModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOAppletInfoModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOAppletInfoModel
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Cmdoc : ObjectiveC.NSObject {
   @objc @discardableResult
@@ -1489,6 +1495,8 @@ public struct Cmds {
   public static func getStressSwitch(_ completion: @escaping (_ err: protocol_channel.CmdError, _ stressSwitchModel: protocol_channel.IDOStressSwitchModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setDefaultMsgList(_ paramModel: protocol_channel.IDODefaultMessageConfigParamModel, _ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDODefaultMessageConfigModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setAppleControl(_ paramModel: protocol_channel.IDOAppletControlModel, _ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOAppletInfoModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2293,6 +2301,78 @@ public typealias BlockFileTransProgress = (_ currentIndex: Swift.Int, _ totalCou
   @objc public var guidanceNotifyFlag: Swift.Int
   @objc public var reminderNotifyFlag: Swift.Int
   @objc public init(heartMode: Swift.Int, pressureMode: Swift.Int, spo2Mode: Swift.Int, scienceMode: Swift.Int, temperatureMode: Swift.Int, noiseMode: Swift.Int, menstrualMode: Swift.Int, walkMode: Swift.Int, handwashingMode: Swift.Int, respirRateState: Swift.Int, bodyPowerState: Swift.Int, drinkwaterMode: Swift.Int, heartmodeNotifyFlag: Swift.Int, pressureNotifyFlag: Swift.Int, spo2NotifyFlag: Swift.Int, menstrualNotifyFlag: Swift.Int, guidanceNotifyFlag: Swift.Int, reminderNotifyFlag: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOAppletControlModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var appName: Swift.String?
+  @objc public init(operate: Swift.Int, appName: Swift.String? = nil)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOAppletInfoModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var errorCode: Swift.Int
+  @objc public var infoItem: [protocol_channel.IDOAppletInfoItem]?
+  public var appletNum: Swift.Int?
+  @objc public var operate: Swift.Int
+  @objc public var residualSpace: Swift.Int
+  @objc public var totalSpace: Swift.Int
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case errorCode
+    case infoItem
+    case appletNum
+    case operate
+    case residualSpace
+    case totalSpace
+    case version
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc public init(errorCode: Swift.Int, infoItem: [protocol_channel.IDOAppletInfoItem], miniProgramNum: Swift.Int, operate: Swift.Int, residualSpace: Swift.Int, totalSpace: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOAppletInfoItem : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var appName: Swift.String
+  @objc public var size: Swift.Int
+  @objc public var version: Swift.String
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case appName
+    case size
+    case version
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc public init(appName: Swift.String, size: Swift.Int, version: Swift.String)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -3219,6 +3299,7 @@ public protocol IDOCmdProtocol {
   @objc var setSupportNoiseSetNotifyFlag: Swift.Bool { get }
   @objc var setSupportNoiseSetOverWarning: Swift.Bool { get }
   @objc var setSupportSetVersionInformation: Swift.Bool { get }
+  @objc var setSupportControlMiniProgram: Swift.Bool { get }
   @objc var languageCh: Swift.Bool { get }
   @objc var languageCzech: Swift.Bool { get }
   @objc var languageEnglish: Swift.Bool { get }
@@ -3995,11 +4076,10 @@ public protocol IDOCmdProtocol {
   @objc public var supportAnswering: Swift.Bool
   @objc public var supportMute: Swift.Bool
   @objc public var supportHangUp: Swift.Bool
-  @objc public var msgData: Swift.String
   @objc public var contact: Swift.String
   @objc public var phoneNumber: Swift.String
   @objc public var dataText: Swift.String
-  @objc public init(evtType: Swift.Int, msgID: Swift.Int, supportAnswering: Swift.Bool, supportMute: Swift.Bool, supportHangUp: Swift.Bool, msgData: Swift.String, contact: Swift.String, phoneNumber: Swift.String, dataText: Swift.String)
+  @objc public init(evtType: Swift.Int, msgID: Swift.Int, supportAnswering: Swift.Bool, supportMute: Swift.Bool, supportHangUp: Swift.Bool, contact: Swift.String, phoneNumber: Swift.String, dataText: Swift.String)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -4056,7 +4136,7 @@ public protocol IDOCmdProtocol {
   @objc public var isOnCalendar: Swift.Bool
   @objc public var isOnSkype: Swift.Bool
   @objc public var isOnAlarm: Swift.Bool
-  @objc public var isOnPokeman: Swift.Bool
+  @objc public var isOnOther: Swift.Bool
   @objc public var isOnVkontakte: Swift.Bool
   @objc public var isOnLine: Swift.Bool
   @objc public var isOnViber: Swift.Bool
@@ -4120,6 +4200,13 @@ public protocol IDOCmdProtocol {
   @objc public var isOnVeryfit: Swift.Bool
   @objc public var isOnGeneral: Swift.Bool
   @objc public var isOnAlibabaemail: Swift.Bool
+  @objc public var isOnGoogleCalendario: Swift.Bool
+  @objc public var isOnFastrackReflexWorld: Swift.Bool
+  @objc public var isOnHamaFitMove: Swift.Bool
+  @objc public var isOnTaobao: Swift.Bool
+  @objc public var isOnDingTalk: Swift.Bool
+  @objc public var isOnAlipay: Swift.Bool
+  @objc public var isOnToutiao: Swift.Bool
   @objc public static func createDefaultModel() -> protocol_channel.IDOSetNoticeStatusModel
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
@@ -5542,6 +5629,12 @@ extension protocol_channel.IDOWeek : Swift.RawRepresentable {}
 extension protocol_channel.IDOAlarmStatus : Swift.Equatable {}
 extension protocol_channel.IDOAlarmStatus : Swift.Hashable {}
 extension protocol_channel.IDOAlarmStatus : Swift.RawRepresentable {}
+extension protocol_channel.IDOAppletInfoModel.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOAppletInfoModel.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOAppletInfoModel.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOAppletInfoItem.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOAppletInfoItem.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOAppletInfoItem.CodingKeys : Swift.RawRepresentable {}
 extension protocol_channel.IDODefaultMessageConfigParamModel.CodingKeys : Swift.Equatable {}
 extension protocol_channel.IDODefaultMessageConfigParamModel.CodingKeys : Swift.Hashable {}
 extension protocol_channel.IDODefaultMessageConfigParamModel.CodingKeys : Swift.RawRepresentable {}
