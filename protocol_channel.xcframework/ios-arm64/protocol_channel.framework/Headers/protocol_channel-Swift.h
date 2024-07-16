@@ -4608,7 +4608,7 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL setSupportNoiseSetOverWarning;
 /// 支持设置版本信息
 @property (nonatomic, readonly) BOOL setSupportSetVersionInformation;
-/// 小程序操作
+/// 支持小程序操作
 @property (nonatomic, readonly) BOOL setSupportControlMiniProgram;
 /// 中文
 @property (nonatomic, readonly) BOOL languageCh;
@@ -5889,11 +5889,11 @@ SWIFT_CLASS("_TtC16protocol_channel11IDOMenuItem")
 SWIFT_CLASS("_TtC16protocol_channel16IDOMenuListModel")
 @interface IDOMenuListModel : NSObject
 @property (nonatomic) NSInteger currentShowNum;
-@property (nonatomic, copy) NSArray<IDOMenuItem *> * _Nonnull items;
+@property (nonatomic, copy) NSArray<IDOMenuItem *> * _Nullable items;
 @property (nonatomic) NSInteger maxNum;
 @property (nonatomic) NSInteger maxShowNum;
 @property (nonatomic) NSInteger minShowNum;
-- (nonnull instancetype)initWithCurrentShowNum:(NSInteger)currentShowNum items:(NSArray<IDOMenuItem *> * _Nonnull)items maxNum:(NSInteger)maxNum maxShowNum:(NSInteger)maxShowNum minShowNum:(NSInteger)minShowNum OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithCurrentShowNum:(NSInteger)currentShowNum items:(NSArray<IDOMenuItem *> * _Nullable)items maxNum:(NSInteger)maxNum maxShowNum:(NSInteger)maxShowNum minShowNum:(NSInteger)minShowNum OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -6039,13 +6039,13 @@ SWIFT_CLASS("_TtC16protocol_channel17IDOMusicInfoModel")
 @interface IDOMusicInfoModel : NSObject
 /// Firmware SDK card information<br />Total space<br />Uint:Byte
 @property (nonatomic) NSInteger allMemory;
-@property (nonatomic, copy) NSArray<IDOMusicFolderItem *> * _Nonnull folderItems;
-@property (nonatomic, copy) NSArray<IDOMusicItem *> * _Nonnull musicItems;
+@property (nonatomic, copy) NSArray<IDOMusicFolderItem *> * _Nullable folderItems;
+@property (nonatomic, copy) NSArray<IDOMusicItem *> * _Nullable musicItems;
 /// Firmware SDK card information<br />Current used space in bytes<br />Uint:Byte
 @property (nonatomic) NSInteger usedMemory;
 /// Firmware SDK card information<br />Available space<br />Uint:Byte
 @property (nonatomic) NSInteger usefulMemory;
-- (nonnull instancetype)initWithAllMemory:(NSInteger)allMemory folderItems:(NSArray<IDOMusicFolderItem *> * _Nonnull)folderItems musicItems:(NSArray<IDOMusicItem *> * _Nonnull)musicItems usedMemory:(NSInteger)usedMemory usefulMemory:(NSInteger)usefulMemory OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithAllMemory:(NSInteger)allMemory folderItems:(NSArray<IDOMusicFolderItem *> * _Nullable)folderItems musicItems:(NSArray<IDOMusicItem *> * _Nullable)musicItems usedMemory:(NSInteger)usedMemory usefulMemory:(NSInteger)usefulMemory OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -6102,10 +6102,10 @@ SWIFT_CLASS("_TtC16protocol_channel25IDOMusicOpearteParamModel")
 /// 5: Delete music
 @property (nonatomic) NSInteger folderOperate;
 /// Folder (playlist) details
-@property (nonatomic, strong) IDOMusicFolderItem * _Nonnull folderItem;
+@property (nonatomic, strong) IDOMusicFolderItem * _Nullable folderItem;
 /// Music details
 @property (nonatomic, strong) IDOMusicItem * _Nonnull musicItem;
-- (nonnull instancetype)initWithMusicOperate:(NSInteger)musicOperate folderOperate:(NSInteger)folderOperate folderItem:(IDOMusicFolderItem * _Nonnull)folderItem musicItem:(IDOMusicItem * _Nonnull)musicItem OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithMusicOperate:(NSInteger)musicOperate folderOperate:(NSInteger)folderOperate folderItem:(IDOMusicFolderItem * _Nullable)folderItem musicItem:(IDOMusicItem * _Nonnull)musicItem OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -6130,9 +6130,6 @@ SWIFT_CLASS("_TtC16protocol_channel20IDOMusicOperateModel")
 @property (nonatomic) NSInteger version;
 /// 0: Successful; non-zero: Failed
 @property (nonatomic) NSInteger errCode;
-/// Music id returned when adding music successfully
-@property (nonatomic) NSInteger musicId;
-- (nonnull instancetype)initWithOperateType:(NSInteger)operateType version:(NSInteger)version errCode:(NSInteger)errCode musicId:(NSInteger)musicId OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

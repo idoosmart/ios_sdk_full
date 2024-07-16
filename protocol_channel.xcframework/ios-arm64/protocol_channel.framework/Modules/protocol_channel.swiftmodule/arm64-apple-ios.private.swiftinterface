@@ -3883,11 +3883,11 @@ public protocol IDOCmdProtocol {
 }
 @objc @objcMembers public class IDOMenuListModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var currentShowNum: Swift.Int
-  @objc public var items: [protocol_channel.IDOMenuItem]
+  @objc public var items: [protocol_channel.IDOMenuItem]?
   @objc public var maxNum: Swift.Int
   @objc public var maxShowNum: Swift.Int
   @objc public var minShowNum: Swift.Int
-  @objc public init(currentShowNum: Swift.Int, items: [protocol_channel.IDOMenuItem], maxNum: Swift.Int, maxShowNum: Swift.Int, minShowNum: Swift.Int)
+  @objc public init(currentShowNum: Swift.Int, items: [protocol_channel.IDOMenuItem]? = nil, maxNum: Swift.Int, maxShowNum: Swift.Int, minShowNum: Swift.Int)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -3954,9 +3954,9 @@ public protocol IDOCmdProtocol {
 @objc @objcMembers public class IDOMusicOpearteParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var musicOperate: Swift.Int
   @objc public var folderOperate: Swift.Int
-  @objc public var folderItem: protocol_channel.IDOMusicFolderItem
+  @objc public var folderItem: protocol_channel.IDOMusicFolderItem?
   @objc public var musicItem: protocol_channel.IDOMusicItem
-  @objc public init(musicOperate: Swift.Int, folderOperate: Swift.Int, folderItem: protocol_channel.IDOMusicFolderItem, musicItem: protocol_channel.IDOMusicItem)
+  @objc public init(musicOperate: Swift.Int, folderOperate: Swift.Int, folderItem: protocol_channel.IDOMusicFolderItem? = nil, musicItem: protocol_channel.IDOMusicItem)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -3964,11 +3964,11 @@ public protocol IDOCmdProtocol {
 }
 @objc @objcMembers public class IDOMusicInfoModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var allMemory: Swift.Int
-  @objc public var folderItems: [protocol_channel.IDOMusicFolderItem]
-  @objc public var musicItems: [protocol_channel.IDOMusicItem]
+  @objc public var folderItems: [protocol_channel.IDOMusicFolderItem]?
+  @objc public var musicItems: [protocol_channel.IDOMusicItem]?
   @objc public var usedMemory: Swift.Int
   @objc public var usefulMemory: Swift.Int
-  @objc public init(allMemory: Swift.Int, folderItems: [protocol_channel.IDOMusicFolderItem], musicItems: [protocol_channel.IDOMusicItem], usedMemory: Swift.Int, usefulMemory: Swift.Int)
+  @objc public init(allMemory: Swift.Int, folderItems: [protocol_channel.IDOMusicFolderItem]?, musicItems: [protocol_channel.IDOMusicItem]?, usedMemory: Swift.Int, usefulMemory: Swift.Int)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -3998,8 +3998,8 @@ public protocol IDOCmdProtocol {
   @objc public var operateType: Swift.Int
   @objc public var version: Swift.Int
   @objc public var errCode: Swift.Int
-  @objc public var musicId: Swift.Int
-  @objc public init(operateType: Swift.Int, version: Swift.Int, errCode: Swift.Int, musicId: Swift.Int)
+  public var musicId: Swift.Int?
+  public init(operateType: Swift.Int, version: Swift.Int, errCode: Swift.Int, musicId: Swift.Int?)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
