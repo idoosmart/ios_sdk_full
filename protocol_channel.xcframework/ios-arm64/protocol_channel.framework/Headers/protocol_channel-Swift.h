@@ -8073,6 +8073,13 @@ SWIFT_PROTOCOL("_TtP16protocol_channel17IDOToolsInterface_")
 /// \param epoFilePath 制作的epo文件存放路径
 ///
 - (void)makeEpoFileWithDirPath:(NSString * _Nonnull)dirPath epoFilePath:(NSString * _Nonnull)epoFilePath completion:(void (^ _Nonnull)(BOOL))completion;
+/// 获取mp3音频采样率
+/// \param mp3FilePath 输入带路径MP3文件名
+///
+///
+/// returns:
+/// int 输入的MP3文件的采样率如：441000， 异常返回-1
+- (void)mp3SamplingRateWithMp3FilePath:(NSString * _Nonnull)mp3FilePath completion:(void (^ _Nonnull)(NSInteger))completion;
 /// gps运动后优化轨迹,根据运动类型初始化速度阈值，若输入其他运动类型，会导致无运动轨迹
 /// \param motionTypeIn 运动类型
 /// 1、户外走路 = 52, 走路 = 1, 徒步 = 4, 运动类型设为0

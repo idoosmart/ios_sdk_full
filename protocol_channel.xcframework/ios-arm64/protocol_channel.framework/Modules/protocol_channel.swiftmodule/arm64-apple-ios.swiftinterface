@@ -5031,6 +5031,7 @@ public protocol IDOCmdProtocol {
   @objc func png2Bmp(inPath: Swift.String, outPath: Swift.String, format: Swift.Int, completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc func compressToPNG(inputFilePath: Swift.String, outputFilePath: Swift.String, completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc func makeEpoFile(dirPath: Swift.String, epoFilePath: Swift.String, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc func mp3SamplingRate(mp3FilePath: Swift.String, completion: @escaping (Swift.Int) -> Swift.Void)
   @objc func gpsInitType(motionTypeIn: Swift.Int, completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc func gpsAlgProcessRealtime(json: Swift.String, completion: @escaping (Swift.String) -> Swift.Void)
   @objc func gpsSmoothData(json: Swift.String, completion: @escaping (Swift.String) -> Swift.Void)
