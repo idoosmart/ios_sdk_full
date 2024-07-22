@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'IDOSDK-full'
-  s.version          = '4.0.37'
+  s.version          = '4.0.38'
   s.summary          = 'ido sdk'
   s.description      = <<-DESC
   ido sdk

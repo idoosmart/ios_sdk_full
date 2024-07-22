@@ -1611,6 +1611,7 @@ SWIFT_CLASS("_TtC16protocol_channel19IDOAppIconItemModel")
 @end
 
 
+
 /// app 交换运动数据
 /// Generated class from Pigeon that represents data sent in messages.
 SWIFT_CLASS("_TtC16protocol_channel22IDOAppIngExchangeModel")
@@ -2137,14 +2138,6 @@ SWIFT_PROTOCOL("_TtP16protocol_channel15IDOBleInterface_")
 /// \param completion 结果 IDOWriteStateModel
 ///
 - (void)writeDataWithData:(NSData * _Nonnull)data device:(IDODeviceModel * _Nonnull)device type:(NSInteger)type platform:(NSInteger)platform completion:(void (^ _Nonnull)(IDOWriteStateModel * _Nonnull))completion;
-/// bt配对（android）
-- (void)setBtPairWithDevice:(IDODeviceModel * _Nonnull)device;
-/// 取消配对（android）
-- (void)cancelPairWithDevice:(IDODeviceModel * _Nullable)device;
-/// 连接SPP
-- (void)connectSPPWithBtMacAddress:(NSString * _Nonnull)btMacAddress;
-/// 断开SPP
-- (void)disconnectSPPWithBtMacAddress:(NSString * _Nonnull)btMacAddress;
 /// 发起dfu升级
 - (void)startNordicDFUWithConfig:(IDODfuConfig * _Nonnull)config;
 /// 导出ble日志，返回压缩后日志zip文件绝对路径
@@ -5958,6 +5951,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel23IDOMessageIconInterface_")
 - (void)iOSConfigWithCountryCode:(NSString * _Nonnull)countryCode baseUrlPath:(NSString * _Nonnull)baseUrlPath appKey:(NSString * _Nonnull)appKey language:(NSInteger)language;
 /// ios 需要执行获取默认的APP包名列表信息，因为event_type是固件分配的 force 强制更新应用名称
 - (void)firstGetAppInfoWithForce:(BOOL)force completion:(void (^ _Nonnull)(NSArray<IDOAppIconItemModel *> * _Nonnull))completion;
+/// 设置默认app信息集合(仅限支持的设备使用)
+- (void)setDefaultAppInfoListWithList:(NSArray<IDOAppIconItemModel *> * _Nonnull)list completion:(void (^ _Nonnull)(BOOL))completion;
 /// 设备支持默认app信息集合
 /// ios 只有默认的包名
 /// android 会包含默认的event_type 如果已经安装的应用则包含图标地址
@@ -7952,6 +7947,7 @@ typedef SWIFT_ENUM(NSInteger, IDOSyncDataType, open) {
 
 SWIFT_CLASS("_TtC16protocol_channel20IDOSyncDataTypeClass")
 @interface IDOSyncDataTypeClass : NSObject
+@property (nonatomic, readonly) enum IDOSyncDataType syncDataType;
 - (nonnull instancetype)initWithType:(enum IDOSyncDataType)type OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

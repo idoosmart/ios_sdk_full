@@ -2427,10 +2427,6 @@ public protocol IDOBaseModel : Swift.Decodable, Swift.Encodable {
   @objc func getBluetoothState(completion: @escaping (protocol_channel.IDOBluetoothStateModel) -> Swift.Void)
   @objc func getDeviceState(device: protocol_channel.IDODeviceModel?, completion: @escaping (protocol_channel.IDODeviceStateModel) -> Swift.Void)
   @objc func writeData(data: Foundation.Data, device: protocol_channel.IDODeviceModel, type: Swift.Int, platform: Swift.Int, completion: @escaping (protocol_channel.IDOWriteStateModel) -> Swift.Void)
-  @objc func setBtPair(device: protocol_channel.IDODeviceModel)
-  @objc func cancelPair(device: protocol_channel.IDODeviceModel?)
-  @objc func connectSPP(btMacAddress: Swift.String)
-  @objc func disconnectSPP(btMacAddress: Swift.String)
   @objc func startNordicDFU(config: protocol_channel.IDODfuConfig)
   @objc func exportLog(completion: @escaping (Swift.String?) -> Swift.Void)
 }
@@ -3914,6 +3910,7 @@ public protocol IDOCmdProtocol {
   @objc var iconDirPath: Swift.String { get }
   @objc func iOSConfig(countryCode: Swift.String, baseUrlPath: Swift.String, appKey: Swift.String, language: Swift.Int)
   @objc func firstGetAppInfo(force: Swift.Bool, completion: @escaping ([protocol_channel.IDOAppIconItemModel]) -> Swift.Void)
+  @objc func setDefaultAppInfoList(list: [protocol_channel.IDOAppIconItemModel], completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc func getDefaultAppInfo(completion: @escaping ([protocol_channel.IDOAppIconItemModel]) -> Swift.Void)
   @objc func getCacheAppInfo(completion: @escaping (protocol_channel.IDOAppIconInfoModel) -> Swift.Void)
   @objc func resetIconInfoData(macAddress: Swift.String, deleteIcon: Swift.Bool, completion: @escaping (Swift.Bool) -> Swift.Void)
@@ -4971,6 +4968,7 @@ public protocol IDOCmdProtocol {
   @objc func stopSync()
 }
 @objc @objcMembers public class IDOSyncDataTypeClass : ObjectiveC.NSObject {
+  @objc final public let syncDataType: protocol_channel.IDOSyncDataType
   @objc public init(type: protocol_channel.IDOSyncDataType)
   @objc deinit
 }
@@ -5531,7 +5529,7 @@ public let sdk: any protocol_channel.IDOSdkInterface
 public typealias BlockDataSyncProgress = (_ progress: Swift.Double) -> Swift.Void
 public typealias BlockDataSyncData = (_ type: protocol_channel.IDOSyncDataType, _ jsonStr: Swift.String, _ errorCode: Swift.Int) -> Swift.Void
 public typealias BlockDataSyncCompleted = (_ errorCode: Swift.Int) -> Swift.Void
-@objc public enum IDOSyncDataType : Swift.Int {
+@objc public enum IDOSyncDataType : Swift.Int, Swift.CustomStringConvertible {
   case nullType = 0
   case stepCount = 1
   case heartRate = 2
@@ -5547,6 +5545,9 @@ public typealias BlockDataSyncCompleted = (_ errorCode: Swift.Int) -> Swift.Void
   case activity = 12
   case gPS = 13
   case swim = 14
+  public var description: Swift.String {
+    get
+  }
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
