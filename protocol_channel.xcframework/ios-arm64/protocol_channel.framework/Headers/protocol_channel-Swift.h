@@ -6900,6 +6900,7 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOSetNoticeStatusModel")
 /// 今日头条(Toutiao)
 @property (nonatomic) BOOL isOnToutiao;
 + (IDOSetNoticeStatusModel * _Nonnull)createDefaultModel SWIFT_WARN_UNUSED_RESULT;
++ (IDOSetNoticeStatusModel * _Nonnull)createAllOffModel SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

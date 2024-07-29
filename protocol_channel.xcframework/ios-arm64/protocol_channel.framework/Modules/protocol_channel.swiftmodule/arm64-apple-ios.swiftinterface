@@ -4205,6 +4205,7 @@ public protocol IDOCmdProtocol {
   @objc public var isOnAlipay: Swift.Bool
   @objc public var isOnToutiao: Swift.Bool
   @objc public static func createDefaultModel() -> protocol_channel.IDOSetNoticeStatusModel
+  @objc public static func createAllOffModel() -> protocol_channel.IDOSetNoticeStatusModel
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc public func toJsonString() -> Swift.String?
