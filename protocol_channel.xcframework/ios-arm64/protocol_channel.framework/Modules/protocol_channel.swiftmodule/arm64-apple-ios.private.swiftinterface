@@ -1211,6 +1211,18 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOAppletInfoModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOAppletInfoModel
   }
+  public struct getAlgFileInfo : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOAlgFileModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOAlgFileModel
+  }
+  public struct rquestAlgFile : protocol_channel.IDOCmdProtocol {
+    public init(type: Swift.Int)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Cmdoc : ObjectiveC.NSObject {
   @objc @discardableResult
@@ -1497,6 +1509,10 @@ public struct Cmds {
   public static func setDefaultMsgList(_ paramModel: protocol_channel.IDODefaultMessageConfigParamModel, _ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDODefaultMessageConfigModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setAppleControl(_ paramModel: protocol_channel.IDOAppletControlModel, _ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOAppletInfoModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getAlgFileInfo(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOAlgFileModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func rquestAlgFile(_ type: Swift.Int, _ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2071,6 +2087,7 @@ public typealias BlockLogProgress = (_ progress: Swift.Double) -> Swift.Void
 }
 public typealias BlockFileTransStatus = (_ currentIndex: Swift.Int, _ status: protocol_channel.IDOTransStatus, _ errorCode: Swift.Int, _ finishingTime: Swift.Int) -> Swift.Void
 public typealias BlockFileTransProgress = (_ currentIndex: Swift.Int, _ totalCount: Swift.Int, _ currentProgress: Swift.Float, _ totalProgress: Swift.Float) -> Swift.Void
+public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceFileToAppTask) -> Swift.Void
 @objc public enum IDOTransType : Swift.Int {
   case fw = 0
   case fzbin = 1
@@ -2148,6 +2165,32 @@ public typealias BlockFileTransProgress = (_ currentIndex: Swift.Int, _ totalCou
   @objc final public let isSports: Swift.Bool
   @objc public init(filePath: Swift.String, fileName: Swift.String, fileSize: Swift.Int = 0, sportType: Swift.Int, iconType: Swift.Int, isSports: Swift.Bool)
   @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class IDODeviceFileToAppTask : ObjectiveC.NSObject {
+  final public let deviceTransItem: protocol_channel.IDODeviceTransItem
+  @objc public func acceptReceiveFile(onProgress: @escaping (_ progress: Swift.Double) -> Swift.Void, onComplete: @escaping (_ isCompleted: Swift.Bool, _ receiveFilePath: Swift.String?) -> Swift.Void)
+  @objc public func rejectReceiveFile(completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func stopReceiveFile(completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc deinit
+}
+@objcMembers public class IDODeviceTransItem {
+  @objc final public let fileType: protocol_channel.IDODeviceTransType
+  @objc final public let fileSize: Swift.Int
+  @objc final public let fileCompressionType: Swift.Int
+  @objc final public let fileName: Swift.String
+  @objc final public let filePath: Swift.String?
+  @objc public init(fileType: protocol_channel.IDODeviceTransType, fileSize: Swift.Int, fileCompressionType: Swift.Int, fileName: Swift.String, filePath: Swift.String?)
+  @objc deinit
+}
+@objc public enum IDODeviceTransType : Swift.Int {
+  case voiceMemo = 0x13
+  case accLog = 0x15
+  case gpsLog = 0x16
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 @objc @objcMembers public class IDOActivitySwitchModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var errCode: Swift.Int
@@ -2280,6 +2323,64 @@ public typealias BlockFileTransProgress = (_ currentIndex: Swift.Int, _ totalCou
   @objc @discardableResult
   func authorizeRequest(productId: Swift.String, handle: @escaping (_ verificationUri: Swift.String, _ pairCode: Swift.String) -> Swift.Void, completion: @escaping (_ rs: protocol_channel.IDOAlexaAuthorizeResult) -> Swift.Void) -> any protocol_channel.IDOCancellable
   @objc func logout()
+}
+@objc @objcMembers public class IDOAlgFileModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var errorCode: Swift.Int
+  @objc public var items: [protocol_channel.IDOAlgFileItem]?
+  @objc public var operate: Swift.Int
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case errorCode
+    case items
+    case itemsNum
+    case operate
+    case version
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc public init(errorCode: Swift.Int, items: [protocol_channel.IDOAlgFileItem]?, operate: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOAlgFileItem : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var quantityComplete: Swift.Int
+  @objc public var totalQuantity: Swift.Int
+  @objc public var type: Swift.Int
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case quantityComplete
+    case totalQuantity
+    case type
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc public init(quantityComplete: Swift.Int, totalQuantity: Swift.Int, type: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOAllHealthSwitchStateModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var heartMode: Swift.Int
@@ -2844,6 +2945,50 @@ public protocol IDOCmdProtocol {
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
 }
+@_hasMissingDesignatedInitializers @objcMembers public class IDOEpoManager {
+  public static let shared: protocol_channel.IDOEpoManager
+  @objc public var status: protocol_channel.IDOEpoUpgradeStatus {
+    @objc get
+  }
+  @objc public var isSupported: Swift.Bool {
+    @objc get
+  }
+  @objc public var delegateGetGps: (any protocol_channel.IDOEpoManagerDelegate)? {
+    @objc get
+    @objc set
+  }
+  @objc public func lastUpdateTimestamp(completion: @escaping (Swift.Int) -> Swift.Void)
+  @objc public func shouldUpdateForEPO(isForce: Swift.Bool = false, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func willStartInstall(isForce: Swift.Bool = false, retryCount: Swift.Int = 0)
+  @objc public func stop()
+  @objc public func listenEpoUpgrade(funcStatus: @escaping (protocol_channel.IDOEpoUpgradeStatus) -> Swift.Void, downProgress: ((Swift.Float) -> Swift.Void)?, sendProgress: ((Swift.Float) -> Swift.Void)?, funcComplete: @escaping (Swift.Int) -> Swift.Void)
+  @objc deinit
+}
+@objc public protocol IDOEpoManagerDelegate {
+  @objc func getAppGpsInfo() -> protocol_channel.IDOOtaGpsInfo?
+}
+@objc public class IDOOtaGpsInfo : ObjectiveC.NSObject {
+  public var longitude: Swift.Float
+  public var latitude: Swift.Float
+  public var altitude: Swift.Float
+  public init(longitude: Swift.Float, latitude: Swift.Float, altitude: Swift.Float)
+  @objc deinit
+}
+@objc public enum IDOEpoUpgradeStatus : Swift.Int {
+  case idle = 0
+  case ready = 1
+  case downing = 2
+  case making = 3
+  case sending = 4
+  case installing = 5
+  case success = 6
+  case failure = 7
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc @objcMembers public class IDOErrorRecordModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var type: Swift.Int
   @objc public var resetFlag: Swift.Int
@@ -2860,6 +3005,8 @@ public protocol IDOCmdProtocol {
   @objc @discardableResult
   func transferFiles(fileItems: [protocol_channel.IDOTransBaseModel], cancelPrevTranTask: Swift.Bool, transProgress: @escaping protocol_channel.BlockFileTransProgress, transStatus: @escaping protocol_channel.BlockFileTransStatus, completion: @escaping ([Swift.Bool]) -> Swift.Void) -> (any protocol_channel.IDOCancellable)?
   @objc func iwfFileSize(filePath: Swift.String, type: Swift.Int64, completion: @escaping (Swift.Int64) -> Swift.Void)
+  @objc func registerDeviceTranFileToApp(transTask: @escaping protocol_channel.BlockDeviceFileToAppTask)
+  @objc func unregisterDeviceTranFileToApp()
 }
 @objc @objcMembers public class IDOTransTypeClass : ObjectiveC.NSObject {
   @objc public init(type: protocol_channel.IDOTransType)
@@ -3180,6 +3327,7 @@ public protocol IDOCmdProtocol {
   @objc var getSupportDrinkPlan: Swift.Bool { get }
   @objc var getSupportMakeWatchDialDecodeJpg: Swift.Bool { get }
   @objc var getSupportSleepPlan: Swift.Bool { get }
+  @objc var getSupportDeviceOperateAlgFile: Swift.Bool { get }
   @objc var setNoticeMessageStateUseVersion0x20: Swift.Bool { get }
   @objc var setScientificSleepSwitch: Swift.Bool { get }
   @objc var setTemperatureSwitchHealth: Swift.Bool { get }
@@ -5623,6 +5771,9 @@ extension protocol_channel.IDOTransType : Swift.RawRepresentable {}
 extension protocol_channel.IDOTransStatus : Swift.Equatable {}
 extension protocol_channel.IDOTransStatus : Swift.Hashable {}
 extension protocol_channel.IDOTransStatus : Swift.RawRepresentable {}
+extension protocol_channel.IDODeviceTransType : Swift.Equatable {}
+extension protocol_channel.IDODeviceTransType : Swift.Hashable {}
+extension protocol_channel.IDODeviceTransType : Swift.RawRepresentable {}
 extension protocol_channel.IDOAlarmType : Swift.Equatable {}
 extension protocol_channel.IDOAlarmType : Swift.Hashable {}
 extension protocol_channel.IDOAlarmType : Swift.RawRepresentable {}
@@ -5632,6 +5783,12 @@ extension protocol_channel.IDOWeek : Swift.RawRepresentable {}
 extension protocol_channel.IDOAlarmStatus : Swift.Equatable {}
 extension protocol_channel.IDOAlarmStatus : Swift.Hashable {}
 extension protocol_channel.IDOAlarmStatus : Swift.RawRepresentable {}
+extension protocol_channel.IDOAlgFileModel.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOAlgFileModel.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOAlgFileModel.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOAlgFileItem.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOAlgFileItem.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOAlgFileItem.CodingKeys : Swift.RawRepresentable {}
 extension protocol_channel.IDOAppletInfoModel.CodingKeys : Swift.Equatable {}
 extension protocol_channel.IDOAppletInfoModel.CodingKeys : Swift.Hashable {}
 extension protocol_channel.IDOAppletInfoModel.CodingKeys : Swift.RawRepresentable {}
@@ -5647,6 +5804,9 @@ extension protocol_channel.IDODefaultMessageConfigModel.CodingKeys : Swift.RawRe
 extension protocol_channel.IDODefaultMessageItem.CodingKeys : Swift.Equatable {}
 extension protocol_channel.IDODefaultMessageItem.CodingKeys : Swift.Hashable {}
 extension protocol_channel.IDODefaultMessageItem.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOEpoUpgradeStatus : Swift.Equatable {}
+extension protocol_channel.IDOEpoUpgradeStatus : Swift.Hashable {}
+extension protocol_channel.IDOEpoUpgradeStatus : Swift.RawRepresentable {}
 extension protocol_channel.IDOLanguageType : Swift.Equatable {}
 extension protocol_channel.IDOLanguageType : Swift.Hashable {}
 extension protocol_channel.IDOLanguageType : Swift.RawRepresentable {}

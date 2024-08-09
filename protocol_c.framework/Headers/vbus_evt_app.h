@@ -426,6 +426,8 @@ typedef enum
 	VBUS_EVT_FUNC_PCM_TO_MP3                               = 5517,  //音频文件转换  将采样率转化为44.1khz   mp3_to_mp3(char* mp3Path,char* pcmPath);
 	VBUS_EVT_FUNC_TRANS_ALL_CONTACT                        = 5518,  //APP下发蓝牙联系人数据给协议层
 	VBUS_EVT_FUNC_FLASH_LOG_SCOND_CHIP_START               = 5519,	//开始获取第二块芯片flash log
+    
+    VBUS_EVT_FUNC_V3_GET_OPERATE_ALG_FILE                  = 5522,  //获取固件算法文件信息（ACC/GPS）
 
 	MP3_TO_MP3_PROCESSING                                  = 5530,  //MP3转换进度  注意错误值和回调值
 

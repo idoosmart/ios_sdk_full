@@ -481,6 +481,7 @@ SWIFT_CLASS("_TtC16protocol_channel8CmdError")
 @class IDODefaultMessageConfigModel;
 @class IDOAppletControlModel;
 @class IDOAppletInfoModel;
+@class IDOAlgFileModel;
 
 SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 @interface Cmdoc : NSObject
@@ -920,6 +921,12 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 操作小程序信息（获取、启动、删除）
 /// Operation of applet information (obtain, start, delete)
 + (id <IDOCancellable> _Nonnull)setAppleControl:(IDOAppletControlModel * _Nonnull)paramModel :(void (^ _Nonnull)(CmdError * _Nonnull, IDOAppletInfoModel * _Nullable))completion;
+/// 获取固件算法文件信息（ACC/GPS）
+/// Get firmware algorithm file information (ACC/GPS)
++ (id <IDOCancellable> _Nonnull)getAlgFileInfo:(void (^ _Nonnull)(CmdError * _Nonnull, IDOAlgFileModel * _Nullable))completion;
+/// 请求固件算法文件信息（ACC/GPS）
+/// Request firmware algorithm file information (ACC/GPS)
++ (id <IDOCancellable> _Nonnull)rquestAlgFile:(NSInteger)type :(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1145,6 +1152,33 @@ typedef SWIFT_ENUM(NSInteger, IDOAlexaLoginState, open) {
 /// 未登录
   IDOAlexaLoginStateLogout = 2,
 };
+
+
+SWIFT_CLASS("_TtC16protocol_channel14IDOAlgFileItem")
+@interface IDOAlgFileItem : NSObject
+/// 已完成数量
+@property (nonatomic) NSInteger quantityComplete;
+/// 总数量
+@property (nonatomic) NSInteger totalQuantity;
+/// 0:无效、1:ACC文件、2:GPS文件
+@property (nonatomic) NSInteger type;
+- (nonnull instancetype)initWithQuantityComplete:(NSInteger)quantityComplete totalQuantity:(NSInteger)totalQuantity type:(NSInteger)type OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel15IDOAlgFileModel")
+@interface IDOAlgFileModel : NSObject
+@property (nonatomic) NSInteger errorCode;
+@property (nonatomic, copy) NSArray<IDOAlgFileItem *> * _Nullable items;
+@property (nonatomic) NSInteger operate;
+- (nonnull instancetype)initWithErrorCode:(NSInteger)errorCode items:(NSArray<IDOAlgFileItem *> * _Nullable)items operate:(NSInteger)operate OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 /// Get event number for all health monitoring switches
@@ -2829,6 +2863,31 @@ SWIFT_CLASS("_TtC16protocol_channel24IDODefaultSportTypeModel")
 @end
 
 
+/// 运动图标
+SWIFT_CLASS("_TtC16protocol_channel22IDODeviceFileToAppTask")
+@interface IDODeviceFileToAppTask : NSObject
+/// 允许接收文件
+/// <ul>
+///   <li>
+///     Parameters:
+///   </li>
+///   <li>
+///     onProgress: 传输进度 0 ~ 1.0
+///   </li>
+///   <li>
+///     onComplete 传输结果， isCompleted，receiveFilePath 接收后的文件（isCompleted为true时有效）
+///   </li>
+/// </ul>
+- (void)acceptReceiveFileOnProgress:(void (^ _Nonnull)(double))onProgress onComplete:(void (^ _Nonnull)(BOOL, NSString * _Nullable))onComplete;
+/// 拒绝接收文件
+- (void)rejectReceiveFileWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+/// APP主动停止设备传输文件到APP
+- (void)stopReceiveFileWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 /// 设备信息
 SWIFT_PROTOCOL("_TtP16protocol_channel18IDODeviceInterface_")
 @protocol IDODeviceInterface
@@ -3172,6 +3231,16 @@ typedef SWIFT_ENUM(NSInteger, IDODeviceStateType, open) {
   IDODeviceStateTypeDisconnecting = 3,
 };
 
+/// 设备传输文件类型
+typedef SWIFT_ENUM(NSInteger, IDODeviceTransType, open) {
+/// 语音备忘录文件
+  IDODeviceTransTypeVoiceMemo = 0x13,
+/// acc算法日志文件
+  IDODeviceTransTypeAccLog = 0x15,
+/// gps算法日志文件
+  IDODeviceTransTypeGpsLog = 0x16,
+};
+
 
 /// 设备升级
 SWIFT_CLASS("_TtC16protocol_channel12IDODfuConfig")
@@ -3315,6 +3384,34 @@ SWIFT_CLASS("_TtC16protocol_channel28IDODrinkWaterRemindModelObjc")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+@class IDOOtaGpsInfo;
+
+SWIFT_PROTOCOL("_TtP16protocol_channel21IDOEpoManagerDelegate_")
+@protocol IDOEpoManagerDelegate
+/// 提供当前手机gps信息用于加快设备定位（仅限支持的设备）
+- (IDOOtaGpsInfo * _Nullable)getAppGpsInfo SWIFT_WARN_UNUSED_RESULT;
+@end
+
+/// EPO升级状态
+typedef SWIFT_ENUM(NSInteger, IDOEpoUpgradeStatus, open) {
+/// 空闲
+  IDOEpoUpgradeStatusIdle = 0,
+/// 准备更新
+  IDOEpoUpgradeStatusReady = 1,
+/// 下载中
+  IDOEpoUpgradeStatusDowning = 2,
+/// 制作中
+  IDOEpoUpgradeStatusMaking = 3,
+/// 发送中
+  IDOEpoUpgradeStatusSending = 4,
+/// 安装中
+  IDOEpoUpgradeStatusInstalling = 5,
+/// 成功
+  IDOEpoUpgradeStatusSuccess = 6,
+/// 失败
+  IDOEpoUpgradeStatusFailure = 7,
+};
 
 
 /// Get Error Records event number
@@ -3761,6 +3858,11 @@ SWIFT_PROTOCOL("_TtP16protocol_channel24IDOFileTransferInterface_")
 /// \param completion 文件大小（单位 字节）
 ///
 - (void)iwfFileSizeWithFilePath:(NSString * _Nonnull)filePath type:(int64_t)type completion:(void (^ _Nonnull)(int64_t))completion;
+/// 注册 设备文件->app传输 (全局注册一次）
+/// transTask 接收到的文件任务
+- (void)registerDeviceTranFileToAppWithTransTask:(void (^ _Nonnull)(IDODeviceFileToAppTask * _Nonnull))transTask;
+/// 取消注册 设备文件 -> app传输
+- (void)unregisterDeviceTranFileToApp;
 @end
 
 
@@ -4371,6 +4473,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL getSupportMakeWatchDialDecodeJpg;
 /// 支持睡眠计划
 @property (nonatomic, readonly) BOOL getSupportSleepPlan;
+/// 支持获取设备算法文件
+@property (nonatomic, readonly) BOOL getSupportDeviceOperateAlgFile;
 /// 设置获取消息应用状态使用version0x20版本下发
 @property (nonatomic, readonly) BOOL setNoticeMessageStateUseVersion0x20;
 /// 科学睡眠开关
@@ -6429,6 +6533,13 @@ SWIFT_CLASS("_TtC16protocol_channel31IDONotificationStatusParamModel")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+SWIFT_CLASS("_TtC16protocol_channel13IDOOtaGpsInfo")
+@interface IDOOtaGpsInfo : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// OTA类型
 typedef SWIFT_ENUM(NSInteger, IDOOtaType, open) {
 /// 无升级
@@ -8097,8 +8208,7 @@ SWIFT_PROTOCOL("_TtP16protocol_channel17IDOToolsInterface_")
 ///
 - (void)gpsAlgProcessRealtimeWithJson:(NSString * _Nonnull)json completion:(void (^ _Nonnull)(NSString * _Nonnull))completion;
 /// 平滑数据
-/// \param json {lat,纬度数组,长度为len,数据类型double
-/// lon,经度数组,长度为len,数据类型double len,数据长度}
+/// \param json {lat,纬度数组,长度为len,数据类型double lon,经度数组,长度为len,数据类型double len,数据长度}
 ///
 /// \param completion 结果保存在数组lat和lon中
 ///

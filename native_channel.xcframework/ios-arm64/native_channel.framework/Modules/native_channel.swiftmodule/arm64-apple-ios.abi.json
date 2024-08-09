@@ -770,22 +770,43 @@
   "ConstValues": [
     {
       "filePath": "\/Users\/hc\/Documents\/works\/protocol_sdk.git\/plugins\/native_channel\/ios\/Classes\/GetAppInfoImpl.swift",
+      "kind": "StringLiteral",
+      "offset": 294,
+      "length": 21,
+      "value": "\"B27B33C3D2271EAA-01\""
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/works\/protocol_sdk.git\/plugins\/native_channel\/ios\/Classes\/GetAppInfoImpl.swift",
+      "kind": "IntegerLiteral",
+      "offset": 351,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/works\/protocol_sdk.git\/plugins\/native_channel\/ios\/Classes\/GetAppInfoImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 17203,
+      "offset": 22394,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/works\/protocol_sdk.git\/plugins\/native_channel\/ios\/Classes\/GetAppInfoImpl.swift",
+      "kind": "BooleanLiteral",
+      "offset": 22431,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/protocol_sdk.git\/plugins\/native_channel\/ios\/Classes\/GetAppInfoImpl.swift",
       "kind": "Array",
-      "offset": 17249,
+      "offset": 22477,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/protocol_sdk.git\/plugins\/native_channel\/ios\/Classes\/GetAppInfoImpl.swift",
       "kind": "StringLiteral",
-      "offset": 17287,
+      "offset": 22515,
       "length": 4,
       "value": "\"US\""
     }

@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'IDOSDK-full'
-  s.version          = '4.0.39'
+  s.version          = '4.0.40'
   s.summary          = 'ido sdk'
   s.description      = <<-DESC
   ido sdk
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     'IDOUtils.framework'
    ]
    
-   s.resources = ['protocol_channel.xcframework/ios-arm64/protocol_channel.framework/icon_assets.bundle']
+   s.resources = ['protocol_channel.xcframework/**/icon_assets.bundle']
 
    # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = {
