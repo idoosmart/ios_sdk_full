@@ -1173,6 +1173,7 @@ SWIFT_CLASS("_TtC16protocol_channel15IDOAlgFileModel")
 @interface IDOAlgFileModel : NSObject
 @property (nonatomic) NSInteger errorCode;
 @property (nonatomic, copy) NSArray<IDOAlgFileItem *> * _Nullable items;
+/// 操作类型 0:无效 1:查 2:请求传输
 @property (nonatomic) NSInteger operate;
 - (nonnull instancetype)initWithErrorCode:(NSInteger)errorCode items:(NSArray<IDOAlgFileItem *> * _Nullable)items operate:(NSInteger)operate OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
@@ -2863,7 +2864,7 @@ SWIFT_CLASS("_TtC16protocol_channel24IDODefaultSportTypeModel")
 @end
 
 
-/// 运动图标
+/// 设备文件->app传输任务
 SWIFT_CLASS("_TtC16protocol_channel22IDODeviceFileToAppTask")
 @interface IDODeviceFileToAppTask : NSObject
 /// 允许接收文件
@@ -8244,7 +8245,7 @@ SWIFT_CLASS("_TtC16protocol_channel17IDOTransBaseModel")
 
 
 /// 消息图标
-SWIFT_CLASS("_TtC16protocol_channel20IDOTransMessageModel")
+SWIFT_CLASS("_TtC16protocol_channel20IDOTransMessageModel") SWIFT_DEPRECATED_MSG("已弃用")
 @interface IDOTransMessageModel : IDOTransBaseModel
 /// 事件类型
 /// 参考 通消息通知

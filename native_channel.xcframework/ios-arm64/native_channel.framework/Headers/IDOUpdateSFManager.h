@@ -58,6 +58,8 @@ NS_ASSUME_NONNULL_BEGIN
 //开始进行升级
 - (void)startOTAWithFiles:(NSArray *)files deviceUUID:(NSString *)deviceUUID;
 
+//开始进行升级 98
+- (void)startOTAANorV2WithFiles:(NSArray *)files deviceUUID:(NSString *)deviceUUID;
 
 /// 将png格式文件序列转为ezipBin类型。转换失败返回nil。V2.2
 /// @param pngDatas png文件数据序列数组 （如果数组是多张图片，则会几张图片组合拼接成一张图片）

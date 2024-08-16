@@ -2101,6 +2101,7 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
   case onlineUbx = 9
   case offlineUbx = 10
   case mp3 = 11
+  @available(*, deprecated, message: "已弃用")
   case msg = 12
   case sport = 13
   case sports = 14
@@ -2146,7 +2147,8 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
   @objc override public init(fileType: protocol_channel.IDOTransType, filePath: Swift.String, fileName: Swift.String, fileSize: Swift.Int = 0)
   @objc deinit
 }
-@objc @objcMembers public class IDOTransMessageModel : protocol_channel.IDOTransBaseModel {
+@objc @available(*, deprecated, message: "已弃用")
+@objcMembers public class IDOTransMessageModel : protocol_channel.IDOTransBaseModel {
   @objc final public let evtType: Swift.Int
   @objc final public let packName: Swift.String
   @objc public init(filePath: Swift.String, fileName: Swift.String, fileSize: Swift.Int = 0, evtType: Swift.Int, packName: Swift.String)
@@ -2947,6 +2949,10 @@ public protocol IDOCmdProtocol {
 }
 @_hasMissingDesignatedInitializers @objcMembers public class IDOEpoManager {
   public static let shared: protocol_channel.IDOEpoManager
+  @objc public var enableAutoUpgrade: Swift.Bool {
+    @objc get
+    @objc set
+  }
   @objc public var status: protocol_channel.IDOEpoUpgradeStatus {
     @objc get
   }
