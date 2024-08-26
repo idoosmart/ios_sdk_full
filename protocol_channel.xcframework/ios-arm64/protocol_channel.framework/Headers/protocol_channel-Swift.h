@@ -9545,6 +9545,7 @@ SWIFT_CLASS("_TtC16protocol_channel22IDOWeatherV3ParamModel")
 /// Multiply by 10 for transmission
 @property (nonatomic) NSInteger todayUvIntensity;
 @property (nonatomic) NSInteger windSpeed;
+@property (nonatomic) NSInteger windForce;
 @property (nonatomic) NSInteger sunriseHour;
 @property (nonatomic) NSInteger sunriseMin;
 @property (nonatomic) NSInteger sunsetHour;
@@ -9557,7 +9558,7 @@ SWIFT_CLASS("_TtC16protocol_channel22IDOWeatherV3ParamModel")
 @property (nonatomic, copy) NSArray<IDOHoursWeatherItem *> * _Nonnull hoursWeatherItems;
 @property (nonatomic, copy) NSArray<IDOFutureItem *> * _Nonnull futureItems;
 @property (nonatomic, copy) NSArray<IDOSunriseItem *> * _Nonnull sunriseItem;
-- (nonnull instancetype)initWithMonth:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour min:(NSInteger)min sec:(NSInteger)sec week:(NSInteger)week weatherType:(NSInteger)weatherType todayTmp:(NSInteger)todayTmp todayMaxTemp:(NSInteger)todayMaxTemp todayMinTemp:(NSInteger)todayMinTemp cityName:(NSString * _Nonnull)cityName airQuality:(NSInteger)airQuality precipitationProbability:(NSInteger)precipitationProbability humidity:(NSInteger)humidity todayUvIntensity:(NSInteger)todayUvIntensity windSpeed:(NSInteger)windSpeed sunriseHour:(NSInteger)sunriseHour sunriseMin:(NSInteger)sunriseMin sunsetHour:(NSInteger)sunsetHour sunsetMin:(NSInteger)sunsetMin sunriseItemNum:(NSInteger)sunriseItemNum airGradeItem:(NSString * _Nonnull)airGradeItem hoursWeatherItems:(NSArray<IDOHoursWeatherItem *> * _Nonnull)hoursWeatherItems futureItems:(NSArray<IDOFutureItem *> * _Nonnull)futureItems sunriseItem:(NSArray<IDOSunriseItem *> * _Nonnull)sunriseItem OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithMonth:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour min:(NSInteger)min sec:(NSInteger)sec week:(NSInteger)week weatherType:(NSInteger)weatherType todayTmp:(NSInteger)todayTmp todayMaxTemp:(NSInteger)todayMaxTemp todayMinTemp:(NSInteger)todayMinTemp cityName:(NSString * _Nonnull)cityName airQuality:(NSInteger)airQuality precipitationProbability:(NSInteger)precipitationProbability humidity:(NSInteger)humidity todayUvIntensity:(NSInteger)todayUvIntensity windSpeed:(NSInteger)windSpeed windForce:(NSInteger)windForce sunriseHour:(NSInteger)sunriseHour sunriseMin:(NSInteger)sunriseMin sunsetHour:(NSInteger)sunsetHour sunsetMin:(NSInteger)sunsetMin sunriseItemNum:(NSInteger)sunriseItemNum airGradeItem:(NSString * _Nonnull)airGradeItem hoursWeatherItems:(NSArray<IDOHoursWeatherItem *> * _Nonnull)hoursWeatherItems futureItems:(NSArray<IDOFutureItem *> * _Nonnull)futureItems sunriseItem:(NSArray<IDOSunriseItem *> * _Nonnull)sunriseItem OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

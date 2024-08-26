@@ -428,6 +428,7 @@ typedef enum
 	VBUS_EVT_FUNC_FLASH_LOG_SCOND_CHIP_START               = 5519,	//开始获取第二块芯片flash log
     
     VBUS_EVT_FUNC_V3_GET_OPERATE_ALG_FILE                  = 5522,  //获取固件算法文件信息（ACC/GPS）
+    VBUS_EVT_FUNC_V3_SPORT_RECORD_SHOW_CONFIG              = 5523,  //支持获取运动记录的显示项配置
 
 	MP3_TO_MP3_PROCESSING                                  = 5530,  //MP3转换进度  注意错误值和回调值
 

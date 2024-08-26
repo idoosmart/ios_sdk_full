@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name protocol_channel
+import CoreBluetooth
 import Flutter
 import Foundation
 import Swift
@@ -5584,6 +5585,7 @@ public protocol IDOCmdProtocol {
   @objc public var humidity: Swift.Int
   @objc public var todayUvIntensity: Swift.Int
   @objc public var windSpeed: Swift.Int
+  @objc public var windForce: Swift.Int
   @objc public var sunriseHour: Swift.Int
   @objc public var sunriseMin: Swift.Int
   @objc public var sunsetHour: Swift.Int
@@ -5593,7 +5595,7 @@ public protocol IDOCmdProtocol {
   @objc public var hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem]
   @objc public var futureItems: [protocol_channel.IDOFutureItem]
   @objc public var sunriseItem: [protocol_channel.IDOSunriseItem]
-  @objc public init(month: Swift.Int, day: Swift.Int, hour: Swift.Int, min: Swift.Int, sec: Swift.Int, week: Swift.Int, weatherType: Swift.Int, todayTmp: Swift.Int, todayMaxTemp: Swift.Int, todayMinTemp: Swift.Int, cityName: Swift.String, airQuality: Swift.Int, precipitationProbability: Swift.Int, humidity: Swift.Int, todayUvIntensity: Swift.Int, windSpeed: Swift.Int, sunriseHour: Swift.Int, sunriseMin: Swift.Int, sunsetHour: Swift.Int, sunsetMin: Swift.Int, sunriseItemNum: Swift.Int, airGradeItem: Swift.String, hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem], futureItems: [protocol_channel.IDOFutureItem], sunriseItem: [protocol_channel.IDOSunriseItem])
+  @objc public init(month: Swift.Int, day: Swift.Int, hour: Swift.Int, min: Swift.Int, sec: Swift.Int, week: Swift.Int, weatherType: Swift.Int, todayTmp: Swift.Int, todayMaxTemp: Swift.Int, todayMinTemp: Swift.Int, cityName: Swift.String, airQuality: Swift.Int, precipitationProbability: Swift.Int, humidity: Swift.Int, todayUvIntensity: Swift.Int, windSpeed: Swift.Int, windForce: Swift.Int, sunriseHour: Swift.Int, sunriseMin: Swift.Int, sunsetHour: Swift.Int, sunsetMin: Swift.Int, sunriseItemNum: Swift.Int, airGradeItem: Swift.String, hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem], futureItems: [protocol_channel.IDOFutureItem], sunriseItem: [protocol_channel.IDOSunriseItem])
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws

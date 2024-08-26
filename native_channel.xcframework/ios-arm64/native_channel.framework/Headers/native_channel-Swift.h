@@ -322,6 +322,7 @@ SWIFT_CLASS("_TtC14native_channel14IdoSifliPlugin")
 @end
 
 
+
 SWIFT_CLASS("_TtC14native_channel19NativeChannelPlugin")
 @interface NativeChannelPlugin : NSObject <FlutterPlugin>
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
