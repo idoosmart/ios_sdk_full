@@ -2966,7 +2966,7 @@ public protocol IDOCmdProtocol {
   }
   @objc public func lastUpdateTimestamp(completion: @escaping (Swift.Int) -> Swift.Void)
   @objc public func shouldUpdateForEPO(isForce: Swift.Bool = false, completion: @escaping (Swift.Bool) -> Swift.Void)
-  @objc public func willStartInstall(isForce: Swift.Bool = false, retryCount: Swift.Int = 0)
+  @objc public func willStartInstall(isForce: Swift.Bool = false, retryCount: Swift.Int = 3)
   @objc public func stop()
   @objc public func listenEpoUpgrade(funcStatus: @escaping (protocol_channel.IDOEpoUpgradeStatus) -> Swift.Void, downProgress: ((Swift.Float) -> Swift.Void)?, sendProgress: ((Swift.Float) -> Swift.Void)?, funcComplete: @escaping (Swift.Int) -> Swift.Void)
   @objc deinit
@@ -5595,7 +5595,9 @@ public protocol IDOCmdProtocol {
   @objc public var hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem]
   @objc public var futureItems: [protocol_channel.IDOFutureItem]
   @objc public var sunriseItem: [protocol_channel.IDOSunriseItem]
-  @objc public init(month: Swift.Int, day: Swift.Int, hour: Swift.Int, min: Swift.Int, sec: Swift.Int, week: Swift.Int, weatherType: Swift.Int, todayTmp: Swift.Int, todayMaxTemp: Swift.Int, todayMinTemp: Swift.Int, cityName: Swift.String, airQuality: Swift.Int, precipitationProbability: Swift.Int, humidity: Swift.Int, todayUvIntensity: Swift.Int, windSpeed: Swift.Int, windForce: Swift.Int, sunriseHour: Swift.Int, sunriseMin: Swift.Int, sunsetHour: Swift.Int, sunsetMin: Swift.Int, sunriseItemNum: Swift.Int, airGradeItem: Swift.String, hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem], futureItems: [protocol_channel.IDOFutureItem], sunriseItem: [protocol_channel.IDOSunriseItem])
+  @objc public var aqiFutureItem: [Swift.Int]?
+  @objc public var aqiHistoryItem: [Swift.Int]?
+  @objc public init(month: Swift.Int, day: Swift.Int, hour: Swift.Int, min: Swift.Int, sec: Swift.Int, week: Swift.Int, weatherType: Swift.Int, todayTmp: Swift.Int, todayMaxTemp: Swift.Int, todayMinTemp: Swift.Int, cityName: Swift.String, airQuality: Swift.Int, precipitationProbability: Swift.Int, humidity: Swift.Int, todayUvIntensity: Swift.Int, windSpeed: Swift.Int, windForce: Swift.Int, sunriseHour: Swift.Int, sunriseMin: Swift.Int, sunsetHour: Swift.Int, sunsetMin: Swift.Int, sunriseItemNum: Swift.Int, airGradeItem: Swift.String, hoursWeatherItems: [protocol_channel.IDOHoursWeatherItem], futureItems: [protocol_channel.IDOFutureItem], sunriseItem: [protocol_channel.IDOSunriseItem], aqiFutureItem: [Swift.Int]? = nil, aqiHistoryItem: [Swift.Int]? = nil)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
