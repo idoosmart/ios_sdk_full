@@ -37622,42 +37622,42 @@
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 390,
+      "offset": 349,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "StringLiteral",
-      "offset": 453,
+      "offset": 412,
       "length": 36,
       "value": "\"IDOBluetoothStrapRestoreIdentifier\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 675,
+      "offset": 634,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 701,
+      "offset": 660,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "Dictionary",
-      "offset": 776,
+      "offset": 735,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "Array",
-      "offset": 864,
+      "offset": 823,
       "length": 2,
       "value": "[]"
     },
@@ -39414,168 +39414,168 @@
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1058,
+      "offset": 1122,
       "length": 22,
       "value": "1"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1109,
+      "offset": 1173,
       "length": 12,
       "value": "2"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1156,
+      "offset": 1220,
       "length": 12,
       "value": "3"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1197,
+      "offset": 1261,
       "length": 4,
       "value": "4"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1230,
+      "offset": 1294,
       "length": 7,
       "value": "5"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1272,
+      "offset": 1336,
       "length": 11,
       "value": "6"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1318,
+      "offset": 1382,
       "length": 19,
       "value": "7"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1366,
+      "offset": 1430,
       "length": 8,
       "value": "8"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1058,
+      "offset": 1122,
       "length": 22,
       "value": "1"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1109,
+      "offset": 1173,
       "length": 12,
       "value": "2"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1156,
+      "offset": 1220,
       "length": 12,
       "value": "3"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1197,
+      "offset": 1261,
       "length": 4,
       "value": "4"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1230,
+      "offset": 1294,
       "length": 7,
       "value": "5"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1272,
+      "offset": 1336,
       "length": 11,
       "value": "6"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1318,
+      "offset": 1382,
       "length": 19,
       "value": "7"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1366,
+      "offset": 1430,
       "length": 8,
       "value": "8"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1058,
+      "offset": 1122,
       "length": 22,
       "value": "1"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1109,
+      "offset": 1173,
       "length": 12,
       "value": "2"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1156,
+      "offset": 1220,
       "length": 12,
       "value": "3"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1197,
+      "offset": 1261,
       "length": 4,
       "value": "4"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1230,
+      "offset": 1294,
       "length": 7,
       "value": "5"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1272,
+      "offset": 1336,
       "length": 11,
       "value": "6"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1318,
+      "offset": 1382,
       "length": 19,
       "value": "7"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Core\/Enum.swift",
       "kind": "IntegerLiteral",
-      "offset": 1366,
+      "offset": 1430,
       "length": 8,
       "value": "8"
     },

@@ -820,9 +820,9 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 设置壁纸表盘列表
 /// Set wallpaper dial list event number
 + (id <IDOCancellable> _Nonnull)setWallpaperDialReply:(IDOWallpaperDialReplyV3ParamModel * _Nonnull)wallpaperDial completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOWallpaperDialReplyV3Model * _Nullable))completion;
-/// 设置时间
-/// Set Time
-+ (id <IDOCancellable> _Nonnull)setDateTime:(IDODateTimeParamModel * _Nonnull)dateTimeParam completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
+/// 设置时间, 不指定参数将使用当前时间
+/// Set the time. If no reference is specified, the current time will be used.
++ (id <IDOCancellable> _Nonnull)setDateTime:(IDODateTimeParamModel * _Nullable)dateTimeParam completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
 /// 设置用户信息
 /// Set user information
 + (id <IDOCancellable> _Nonnull)setUserInfo:(IDOUserInfoPramModel * _Nonnull)userInfo completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
@@ -3157,6 +3157,15 @@ SWIFT_CLASS("_TtC16protocol_channel26IDODeviceNotificationModel")
 /// 69 固件修改电子卡片内容，通知APP获取电子卡片内容
 /// 70 固件修改晨报内容，通知APP获取晨报内容
 /// 71 固件修改语音备忘录，通知APP获取语音备忘录内容
+/// 72 APP发起测量功能的时候，固件通知APP手表未佩戴的异常
+/// 73 APP发起的测量身体成分测量失败，通知APP
+/// 74 固件AI语音功能退出，通知APP
+/// 75 固件AI表盘功能退出，通知APP
+/// 76 固件通知APP更新OTA
+/// 77 固件遇到账户不一致，用户点击取消配对
+/// 78 固件遇到账户不一致，用户点击确定恢复出厂
+/// 82 固件点击连接新手机, 通知app断联
+/// 83 固件通知APP需要更新EPO(星历)文件
 ///
 /// \endcode
 @property (nonatomic, readonly, strong) NSNumber * _Nullable dataType;

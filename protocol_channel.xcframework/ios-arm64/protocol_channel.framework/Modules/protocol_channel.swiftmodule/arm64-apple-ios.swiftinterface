@@ -985,7 +985,7 @@ public struct Cmds {
     public typealias DataType = protocol_channel.IDOWallpaperDialReplyV3Model
   }
   public struct setDateTime : protocol_channel.IDOCmdProtocol {
-    public init(_ param: protocol_channel.IDODateTimeParamModel)
+    public init(_ param: protocol_channel.IDODateTimeParamModel? = nil)
     @discardableResult
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
@@ -1435,7 +1435,7 @@ public struct Cmds {
   @objc @discardableResult
   public static func setWallpaperDialReply(_ wallpaperDial: protocol_channel.IDOWallpaperDialReplyV3ParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ wallpaperDialReplyModel: protocol_channel.IDOWallpaperDialReplyV3Model?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
-  public static func setDateTime(_ dateTimeParam: protocol_channel.IDODateTimeParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
+  public static func setDateTime(_ dateTimeParam: protocol_channel.IDODateTimeParamModel? = nil, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setUserInfo(_ userInfo: protocol_channel.IDOUserInfoPramModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult

@@ -834,6 +834,15 @@ extern int mkEpoFile(char *file_path,char *save_file_name);
 extern int Png2Bmp(char *inname,char *outname,int format);
 
 /**
+ * @brief PNG图片32/24位转16位
+ * @param inname 用于转换的png路径(包含文件名及后缀)
+ * @param outname 转换完的png路径(包含文件名及后缀)
+ * @return:
+ *   SUCCESS(0) : 成功
+ */
+extern int PngConvert16bit(char *inname,char *outname);
+
+/**
  * @brief 制作壁纸图片文件
  * @param file_path 素材路径
  * @param save_file_path 输出文件名
