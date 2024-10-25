@@ -775,7 +775,7 @@ public struct Cmds {
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
   public struct getAlarm : protocol_channel.IDOCmdProtocol {
-    public init(flag: Swift.Int)
+    public init(flag: Swift.Int, priority: protocol_channel.IDOCmdPriority = .normal)
     @discardableResult
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOAlarmModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOAlarmModel
@@ -1366,6 +1366,8 @@ public struct Cmds {
   public static func setWeatherCityName(_ cityName: Swift.String, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func getAlarm(_ flag: Swift.Int, completion: @escaping (_ err: protocol_channel.CmdError, _ alarmModel: protocol_channel.IDOAlarmModelObjc?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getAlarm(_ flag: Swift.Int, priority: protocol_channel.IDOCmdPriority = .normal, completion: @escaping (_ err: protocol_channel.CmdError, _ alarmModel: protocol_channel.IDOAlarmModelObjc?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setAlarm(_ alarm: protocol_channel.IDOAlarmModelObjc, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
@@ -2645,6 +2647,17 @@ public protocol IDOCmdProtocol {
   associatedtype DataType
   @discardableResult
   func send(completion: @escaping protocol_channel.IDOCmdResponse<Self.DataType>) -> any protocol_channel.IDOCancellable
+}
+@objc public enum IDOCmdPriority : Swift.Int {
+  case veryHigh = 3
+  case high = 2
+  case normal = 1
+  case low = 0
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 @objc public protocol IDOCmdInterface {
   @objc var isBinding: Swift.Bool { get }
@@ -5805,6 +5818,9 @@ extension protocol_channel.IDOAppletInfoModel.CodingKeys : Swift.RawRepresentabl
 extension protocol_channel.IDOAppletInfoItem.CodingKeys : Swift.Equatable {}
 extension protocol_channel.IDOAppletInfoItem.CodingKeys : Swift.Hashable {}
 extension protocol_channel.IDOAppletInfoItem.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOCmdPriority : Swift.Equatable {}
+extension protocol_channel.IDOCmdPriority : Swift.Hashable {}
+extension protocol_channel.IDOCmdPriority : Swift.RawRepresentable {}
 extension protocol_channel.IDODefaultMessageConfigParamModel.CodingKeys : Swift.Equatable {}
 extension protocol_channel.IDODefaultMessageConfigParamModel.CodingKeys : Swift.Hashable {}
 extension protocol_channel.IDODefaultMessageConfigParamModel.CodingKeys : Swift.RawRepresentable {}

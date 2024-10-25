@@ -415,6 +415,7 @@ SWIFT_CLASS("_TtC16protocol_channel8CmdError")
 @class IDOTakingMedicineReminderParamModelObjc;
 @class IDOSpo2SwitchParamModel;
 @class IDOAlarmModelObjc;
+enum IDOCmdPriority : NSInteger;
 @class IDOHabitInfoModel;
 @class IDOFitnessGuidanceParamModelObjc;
 @class IDODisplayModeParamModel;
@@ -707,6 +708,11 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// \param flag Flag for getting alarms  0: Get all alarms 1: Get alarms modified by the device notification
 ///
 + (id <IDOCancellable> _Nonnull)getAlarm:(NSInteger)flag completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOAlarmModelObjc * _Nullable))completion;
+/// app获取ble的闹钟
+/// Getting Alarms for V3APP Devices
+/// \param flag Flag for getting alarms  0: Get all alarms 1: Get alarms modified by the device notification
+///
++ (id <IDOCancellable> _Nonnull)getAlarm:(NSInteger)flag priority:(enum IDOCmdPriority)priority completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOAlarmModelObjc * _Nullable))completion;
 /// app设置ble的闹钟
 /// Getting Alarms for V3APP Devices
 + (id <IDOCancellable> _Nonnull)setAlarm:(IDOAlarmModelObjc * _Nonnull)alarm completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
@@ -2625,6 +2631,18 @@ SWIFT_CLASS("_TtC16protocol_channel22IDOCmdOTAResponseModel")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+/// 指令优先级
+typedef SWIFT_ENUM(NSInteger, IDOCmdPriority, open) {
+/// 很高
+  IDOCmdPriorityVeryHigh = 3,
+/// 高
+  IDOCmdPriorityHigh = 2,
+/// 正常
+  IDOCmdPriorityNormal = 1,
+/// 低
+  IDOCmdPriorityLow = 0,
+};
 
 
 SWIFT_CLASS("_TtC16protocol_channel22IDOCmdSetResponseModel")
