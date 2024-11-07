@@ -4503,6 +4503,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL getSupportSleepPlan;
 /// 支持获取设备算法文件
 @property (nonatomic, readonly) BOOL getSupportDeviceOperateAlgFile;
+/// 支持获取运动记录的显示项配置
+@property (nonatomic, readonly) BOOL getSupportSportRecordShowConfig;
 /// 设置获取消息应用状态使用version0x20版本下发
 @property (nonatomic, readonly) BOOL setNoticeMessageStateUseVersion0x20;
 /// 科学睡眠开关
@@ -4735,6 +4737,12 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL setSupportSetVersionInformation;
 /// 支持小程序操作
 @property (nonatomic, readonly) BOOL setSupportControlMiniProgram;
+/// 支持下发未来和历史空气质量数据
+@property (nonatomic, readonly) BOOL getSupportSetWeatherHistoryFutureAqi;
+/// 支持设置亮屏亮度时间
+@property (nonatomic, readonly) BOOL setBrightScreenTime;
+/// 支持设置心率过高过低提醒
+@property (nonatomic, readonly) BOOL setHeartSetRateModeCustom;
 /// 中文
 @property (nonatomic, readonly) BOOL languageCh;
 /// 捷克文

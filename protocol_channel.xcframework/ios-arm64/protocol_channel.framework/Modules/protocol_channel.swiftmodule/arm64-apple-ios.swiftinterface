@@ -3348,6 +3348,7 @@ public protocol IDOCmdProtocol {
   @objc var getSupportMakeWatchDialDecodeJpg: Swift.Bool { get }
   @objc var getSupportSleepPlan: Swift.Bool { get }
   @objc var getSupportDeviceOperateAlgFile: Swift.Bool { get }
+  @objc var getSupportSportRecordShowConfig: Swift.Bool { get }
   @objc var setNoticeMessageStateUseVersion0x20: Swift.Bool { get }
   @objc var setScientificSleepSwitch: Swift.Bool { get }
   @objc var setTemperatureSwitchHealth: Swift.Bool { get }
@@ -3464,6 +3465,9 @@ public protocol IDOCmdProtocol {
   @objc var setSupportNoiseSetOverWarning: Swift.Bool { get }
   @objc var setSupportSetVersionInformation: Swift.Bool { get }
   @objc var setSupportControlMiniProgram: Swift.Bool { get }
+  @objc var getSupportSetWeatherHistoryFutureAqi: Swift.Bool { get }
+  @objc var setBrightScreenTime: Swift.Bool { get }
+  @objc var setHeartSetRateModeCustom: Swift.Bool { get }
   @objc var languageCh: Swift.Bool { get }
   @objc var languageCzech: Swift.Bool { get }
   @objc var languageEnglish: Swift.Bool { get }
