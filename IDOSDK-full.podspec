@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'IDOSDK-full'
-  s.version          = '4.1.0'
+  s.version          = '4.2.0'
   s.summary          = 'ido sdk'
   s.description      = <<-DESC
   ido sdk
@@ -18,17 +18,17 @@ Pod::Spec.new do |s|
   s.libraries        = 'iconv','z','c++'
 
   s.vendored_frameworks = [
-    'App.xcframework',
-    'flutter_bluetooth.xcframework',
-    'Flutter.xcframework',
-    'FlutterPluginRegistrant.xcframework',
-    'native_channel.xcframework',
-    'protocol_channel.xcframework',
-    'protocol_c.framework',
-    'IDOUtils.framework'
+    'IDOSDK-full/libs/App.xcframework',
+    'IDOSDK-full/libs/flutter_bluetooth.xcframework',
+    'IDOSDK-full/libs/Flutter.xcframework',
+    'IDOSDK-full/libs/FlutterPluginRegistrant.xcframework',
+    'IDOSDK-full/libs/native_channel.xcframework',
+    'IDOSDK-full/libs/protocol_channel.xcframework',
+    'IDOSDK-full/libs/protocol_c.xcframework',
+    'IDOSDK-full/libs/IDOUtils.xcframework'
    ]
    
-   s.resources = ['protocol_channel.xcframework/**/icon_assets.bundle']
+  s.resources = ['IDOSDK-full/icon_assets.bundle']
 
    # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = {
