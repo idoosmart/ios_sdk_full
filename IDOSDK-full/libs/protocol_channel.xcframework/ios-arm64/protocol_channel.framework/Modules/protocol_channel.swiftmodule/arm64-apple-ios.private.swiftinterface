@@ -3710,7 +3710,7 @@ public protocol IDOCmdProtocol {
   @objc public var lowHeartMode: Swift.Int
   @objc public var highHeartValue: Swift.Int
   @objc public var lowHeartValue: Swift.Int
-  @objc public init(updateTime: Swift.Int, mode: Swift.Int, hasTimeRange: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, measurementInterval: Swift.Int, notifyFlag: Swift.Int, highHeartMode: Swift.Int, lowHeartMode: Swift.Int, highHeartValue: Swift.Int, lowHeartValue: Swift.Int)
+  @objc public init(updateTime: Swift.Int, mode: Swift.Int = 0, hasTimeRange: Swift.Int = 0, startHour: Swift.Int = 0, startMinute: Swift.Int = 0, endHour: Swift.Int = 0, endMinute: Swift.Int = 0, measurementInterval: Swift.Int = 0, notifyFlag: Swift.Int = 0, highHeartMode: Swift.Int = 0, lowHeartMode: Swift.Int = 0, highHeartValue: Swift.Int = 0, lowHeartValue: Swift.Int = 0)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -3726,7 +3726,9 @@ public protocol IDOCmdProtocol {
   @objc public var endMinute: Swift.Int
   @objc public var measurementInterval: Swift.Int
   @objc public var getSECMode: Swift.Int
+  @objc public var secModeArray: [Swift.Int]
   @objc public var getMinMode: Swift.Int
+  @objc public var minModeArray: [Swift.Int]
   @objc public var notifyFlag: Swift.Int
   @objc public var highHeartMode: Swift.Int
   @objc public var lowHeartMode: Swift.Int

@@ -5232,6 +5232,7 @@ SWIFT_CLASS("_TtC16protocol_channel17IDOHeartModeModel")
 ///
 /// \endcode
 @property (nonatomic) NSInteger getSECMode;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull secModeArray;
 /// Currently supported heart rate types by the watch,
 /// \code
 /// all 0:invalid values
@@ -5246,6 +5247,7 @@ SWIFT_CLASS("_TtC16protocol_channel17IDOHeartModeModel")
 ///
 /// \endcode
 @property (nonatomic) NSInteger getMinMode;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull minModeArray;
 /// Notification type:
 /// \code
 /// 0: Invalid
