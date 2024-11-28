@@ -2677,6 +2677,8 @@ typedef SWIFT_ENUM(NSInteger, IDOConnectErrorType, open) {
   IDOConnectErrorTypePairFail = 8,
 /// 获取基本信息失败
   IDOConnectErrorTypeInformationFail = 9,
+/// app主动断开
+  IDOConnectErrorTypeCancelByUser = 10,
 };
 
 
@@ -6818,6 +6820,8 @@ SWIFT_CLASS("_TtC16protocol_channel10IDOSdkInfo")
 @interface IDOSdkInfo : NSObject
 /// SDK版本
 @property (nonatomic, readonly, copy) NSString * _Nonnull versionSdk;
+/// SDK更新时间
+@property (nonatomic, readonly, copy) NSString * _Nonnull updateTime;
 /// Lib库版本
 @property (nonatomic, readonly, copy) NSString * _Nonnull versionLib;
 /// Alexa库版本

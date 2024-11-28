@@ -98,6 +98,7 @@ import _SwiftConcurrencyShims
   case characteristicsFail
   case pairFail
   case informationFail
+  case cancelByUser
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -175,10 +176,18 @@ import _SwiftConcurrencyShims
   @objc deinit
 }
 @objc @objcMembers public class IDODeviceStateModel : ObjectiveC.NSObject {
-  @objc final public let uuid: Swift.String?
-  @objc final public let macAddress: Swift.String?
-  @objc final public let state: protocol_channel.IDODeviceStateType
-  @objc final public let errorState: protocol_channel.IDOConnectErrorType
+  @objc public var uuid: Swift.String? {
+    get
+  }
+  @objc public var macAddress: Swift.String? {
+    get
+  }
+  @objc public var state: protocol_channel.IDODeviceStateType {
+    get
+  }
+  @objc public var errorState: protocol_channel.IDOConnectErrorType {
+    get
+  }
   @objc public init(uuid: Swift.String?, macAddress: Swift.String?, state: protocol_channel.IDODeviceStateType, errorState: protocol_channel.IDOConnectErrorType)
   @objc deinit
 }
@@ -4584,6 +4593,7 @@ public protocol IDOCmdProtocol {
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class IDOSdkInfo : ObjectiveC.NSObject {
   @objc final public let versionSdk: Swift.String
+  @objc final public let updateTime: Swift.String
   @objc public var versionLib: Swift.String {
     get
   }
