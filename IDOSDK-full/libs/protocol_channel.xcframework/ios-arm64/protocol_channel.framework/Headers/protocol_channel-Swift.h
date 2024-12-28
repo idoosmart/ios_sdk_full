@@ -1705,7 +1705,7 @@ SWIFT_CLASS("_TtC16protocol_channel24IDOAppIngV3ExchangeModel")
 @property (nonatomic, strong) IDOExchangeBaseModel * _Nullable baseModel;
 /// 协议版本号
 @property (nonatomic) NSInteger version;
-/// 0: 表示信号弱 2: 表示信号强
+/// 0: 表示信号弱  1: 表示信号强
 @property (nonatomic) NSInteger signal;
 /// app 距离
 @property (nonatomic) NSInteger distance;
@@ -7831,6 +7831,16 @@ typedef SWIFT_ENUM(NSInteger, IDOStatusNotification, open) {
   IDOStatusNotificationSyncHealthDataIng = 10,
 /// 同步健康数据完成
   IDOStatusNotificationSyncHealthDataCompleted = 11,
+/// 未启用
+  IDOStatusNotificationAccountMatched = 12,
+/// 未启用
+  IDOStatusNotificationAccountFailed = 13,
+/// 未启用
+  IDOStatusNotificationAccountNotMatch = 14,
+/// 未启用
+  IDOStatusNotificationAccountNil = 15,
+/// 快速配置开始
+  IDOStatusNotificationFastSyncStarting = 16,
 };
 
 

@@ -248,6 +248,11 @@ import _SwiftConcurrencyShims
   case macAddressError = 9
   case syncHealthDataIng = 10
   case syncHealthDataCompleted = 11
+  case accountMatched = 12
+  case accountFailed = 13
+  case accountNotMatch = 14
+  case accountNil = 15
+  case fastSyncStarting = 16
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {

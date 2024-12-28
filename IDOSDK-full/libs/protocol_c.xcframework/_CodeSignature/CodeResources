@@ -4,13 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>ios-arm64_armv7/protocol_c.framework/.DS_Store</key>
-		<data>
-		O/wX51iEI3O/rAohXRZkGgDtnes=
-		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/Headers/ido_protocol_public_interface.h</key>
 		<data>
-		ljmkx2rWoRbVX2zCdmz3G9rIm/0=
+		AvyJriaF5IDftVDTNpwj6BRMVZY=
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/Headers/include_help.h</key>
 		<data>
@@ -26,7 +22,7 @@
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/Info.plist</key>
 		<data>
-		3Yz+tgvuVcBUAXzunWcwK+5AX9Q=
+		uUKe34NjpdsC+L1Mj2CYf10vpww=
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/Modules/module.modulemap</key>
 		<data>
@@ -34,11 +30,11 @@
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/protocol_c</key>
 		<data>
-		vsQ78gGvPBFYxJi4F9/K+M8OFb0=
+		1Lir9g61jTJnmFVc3oynY2uaInc=
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/protocol_c.bundle/Info.plist</key>
 		<data>
-		yiOMLQCsgW2cuzIm/8gYQYx9i2U=
+		o22D4p8xqf2HldXygROHbJmFpPY=
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/protocol_c.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -51,11 +47,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ljmkx2rWoRbVX2zCdmz3G9rIm/0=
+			AvyJriaF5IDftVDTNpwj6BRMVZY=
 			</data>
 			<key>hash2</key>
 			<data>
-			XFgRN+INf68dB319ixP47uLh1MACtGrpRQkRU+KMxfw=
+			eHp3Xz94+YRLiD6C5JhM0AMG/fy3ZDtc5vraWc/d2Lk=
 			</data>
 		</dict>
 		<key>ios-arm64_armv7/protocol_c.framework/Headers/include_help.h</key>
@@ -95,11 +91,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3Yz+tgvuVcBUAXzunWcwK+5AX9Q=
+			uUKe34NjpdsC+L1Mj2CYf10vpww=
 			</data>
 			<key>hash2</key>
 			<data>
-			GIIyVu2HjSikOUCWGkPUIsgh2W3EGA9yXd+KiVAVGJs=
+			FLxcYkpU9bKjTpM5JTV03PpNC0sRrAmtQlXeqaJymsk=
 			</data>
 		</dict>
 		<key>ios-arm64_armv7/protocol_c.framework/Modules/module.modulemap</key>
@@ -117,22 +113,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vsQ78gGvPBFYxJi4F9/K+M8OFb0=
+			1Lir9g61jTJnmFVc3oynY2uaInc=
 			</data>
 			<key>hash2</key>
 			<data>
-			dercVzJQpCvJqeToCbwn1m7ZDYvqKfI1Z9hE7087fAw=
+			DCL7K/jvm4fuY2Z66hkavgWNrnebGd+CzcbDHzbO6Q8=
 			</data>
 		</dict>
 		<key>ios-arm64_armv7/protocol_c.framework/protocol_c.bundle/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yiOMLQCsgW2cuzIm/8gYQYx9i2U=
+			o22D4p8xqf2HldXygROHbJmFpPY=
 			</data>
 			<key>hash2</key>
 			<data>
-			nUbOG1Ok73yPq2TedqxJ2S3+ACuVrULxfFqJ1XQyg/s=
+			df7sLHffxUXOfC6jOc9FkIC7Aw/xpCONDopmxCQ3uak=
 			</data>
 		</dict>
 		<key>ios-arm64_armv7/protocol_c.framework/protocol_c.bundle/PrivacyInfo.xcprivacy</key>

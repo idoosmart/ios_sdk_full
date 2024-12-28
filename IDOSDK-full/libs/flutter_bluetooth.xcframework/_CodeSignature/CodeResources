@@ -26,11 +26,11 @@
 		</data>
 		<key>ios-arm64/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		svNZkRnyiLMtU1yjNRrTfUR04QE=
+		ME9QPh52jPFFs9Zkp/HD2EE5me0=
 		</data>
 		<key>ios-arm64/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		m+2aKINUl4dvRmgUOTmzNNdOJ4c=
+		86VLdGHnWeX3PF5KTQ5UoEIATQs=
 		</data>
 		<key>ios-arm64/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>ios-arm64/flutter_bluetooth.framework/flutter_bluetooth</key>
 		<data>
-		8ge68HTD2BISu776DK/d7Vv5AHU=
+		lsvAxd7Y4tTuWzq23XDrHk9mLyw=
 		</data>
 		<key>ios-arm64/flutter_bluetooth.framework/flutter_bluetooth.bundle/Info.plist</key>
 		<data>
@@ -122,22 +122,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			svNZkRnyiLMtU1yjNRrTfUR04QE=
+			ME9QPh52jPFFs9Zkp/HD2EE5me0=
 			</data>
 			<key>hash2</key>
 			<data>
-			FcOEKvQ2lxciLK7xowf1SGorJcImmIiQr5B/CZSU7NU=
+			6CzcRdsz3jaCwKHsKrDOMkpN3r3ybSGz0ZixUmcBwU4=
 			</data>
 		</dict>
 		<key>ios-arm64/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			m+2aKINUl4dvRmgUOTmzNNdOJ4c=
+			86VLdGHnWeX3PF5KTQ5UoEIATQs=
 			</data>
 			<key>hash2</key>
 			<data>
-			G7TrYJHn2dD3nb4qvFnUmcYrEr40qCkeLVbI+pXYzVg=
+			wZ2+QXFNSIZVWjCsGjSipeGGXbm8FLo6t2wwX2ynJNY=
 			</data>
 		</dict>
 		<key>ios-arm64/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -188,11 +188,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8ge68HTD2BISu776DK/d7Vv5AHU=
+			lsvAxd7Y4tTuWzq23XDrHk9mLyw=
 			</data>
 			<key>hash2</key>
 			<data>
-			8zLIf5LwW+F4HHmTURS7evI/smjGoPIBgLnwDnQs8K8=
+			Rc/YlL+XyRlX/CiROjHoURRsAJZqytmzBM0qiw9q6cM=
 			</data>
 		</dict>
 		<key>ios-arm64/flutter_bluetooth.framework/flutter_bluetooth.bundle/Info.plist</key>
