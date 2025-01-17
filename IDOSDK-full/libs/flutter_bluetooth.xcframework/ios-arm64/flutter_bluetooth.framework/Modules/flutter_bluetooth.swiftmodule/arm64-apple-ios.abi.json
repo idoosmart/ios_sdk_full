@@ -37663,10 +37663,17 @@
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
-      "kind": "StringLiteral",
-      "offset": 1122,
-      "length": 31,
-      "value": "\"com.serial.bluetoothSendQueue\""
+      "kind": "Array",
+      "offset": 1143,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
+      "kind": "FloatLiteral",
+      "offset": 1296,
+      "length": 4,
+      "value": "0.01"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/iOSDFULibrary\/Implementation\/SecureDFU\/Characteristics\/ButtonlessDFU.swift",
