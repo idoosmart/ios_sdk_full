@@ -2835,21 +2835,16 @@ public protocol IDOCmdProtocol {
   @objc public var defaultShowNum: Swift.Int
   @objc public var minShowNum: Swift.Int
   @objc public var maxShowNum: Swift.Int
-  @objc public var isSupportsSort: Swift.Int
-  @objc public var sportTypes: [protocol_channel.IDOSportTypeItem]
-  @objc public init(defaultShowNum: Swift.Int, minShowNum: Swift.Int, maxShowNum: Swift.Int, isSupportsSort: Swift.Int, sportTypes: [protocol_channel.IDOSportTypeItem])
+  @objc public var isSupportsSort: Swift.Bool
+  public var sportTypes: [protocol_channel.IDOSportType] {
+    get
+    set
+  }
+  public init(defaultShowNum: Swift.Int, minShowNum: Swift.Int, maxShowNum: Swift.Int, isSupportsSort: Swift.Bool, sportTypes: [protocol_channel.IDOSportType])
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @objcMembers public class IDOSportTypeItem : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var type: protocol_channel.IDOSportType
-  @objc public init(type: protocol_channel.IDOSportType)
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public protocol IDODeviceInterface {
   @objc var deviceMode: Swift.Int { get }
@@ -4096,7 +4091,9 @@ public protocol IDOCmdProtocol {
 @objc public protocol IDOMessageIconInterface {
   @objc var updating: Swift.Bool { get }
   @objc var iconDirPath: Swift.String { get }
-  @objc func iOSConfig(countryCode: Swift.String, baseUrlPath: Swift.String, appKey: Swift.String, language: Swift.Int)
+  @objc @available(*, deprecated, message: "This method is deprecated and will be removed in a future version. Use config(...)")
+  func iOSConfig(countryCode: Swift.String, baseUrlPath: Swift.String, appKey: Swift.String, language: Swift.Int)
+  @objc func config(countryCode: Swift.String?, baseUrlPath: Swift.String?, appKey: Swift.String?, language: Foundation.NSNumber?)
   @objc func firstGetAppInfo(force: Swift.Bool, completion: @escaping ([protocol_channel.IDOAppIconItemModel]) -> Swift.Void)
   @objc func setDefaultAppInfoList(list: [protocol_channel.IDOAppIconItemModel], completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc func getDefaultAppInfo(completion: @escaping ([protocol_channel.IDOAppIconItemModel]) -> Swift.Void)

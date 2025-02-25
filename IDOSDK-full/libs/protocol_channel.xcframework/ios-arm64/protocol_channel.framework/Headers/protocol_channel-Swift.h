@@ -2863,7 +2863,6 @@ SWIFT_CLASS("_TtC16protocol_channel21IDODefaultMessageItem")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class IDOSportTypeItem;
 
 SWIFT_CLASS("_TtC16protocol_channel24IDODefaultSportTypeModel")
 @interface IDODefaultSportTypeModel : NSObject
@@ -2873,11 +2872,8 @@ SWIFT_CLASS("_TtC16protocol_channel24IDODefaultSportTypeModel")
 @property (nonatomic) NSInteger minShowNum;
 /// 最大支持的数量
 @property (nonatomic) NSInteger maxShowNum;
-/// 是否支持默认排序 0 不支持 ，1 支持
-@property (nonatomic) NSInteger isSupportsSort;
-/// 运动类型列表集合 type的集合
-@property (nonatomic, copy) NSArray<IDOSportTypeItem *> * _Nonnull sportTypes;
-- (nonnull instancetype)initWithDefaultShowNum:(NSInteger)defaultShowNum minShowNum:(NSInteger)minShowNum maxShowNum:(NSInteger)maxShowNum isSupportsSort:(NSInteger)isSupportsSort sportTypes:(NSArray<IDOSportTypeItem *> * _Nonnull)sportTypes OBJC_DESIGNATED_INITIALIZER;
+/// 是否支持默认排序
+@property (nonatomic) BOOL isSupportsSort;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -6092,7 +6088,18 @@ SWIFT_PROTOCOL("_TtP16protocol_channel23IDOMessageIconInterface_")
 /// baseUrlPath：base url 缓存服务器地址
 /// appKey：后台请求分配 appKey
 /// language：语言单位
-- (void)iOSConfigWithCountryCode:(NSString * _Nonnull)countryCode baseUrlPath:(NSString * _Nonnull)baseUrlPath appKey:(NSString * _Nonnull)appKey language:(NSInteger)language;
+- (void)iOSConfigWithCountryCode:(NSString * _Nonnull)countryCode baseUrlPath:(NSString * _Nonnull)baseUrlPath appKey:(NSString * _Nonnull)appKey language:(NSInteger)language SWIFT_DEPRECATED_MSG("This method is deprecated and will be removed in a future version. Use config(...)");
+/// ios 配置
+/// countryCode：国家编码
+/// baseUrlPath：base url 缓存服务器地址
+/// appKey：后台请求分配 appKey
+/// language：语言单位 无效:0,中文:1,英文:2,法语:3,德语:4,意大利语:5,西班牙语:6,日语:7,
+/// 波兰语:8,捷克语:9,罗马尼亚:10,立陶宛语:11,荷兰语:12,斯洛文尼亚:13,
+/// 匈牙利语:14,俄罗斯语:15,乌克兰语:16,斯洛伐克语:17,丹麦语:18,克罗地亚:19,印尼语:20,
+/// 韩语:21,印地语:22,葡萄牙语:23,土耳其:24,泰国语:25,越南语:26,缅甸语:27,
+/// 菲律宾语:28,繁体中文:29,希腊语:30,阿拉伯语:31,瑞典语:32,芬兰语:33,波斯语:34,挪威语:35
+/// 未设语言单位，默认为英文
+- (void)configWithCountryCode:(NSString * _Nullable)countryCode baseUrlPath:(NSString * _Nullable)baseUrlPath appKey:(NSString * _Nullable)appKey language:(NSNumber * _Nullable)language;
 /// ios 需要执行获取默认的APP包名列表信息，因为event_type是固件分配的 force 强制更新应用名称
 - (void)firstGetAppInfoWithForce:(BOOL)force completion:(void (^ _Nonnull)(NSArray<IDOAppIconItemModel *> * _Nonnull))completion;
 /// 设置默认app信息集合(仅限支持的设备使用)
@@ -7772,16 +7779,6 @@ typedef SWIFT_ENUM(NSInteger, IDOSportType, open) {
 /// 美式橄榄球
   IDOSportTypeAmericanFootball = 255,
 };
-
-
-SWIFT_CLASS("_TtC16protocol_channel16IDOSportTypeItem")
-@interface IDOSportTypeItem : NSObject
-@property (nonatomic) enum IDOSportType type;
-- (nonnull instancetype)initWithType:(enum IDOSportType)type OBJC_DESIGNATED_INITIALIZER;
-- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
 
 enum IDOSppStateType : NSInteger;
 
