@@ -2756,6 +2756,71 @@ SWIFT_PROTOCOL("_TtP16protocol_channel26IDODataExchangeOCInterface_")
 - (void)getActivityGpsData;
 @end
 
+/// 数据子选项项类型
+typedef SWIFT_ENUM(NSInteger, IDODataSubType, open) {
+  IDODataSubTypeNone = 0x0000,
+  IDODataSubTypeOverallResponseTimeOverall = 0x0101,
+  IDODataSubTypeDistanceTotalDistance = 0x0201,
+  IDODataSubTypeDistanceCurrentLapDistance = 0x0202,
+  IDODataSubTypeDistanceLastLapDistance = 0x0204,
+  IDODataSubTypeElevationElevation = 0x0301,
+  IDODataSubTypeElevationTotalAscent = 0x0302,
+  IDODataSubTypeElevationLapAscent = 0x0304,
+  IDODataSubTypeElevationLastLapAscent = 0x0308,
+  IDODataSubTypeElevationTotalDescent = 0x0310,
+  IDODataSubTypeElevationLapDescent = 0x0320,
+  IDODataSubTypeElevationLastLapDescent = 0x0340,
+  IDODataSubTypeElevationGrade = 0x0380,
+  IDODataSubTypePacePace = 0x0401,
+  IDODataSubTypePaceAveragePace = 0x0402,
+  IDODataSubTypePaceLapPace = 0x0404,
+  IDODataSubTypePaceLastLapPace = 0x0408,
+  IDODataSubTypePaceEffortPace = 0x0410,
+  IDODataSubTypePaceAverageEffortPace = 0x0420,
+  IDODataSubTypePaceLapEffortPace = 0x0440,
+  IDODataSubTypeSpeedCurrentSpeed = 0x0501,
+  IDODataSubTypeSpeedAverageSpeed = 0x0502,
+  IDODataSubTypeSpeedMaximumSpeed = 0x0504,
+  IDODataSubTypeSpeedLapSpeed = 0x0508,
+  IDODataSubTypeSpeedLastLapSpeed = 0x0510,
+  IDODataSubTypeSpeedVerticalSpeed = 0x0520,
+  IDODataSubTypeSpeedAverageVerticalSpeed = 0x0540,
+  IDODataSubTypeSpeedLapVerticalSpeed = 0x0580,
+  IDODataSubTypeHeartRateHeartRate = 0x0601,
+  IDODataSubTypeHeartRateHeartRateZone = 0x0602,
+  IDODataSubTypeHeartRateAverageHeartRate = 0x0604,
+  IDODataSubTypeHeartRateMaxHeartRate = 0x0608,
+  IDODataSubTypeHeartRateLapHeartRate = 0x0610,
+  IDODataSubTypeHeartRateLastLapHeartRate = 0x0620,
+  IDODataSubTypeHeartRateHeartRateReserve = 0x0640,
+  IDODataSubTypePowerPower = 0x0701,
+  IDODataSubTypePowerAveragePower = 0x0702,
+  IDODataSubTypePowerLapPower = 0x0704,
+  IDODataSubTypePower3sAveragePower = 0x0708,
+  IDODataSubTypePower10sAveragePower = 0x0710,
+  IDODataSubTypePower30sAveragePower = 0x0720,
+  IDODataSubTypeCadenceCadence = 0x0801,
+  IDODataSubTypeCadenceAverageCadence = 0x0802,
+  IDODataSubTypeCadenceLapCadence = 0x0804,
+  IDODataSubTypeCadenceLastLapCadence = 0x0808,
+  IDODataSubTypeRunningEconomyStrideLength = 0x0901,
+  IDODataSubTypeRunningEconomyAverageStrideLength = 0x0902,
+  IDODataSubTypeRunningEconomyLapStridoLength = 0x0904,
+  IDODataSubTypeRunningFitnessTrainingLoad = 0x0A01,
+  IDODataSubTypeRunningFitnessAerobicTrainingEffect = 0x0A02,
+  IDODataSubTypeRunningFitnessAnaerobicTrainingEfect = 0x0A04,
+  IDODataSubTypeRunningFitnessCalorie = 0x0A08,
+  IDODataSubTypeTimeActivityTime = 0x0B01,
+  IDODataSubTypeTimeTotalTime = 0x0B02,
+  IDODataSubTypeTimeCurrentTime = 0x0B04,
+  IDODataSubTypeTimeTimeToSunriseSunset = 0x0B08,
+  IDODataSubTypeTimeLapTime = 0x0B10,
+  IDODataSubTypeTimeLastLapTime = 0x0B20,
+  IDODataSubTypeOtherVO2max = 0x0C01,
+  IDODataSubTypeOtherBatteryLevel = 0x0C02,
+  IDODataSubTypeOtherBatteryLifeBasedOnSoc = 0x0C04,
+};
+
 
 /// Get data transfer configuration event number
 SWIFT_CLASS("_TtC16protocol_channel22IDODataTranConfigModel")
@@ -2800,6 +2865,35 @@ SWIFT_CLASS("_TtC16protocol_channel22IDODataTranConfigModel")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+/// 数据项类型
+typedef SWIFT_ENUM(NSInteger, IDODataType, open) {
+  IDODataTypeNone = 0x00,
+/// 总响应时间
+  IDODataTypeOverallResponseTime = 0x01,
+/// 距离类
+  IDODataTypeDistance = 0x02,
+/// 海拔类
+  IDODataTypeElevation = 0x03,
+/// 配速类
+  IDODataTypePace = 0x04,
+/// 速度类
+  IDODataTypeSpeed = 0x05,
+/// 心率类
+  IDODataTypeHeartRate = 0x06,
+/// 功率类
+  IDODataTypePower = 0x07,
+/// 步频类
+  IDODataTypeCadence = 0x08,
+/// 跑步类
+  IDODataTypeRunningEconomy = 0x09,
+/// 跑步健身类
+  IDODataTypeRunningFitness = 0x0A,
+/// 时间类
+  IDODataTypeTime = 0x0B,
+/// 其他类
+  IDODataTypeOther = 0x0C,
+};
 
 
 /// 设置时间
@@ -4607,6 +4701,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL setMenuListMain7;
 /// v3经期的历史数据下发
 @property (nonatomic, readonly) BOOL setHistoryMenstrual;
+/// 经期历史数据支持交互
+@property (nonatomic, readonly) BOOL supportHistoricalMenstruationExchange;
 /// v2经期提醒设置 增加易孕期和结束时间
 @property (nonatomic, readonly) BOOL setMenstrualAddPregnancy;
 /// realme wear 定制需求 不支持显示来电”延时三秒”开关
@@ -4877,6 +4973,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL syncHealthSyncV3ActivityEndTimeUseUtcMode;
 /// 支持数据同步时开启快速模式
 @property (nonatomic, readonly) BOOL syncSupportSetFastModeWhenSyncConfig;
+/// 支持获取app基本信息
+@property (nonatomic, readonly) BOOL getSupportAppBaseInformation;
 /// 闹钟个数
 @property (nonatomic, readonly) NSInteger alarmCount;
 /// 刷牙
@@ -4905,6 +5003,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL supportSetWeatherDataV2;
 /// 支持设置一键呼叫
 @property (nonatomic, readonly) BOOL supportSetOnetouchCalling;
+/// 支持设置运动中屏幕显示
+@property (nonatomic, readonly) BOOL supportOperateSetSportScreen;
 /// alexa 语音提醒增加对应的时钟传输字段
 @property (nonatomic, readonly) BOOL alexaReminderAddSecV3;
 /// alexa 简单控制命令
@@ -7385,6 +7485,108 @@ SWIFT_CLASS("_TtC16protocol_channel18IDOSportParamModel")
 @property (nonatomic, copy) NSArray<IDOSportModeSortParamModel *> * _Nonnull items;
 - (nonnull instancetype)initWithItems:(NSArray<IDOSportModeSortParamModel *> * _Nonnull)items OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel27IDOSportScreenDataItemModel")
+@interface IDOSportScreenDataItemModel : NSObject
+@property (nonatomic) enum IDODataType dataType;
+/// 当前选中的数据项子项，正常取值范围:0~15； 无效值：0XFF，表示没有选择任何子选项
+@property (nonatomic) enum IDODataSubType dataSubType;
+- (nonnull instancetype)initWithDataType:(enum IDODataType)dataType subType:(enum IDODataSubType)subType OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel22IDOSportScreenDataType")
+@interface IDOSportScreenDataType : NSObject
+@property (nonatomic) enum IDODataType dataType;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class IDOSportScreenItemReply;
+@class IDOSportScreenLayoutType;
+
+SWIFT_CLASS("_TtC16protocol_channel28IDOSportScreenInfoReplyModel")
+@interface IDOSportScreenInfoReplyModel : NSObject
+@property (nonatomic) NSInteger errCode;
+/// 0x01查询基础信息–支持的所有运动类型,支持的屏幕布局配置信息
+/// 0x02查询基础信息–运动类型支持的数据项和数据子项，最多支持同时查询23个
+/// 0x03查询详情信息, 最多支持2个同时查询
+/// 0x04编辑, 最多支持2个同时编辑
+@property (nonatomic) NSInteger operate;
+/// 最小数据项显示个数
+@property (nonatomic) NSInteger minDataNum;
+/// 最大数据项显示个数
+@property (nonatomic) NSInteger maxDataNum;
+/// 最小屏幕显示个数
+@property (nonatomic) NSInteger minScreenNum;
+/// 最大屏幕显示个数
+@property (nonatomic) NSInteger maxScreenNum;
+@property (nonatomic, copy) NSArray<IDOSportScreenItemReply *> * _Nullable sportItems;
+/// 获取屏幕信息，查基础使用，查详情返回NULL
+@property (nonatomic, copy) NSArray<IDOSportScreenLayoutType *> * _Nullable screenConfItems;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode operate:(NSInteger)operate minDataNum:(NSInteger)minDataNum maxDataNum:(NSInteger)maxDataNum minScreenNum:(NSInteger)minScreenNum maxScreenNum:(NSInteger)maxScreenNum sportItems:(NSArray<IDOSportScreenItemReply *> * _Nullable)sportItems screenConfItems:(NSArray<IDOSportScreenLayoutType *> * _Nullable)screenConfItems OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel23IDOSportScreenItemModel")
+@interface IDOSportScreenItemModel : NSObject
+@property (nonatomic, copy) NSArray<IDOSportScreenDataItemModel *> * _Nullable dataItem;
+- (nonnull instancetype)initWithDataItem:(NSArray<IDOSportScreenDataItemModel *> * _Nullable)dataItem OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel23IDOSportScreenItemReply")
+@interface IDOSportScreenItemReply : NSObject
+@property (nonatomic) NSInteger sportType;
+@property (nonatomic, copy) NSArray<IDOSportScreenItemModel *> * _Nullable screenItems;
+@property (nonatomic, copy) NSArray<IDOSportScreenDataType *> * _Nullable supportDataTypes;
+- (nonnull instancetype)initWithSportType:(NSInteger)sportType screenItems:(NSArray<IDOSportScreenItemModel *> * _Nullable)screenItems supportDataTypes:(NSArray<IDOSportScreenDataType *> * _Nullable)supportDataTypes OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel24IDOSportScreenLayoutType")
+@interface IDOSportScreenLayoutType : NSObject
+@property (nonatomic) NSInteger layoutType;
+@property (nonatomic) NSInteger style;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class IDOSportScreenSportItemModel;
+
+SWIFT_CLASS("_TtC16protocol_channel24IDOSportScreenParamModel")
+@interface IDOSportScreenParamModel : NSObject
+/// 0x01查询基础信息–支持的所有运动类型,支持的屏幕布局配置信息
+/// 0x02查询基础信息–运动类型支持的数据项和数据子项，最多支持同时查询23个
+/// 0x03查询详情信息, 最多支持2个同时查询
+/// 0x04编辑, 最多支持2个同时编辑
+@property (nonatomic) NSInteger operate;
+@property (nonatomic, copy) NSArray<IDOSportScreenSportItemModel *> * _Nullable sportItems;
+- (nonnull instancetype)initWithOperate:(NSInteger)operate sportItems:(NSArray<IDOSportScreenSportItemModel *> * _Nullable)sportItems OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel28IDOSportScreenSportItemModel")
+@interface IDOSportScreenSportItemModel : NSObject
+/// 运动类型
+@property (nonatomic) NSInteger sportType;
+@property (nonatomic, copy) NSArray<IDOSportScreenItemModel *> * _Nullable screenItems;
+- (nonnull instancetype)initWithSportType:(NSInteger)sportType screenItems:(NSArray<IDOSportScreenItemModel *> * _Nullable)screenItems OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

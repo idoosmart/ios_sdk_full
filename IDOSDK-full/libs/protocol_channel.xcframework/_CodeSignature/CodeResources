@@ -10,7 +10,7 @@
 		</data>
 		<key>ios-arm64/protocol_channel.framework/Headers/protocol_channel-Swift.h</key>
 		<data>
-		v4pZ/aOL9/KRfTeQ8Qh4D4UMpQQ=
+		Mumnb2u9wdrd/c3G/sx8dT9zkxQ=
 		</data>
 		<key>ios-arm64/protocol_channel.framework/Headers/protocol_channel-umbrella.h</key>
 		<data>
@@ -26,27 +26,27 @@
 		</data>
 		<key>ios-arm64/protocol_channel.framework/Modules/protocol_channel.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		4R1Usx1/igPJT6zGHE7GNlYTdqk=
+		oafehFtep6UBa/4bzFCQYHtU9YA=
 		</data>
 		<key>ios-arm64/protocol_channel.framework/Modules/protocol_channel.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		h0sIgFWgieDXXJ/6EMKtwGgrA2I=
+		ogLJ0D8LRwNdVCSwSnLUYC1pX2U=
 		</data>
 		<key>ios-arm64/protocol_channel.framework/Modules/protocol_channel.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		94cekPMrizZkfztHjyaDwDDwPrg=
+		lBaQN9zeimlZfnG5U0Pif5CvLz8=
 		</data>
 		<key>ios-arm64/protocol_channel.framework/Modules/protocol_channel.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		NuNMo0/GZD7sHte5/PCgUJU+jK4=
+		wg1OI8OFbQ5bxooydN9KhkZ07Jc=
 		</data>
 		<key>ios-arm64/protocol_channel.framework/Modules/protocol_channel.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		94cekPMrizZkfztHjyaDwDDwPrg=
+		lBaQN9zeimlZfnG5U0Pif5CvLz8=
 		</data>
 		<key>ios-arm64/protocol_channel.framework/protocol_channel</key>
 		<data>
-		wenw7lTOrPKeoyL+eX9xuCGbAJ0=
+		SdAxgj4GLQA9Oq5D9Nvpre41eeI=
 		</data>
 		<key>ios-arm64/protocol_channel.framework/protocol_channel.bundle/Info.plist</key>
 		<data>
@@ -74,11 +74,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			v4pZ/aOL9/KRfTeQ8Qh4D4UMpQQ=
+			Mumnb2u9wdrd/c3G/sx8dT9zkxQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			tTiW2kAw7tEbAZ0fh0UqBQJKgty3cla/KAK5cf2xJU0=
+			iXYnTxCWtu2ymxZaIBcVglbKgaibK6gpj7be7ujvPCw=
 			</data>
 		</dict>
 		<key>ios-arm64/protocol_channel.framework/Headers/protocol_channel-umbrella.h</key>
@@ -118,66 +118,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4R1Usx1/igPJT6zGHE7GNlYTdqk=
+			oafehFtep6UBa/4bzFCQYHtU9YA=
 			</data>
 			<key>hash2</key>
 			<data>
-			eSFsqYzS9jTPt0NCXhOozXbgLmTanWMdx7h+6GVoVbY=
+			jBXvhbZGWCcjRcw2UAiXBEg+LfIst6bBD/6/7PSOaXI=
 			</data>
 		</dict>
 		<key>ios-arm64/protocol_channel.framework/Modules/protocol_channel.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			h0sIgFWgieDXXJ/6EMKtwGgrA2I=
+			ogLJ0D8LRwNdVCSwSnLUYC1pX2U=
 			</data>
 			<key>hash2</key>
 			<data>
-			CcxMOqh8wu8c6Xf+bwZE7Dr0ORJ0ziCyDRewaaMYoH0=
+			xa9/iODm5vXElrqorJOINWvdpvbNU8tTfiUOE+RgKoA=
 			</data>
 		</dict>
 		<key>ios-arm64/protocol_channel.framework/Modules/protocol_channel.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			94cekPMrizZkfztHjyaDwDDwPrg=
+			lBaQN9zeimlZfnG5U0Pif5CvLz8=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ry9Rg6CFWPFfzAklitPu5VH2cNP/KbP6FviHe7CP7xM=
+			Gtv7RdEIX6Ru/y/KuAO4fFrf98S6iRQhcMv8wDRuJdA=
 			</data>
 		</dict>
 		<key>ios-arm64/protocol_channel.framework/Modules/protocol_channel.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NuNMo0/GZD7sHte5/PCgUJU+jK4=
+			wg1OI8OFbQ5bxooydN9KhkZ07Jc=
 			</data>
 			<key>hash2</key>
 			<data>
-			csF1XdKBP5yWRFY9it6rbVlVWLEAK9uuVxWAjEXekYY=
+			7C5cNKsDcfJJleG5RiKpyNu4rLcoRsc5QC9Cp2zJIhE=
 			</data>
 		</dict>
 		<key>ios-arm64/protocol_channel.framework/Modules/protocol_channel.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			94cekPMrizZkfztHjyaDwDDwPrg=
+			lBaQN9zeimlZfnG5U0Pif5CvLz8=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ry9Rg6CFWPFfzAklitPu5VH2cNP/KbP6FviHe7CP7xM=
+			Gtv7RdEIX6Ru/y/KuAO4fFrf98S6iRQhcMv8wDRuJdA=
 			</data>
 		</dict>
 		<key>ios-arm64/protocol_channel.framework/protocol_channel</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wenw7lTOrPKeoyL+eX9xuCGbAJ0=
+			SdAxgj4GLQA9Oq5D9Nvpre41eeI=
 			</data>
 			<key>hash2</key>
 			<data>
-			1PDaIg2HRAipW1qqfdElgAR+Bl8ZPfUbs/b2G2Q3WAc=
+			KX02F9fQ/S+8B1xPXrY7jQw6QXl/lXKpDaxQl70QRQg=
 			</data>
 		</dict>
 		<key>ios-arm64/protocol_channel.framework/protocol_channel.bundle/Info.plist</key>

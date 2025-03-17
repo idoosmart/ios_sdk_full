@@ -412,6 +412,8 @@ typedef enum
     VBUS_EVT_FUNC_V3_CALENDEAR_REMINDER                    = 5088,  //日历提醒
     VBUS_EVT_FUNC_V3_CONFIG_MES_LIST                       = 5089,  //配置默认的消息应用列表
     VBUS_EVT_FUNC_V3_SET_ICE                               = 5090,  //设置紧急联系人（ECI）方式
+    VBUS_EVT_FUNC_V3_APP_BASE_INFORMATION                  = 5095,  //protocol_v3_app_base_information
+    VBUS_EVT_FUNC_V3_SET_SPORT_SCREEN                      = 5097,  //运动中屏幕显示设置 protocol_v3_set_sport_screen
 
 
 	VBUS_EVT_FUNC_MAKE_PHOTO                               = 5500,	//制作照片

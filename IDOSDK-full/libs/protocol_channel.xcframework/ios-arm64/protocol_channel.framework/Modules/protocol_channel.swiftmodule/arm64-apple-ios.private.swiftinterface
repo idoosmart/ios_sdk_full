@@ -1238,6 +1238,24 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
+  public struct getSportScreenDetailInfo : protocol_channel.IDOCmdProtocol {
+    public init(_ param: [protocol_channel.IDOSportScreenSportItemModel])
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOSportScreenInfoReplyModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOSportScreenInfoReplyModel
+  }
+  public struct getSportScreenBaseInfo : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOSportScreenInfoReplyModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOSportScreenInfoReplyModel
+  }
+  public struct setSportScreen : protocol_channel.IDOCmdProtocol {
+    public init(_ param: [protocol_channel.IDOSportScreenSportItemModel])
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Cmdoc : ObjectiveC.NSObject {
   @objc @discardableResult
@@ -3410,6 +3428,7 @@ public protocol IDOCmdProtocol {
   @objc var setWatchPhotoPositionMove: Swift.Bool { get }
   @objc var setMenuListMain7: Swift.Bool { get }
   @objc var setHistoryMenstrual: Swift.Bool { get }
+  @objc var supportHistoricalMenstruationExchange: Swift.Bool { get }
   @objc var setMenstrualAddPregnancy: Swift.Bool { get }
   @objc var setNotSurportCalling3SDelay: Swift.Bool { get }
   @objc var setSetFitnessGuidance: Swift.Bool { get }
@@ -3545,6 +3564,7 @@ public protocol IDOCmdProtocol {
   @objc var syncExchangeDataReplyAddRealTimeSpeedPaceV3: Swift.Bool { get }
   @objc var syncHealthSyncV3ActivityEndTimeUseUtcMode: Swift.Bool { get }
   @objc var syncSupportSetFastModeWhenSyncConfig: Swift.Bool { get }
+  @objc var getSupportAppBaseInformation: Swift.Bool { get }
   @objc var alarmCount: Swift.Int { get }
   @objc var alarmBrushTeeth: Swift.Bool { get }
   @objc var alarmDating: Swift.Bool { get }
@@ -3559,6 +3579,7 @@ public protocol IDOCmdProtocol {
   @objc var supportSetAntilost: Swift.Bool { get }
   @objc var supportSetWeatherDataV2: Swift.Bool { get }
   @objc var supportSetOnetouchCalling: Swift.Bool { get }
+  @objc var supportOperateSetSportScreen: Swift.Bool { get }
   @objc var alexaReminderAddSecV3: Swift.Bool { get }
   @objc var alexaSetEasyOperateV3: Swift.Bool { get }
   @objc var alexaSetGetAlexaAlarmV3: Swift.Bool { get }
@@ -5003,6 +5024,165 @@ public protocol IDOCmdProtocol {
     get
   }
 }
+@objc @objcMembers public class IDOSportScreenParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var sportItems: [protocol_channel.IDOSportScreenSportItemModel]?
+  @objc public init(operate: Swift.Int, sportItems: [protocol_channel.IDOSportScreenSportItemModel]?)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOSportScreenSportItemModel : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var sportType: Swift.Int
+  @objc public var screenItems: [protocol_channel.IDOSportScreenItemModel]?
+  @objc public init(sportType: Swift.Int, screenItems: [protocol_channel.IDOSportScreenItemModel]? = nil)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOSportScreenItemModel : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var dataItem: [protocol_channel.IDOSportScreenDataItemModel]?
+  @objc public init(dataItem: [protocol_channel.IDOSportScreenDataItemModel]?)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOSportScreenDataItemModel : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var dataType: protocol_channel.IDODataType
+  @objc public var dataSubType: protocol_channel.IDODataSubType
+  @objc public init(dataType: protocol_channel.IDODataType, subType: protocol_channel.IDODataSubType)
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+@objc @objcMembers public class IDOSportScreenInfoReplyModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var errCode: Swift.Int
+  @objc public var operate: Swift.Int
+  @objc public var minDataNum: Swift.Int
+  @objc public var maxDataNum: Swift.Int
+  @objc public var minScreenNum: Swift.Int
+  @objc public var maxScreenNum: Swift.Int
+  @objc public var sportItems: [protocol_channel.IDOSportScreenItemReply]?
+  @objc public var screenConfItems: [protocol_channel.IDOSportScreenLayoutType]?
+  @objc public init(errCode: Swift.Int, operate: Swift.Int, minDataNum: Swift.Int, maxDataNum: Swift.Int, minScreenNum: Swift.Int, maxScreenNum: Swift.Int, sportItems: [protocol_channel.IDOSportScreenItemReply]? = nil, screenConfItems: [protocol_channel.IDOSportScreenLayoutType]? = nil)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOSportScreenItemReply : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var sportType: Swift.Int
+  @objc public var screenItems: [protocol_channel.IDOSportScreenItemModel]?
+  @objc public var supportDataTypes: [protocol_channel.IDOSportScreenDataType]?
+  @objc public init(sportType: Swift.Int, screenItems: [protocol_channel.IDOSportScreenItemModel]? = nil, supportDataTypes: [protocol_channel.IDOSportScreenDataType]? = nil)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOSportScreenDataType : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var dataType: protocol_channel.IDODataType
+  public var dataValue: [protocol_channel.IDODataSubType]
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class IDOSportScreenLayoutType : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var layoutType: Swift.Int
+  @objc public var style: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public enum IDODataType : Swift.Int, Swift.Codable {
+  case none = 0x00
+  case overallResponseTime = 0x01
+  case distance = 0x02
+  case elevation = 0x03
+  case pace = 0x04
+  case speed = 0x05
+  case heartRate = 0x06
+  case power = 0x07
+  case cadence = 0x08
+  case runningEconomy = 0x09
+  case runningFitness = 0x0A
+  case time = 0x0B
+  case other = 0x0C
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum IDODataSubType : Swift.Int, Swift.Codable {
+  case none = 0x0000
+  case overallResponseTimeOverall = 0x0101
+  case distanceTotalDistance = 0x0201
+  case distanceCurrentLapDistance = 0x0202
+  case distanceLastLapDistance = 0x0204
+  case elevationElevation = 0x0301
+  case elevationTotalAscent = 0x0302
+  case elevationLapAscent = 0x0304
+  case elevationLastLapAscent = 0x0308
+  case elevationTotalDescent = 0x0310
+  case elevationLapDescent = 0x0320
+  case elevationLastLapDescent = 0x0340
+  case elevationGrade = 0x0380
+  case pacePace = 0x0401
+  case paceAveragePace = 0x0402
+  case paceLapPace = 0x0404
+  case paceLastLapPace = 0x0408
+  case paceEffortPace = 0x0410
+  case paceAverageEffortPace = 0x0420
+  case paceLapEffortPace = 0x0440
+  case speedCurrentSpeed = 0x0501
+  case speedAverageSpeed = 0x0502
+  case speedMaximumSpeed = 0x0504
+  case speedLapSpeed = 0x0508
+  case speedLastLapSpeed = 0x0510
+  case speedVerticalSpeed = 0x0520
+  case speedAverageVerticalSpeed = 0x0540
+  case speedLapVerticalSpeed = 0x0580
+  case heartRateHeartRate = 0x0601
+  case heartRateHeartRateZone = 0x0602
+  case heartRateAverageHeartRate = 0x0604
+  case heartRateMaxHeartRate = 0x0608
+  case heartRateLapHeartRate = 0x0610
+  case heartRateLastLapHeartRate = 0x0620
+  case heartRateHeartRateReserve = 0x0640
+  case powerPower = 0x0701
+  case powerAveragePower = 0x0702
+  case powerLapPower = 0x0704
+  case power3sAveragePower = 0x0708
+  case power10sAveragePower = 0x0710
+  case power30sAveragePower = 0x0720
+  case cadenceCadence = 0x0801
+  case cadenceAverageCadence = 0x0802
+  case cadenceLapCadence = 0x0804
+  case cadenceLastLapCadence = 0x0808
+  case runningEconomyStrideLength = 0x0901
+  case runningEconomyAverageStrideLength = 0x0902
+  case runningEconomyLapStridoLength = 0x0904
+  case runningFitnessTrainingLoad = 0x0A01
+  case runningFitnessAerobicTrainingEffect = 0x0A02
+  case runningFitnessAnaerobicTrainingEfect = 0x0A04
+  case runningFitnessCalorie = 0x0A08
+  case timeActivityTime = 0x0B01
+  case timeTotalTime = 0x0B02
+  case timeCurrentTime = 0x0B04
+  case timeTimeToSunriseSunset = 0x0B08
+  case timeLapTime = 0x0B10
+  case timeLastLapTime = 0x0B20
+  case otherVO2max = 0x0C01
+  case otherBatteryLevel = 0x0C02
+  case otherBatteryLifeBasedOnSoc = 0x0C04
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc @objcMembers public class IDOStepGoalModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var step: Swift.Int
   @objc public var stepWeek: Swift.Int
@@ -5866,6 +6046,12 @@ extension protocol_channel.IDONoticeMsgAllSwitchState : Swift.RawRepresentable {
 extension protocol_channel.IDOSportType : Swift.Equatable {}
 extension protocol_channel.IDOSportType : Swift.Hashable {}
 extension protocol_channel.IDOSportType : Swift.RawRepresentable {}
+extension protocol_channel.IDODataType : Swift.Equatable {}
+extension protocol_channel.IDODataType : Swift.Hashable {}
+extension protocol_channel.IDODataType : Swift.RawRepresentable {}
+extension protocol_channel.IDODataSubType : Swift.Equatable {}
+extension protocol_channel.IDODataSubType : Swift.Hashable {}
+extension protocol_channel.IDODataSubType : Swift.RawRepresentable {}
 extension protocol_channel.IDOSyncDataType : Swift.Equatable {}
 extension protocol_channel.IDOSyncDataType : Swift.Hashable {}
 extension protocol_channel.IDOSyncDataType : Swift.RawRepresentable {}

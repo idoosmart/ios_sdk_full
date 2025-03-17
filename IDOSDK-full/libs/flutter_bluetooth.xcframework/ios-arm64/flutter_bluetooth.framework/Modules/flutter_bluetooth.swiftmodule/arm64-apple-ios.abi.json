@@ -37643,35 +37643,42 @@
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 660,
+      "offset": 688,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 714,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "Dictionary",
-      "offset": 735,
+      "offset": 789,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "Array",
-      "offset": 823,
+      "offset": 877,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "Array",
-      "offset": 1143,
+      "offset": 1192,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "FloatLiteral",
-      "offset": 1296,
+      "offset": 1345,
       "length": 4,
       "value": "0.01"
     },
@@ -37860,21 +37867,21 @@
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Model\/Device.swift",
       "kind": "StringLiteral",
-      "offset": 867,
+      "offset": 890,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Model\/Device.swift",
       "kind": "StringLiteral",
-      "offset": 900,
+      "offset": 923,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Model\/Device.swift",
       "kind": "Array",
-      "offset": 937,
+      "offset": 960,
       "length": 2,
       "value": "[]"
     },

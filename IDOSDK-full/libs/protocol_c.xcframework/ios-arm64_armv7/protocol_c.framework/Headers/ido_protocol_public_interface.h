@@ -815,12 +815,13 @@ extern int mkWatchDialFile(char *file_path,char *save_file_name,int format);
 extern int mkWatchDialFileCompression(char *file_path,char *save_file_name,uint8_t format,uint16_t block_size);
 
 /**
- * @brief 制作(EPO.DAT)文件
+ * @brief 制作(EPO.DAT/.pgl)文件
  * @param file_path 素材路径
- * @param save_file_name 输出文件名,一般为EPO.DAT
- * @return SUCCESS(0),成功
+ * @param save_file_name 输出文件名,一般为EPO.DAT/.pgl
+ * @param file_count 需要合并的文件个数，如果跟实际文件夹内个数不一致就报错,错误码ERROR_INVALID_PARAM(7)
+ * @return SUCCESS(0),成功,ERROR_INVALID_PARAM(7),EPO文件过期ERROR_INVAILD_FILE (27)
  * */
-extern int mkEpoFile(char *file_path,char *save_file_name);
+extern int mkEpoFile(char *file_path,char *save_file_name,int file_count);
 
 /**
  * @brief 图片转换格式 png->bmp
