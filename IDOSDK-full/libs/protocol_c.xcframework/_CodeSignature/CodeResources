@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>ios-arm64_armv7/protocol_c.framework/.DS_Store</key>
-		<data>
-		mjrzGXAf/dqpq64lvMnYv+NQ8lY=
-		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/Headers/ido_protocol_public_interface.h</key>
 		<data>
 		ljmkx2rWoRbVX2zCdmz3G9rIm/0=
@@ -34,7 +30,7 @@
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/protocol_c</key>
 		<data>
-		ihwwCy5oWKQNyOpXUHlVLchLBtI=
+		Y7H9AHhns8YBWqyUEsh61sVm7zE=
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/protocol_c.bundle/Info.plist</key>
 		<data>
@@ -117,11 +113,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ihwwCy5oWKQNyOpXUHlVLchLBtI=
+			Y7H9AHhns8YBWqyUEsh61sVm7zE=
 			</data>
 			<key>hash2</key>
 			<data>
-			zC7zUuMv1uLF7fRf9hnwivUMtPeSatp+9xljk1+oxr8=
+			/4Jkqnxv/ScKkILUmkvVu1jT8/h4j80EGGr9Z3Q9FDQ=
 			</data>
 		</dict>
 		<key>ios-arm64_armv7/protocol_c.framework/protocol_c.bundle/Info.plist</key>

@@ -1653,6 +1653,19 @@ SWIFT_CLASS("_TtC16protocol_channel19IDOAppIconItemModel")
 
 
 
+SWIFT_CLASS("_TtC16protocol_channel15IDOAppInfoModel")
+@interface IDOAppInfoModel : NSObject
+/// user name
+@property (nonatomic, copy) NSString * _Nonnull userName;
+/// 1：发送
+@property (nonatomic) NSInteger operate;
+- (nonnull instancetype)initWithUserName:(NSString * _Nonnull)userName operate:(NSInteger)operate OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 /// app 交换运动数据
 /// Generated class from Pigeon that represents data sent in messages.
 SWIFT_CLASS("_TtC16protocol_channel22IDOAppIngExchangeModel")

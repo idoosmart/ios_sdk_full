@@ -1256,6 +1256,12 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
+  public struct setAppBaseInfo : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOAppInfoModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Cmdoc : ObjectiveC.NSObject {
   @objc @discardableResult
@@ -2511,6 +2517,15 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
     }
   }
   @objc public init(appName: Swift.String, size: Swift.Int, version: Swift.String)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOAppInfoModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var userName: Swift.String
+  @objc public var operate: Swift.Int
+  @objc public init(userName: Swift.String, operate: Swift.Int = 1)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
