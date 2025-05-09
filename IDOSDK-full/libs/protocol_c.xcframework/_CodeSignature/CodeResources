@@ -18,7 +18,7 @@
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/Headers/vbus_evt_app.h</key>
 		<data>
-		8oghE8T4TGgRniqlIWNxr/VKWUE=
+		quzo/eeW8LVpZmfvlijd2B7KnaA=
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/Info.plist</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/protocol_c</key>
 		<data>
-		Y7H9AHhns8YBWqyUEsh61sVm7zE=
+		mBgl8misaHlYEAFzfn4nbY61sMY=
 		</data>
 		<key>ios-arm64_armv7/protocol_c.framework/protocol_c.bundle/Info.plist</key>
 		<data>
@@ -80,11 +80,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8oghE8T4TGgRniqlIWNxr/VKWUE=
+			quzo/eeW8LVpZmfvlijd2B7KnaA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ET1qwRXoFMYi6C5BCATi9CdD889gkTUnjmN8Cax0XJI=
+			bszf+p1fU7IyTh8VWh6pnu46JyUhxQfQ2hXkWsGR5VA=
 			</data>
 		</dict>
 		<key>ios-arm64_armv7/protocol_c.framework/Info.plist</key>
@@ -113,11 +113,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y7H9AHhns8YBWqyUEsh61sVm7zE=
+			mBgl8misaHlYEAFzfn4nbY61sMY=
 			</data>
 			<key>hash2</key>
 			<data>
-			/4Jkqnxv/ScKkILUmkvVu1jT8/h4j80EGGr9Z3Q9FDQ=
+			l+2OfKREkmfQXksfJOIOADVq21j8Kv8QvSSlclbM4fk=
 			</data>
 		</dict>
 		<key>ios-arm64_armv7/protocol_c.framework/protocol_c.bundle/Info.plist</key>

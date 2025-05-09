@@ -135,6 +135,8 @@ typedef enum
     VBUS_EVT_APP_SET_VOICE_ASSISTANT_ON_OFF          = 193,    //手机app通过这个命令开关，设置手机语音助手开关  struct protocol_set_voice_assistant_on_off
     VBUS_EVT_APP_SET_NOTICE_CALL_QUICK_REPLY_ON_OFF  = 194,    //手机app通过这个命令开关，设置来电快捷回复开关  struct protocol_set_call_quick_reply_on_off
     VBUS_EVT_APP_SET_VERSION_INFORMATION             = 195,    //手机app通过这个命令开关，设置固件版本信息     struct protocol_set_version_information
+    VBUS_EVT_APP_SET_DURING_EXERCISE                 = 196,     //支持运动中设置`
+    VBUS_EVT_APP_SET_HEART_RATE_ZONE                 = 199,    //支持简单心率区间设置
     
 	VBUS_EVT_APP_BIND_START                          = 200,    //绑定 struct protocol_start_bind,struct protocol_start_bind_reply
 	VBUS_EVT_APP_BIND_REMOVE                         = 201,	   //解绑
@@ -194,7 +196,11 @@ typedef enum
     VBUS_EVT_APP_GET_HEART_RATE_MODE_SMART           = 343,    //APP智能心率模式获取
     VBUS_EVT_APP_GET_SPO2                            = 344,    //获取血氧开关
     VBUS_EVT_APP_GET_PRESSURE                        = 345,    //获取压力开关
-    
+    VBUS_EVT_APP_GET_LEFT_RIGHT_WEAR_SETTINGS        = 346,    //获取左右手佩戴设置struct protocol_head head; struct protocol_get_left_right_hand_wear_setting_reply
+    VBUS_EVT_APP_GET_SETTINGS_DURING_EXERCISE        = 347,    //支持获取获取运动中设置
+    VBUS_EVT_APP_GET_HEART_RATE_ZONE                 = 348,    //支持获取简单心率区间设置 protocol_get_heart_rate_zone
+
+
     VBUS_EVT_CHECK_REBOOT                            = 350,	   //检查重启状态,非协议,用于内部状态处理
 	VBUS_EVT_APP_GET_UNREAD_APP_ONOFF                = 351,    //获取获取固件红点提示开关状态   struct protocol_head ,struct protocol_unread_app_reminder
 	VBUS_EVT_APP_GET_SET_BT_NOTICE                   = 352,    //查询bt配对开关、连接、a2dp连接、hfp连接状态(仅支持带bt蓝牙的设备)   struct protocol_head ,struct protocol_set_bt_notice
@@ -414,6 +420,7 @@ typedef enum
     VBUS_EVT_FUNC_V3_SET_ICE                               = 5090,  //设置紧急联系人（ECI）方式
     VBUS_EVT_FUNC_V3_APP_BASE_INFORMATION                  = 5095,  //protocol_v3_app_base_information
     VBUS_EVT_FUNC_V3_SET_SPORT_SCREEN                      = 5097,  //运动中屏幕显示设置 protocol_v3_set_sport_screen
+    VBUS_EVT_FUNC_V3_SET_SPORT_REMIND                      = 5099,  //运动中提醒设置
 
 
 	VBUS_EVT_FUNC_MAKE_PHOTO                               = 5500,	//制作照片

@@ -46,7 +46,7 @@
 		</data>
 		<key>ios-arm64/native_channel.framework/Info.plist</key>
 		<data>
-		3Zjj2E33hc+IgYzSNqJIM6t8CI4=
+		S+2Sqbqo1Y3IbD4Va7h9T7YSaVc=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/module.modulemap</key>
 		<data>
@@ -54,11 +54,11 @@
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		mg1UI7IL1fYTWPwV0G/kXMjnz18=
+		/NNvvrqhwSK62HCnnUZ0DXmr3SY=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		kVj+Kpd4+5KOlIWUycmF714y5Po=
+		1AkleoQTqLsaisIQqRYCqoEcokI=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>ios-arm64/native_channel.framework/native_channel</key>
 		<data>
-		8Fhu1louAE6tVASSubsWy9rtTFo=
+		S0BG+noHj0gj6etVVmljEpQVQl0=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -193,11 +193,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3Zjj2E33hc+IgYzSNqJIM6t8CI4=
+			S+2Sqbqo1Y3IbD4Va7h9T7YSaVc=
 			</data>
 			<key>hash2</key>
 			<data>
-			+7AmxjitUNUI6eKTncwiAm7u3uovW6gBRoWl9m46oGA=
+			ZFa4gzTxEf+kKwQvNQi5vlUzx4uuzYWSyr1HMomKXwA=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/module.modulemap</key>
@@ -215,22 +215,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mg1UI7IL1fYTWPwV0G/kXMjnz18=
+			/NNvvrqhwSK62HCnnUZ0DXmr3SY=
 			</data>
 			<key>hash2</key>
 			<data>
-			5/f0kqSDa5LcSUWRhw8SPO2pdOjkXAeeC3O6H9NVWP0=
+			bYJXDdCmZHlxtQZAo+YuEuOhsS+JYYI4Y6Rz2GxR7ko=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kVj+Kpd4+5KOlIWUycmF714y5Po=
+			1AkleoQTqLsaisIQqRYCqoEcokI=
 			</data>
 			<key>hash2</key>
 			<data>
-			HPZNQvlnLb5AbZH88U7OzeToTFu/dAa1CNWJaePnsOE=
+			2vzgL5IiKyhQ1dyLUiirOZfWov8/t2CFB4+Ktrz7roI=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -270,11 +270,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8Fhu1louAE6tVASSubsWy9rtTFo=
+			S0BG+noHj0gj6etVVmljEpQVQl0=
 			</data>
 			<key>hash2</key>
 			<data>
-			vMRbdqiepZTxcAZ7K2nLbAcioA/xpQZiL92C8XKuzQU=
+			KMxKEvCJ2njNLY+eEM2LFB1pSXjx7pYus8WgHuqowfQ=
 			</data>
 		</dict>
 	</dict>

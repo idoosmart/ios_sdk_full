@@ -483,6 +483,14 @@ enum IDOCmdPriority : NSInteger;
 @class IDOAppletControlModel;
 @class IDOAppletInfoModel;
 @class IDOAlgFileModel;
+@class IDOSportScreenSportItemModel;
+@class IDOSportScreenInfoReplyModel;
+@class IDOAppInfoModel;
+@class IDOSettingsDuringExerciseModel;
+@class IDOLeftRightWearModel;
+@class IDOSportingRemindSettingReplyModel;
+@class IDOSportingRemindSettingModel;
+@class IDOSimpleHeartRateZoneSettingModel;
 
 SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 @interface Cmdoc : NSObject
@@ -933,7 +941,48 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 请求固件算法文件信息（ACC/GPS）
 /// Request firmware algorithm file information (ACC/GPS)
 + (id <IDOCancellable> _Nonnull)rquestAlgFile:(NSInteger)type :(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
+/// 获取运动中屏幕显示详情信息
++ (id <IDOCancellable> _Nonnull)getSportScreenDetailInfo:(NSArray<IDOSportScreenSportItemModel *> * _Nonnull)sportItems completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOSportScreenInfoReplyModel * _Nullable))completion;
+/// 获取运动中屏幕显示基础信息
++ (id <IDOCancellable> _Nonnull)getSportScreenBaseInfo:(void (^ _Nonnull)(CmdError * _Nonnull, IDOSportScreenInfoReplyModel * _Nullable))completion;
+/// 设置运动中屏幕显示
++ (id <IDOCancellable> _Nonnull)setSportScreen:(NSArray<IDOSportScreenSportItemModel *> * _Nonnull)sportItems completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
+/// 设置APP基本信息
++ (id <IDOCancellable> _Nonnull)setAppBaseInfo:(IDOAppInfoModel * _Nonnull)appInfoModel completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
+/// 运动中设置提示音开关
++ (id <IDOCancellable> _Nonnull)setDuringExercise:(IDOSettingsDuringExerciseModel * _Nonnull)duringExerciseModel completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
+/// 获取左右手佩戴设置
++ (id <IDOCancellable> _Nonnull)getLeftRightWearSettings:(void (^ _Nonnull)(CmdError * _Nonnull, IDOLeftRightWearModel * _Nullable))completion;
+/// 获取运动中设置提示音开关
++ (id <IDOCancellable> _Nonnull)getSettingsDuringExercise:(void (^ _Nonnull)(CmdError * _Nonnull, IDOSettingsDuringExerciseModel * _Nullable))completion;
+/// 查询运动中提醒
++ (id <IDOCancellable> _Nonnull)getSportingRemindSetting:(NSArray<NSNumber *> * _Nonnull)sportTypes completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOSportingRemindSettingReplyModel * _Nullable))completion;
+/// 设置运动中提醒项
++ (id <IDOCancellable> _Nonnull)setSportingRemindSetting:(NSArray<IDOSportingRemindSettingModel *> * _Nonnull)settingItems completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
+/// 简单心率区间设置
++ (id <IDOCancellable> _Nonnull)setSimpleHeartRateZone:(IDOSimpleHeartRateZoneSettingModel * _Nonnull)model completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
+/// 查询简单心率区间
++ (id <IDOCancellable> _Nonnull)getSimpleHeartRateZone:(void (^ _Nonnull)(CmdError * _Nonnull, IDOSimpleHeartRateZoneSettingModel * _Nullable))completion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel17CommonRangeRemind")
+@interface CommonRangeRemind : NSObject
+@property (nonatomic) BOOL isOpen;
+@property (nonatomic) NSInteger maxThreshold;
+@property (nonatomic) NSInteger minThreshold;
+- (nonnull instancetype)initWithIsOpen:(BOOL)isOpen maxThreshold:(NSInteger)maxThreshold minThreshold:(NSInteger)minThreshold OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel14DistanceRemind")
+@interface DistanceRemind : NSObject
+- (nonnull instancetype)initWithIsOpen:(BOOL)isOpen isMetric:(BOOL)isMetric goalValOrg:(NSInteger)goalValOrg OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -4392,6 +4441,10 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL sportTrailRunning;
 /// 匹克球
 @property (nonatomic, readonly) BOOL sportPickleBall;
+/// 滑板
+@property (nonatomic, readonly) BOOL sportSnowboard;
+/// 越野滑板
+@property (nonatomic, readonly) BOOL sportCrossCountrySkiing;
 /// 获取实时数据
 @property (nonatomic, readonly) BOOL getRealtimeData;
 /// 获取v3语言库
@@ -4610,6 +4663,22 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL getSupportDeviceOperateAlgFile;
 /// 支持获取运动记录的显示项配置
 @property (nonatomic, readonly) BOOL getSupportSportRecordShowConfig;
+/// 支持获取左右手佩戴设置
+@property (nonatomic, readonly) BOOL getLeftRightHandWearSettings;
+/// 支持支持运动中设置提示音
+@property (nonatomic, readonly) BOOL supportSettingsDuringExercise;
+/// 支持身高单位设置(厘米/英寸)
+@property (nonatomic, readonly) BOOL supportHeightLengthUnit;
+/// 支持运动中提醒设置
+@property (nonatomic, readonly) BOOL supportSportingRemindSetting;
+/// 支持步幅长度的单位设置(公制/英制)
+@property (nonatomic, readonly) BOOL supportSetStrideLengthUnit;
+/// 支持简单心率区间
+@property (nonatomic, readonly) BOOL supportSimpleHrZoneSetting;
+/// 开启功能表则关闭智能心率过低提醒
+@property (nonatomic, readonly) BOOL notSupportSmartLowHeartReatRemind;
+/// 开启功能表则关闭智能心率过高提醒
+@property (nonatomic, readonly) BOOL notSupportSmartHighHeartReatRemind;
 /// 设置获取消息应用状态使用version0x20版本下发
 @property (nonatomic, readonly) BOOL setNoticeMessageStateUseVersion0x20;
 /// 科学睡眠开关
@@ -5828,6 +5897,17 @@ typedef SWIFT_ENUM(NSInteger, IDOLanguageType, open) {
   IDOLanguageTypePersian = 34,
   IDOLanguageTypeNorwegian = 35,
 };
+
+
+SWIFT_CLASS("_TtC16protocol_channel21IDOLeftRightWearModel")
+@interface IDOLeftRightWearModel : NSObject
+/// 0x00 左手，0x01 右手
+@property (nonatomic) NSInteger handType;
+- (nonnull instancetype)initWithHandType:(NSInteger)handType OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 /// Get Real-time Data event number
@@ -7180,6 +7260,17 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOSetNoticeStatusModel")
 @end
 
 
+SWIFT_CLASS("_TtC16protocol_channel30IDOSettingsDuringExerciseModel")
+@interface IDOSettingsDuringExerciseModel : NSObject
+/// 0x55关， 0xAA开
+@property (nonatomic) NSInteger notificationSwitch;
+- (nonnull instancetype)initWithNotificationSwitch:(NSInteger)notificationSwitch OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 /// Set shortcut
 SWIFT_CLASS("_TtC16protocol_channel21IDOShortcutParamModel")
 @interface IDOShortcutParamModel : NSObject
@@ -7190,6 +7281,15 @@ SWIFT_CLASS("_TtC16protocol_channel21IDOShortcutParamModel")
 /// 3: Quick access to do not disturb
 @property (nonatomic) NSInteger mode;
 - (nonnull instancetype)initWithMode:(NSInteger)mode OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel34IDOSimpleHeartRateZoneSettingModel")
+@interface IDOSimpleHeartRateZoneSettingModel : NSObject
+- (nonnull instancetype)initWithMaxHrValue:(NSInteger)maxHrValue OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -7577,7 +7677,6 @@ SWIFT_CLASS("_TtC16protocol_channel24IDOSportScreenLayoutType")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class IDOSportScreenSportItemModel;
 
 SWIFT_CLASS("_TtC16protocol_channel24IDOSportScreenParamModel")
 @interface IDOSportScreenParamModel : NSObject
@@ -7994,6 +8093,45 @@ typedef SWIFT_ENUM(NSInteger, IDOSportType, open) {
 /// 美式橄榄球
   IDOSportTypeAmericanFootball = 255,
 };
+
+@class PaceRemind;
+
+SWIFT_CLASS("_TtC16protocol_channel29IDOSportingRemindSettingModel")
+@interface IDOSportingRemindSettingModel : NSObject
+@property (nonatomic) NSInteger sportType;
+@property (nonatomic, strong) DistanceRemind * _Nonnull distanceRemind;
+@property (nonatomic, strong) CommonRangeRemind * _Nonnull heartRateRemind;
+@property (nonatomic, strong) PaceRemind * _Nonnull paceRemind;
+@property (nonatomic, strong) CommonRangeRemind * _Nonnull stepFreqRemind;
+- (nonnull instancetype)initWithSportType:(NSInteger)sportType distanceRemind:(DistanceRemind * _Nonnull)distanceRemind heartRateRemind:(CommonRangeRemind * _Nonnull)heartRateRemind paceRemind:(PaceRemind * _Nonnull)paceRemind stepFreqRemind:(CommonRangeRemind * _Nonnull)stepFreqRemind OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel34IDOSportingRemindSettingParamModel")
+@interface IDOSportingRemindSettingParamModel : NSObject
+/// 操作类型常量
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger SET;)
++ (NSInteger)SET SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger QUERY;)
++ (NSInteger)QUERY SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, copy) NSArray<IDOSportingRemindSettingModel *> * _Nullable settingItems;
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nullable sportTypes;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel34IDOSportingRemindSettingReplyModel")
+@interface IDOSportingRemindSettingReplyModel : NSObject
+@property (nonatomic) NSInteger errCode;
+@property (nonatomic, copy) NSArray<IDOSportingRemindSettingModel *> * _Nullable settingItems;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode settingItems:(NSArray<IDOSportingRemindSettingModel *> * _Nullable)settingItems OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 enum IDOSppStateType : NSInteger;
 
@@ -9117,7 +9255,10 @@ SWIFT_CLASS("_TtC16protocol_channel17IDOUnitParamModel")
 /// 2: miles
 /// Requires support from the device firmware <code>setSupportWalkRunUnit</code>
 @property (nonatomic) NSInteger walkingRunningUnit;
+/// //身高单位 0：无效，1：cm，2：inch 英寸；功能表：``
+@property (nonatomic) NSInteger heightUnit;
 - (nonnull instancetype)initWithDistUnit:(NSInteger)distUnit weightUnit:(NSInteger)weightUnit temp:(NSInteger)temp stride:(NSInteger)stride language:(NSInteger)language is12HourFormat:(NSInteger)is12HourFormat strideRun:(NSInteger)strideRun strideGpsCal:(NSInteger)strideGpsCal weekStartDate:(NSInteger)weekStartDate calorieUnit:(NSInteger)calorieUnit swimPoolUnit:(NSInteger)swimPoolUnit cyclingUnit:(NSInteger)cyclingUnit walkingRunningUnit:(NSInteger)walkingRunningUnit OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithDistUnit:(NSInteger)distUnit weightUnit:(NSInteger)weightUnit temp:(NSInteger)temp stride:(NSInteger)stride language:(NSInteger)language is12HourFormat:(NSInteger)is12HourFormat strideRun:(NSInteger)strideRun strideGpsCal:(NSInteger)strideGpsCal weekStartDate:(NSInteger)weekStartDate calorieUnit:(NSInteger)calorieUnit swimPoolUnit:(NSInteger)swimPoolUnit cyclingUnit:(NSInteger)cyclingUnit walkingRunningUnit:(NSInteger)walkingRunningUnit heightUnit:(NSInteger)heightUnit OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -9950,6 +10091,18 @@ typedef SWIFT_ENUM(NSInteger, NoticeMessageType, open) {
   NoticeMessageTypeJiotv = 0x35,
   NoticeMessageTypeKeep = 0x36,
 };
+
+
+SWIFT_CLASS("_TtC16protocol_channel10PaceRemind")
+@interface PaceRemind : NSObject
+@property (nonatomic) BOOL isOpen;
+@property (nonatomic) BOOL isMetric;
+@property (nonatomic) NSInteger fastThresholdOrg;
+@property (nonatomic) NSInteger slowThresholdOrg;
+- (nonnull instancetype)initWithIsOpen:(BOOL)isOpen isMetric:(BOOL)isMetric fastThresholdOrg:(NSInteger)fastThresholdOrg slowThresholdOrg:(NSInteger)slowThresholdOrg OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 @protocol FlutterPluginRegistrar;
 

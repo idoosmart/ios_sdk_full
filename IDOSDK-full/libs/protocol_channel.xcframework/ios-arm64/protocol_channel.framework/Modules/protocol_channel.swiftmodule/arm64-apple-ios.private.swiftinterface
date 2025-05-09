@@ -1262,6 +1262,48 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
+  public struct setDuringExercise : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOSettingsDuringExerciseModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
+  }
+  public struct getLeftRightWearSettings : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOLeftRightWearModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOLeftRightWearModel
+  }
+  public struct getSettingsDuringExercise : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOSettingsDuringExerciseModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOSettingsDuringExerciseModel
+  }
+  public struct getSportingRemindSetting : protocol_channel.IDOCmdProtocol {
+    public init(_ param: [Swift.Int])
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOSportingRemindSettingReplyModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOSportingRemindSettingReplyModel
+  }
+  public struct setSportingRemindSetting : protocol_channel.IDOCmdProtocol {
+    public init(_ param: [protocol_channel.IDOSportingRemindSettingModel])
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
+  }
+  public struct setSimpleHeartRateZone : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOSimpleHeartRateZoneSettingModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
+  }
+  public struct getSimpleHeartRateZone : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOSimpleHeartRateZoneSettingModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOSimpleHeartRateZoneSettingModel
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Cmdoc : ObjectiveC.NSObject {
   @objc @discardableResult
@@ -1554,6 +1596,28 @@ public struct Cmds {
   public static func getAlgFileInfo(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOAlgFileModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func rquestAlgFile(_ type: Swift.Int, _ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getSportScreenDetailInfo(_ sportItems: [protocol_channel.IDOSportScreenSportItemModel], completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOSportScreenInfoReplyModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getSportScreenBaseInfo(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOSportScreenInfoReplyModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setSportScreen(_ sportItems: [protocol_channel.IDOSportScreenSportItemModel], completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setAppBaseInfo(_ appInfoModel: protocol_channel.IDOAppInfoModel, completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setDuringExercise(_ duringExerciseModel: protocol_channel.IDOSettingsDuringExerciseModel, completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getLeftRightWearSettings(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOLeftRightWearModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getSettingsDuringExercise(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOSettingsDuringExerciseModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getSportingRemindSetting(_ sportTypes: [Swift.Int], completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOSportingRemindSettingReplyModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setSportingRemindSetting(_ settingItems: [protocol_channel.IDOSportingRemindSettingModel], completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOCmdSetResponseModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setSimpleHeartRateZone(_ model: protocol_channel.IDOSimpleHeartRateZoneSettingModel, completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOCmdSetResponseModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getSimpleHeartRateZone(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOSimpleHeartRateZoneSettingModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2534,6 +2598,9 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
 public protocol IDOBaseModel : Swift.Decodable, Swift.Encodable {
   func toJsonString() -> Swift.String?
 }
+extension protocol_channel.IDOBaseModel {
+  public func toJsonString() -> Swift.String?
+}
 @objc @objcMembers public class IDOBatteryInfoModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var type: Swift.Int
   @objc public var voltage: Swift.Int
@@ -3282,6 +3349,8 @@ public protocol IDOCmdProtocol {
   @objc var sportParallelBars: Swift.Bool { get }
   @objc var sportTrailRunning: Swift.Bool { get }
   @objc var sportPickleBall: Swift.Bool { get }
+  @objc var sportSnowboard: Swift.Bool { get }
+  @objc var sportCrossCountrySkiing: Swift.Bool { get }
   @objc var getRealtimeData: Swift.Bool { get }
   @objc var getLangLibraryV3: Swift.Bool { get }
   @objc var getFindPhone: Swift.Bool { get }
@@ -3391,6 +3460,14 @@ public protocol IDOCmdProtocol {
   @objc var getSupportSleepPlan: Swift.Bool { get }
   @objc var getSupportDeviceOperateAlgFile: Swift.Bool { get }
   @objc var getSupportSportRecordShowConfig: Swift.Bool { get }
+  @objc var getLeftRightHandWearSettings: Swift.Bool { get }
+  @objc var supportSettingsDuringExercise: Swift.Bool { get }
+  @objc var supportHeightLengthUnit: Swift.Bool { get }
+  @objc var supportSportingRemindSetting: Swift.Bool { get }
+  @objc var supportSetStrideLengthUnit: Swift.Bool { get }
+  @objc var supportSimpleHrZoneSetting: Swift.Bool { get }
+  @objc var notSupportSmartLowHeartReatRemind: Swift.Bool { get }
+  @objc var notSupportSmartHighHeartReatRemind: Swift.Bool { get }
   @objc var setNoticeMessageStateUseVersion0x20: Swift.Bool { get }
   @objc var setScientificSleepSwitch: Swift.Bool { get }
   @objc var setTemperatureSwitchHealth: Swift.Bool { get }
@@ -3968,6 +4045,14 @@ public protocol IDOCmdProtocol {
   public var rawValue: Swift.Int {
     get
   }
+}
+@objc @objcMembers public class IDOLeftRightWearModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var handType: Swift.Int
+  @objc public init(handType: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOLiveDataModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var totalStep: Swift.Int
@@ -4680,9 +4765,24 @@ public protocol IDOCmdProtocol {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
+@objc @objcMembers public class IDOSettingsDuringExerciseModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var notificationSwitch: Swift.Int
+  @objc public init(notificationSwitch: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 @objc @objcMembers public class IDOShortcutParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var mode: Swift.Int
   @objc public init(mode: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOSimpleHeartRateZoneSettingModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public init(maxHrValue: Swift.Int)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -4736,6 +4836,62 @@ public protocol IDOCmdProtocol {
   @objc public var targetType: Swift.Int
   @objc public init(sportStep: Swift.Int, walkGoalSteps: Swift.Int, targetType: Swift.Int = 0)
   @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOSportingRemindSettingParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public static let SET: Swift.Int
+  @objc public static let QUERY: Swift.Int
+  public var operate: Swift.Int?
+  @objc public var settingItems: [protocol_channel.IDOSportingRemindSettingModel]?
+  @objc public var sportTypes: [Swift.Int]?
+  public init(operate: Swift.Int? = nil, settingItems: [protocol_channel.IDOSportingRemindSettingModel]? = nil, sportTypes: [Swift.Int]? = nil)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOSportingRemindSettingReplyModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var errCode: Swift.Int
+  @objc public var settingItems: [protocol_channel.IDOSportingRemindSettingModel]?
+  @objc public init(errCode: Swift.Int = 0, settingItems: [protocol_channel.IDOSportingRemindSettingModel]? = nil)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOSportingRemindSettingModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var sportType: Swift.Int
+  @objc public var distanceRemind: protocol_channel.DistanceRemind
+  @objc public var heartRateRemind: protocol_channel.CommonRangeRemind
+  @objc public var paceRemind: protocol_channel.PaceRemind
+  @objc public var stepFreqRemind: protocol_channel.CommonRangeRemind
+  @objc public init(sportType: Swift.Int, distanceRemind: protocol_channel.DistanceRemind, heartRateRemind: protocol_channel.CommonRangeRemind, paceRemind: protocol_channel.PaceRemind, stepFreqRemind: protocol_channel.CommonRangeRemind)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class DistanceRemind : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public init(isOpen: Swift.Bool = false, isMetric: Swift.Bool = false, goalValOrg: Swift.Int = 0)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class CommonRangeRemind : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var isOpen: Swift.Bool
+  @objc public var maxThreshold: Swift.Int
+  @objc public var minThreshold: Swift.Int
+  @objc public init(isOpen: Swift.Bool = false, maxThreshold: Swift.Int = 0, minThreshold: Swift.Int = 0)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class PaceRemind : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var isOpen: Swift.Bool
+  @objc public var isMetric: Swift.Bool
+  @objc public var fastThresholdOrg: Swift.Int
+  @objc public var slowThresholdOrg: Swift.Int
+  @objc public init(isOpen: Swift.Bool = false, isMetric: Swift.Bool = false, fastThresholdOrg: Swift.Int = 0, slowThresholdOrg: Swift.Int = 0)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -5043,25 +5199,25 @@ public protocol IDOCmdProtocol {
   @objc public var operate: Swift.Int
   @objc public var sportItems: [protocol_channel.IDOSportScreenSportItemModel]?
   @objc public init(operate: Swift.Int, sportItems: [protocol_channel.IDOSportScreenSportItemModel]?)
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOSportScreenSportItemModel : ObjectiveC.NSObject, Swift.Codable {
   @objc public var sportType: Swift.Int
   @objc public var screenItems: [protocol_channel.IDOSportScreenItemModel]?
   @objc public init(sportType: Swift.Int, screenItems: [protocol_channel.IDOSportScreenItemModel]? = nil)
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
 }
 @objc @objcMembers public class IDOSportScreenItemModel : ObjectiveC.NSObject, Swift.Codable {
   @objc public var dataItem: [protocol_channel.IDOSportScreenDataItemModel]?
   @objc public init(dataItem: [protocol_channel.IDOSportScreenDataItemModel]?)
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
 }
 @objc @objcMembers public class IDOSportScreenDataItemModel : ObjectiveC.NSObject, Swift.Codable {
   @objc public var dataType: protocol_channel.IDODataType
@@ -5081,19 +5237,19 @@ public protocol IDOCmdProtocol {
   @objc public var sportItems: [protocol_channel.IDOSportScreenItemReply]?
   @objc public var screenConfItems: [protocol_channel.IDOSportScreenLayoutType]?
   @objc public init(errCode: Swift.Int, operate: Swift.Int, minDataNum: Swift.Int, maxDataNum: Swift.Int, minScreenNum: Swift.Int, maxScreenNum: Swift.Int, sportItems: [protocol_channel.IDOSportScreenItemReply]? = nil, screenConfItems: [protocol_channel.IDOSportScreenLayoutType]? = nil)
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOSportScreenItemReply : ObjectiveC.NSObject, Swift.Codable {
   @objc public var sportType: Swift.Int
   @objc public var screenItems: [protocol_channel.IDOSportScreenItemModel]?
   @objc public var supportDataTypes: [protocol_channel.IDOSportScreenDataType]?
   @objc public init(sportType: Swift.Int, screenItems: [protocol_channel.IDOSportScreenItemModel]? = nil, supportDataTypes: [protocol_channel.IDOSportScreenDataType]? = nil)
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
 }
 @objc @objcMembers public class IDOSportScreenDataType : ObjectiveC.NSObject, Swift.Codable {
   @objc public var dataType: protocol_channel.IDODataType
@@ -5443,7 +5599,9 @@ public protocol IDOCmdProtocol {
   @objc public var swimPoolUnit: Swift.Int
   @objc public var cyclingUnit: Swift.Int
   @objc public var walkingRunningUnit: Swift.Int
+  @objc public var heightUnit: Swift.Int
   @objc public init(distUnit: Swift.Int, weightUnit: Swift.Int, temp: Swift.Int, stride: Swift.Int, language: Swift.Int, is12HourFormat: Swift.Int, strideRun: Swift.Int, strideGpsCal: Swift.Int, weekStartDate: Swift.Int, calorieUnit: Swift.Int, swimPoolUnit: Swift.Int, cyclingUnit: Swift.Int, walkingRunningUnit: Swift.Int = 0)
+  @objc public init(distUnit: Swift.Int, weightUnit: Swift.Int, temp: Swift.Int, stride: Swift.Int, language: Swift.Int, is12HourFormat: Swift.Int, strideRun: Swift.Int, strideGpsCal: Swift.Int, weekStartDate: Swift.Int, calorieUnit: Swift.Int, swimPoolUnit: Swift.Int, cyclingUnit: Swift.Int, walkingRunningUnit: Swift.Int = 0, heightUnit: Swift.Int = 0)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
