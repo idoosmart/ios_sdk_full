@@ -6,7 +6,7 @@
 	<dict>
 		<key>ios-arm64/FlutterPluginRegistrant.framework/FlutterPluginRegistrant</key>
 		<data>
-		icd1V7ZKYVmgptHj+pqdADrJ22E=
+		FXJa+svlXXssnf4fkVM54yC1+Bo=
 		</data>
 		<key>ios-arm64/FlutterPluginRegistrant.framework/Headers/FlutterPluginRegistrant-umbrella.h</key>
 		<data>
@@ -31,11 +31,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			icd1V7ZKYVmgptHj+pqdADrJ22E=
+			FXJa+svlXXssnf4fkVM54yC1+Bo=
 			</data>
 			<key>hash2</key>
 			<data>
-			Dy/X8Ls0aoJFEw2eDpWpMvJZHDpRW+MQ7zZSzQqfI9k=
+			h9J8xIeggNfzzqmG6jH3+ROaG4U7tASJe4TD6Q0/mng=
 			</data>
 		</dict>
 		<key>ios-arm64/FlutterPluginRegistrant.framework/Headers/FlutterPluginRegistrant-umbrella.h</key>
