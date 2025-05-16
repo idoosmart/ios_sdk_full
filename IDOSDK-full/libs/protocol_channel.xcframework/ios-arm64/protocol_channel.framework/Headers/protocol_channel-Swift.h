@@ -980,6 +980,9 @@ SWIFT_CLASS("_TtC16protocol_channel17CommonRangeRemind")
 
 SWIFT_CLASS("_TtC16protocol_channel14DistanceRemind")
 @interface DistanceRemind : NSObject
+@property (nonatomic) BOOL isOpen;
+@property (nonatomic) BOOL isMetric;
+@property (nonatomic) NSInteger goalValOrg;
 - (nonnull instancetype)initWithIsOpen:(BOOL)isOpen isMetric:(BOOL)isMetric goalValOrg:(NSInteger)goalValOrg OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -6791,6 +6794,25 @@ typedef SWIFT_ENUM(NSInteger, IDOOtaType, open) {
 };
 
 
+SWIFT_CLASS("_TtC16protocol_channel16IDOProtocolState")
+@interface IDOProtocolState : NSObject
+/// 设备已连接
+@property (nonatomic, readonly) BOOL isConnected;
+/// 绑定中 (切换设备会受到限制）
+@property (nonatomic, readonly) BOOL isBinding;
+/// 执行快速配置 (执行快速配置期间，外部指令将直接返回失败）
+@property (nonatomic, readonly) BOOL isFastSynchronizing;
+/// ota类型
+/// otaType 0 无升级, 1 泰凌微设备OTA, 2 nordic设备OTA
+@property (nonatomic, readonly) enum IDOOtaType otaType;
+/// 当前连接的设备MAC地址
+/// 注意：未标记为已连接时，将固定返回”UNKNOWN”
+@property (nonatomic, readonly, copy) NSString * _Nonnull macAddress;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC16protocol_channel14IDOReceiveData")
 @interface IDOReceiveData : NSObject
 /// 蓝牙字节数据
@@ -6875,6 +6897,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel15IDOSdkInterface_")
 @property (nonatomic, readonly, strong) id <IDOToolsInterface> _Nonnull tool;
 /// sdk info
 @property (nonatomic, readonly, strong) IDOSdkInfo * _Nonnull info;
+/// sdk state
+@property (nonatomic, readonly, strong) IDOProtocolState * _Nonnull state;
 @end
 
 
@@ -6897,6 +6921,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IDOSDK * _No
 @property (nonatomic, readonly, strong) id <IDODataExchangeOCInterface> _Nonnull dataExchange;
 @property (nonatomic, readonly, strong) id <IDODeviceLogInterface> _Nonnull deviceLog;
 @property (nonatomic, readonly, strong) id <IDOToolsInterface> _Nonnull tool;
+@property (nonatomic, readonly, strong) IDOProtocolState * _Nonnull state;
 @property (nonatomic, readonly, strong) IDOSdkInfo * _Nonnull info;
 @end
 
@@ -7643,7 +7668,8 @@ SWIFT_CLASS("_TtC16protocol_channel28IDOSportScreenInfoReplyModel")
 @property (nonatomic, copy) NSArray<IDOSportScreenItemReply *> * _Nullable sportItems;
 /// 获取屏幕信息，查基础使用，查详情返回NULL
 @property (nonatomic, copy) NSArray<IDOSportScreenLayoutType *> * _Nullable screenConfItems;
-- (nonnull instancetype)initWithErrCode:(NSInteger)errCode operate:(NSInteger)operate minDataNum:(NSInteger)minDataNum maxDataNum:(NSInteger)maxDataNum minScreenNum:(NSInteger)minScreenNum maxScreenNum:(NSInteger)maxScreenNum sportItems:(NSArray<IDOSportScreenItemReply *> * _Nullable)sportItems screenConfItems:(NSArray<IDOSportScreenLayoutType *> * _Nullable)screenConfItems OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, copy) NSArray<IDOSportScreenDataItemModel *> * _Nullable specialDataItems;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode operate:(NSInteger)operate minDataNum:(NSInteger)minDataNum maxDataNum:(NSInteger)maxDataNum minScreenNum:(NSInteger)minScreenNum maxScreenNum:(NSInteger)maxScreenNum sportItems:(NSArray<IDOSportScreenItemReply *> * _Nullable)sportItems screenConfItems:(NSArray<IDOSportScreenLayoutType *> * _Nullable)screenConfItems specialDataItems:(NSArray<IDOSportScreenDataItemModel *> * _Nullable)specialDataItems OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

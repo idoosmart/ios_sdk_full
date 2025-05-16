@@ -270,6 +270,24 @@ import _SwiftConcurrencyShims
   @objc public init(dataType: Foundation.NSNumber?, notifyType: Foundation.NSNumber?, msgId: Foundation.NSNumber?, msgNotice: Foundation.NSNumber?, errorIndex: Foundation.NSNumber?, controlEvt: Foundation.NSNumber?, controlJson: Swift.String?)
   @objc deinit
 }
+@objc @_hasMissingDesignatedInitializers @objcMembers public class IDOProtocolState : ObjectiveC.NSObject {
+  @objc public var isConnected: Swift.Bool {
+    get
+  }
+  @objc public var isBinding: Swift.Bool {
+    get
+  }
+  @objc public var isFastSynchronizing: Swift.Bool {
+    get
+  }
+  @objc public var otaType: protocol_channel.IDOOtaType {
+    get
+  }
+  @objc public var macAddress: Swift.String {
+    get
+  }
+  @objc deinit
+}
 @objc public enum IDOLogType : Swift.Int {
   case none = 0
   case debug
@@ -4709,6 +4727,9 @@ public protocol IDOCmdProtocol {
   @objc public var tool: any protocol_channel.IDOToolsInterface {
     @objc get
   }
+  @objc public var state: protocol_channel.IDOProtocolState {
+    @objc get
+  }
   @objc public var info: protocol_channel.IDOSdkInfo {
     @objc get
   }
@@ -4743,6 +4764,7 @@ public protocol IDOCmdProtocol {
   @objc var deviceLog: any protocol_channel.IDODeviceLogInterface { get }
   @objc var tool: any protocol_channel.IDOToolsInterface { get }
   @objc var info: protocol_channel.IDOSdkInfo { get }
+  @objc var state: protocol_channel.IDOProtocolState { get }
 }
 @objc public protocol IDOCancellable {
   @objc var isCancelled: Swift.Bool { get }
@@ -4872,6 +4894,9 @@ public protocol IDOCmdProtocol {
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class DistanceRemind : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var isOpen: Swift.Bool
+  @objc public var isMetric: Swift.Bool
+  @objc public var goalValOrg: Swift.Int
   @objc public init(isOpen: Swift.Bool = false, isMetric: Swift.Bool = false, goalValOrg: Swift.Int = 0)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -5236,7 +5261,8 @@ public protocol IDOCmdProtocol {
   @objc public var maxScreenNum: Swift.Int
   @objc public var sportItems: [protocol_channel.IDOSportScreenItemReply]?
   @objc public var screenConfItems: [protocol_channel.IDOSportScreenLayoutType]?
-  @objc public init(errCode: Swift.Int, operate: Swift.Int, minDataNum: Swift.Int, maxDataNum: Swift.Int, minScreenNum: Swift.Int, maxScreenNum: Swift.Int, sportItems: [protocol_channel.IDOSportScreenItemReply]? = nil, screenConfItems: [protocol_channel.IDOSportScreenLayoutType]? = nil)
+  @objc public var specialDataItems: [protocol_channel.IDOSportScreenDataItemModel]?
+  @objc public init(errCode: Swift.Int, operate: Swift.Int, minDataNum: Swift.Int, maxDataNum: Swift.Int, minScreenNum: Swift.Int, maxScreenNum: Swift.Int, sportItems: [protocol_channel.IDOSportScreenItemReply]? = nil, screenConfItems: [protocol_channel.IDOSportScreenLayoutType]? = nil, specialDataItems: [protocol_channel.IDOSportScreenDataItemModel]? = nil)
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc public func toJsonString() -> Swift.String?
