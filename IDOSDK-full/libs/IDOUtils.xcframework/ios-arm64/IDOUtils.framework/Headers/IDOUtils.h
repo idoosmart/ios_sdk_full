@@ -15,5 +15,4 @@ FOUNDATION_EXPORT const unsigned char IDOUtilsVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <IDOUtils/PublicHeader.h>
 
-#import <IDOUtils/SifliOtaSDKA-Swift.h>
 #import <IDOUtils/eZIPSDKA.h>

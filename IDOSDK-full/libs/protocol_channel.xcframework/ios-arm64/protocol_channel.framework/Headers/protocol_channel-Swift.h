@@ -2550,6 +2550,7 @@ SWIFT_CLASS("_TtC16protocol_channel26IDOBpMeasurementParamModel")
 
 enum IDOStatusNotification : NSInteger;
 @class IDODeviceNotificationModel;
+@class IDOOtaDeviceModel;
 
 SWIFT_PROTOCOL("_TtP16protocol_channel17IDOBridgeDelegate_")
 @protocol IDOBridgeDelegate <NSObject>
@@ -2559,6 +2560,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel17IDOBridgeDelegate_")
 - (void)listenDeviceNotificationWithModel:(IDODeviceNotificationModel * _Nonnull)model;
 /// 根据设备macAddress查询绑定状态（由APP端提供） true: 已绑定，false：未绑定
 - (BOOL)checkDeviceBindStateWithMacAddress:(NSString * _Nonnull)macAddress SWIFT_WARN_UNUSED_RESULT;
+/// 监听已扫描列表中处于ota模式的设备 ，需要业务端执行ota
+- (void)listenWaitingOtaDeviceWithOtaDevice:(IDOOtaDeviceModel * _Nonnull)otaDevice;
 @end
 
 enum IDOLogType : NSInteger;
@@ -2572,6 +2575,21 @@ SWIFT_PROTOCOL("_TtP16protocol_channel18IDOBridgeInterface_")
 /// \param logType log等级
 ///
 - (void)setupBridgeWithDelegate:(id <IDOBridgeDelegate> _Nonnull)delegate logType:(enum IDOLogType)logType;
+@optional
+/// 标记为OTA模式
+/// \param macAddress 设备macAddress
+///
+/// \param iosUUID uuid
+///
+/// \param platform 设备平台 0:nordic, 10:realtek 8762x, 20:cypress psoc6,
+/// 30:Apollo3, 40:汇顶, 50:nordic+泰凌微,
+/// 60:泰凌微+5340+no nand flash, 70:汇顶+富瑞坤,
+/// 80:5340, 90: 炬芯, 97: 恒玄, 98: 思澈1,
+/// 99: 思澈2 （注意：目前只支持98）
+///
+/// \param deviceId 设备id
+///
+- (void)markOtaModeWithMacAddress:(NSString * _Nonnull)macAddress iosUUID:(NSString * _Nonnull)iosUUID platform:(NSInteger)platform deviceId:(NSInteger)deviceId completion:(void (^ _Nonnull)(BOOL))completion;
 @end
 
 
@@ -3246,7 +3264,9 @@ SWIFT_CLASS("_TtC16protocol_channel14IDODeviceModel")
 @property (nonatomic, readonly) NSInteger bltVersion;
 /// 配对状态（Android）
 @property (nonatomic, readonly) BOOL isPair;
+@property (nonatomic, readonly) NSInteger platform;
 - (nonnull instancetype)initWithRssi:(NSInteger)rssi name:(NSString * _Nullable)name state:(enum IDODeviceStateType)state uuid:(NSString * _Nullable)uuid macAddress:(NSString * _Nullable)macAddress otaMacAddress:(NSString * _Nullable)otaMacAddress btMacAddress:(NSString * _Nullable)btMacAddress deviceId:(NSInteger)deviceId deviceType:(NSInteger)deviceType isOta:(BOOL)isOta isTlwOta:(BOOL)isTlwOta bltVersion:(NSInteger)bltVersion isPair:(BOOL)isPair OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithRssi:(NSInteger)rssi name:(NSString * _Nullable)name state:(enum IDODeviceStateType)state uuid:(NSString * _Nullable)uuid macAddress:(NSString * _Nullable)macAddress otaMacAddress:(NSString * _Nullable)otaMacAddress btMacAddress:(NSString * _Nullable)btMacAddress deviceId:(NSInteger)deviceId deviceType:(NSInteger)deviceType isOta:(BOOL)isOta isTlwOta:(BOOL)isTlwOta bltVersion:(NSInteger)bltVersion isPair:(BOOL)isPair platform:(NSInteger)platform OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -6772,6 +6792,42 @@ SWIFT_CLASS("_TtC16protocol_channel31IDONotificationStatusParamModel")
 @property (nonatomic) NSInteger notifyFlag;
 - (nonnull instancetype)initWithNotifyFlag:(NSInteger)notifyFlag OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel17IDOOtaDeviceModel")
+@interface IDOOtaDeviceModel : NSObject
+/// rssi
+@property (nonatomic, readonly) NSInteger rssi;
+/// 设备名称
+@property (nonatomic, readonly, copy) NSString * _Nullable name;
+/// uuid
+@property (nonatomic, readonly, copy) NSString * _Nullable uuid;
+/// mac address
+@property (nonatomic, readonly, copy) NSString * _Nullable macAddress;
+/// ota mac address
+@property (nonatomic, readonly, copy) NSString * _Nullable otaMacAddress;
+/// bt mac address
+@property (nonatomic, readonly, copy) NSString * _Nullable btMacAddress;
+/// 设备ID
+@property (nonatomic, readonly) NSInteger deviceId;
+/// 设备类型 0:无效 1: 手表 2: 手环
+@property (nonatomic, readonly) NSInteger deviceType;
+/// 是否ota模式
+@property (nonatomic, readonly) BOOL isOta;
+/// 是否泰凌微ota
+@property (nonatomic, readonly) BOOL isTlwOta;
+/// bt版本号
+@property (nonatomic, readonly) NSInteger bltVersion;
+/// 配对状态（Android）
+@property (nonatomic, readonly) BOOL isPair;
+/// 平台 98, 99
+@property (nonatomic, readonly) NSInteger platform;
+- (nonnull instancetype)initWithRssi:(NSInteger)rssi name:(NSString * _Nullable)name uuid:(NSString * _Nullable)uuid macAddress:(NSString * _Nullable)macAddress otaMacAddress:(NSString * _Nullable)otaMacAddress btMacAddress:(NSString * _Nullable)btMacAddress deviceId:(NSInteger)deviceId deviceType:(NSInteger)deviceType isOta:(BOOL)isOta isTlwOta:(BOOL)isTlwOta bltVersion:(NSInteger)bltVersion isPair:(BOOL)isPair platform:(NSInteger)platform OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (IDODeviceModel * _Nonnull)toDeviceModel SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

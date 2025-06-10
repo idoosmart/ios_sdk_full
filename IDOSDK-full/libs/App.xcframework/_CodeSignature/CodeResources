@@ -6,7 +6,7 @@
 	<dict>
 		<key>ios-arm64/App.framework/App</key>
 		<data>
-		t0cfuI4+eHrDMVRaUlOdyff7qN0=
+		6C/kPpA4g5AiLI9rhYJjDEh/fE8=
 		</data>
 		<key>ios-arm64/App.framework/Info.plist</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>ios-arm64/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		QlZDpL/CnAWVsgXlvQrb04Kiwv4=
+		eHxz3ZGydy9kIGSsblms0GIDHso=
 		</data>
 		<key>ios-arm64/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>ios-arm64/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		ZJFH54mS00570zQItKKMDrxjcO8=
+		7e7F6gZeHYFZtGnbBzvHcaF3UJQ=
 		</data>
 		<key>ios-arm64/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -47,11 +47,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t0cfuI4+eHrDMVRaUlOdyff7qN0=
+			6C/kPpA4g5AiLI9rhYJjDEh/fE8=
 			</data>
 			<key>hash2</key>
 			<data>
-			t0spBb7uczSLMBQjZwu3++aPvnZRIXV9+gl5qn6bXUg=
+			94hGTwr5Xq4EP0ev8f63JxUJF2mBE/FK4llGgRTWePs=
 			</data>
 		</dict>
 		<key>ios-arm64/App.framework/Info.plist</key>
@@ -69,11 +69,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QlZDpL/CnAWVsgXlvQrb04Kiwv4=
+			eHxz3ZGydy9kIGSsblms0GIDHso=
 			</data>
 			<key>hash2</key>
 			<data>
-			ja6m48qUoFhdqAh/u8uWjzcf24qOD2WHtxn0aCYwqzw=
+			yVmqqrAaG50BoRsI5I8KFl+K4oaWgkz0yIMnjrz0aJE=
 			</data>
 		</dict>
 		<key>ios-arm64/App.framework/flutter_assets/AssetManifest.json</key>
@@ -102,11 +102,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZJFH54mS00570zQItKKMDrxjcO8=
+			7e7F6gZeHYFZtGnbBzvHcaF3UJQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Llj90BbEFMnVOmJVGXqwFnTok7YaHWQsof8NVfrTv2w=
+			E/wa9u83eBGFuhPomjkm7UgyFTrfYFhoqsDejK81ee8=
 			</data>
 		</dict>
 		<key>ios-arm64/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>

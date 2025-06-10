@@ -166,7 +166,11 @@ import _SwiftConcurrencyShims
   @objc public var isPair: Swift.Bool {
     get
   }
+  @objc public var platform: Swift.Int {
+    get
+  }
   @objc public init(rssi: Swift.Int, name: Swift.String?, state: protocol_channel.IDODeviceStateType, uuid: Swift.String?, macAddress: Swift.String?, otaMacAddress: Swift.String?, btMacAddress: Swift.String?, deviceId: Swift.Int, deviceType: Swift.Int, isOta: Swift.Bool, isTlwOta: Swift.Bool, bltVersion: Swift.Int, isPair: Swift.Bool)
+  @objc public init(rssi: Swift.Int, name: Swift.String?, state: protocol_channel.IDODeviceStateType, uuid: Swift.String?, macAddress: Swift.String?, otaMacAddress: Swift.String?, btMacAddress: Swift.String?, deviceId: Swift.Int, deviceType: Swift.Int, isOta: Swift.Bool, isTlwOta: Swift.Bool, bltVersion: Swift.Int, isPair: Swift.Bool, platform: Swift.Int)
   @objc deinit
 }
 @objc @objcMembers public class IDOBluetoothStateModel : ObjectiveC.NSObject {
@@ -329,6 +333,53 @@ import _SwiftConcurrencyShims
   public var rawValue: Swift.Int {
     get
   }
+}
+@objc @objcMembers public class IDOOtaDeviceModel : ObjectiveC.NSObject {
+  @objc public var rssi: Swift.Int {
+    get
+  }
+  @objc public var name: Swift.String? {
+    get
+  }
+  @objc public var uuid: Swift.String? {
+    get
+  }
+  @objc public var macAddress: Swift.String? {
+    get
+  }
+  @objc public var otaMacAddress: Swift.String? {
+    get
+  }
+  @objc public var btMacAddress: Swift.String? {
+    get
+  }
+  @objc public var deviceId: Swift.Int {
+    get
+  }
+  @objc public var deviceType: Swift.Int {
+    get
+  }
+  @objc public var isOta: Swift.Bool {
+    get
+  }
+  @objc public var isTlwOta: Swift.Bool {
+    get
+  }
+  @objc public var bltVersion: Swift.Int {
+    get
+  }
+  @objc public var isPair: Swift.Bool {
+    get
+  }
+  @objc public var platform: Swift.Int {
+    get
+  }
+  @objc public init(rssi: Swift.Int, name: Swift.String?, uuid: Swift.String?, macAddress: Swift.String?, otaMacAddress: Swift.String?, btMacAddress: Swift.String?, deviceId: Swift.Int, deviceType: Swift.Int, isOta: Swift.Bool, isTlwOta: Swift.Bool, bltVersion: Swift.Int, isPair: Swift.Bool, platform: Swift.Int)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc public func toDeviceModel() -> protocol_channel.IDODeviceModel
+  @objc deinit
 }
 @objc @objcMembers public class CmdError : ObjectiveC.NSObject, Swift.Error {
   @objc final public let code: Swift.Int
@@ -2749,11 +2800,13 @@ extension protocol_channel.IDOBaseModel {
 }
 @objc public protocol IDOBridgeInterface {
   @objc func setupBridge(delegate: any protocol_channel.IDOBridgeDelegate, logType: protocol_channel.IDOLogType)
+  @objc optional func markOtaMode(macAddress: Swift.String, iosUUID: Swift.String, platform: Swift.Int, deviceId: Swift.Int, completion: @escaping (Swift.Bool) -> Swift.Void)
 }
 @objc public protocol IDOBridgeDelegate : ObjectiveC.NSObjectProtocol {
   @objc func listenStatusNotification(status: protocol_channel.IDOStatusNotification)
   @objc func listenDeviceNotification(model: protocol_channel.IDODeviceNotificationModel)
   @objc func checkDeviceBindState(macAddress: Swift.String) -> Swift.Bool
+  @objc func listenWaitingOtaDevice(otaDevice: protocol_channel.IDOOtaDeviceModel)
 }
 @objc @objcMembers public class IDOBtNoticeModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var btConnectStates: Swift.Int

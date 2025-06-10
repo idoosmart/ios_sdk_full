@@ -32,21 +32,25 @@
 		<data>
 		d7TSgD0vpT/5HWsDWGT8FmcU9iI=
 		</data>
+		<key>ios-arm64/native_channel.framework/Headers/SifliOTAManagerSDK.h</key>
+		<data>
+		36Cz1SUck40BKLRWy+JWhIbTVro=
+		</data>
 		<key>ios-arm64/native_channel.framework/Headers/native_channel-Swift.h</key>
 		<data>
-		o2u59ASs+r9aXZzg0EK6Z3ohBdc=
+		7ItniLj5RKqwzgeamr3ArkHaWWw=
 		</data>
 		<key>ios-arm64/native_channel.framework/Headers/native_channel-umbrella.h</key>
 		<data>
-		Pm16xQqPKR3XVIAUZYGrOJKB6gk=
+		H5DcfuJ+bJeRq8QTlYcgmhJYIIg=
 		</data>
 		<key>ios-arm64/native_channel.framework/Headers/native_channel.h</key>
 		<data>
-		lxiowGkZgraOe6AErH6CIGinWbk=
+		yIOkUYdNZGBfEyCb9ddn44LiwJg=
 		</data>
 		<key>ios-arm64/native_channel.framework/Info.plist</key>
 		<data>
-		S+2Sqbqo1Y3IbD4Va7h9T7YSaVc=
+		3Zjj2E33hc+IgYzSNqJIM6t8CI4=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/module.modulemap</key>
 		<data>
@@ -54,27 +58,27 @@
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		/NNvvrqhwSK62HCnnUZ0DXmr3SY=
+		v32Gg0Q4sxkoNQm3QpVQBZyssOA=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		1AkleoQTqLsaisIQqRYCqoEcokI=
+		oWb+aPHbIRjZtzDm7hwa8en+mp4=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		YfmB1Cd9nxjAgKbnjzjgvDuUEOM=
+		tXxR+NwJuGwCFgosOPvdiAsTiXU=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		wGCfsewA32FiICnvi20D8jfI7iU=
+		efmEvLMdrTG0Tsy3usdN6XEpHh0=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		YfmB1Cd9nxjAgKbnjzjgvDuUEOM=
+		tXxR+NwJuGwCFgosOPvdiAsTiXU=
 		</data>
 		<key>ios-arm64/native_channel.framework/native_channel</key>
 		<data>
-		F9TULoA06ScCUB5CsQ8SuFynZLA=
+		Qc2U5Q2ZOuJdapPF5CGhUPLgLW4=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -156,48 +160,59 @@
 			3E8W1WUIXRXtK1EFmLkITCxW7BMbattbYXFLvGmnk0Q=
 			</data>
 		</dict>
+		<key>ios-arm64/native_channel.framework/Headers/SifliOTAManagerSDK.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			36Cz1SUck40BKLRWy+JWhIbTVro=
+			</data>
+			<key>hash2</key>
+			<data>
+			gH1FMejQoSxWnhfFzLvH+Z9OrRpyb9HhC3SH4FxHrU8=
+			</data>
+		</dict>
 		<key>ios-arm64/native_channel.framework/Headers/native_channel-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			o2u59ASs+r9aXZzg0EK6Z3ohBdc=
+			7ItniLj5RKqwzgeamr3ArkHaWWw=
 			</data>
 			<key>hash2</key>
 			<data>
-			0wKDb2ujPLnJxcfKkK2FJA/91bFcGWg5OuTm6qR8S04=
+			sciqDSyuryWI8ojKuxvXHf2j6GjCv7aD72Zqb1MKokI=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Headers/native_channel-umbrella.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Pm16xQqPKR3XVIAUZYGrOJKB6gk=
+			H5DcfuJ+bJeRq8QTlYcgmhJYIIg=
 			</data>
 			<key>hash2</key>
 			<data>
-			VVOs4sAAlZ7zHBFIzGUKnksaYCR2GJLL3b4ZEnV+zrE=
+			HITKv2rsmjhk+AAWGYp7zmtNCR2/0SvYfCpAMoXCOe8=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Headers/native_channel.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lxiowGkZgraOe6AErH6CIGinWbk=
+			yIOkUYdNZGBfEyCb9ddn44LiwJg=
 			</data>
 			<key>hash2</key>
 			<data>
-			vaCbqeyhSUC+iNgsfO2Zniph4qTzIc0uBsOoDfnb8fE=
+			Yxt2RiQs314/rX6ABkxTrmjQaTfw2t1M7PueI54aIjU=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			S+2Sqbqo1Y3IbD4Va7h9T7YSaVc=
+			3Zjj2E33hc+IgYzSNqJIM6t8CI4=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZFa4gzTxEf+kKwQvNQi5vlUzx4uuzYWSyr1HMomKXwA=
+			+7AmxjitUNUI6eKTncwiAm7u3uovW6gBRoWl9m46oGA=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/module.modulemap</key>
@@ -215,66 +230,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/NNvvrqhwSK62HCnnUZ0DXmr3SY=
+			v32Gg0Q4sxkoNQm3QpVQBZyssOA=
 			</data>
 			<key>hash2</key>
 			<data>
-			bYJXDdCmZHlxtQZAo+YuEuOhsS+JYYI4Y6Rz2GxR7ko=
+			ckchu/vBzXO4N7snW/vI0NYctWqXpHEsQh8d6do5N4w=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1AkleoQTqLsaisIQqRYCqoEcokI=
+			oWb+aPHbIRjZtzDm7hwa8en+mp4=
 			</data>
 			<key>hash2</key>
 			<data>
-			2vzgL5IiKyhQ1dyLUiirOZfWov8/t2CFB4+Ktrz7roI=
+			XJULijamWIUfAj2xbtejAk5bX4Vn4Oixc5TWqOBJQ4Q=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YfmB1Cd9nxjAgKbnjzjgvDuUEOM=
+			tXxR+NwJuGwCFgosOPvdiAsTiXU=
 			</data>
 			<key>hash2</key>
 			<data>
-			wygN6VFEsW4Iut3lOi4l5aopZACxoNsYoJfeXot1wsc=
+			X7V7Vjj0MPOyb3LF1SiRsK+INu55QezH+7OD4TP/+js=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wGCfsewA32FiICnvi20D8jfI7iU=
+			efmEvLMdrTG0Tsy3usdN6XEpHh0=
 			</data>
 			<key>hash2</key>
 			<data>
-			DEseMhJyPtmCK/jekDxYP7MusGS0vDPHCnQKgMaTaXk=
+			VAlJqnOVRlOIRsyWe8vPFWec6VIZalarbL0fvjcsnxg=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YfmB1Cd9nxjAgKbnjzjgvDuUEOM=
+			tXxR+NwJuGwCFgosOPvdiAsTiXU=
 			</data>
 			<key>hash2</key>
 			<data>
-			wygN6VFEsW4Iut3lOi4l5aopZACxoNsYoJfeXot1wsc=
+			X7V7Vjj0MPOyb3LF1SiRsK+INu55QezH+7OD4TP/+js=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/native_channel</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F9TULoA06ScCUB5CsQ8SuFynZLA=
+			Qc2U5Q2ZOuJdapPF5CGhUPLgLW4=
 			</data>
 			<key>hash2</key>
 			<data>
-			HbJv61XTRkqlPBYO6NlaX6xazEi4Ng6NuqY7be5L2pg=
+			zkMBc1z1LFgTRlsCgodUWXaEbTWMTW0RVaZOcMF7Sew=
 			</data>
 		</dict>
 	</dict>

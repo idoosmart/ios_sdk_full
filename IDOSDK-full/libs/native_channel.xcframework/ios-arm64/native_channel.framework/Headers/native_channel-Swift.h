@@ -302,6 +302,17 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+typedef SWIFT_ENUM(NSInteger, BleCoreManagerState, open) {
+  BleCoreManagerStateUnknown = 0,
+  BleCoreManagerStateResetting = 1,
+  BleCoreManagerStateUnsupported = 2,
+  BleCoreManagerStateUnauthorized = 3,
+  BleCoreManagerStatePoweredOff = 4,
+  BleCoreManagerStatePoweredOn = 5,
+};
+
+
+
 @protocol FlutterPluginRegistrar;
 @class NSString;
 @class FlutterError;
@@ -323,12 +334,313 @@ SWIFT_CLASS("_TtC14native_channel14IdoSifliPlugin")
 
 
 
+typedef SWIFT_ENUM(uint16_t, NandImageID, open) {
+  NandImageIDHCPU = 0,
+  NandImageIDLCPU = 1,
+  NandImageIDPATCH = 2,
+  NandImageIDRES = 3,
+  NandImageIDLCPU_PATCH = 4,
+  NandImageIDDYN = 5,
+  NandImageIDMUSIC = 6,
+  NandImageIDPIC = 7,
+  NandImageIDFONT = 8,
+  NandImageIDRING = 9,
+  NandImageIDLANG = 10,
+};
+
+
 SWIFT_CLASS("_TtC14native_channel19NativeChannelPlugin")
 @interface NativeChannelPlugin : NSObject <FlutterPlugin>
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 + (void)registerWithRegistrar:(id <FlutterPluginRegistrar> _Nonnull)registrar;
 @end
+
+typedef SWIFT_ENUM(uint8_t, NorImageID, open) {
+  NorImageIDHCPU = 0,
+  NorImageIDLCPU = 1,
+  NorImageIDPATCH = 2,
+  NorImageIDRES = 3,
+  NorImageIDFONT_OR_MAX = 4,
+  NorImageIDEX = 5,
+  NorImageIDOTA_MANAGER = 6,
+  NorImageIDTINY_FONT = 7,
+  NorImageIDBOOT_LOADER = 11,
+  NorImageIDNONE = 0xff,
+};
+
+typedef SWIFT_ENUM(NSInteger, NorV1TriggerMode, open) {
+/// 普通模式
+  NorV1TriggerModeNormal = 0,
+/// 强制启动
+  NorV1TriggerModeForce = 1,
+/// 续传
+  NorV1TriggerModeResume = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, OTALogLevel, open) {
+  OTALogLevelInfo = 0,
+  OTALogLevelWarn = 1,
+  OTALogLevelDebug = 2,
+  OTALogLevelError = 3,
+};
+
+
+SWIFT_CLASS("_TtC14native_channel14QBleLogManager")
+@interface QBleLogManager : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QBleLogManager * _Nonnull share;)
++ (QBleLogManager * _Nonnull)share SWIFT_WARN_UNUSED_RESULT;
+/// SDK内部日志开关。当关闭时，控制台不再打印内容，但QBleLogManagerDelegate的回调不受影响。
+@property (nonatomic) BOOL openLog;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class NSURL;
+
+SWIFT_CLASS("_TtC14native_channel19SFNandImageFileInfo")
+@interface SFNandImageFileInfo : NSObject
+@property (nonatomic, readonly, copy) NSURL * _Nonnull path;
+@property (nonatomic, readonly) enum NandImageID imageID;
+- (nonnull instancetype)initWithPath:(NSURL * _Nonnull)path imageID:(enum NandImageID)imageID OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC14native_channel18SFNorImageFileInfo")
+@interface SFNorImageFileInfo : NSObject
+@property (nonatomic, readonly, copy) NSURL * _Nonnull path;
+@property (nonatomic, readonly) enum NorImageID imageID;
+- (nonnull instancetype)initWithPath:(NSURL * _Nonnull)path imageID:(enum NorImageID)imageID OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+enum SFOTAErrorType : NSInteger;
+
+SWIFT_CLASS("_TtC14native_channel10SFOTAError")
+@interface SFOTAError : NSObject
+@property (nonatomic, readonly) enum SFOTAErrorType errorType;
+@property (nonatomic, readonly, copy) NSString * _Nonnull errorDes;
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// SFOTAErrorType
+typedef SWIFT_ENUM(NSInteger, SFOTAErrorType, open) {
+  SFOTAErrorTypeUnknown = 0,
+  SFOTAErrorTypeConnectTimeout = 1,
+  SFOTAErrorTypeConnectionCanceled = 2,
+  SFOTAErrorTypeDisconnected = 3,
+  SFOTAErrorTypeFailedToConnect = 4,
+/// SFOTAError特有
+  SFOTAErrorTypeGeneral = 5,
+/// 蓝牙设备搜索超时
+  SFOTAErrorTypeSearchTimeout = 6,
+/// 任务请求超时
+  SFOTAErrorTypeRequestTimeout = 7,
+/// Nand加载资源失败
+  SFOTAErrorTypeLoadResourceZipFailed = 8,
+/// 加载控制文件失败
+  SFOTAErrorTypeLoadControlFileFailed = 9,
+/// 加载Image文件失败
+  SFOTAErrorTypeLoadImageFileFailed = 10,
+/// 设备返回错误码
+/// OTA_UI_NOT_SUPPORT= 65
+/// OTA_VERSION_INVALID= 66
+/// OTA_FAT_OUT_OF_FREE_SPACE= 67
+/// OTA_TOTAL_SIZE_NOT_ALIGNED= 68
+/// OTA_FILE_SIZE_NOT_ALIGNED =69
+/// OTA_MKDIR_ERR =70
+/// OTA_SWITCH_DIR_ERR =71
+/// OTA_FILE_OPEN_ERR=72
+/// OTA_FILE_CLOSE_ERR=73
+/// OTA_FILE_SIZE_ERR=74
+/// OTA_FILE_CRC_ERR=75
+/// OTA_FILE_WRITE_ERR=76
+/// OTA_FILE_RECV_NUM_ERR=77
+/// OTA_USER_REFUSE=78
+/// OTA_LOW_BATTERY=79
+/// OTA_RENAME_ERROR=80
+/// OTA_IMG_INSTALL_ERROR=81
+  SFOTAErrorTypeErrorCodeFromDevice = 11,
+/// 解析响应数据长度不足
+  SFOTAErrorTypeInsufficientBytes = 12,
+/// 蓝牙不可用
+  SFOTAErrorTypeUnavailableBleStatus = 13,
+/// 输入参数无效
+  SFOTAErrorTypeInvalidParams = 14,
+/// 在切片数量之外尝试无响应发送
+  SFOTAErrorTypeSendNoRspPacketOutSliceRange = 15,
+/// 发送的固件文件超过了协议设计范围
+  SFOTAErrorTypeFileTooLarge = 16,
+};
+
+@protocol SFOTALogManagerDelegate;
+
+SWIFT_CLASS("_TtC14native_channel15SFOTALogManager")
+@interface SFOTALogManager : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SFOTALogManager * _Nonnull share;)
++ (SFOTALogManager * _Nonnull)share SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, weak) id <SFOTALogManagerDelegate> _Nullable delegate;
+@property (nonatomic) BOOL logEnable;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class SFOTALogModel;
+
+SWIFT_PROTOCOL("_TtP14native_channel23SFOTALogManagerDelegate_")
+@protocol SFOTALogManagerDelegate <NSObject>
+/// OTA SDK 日志委托。可以将这些日志上报到你的异常管理平台
+/// \param manager SFOTALogManager
+///
+/// \param log SDK 产生的日志文本
+///
+/// \param level 日志等级
+///
+- (void)otaLogManagerWithManager:(SFOTALogManager * _Nonnull)manager onLog:(SFOTALogModel * _Null_unspecified)log logLevel:(enum OTALogLevel)level;
+@end
+
+
+SWIFT_CLASS("_TtC14native_channel13SFOTALogModel")
+@interface SFOTALogModel : NSObject
+/// 时间戳，毫秒
+@property (nonatomic, readonly) NSInteger timestamp;
+/// 日志内容
+@property (nonatomic, readonly, copy) NSString * _Nonnull message;
+- (nonnull instancetype)initWithTimestamp:(NSInteger)timestamp message:(NSString * _Nonnull)message OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@protocol SFOTAManagerDelegate;
+enum SFOTAType : NSInteger;
+
+SWIFT_CLASS("_TtC14native_channel12SFOTAManager")
+@interface SFOTAManager : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull SDKVersion;)
++ (NSString * _Nonnull)SDKVersion SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SFOTAManager * _Nonnull share;)
++ (SFOTAManager * _Nonnull)share SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, weak) id <SFOTAManagerDelegate> _Nullable delegate;
+/// 搜索目标外设时的超时时间(秒)，默认20秒
+@property (nonatomic) NSInteger searchingTimeout;
+- (void)logTest;
+/// 当前蓝牙状态
+@property (nonatomic, readonly) enum BleCoreManagerState bleState;
+/// true-当前manager正在执行其它任务，开始新的OTA流程的行为会被忽略。false-处于空闲状态
+@property (nonatomic, readonly) BOOL isBusy;
+/// 当前正在执行的OTA类型。none表示当前没有OTA流程
+@property (nonatomic, readonly) enum SFOTAType otaType;
+/// 开启NAND升级
+/// \param targetDeviceIdentifier 目标设备的identifier字符串。通过CBPeripheral.identifier.uuidString获取
+///
+/// \param resourcePath 1.可以输入一个zip格式的资源文件本地路径,sdk将会解压后检索orderFile;2.可以输入资源路径本地根目录,sdk将会在那里检索orderFile,传输过程不可变动目录内容。为nil表示本次升级不涉及资源文件
+///
+/// \param controlImageFilePath 与Image升级文件对应的control文件的本地路径。
+///
+/// \param imageFileInfos Image文件本地地址与类型信息。如果controlImageFilePath为nil则忽略该参数
+///
+/// \param tryResume 是否尝试启用续传功能。
+///
+/// \param 发送Image部分时，设备的回复频率。默认4（即SDK发送20包数据，设备进行一次回复），数值越大理论上速度越快，但超过设备的处理能力反而会因为重发而降低整体的发送速度，因此该值需要依据具体的设备性能而定。 
+///
+- (void)startOTANandWithTargetDeviceIdentifier:(NSString * _Nonnull)targetDeviceIdentifier resourcePath:(NSURL * _Nullable)resourcePath controlImageFilePath:(NSURL * _Nullable)controlImageFilePath imageFileInfos:(NSArray<SFNandImageFileInfo *> * _Nonnull)imageFileInfos tryResume:(BOOL)tryResume imageResponseFrequnecy:(uint8_t)imageResponseFrequnecy;
+/// 开启NorV2升级
+/// \param targetDeviceIdentifier 目标设备的identifier字符串。通过CBPeripheral.identifier.uuidString获取
+///
+/// \param controlImageFilePath 与Image升级文件对应的control文件的本地路径。
+///
+/// \param imageFileInfos image文件信息列表。包含image文件本地路径以及image文件类型。
+///
+/// \param tryResume 是否尝试启用续传功能。
+///
+/// \param 发送Image时，设备的回复频率。默认20（即SDK发送20包数据，设备进行一次回复），数值越大理论上速度越快，但超过设备的处理能力反而会因为重发而降低整体的发送速度，因此该值需要依据具体的设备性能而定。 
+///
+- (void)startOTANorV2WithTargetDeviceIdentifier:(NSString * _Nonnull)targetDeviceIdentifier controlImageFilePath:(NSURL * _Nonnull)controlImageFilePath imageFileInfos:(NSArray<SFNorImageFileInfo *> * _Nonnull)imageFileInfos tryResume:(BOOL)tryResume responseFrequency:(uint8_t)responseFrequency;
+/// 启动NorV1升级
+/// \param targetDeviceIdentifier 目标设备的identifier字符串。通过CBPeripheral.identifier.uuidString获取
+///
+/// \param ctrlFilePath 与Image升级文件对应的control文件的本地路径。
+///
+/// \param imageFileInfos image文件信息列表。包含image文件本地路径以及image文件类型。
+///
+/// \param triggerMode 升级的触发模式。
+///
+/// \param 发送Image时，设备的回复频率。默认20（即SDK发送20包数据，设备进行一次回复），数值越大理论上速度越快，但超过设备的处理能力反而会因为重发而降低整体的发送速度，因此该值需要依据具体的设备性能而定。 
+///
+- (void)startOTANorV1WithTargetDeviceIdentifier:(NSString * _Nonnull)targetDeviceIdentifier ctrlFilePath:(NSURL * _Nonnull)ctrlFilePath imageFileInfos:(NSArray<SFNorImageFileInfo *> * _Nonnull)imageFileInfos triggerMode:(enum NorV1TriggerMode)triggerMode responseFrequency:(uint8_t)responseFrequency;
+/// OTA Nor Offlie 单文件传输
+/// \param targetDeviceIdentifier 目标设备
+///
+/// \param offlineFilePath offline file path
+///
+- (void)startOTANorOfflineWithTargetDeviceIdentifier:(NSString * _Nonnull)targetDeviceIdentifier offlineFilePath:(NSURL * _Nonnull)offlineFilePath;
+/// 终止升级流程
+- (void)stop;
+/// 初始化SDK
+/// 尽量提前执行，避免在调用ota方法时蓝牙状态未就绪失败.
+- (void)initSDK SWIFT_METHOD_FAMILY(none);
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+enum SFOTAProgressStage : NSInteger;
+
+SWIFT_PROTOCOL("_TtP14native_channel20SFOTAManagerDelegate_")
+@protocol SFOTAManagerDelegate <NSObject>
+/// 蓝牙状态改变回调。当state为poweredOn时才能启动升级，否则会启动失败。
+/// state还可以通过manager的bleState属性来主动获取。
+/// \param manager 管理器
+///
+/// \param state 新蓝牙状态
+///
+- (void)otaManagerWithManager:(SFOTAManager * _Nonnull)manager updateBleState:(enum BleCoreManagerState)state;
+/// 进度回调
+/// \param manager 管理器
+///
+/// \param stage 当前所处的发送阶段
+///
+/// \param totalBytes 当前阶段总字节数
+///
+/// \param completedBytes 当前阶段已完成字节数
+///
+- (void)otaManagerWithManager:(SFOTAManager * _Nonnull)manager stage:(enum SFOTAProgressStage)stage totalBytes:(NSInteger)totalBytes completedBytes:(NSInteger)completedBytes;
+/// OTA流程结束
+/// \param manager 管理器
+///
+/// \param error nil-表示成功，否则表示失败
+///
+- (void)otaManagerWithManager:(SFOTAManager * _Nonnull)manager complete:(SFOTAError * _Nullable)error;
+@end
+
+typedef SWIFT_ENUM(NSInteger, SFOTANorV1Mode, open) {
+/// 普通模式
+  SFOTANorV1ModeNormal = 0,
+/// 强制启动
+  SFOTANorV1ModeForce = 1,
+/// 续传
+  SFOTANorV1ModeResume = 2,
+};
+
+typedef SWIFT_ENUM(NSInteger, SFOTAProgressStage, open) {
+  SFOTAProgressStageNand_res = 0,
+  SFOTAProgressStageNand_image = 1,
+  SFOTAProgressStageNor = 2,
+};
+
+/// OTA类型
+typedef SWIFT_ENUM(NSInteger, SFOTAType, open) {
+  SFOTATypeNone = 0,
+  SFOTATypeNand = 1,
+  SFOTATypeNorV2 = 2,
+  SFOTATypeNorV1 = 3,
+};
 
 #endif
 #if __has_attribute(external_source_symbol)

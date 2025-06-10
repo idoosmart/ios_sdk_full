@@ -263,6 +263,9 @@ typedef enum
 	//VBUS_EVT_APP_BLE_TO_APP_PHONE_REJECT           = 564,	   //固件静音同步到手机静音
     VBUS_EVT_APP_BLE_TO_APP_VOLUME_PERCENTAGE        = 565,    //控制音乐百分比
 
+    VBUS_EVT_APP_BLE_TO_APP_OPEN_APP_PHOTO_INTO_PREVIEW = 567, //打开APP相机，进入拍照预览功能
+    VBUS_EVT_APP_BLE_TO_APP_PARSE_APP_PHOTO_STOP_PREVIEW = 568,//暂停拍照预览，停止传输照片流
+    VBUS_EVT_APP_BLE_TO_APP_CLOSE_APP_PHOTO_OUT_PREVIEW = 569, //关闭APP相机，退出拍照预览功能
 	VBUS_EVT_APP_BLE_TO_APP_FIND_PHONE_START         = 570,    //寻找手机开始
 	VBUS_EVT_APP_BLE_TO_APP_FIND_PHONE_STOP          = 571,	   //寻找手机结束
 	VBUS_EVT_APP_BLE_TO_APP_ANTI_LOST_START          = 572,	   //防丢启动
@@ -421,6 +424,7 @@ typedef enum
     VBUS_EVT_FUNC_V3_APP_BASE_INFORMATION                  = 5095,  //protocol_v3_app_base_information
     VBUS_EVT_FUNC_V3_SET_SPORT_SCREEN                      = 5097,  //运动中屏幕显示设置 protocol_v3_set_sport_screen
     VBUS_EVT_FUNC_V3_SET_SPORT_REMIND                      = 5099,  //运动中提醒设置
+    VBUS_EVT_FUNC_V3_EMOTION_INFORMATION                   = 5100,  //情绪健康
 
 
 	VBUS_EVT_FUNC_MAKE_PHOTO                               = 5500,	//制作照片
@@ -478,6 +482,7 @@ typedef enum
 	VBUS_EVT_TRAN_JSON_V3_RESPIR_RATE 		               = 7012,  //呼吸率数据回调
 	VBUS_EVT_TRAN_JSON_V3_BODY_POWER 		               = 7013,  //身体电量数据回调
 	VBUS_EVT_TRAN_JSON_V3_HRV 				               = 7014,  //HRV数据回调
+    VBUS_EVT_TRAN_JSON_V3_EMOTION_HEALTH = 7018,    //情绪健康数据回调
 	VBUS_EVT_TRAN_JSON_V3_TEST_SYNC_PLAN_SPORT             = 7113,	//计划多运动模拟测试接口
     VBUS_EVT_TRAN_JSON_V3_RESPIR_RATE_INFO                 = 7114,	//呼吸率数据同步发送
     

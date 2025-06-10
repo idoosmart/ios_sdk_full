@@ -18,6 +18,7 @@
 #import "Alexa.g.h"
 #import "Sifli.g.h"
 #import "IDOUpdateSFManager.h"
+#import "SifliOTAManagerSDK.h"
 
 FOUNDATION_EXPORT double native_channelVersionNumber;
 FOUNDATION_EXPORT const unsigned char native_channelVersionString[];
