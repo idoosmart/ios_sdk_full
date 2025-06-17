@@ -7370,6 +7370,7 @@ SWIFT_CLASS("_TtC16protocol_channel21IDOShortcutParamModel")
 
 SWIFT_CLASS("_TtC16protocol_channel34IDOSimpleHeartRateZoneSettingModel")
 @interface IDOSimpleHeartRateZoneSettingModel : NSObject
+@property (nonatomic) NSInteger maxHrValue;
 - (nonnull instancetype)initWithMaxHrValue:(NSInteger)maxHrValue OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;

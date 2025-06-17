@@ -3033,10 +3033,13 @@
       },
       {
         "kind": "Import",
-        "name": "Zip",
-        "printedName": "Zip",
+        "name": "ZIPFoundation",
+        "printedName": "ZIPFoundation",
         "declKind": "Import",
-        "moduleName": "native_channel"
+        "moduleName": "native_channel",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -14232,7 +14235,7 @@
     {
       "filePath": "\/Users\/hc\/Documents\/works\/protocol_sdk.git\/plugins\/native_channel\/ios\/Classes\/siche\/SifliOTAManagerSDK\/SifliOTAManagerSDK\/SFOTAModules\/SFOTANandModule\/Utils\/ResourceZipLoader.swift",
       "kind": "StringLiteral",
-      "offset": 246,
+      "offset": 270,
       "length": 25,
       "value": "\"ota_file_list_order.txt\""
     },

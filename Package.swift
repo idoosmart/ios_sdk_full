@@ -16,19 +16,22 @@ let package = Package(
             targets: [pkgName]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
+        .package(url: "https://github.com/weichsel/ZIPFoundation.git", .upToNextMajor(from: "0.9.11"))
     ],
     targets: [
         .target(
             name: pkgName,
-            dependencies: ["App",
-                           "flutter_bluetooth",
-                           "Flutter",
-                           "FlutterPluginRegistrant",
-                           "native_channel",
-                           "protocol_channel",
-                           "IDOUtils",
-                           "protocol_c"],
+            dependencies: [
+                "App",
+                "flutter_bluetooth",
+                "Flutter",
+                "FlutterPluginRegistrant",
+                "native_channel",
+                "protocol_channel",
+                "IDOUtils",
+                "protocol_c",
+                .product(name: "ZIPFoundation", package: "ZIPFoundation")
+            ],
             path: pkgName,
             resources: [
                 .process("icon_assets.bundle")

@@ -4857,6 +4857,7 @@ public protocol IDOCmdProtocol {
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOSimpleHeartRateZoneSettingModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var maxHrValue: Swift.Int
   @objc public init(maxHrValue: Swift.Int)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
