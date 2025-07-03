@@ -963,6 +963,8 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 + (id <IDOCancellable> _Nonnull)setSimpleHeartRateZone:(IDOSimpleHeartRateZoneSettingModel * _Nonnull)model completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
 /// 查询简单心率区间
 + (id <IDOCancellable> _Nonnull)getSimpleHeartRateZone:(void (^ _Nonnull)(CmdError * _Nonnull, IDOSimpleHeartRateZoneSettingModel * _Nullable))completion;
+/// 获取用户信息
++ (id <IDOCancellable> _Nonnull)getUserInfo:(void (^ _Nonnull)(CmdError * _Nonnull, IDOUserInfoPramModel * _Nullable))completion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -5132,6 +5134,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL alexaGetSupportGetAlexaDefaultLanguage;
 /// alexa跳转运动界面支持100种运动类型字段
 @property (nonatomic, readonly) BOOL alexaGetUIControllSports;
+/// 获取用户信息
+@property (nonatomic, readonly) BOOL supportGetUserInfo;
 - (NSString * _Nullable)printProperties SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -9429,7 +9433,10 @@ SWIFT_CLASS("_TtC16protocol_channel20IDOUserInfoPramModel")
 /// 性别 1：女  0：男
 /// Gender 1: Female 0: Male
 @property (nonatomic) NSInteger gender;
+/// 当前时间戳
+@property (nonatomic) int32_t setTime;
 - (nonnull instancetype)initWithYear:(NSInteger)year monuth:(NSInteger)monuth day:(NSInteger)day heigh:(NSInteger)heigh weigh:(NSInteger)weigh gender:(NSInteger)gender OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithYear:(NSInteger)year monuth:(NSInteger)monuth day:(NSInteger)day heigh:(NSInteger)heigh weigh:(NSInteger)weigh gender:(NSInteger)gender setTime:(int32_t)setTime OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

@@ -1373,6 +1373,12 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOSimpleHeartRateZoneSettingModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOSimpleHeartRateZoneSettingModel
   }
+  public struct getUserInfo : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOUserInfoPramModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOUserInfoPramModel
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Cmdoc : ObjectiveC.NSObject {
   @objc @discardableResult
@@ -1687,6 +1693,8 @@ public struct Cmds {
   public static func setSimpleHeartRateZone(_ model: protocol_channel.IDOSimpleHeartRateZoneSettingModel, completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOCmdSetResponseModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func getSimpleHeartRateZone(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOSimpleHeartRateZoneSettingModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getUserInfo(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOUserInfoPramModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
   @objc override dynamic public init()
   @objc deinit
 }
@@ -3754,6 +3762,7 @@ public protocol IDOCmdProtocol {
   @objc var setAlexaControll100brightness: Swift.Bool { get }
   @objc var alexaGetSupportGetAlexaDefaultLanguage: Swift.Bool { get }
   @objc var alexaGetUIControllSports: Swift.Bool { get }
+  @objc var supportGetUserInfo: Swift.Bool { get }
   @objc func printProperties() -> Swift.String?
 }
 @objc @objcMembers public class IDOGpsControlModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
@@ -5740,7 +5749,9 @@ public protocol IDOCmdProtocol {
   @objc public var heigh: Swift.Int
   @objc public var weigh: Swift.Int
   @objc public var gender: Swift.Int
+  @objc public var setTime: Swift.Int32
   @objc public init(year: Swift.Int, monuth: Swift.Int, day: Swift.Int, heigh: Swift.Int, weigh: Swift.Int, gender: Swift.Int)
+  @objc public init(year: Swift.Int, monuth: Swift.Int, day: Swift.Int, heigh: Swift.Int, weigh: Swift.Int, gender: Swift.Int, setTime: Swift.Int32 = 0)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws

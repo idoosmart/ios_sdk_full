@@ -199,6 +199,7 @@ typedef enum
     VBUS_EVT_APP_GET_LEFT_RIGHT_WEAR_SETTINGS        = 346,    //获取左右手佩戴设置struct protocol_head head; struct protocol_get_left_right_hand_wear_setting_reply
     VBUS_EVT_APP_GET_SETTINGS_DURING_EXERCISE        = 347,    //支持获取获取运动中设置
     VBUS_EVT_APP_GET_HEART_RATE_ZONE                 = 348,    //支持获取简单心率区间设置 protocol_get_heart_rate_zone
+    VBUS_EVT_APP_GET_USER_INFO                       = 349,    //支持获取用户信息功能
 
 
     VBUS_EVT_CHECK_REBOOT                            = 350,	   //检查重启状态,非协议,用于内部状态处理
