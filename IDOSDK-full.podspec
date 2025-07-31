@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'IDOSDK-full'
-  s.version          = '4.3.1'
+  s.version          = '4.4.0'
   s.summary          = 'ido sdk'
   s.description      = <<-DESC
   ido sdk
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.source           = { :git => 'https://github.com/idoosmart/ios_sdk_full.git', :tag => s.version.to_s }
 
-  s.platform         = :ios, '9.0'
+  s.platform         = :ios, '12.0'
   s.libraries        = 'iconv','z','c++'
 
   s.vendored_frameworks = [
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
    
   s.resources = ['IDOSDK-full/icon_assets.bundle']
   
-  s.dependency 'ZIPFoundation', '~> 0.9.11'
+  s.dependency 'ZIPFoundation', '~> 0.9.19'
 
    # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = {

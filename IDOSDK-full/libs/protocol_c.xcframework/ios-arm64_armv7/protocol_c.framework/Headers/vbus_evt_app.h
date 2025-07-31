@@ -427,6 +427,7 @@ typedef enum
     VBUS_EVT_FUNC_V3_SET_SPORT_REMIND                      = 5099,  //运动中提醒设置
     VBUS_EVT_FUNC_V3_EMOTION_INFORMATION                   = 5100,  //情绪健康
     VBUS_EVT_FUNC_V3_MENU_LIST                             = 5101,  //v3菜单列表操作
+    VBUS_EVT_FUNC_V3_PHYSIOLOGICAL_RECORD                  = 5102,  //女性生理日常记录
 
 
 

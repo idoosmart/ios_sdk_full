@@ -50,7 +50,7 @@
 		</data>
 		<key>ios-arm64/native_channel.framework/Info.plist</key>
 		<data>
-		3Zjj2E33hc+IgYzSNqJIM6t8CI4=
+		XdndUhVlt95M6i0fhb7LFYDlHtk=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/module.modulemap</key>
 		<data>
@@ -58,27 +58,27 @@
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		rGUKUdLnPmc7Ws8aXUOjsPho9Ww=
+		gqlEzVrotyeZmh/PbM4kwowQmf0=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		y3RR+/1C7iyvZx6pGjED1faAncI=
+		Eateso4yrqhvv+yRSCRgRZ1M+mI=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		DRF/yhoJXO7Z1qcMwu53+lOcIUY=
+		BVroD1oxi6Gn+hbjijboM94I7cM=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		efmEvLMdrTG0Tsy3usdN6XEpHh0=
+		XLqvO5HrmzsYx/Zeq0eDnxaytuc=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		DRF/yhoJXO7Z1qcMwu53+lOcIUY=
+		BVroD1oxi6Gn+hbjijboM94I7cM=
 		</data>
 		<key>ios-arm64/native_channel.framework/native_channel</key>
 		<data>
-		X8NsU0bcG2Au87JzzyRL2uHfX2A=
+		/Gkm0sx+nP0yGIFLrTELOPYrPLY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -208,11 +208,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3Zjj2E33hc+IgYzSNqJIM6t8CI4=
+			XdndUhVlt95M6i0fhb7LFYDlHtk=
 			</data>
 			<key>hash2</key>
 			<data>
-			+7AmxjitUNUI6eKTncwiAm7u3uovW6gBRoWl9m46oGA=
+			r/NodWWM1n0DFeP58X5KNaWqGj40jtCQdG+qIAOg5jM=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/module.modulemap</key>
@@ -230,66 +230,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rGUKUdLnPmc7Ws8aXUOjsPho9Ww=
+			gqlEzVrotyeZmh/PbM4kwowQmf0=
 			</data>
 			<key>hash2</key>
 			<data>
-			NKT3dc81Rs7I4saWNnfZ3TSwsNgVBwDI/n1sURARijY=
+			vKUJCvulr7fB91sAY6+CDL1BqT4rgCD2GcLJK5krriU=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			y3RR+/1C7iyvZx6pGjED1faAncI=
+			Eateso4yrqhvv+yRSCRgRZ1M+mI=
 			</data>
 			<key>hash2</key>
 			<data>
-			wrn5X5ZbcBCjsYpar4hr/OJXTL4TXbym+jkwydal5+I=
+			6DhXKv1BhTEftpQDz85QCKr49F7+a0p1G/Mq45V4WeY=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DRF/yhoJXO7Z1qcMwu53+lOcIUY=
+			BVroD1oxi6Gn+hbjijboM94I7cM=
 			</data>
 			<key>hash2</key>
 			<data>
-			BKXVSZsx6nWd06FlU4Yj3VmvPkKthRkFiKz+Lfrquj4=
+			lwKIkmG0QPVxRc+oUbffO/8h1BOmavrQbaFaDfS1FX4=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			efmEvLMdrTG0Tsy3usdN6XEpHh0=
+			XLqvO5HrmzsYx/Zeq0eDnxaytuc=
 			</data>
 			<key>hash2</key>
 			<data>
-			VAlJqnOVRlOIRsyWe8vPFWec6VIZalarbL0fvjcsnxg=
+			2zZcpQgsMHcciW5wf71rbdZuCD5bDZeNayVnvmv5qBE=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DRF/yhoJXO7Z1qcMwu53+lOcIUY=
+			BVroD1oxi6Gn+hbjijboM94I7cM=
 			</data>
 			<key>hash2</key>
 			<data>
-			BKXVSZsx6nWd06FlU4Yj3VmvPkKthRkFiKz+Lfrquj4=
+			lwKIkmG0QPVxRc+oUbffO/8h1BOmavrQbaFaDfS1FX4=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/native_channel</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			X8NsU0bcG2Au87JzzyRL2uHfX2A=
+			/Gkm0sx+nP0yGIFLrTELOPYrPLY=
 			</data>
 			<key>hash2</key>
 			<data>
-			a2/OghViURPCChJkHEZha35zjVISXoYJayApAAsLn1c=
+			CKHJiI6e3R2wDtJ2MWeXusJ6C2OHVWiSNb8K1EBU7ks=
 			</data>
 		</dict>
 	</dict>
