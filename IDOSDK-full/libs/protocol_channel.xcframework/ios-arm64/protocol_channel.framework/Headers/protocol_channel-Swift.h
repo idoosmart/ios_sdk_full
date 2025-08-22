@@ -2764,6 +2764,12 @@ typedef SWIFT_ENUM(NSInteger, IDOConnectErrorType, open) {
   IDOConnectErrorTypeInformationFail = 9,
 /// app主动断开
   IDOConnectErrorTypeCancelByUser = 10,
+/// 设备已绑定并且不支持重复绑定
+  IDOConnectErrorTypeDeviceAlreadyBindAndNotSupportRebind = 11,
+/// app 绑定的设备被重置了
+  IDOConnectErrorTypeDeviceHasBeenReset = 12,
+/// 连接被终止，比如在 ota 中，不需要执行重连了
+  IDOConnectErrorTypeConnectTerminated = 13,
 };
 
 

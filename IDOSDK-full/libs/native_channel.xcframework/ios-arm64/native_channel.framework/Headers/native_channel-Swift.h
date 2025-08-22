@@ -313,17 +313,19 @@ typedef SWIFT_ENUM(NSInteger, BleCoreManagerState, open) {
 
 
 
+@class NSNumber;
+@class FlutterError;
 @protocol FlutterPluginRegistrar;
 @class NSString;
-@class FlutterError;
 @class FlutterStandardTypedData;
-@class NSNumber;
 
 SWIFT_CLASS("_TtC14native_channel14IdoSifliPlugin")
 @interface IdoSifliPlugin : NSObject <FlutterPlugin, ApiSifliHost, IDOUpdateSFManagerDelegate>
+- (void)checkOtaDoingWithCompletion:(void (^ _Nonnull)(NSNumber * _Nullable, FlutterError * _Nullable))completion;
 + (void)registerWithRegistrar:(id <FlutterPluginRegistrar> _Nonnull)registrar;
 - (void)startOTAFiles:(NSArray * _Nonnull)files deviceUUID:(NSString * _Nonnull)deviceUUID error:(FlutterError * _Nullable * _Nonnull)error;
 - (FlutterStandardTypedData * _Nullable)sifliEBinFromPngPngDatas:(FlutterStandardTypedData * _Nonnull)pngDatas eColor:(NSString * _Nonnull)eColor type:(NSNumber * _Nonnull)type binType:(NSNumber * _Nonnull)binType boardType:(IDOSFBoardType)boardType error:(FlutterError * _Nullable * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
+- (FlutterStandardTypedData * _Nullable)sifliEBinFromPngsPngDatas:(NSArray<FlutterStandardTypedData *> * _Nonnull)pngDatas eColor:(NSString * _Nonnull)eColor type:(NSNumber * _Nonnull)type binType:(NSNumber * _Nonnull)binType boardType:(IDOSFBoardType)boardType error:(FlutterError * _Nullable * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
 - (void)updateManageState:(OTAUpdateState)state updateDesc:(NSString * _Nonnull)desc;
 - (void)updateManagerProgress:(float)progress message:(NSString * _Nullable)message;
 - (void)logMessage:(NSString * _Nonnull)logMsg;

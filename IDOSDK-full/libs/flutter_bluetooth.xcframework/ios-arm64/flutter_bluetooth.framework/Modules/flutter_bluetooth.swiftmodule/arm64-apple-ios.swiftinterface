@@ -1141,6 +1141,7 @@ extension flutter_bluetooth.Status : Foundation.CustomNSError {
 @objc @_inheritsConvenienceInitializers public class SwiftFlutterBluetoothPlugin : ObjectiveC.NSObject, Flutter.FlutterPlugin {
   @objc public static func register(with registrar: any Flutter.FlutterPluginRegistrar)
   @objc public func handle(_ call: Flutter.FlutterMethodCall, result: @escaping Flutter.FlutterResult)
+  public func requestDeviceBindState(macAddress: Swift.String, completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc override dynamic public init()
   @objc deinit
 }

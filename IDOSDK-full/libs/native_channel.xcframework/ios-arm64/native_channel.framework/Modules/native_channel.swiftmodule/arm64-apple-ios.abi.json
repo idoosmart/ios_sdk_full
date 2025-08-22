@@ -551,6 +551,75 @@
         "children": [
           {
             "kind": "Function",
+            "name": "checkOtaDoing",
+            "printedName": "checkOtaDoing(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.NSNumber?, Flutter.FlutterError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Foundation.NSNumber?, Flutter.FlutterError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.NSNumber?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NSNumber",
+                            "printedName": "Foundation.NSNumber",
+                            "usr": "c:objc(cs)NSNumber"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Flutter.FlutterError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FlutterError",
+                            "printedName": "Flutter.FlutterError",
+                            "usr": "c:objc(cs)FlutterError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@native_channel@objc(cs)IdoSifliPlugin(im)checkOtaDoingWithCompletion:",
+            "mangledName": "$s14native_channel14IdoSifliPluginC13checkOtaDoing10completionyySo8NSNumberCSg_So12FlutterErrorCSgtc_tF",
+            "moduleName": "native_channel",
+            "objc_name": "checkOtaDoingWithCompletion:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "register",
             "printedName": "register(with:)",
             "children": [
@@ -720,6 +789,97 @@
             "mangledName": "$s14native_channel14IdoSifliPluginC9sifliEBin07fromPngI5Datas6eColor4type7binType05boardN05errorSo24FlutterStandardTypedDataCSgAL_SSSo8NSNumberCAOSo010IDOSFBoardN0VSAySo0Q5ErrorCSgGtF",
             "moduleName": "native_channel",
             "objc_name": "sifliEBinFromPngPngDatas:eColor:type:binType:boardType:error:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sifliEBin",
+            "printedName": "sifliEBin(fromPngsPngDatas:eColor:type:binType:boardType:error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Flutter.FlutterStandardTypedData?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlutterStandardTypedData",
+                    "printedName": "Flutter.FlutterStandardTypedData",
+                    "usr": "c:objc(cs)FlutterStandardTypedData"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Flutter.FlutterStandardTypedData]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlutterStandardTypedData",
+                    "printedName": "Flutter.FlutterStandardTypedData",
+                    "usr": "c:objc(cs)FlutterStandardTypedData"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSNumber",
+                "printedName": "Foundation.NSNumber",
+                "usr": "c:objc(cs)NSNumber"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSNumber",
+                "printedName": "Foundation.NSNumber",
+                "usr": "c:objc(cs)NSNumber"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IDOSFBoardType",
+                "printedName": "native_channel.IDOSFBoardType",
+                "usr": "c:@E@IDOSFBoardType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AutoreleasingUnsafeMutablePointer",
+                "printedName": "Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Flutter.FlutterError?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FlutterError",
+                        "printedName": "Flutter.FlutterError",
+                        "usr": "c:objc(cs)FlutterError"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "usr": "s:SA"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@native_channel@objc(cs)IdoSifliPlugin(im)sifliEBinFromPngsPngDatas:eColor:type:binType:boardType:error:",
+            "mangledName": "$s14native_channel14IdoSifliPluginC9sifliEBin16fromPngsPngDatas6eColor4type7binType05boardO05errorSo24FlutterStandardTypedDataCSgSayALG_SSSo8NSNumberCAPSo010IDOSFBoardO0VSAySo0R5ErrorCSgGtF",
+            "moduleName": "native_channel",
+            "objc_name": "sifliEBinFromPngsPngDatas:eColor:type:binType:boardType:error:",
             "declAttributes": [
               "ObjC",
               "AccessControl"
