@@ -31,6 +31,7 @@ import _SwiftConcurrencyShims
   @objc public func startOTAFiles(_ files: [Any], deviceUUID: Swift.String, error: Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>)
   @objc public func sifliEBin(fromPngPngDatas pngDatas: Flutter.FlutterStandardTypedData, eColor: Swift.String, type: Foundation.NSNumber, binType: Foundation.NSNumber, boardType: native_channel.IDOSFBoardType, error: Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>) -> Flutter.FlutterStandardTypedData?
   @objc public func sifliEBin(fromPngsPngDatas pngDatas: [Flutter.FlutterStandardTypedData], eColor: Swift.String, type: Foundation.NSNumber, binType: Foundation.NSNumber, boardType: native_channel.IDOSFBoardType, error: Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>) -> Flutter.FlutterStandardTypedData?
+  @objc public func asyncSifliEBin(fromPngsPngDatas pngDatas: [Flutter.FlutterStandardTypedData], eColor: Swift.String, type: Foundation.NSNumber, binType: Foundation.NSNumber, boardType: native_channel.IDOSFBoardType, isGif: Foundation.NSNumber, completion: @escaping (Flutter.FlutterStandardTypedData?, Flutter.FlutterError?) -> Swift.Void)
   @objc public func updateManage(_ state: native_channel.OTAUpdateState, updateDesc desc: Swift.String)
   @objc public func updateManagerProgress(_ progress: Swift.Float, message: Swift.String?)
   @objc public func logMessage(_ logMsg: Swift.String)

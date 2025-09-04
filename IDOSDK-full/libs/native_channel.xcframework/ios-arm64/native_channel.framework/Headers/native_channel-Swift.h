@@ -326,6 +326,7 @@ SWIFT_CLASS("_TtC14native_channel14IdoSifliPlugin")
 - (void)startOTAFiles:(NSArray * _Nonnull)files deviceUUID:(NSString * _Nonnull)deviceUUID error:(FlutterError * _Nullable * _Nonnull)error;
 - (FlutterStandardTypedData * _Nullable)sifliEBinFromPngPngDatas:(FlutterStandardTypedData * _Nonnull)pngDatas eColor:(NSString * _Nonnull)eColor type:(NSNumber * _Nonnull)type binType:(NSNumber * _Nonnull)binType boardType:(IDOSFBoardType)boardType error:(FlutterError * _Nullable * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
 - (FlutterStandardTypedData * _Nullable)sifliEBinFromPngsPngDatas:(NSArray<FlutterStandardTypedData *> * _Nonnull)pngDatas eColor:(NSString * _Nonnull)eColor type:(NSNumber * _Nonnull)type binType:(NSNumber * _Nonnull)binType boardType:(IDOSFBoardType)boardType error:(FlutterError * _Nullable * _Nonnull)error SWIFT_WARN_UNUSED_RESULT;
+- (void)asyncSifliEBinFromPngsPngDatas:(NSArray<FlutterStandardTypedData *> * _Nonnull)pngDatas eColor:(NSString * _Nonnull)eColor type:(NSNumber * _Nonnull)type binType:(NSNumber * _Nonnull)binType boardType:(IDOSFBoardType)boardType isGif:(NSNumber * _Nonnull)isGif completion:(void (^ _Nonnull)(FlutterStandardTypedData * _Nullable, FlutterError * _Nullable))completion;
 - (void)updateManageState:(OTAUpdateState)state updateDesc:(NSString * _Nonnull)desc;
 - (void)updateManagerProgress:(float)progress message:(NSString * _Nullable)message;
 - (void)logMessage:(NSString * _Nonnull)logMsg;

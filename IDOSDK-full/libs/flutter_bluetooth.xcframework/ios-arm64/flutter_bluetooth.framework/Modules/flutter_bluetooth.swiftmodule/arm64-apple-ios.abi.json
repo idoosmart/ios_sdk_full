@@ -37704,91 +37704,105 @@
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "Dictionary",
-      "offset": 793,
+      "offset": 794,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "Array",
-      "offset": 881,
+      "offset": 882,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "Array",
-      "offset": 1204,
+      "offset": 1205,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "FloatLiteral",
-      "offset": 1357,
+      "offset": 1358,
       "length": 4,
       "value": "0.01"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1399,
+      "offset": 1400,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1455,
+      "offset": 1456,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1512,
+      "offset": 1513,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1585,
+      "offset": 1586,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1648,
+      "offset": 1663,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1744,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1812,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1791,
+      "offset": 1955,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1826,
+      "offset": 1990,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1859,
+      "offset": 2023,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/works\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1905,
+      "offset": 2069,
       "length": 1,
       "value": "0"
     },

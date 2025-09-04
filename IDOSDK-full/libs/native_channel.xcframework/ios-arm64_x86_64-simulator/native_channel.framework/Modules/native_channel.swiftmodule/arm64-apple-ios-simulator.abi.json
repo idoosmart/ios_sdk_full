@@ -5357,6 +5357,120 @@
           },
           {
             "kind": "Function",
+            "name": "asyncSifliEBin",
+            "printedName": "asyncSifliEBin(fromPngsPngDatas:eColor:type:binType:boardType:isGif:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Flutter.FlutterStandardTypedData]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FlutterStandardTypedData",
+                    "printedName": "Flutter.FlutterStandardTypedData",
+                    "usr": "c:objc(cs)FlutterStandardTypedData"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSNumber",
+                "printedName": "Foundation.NSNumber",
+                "usr": "c:objc(cs)NSNumber"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSNumber",
+                "printedName": "Foundation.NSNumber",
+                "usr": "c:objc(cs)NSNumber"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IDOSFBoardType",
+                "printedName": "native_channel.IDOSFBoardType",
+                "usr": "c:@E@IDOSFBoardType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSNumber",
+                "printedName": "Foundation.NSNumber",
+                "usr": "c:objc(cs)NSNumber"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Flutter.FlutterStandardTypedData?, Flutter.FlutterError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Flutter.FlutterStandardTypedData?, Flutter.FlutterError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Flutter.FlutterStandardTypedData?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FlutterStandardTypedData",
+                            "printedName": "Flutter.FlutterStandardTypedData",
+                            "usr": "c:objc(cs)FlutterStandardTypedData"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Flutter.FlutterError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FlutterError",
+                            "printedName": "Flutter.FlutterError",
+                            "usr": "c:objc(cs)FlutterError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@native_channel@objc(cs)IdoSifliPlugin(im)asyncSifliEBinFromPngsPngDatas:eColor:type:binType:boardType:isGif:completion:",
+            "mangledName": "$s14native_channel14IdoSifliPluginC05asyncD4EBin16fromPngsPngDatas6eColor4type7binType05boardO05isGif10completionySaySo24FlutterStandardTypedDataCG_SSSo8NSNumberCAPSo010IDOSFBoardO0VAPyAMSg_So0T5ErrorCSgtctF",
+            "moduleName": "native_channel",
+            "isOpen": true,
+            "objc_name": "asyncSifliEBinFromPngsPngDatas:eColor:type:binType:boardType:isGif:completion:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "updateManage",
             "printedName": "updateManage(_:updateDesc:)",
             "children": [

@@ -30,7 +30,7 @@
 		</data>
 		<key>ios-arm64/native_channel.framework/Headers/Sifli.g.h</key>
 		<data>
-		LGuMQqli9w30RUq68fBs7D31i+4=
+		aAn6Frnz83rSpwuw0dKFSMOP+Ow=
 		</data>
 		<key>ios-arm64/native_channel.framework/Headers/SifliOTAManagerSDK.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>ios-arm64/native_channel.framework/Headers/native_channel-Swift.h</key>
 		<data>
-		uTjomgPBsm9GfimuxKsfX2GPizM=
+		LEJXPk9l+iqigxtVQJzjIhhSHH8=
 		</data>
 		<key>ios-arm64/native_channel.framework/Headers/native_channel-umbrella.h</key>
 		<data>
@@ -58,15 +58,15 @@
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		DYRo2vfWpOdpyB0qq80OOevucPI=
+		w4Otv+Peo7jsr3aAlRhv9cKiepA=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		ZfduB2uJ+b8ZKYthUg7cbQ6sPPQ=
+		m9g/mcGlgM4JbvIdm+6oyztJNjA=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		yzTLK04S4nt4fs/kFk4kiE32rIY=
+		3Qbh0x3FOcNQ3kdlM49lRc21uJA=
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		yzTLK04S4nt4fs/kFk4kiE32rIY=
+		3Qbh0x3FOcNQ3kdlM49lRc21uJA=
 		</data>
 		<key>ios-arm64/native_channel.framework/native_channel</key>
 		<data>
-		bSCxpoVs1UxDQiqZ3pInAniCRc8=
+		Y7ETQR42BR4+OeMtpL2MQW+ldTs=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Headers/Alexa.g.h</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Headers/Sifli.g.h</key>
 		<data>
-		LGuMQqli9w30RUq68fBs7D31i+4=
+		aAn6Frnz83rSpwuw0dKFSMOP+Ow=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Headers/SifliOTAManagerSDK.h</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Headers/native_channel-Swift.h</key>
 		<data>
-		HLn3Fz4fg0CAmXtww4Y3U59gjF8=
+		AGkBTIXKYmnkVVQFOzzmsOeHj/U=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Headers/native_channel-umbrella.h</key>
 		<data>
@@ -134,19 +134,19 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		TxBFpyweEHCsU8icHThfYAGnunk=
+		vH66daRsbV9TgIyuwC6R62/mbmY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		WdpJy4ner5K5aOSBvpP/uYsUYOk=
+		E6HYMai+UVAsXwfEvZ9gGZak+xU=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		Mr7e55MMcQYzPMTmGxNAaBxt7U8=
+		+jpMLVbwbOG/q4tuq11VXEuyeJc=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		PuVeLRdZlQisihoNeXBQ0tOETOU=
+		BIBV9qPI+jyR8ZAAMT/cMFVQ/Ek=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -154,15 +154,15 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PuVeLRdZlQisihoNeXBQ0tOETOU=
+		BIBV9qPI+jyR8ZAAMT/cMFVQ/Ek=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		Mr7e55MMcQYzPMTmGxNAaBxt7U8=
+		+jpMLVbwbOG/q4tuq11VXEuyeJc=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		jBmWR01GQvDgoKFS5RN6nWeSQvc=
+		kEnOvp5TsYPTUupTA0hROlwCA/8=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -170,11 +170,11 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		jBmWR01GQvDgoKFS5RN6nWeSQvc=
+		kEnOvp5TsYPTUupTA0hROlwCA/8=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeDirectory</key>
 		<data>
-		/eYOq+I1381U+jIGCRprfLB1i74=
+		jj5UxR3alkicx1eGKLA/mE4aQtY=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeRequirements</key>
 		<data>
@@ -182,11 +182,11 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeRequirements-1</key>
 		<data>
-		E4eyqLbPfR4Yn82+z5FHqVB6KjQ=
+		FDxzpnkuWPZGOCiHhCLqalGh9ig=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeResources</key>
 		<data>
-		LUehTzx5ZoaB2W9aSuOLUAJu9Wk=
+		GiV9yOUi67o0fGzxP71YHKMyZBo=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeSignature</key>
 		<data>
@@ -194,7 +194,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/native_channel</key>
 		<data>
-		LBuVWDyUg/8MUS2sP5b8cO68uIc=
+		GgRUAei2w2BljyDlJaF+vHQhT8g=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -269,11 +269,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LGuMQqli9w30RUq68fBs7D31i+4=
+			aAn6Frnz83rSpwuw0dKFSMOP+Ow=
 			</data>
 			<key>hash2</key>
 			<data>
-			HbHungf5GV1svf7wAKRVrLOAobI6SbB0pv83BAKAWpU=
+			pV/TvgD9mtfQ1s1qgtCL0Dx7Ygx9erVj1334YGHppcg=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Headers/SifliOTAManagerSDK.h</key>
@@ -291,11 +291,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uTjomgPBsm9GfimuxKsfX2GPizM=
+			LEJXPk9l+iqigxtVQJzjIhhSHH8=
 			</data>
 			<key>hash2</key>
 			<data>
-			Yt+gyu6p4ZpboWofxr2WUmLNBvuvBaeKrmjjpo9SvP0=
+			jFZsP3nIrPPNyhgT9HfRh2fmFTlR1jvD96K2+Lrjc3A=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Headers/native_channel-umbrella.h</key>
@@ -346,33 +346,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DYRo2vfWpOdpyB0qq80OOevucPI=
+			w4Otv+Peo7jsr3aAlRhv9cKiepA=
 			</data>
 			<key>hash2</key>
 			<data>
-			2JyUphsbfFmLr0B/mgS370bxxaQzGrt5dK1iS67h588=
+			8OQfwYc9AnF+DfE1wywgYJ4dVyFG/DzKDcQ3NoCBzFY=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZfduB2uJ+b8ZKYthUg7cbQ6sPPQ=
+			m9g/mcGlgM4JbvIdm+6oyztJNjA=
 			</data>
 			<key>hash2</key>
 			<data>
-			l6GJEGQFJrR5vlKb+Vslm9rE2cs34NZxRNrE71J4yig=
+			ckIj1mjwaC+2JyqUh7duW8EEhNx1T7GAq2kF9gESKZo=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yzTLK04S4nt4fs/kFk4kiE32rIY=
+			3Qbh0x3FOcNQ3kdlM49lRc21uJA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ivnxCRLQ2gRhohAmpYlSKBoHeZuICmG79i9uBUhcXFg=
+			/s3+qRAHnZfHm/dc8h5bBYF8dVbpgjIOjBBddKOSIS8=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -390,22 +390,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yzTLK04S4nt4fs/kFk4kiE32rIY=
+			3Qbh0x3FOcNQ3kdlM49lRc21uJA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ivnxCRLQ2gRhohAmpYlSKBoHeZuICmG79i9uBUhcXFg=
+			/s3+qRAHnZfHm/dc8h5bBYF8dVbpgjIOjBBddKOSIS8=
 			</data>
 		</dict>
 		<key>ios-arm64/native_channel.framework/native_channel</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bSCxpoVs1UxDQiqZ3pInAniCRc8=
+			Y7ETQR42BR4+OeMtpL2MQW+ldTs=
 			</data>
 			<key>hash2</key>
 			<data>
-			oZuMOofyoDqpmz6BnkljvBKazpav6SUeP2KcVMHF+cI=
+			meB1NG65l7VKcL5ETgOtfzkf93T8ihrcAJaQJVnOn7c=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Headers/Alexa.g.h</key>
@@ -478,11 +478,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LGuMQqli9w30RUq68fBs7D31i+4=
+			aAn6Frnz83rSpwuw0dKFSMOP+Ow=
 			</data>
 			<key>hash2</key>
 			<data>
-			HbHungf5GV1svf7wAKRVrLOAobI6SbB0pv83BAKAWpU=
+			pV/TvgD9mtfQ1s1qgtCL0Dx7Ygx9erVj1334YGHppcg=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Headers/SifliOTAManagerSDK.h</key>
@@ -500,11 +500,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HLn3Fz4fg0CAmXtww4Y3U59gjF8=
+			AGkBTIXKYmnkVVQFOzzmsOeHj/U=
 			</data>
 			<key>hash2</key>
 			<data>
-			NdP+EfTYTT3Hv7VEZjhh/10fqXqr63OHwsEEYD26jc8=
+			CD73Rivq7J1g5z872HoSo6MBT4s9UeWXdiq+QzOMPDg=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Headers/native_channel-umbrella.h</key>
@@ -555,44 +555,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TxBFpyweEHCsU8icHThfYAGnunk=
+			vH66daRsbV9TgIyuwC6R62/mbmY=
 			</data>
 			<key>hash2</key>
 			<data>
-			j6lJTqkFNfCKJhnJHMMqwrWOZeYssS1LnQCC13JXRSg=
+			ygyXL+iY0TB42nmS8Aku4xhFDEpcum+KuqJotRumhZI=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WdpJy4ner5K5aOSBvpP/uYsUYOk=
+			E6HYMai+UVAsXwfEvZ9gGZak+xU=
 			</data>
 			<key>hash2</key>
 			<data>
-			vS+JXinHDM35/ioHoKEiBX14m+jSZ+TWRFSY5x1jU8w=
+			q6ZF6s6EwCw8DD6vvw93FlSoBIPF9trWZ8ZysqlOO48=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Mr7e55MMcQYzPMTmGxNAaBxt7U8=
+			+jpMLVbwbOG/q4tuq11VXEuyeJc=
 			</data>
 			<key>hash2</key>
 			<data>
-			clQBvtuVZXrNkTg84Q+e2ruXcTe3DI7+51EjnzmlH90=
+			dE1QJvuimiNfwgW4t2NhSlFq7gTHhyQb2YE/Ow9J5KQ=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PuVeLRdZlQisihoNeXBQ0tOETOU=
+			BIBV9qPI+jyR8ZAAMT/cMFVQ/Ek=
 			</data>
 			<key>hash2</key>
 			<data>
-			MLW+9wN/3WcYF3VqTy37rDSDpQgU+VzF6PfSJATMAtE=
+			viUFRzJ8oCoiBifM5lYEpLAITi4nQBh7m4mFX3UU6pk=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -610,33 +610,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PuVeLRdZlQisihoNeXBQ0tOETOU=
+			BIBV9qPI+jyR8ZAAMT/cMFVQ/Ek=
 			</data>
 			<key>hash2</key>
 			<data>
-			MLW+9wN/3WcYF3VqTy37rDSDpQgU+VzF6PfSJATMAtE=
+			viUFRzJ8oCoiBifM5lYEpLAITi4nQBh7m4mFX3UU6pk=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Mr7e55MMcQYzPMTmGxNAaBxt7U8=
+			+jpMLVbwbOG/q4tuq11VXEuyeJc=
 			</data>
 			<key>hash2</key>
 			<data>
-			clQBvtuVZXrNkTg84Q+e2ruXcTe3DI7+51EjnzmlH90=
+			dE1QJvuimiNfwgW4t2NhSlFq7gTHhyQb2YE/Ow9J5KQ=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jBmWR01GQvDgoKFS5RN6nWeSQvc=
+			kEnOvp5TsYPTUupTA0hROlwCA/8=
 			</data>
 			<key>hash2</key>
 			<data>
-			tPskjQ1yFd5COWB3Q2Lz2JfTCxJOigTV0OfxRSbc75Y=
+			vHu0YHqpvvGxNhU+vP806iWL4q4VPRWBGmdDnAaLpcY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -654,22 +654,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jBmWR01GQvDgoKFS5RN6nWeSQvc=
+			kEnOvp5TsYPTUupTA0hROlwCA/8=
 			</data>
 			<key>hash2</key>
 			<data>
-			tPskjQ1yFd5COWB3Q2Lz2JfTCxJOigTV0OfxRSbc75Y=
+			vHu0YHqpvvGxNhU+vP806iWL4q4VPRWBGmdDnAaLpcY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeDirectory</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/eYOq+I1381U+jIGCRprfLB1i74=
+			jj5UxR3alkicx1eGKLA/mE4aQtY=
 			</data>
 			<key>hash2</key>
 			<data>
-			VIUtiVA2XikYfesV6LcA/yqRyaL182BdmeiJYCIW5IE=
+			PLchUmvg0Z4dqN1TpzvbKMTpVwsu1RtueTS03CvQbNw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeRequirements</key>
@@ -687,22 +687,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			E4eyqLbPfR4Yn82+z5FHqVB6KjQ=
+			FDxzpnkuWPZGOCiHhCLqalGh9ig=
 			</data>
 			<key>hash2</key>
 			<data>
-			fKXwEF2nWvPBSeJ7krJuDoUxMcsI7m7HY3KeXpvgAt8=
+			XkD0cxNAnkn2YlM/4Y61YiiMYPBpK6UejUQeyqaiAGY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LUehTzx5ZoaB2W9aSuOLUAJu9Wk=
+			GiV9yOUi67o0fGzxP71YHKMyZBo=
 			</data>
 			<key>hash2</key>
 			<data>
-			8YqaqQzpV1HUtEYxCr631UmAEXUTHd5RIfo5V+eeq74=
+			1B55v0CguA4GChYn5x53PaEDHKsJ8TSUxfULirqq9mk=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeSignature</key>
@@ -720,11 +720,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LBuVWDyUg/8MUS2sP5b8cO68uIc=
+			GgRUAei2w2BljyDlJaF+vHQhT8g=
 			</data>
 			<key>hash2</key>
 			<data>
-			H/rQ8ShikUfbcs0O83wXwzzNwApehG5J0thptkKANHM=
+			279SHwZH3qjLMHsfKSG3QJOz6Mv6YNdwiD2DmWXYkMk=
 			</data>
 		</dict>
 	</dict>
