@@ -5277,7 +5277,9 @@ SWIFT_CLASS("_TtC16protocol_channel15IDOGpsInfoModel")
 /// Fix start bit
 /// Default 0, used for debugging
 @property (nonatomic) NSInteger fixStartBit;
-- (nonnull instancetype)initWithErrCode:(NSInteger)errCode fwVersion:(NSInteger)fwVersion agpsInfo:(NSInteger)agpsInfo agpsErrCode:(NSInteger)agpsErrCode utcYear:(NSInteger)utcYear utcMonth:(NSInteger)utcMonth utcDay:(NSInteger)utcDay utcHour:(NSInteger)utcHour utcMinute:(NSInteger)utcMinute startMode:(NSInteger)startMode gns:(NSInteger)gns fixStartBit:(NSInteger)fixStartBit OBJC_DESIGNATED_INITIALIZER;
+/// GPS firmware version XX.XX.XX
+@property (nonatomic, copy) NSString * _Nonnull fwVersionString;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode fwVersion:(NSInteger)fwVersion agpsInfo:(NSInteger)agpsInfo agpsErrCode:(NSInteger)agpsErrCode utcYear:(NSInteger)utcYear utcMonth:(NSInteger)utcMonth utcDay:(NSInteger)utcDay utcHour:(NSInteger)utcHour utcMinute:(NSInteger)utcMinute startMode:(NSInteger)startMode gns:(NSInteger)gns fixStartBit:(NSInteger)fixStartBit fwVersionString:(NSString * _Nonnull)fwVersionString OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -15498,7 +15500,9 @@ SWIFT_CLASS("_TtC16protocol_channel15IDOGpsInfoModel")
 /// Fix start bit
 /// Default 0, used for debugging
 @property (nonatomic) NSInteger fixStartBit;
-- (nonnull instancetype)initWithErrCode:(NSInteger)errCode fwVersion:(NSInteger)fwVersion agpsInfo:(NSInteger)agpsInfo agpsErrCode:(NSInteger)agpsErrCode utcYear:(NSInteger)utcYear utcMonth:(NSInteger)utcMonth utcDay:(NSInteger)utcDay utcHour:(NSInteger)utcHour utcMinute:(NSInteger)utcMinute startMode:(NSInteger)startMode gns:(NSInteger)gns fixStartBit:(NSInteger)fixStartBit OBJC_DESIGNATED_INITIALIZER;
+/// GPS firmware version XX.XX.XX
+@property (nonatomic, copy) NSString * _Nonnull fwVersionString;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode fwVersion:(NSInteger)fwVersion agpsInfo:(NSInteger)agpsInfo agpsErrCode:(NSInteger)agpsErrCode utcYear:(NSInteger)utcYear utcMonth:(NSInteger)utcMonth utcDay:(NSInteger)utcDay utcHour:(NSInteger)utcHour utcMinute:(NSInteger)utcMinute startMode:(NSInteger)startMode gns:(NSInteger)gns fixStartBit:(NSInteger)fixStartBit fwVersionString:(NSString * _Nonnull)fwVersionString OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");

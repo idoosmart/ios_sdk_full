@@ -3800,7 +3800,8 @@ public protocol IDOCmdProtocol {
   @objc public var startMode: Swift.Int
   @objc public var gns: Swift.Int
   @objc public var fixStartBit: Swift.Int
-  @objc public init(errCode: Swift.Int, fwVersion: Swift.Int, agpsInfo: Swift.Int, agpsErrCode: Swift.Int, utcYear: Swift.Int, utcMonth: Swift.Int, utcDay: Swift.Int, utcHour: Swift.Int, utcMinute: Swift.Int, startMode: Swift.Int, gns: Swift.Int, fixStartBit: Swift.Int)
+  @objc public var fwVersionString: Swift.String
+  @objc public init(errCode: Swift.Int, fwVersion: Swift.Int, agpsInfo: Swift.Int, agpsErrCode: Swift.Int, utcYear: Swift.Int, utcMonth: Swift.Int, utcDay: Swift.Int, utcHour: Swift.Int, utcMinute: Swift.Int, startMode: Swift.Int, gns: Swift.Int, fixStartBit: Swift.Int, fwVersionString: Swift.String)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
