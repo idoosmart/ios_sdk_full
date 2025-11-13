@@ -428,6 +428,9 @@ typedef enum
     VBUS_EVT_FUNC_V3_EMOTION_INFORMATION                   = 5100,  //情绪健康
     VBUS_EVT_FUNC_V3_MENU_LIST                             = 5101,  //v3菜单列表操作
     VBUS_EVT_FUNC_V3_PHYSIOLOGICAL_RECORD                  = 5102,  //女性生理日常记录
+    VBUS_EVT_FUNC_V3_GLUCOSE_INFORMATION                   = 5104,  //v3血糖数据下发
+    VBUS_EVT_FUNC_V3_ALGORITHM_RAW_DATA                    = 5105,  //算法原始数据采集
+    VBUS_EVT_FUNC_V3_ALGORITHM_RAW_DATA_OPERATE_02         = 5106,  //算法原始数据采集 操作0x02为数据采集中 这个操作的事件号
 
 
 
