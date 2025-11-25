@@ -2973,27 +2973,23 @@ extension protocol_channel.IDOBaseModel {
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOBloodGlucoseCurrentInfo : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var lastYear: Swift.Int
-  @objc public var lastMonth: Swift.Int
-  @objc public var lastDay: Swift.Int
-  @objc public var lastHour: Swift.Int
-  @objc public var lastMin: Swift.Int
-  @objc public var lastGlucoseVal: Swift.Int
+  @objc public var lastUtcDate: Swift.UInt32
   @objc public var targetUnit: Swift.Int
   @objc public var trendVal: Swift.Int
   @objc public var sensorStatus: Swift.Int
+  @objc public var lastGlucoseVal: Swift.Int
   @objc public var sensorWarmUpTime: Swift.Int
+  @objc public var normalGlucoseValMax: Swift.Int
+  @objc public var normalGlucoseValMin: Swift.Int
   public enum CodingKeys : Swift.String, Swift.CodingKey {
-    case lastYear
-    case lastMonth
-    case lastDay
-    case lastHour
-    case lastMin
+    case lastUtcDate
     case lastGlucoseVal
     case targetUnit
     case trendVal
     case sensorStatus
     case sensorWarmUpTime
+    case normalGlucoseValMax
+    case normalGlucoseValMin
     public init?(rawValue: Swift.String)
     public init?(stringValue: Swift.String)
     public init?(intValue: Swift.Int)
@@ -3008,7 +3004,7 @@ extension protocol_channel.IDOBaseModel {
       get
     }
   }
-  @objc public init(lastYear: Swift.Int, lastMonth: Swift.Int, lastDay: Swift.Int, lastHour: Swift.Int, lastMin: Swift.Int, lastGlucoseVal: Swift.Int, targetUnit: Swift.Int, trendVal: Swift.Int, sensorWarmUpTime: Swift.Int, sensorStatus: Swift.Int)
+  @objc public init(lastUtcDate: Swift.UInt32, lastGlucoseVal: Swift.Int = 0xFFFF, targetUnit: Swift.Int, trendVal: Swift.Int, sensorWarmUpTime: Swift.Int, sensorStatus: Swift.Int, normalGlucoseValMax: Swift.Int, normalGlucoseValMin: Swift.Int)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -3022,7 +3018,7 @@ extension protocol_channel.IDOBaseModel {
   @objc public var sdbg: Swift.Int
   @objc public var cv: Swift.Int
   @objc public var mage: Swift.Int
-  @objc public init(glucoseMax: Swift.Int, glucoseMin: Swift.Int, maxFlu: Swift.Int, ehba1c: Swift.Int, mbg: Swift.Int, sdbg: Swift.Int, cv: Swift.Int, mage: Swift.Int)
+  @objc public init(glucoseMax: Swift.Int = 0xFFFF, glucoseMin: Swift.Int = 0xFFFF, maxFlu: Swift.Int = 0xFFFF, ehba1c: Swift.Int = 0xFFFF, mbg: Swift.Int = 0xFFFF, sdbg: Swift.Int = 0xFFFF, cv: Swift.Int = 0xFFFF, mage: Swift.Int = 0xFFFF)
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case glucoseMax
     case glucoseMin
@@ -3053,16 +3049,19 @@ extension protocol_channel.IDOBaseModel {
 @objc @objcMembers public class IDOBloodGlucoseStatisticsInfo : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var targetUnit: Swift.Int
   @objc public var insulinCount: Swift.Int
-  @objc public var todayItem: protocol_channel.IDOBloodGlucoseStatisticsItem
-  @objc public var weekItem: protocol_channel.IDOBloodGlucoseStatisticsItem
-  @objc public var monthItem: protocol_channel.IDOBloodGlucoseStatisticsItem
-  @objc public init(targetUnit: Swift.Int, insulinCount: Swift.Int, todayItem: protocol_channel.IDOBloodGlucoseStatisticsItem, weekItem: protocol_channel.IDOBloodGlucoseStatisticsItem, monthItem: protocol_channel.IDOBloodGlucoseStatisticsItem)
+  @objc public var todayItem: protocol_channel.IDOBloodGlucoseStatisticsItem?
+  @objc public var weekItem: protocol_channel.IDOBloodGlucoseStatisticsItem?
+  @objc public var monthItem: protocol_channel.IDOBloodGlucoseStatisticsItem?
+  @objc public init(targetUnit: Swift.Int, insulinCount: Swift.Int, todayItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil, weekItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil, monthItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil)
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case targetUnit
     case insulinCount
     case todayItem
     case weekItem
     case monthItem
+    case todayCount
+    case weekCount
+    case monthCount
     public init?(rawValue: Swift.String)
     public init?(stringValue: Swift.String)
     public init?(intValue: Swift.Int)
