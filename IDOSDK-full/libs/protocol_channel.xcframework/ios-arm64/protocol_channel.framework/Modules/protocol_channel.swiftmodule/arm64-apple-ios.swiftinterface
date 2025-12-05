@@ -1425,6 +1425,30 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDORawDataSensorConfigReply>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDORawDataSensorConfigReply
   }
+  public struct getMenuListV3 : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOMenuListV3Model>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOMenuListV3Model
+  }
+  public struct setMenuListV3 : protocol_channel.IDOCmdProtocol {
+    public init(_ items: [Swift.Int])
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
+  }
+  public struct emotionHealthReminder : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOEmotionHealthReminderParamModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOEmotionHealthReminderReplyModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOEmotionHealthReminderReplyModel
+  }
+  public struct appListStyle : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOAppListStyleParamModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOAppListStyleReplyModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOAppListStyleReplyModel
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Cmdoc : ObjectiveC.NSObject {
   @objc @discardableResult
@@ -1755,6 +1779,14 @@ public struct Cmds {
   public static func setAlgorithmRawDataSensorConfig(ppg: protocol_channel.IDOAlgorithmSensorSwitch, acc: protocol_channel.IDOAlgorithmSensorSwitch, completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOCmdSetResponseModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func getAlgorithmRawDataSensorConfig(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDORawDataSensorConfigReply?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getMenuListV3(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOMenuListV3Model?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setMenuListV3(items: [Swift.Int], completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOCmdSetResponseModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func emotionHealthReminder(param: protocol_channel.IDOEmotionHealthReminderParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOEmotionHealthReminderReplyModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func appListStyle(param: protocol_channel.IDOAppListStyleParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOAppListStyleReplyModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2897,6 +2929,42 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
+@objc @objcMembers public class IDOAppListStyleParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var fontColor: Swift.Int
+  @objc public var name: Swift.String
+  @objc public var wallpaperVersion: Swift.Int
+  @objc public init(operate: Swift.Int, fontColor: Swift.Int = 0, name: Swift.String = "", wallpaperVersion: Swift.Int = 0)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public class IDOApplicationListItem : ObjectiveC.NSObject, Swift.Codable {
+  public var sortNumber: Swift.Int
+  public var fontColor: Swift.Int
+  public var size: Swift.Int
+  public var name: Swift.String
+  public var wallpaperVersion: Swift.Int
+  public init(sortNumber: Swift.Int, fontColor: Swift.Int, size: Swift.Int, name: Swift.String, wallpaperVersion: Swift.Int)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOAppListStyleReplyModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var errorCode: Swift.Int
+  @objc public var applicationListTotalNum: Swift.Int
+  @objc public var userApplicationListItemNum: Swift.Int
+  @objc public var applicationListCapacitySize: Swift.Int
+  @objc public var userApplicationListCapacitySize: Swift.Int
+  @objc public var listItems: [protocol_channel.IDOApplicationListItem]?
+  @objc public init(operate: Swift.Int, errorCode: Swift.Int, applicationListTotalNum: Swift.Int = 0, userApplicationListItemNum: Swift.Int = 0, applicationListCapacitySize: Swift.Int = 0, userApplicationListCapacitySize: Swift.Int = 0, listItems: [protocol_channel.IDOApplicationListItem]? = nil)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 public protocol IDOBaseModel : Swift.Decodable, Swift.Encodable {
   func toJsonString() -> Swift.String?
 }
@@ -3048,14 +3116,14 @@ extension protocol_channel.IDOBaseModel {
 }
 @objc @objcMembers public class IDOBloodGlucoseStatisticsInfo : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var targetUnit: Swift.Int
-  @objc public var insulinCount: Swift.Int
+  @objc public var insulinDose: Swift.Int
   @objc public var todayItem: protocol_channel.IDOBloodGlucoseStatisticsItem?
   @objc public var weekItem: protocol_channel.IDOBloodGlucoseStatisticsItem?
   @objc public var monthItem: protocol_channel.IDOBloodGlucoseStatisticsItem?
-  @objc public init(targetUnit: Swift.Int, insulinCount: Swift.Int, todayItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil, weekItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil, monthItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil)
+  @objc public init(targetUnit: Swift.Int, insulinDose: Swift.Int, todayItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil, weekItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil, monthItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil)
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case targetUnit
-    case insulinCount
+    case insulinDose
     case todayItem
     case weekItem
     case monthItem
@@ -3536,6 +3604,53 @@ public protocol IDOCmdProtocol {
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
 }
+@objc @objcMembers public class IDOEmotionHealthReminderParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var notifyType: Swift.Int
+  @objc public var emotionalHealthSwitch: Swift.Int
+  @objc public var pressureRemind: protocol_channel.IDOPressureRemindConfig?
+  @objc public var unpleasantRemind: protocol_channel.IDOUnpleasantRemindConfig?
+  @objc public init(operate: Swift.Int, notifyType: Swift.Int = 0, emotionalHealthSwitch: Swift.Int, pressureRemind: protocol_channel.IDOPressureRemindConfig? = nil, unpleasantRemind: protocol_channel.IDOUnpleasantRemindConfig? = nil)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public class IDOPressureRemindConfig : ObjectiveC.NSObject, Swift.Codable {
+  public var pressureSwitch: Swift.Int
+  public var startHour: Swift.Int
+  public var startMinute: Swift.Int
+  public var endHour: Swift.Int
+  public var endMinute: Swift.Int
+  public var repeats: Swift.Set<protocol_channel.IDOWeek>
+  public var isOpenRepeat: Swift.Bool
+  public var reminderInterval: Swift.Int
+  public init(pressureSwitch: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, repeats: Swift.Set<protocol_channel.IDOWeek>, isOpenRepeat: Swift.Bool, reminderInterval: Swift.Int)
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc deinit
+}
+@objc public class IDOUnpleasantRemindConfig : ObjectiveC.NSObject, Swift.Codable {
+  public var unpleasantSwitch: Swift.Int
+  public var unhappyReminderNum: Swift.Int
+  public init(unpleasantSwitch: Swift.Int, unhappyReminderNum: Swift.Int)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOEmotionHealthReminderReplyModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var errorCode: Swift.Int
+  @objc public var notifyType: Swift.Int
+  @objc public var emotionalHealthSwitch: Swift.Int
+  @objc public var pressureRemind: protocol_channel.IDOPressureRemindConfig?
+  @objc public var unpleasantRemind: protocol_channel.IDOUnpleasantRemindConfig?
+  @objc public init(operate: Swift.Int, errorCode: Swift.Int, notifyType: Swift.Int = 0, emotionalHealthSwitch: Swift.Int = 0, pressureRemind: protocol_channel.IDOPressureRemindConfig? = nil, unpleasantRemind: protocol_channel.IDOUnpleasantRemindConfig? = nil)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 @_hasMissingDesignatedInitializers @objcMembers public class IDOEpoManager {
   public static let shared: protocol_channel.IDOEpoManager
   @objc public var enableAutoUpgrade: Swift.Bool {
@@ -3703,6 +3818,7 @@ public protocol IDOCmdProtocol {
   @objc var reminder189Email: Swift.Bool { get }
   @objc var reminderVeryFit: Swift.Bool { get }
   @objc var reminderGeneral: Swift.Bool { get }
+  @objc var reminderOther: Swift.Bool { get }
   @objc var reminderMattersRemind: Swift.Bool { get }
   @objc var reminderMicrosoft: Swift.Bool { get }
   @objc var reminderMissedCall: Swift.Bool { get }
@@ -3723,6 +3839,7 @@ public protocol IDOCmdProtocol {
   @objc var reminderWhatsapp: Swift.Bool { get }
   @objc var reminderAlarmClock: Swift.Bool { get }
   @objc var reminderSinaWeibo: Swift.Bool { get }
+  @objc var reminderWeibo: Swift.Bool { get }
   @objc var reminderCalling: Swift.Bool { get }
   @objc var reminderCallContact: Swift.Bool { get }
   @objc var reminderCallNum: Swift.Bool { get }
@@ -3754,6 +3871,17 @@ public protocol IDOCmdProtocol {
   @objc var reminderAmericanas: Swift.Bool { get }
   @objc var reminderYahoo: Swift.Bool { get }
   @objc var reminderMessageIcon: Swift.Bool { get }
+  @objc var reminderTaobao: Swift.Bool { get }
+  @objc var reminderDingding: Swift.Bool { get }
+  @objc var reminderAlipay: Swift.Bool { get }
+  @objc var reminderToutiao: Swift.Bool { get }
+  @objc var reminderDouyin: Swift.Bool { get }
+  @objc var reminderTmall: Swift.Bool { get }
+  @objc var reminderJd: Swift.Bool { get }
+  @objc var reminderPinduoduo: Swift.Bool { get }
+  @objc var reminderBaidu: Swift.Bool { get }
+  @objc var reminderMeituan: Swift.Bool { get }
+  @objc var reminderEleme: Swift.Bool { get }
   @objc var sportWalk: Swift.Bool { get }
   @objc var sportRun: Swift.Bool { get }
   @objc var sportByBike: Swift.Bool { get }
@@ -3770,6 +3898,7 @@ public protocol IDOCmdProtocol {
   @objc var sportPushUp: Swift.Bool { get }
   @objc var sportDumbbell: Swift.Bool { get }
   @objc var sportWeightlifting: Swift.Bool { get }
+  @objc var sportBodybuildingExercise: Swift.Bool { get }
   @objc var sportYoga: Swift.Bool { get }
   @objc var sportRopeSkipping: Swift.Bool { get }
   @objc var sportTableTennis: Swift.Bool { get }
@@ -3833,6 +3962,8 @@ public protocol IDOCmdProtocol {
   @objc var getDoNotDisturbMain3: Swift.Bool { get }
   @objc var getVoiceTransmission: Swift.Bool { get }
   @objc var setDrinkWaterAddNotifyFlag: Swift.Bool { get }
+  @objc var setSpo2LowValueRemindAddNotifyFlag: Swift.Bool { get }
+  @objc var notSupportSmartHeartNotifyFlag: Swift.Bool { get }
   @objc var getDeviceLogState: Swift.Bool { get }
   @objc var getNewWatchList: Swift.Bool { get }
   @objc var getNotifyIconAdaptive: Swift.Bool { get }
@@ -3926,14 +4057,6 @@ public protocol IDOCmdProtocol {
   @objc var getSupportSleepPlan: Swift.Bool { get }
   @objc var getSupportDeviceOperateAlgFile: Swift.Bool { get }
   @objc var getSupportSportRecordShowConfig: Swift.Bool { get }
-  @objc var getLeftRightHandWearSettings: Swift.Bool { get }
-  @objc var supportSettingsDuringExercise: Swift.Bool { get }
-  @objc var supportHeightLengthUnit: Swift.Bool { get }
-  @objc var supportSportingRemindSetting: Swift.Bool { get }
-  @objc var supportSetStrideLengthUnit: Swift.Bool { get }
-  @objc var supportSimpleHrZoneSetting: Swift.Bool { get }
-  @objc var notSupportSmartLowHeartReatRemind: Swift.Bool { get }
-  @objc var notSupportSmartHighHeartReatRemind: Swift.Bool { get }
   @objc var setNoticeMessageStateUseVersion0x20: Swift.Bool { get }
   @objc var setScientificSleepSwitch: Swift.Bool { get }
   @objc var setTemperatureSwitchHealth: Swift.Bool { get }
@@ -3987,6 +4110,9 @@ public protocol IDOCmdProtocol {
   @objc var setMenuListMain7: Swift.Bool { get }
   @objc var setHistoryMenstrual: Swift.Bool { get }
   @objc var supportHistoricalMenstruationExchange: Swift.Bool { get }
+  @objc var supportSetHistoricalMenstruationExchangeVersion21: Swift.Bool { get }
+  @objc var supportHistoricalMenstruationExchangeVersion31: Swift.Bool { get }
+  @objc var supportPhysiologicalRecord: Swift.Bool { get }
   @objc var setMenstrualAddPregnancy: Swift.Bool { get }
   @objc var setNotSurportCalling3SDelay: Swift.Bool { get }
   @objc var setSetFitnessGuidance: Swift.Bool { get }
@@ -4054,6 +4180,7 @@ public protocol IDOCmdProtocol {
   @objc var getSupportSetWeatherHistoryFutureAqi: Swift.Bool { get }
   @objc var setBrightScreenTime: Swift.Bool { get }
   @objc var setHeartSetRateModeCustom: Swift.Bool { get }
+  @objc var supportProtocolV3MenuList: Swift.Bool { get }
   @objc var languageCh: Swift.Bool { get }
   @objc var languageCzech: Swift.Bool { get }
   @objc var languageEnglish: Swift.Bool { get }
@@ -4138,6 +4265,10 @@ public protocol IDOCmdProtocol {
   @objc var supportSetWeatherDataV2: Swift.Bool { get }
   @objc var supportSetOnetouchCalling: Swift.Bool { get }
   @objc var supportOperateSetSportScreen: Swift.Bool { get }
+  @objc var supportOperateListStyle: Swift.Bool { get }
+  @objc var supportEmotionHealth: Swift.Bool { get }
+  @objc var supportV3SyncContactVersion20: Swift.Bool { get }
+  @objc var supportGetSosCallRecord: Swift.Bool { get }
   @objc var alexaReminderAddSecV3: Swift.Bool { get }
   @objc var alexaSetEasyOperateV3: Swift.Bool { get }
   @objc var alexaSetGetAlexaAlarmV3: Swift.Bool { get }
@@ -4149,7 +4280,22 @@ public protocol IDOCmdProtocol {
   @objc var setAlexaControll100brightness: Swift.Bool { get }
   @objc var alexaGetSupportGetAlexaDefaultLanguage: Swift.Bool { get }
   @objc var alexaGetUIControllSports: Swift.Bool { get }
+  @objc var getLeftRightHandWearSettings: Swift.Bool { get }
+  @objc var supportSettingsDuringExercise: Swift.Bool { get }
+  @objc var supportHeightLengthUnit: Swift.Bool { get }
+  @objc var supportSportingRemindSetting: Swift.Bool { get }
+  @objc var supportSportGetAutoPauseEnd: Swift.Bool { get }
+  @objc var supportSetStrideLengthUnit: Swift.Bool { get }
+  @objc var supportSimpleHrZoneSetting: Swift.Bool { get }
+  @objc var notSupportSmartLowHeartReatRemind: Swift.Bool { get }
+  @objc var notSupportSmartHighHeartReatRemind: Swift.Bool { get }
+  @objc var notSupportPhotoPreviewControl: Swift.Bool { get }
   @objc var supportGetUserInfo: Swift.Bool { get }
+  @objc var supportMissedCallMsgTypeUseFixed: Swift.Bool { get }
+  @objc var supportAppNotDisplayAlarmName: Swift.Bool { get }
+  @objc var supportSetSleepRemind: Swift.Bool { get }
+  @objc var supportBloodGlucose: Swift.Bool { get }
+  @objc var supportAlgorithmRawDataCollect: Swift.Bool { get }
   @objc func printProperties() -> Swift.String?
 }
 @objc @objcMembers public class IDOGpsControlModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
@@ -4672,6 +4818,20 @@ public protocol IDOCmdProtocol {
 @objc @objcMembers public class IDOMenuListParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var items: [Swift.Int]
   @objc public init(items: [Swift.Int])
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOMenuListV3Model : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var errorCode: Swift.Int
+  @objc public var minShowNum: Swift.Int
+  @objc public var maxShowNum: Swift.Int
+  @objc public var currentShowNum: Swift.Int
+  @objc public var supportMaxNum: Swift.Int
+  @objc public var itemList: [Swift.Int]?
+  @objc public init(version: Swift.Int = 0, operate: Swift.Int, errorCode: Swift.Int, minShowNum: Swift.Int = 0, maxShowNum: Swift.Int = 0, currentShowNum: Swift.Int = 0, supportMaxNum: Swift.Int = 0, itemList: [Swift.Int]? = nil)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -5470,10 +5630,11 @@ public protocol IDOCmdProtocol {
 @objc @objcMembers public class IDOSport100SortItem : ObjectiveC.NSObject, Swift.Codable {
   @objc public var type: protocol_channel.IDOSportType
   @objc public var flag: Swift.Int
-  @objc public init(type: protocol_channel.IDOSportType, flag: Swift.Int)
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc public init(type: protocol_channel.IDOSportType, flag: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
 }
 @objc @objcMembers public class IDOSportSortModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var errCode: Swift.Int
@@ -5488,6 +5649,7 @@ public protocol IDOCmdProtocol {
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public enum IDOSportType : Swift.Int, Swift.Codable {
+  case sportTypeUnkonw = -1
   case sportTypeNull = 0
   case sportTypeWalk = 1
   case sportTypeRun = 2
@@ -5527,6 +5689,13 @@ public protocol IDOCmdProtocol {
   case sportTypePlank = 37
   case sportTypeGym = 38
   case sportTypeOxAerobics = 39
+  case sportTypeAbdominalAndCoreTraining = 40
+  case sportTypeLowerBodyTraining = 41
+  case sportTypeDiving = 43
+  case sportTypeSteppingTraining = 44
+  case sportTypeUpperBodyTraining = 45
+  case sportTypeMixedCardio = 46
+  case sportTypeBackTraining = 47
   case sportTypeOutdoorRun = 48
   case sportTypeIndoorRun = 49
   case sportTypeOutdoorCycle = 50
@@ -5538,6 +5707,9 @@ public protocol IDOCmdProtocol {
   case sportTypeElliptical = 56
   case sportTypeRower = 57
   case sportTypeHit = 58
+  case sportTypeSteppingTest = 59
+  case sportTypeGameMode = 60
+  case sportTypeCricket = 75
   case sportTypeFreeTraining = 100
   case sportTypeFunctionalStrengthTraining = 101
   case sportTypeCoreTraining = 102
@@ -5552,8 +5724,8 @@ public protocol IDOCmdProtocol {
   case sportTypeBarbell = 118
   case sportTypeMartial = 119
   case sportTypeTaiJi = 120
-  case sportTypeKarate = 122
   case sportTypeTaekwondo = 121
+  case sportTypeKarate = 122
   case sportTypeFreeFight = 123
   case sportTypeFencing = 124
   case sportTypeArchery = 125
@@ -5573,6 +5745,10 @@ public protocol IDOCmdProtocol {
   case sportTypeBeachSoccer = 139
   case sportTypeSepaktakraw = 140
   case sportTypeDodgeball = 141
+  case sportTypeNetball = 142
+  case sportTypeLunge = 149
+  case sportTypeArcherStep = 150
+  case sportTypeStretching = 151
   case sportTypeHiphop = 152
   case sportTypeBallet = 153
   case sportTypeSocialDance = 154
@@ -5608,9 +5784,19 @@ public protocol IDOCmdProtocol {
   case sportTypeBMX = 184
   case sportTypeFootVolley = 187
   case sportTypeStandingStroke = 188
+  case sportTypeTrailRunning = 189
   case sportTypeCrunch = 190
-  case sportType
-  case hulaHoop = 196
+  case sportTypeBurpee = 191
+  case sportTypeKabaddi = 192
+  case sportTypeOutdoorFun = 193
+  case sportTypeOtherActivity = 194
+  case sportTypeTrampoline = 195
+  case sportTypeHulaHoop = 196
+  case sportTypeRacing = 197
+  case sportTypeBattlingRope = 198
+  case sportTypeParachuting = 199
+  case sportTypeOrienteering = 200
+  case sportTypeMountainBiking = 201
   case beachTennis = 202
   case smartJumpRope = 203
   case pickleball = 204
