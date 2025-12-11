@@ -78,7 +78,7 @@
 		</data>
 		<key>ios-arm64/native_channel.framework/native_channel</key>
 		<data>
-		uAzUsvNohg+cMJevIerStCzeeJk=
+		kTcqkNDLOo5YT4QLIuBd2A2zMC8=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Headers/Alexa.g.h</key>
 		<data>
@@ -174,7 +174,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeDirectory</key>
 		<data>
-		o2umTCUif+VkvWTDgRgz1PJS5l4=
+		tUewacF8ME02RTwMbWgRo7TskJc=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeRequirements</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeRequirements-1</key>
 		<data>
-		ev0e7G7ClUmyQKQuIOv5z5OHBu4=
+		nCvh1Dwx5N1x0CnggDBdMBXgS3Y=
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -194,7 +194,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/native_channel</key>
 		<data>
-		6TUcIDoAf1TkeaVpW6sHVT6AC/4=
+		ViUI9z5fIPEvG2/e3b7df9mNDj8=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -401,11 +401,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uAzUsvNohg+cMJevIerStCzeeJk=
+			kTcqkNDLOo5YT4QLIuBd2A2zMC8=
 			</data>
 			<key>hash2</key>
 			<data>
-			PbHKnTqszWqd0KaUrmY05aVSqIpye9rjwW74YjlP4IU=
+			9dF9c/brqk9SXR3HIiBKiEcu9gcmNQryVjWhGJguAr4=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/Headers/Alexa.g.h</key>
@@ -665,11 +665,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			o2umTCUif+VkvWTDgRgz1PJS5l4=
+			tUewacF8ME02RTwMbWgRo7TskJc=
 			</data>
 			<key>hash2</key>
 			<data>
-			GXNPnZV4IzKEIqpR8h/Xe7z+t/GS/JPqDbsrOxDUaEY=
+			KcRexhSDLGvf4nYNmb6ZSUGI2mca7c4NgG7w7AP9J5E=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeRequirements</key>
@@ -687,11 +687,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ev0e7G7ClUmyQKQuIOv5z5OHBu4=
+			nCvh1Dwx5N1x0CnggDBdMBXgS3Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			8k0tMh6gLvZTcvtE86GqVM4PvvJS6yvOtJiab9sMtng=
+			N5PKMfQPasTcItMshhd1XGcwvM/EcS/NL+l+dBwf0/w=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/native_channel.framework/_CodeSignature/CodeResources</key>
@@ -720,11 +720,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6TUcIDoAf1TkeaVpW6sHVT6AC/4=
+			ViUI9z5fIPEvG2/e3b7df9mNDj8=
 			</data>
 			<key>hash2</key>
 			<data>
-			EBLfEuCvoyfcK61pmUAR8fSKBoPyBzAn9aEjs0m74Bo=
+			NHeI8rq05siRuLgJK649FxVH2XKYzTY0j9GVEMHxbG4=
 			</data>
 		</dict>
 	</dict>

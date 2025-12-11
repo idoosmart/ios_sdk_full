@@ -3623,9 +3623,8 @@ public protocol IDOCmdProtocol {
   public var endHour: Swift.Int
   public var endMinute: Swift.Int
   public var repeats: Swift.Set<protocol_channel.IDOWeek>
-  public var isOpenRepeat: Swift.Bool
   public var reminderInterval: Swift.Int
-  public init(pressureSwitch: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, repeats: Swift.Set<protocol_channel.IDOWeek>, isOpenRepeat: Swift.Bool, reminderInterval: Swift.Int)
+  public init(pressureSwitch: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, repeats: Swift.Set<protocol_channel.IDOWeek>, reminderInterval: Swift.Int)
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
@@ -5620,7 +5619,7 @@ public protocol IDOCmdProtocol {
   @objc public var minShowNum: Swift.Int
   @objc public var maxShowNum: Swift.Int
   @objc public var nowUserLocation: Swift.Int
-  @objc public var items: [protocol_channel.IDOSport100SortItem]
+  @objc public var items: [protocol_channel.IDOSport100SortItem]?
   @objc public init(errCode: Swift.Int, operate: Swift.Int, minShowNum: Swift.Int, maxShowNum: Swift.Int, nowUserLocation: Swift.Int, items: [protocol_channel.IDOSport100SortItem])
   @objc public func toJsonString() -> Swift.String?
   @objc deinit

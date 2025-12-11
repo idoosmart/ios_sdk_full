@@ -7987,7 +7987,7 @@ SWIFT_CLASS("_TtC16protocol_channel20IDOSport100SortModel")
 @property (nonatomic) NSInteger maxShowNum;
 /// Current position of displayed added sports, app displays based on this position, with the devices added before corresponding to those positions, and those added later to the positions after this position. Only valid for queries
 @property (nonatomic) NSInteger nowUserLocation;
-@property (nonatomic, copy) NSArray<IDOSport100SortItem *> * _Nonnull items;
+@property (nonatomic, copy) NSArray<IDOSport100SortItem *> * _Nullable items;
 - (nonnull instancetype)initWithErrCode:(NSInteger)errCode operate:(NSInteger)operate minShowNum:(NSInteger)minShowNum maxShowNum:(NSInteger)maxShowNum nowUserLocation:(NSInteger)nowUserLocation items:(NSArray<IDOSport100SortItem *> * _Nonnull)items OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
