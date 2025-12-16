@@ -6,7 +6,7 @@
 	<dict>
 		<key>ios-arm64/FlutterPluginRegistrant.framework/FlutterPluginRegistrant</key>
 		<data>
-		ZidIQcOEFvD64G9fS+ZGiUAS5a4=
+		SAdRXuLzH7WTJ0aIlNqA775cleA=
 		</data>
 		<key>ios-arm64/FlutterPluginRegistrant.framework/Headers/FlutterPluginRegistrant-umbrella.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/FlutterPluginRegistrant.framework/FlutterPluginRegistrant</key>
 		<data>
-		UL4sN2ENJVXgnnnDrFPnG1Xn+wk=
+		+Fs2zY0maPAfNA1pjoaG4C1wbT4=
 		</data>
 		<key>ios-arm64_x86_64-simulator/FlutterPluginRegistrant.framework/Headers/FlutterPluginRegistrant-umbrella.h</key>
 		<data>
@@ -71,11 +71,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZidIQcOEFvD64G9fS+ZGiUAS5a4=
+			SAdRXuLzH7WTJ0aIlNqA775cleA=
 			</data>
 			<key>hash2</key>
 			<data>
-			DUtuXqApDcgw3/osZUojLgz/lVWc9r6eSUkMx9ZX3TU=
+			gGcEclaeDmGNlW5cHuPyDh6Xax/mIAXTpibIXWtEOL4=
 			</data>
 		</dict>
 		<key>ios-arm64/FlutterPluginRegistrant.framework/Headers/FlutterPluginRegistrant-umbrella.h</key>
@@ -126,11 +126,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UL4sN2ENJVXgnnnDrFPnG1Xn+wk=
+			+Fs2zY0maPAfNA1pjoaG4C1wbT4=
 			</data>
 			<key>hash2</key>
 			<data>
-			GUI4kJbUnW29KnRjF8NBtMd++laN+6tZ3MDvcQIQsKY=
+			ZoCw/TNcIEOG/upC/f6LP7YoRBbvtguZFFpsBYSbx4s=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/FlutterPluginRegistrant.framework/Headers/FlutterPluginRegistrant-umbrella.h</key>

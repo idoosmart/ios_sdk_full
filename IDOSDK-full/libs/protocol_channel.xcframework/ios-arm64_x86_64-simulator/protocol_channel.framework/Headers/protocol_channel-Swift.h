@@ -6209,9 +6209,9 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOLanguageLibraryModel")
 @property (nonatomic) NSInteger fixedLang;
 /// Maximum storage languages
 @property (nonatomic) NSInteger maxStorageLang;
-@property (nonatomic, copy) NSArray<IDOLanguageLibraryItem *> * _Nonnull items;
-@property (nonatomic, copy) NSArray<IDOLanguageLibraryItem *> * _Nonnull itemsUser;
-- (nonnull instancetype)initWithUseLang:(NSInteger)useLang defaultLang:(NSInteger)defaultLang fixedLang:(NSInteger)fixedLang maxStorageLang:(NSInteger)maxStorageLang items:(NSArray<IDOLanguageLibraryItem *> * _Nonnull)items itemsUser:(NSArray<IDOLanguageLibraryItem *> * _Nonnull)itemsUser OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, copy) NSArray<IDOLanguageLibraryItem *> * _Nullable items;
+@property (nonatomic, copy) NSArray<IDOLanguageLibraryItem *> * _Nullable itemsUser;
+- (nonnull instancetype)initWithUseLang:(NSInteger)useLang defaultLang:(NSInteger)defaultLang fixedLang:(NSInteger)fixedLang maxStorageLang:(NSInteger)maxStorageLang items:(NSArray<IDOLanguageLibraryItem *> * _Nullable)items itemsUser:(NSArray<IDOLanguageLibraryItem *> * _Nullable)itemsUser OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -6254,6 +6254,13 @@ typedef SWIFT_ENUM(NSInteger, IDOLanguageType, open) {
   IDOLanguageTypeFinnish = 33,
   IDOLanguageTypePersian = 34,
   IDOLanguageTypeNorwegian = 35,
+  IDOLanguageTypeMalay = 36,
+  IDOLanguageTypeBrazilianPortuguese = 37,
+  IDOLanguageTypeBengali = 38,
+  IDOLanguageTypeKhmer = 39,
+  IDOLanguageTypeSerbian = 40,
+  IDOLanguageTypeBulgaria = 41,
+  IDOLanguageTypeHebrew = 42,
 };
 
 
@@ -16967,9 +16974,9 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOLanguageLibraryModel")
 @property (nonatomic) NSInteger fixedLang;
 /// Maximum storage languages
 @property (nonatomic) NSInteger maxStorageLang;
-@property (nonatomic, copy) NSArray<IDOLanguageLibraryItem *> * _Nonnull items;
-@property (nonatomic, copy) NSArray<IDOLanguageLibraryItem *> * _Nonnull itemsUser;
-- (nonnull instancetype)initWithUseLang:(NSInteger)useLang defaultLang:(NSInteger)defaultLang fixedLang:(NSInteger)fixedLang maxStorageLang:(NSInteger)maxStorageLang items:(NSArray<IDOLanguageLibraryItem *> * _Nonnull)items itemsUser:(NSArray<IDOLanguageLibraryItem *> * _Nonnull)itemsUser OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, copy) NSArray<IDOLanguageLibraryItem *> * _Nullable items;
+@property (nonatomic, copy) NSArray<IDOLanguageLibraryItem *> * _Nullable itemsUser;
+- (nonnull instancetype)initWithUseLang:(NSInteger)useLang defaultLang:(NSInteger)defaultLang fixedLang:(NSInteger)fixedLang maxStorageLang:(NSInteger)maxStorageLang items:(NSArray<IDOLanguageLibraryItem *> * _Nullable)items itemsUser:(NSArray<IDOLanguageLibraryItem *> * _Nullable)itemsUser OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -17012,6 +17019,13 @@ typedef SWIFT_ENUM(NSInteger, IDOLanguageType, open) {
   IDOLanguageTypeFinnish = 33,
   IDOLanguageTypePersian = 34,
   IDOLanguageTypeNorwegian = 35,
+  IDOLanguageTypeMalay = 36,
+  IDOLanguageTypeBrazilianPortuguese = 37,
+  IDOLanguageTypeBengali = 38,
+  IDOLanguageTypeKhmer = 39,
+  IDOLanguageTypeSerbian = 40,
+  IDOLanguageTypeBulgaria = 41,
+  IDOLanguageTypeHebrew = 42,
 };
 
 

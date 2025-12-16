@@ -4600,9 +4600,9 @@ public protocol IDOCmdProtocol {
   @objc public var defaultLang: Swift.Int
   @objc public var fixedLang: Swift.Int
   @objc public var maxStorageLang: Swift.Int
-  @objc public var items: [protocol_channel.IDOLanguageLibraryItem]
-  @objc public var itemsUser: [protocol_channel.IDOLanguageLibraryItem]
-  @objc public init(useLang: Swift.Int, defaultLang: Swift.Int, fixedLang: Swift.Int, maxStorageLang: Swift.Int, items: [protocol_channel.IDOLanguageLibraryItem], itemsUser: [protocol_channel.IDOLanguageLibraryItem])
+  @objc public var items: [protocol_channel.IDOLanguageLibraryItem]?
+  @objc public var itemsUser: [protocol_channel.IDOLanguageLibraryItem]?
+  @objc public init(useLang: Swift.Int, defaultLang: Swift.Int, fixedLang: Swift.Int, maxStorageLang: Swift.Int, items: [protocol_channel.IDOLanguageLibraryItem]?, itemsUser: [protocol_channel.IDOLanguageLibraryItem]?)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -4653,6 +4653,13 @@ public protocol IDOCmdProtocol {
   case finnish = 33
   case persian = 34
   case norwegian = 35
+  case malay = 36
+  case brazilianPortuguese = 37
+  case bengali = 38
+  case khmer = 39
+  case serbian = 40
+  case bulgaria = 41
+  case hebrew = 42
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
