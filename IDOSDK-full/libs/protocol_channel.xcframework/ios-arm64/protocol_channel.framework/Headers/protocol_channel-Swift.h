@@ -505,6 +505,11 @@ enum IDOAlgorithmSensorSwitch : NSInteger;
 @class IDOEmotionHealthReminderReplyModel;
 @class IDOAppListStyleParamModel;
 @class IDOAppListStyleReplyModel;
+@class IDOBloodGlucoseSendInfo;
+@class IDOBloodGlucoseInfoReplyV1;
+@class IDOBloodGlucoseDataInfoV1;
+@class IDOBikeLockReplyModel;
+@class IDOBikeLockInfo;
 
 SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 @interface Cmdoc : NSObject
@@ -1001,6 +1006,16 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 + (id <IDOCancellable> _Nonnull)emotionHealthReminderWithParam:(IDOEmotionHealthReminderParamModel * _Nonnull)param completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOEmotionHealthReminderReplyModel * _Nullable))completion;
 /// 应用列表样式 （设置/查询/删除）
 + (id <IDOCancellable> _Nonnull)appListStyleWithParam:(IDOAppListStyleParamModel * _Nonnull)param completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOAppListStyleReplyModel * _Nullable))completion;
+/// 设置血糖数据 (v01)
++ (id <IDOCancellable> _Nonnull)setBloodGlucoseDataV01:(IDOBloodGlucoseSendInfo * _Nonnull)param completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOBloodGlucoseInfoReplyV1 * _Nullable))completion;
+/// 获取血糖数据（v01）
++ (id <IDOCancellable> _Nonnull)getBloodGlucoseDataV01WithLocalSerialNumber:(NSInteger)localSerialNumber completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOBloodGlucoseDataInfoV1 * _Nullable))completion;
+/// 停止血糖监测（v01）
++ (id <IDOCancellable> _Nonnull)stopBloodGlucoseDataV01:(void (^ _Nonnull)(CmdError * _Nonnull, IDOBloodGlucoseInfoReplyV1 * _Nullable))completion;
+/// 获取车锁列表
++ (id <IDOCancellable> _Nonnull)getBikeLockList:(void (^ _Nonnull)(CmdError * _Nonnull, IDOBikeLockReplyModel * _Nullable))completion;
+/// 设置车锁列表
++ (id <IDOCancellable> _Nonnull)setBikeLockList:(NSArray<IDOBikeLockInfo *> * _Nonnull)items completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2165,6 +2180,36 @@ SWIFT_CLASS("_TtC16protocol_channel19IDOBatteryInfoModel")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+SWIFT_CLASS("_TtC16protocol_channel15IDOBikeLockInfo")
+@interface IDOBikeLockInfo : NSObject
+/// 车锁的mac地址,按照大端排序 mac0 mac1 mac2 mac3 mac4 mac5
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull mac;
+/// 车锁与手表交互需要的密钥
+@property (nonatomic, copy) NSString * _Nonnull secret;
+/// 车锁名称
+@property (nonatomic, copy) NSString * _Nullable name;
+/// mac的字符串形式，形如：AA:BB:CC:DD:EE:FF
+@property (nonatomic, readonly, copy) NSString * _Nonnull macStr;
+- (nonnull instancetype)initWithMac:(NSArray<NSNumber *> * _Nonnull)mac secret:(NSString * _Nonnull)secret name:(NSString * _Nullable)name OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel21IDOBikeLockReplyModel")
+@interface IDOBikeLockReplyModel : NSObject
+/// 操作类型 1:设置 2:查询
+@property (nonatomic) NSInteger operate;
+/// 错误码 0:成功 1:失败
+@property (nonatomic) NSInteger errorCode;
+/// 车锁信息，operate=2查询有效
+@property (nonatomic, copy) NSArray<IDOBikeLockInfo *> * _Nullable items;
+- (nonnull instancetype)initWithOperate:(NSInteger)operate errorCode:(NSInteger)errorCode items:(NSArray<IDOBikeLockInfo *> * _Nullable)items OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// 绑定状态
 typedef SWIFT_ENUM(NSInteger, IDOBindStatus, open) {
 /// 绑定失败
@@ -2545,6 +2590,59 @@ SWIFT_CLASS("_TtC16protocol_channel26IDOBloodGlucoseCurrentInfo")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+SWIFT_CLASS("_TtC16protocol_channel28IDOBloodGlucoseCurrentInfoV1")
+@interface IDOBloodGlucoseCurrentInfoV1 : NSObject
+/// 最近一次测量的时间戳
+@property (nonatomic) uint32_t lastUtcDate;
+/// 最近一次测量的值 100倍 0xffff为无效值
+@property (nonatomic) NSInteger lastGlucoseVal;
+/// 血糖单位 1: mmol/L  2: mg/DL
+@property (nonatomic) NSInteger targetUnit;
+/// 血糖趋势
+/// 0：无效
+/// 1：rapidlyfalling
+/// 2：falling
+/// 3：slowlyfalling
+/// 4：steady
+/// 5：slowlyrising
+/// 6：rising
+/// 7：rapidlyrising
+@property (nonatomic) NSInteger trendVal;
+/// 传感器状态
+/// 0:无效值
+/// 1:正常，在这个状态 血糖数值
+/// 2:sensor蓝牙连接中
+/// 3:sensor蓝牙断开
+@property (nonatomic) NSInteger sensorStatus;
+/// 传感器预热剩余时间(单位：分钟)
+@property (nonatomic) NSInteger sensorWarmUpTime;
+/// 血糖正常值范围最大值(100倍)
+@property (nonatomic) NSInteger normalGlucoseValMax;
+/// 血糖正常值范围最小值(100倍)
+@property (nonatomic) NSInteger normalGlucoseValMin;
+/// 序列号
+@property (nonatomic) NSInteger serialNumber;
+- (nonnull instancetype)initWithLastUtcDate:(uint32_t)lastUtcDate lastGlucoseVal:(NSInteger)lastGlucoseVal targetUnit:(NSInteger)targetUnit trendVal:(NSInteger)trendVal sensorStatus:(NSInteger)sensorStatus sensorWarmUpTime:(NSInteger)sensorWarmUpTime normalGlucoseValMax:(NSInteger)normalGlucoseValMax normalGlucoseValMin:(NSInteger)normalGlucoseValMin serialNumber:(NSInteger)serialNumber OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class IDOBloodGlucoseHistoryDataInfoV1;
+
+SWIFT_CLASS("_TtC16protocol_channel25IDOBloodGlucoseDataInfoV1")
+@interface IDOBloodGlucoseDataInfoV1 : NSObject
+/// 数据类型
+/// 1:固件上报历史血糖数据
+/// 2:设备结束监测
+@property (nonatomic) NSInteger dataType;
+/// 血糖CGM历史数据count 有数据传1，没数据传0
+@property (nonatomic, strong) IDOBloodGlucoseHistoryDataInfoV1 * _Nullable historyInfo;
+- (nonnull instancetype)initWithDataType:(NSInteger)dataType historyInfo:(IDOBloodGlucoseHistoryDataInfoV1 * _Nullable)historyInfo OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @class IDOBloodGlucoseHistoryDataItem;
 
 SWIFT_CLASS("_TtC16protocol_channel30IDOBloodGlucoseHistoryDataInfo")
@@ -2553,6 +2651,17 @@ SWIFT_CLASS("_TtC16protocol_channel30IDOBloodGlucoseHistoryDataInfo")
 @property (nonatomic, copy) NSArray<IDOBloodGlucoseHistoryDataItem *> * _Nullable dataInfos;
 - (nonnull instancetype)initWithDataInfos:(NSArray<IDOBloodGlucoseHistoryDataItem *> * _Nullable)dataInfos OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class IDOBloodGlucoseHistoryDataItemV1;
+
+SWIFT_CLASS("_TtC16protocol_channel32IDOBloodGlucoseHistoryDataInfoV1")
+@interface IDOBloodGlucoseHistoryDataInfoV1 : NSObject
+/// 当前包item个数，最大值84
+@property (nonatomic, copy) NSArray<IDOBloodGlucoseHistoryDataItemV1 *> * _Nullable dataInfos;
+- (nonnull instancetype)initWithDataInfos:(NSArray<IDOBloodGlucoseHistoryDataItemV1 *> * _Nullable)dataInfos OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2569,10 +2678,148 @@ SWIFT_CLASS("_TtC16protocol_channel30IDOBloodGlucoseHistoryDataItem")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+SWIFT_CLASS("_TtC16protocol_channel32IDOBloodGlucoseHistoryDataItemV1")
+@interface IDOBloodGlucoseHistoryDataItemV1 : NSObject
+/// 时间
+@property (nonatomic) uint32_t date;
+/// 血糖值 （扩大100倍）
+@property (nonatomic) NSInteger glucoseVal;
+/// 血糖单位 1: mmol/L  2: mg/DL
+@property (nonatomic) NSInteger targetUnit;
+/// 序列号
+@property (nonatomic) NSInteger serialNumber;
+- (nonnull instancetype)initWithDate:(uint32_t)date glucoseVal:(NSInteger)glucoseVal targetUnit:(NSInteger)targetUnit serialNumber:(NSInteger)serialNumber OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class IDOBloodGlucoseReplyInfoV1;
+
+SWIFT_CLASS("_TtC16protocol_channel26IDOBloodGlucoseInfoReplyV1")
+@interface IDOBloodGlucoseInfoReplyV1 : NSObject
+/// 操作码 1:发送  2:获取 3:设备结束监测
+@property (nonatomic) NSInteger operate;
+/// 操作码 1有效 3有效
+@property (nonatomic, strong) IDOBloodGlucoseReplyInfoV1 * _Nullable replyInfo;
+/// 操作码 2有效
+@property (nonatomic, strong) IDOBloodGlucoseDataInfoV1 * _Nullable dataInfo;
+- (nonnull instancetype)initWithOperate:(NSInteger)operate replyInfo:(IDOBloodGlucoseReplyInfoV1 * _Nullable)replyInfo dataInfo:(IDOBloodGlucoseDataInfoV1 * _Nullable)dataInfo OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel26IDOBloodGlucoseReplyInfoV1")
+@interface IDOBloodGlucoseReplyInfoV1 : NSObject
+/// 错误码 0成功，非0是错误码
+@property (nonatomic) NSInteger errCode;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode allItemsNum:(NSInteger)allItemsNum finishItemsNum:(NSInteger)finishItemsNum curItemsNum:(NSInteger)curItemsNum OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class IDOBloodGlucoseStatisticsInfoV1;
+@class IDOBloodGlucoseSensorInfoV1;
+@class IDOBloodGlucoseSettingInfoV1;
+
+SWIFT_CLASS("_TtC16protocol_channel23IDOBloodGlucoseSendInfo")
+@interface IDOBloodGlucoseSendInfo : NSObject
+/// 数据类型
+/// 1:app下发当前血糖数据
+/// 2:app下发血糖统计数据
+/// 3:app下发血糖CGM历史数据
+/// 4:app下发绑定设置血糖仪信息
+/// 5:app设置单位、目标范围
+@property (nonatomic) NSInteger dataType;
+/// data_type 1有效
+@property (nonatomic, strong) IDOBloodGlucoseCurrentInfoV1 * _Nullable currentInfo;
+/// data_type 2有效
+@property (nonatomic, strong) IDOBloodGlucoseStatisticsInfoV1 * _Nullable statisticsInfo;
+/// data_type 3有效
+@property (nonatomic, strong) IDOBloodGlucoseHistoryDataInfoV1 * _Nullable historyInfo;
+/// data_type 4有效
+@property (nonatomic, strong) IDOBloodGlucoseSensorInfoV1 * _Nullable sensorInfo;
+/// data_type 5有效
+@property (nonatomic, strong) IDOBloodGlucoseSettingInfoV1 * _Nullable settingInfo;
+- (nonnull instancetype)initWithDataType:(NSInteger)dataType currentInfo:(IDOBloodGlucoseCurrentInfoV1 * _Nullable)currentInfo statisticsInfo:(IDOBloodGlucoseStatisticsInfoV1 * _Nullable)statisticsInfo historyInfo:(IDOBloodGlucoseHistoryDataInfoV1 * _Nullable)historyInfo sensorInfo:(IDOBloodGlucoseSensorInfoV1 * _Nullable)sensorInfo settingInfo:(IDOBloodGlucoseSettingInfoV1 * _Nullable)settingInfo OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel27IDOBloodGlucoseSensorInfoV1")
+@interface IDOBloodGlucoseSensorInfoV1 : NSObject
+/// 设备编码（仅搜索设备时用） len: 9
+@property (nonatomic, copy) NSString * _Nonnull sn;
+/// mac地址 len: 13
+@property (nonatomic, copy) NSString * _Nonnull mac;
+/// 完整设备编码sn号（唯一） len: 14
+@property (nonatomic, copy) NSString * _Nonnull intactSn;
+/// 连接鉴权ID len: 13
+@property (nonatomic, copy) NSString * _Nonnull connectId;
+/// 开始监测时间
+@property (nonatomic) uint32_t startTime;
+/// 结束监测时间
+@property (nonatomic) uint32_t endTime;
+/// 监测状态
+@property (nonatomic) NSInteger isTesting;
+/// 可使用天数
+@property (nonatomic) NSInteger monitoringDays;
+/// 血糖出值间隔（单位：秒）
+@property (nonatomic) NSInteger gluIntervals;
+/// 初始化时间（单位：分钟）
+@property (nonatomic) uint32_t initTime;
+- (uint32_t)initTime SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
+/// 设备类型
+@property (nonatomic) NSInteger deviceType;
+- (nonnull instancetype)initWithSn:(NSString * _Nonnull)sn mac:(NSString * _Nonnull)mac intactSn:(NSString * _Nonnull)intactSn connectId:(NSString * _Nonnull)connectId startTime:(uint32_t)startTime endTime:(uint32_t)endTime isTesting:(NSInteger)isTesting monitoringDays:(NSInteger)monitoringDays gluIntervals:(NSInteger)gluIntervals initTime:(uint32_t)initTime deviceType:(NSInteger)deviceType OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel28IDOBloodGlucoseSettingInfoV1")
+@interface IDOBloodGlucoseSettingInfoV1 : NSObject
+/// 血糖单位 1: mmol/L  2: mg/DL
+@property (nonatomic) NSInteger targetUnit;
+/// 量程上限
+@property (nonatomic) NSInteger rangeMax;
+/// 量程下限
+@property (nonatomic) NSInteger rangeMin;
+/// 目标范围上限
+@property (nonatomic) NSInteger targetRangeMax;
+/// 目标范围下限
+@property (nonatomic) NSInteger targetRangeMin;
+/// 手表直连发射器开关
+@property (nonatomic) NSInteger deviceConnectSwitch;
+- (nonnull instancetype)initWithTargetUnit:(NSInteger)targetUnit rangeMax:(NSInteger)rangeMax rangeMin:(NSInteger)rangeMin targetRangeMax:(NSInteger)targetRangeMax targetRangeMin:(NSInteger)targetRangeMin deviceConnectSwitch:(NSInteger)deviceConnectSwitch OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @class IDOBloodGlucoseStatisticsItem;
 
 SWIFT_CLASS("_TtC16protocol_channel29IDOBloodGlucoseStatisticsInfo")
 @interface IDOBloodGlucoseStatisticsInfo : NSObject
+/// 血糖单位 1: mmol/L  2: mg/DL
+@property (nonatomic) NSInteger targetUnit;
+/// 胰岛素注射量 四位小数扩大10000倍
+@property (nonatomic) NSInteger insulinDose;
+/// 当日统计数据
+@property (nonatomic, strong) IDOBloodGlucoseStatisticsItem * _Nullable todayItem;
+/// 本周统计数据
+@property (nonatomic, strong) IDOBloodGlucoseStatisticsItem * _Nullable weekItem;
+/// 本月统计数据
+@property (nonatomic, strong) IDOBloodGlucoseStatisticsItem * _Nullable monthItem;
+- (nonnull instancetype)initWithTargetUnit:(NSInteger)targetUnit insulinDose:(NSInteger)insulinDose todayItem:(IDOBloodGlucoseStatisticsItem * _Nullable)todayItem weekItem:(IDOBloodGlucoseStatisticsItem * _Nullable)weekItem monthItem:(IDOBloodGlucoseStatisticsItem * _Nullable)monthItem OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC16protocol_channel31IDOBloodGlucoseStatisticsInfoV1")
+@interface IDOBloodGlucoseStatisticsInfoV1 : NSObject
 /// 血糖单位 1: mmol/L  2: mg/DL
 @property (nonatomic) NSInteger targetUnit;
 /// 胰岛素注射量 四位小数扩大10000倍
@@ -5463,6 +5710,10 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL supportSetSleepRemind;
 /// 支持血糖
 @property (nonatomic, readonly) BOOL supportBloodGlucose;
+/// 支持血糖(v01)
+@property (nonatomic, readonly) BOOL supportBloodGlucoseV01;
+/// 车锁管理
+@property (nonatomic, readonly) BOOL supportBikeLockManager;
 /// 支持算法数据的采集
 @property (nonatomic, readonly) BOOL supportAlgorithmRawDataCollect;
 - (NSString * _Nullable)printProperties SWIFT_WARN_UNUSED_RESULT;

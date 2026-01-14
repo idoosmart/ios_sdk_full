@@ -1449,6 +1449,36 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOAppListStyleReplyModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOAppListStyleReplyModel
   }
+  public struct setBloodGlucoseDataV01 : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOBloodGlucoseSendInfo)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOBloodGlucoseInfoReplyV1>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOBloodGlucoseInfoReplyV1
+  }
+  public struct getBloodGlucoseDataV01 : protocol_channel.IDOCmdProtocol {
+    public init(localSerialNumber: Swift.Int)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOBloodGlucoseInfoReplyV1>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOBloodGlucoseInfoReplyV1
+  }
+  public struct stopBloodGlucoseDataV01 : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOBloodGlucoseInfoReplyV1>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOBloodGlucoseInfoReplyV1
+  }
+  public struct getBikeLockList : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOBikeLockReplyModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOBikeLockReplyModel
+  }
+  public struct setBikeLockList : protocol_channel.IDOCmdProtocol {
+    public init(_ items: [protocol_channel.IDOBikeLockInfo])
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Cmdoc : ObjectiveC.NSObject {
   @objc @discardableResult
@@ -1787,6 +1817,16 @@ public struct Cmds {
   public static func emotionHealthReminder(param: protocol_channel.IDOEmotionHealthReminderParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOEmotionHealthReminderReplyModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func appListStyle(param: protocol_channel.IDOAppListStyleParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOAppListStyleReplyModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setBloodGlucoseDataV01(_ param: protocol_channel.IDOBloodGlucoseSendInfo, completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOBloodGlucoseInfoReplyV1?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getBloodGlucoseDataV01(localSerialNumber: Swift.Int, completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOBloodGlucoseDataInfoV1?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func stopBloodGlucoseDataV01(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOBloodGlucoseInfoReplyV1?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getBikeLockList(_ completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOBikeLockReplyModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setBikeLockList(_ items: [protocol_channel.IDOBikeLockInfo], completion: @escaping (_ err: protocol_channel.CmdError, _ aModel: protocol_channel.IDOCmdSetResponseModel?) -> Swift.Void) -> any protocol_channel.IDOCancellable
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2989,6 +3029,65 @@ extension protocol_channel.IDOBaseModel {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
+@objc @objcMembers public class IDOBikeLockInfo : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var mac: [Swift.Int]
+  @objc public var secret: Swift.String
+  @objc public var name: Swift.String?
+  @objc public var macStr: Swift.String {
+    @objc get
+  }
+  @objc public init(mac: [Swift.Int], secret: Swift.String, name: Swift.String? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case mac
+    case secret
+    case name
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBikeLockReplyModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var errorCode: Swift.Int
+  @objc public var items: [protocol_channel.IDOBikeLockInfo]?
+  @objc public init(operate: Swift.Int, errorCode: Swift.Int, items: [protocol_channel.IDOBikeLockInfo]? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case version
+    case operate
+    case errorCode
+    case itemNum
+    case items
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 @objc @objcMembers public class IDOBleBeepModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var errCode: Swift.Int
   @objc public var items: [protocol_channel.IDOBleBeepItem]?
@@ -3197,6 +3296,326 @@ extension protocol_channel.IDOBaseModel {
     }
   }
   @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBloodGlucoseSendInfo : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var dataType: Swift.Int
+  @objc public var currentInfo: protocol_channel.IDOBloodGlucoseCurrentInfoV1?
+  @objc public var statisticsInfo: protocol_channel.IDOBloodGlucoseStatisticsInfoV1?
+  @objc public var historyInfo: protocol_channel.IDOBloodGlucoseHistoryDataInfoV1?
+  @objc public var sensorInfo: protocol_channel.IDOBloodGlucoseSensorInfoV1?
+  @objc public var settingInfo: protocol_channel.IDOBloodGlucoseSettingInfoV1?
+  @objc public init(dataType: Swift.Int, currentInfo: protocol_channel.IDOBloodGlucoseCurrentInfoV1? = nil, statisticsInfo: protocol_channel.IDOBloodGlucoseStatisticsInfoV1? = nil, historyInfo: protocol_channel.IDOBloodGlucoseHistoryDataInfoV1? = nil, sensorInfo: protocol_channel.IDOBloodGlucoseSensorInfoV1? = nil, settingInfo: protocol_channel.IDOBloodGlucoseSettingInfoV1? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case dataType
+    case currentInfoCount
+    case statisticsInfoCount
+    case historyInfoCount
+    case sensorInfoCount
+    case settingInfoCount
+    case currentInfo
+    case statisticsInfo
+    case historyInfo
+    case sensorInfo
+    case settingInfo
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBloodGlucoseCurrentInfoV1 : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var lastUtcDate: Swift.UInt32
+  @objc public var lastGlucoseVal: Swift.Int
+  @objc public var targetUnit: Swift.Int
+  @objc public var trendVal: Swift.Int
+  @objc public var sensorStatus: Swift.Int
+  @objc public var sensorWarmUpTime: Swift.Int
+  @objc public var normalGlucoseValMax: Swift.Int
+  @objc public var normalGlucoseValMin: Swift.Int
+  @objc public var serialNumber: Swift.Int
+  @objc public init(lastUtcDate: Swift.UInt32, lastGlucoseVal: Swift.Int = 0xFFFF, targetUnit: Swift.Int, trendVal: Swift.Int, sensorStatus: Swift.Int, sensorWarmUpTime: Swift.Int, normalGlucoseValMax: Swift.Int, normalGlucoseValMin: Swift.Int, serialNumber: Swift.Int)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case lastUtcDate
+    case lastGlucoseVal
+    case targetUnit
+    case trendVal
+    case sensorStatus
+    case sensorWarmUpTime
+    case normalGlucoseValMax
+    case normalGlucoseValMin
+    case serialNumber
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBloodGlucoseStatisticsInfoV1 : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var targetUnit: Swift.Int
+  @objc public var insulinDose: Swift.Int
+  @objc public var todayItem: protocol_channel.IDOBloodGlucoseStatisticsItem?
+  @objc public var weekItem: protocol_channel.IDOBloodGlucoseStatisticsItem?
+  @objc public var monthItem: protocol_channel.IDOBloodGlucoseStatisticsItem?
+  @objc public init(targetUnit: Swift.Int, insulinDose: Swift.Int, todayItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil, weekItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil, monthItem: protocol_channel.IDOBloodGlucoseStatisticsItem? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case targetUnit
+    case insulinDose
+    case todayItem
+    case weekItem
+    case monthItem
+    case todayCount
+    case weekCount
+    case monthCount
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBloodGlucoseHistoryDataInfoV1 : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var dataInfos: [protocol_channel.IDOBloodGlucoseHistoryDataItemV1]?
+  @objc public init(dataInfos: [protocol_channel.IDOBloodGlucoseHistoryDataItemV1]?)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case allItemsNum
+    case dataInfos
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBloodGlucoseHistoryDataItemV1 : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var date: Swift.UInt32
+  @objc public var glucoseVal: Swift.Int
+  @objc public var targetUnit: Swift.Int
+  @objc public var serialNumber: Swift.Int
+  @objc public init(date: Swift.UInt32, glucoseVal: Swift.Int, targetUnit: Swift.Int, serialNumber: Swift.Int)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case date
+    case glucoseVal
+    case targetUnit
+    case serialNumber
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBloodGlucoseSensorInfoV1 : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var sn: Swift.String
+  @objc public var mac: Swift.String
+  @objc public var intactSn: Swift.String
+  @objc public var connectId: Swift.String
+  @objc public var startTime: Swift.UInt32
+  @objc public var endTime: Swift.UInt32
+  @objc public var isTesting: Swift.Int
+  @objc public var monitoringDays: Swift.Int
+  @objc public var gluIntervals: Swift.Int
+  @objc public var initTime: Swift.UInt32
+  @objc public var deviceType: Swift.Int
+  @objc public init(sn: Swift.String, mac: Swift.String, intactSn: Swift.String, connectId: Swift.String, startTime: Swift.UInt32, endTime: Swift.UInt32, isTesting: Swift.Int, monitoringDays: Swift.Int, gluIntervals: Swift.Int, initTime: Swift.UInt32, deviceType: Swift.Int)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case sn
+    case mac
+    case intactSn
+    case connectId
+    case startTime
+    case endTime
+    case isTesting
+    case monitoringDays
+    case gluIntervals
+    case initTime
+    case deviceType
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBloodGlucoseSettingInfoV1 : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var targetUnit: Swift.Int
+  @objc public var rangeMax: Swift.Int
+  @objc public var rangeMin: Swift.Int
+  @objc public var targetRangeMax: Swift.Int
+  @objc public var targetRangeMin: Swift.Int
+  @objc public var deviceConnectSwitch: Swift.Int
+  @objc public init(targetUnit: Swift.Int, rangeMax: Swift.Int, rangeMin: Swift.Int, targetRangeMax: Swift.Int, targetRangeMin: Swift.Int, deviceConnectSwitch: Swift.Int)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case targetUnit
+    case rangeMax
+    case rangeMin
+    case targetRangeMax
+    case targetRangeMin
+    case deviceConnectSwitch
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBloodGlucoseInfoReplyV1 : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var replyInfo: protocol_channel.IDOBloodGlucoseReplyInfoV1?
+  @objc public var dataInfo: protocol_channel.IDOBloodGlucoseDataInfoV1?
+  @objc public init(operate: Swift.Int, replyInfo: protocol_channel.IDOBloodGlucoseReplyInfoV1? = nil, dataInfo: protocol_channel.IDOBloodGlucoseDataInfoV1? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case version
+    case operate
+    case replyInfo
+    case dataInfo
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBloodGlucoseReplyInfoV1 : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var errCode: Swift.Int
+  @objc public init(errCode: Swift.Int, allItemsNum: Swift.Int, finishItemsNum: Swift.Int, curItemsNum: Swift.Int)
+  required public init(from decoder: any Swift.Decoder) throws
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case errCode
+    case allItemsNum
+    case finishItemsNum
+    case curItemsNum
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc @objcMembers public class IDOBloodGlucoseDataInfoV1 : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var dataType: Swift.Int
+  @objc public var historyInfo: protocol_channel.IDOBloodGlucoseHistoryDataInfoV1?
+  @objc public init(dataType: Swift.Int, historyInfo: protocol_channel.IDOBloodGlucoseHistoryDataInfoV1? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case dataType
+    case historyInfoCount
+    case historyInfo
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -4294,6 +4713,8 @@ public protocol IDOCmdProtocol {
   @objc var supportAppNotDisplayAlarmName: Swift.Bool { get }
   @objc var supportSetSleepRemind: Swift.Bool { get }
   @objc var supportBloodGlucose: Swift.Bool { get }
+  @objc var supportBloodGlucoseV01: Swift.Bool { get }
+  @objc var supportBikeLockManager: Swift.Bool { get }
   @objc var supportAlgorithmRawDataCollect: Swift.Bool { get }
   @objc func printProperties() -> Swift.String?
 }
@@ -6878,6 +7299,12 @@ extension protocol_channel.IDOAppletInfoModel.CodingKeys : Swift.RawRepresentabl
 extension protocol_channel.IDOAppletInfoItem.CodingKeys : Swift.Equatable {}
 extension protocol_channel.IDOAppletInfoItem.CodingKeys : Swift.Hashable {}
 extension protocol_channel.IDOAppletInfoItem.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBikeLockInfo.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBikeLockInfo.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBikeLockInfo.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBikeLockReplyModel.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBikeLockReplyModel.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBikeLockReplyModel.CodingKeys : Swift.RawRepresentable {}
 extension protocol_channel.IDOBloodGlucoseCurrentInfo.CodingKeys : Swift.Equatable {}
 extension protocol_channel.IDOBloodGlucoseCurrentInfo.CodingKeys : Swift.Hashable {}
 extension protocol_channel.IDOBloodGlucoseCurrentInfo.CodingKeys : Swift.RawRepresentable {}
@@ -6893,6 +7320,36 @@ extension protocol_channel.IDOBloodGlucoseHistoryDataInfo.CodingKeys : Swift.Raw
 extension protocol_channel.IDOBloodGlucoseHistoryDataItem.CodingKeys : Swift.Equatable {}
 extension protocol_channel.IDOBloodGlucoseHistoryDataItem.CodingKeys : Swift.Hashable {}
 extension protocol_channel.IDOBloodGlucoseHistoryDataItem.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBloodGlucoseSendInfo.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBloodGlucoseSendInfo.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBloodGlucoseSendInfo.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBloodGlucoseCurrentInfoV1.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBloodGlucoseCurrentInfoV1.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBloodGlucoseCurrentInfoV1.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBloodGlucoseStatisticsInfoV1.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBloodGlucoseStatisticsInfoV1.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBloodGlucoseStatisticsInfoV1.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBloodGlucoseHistoryDataInfoV1.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBloodGlucoseHistoryDataInfoV1.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBloodGlucoseHistoryDataInfoV1.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBloodGlucoseHistoryDataItemV1.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBloodGlucoseHistoryDataItemV1.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBloodGlucoseHistoryDataItemV1.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBloodGlucoseSensorInfoV1.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBloodGlucoseSensorInfoV1.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBloodGlucoseSensorInfoV1.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBloodGlucoseSettingInfoV1.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBloodGlucoseSettingInfoV1.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBloodGlucoseSettingInfoV1.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBloodGlucoseInfoReplyV1.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBloodGlucoseInfoReplyV1.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBloodGlucoseInfoReplyV1.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBloodGlucoseReplyInfoV1.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBloodGlucoseReplyInfoV1.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBloodGlucoseReplyInfoV1.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOBloodGlucoseDataInfoV1.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOBloodGlucoseDataInfoV1.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOBloodGlucoseDataInfoV1.CodingKeys : Swift.RawRepresentable {}
 extension protocol_channel.IDOCmdPriority : Swift.Equatable {}
 extension protocol_channel.IDOCmdPriority : Swift.Hashable {}
 extension protocol_channel.IDOCmdPriority : Swift.RawRepresentable {}

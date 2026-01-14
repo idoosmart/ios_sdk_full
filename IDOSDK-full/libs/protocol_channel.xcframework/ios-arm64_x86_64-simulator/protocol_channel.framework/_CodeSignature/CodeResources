@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/protocol_channel-Swift.h</key>
 		<data>
-		Fx+dwXHjxuovfUtH+1g4Z1+H+Fc=
+		EzUkRCjfKJiqdRiblZvR+gYdyZQ=
 		</data>
 		<key>Headers/protocol_channel-umbrella.h</key>
 		<data>
@@ -26,243 +26,271 @@
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		2cXQMYaaMp81HdnNwuPWs8EzxA0=
+		44YdafktO56qcFoyHuaDDJEiZLQ=
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		wIsQ5VlU48lF9i5/2RF45nLlbOc=
+		qFcfxVFXXmTYRO9QIuE/mVR6+BE=
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		CBaPuSlDzA/+ZWWWHMqjF6+M8Us=
+		8fVf6qbqurb9L94gYrReDK1we4E=
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		oTNHTuXaktCkTPH14oh9SPsUtqQ=
+		0ozQWiG5muNKQYgsOb8RwFZbH6g=
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		f2isZrUdM8CZnXRdSJ6WEtG/NH4=
+		aS7kZ/A5evRCgfPNSoUi5t7UNS4=
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		oTNHTuXaktCkTPH14oh9SPsUtqQ=
+		0ozQWiG5muNKQYgsOb8RwFZbH6g=
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		tvNb6goeq+Xx1HL3l94LejKkIgw=
+		PXnX1N5cmcVa/sgMF3d5xmnc5XM=
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		CBaPuSlDzA/+ZWWWHMqjF6+M8Us=
+		8fVf6qbqurb9L94gYrReDK1we4E=
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		W8BzDlxiv0I2Itt0fydhduzTs2I=
+		3EcolO9QFL4R65OSeN018jK57cI=
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		pvaD4CLZsNj/wAB/iUyJTr6+XT4=
+		gFWmyPuPbk7VZLq1+ga4EwpPGYI=
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		W8BzDlxiv0I2Itt0fydhduzTs2I=
+		3EcolO9QFL4R65OSeN018jK57cI=
 		</data>
 		<key>Modules/protocol_channel.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/wTHTb4ZLidigOZIcvM9vy1AFWY=
+		jOhpeXbpv366T3godBlJ78Sb8g8=
 		</data>
-		<key>icon_assets.bundle/bundl.swiggy_100.jpg</key>
+		<key>icon_assets.bundle/com.360buy.jdmobile_100.png</key>
 		<data>
-		9YNjR+LELb0vwQhppDeWY2gDx7c=
+		EBZ+SSeBoT/OBs1f2ej9Ae6ZQxE=
 		</data>
-		<key>icon_assets.bundle/com.Iphone.MMT_100.jpg</key>
+		<key>icon_assets.bundle/com.alipay.iphoneclient_100.png</key>
 		<data>
-		4VFRtuni5D3YS8qmdSb+utehKWM=
+		4K8OJAKNCfswV1e09tce/lh2bAE=
 		</data>
-		<key>icon_assets.bundle/com.aiwatch.aiwa_100.png</key>
+		<key>icon_assets.bundle/com.amazon.Amazon_100.png</key>
 		<data>
-		x41ArjCqt1YwJ/KIrBTDxPzotgM=
+		lW7PaNIoGa/2ngxqmKUo2tD8zGs=
 		</data>
-		<key>icon_assets.bundle/com.amazon.Amazon_100.jpg</key>
+		<key>icon_assets.bundle/com.apple.MobileSMS_100.png</key>
 		<data>
-		EzOBn0O/i3597khqHm5zAI0E8+A=
+		gtLtE1F2uC7u/awccGs2L4I8ao0=
 		</data>
-		<key>icon_assets.bundle/com.amazon.aiv.AIVApp_100.jpg</key>
+		<key>icon_assets.bundle/com.apple.missed.mobilephone_100.png</key>
 		<data>
-		9AOsQYAndEWgA1uPJGazGi4+65c=
+		DF+dXavfm1HXLIC5rA5Jk7/k/EY=
 		</data>
-		<key>icon_assets.bundle/com.appflipkart.flipkart_100.jpg</key>
+		<key>icon_assets.bundle/com.apple.mobilecal_100.png</key>
 		<data>
-		/v1PzxY2bWmUtZTIxCh2HEC6P4s=
+		NtMzfXA81Hrb01UueO1AVIpTsDE=
 		</data>
-		<key>icon_assets.bundle/com.apple.MobileSMS_100.jpg</key>
+		<key>icon_assets.bundle/com.apple.mobilemail_100.png</key>
 		<data>
-		K7HhDeZMDisCXKlAs1tw7Sc1zpw=
+		XuOXb9r/B9WXQUOc/nWgInCtqvM=
 		</data>
-		<key>icon_assets.bundle/com.apple.missed.mobilephone_100.jpg</key>
+		<key>icon_assets.bundle/com.atebits.Tweetie2_100.png</key>
 		<data>
-		zisSSZiSoFxTZTa4FCiqJWEULnE=
+		3NpKoLJMpMo5PHLA7SiK+3sIrpU=
 		</data>
-		<key>icon_assets.bundle/com.apple.mobilecal_100.jpg</key>
+		<key>icon_assets.bundle/com.baidu.BaiduMobile_100.png</key>
 		<data>
-		THIyAUUVxhf3uZAkzJpXOdAwijY=
+		/G8veckV2g3PCvRauDGyhM4cnk0=
 		</data>
-		<key>icon_assets.bundle/com.apple.mobilemail_100.jpg</key>
+		<key>icon_assets.bundle/com.burbn.instagram_100.png</key>
 		<data>
-		oOLAtoycqMEJ/IzcbxR75kjDQ8g=
+		sFjjuCjBs99aRbeJSMQHe1TupSU=
 		</data>
-		<key>icon_assets.bundle/com.apple.mobilephone_100.jpg</key>
+		<key>icon_assets.bundle/com.disney.disneyplus_100.png</key>
 		<data>
-		+m41y7EhXVVT3ePf61wTJ96zars=
+		Pz3AQYUMtRKPOLNI3arQvrYSve8=
 		</data>
-		<key>icon_assets.bundle/com.atebits.Tweetie2_100.jpg</key>
+		<key>icon_assets.bundle/com.easilydo.mail_100.png</key>
 		<data>
-		AkgsMj+BE40XDkW9S+rXDhXHM0c=
+		3QSFldnbVlNMaseLptBEK8ybJYU=
 		</data>
-		<key>icon_assets.bundle/com.burbn.instagram_100.jpg</key>
+		<key>icon_assets.bundle/com.ebay.iphone_100.png</key>
 		<data>
-		5CgBm4Z5m5fVinNdR4+5LqUph44=
+		HcvFpD7BAs/lAnPqXhzLkqOkkDY=
 		</data>
-		<key>icon_assets.bundle/com.eternoinfotech.newshunt_100.jpg</key>
+		<key>icon_assets.bundle/com.facebook.Facebook_100.png</key>
 		<data>
-		frIZPP9uddW1y1NXTKonkG1yT1Y=
+		qs5uhs9+DKb3Ugh8GQvC/xO2e8Y=
 		</data>
-		<key>icon_assets.bundle/com.facebook.Facebook_100.jpg</key>
+		<key>icon_assets.bundle/com.facebook.Messenger_100.png</key>
 		<data>
-		YjyHh46iKvY9v4Tnn+J29jy6GQ8=
+		9pxIgPqlijOaYPJ/a0tubuYO8jw=
 		</data>
-		<key>icon_assets.bundle/com.facebook.Messenger_100.jpg</key>
+		<key>icon_assets.bundle/com.google.Gmail_100.png</key>
 		<data>
-		JK7i+sX5hCnY6ipcoBVc2JRIPEY=
+		xRCdilxNQEQYR2iJYxFxZvB5jeQ=
 		</data>
-		<key>icon_assets.bundle/com.google.Gmail_100.jpg</key>
+		<key>icon_assets.bundle/com.google.Tachyon_100.png</key>
 		<data>
-		RXsfaAQ6rPvbZcMEo9vMHF3Pv8c=
+		v30E0hipoaelA05e3a8GmK6otVY=
 		</data>
-		<key>icon_assets.bundle/com.google.ios.youtube_100.jpg</key>
+		<key>icon_assets.bundle/com.google.calendar_100.png</key>
 		<data>
-		7Ha90hmXVbuLiDQv+FUMA+XekEE=
+		PNqrDq/oMpfgAg03O5Uy1pDwXic=
 		</data>
-		<key>icon_assets.bundle/com.google.ios.youtubemusic_100.jpg</key>
+		<key>icon_assets.bundle/com.google.ios.youtube_100.png</key>
 		<data>
-		mDnlC/IqRNwKrTYgRPZYNNL7QUE=
+		h5xGChygkXjtt7fQ1wFQfC8e8uw=
 		</data>
-		<key>icon_assets.bundle/com.google.paisa_100.jpg</key>
+		<key>icon_assets.bundle/com.hammerandchisel.discord_100.png</key>
 		<data>
-		zgv2eT/u66vWp0YY2ehkz3LaICA=
+		QV33Ld+2GEFHlSxFDZuZoWHSJBk=
 		</data>
-		<key>icon_assets.bundle/com.icewatch.icefit_100.png</key>
+		<key>icon_assets.bundle/com.ido.life_100.png</key>
 		<data>
-		KAhVqBr2J0D/+QR7VREkk9tJjcU=
+		4dYd0CtlATmESrdVzeiHcPYaG7c=
 		</data>
-		<key>icon_assets.bundle/com.ido.life_100.jpg</key>
+		<key>icon_assets.bundle/com.iwilab.KakaoTalk_100.png</key>
 		<data>
-		iZHU1rZfQH++yRNtGnCrDYvmLI8=
+		IK550CKWPgqRvJBXWWGNGGG5vAY=
 		</data>
-		<key>icon_assets.bundle/com.iwilab.KakaoTalk_100.jpg</key>
+		<key>icon_assets.bundle/com.laiwang.DingTalk_100.png</key>
 		<data>
-		cbFI8eiWEhJNXSCUdRwhYPt7+0Q=
+		MVetTkGRHL2yUzsPP5m45usQcwk=
 		</data>
-		<key>icon_assets.bundle/com.jio.jioplay_100.jpg</key>
+		<key>icon_assets.bundle/com.linkedin.LinkedIn_100.png</key>
 		<data>
-		5o/ziZCtELs88u6oJmh0X8vmRGY=
+		X1zTdzyh/hrc/GI4Dp9K4VqpGTg=
 		</data>
-		<key>icon_assets.bundle/com.kieslect.ks_100.jpg</key>
+		<key>icon_assets.bundle/com.meituan.imeituan_100.png</key>
 		<data>
-		sOxBjNb+U16Mm2YZqQRlD96ODj0=
+		LnqN/+/3LkHHM1m5fk/YSg3JXYY=
 		</data>
-		<key>icon_assets.bundle/com.linkedin.LinkedIn_100.jpg</key>
+		<key>icon_assets.bundle/com.microsoft.Office.Outlook_100.png</key>
 		<data>
-		H/hyBcXGTs7/EDlKqn0+abTWNOw=
+		+ZeeKGzWqwF9udJo9UckB6sR3ps=
 		</data>
-		<key>icon_assets.bundle/com.microsoft.Office.Outlook_100.jpg</key>
+		<key>icon_assets.bundle/com.microsoft.lync2013.iphone_100.png</key>
 		<data>
-		pfePbGmRxF+DkdRsq3dy3Ozpwvg=
+		aY43UVBriqwDREg5eIlqYVXpsiY=
 		</data>
-		<key>icon_assets.bundle/com.netflix.Netflix_100.jpg</key>
+		<key>icon_assets.bundle/com.microsoft.skype.teams_100.png</key>
 		<data>
-		GDMfzhyFU0MGwaFofRJhVdOHr9s=
+		3Ml73138RsjiTJWjf25KkOgy4qg=
 		</data>
-		<key>icon_assets.bundle/com.nis.app_100.jpg</key>
+		<key>icon_assets.bundle/com.netflix.Netflix_100.png</key>
 		<data>
-		aklDNLCZV0I8jwEaaUUy3rFzB80=
+		d9Ktea2Yj4JcQwT0e3Rzv0IjU6M=
 		</data>
-		<key>icon_assets.bundle/com.one97.paytm_100.jpg</key>
+		<key>icon_assets.bundle/com.shazam.Shazam_100.png</key>
 		<data>
-		PbemqgS56g7lYFoytrp84NdwRm0=
+		TE4j4M+xcjaJUQq0Q2FuaX4pCVo=
 		</data>
-		<key>icon_assets.bundle/com.phonepe.PhonePeApp_100.jpg</key>
+		<key>icon_assets.bundle/com.sina.weibo_100.png</key>
 		<data>
-		l9p4xGU88MQ2BvUO7Ln6v4zcbaU=
+		R7Lck/3VG5Y+9tQ5ETG7MpLZqKM=
 		</data>
-		<key>icon_assets.bundle/com.skype.skype_100.jpg</key>
+		<key>icon_assets.bundle/com.ss.iphone.article.News_100.png</key>
 		<data>
-		+OyBugLzzo2s1SAuF25HN76EZzw=
+		40W+z07Kk9qCh+0fuJrNCQ8NH4A=
 		</data>
-		<key>icon_assets.bundle/com.tencent.mqq_100.jpg</key>
+		<key>icon_assets.bundle/com.ss.iphone.ugc.Aweme_100.png</key>
 		<data>
-		ouUl6Ef4gS9/lym/7xmrb225xnQ=
+		+3GSAWCaFak5bwaOEMT5oQLBe+8=
 		</data>
-		<key>icon_assets.bundle/com.tencent.xin_100.jpg</key>
+		<key>icon_assets.bundle/com.taobao.taobao4iphone_100.png</key>
 		<data>
-		eScheGamvx8znRnFcz/sFowR2UU=
+		azsPMNZoVqRhmYXUR4SSnZBvkrY=
 		</data>
-		<key>icon_assets.bundle/com.toyopagroup.picaboo_100.jpg</key>
+		<key>icon_assets.bundle/com.taobao.tmall_100.png</key>
 		<data>
-		HH+TwTZjNBNev8MnUzwyb0uAdvw=
+		wQsXtIm1Bz8xLWyJHFzuUvOVNsU=
 		</data>
-		<key>icon_assets.bundle/com.tumblr.tumblr_100.jpg</key>
+		<key>icon_assets.bundle/com.tencent.mqq_100.png</key>
 		<data>
-		nc0yrCHLYc1wZ6wcKR4G0deQ6ek=
+		SRIFgWeZj/7lszoyOueXJ+d1R4M=
 		</data>
-		<key>icon_assets.bundle/com.ubercab.UberClient_100.jpg</key>
+		<key>icon_assets.bundle/com.tencent.xin_100.png</key>
 		<data>
-		gkzenqkDwEvr/nVG03kaH1nVm84=
+		99EOAKjiJqC8yzMAy2sOYuoeijU=
 		</data>
-		<key>icon_assets.bundle/com.viber_100.jpg</key>
+		<key>icon_assets.bundle/com.toyopagroup.picaboo_100.png</key>
 		<data>
-		DQUd9N/xde7FkOI8zWHlYjqeh1E=
+		aVRRKXapeoeYUKPIWkoFH8EnEmg=
 		</data>
-		<key>icon_assets.bundle/com.vk.vkclient_100.jpg</key>
+		<key>icon_assets.bundle/com.tumblr.tumblr_100.png</key>
 		<data>
-		HztFB4iQEKlydeIO/gcmGdTZqu8=
+		CWGsynFsKbR+CclqCme01GaH+Eo=
 		</data>
-		<key>icon_assets.bundle/com.zhiliaoapp.musically_100.jpg</key>
+		<key>icon_assets.bundle/com.viber_100.png</key>
 		<data>
-		tKoBiVYiSM3jhN4/EmVsa4YHnxI=
+		I3ypsjG38zcHaUx38EolyykVYA0=
 		</data>
-		<key>icon_assets.bundle/com.zomato.zomato_100.jpg</key>
+		<key>icon_assets.bundle/com.vk.vkclient_100.png</key>
 		<data>
-		SFrlcc6A5jAuMSPqlcOBr9oueas=
+		z5cPpGYoSrjur278LNlioSHJvCU=
 		</data>
-		<key>icon_assets.bundle/in.startv.hotstarLite_100.jpg</key>
+		<key>icon_assets.bundle/com.xiaojukeji.didi_100.png</key>
 		<data>
-		Mo5K3llcWvcIhyvajAW//GGbdGQ=
+		6gebfNIrjUX6gZbAjW9lkkVPXdk=
 		</data>
-		<key>icon_assets.bundle/jp.naver.line_100.jpg</key>
+		<key>icon_assets.bundle/com.xunmeng.pinduoduo_100.png</key>
 		<data>
-		kjBLMvCDrmFUNrpHQPPxwu3HM2c=
+		w0pLHknXiMFk/d8lrUzBTli9xok=
 		</data>
-		<key>icon_assets.bundle/net.whatsapp.WhatsAppSMB_100.jpg</key>
+		<key>icon_assets.bundle/com.yahoo.Aerogram_100.png</key>
 		<data>
-		YB5a8PL/dDqZ29KY81YR6lVqyUU=
+		PKkC84yWf21Xx8iSWcyoSvHnQfo=
 		</data>
-		<key>icon_assets.bundle/net.whatsapp.WhatsApp_100.jpg</key>
+		<key>icon_assets.bundle/com.zhiliaoapp.musically_100.png</key>
 		<data>
-		6921MO4KYn1kEl0qe+e05q3tAkw=
+		LPhYERsJAhEyIDPgeT1XQZNQoPs=
 		</data>
-		<key>icon_assets.bundle/olacabs.OlaCabs_100.jpg</key>
+		<key>icon_assets.bundle/in.mohalla.video_100.png</key>
 		<data>
-		zlH1f+xrA8OOViHwZbGatZIOpxQ=
+		KmN7pBItyUbF37fHjIwIWGy1/Ss=
 		</data>
-		<key>icon_assets.bundle/ph.telegra.Telegraph_100.jpg</key>
+		<key>icon_assets.bundle/jp.naver.line_100.png</key>
 		<data>
-		zyc4+2A3WM3pOpn/IOdjDhOxdqc=
+		RJ9LAtv3AbbU9c3Y0H/gEYNiISg=
 		</data>
-		<key>icon_assets.bundle/pinterest_100.jpg</key>
+		<key>icon_assets.bundle/me.ele.ios.eleme_100.png</key>
 		<data>
-		4dPPCPB5BL2YIQMrMmQfFlIZKTc=
+		21xr95LB0FoOepz/J3x0DR2xPuU=
+		</data>
+		<key>icon_assets.bundle/net.whatsapp.WhatsAppSMB_100.png</key>
+		<data>
+		/o8oMqSV3zPjdvKJ2KIomuz+LW0=
+		</data>
+		<key>icon_assets.bundle/net.whatsapp.WhatsApp_100.png</key>
+		<data>
+		krSXAaVDO/lt/4M4blNP7wwoJlk=
+		</data>
+		<key>icon_assets.bundle/org.whispersystems.signal_100.png</key>
+		<data>
+		oVPF0m1IBKo9mgTGQ1O5mKtXhAM=
+		</data>
+		<key>icon_assets.bundle/ph.telegra.Telegraph_100.png</key>
+		<data>
+		lYsk8TvAegv82gU8YesGblERyE8=
+		</data>
+		<key>icon_assets.bundle/pinterest_100.png</key>
+		<data>
+		aHydpYqcs9qlfvp+pN3+tQgZN74=
+		</data>
+		<key>icon_assets.bundle/us.zoom.videomeetings_100.png</key>
+		<data>
+		KM3K7b8IqrhjVAdpamARmSvAkzE=
+		</data>
+		<key>icon_assets.bundle/vn.com.vng.zingalo_100.png</key>
+		<data>
+		tv7X9bKm8JAhgFPmq2A724uaaS4=
 		</data>
 		<key>protocol_channel.bundle/Info.plist</key>
 		<data>
@@ -286,7 +314,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NZI8oSOEMMnpYiIA0FtwGYujZjV8tK3v4rM8O6leCo0=
+			kh3znmjzJD9XEoRY+FEyIBoWLbcppUVO3uTh1CnbJAQ=
 			</data>
 		</dict>
 		<key>Headers/protocol_channel-umbrella.h</key>
@@ -307,420 +335,469 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			n7hwtbcsj9lr6ZG9fyxl2vf9ItElkiXtX+qGQGvUUX0=
+			Y04rrYTWXvVpUXAXtvoAFW45XmCGwLdJMtNieh5K/2U=
 			</data>
 		</dict>
 		<key>Modules/protocol_channel.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3AADkE3G+7C7QLmfopqe59iAAAw94TDrEYnt0L05beU=
+			Vl44Uh/ABSuuphyRyI1Ks561MnCGT8dOWrbHS+2nWTI=
 			</data>
 		</dict>
 		<key>Modules/protocol_channel.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			awk3jt2asOaF1q9buCR3I+l4O1mZDBsLZ1mq4SZ0dh8=
+			mLV1ub6jb9MZiwban45KlitZAyHTGcAkZZJ8f5DVihA=
 			</data>
 		</dict>
 		<key>Modules/protocol_channel.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			770RhVKFRmakXAwHERZ6oQbtF3uXOnysd7Ik+O7w/9Q=
+			y4SynmlHB5UCN98XgjiONztP8+xwCv/g4ma74Kuu0oI=
 			</data>
 		</dict>
 		<key>Modules/protocol_channel.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VgBixxycooFX7zbdwgAh0wJO8Hm1/UCw2USOsVljMz4=
+			akktfKpLCKGL7Wi72reVXIrTER0y285TgwlqoFj19wE=
 			</data>
 		</dict>
 		<key>Modules/protocol_channel.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			770RhVKFRmakXAwHERZ6oQbtF3uXOnysd7Ik+O7w/9Q=
+			y4SynmlHB5UCN98XgjiONztP8+xwCv/g4ma74Kuu0oI=
 			</data>
 		</dict>
 		<key>Modules/protocol_channel.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rrfT45YZU1qGSjAFzdJ8zzDG7l36ZYB+5VLS1iuKTyI=
+			YNVJBJKHMAhbmIM9uELkBLn35Npm+PcgsAZU3tp5eHU=
 			</data>
 		</dict>
 		<key>Modules/protocol_channel.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			awk3jt2asOaF1q9buCR3I+l4O1mZDBsLZ1mq4SZ0dh8=
+			mLV1ub6jb9MZiwban45KlitZAyHTGcAkZZJ8f5DVihA=
 			</data>
 		</dict>
 		<key>Modules/protocol_channel.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S2vfcaJBj1rLKTlUF0oNfqFEDvfkHQy83RdzDOOpt2E=
+			f3t1Z3VC2As1CWOrKuqjY6F6YJgxqU/RmFLe5Q20gGU=
 			</data>
 		</dict>
 		<key>Modules/protocol_channel.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BCYiB7I5UZFNJVahSSwg6VTD4D1lfujDgCpGsZu7XUI=
+			VLMQS2ZFzuNkXY81VyIgGaexQFYAuPXqQqkGDZehkWI=
 			</data>
 		</dict>
 		<key>Modules/protocol_channel.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			S2vfcaJBj1rLKTlUF0oNfqFEDvfkHQy83RdzDOOpt2E=
+			f3t1Z3VC2As1CWOrKuqjY6F6YJgxqU/RmFLe5Q20gGU=
 			</data>
 		</dict>
 		<key>Modules/protocol_channel.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L+dYiE9ZmsNdTjPIX6cdHSfZqTfdHft00WFeBGyBCQU=
+			6inwSa0iah6PEGNKccqWEkeBDni/4IGfhAuY/pWTXLI=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/bundl.swiggy_100.jpg</key>
+		<key>icon_assets.bundle/com.360buy.jdmobile_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			llXHdbgpeMnwkLmo+5KaCljXD/YCrC/LPJgVrVjGP5Q=
+			q9yt6vjvjmLr/4MI4fS3D0ueFavua3vZVrSlyKFQmaM=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.Iphone.MMT_100.jpg</key>
+		<key>icon_assets.bundle/com.alipay.iphoneclient_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B1iXWfCO9/E+ytEQhkVmq+8d0IIYbaKFcO1J5Szlvgg=
+			6yQcwgeBypZal6/u6KgMMTJQHsWL/Imf2W3QMNuip9k=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.aiwatch.aiwa_100.png</key>
+		<key>icon_assets.bundle/com.amazon.Amazon_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nE1ShQalbo2N4ma1iVA9NFUDar/BIYGIbrMeyF3Zi7s=
+			d7sdkZaEnJgNkofcs7RtBS9oFFV/Bl5gAn0kkCqCyqQ=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.amazon.Amazon_100.jpg</key>
+		<key>icon_assets.bundle/com.apple.MobileSMS_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1wUJzzYWzPbm/lRpSMkNO9kRr16jV29f7TnQa8fbiFs=
+			n6D3ZBQnkJSxuLY6WdtF+haigi0c9EE25MWZabBFLT0=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.amazon.aiv.AIVApp_100.jpg</key>
+		<key>icon_assets.bundle/com.apple.missed.mobilephone_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rZAx9iCc0s3SfigAGtLVxzQsZzzqUs/ngQlvRAkqGFk=
+			l/pkGvHFzqNNhL58SR+8mw0YMvIKkan9aPvoR7kPhts=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.appflipkart.flipkart_100.jpg</key>
+		<key>icon_assets.bundle/com.apple.mobilecal_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BQxk99qtvvlmxe4nfEqUp4SiO38UNbFR6vwmFUmeszA=
+			vQYMytIKDdZ3tmG6pavV8Uz6zIXffUshrfeJOip3M5g=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.apple.MobileSMS_100.jpg</key>
+		<key>icon_assets.bundle/com.apple.mobilemail_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6RcPUasNFjeZb4PbBaMSmukvWHtFp+g6t9EG5b10RZk=
+			Rk71AvqPd50RVeazo11uoHxRD7UduBn3as/S692Kpt0=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.apple.missed.mobilephone_100.jpg</key>
+		<key>icon_assets.bundle/com.atebits.Tweetie2_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RPPxUO9fjPXBLb9DiBzEkChRx5ftKjGfwVTkUOUvJf8=
+			TKRqHfMTl7Df5PYHGbUpC6Z/dBJuL6CQdcLfkGkvfnM=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.apple.mobilecal_100.jpg</key>
+		<key>icon_assets.bundle/com.baidu.BaiduMobile_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ofpCvNyy8g04lKhSImvGMRlT38OHzr5hN8QMEVHwm/Y=
+			YIT39LZmgkOAt6rmajjCi7cr5kHdTknFNJeuPiyAX0c=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.apple.mobilemail_100.jpg</key>
+		<key>icon_assets.bundle/com.burbn.instagram_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jLTh/wXtFOZpwrvD7UeQt3SLm2zLHIoCWt+QHY/ViSM=
+			UiWt1Jg2ciNPACCdBs9R2+2hNjpjGypD2ZzyiTMHz2o=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.apple.mobilephone_100.jpg</key>
+		<key>icon_assets.bundle/com.disney.disneyplus_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GOYA1vnFzPrlCojNzXb9RT20maS39o1VlGhc53j+LXE=
+			Rj5uAZeJzmkpkMiTTLhWKZdXzUPMI4/QSxVpOp+VOfY=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.atebits.Tweetie2_100.jpg</key>
+		<key>icon_assets.bundle/com.easilydo.mail_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E8e6yDWK1TsUa7dbnZ6Hh3VWweRBcxKRs0M0swFoCpM=
+			8WMHF0/0psJyihMRsMJehfvSqW8xrtpPeUGuunkTcQE=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.burbn.instagram_100.jpg</key>
+		<key>icon_assets.bundle/com.ebay.iphone_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pXgvlWapDHP5DF8U4ZqtMWG+8pRYfUqFLSWFrghDmvk=
+			oFHWgvWcseT6+nj1EJSnZxKQ7GXHsG58beUk0hbOEcU=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.eternoinfotech.newshunt_100.jpg</key>
+		<key>icon_assets.bundle/com.facebook.Facebook_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IT6r9la/+5L3k7agNWKE3ts6MGgBR9F7yY3erT1OPIM=
+			zfEH2jogCeNxMfJVc2X5NXieGT70Iq7A9SvDPK1Ptgc=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.facebook.Facebook_100.jpg</key>
+		<key>icon_assets.bundle/com.facebook.Messenger_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B4CfWKZbyNC9zXPOal1r1U8/ZMXsV1WRFHG9+hoWRHI=
+			2BHOnBvaTTVNUZtfryna5fSYK1g0HjrOTHybnevhCns=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.facebook.Messenger_100.jpg</key>
+		<key>icon_assets.bundle/com.google.Gmail_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wSqkvOUYAFVLRUYdpne8NCbGzTp1PS6fmXH8dwZSMu0=
+			6L1IkuUE2MQtBxEOfjRefsmsqbh6cxDx2IcYEam83yU=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.google.Gmail_100.jpg</key>
+		<key>icon_assets.bundle/com.google.Tachyon_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OjX2PKY5QC6giwjReozWkmRPnVnshyhIC+jcq9L7Qnk=
+			4T51VLEOTR7a8ak2D7WVY5IZNCLkOd1hmOYH6ZaMxz0=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.google.ios.youtube_100.jpg</key>
+		<key>icon_assets.bundle/com.google.calendar_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V/HVcuQGmN38f0dPsLi/S6YF2O3zYlVZ7sHIK/9sKm8=
+			sCoHtZb7kUv4EOWaG9oThTb0zcowOnu6BdU659ith+s=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.google.ios.youtubemusic_100.jpg</key>
+		<key>icon_assets.bundle/com.google.ios.youtube_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			G4Kwi5gnNVC6Nb1EmPKD3mSM43p4vbNWvbJTsvgHfFk=
+			+YIZK2Pva9QYGPu9aAnK3wWPhIUvdxH0wOR534dhjks=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.google.paisa_100.jpg</key>
+		<key>icon_assets.bundle/com.hammerandchisel.discord_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MZa4ymV5mFOzMKGq1RUgX/0S/qzyZSfXalHj45AWQ+Y=
+			7cJe9/nc1KU1I3KdIoStr3m/527QxI9cCZxsb9h3C0o=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.icewatch.icefit_100.png</key>
+		<key>icon_assets.bundle/com.ido.life_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0EjlESiHoIJ3Z/HJnmC6WlNtMfqJaAIRTZzr0cgXZQQ=
+			Q9azuc6Z6xlVwFHqzmplw6sOZ5I0jIwT15sDjWaXpQA=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.ido.life_100.jpg</key>
+		<key>icon_assets.bundle/com.iwilab.KakaoTalk_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PcQEhO27rhPBVmabzv3kboM5JFEyNGmx0QMOgdYWvPE=
+			cyP2inJOOoq8C7oqy1CDpMKQFE/ajo6Z3IwHpAlKEK0=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.iwilab.KakaoTalk_100.jpg</key>
+		<key>icon_assets.bundle/com.laiwang.DingTalk_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wOyQEn6dJT3FibbgVNP2NtM9mSCHHX8qvHQeompa9v0=
+			wyWy2ROfguJJntf1/lxzsvpUHQltpl1HXRAZzYEpZlw=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.jio.jioplay_100.jpg</key>
+		<key>icon_assets.bundle/com.linkedin.LinkedIn_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			piek76Z5+IYL8r9auKE9DnnQ8fE4Kg9/F1L/PxR0nRI=
+			jiL4BAKdsUlm8uB2RfJubdMq+f9YkIzmIJ0D/xYB0iA=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.kieslect.ks_100.jpg</key>
+		<key>icon_assets.bundle/com.meituan.imeituan_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zlsmKQz8L57a5wncd+WhyyqEG6rGsOxCzXMssMyDKvE=
+			ukyooe/oPIant9rwx91XG7PMWbbgwN40z48GTpdvIyg=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.linkedin.LinkedIn_100.jpg</key>
+		<key>icon_assets.bundle/com.microsoft.Office.Outlook_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wQDEdQSaVVJ7eSeOHuG0GfhdVxM7LHXN0m7vwMg37bY=
+			Lq54gQ7qbDOLLgG27LE86BzFIQHtFOqlj4Wx0nRjGHo=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.microsoft.Office.Outlook_100.jpg</key>
+		<key>icon_assets.bundle/com.microsoft.lync2013.iphone_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q3F6Lk7Bgs0BGbhRMdiCLOTaGN/1ul2wj1e0IA/alFI=
+			rAYa3RzJlmEAL3zWK69QX8grvgaLR0MPFipC2izKvN4=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.netflix.Netflix_100.jpg</key>
+		<key>icon_assets.bundle/com.microsoft.skype.teams_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yMRkjYBrBr1ul4aXt7vf3aXJgLNn17QTrCWBTX8GhfM=
+			i5/b4aCcnOR1aJcAdREMk/zdyKXCj6WnAkLPtHAxzaw=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.nis.app_100.jpg</key>
+		<key>icon_assets.bundle/com.netflix.Netflix_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WcQRc+0pHU0XPZbpOy45rSzbLDGab9WgHFbZvhn8vXQ=
+			Fd3uza8mdRusr5ue9WHFLbd409r5YZE0bOJ6RHa+uKQ=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.one97.paytm_100.jpg</key>
+		<key>icon_assets.bundle/com.shazam.Shazam_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wGfEsl/iaVEuUMC9a1z4hIYLUxFuSB7vzHYK94+FhtA=
+			MUAcjzdpEre9acTlMJcngOWlci5yKzNR6qQW2YKolSY=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.phonepe.PhonePeApp_100.jpg</key>
+		<key>icon_assets.bundle/com.sina.weibo_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Swp0lgkz4zZalNwBExT4ubU37nMd2UQf0DLI4Ss2VQY=
+			Wlu6tVd0yT71lVrIbwrCvmi4MDNq6YecHVQ8kiaRKKc=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.skype.skype_100.jpg</key>
+		<key>icon_assets.bundle/com.ss.iphone.article.News_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GFMyWvTJhr/envgn4QmktedOBzc6Bf/K8zv+nAWaDys=
+			B62Nmltyu06I5A2qhHPdI2D4Y7kzIxfKUmzDsMIGeIk=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.tencent.mqq_100.jpg</key>
+		<key>icon_assets.bundle/com.ss.iphone.ugc.Aweme_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ssQ9bOO/X565vQwgPyQiwLPXO0g3Yd7j3E8aK5RsNgM=
+			8mnOkhxx3U9+fTGYTodCFFOHKpJcUQevv5gpKv5BGgE=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.tencent.xin_100.jpg</key>
+		<key>icon_assets.bundle/com.taobao.taobao4iphone_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nM3BYS3qcafdQTA1fcVugBo7X/3ZjKVqVe6nLj1v0Jw=
+			P3DSarJv9AWJD1Ypqmcc4kGMsQn2dUCVgLQHIw9O29I=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.toyopagroup.picaboo_100.jpg</key>
+		<key>icon_assets.bundle/com.taobao.tmall_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			73GgQ1unHZd59HwK+kDc2SXDvt0FcdELU4R0tPrAmrQ=
+			dmceLXXnZF6aqC4hl42GdQfju1Cu/R7fTyQIWWONh/s=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.tumblr.tumblr_100.jpg</key>
+		<key>icon_assets.bundle/com.tencent.mqq_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x/L48/Zeh5Z9SqsRBfTWjxYjwlbXpym+p7hcQGy8mqg=
+			vX1UTg5lB9pmopkMFHA7UXKz+NMR3N7FDbAwb9erFJA=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.ubercab.UberClient_100.jpg</key>
+		<key>icon_assets.bundle/com.tencent.xin_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yXoR0xEW1cfh3EKDcPlyS+JMskKTSRlK80kxYvHjW3I=
+			Plu51HB2BHXs/aHXWvj9YiCbQgE+HVYOTTTiPw3ixIo=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.viber_100.jpg</key>
+		<key>icon_assets.bundle/com.toyopagroup.picaboo_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2K1d4FBTlwmWVsPJoE1fouFnbZ3rKjZW7nh0Pjg2jVc=
+			5303MKZqmiL5Whgdm8QVz+ayXEXmQWMSVQB1bzecE+0=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.vk.vkclient_100.jpg</key>
+		<key>icon_assets.bundle/com.tumblr.tumblr_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DPkior5M5txdyA2lDM+jWdaD/V2v/nrcxZ/vHHMGU6U=
+			LpI4dFSOWsnvFYRpqd0avGwV6Vyt+LbgccI6aO1tHso=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.zhiliaoapp.musically_100.jpg</key>
+		<key>icon_assets.bundle/com.viber_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mw6QhtVY1xTGfE5cgB4DWcHJb5ajn82yGfwf6Ty/buo=
+			CurMzGP136fmHfAg70IBmVbhNHJnPKAqP++6QLrR3NE=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/com.zomato.zomato_100.jpg</key>
+		<key>icon_assets.bundle/com.vk.vkclient_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s1lbGT14bFy75g05uz8yKgdO58cF0QkfzuJ1JfzsUe8=
+			sOBfQIH9ZOw/baRmLQfqp9+PtJ1FnYmCSQ+mrT2ZJRU=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/in.startv.hotstarLite_100.jpg</key>
+		<key>icon_assets.bundle/com.xiaojukeji.didi_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			y/fcB1fLtE2ZgEEe9AgeecAAvEJxDedL5MpeUbtMpMk=
+			1oKuoLs0+RrGHOq13kxMw6KS4O+Hsvol0pNJMGLD5/4=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/jp.naver.line_100.jpg</key>
+		<key>icon_assets.bundle/com.xunmeng.pinduoduo_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aXfQxn5wpRxkMWhCD/xc1qeNor9fDjbtGnaqn3+RYBo=
+			IhXbEUeopOBwXCNn28r0yAKq0Ljjq3w+eBp3EDiDhtA=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/net.whatsapp.WhatsAppSMB_100.jpg</key>
+		<key>icon_assets.bundle/com.yahoo.Aerogram_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iDYlWTy9Jg9Bv0G3c9GQlnOTca0PS6oSEojzqLfo0bY=
+			LUuR4HBVffbn6ltKbWO+xMNbEWUyMl6u3JUYCvGUpUI=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/net.whatsapp.WhatsApp_100.jpg</key>
+		<key>icon_assets.bundle/com.zhiliaoapp.musically_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			H1eBy0y2WA0GgOB93fMUelLDXihUAT704rMbF9Qy/as=
+			q46CZcHLH0ARPOVpNRF5wNEjLyaJkl6jD/O7p+910Zs=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/olacabs.OlaCabs_100.jpg</key>
+		<key>icon_assets.bundle/in.mohalla.video_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			42i6EPO78q2Fzfktaa01A6Z1i/szMcty8MfLosJ7RJ0=
+			CxYMUw90yJl+XhZEUwDd9HpMUoQSAg74Ccv/kiPGWYk=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/ph.telegra.Telegraph_100.jpg</key>
+		<key>icon_assets.bundle/jp.naver.line_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M2RXAwXb13vP2hIoh78InupdvkRWLeSmEVbTOtVe8xE=
+			764ixofa0CZfDEndb9P7OmXHRpfhSatKeF5JzX673Tw=
 			</data>
 		</dict>
-		<key>icon_assets.bundle/pinterest_100.jpg</key>
+		<key>icon_assets.bundle/me.ele.ios.eleme_100.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+GQYuPMGz590jry2eEmCuUdsHejt5xaVk6L1nA4th54=
+			fK6HoYxgkUgXcFuP9u/In5jtMWOeUBbbju867x+WJkI=
+			</data>
+		</dict>
+		<key>icon_assets.bundle/net.whatsapp.WhatsAppSMB_100.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			tPtVf2enwPz9xZWs1c6DxSjrSxDrDcJNGetok9kpXUI=
+			</data>
+		</dict>
+		<key>icon_assets.bundle/net.whatsapp.WhatsApp_100.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BBCnQ/odfQxizSj3lbmEKgz/UagbHobFx3HacaCd4CU=
+			</data>
+		</dict>
+		<key>icon_assets.bundle/org.whispersystems.signal_100.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ow/i0GBqG6oEJNHX5jP+u2fAQFdsy0OvxpzZayq3U1A=
+			</data>
+		</dict>
+		<key>icon_assets.bundle/ph.telegra.Telegraph_100.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HEOduBgSPHCEeYVAh3ckjtptKL6wfYngONz4z7iuV+I=
+			</data>
+		</dict>
+		<key>icon_assets.bundle/pinterest_100.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zE3Wp0GnSuvxucITFUxNaLdUSGPNWicry5nJ3kqP8sI=
+			</data>
+		</dict>
+		<key>icon_assets.bundle/us.zoom.videomeetings_100.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			k6WZmiE0XTBsdAj4K0cy0Ho5C7PY4e4LTRcy138Te7w=
+			</data>
+		</dict>
+		<key>icon_assets.bundle/vn.com.vng.zingalo_100.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xzw5hdE0TTlPXq8XurBoIspT0MXT5qUhiTz/wnmbb1U=
 			</data>
 		</dict>
 		<key>protocol_channel.bundle/Info.plist</key>

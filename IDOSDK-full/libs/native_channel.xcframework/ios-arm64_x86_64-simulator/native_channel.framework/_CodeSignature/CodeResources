@@ -24,9 +24,33 @@
 		<data>
 		EQgf94uWpFFB4CBlrtCoXDc6x2s=
 		</data>
+		<key>Headers/BackgroundSelectModel.h</key>
+		<data>
+		Ll/c70k0TdRGYjNUufvirTA7aSY=
+		</data>
+		<key>Headers/ColorSelectModel.h</key>
+		<data>
+		VFWWvpo5Iyk9UtYnV1PThnq4OOk=
+		</data>
+		<key>Headers/CustomDialUtils.h</key>
+		<data>
+		Vk+N7F4I5L8ZKZDn5qdLiDJNW/8=
+		</data>
+		<key>Headers/Element.h</key>
+		<data>
+		ziq0G/6RoZk3tPlGYXpewDkwjzU=
+		</data>
+		<key>Headers/FontSelectModel.h</key>
+		<data>
+		5ujejyaajxf115m4FM5f75I+W3M=
+		</data>
 		<key>Headers/IDOUpdateSFManager.h</key>
 		<data>
 		sQao9LMqOd276dbBuLqli62udbE=
+		</data>
+		<key>Headers/PlacementSelectModel.h</key>
+		<data>
+		O7qV//5sPiTKnLBM3+P6fKb0Se4=
 		</data>
 		<key>Headers/Sifli.g.h</key>
 		<data>
@@ -42,7 +66,7 @@
 		</data>
 		<key>Headers/native_channel-umbrella.h</key>
 		<data>
-		H5DcfuJ+bJeRq8QTlYcgmhJYIIg=
+		aCKbYBTJSxNzkEoUPOy05Dg3yp0=
 		</data>
 		<key>Headers/native_channel.h</key>
 		<data>
@@ -58,15 +82,15 @@
 		</data>
 		<key>Modules/native_channel.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		jPuwQ/uR4iPmARL1j6ZVZCbAz4c=
+		9rwsXm4NCYi5oYKic2PEZrhSwlw=
 		</data>
 		<key>Modules/native_channel.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		tTXY+6gHK11aU5h0i4zuOFd9qss=
+		chQ5YwsYg1/2Qv2kBJM9qTWM9aM=
 		</data>
 		<key>Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		5VPZuyq2BmpESK/nuFTo4oTj2AQ=
+		BW+xvlx30wUi3NXsedqiJ+eV6rQ=
 		</data>
 		<key>Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -74,7 +98,7 @@
 		</data>
 		<key>Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		uG22cNt0Ain66TLpBDDbiYjJN20=
+		AfeX2rjCt+b1cDBob6/MrgW+CkI=
 		</data>
 		<key>Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -82,11 +106,11 @@
 		</data>
 		<key>Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		c9P/zBzmmeq1X49Nsxm1vLdaE+Y=
+		ZTxbqdtuOoIqze2vdSIZwK+eez4=
 		</data>
 		<key>Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		5VPZuyq2BmpESK/nuFTo4oTj2AQ=
+		BW+xvlx30wUi3NXsedqiJ+eV6rQ=
 		</data>
 		<key>Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -94,7 +118,7 @@
 		</data>
 		<key>Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		t5mcb5TYobhBEdoTFiCsISFWe+4=
+		k3Q+wqZ2SnJlSlf/3+4E0W92wFY=
 		</data>
 		<key>Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
@@ -102,7 +126,7 @@
 		</data>
 		<key>Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		9fGJslJMPymByLpxDnvH4I5Gugg=
+		sXAD2fl6b4+RcLaLLEellb8ztKc=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -162,6 +186,61 @@
 			F0/Kbq3iSsLS1JvnaSYH+57xjbtu/jeydWPT9sFzxkQ=
 			</data>
 		</dict>
+		<key>Headers/BackgroundSelectModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Ll/c70k0TdRGYjNUufvirTA7aSY=
+			</data>
+			<key>hash2</key>
+			<data>
+			Efd8uQNaRDbbYzKqCOMwIgnlqgvfOJ3oOtabQDKqFmY=
+			</data>
+		</dict>
+		<key>Headers/ColorSelectModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			VFWWvpo5Iyk9UtYnV1PThnq4OOk=
+			</data>
+			<key>hash2</key>
+			<data>
+			sMFfJHWNiRkbR6vAmosmmOhbfPH7v6CHnIS26pWI9VI=
+			</data>
+		</dict>
+		<key>Headers/CustomDialUtils.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Vk+N7F4I5L8ZKZDn5qdLiDJNW/8=
+			</data>
+			<key>hash2</key>
+			<data>
+			5/kWPAJw7lrlklpdEw8Q4tONr6WLxIiJUEAoiiaiZcQ=
+			</data>
+		</dict>
+		<key>Headers/Element.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ziq0G/6RoZk3tPlGYXpewDkwjzU=
+			</data>
+			<key>hash2</key>
+			<data>
+			NUCTz+FDxUvRReF1/6juRzOGJ23jUp1sHUKbvvxRNJE=
+			</data>
+		</dict>
+		<key>Headers/FontSelectModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			5ujejyaajxf115m4FM5f75I+W3M=
+			</data>
+			<key>hash2</key>
+			<data>
+			DJSlDJqAlGlqusgi5mpSae/IgpBCW9f6s5cCbXYoF7c=
+			</data>
+		</dict>
 		<key>Headers/IDOUpdateSFManager.h</key>
 		<dict>
 			<key>hash</key>
@@ -171,6 +250,17 @@
 			<key>hash2</key>
 			<data>
 			05Zx4QwE8iuf9ajRjAizr1bnag2NYgGIJpk+Wv4DlSs=
+			</data>
+		</dict>
+		<key>Headers/PlacementSelectModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			O7qV//5sPiTKnLBM3+P6fKb0Se4=
+			</data>
+			<key>hash2</key>
+			<data>
+			B+d7ihGXf2lqCcHBUoYyuzG/TLLP3kS1TL9NcISJLxY=
 			</data>
 		</dict>
 		<key>Headers/Sifli.g.h</key>
@@ -210,11 +300,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			H5DcfuJ+bJeRq8QTlYcgmhJYIIg=
+			aCKbYBTJSxNzkEoUPOy05Dg3yp0=
 			</data>
 			<key>hash2</key>
 			<data>
-			HITKv2rsmjhk+AAWGYp7zmtNCR2/0SvYfCpAMoXCOe8=
+			gSLmeh3z5bZyqvVebuZKsTZMF6zLyeGgCfxMgUW62Qw=
 			</data>
 		</dict>
 		<key>Headers/native_channel.h</key>
@@ -243,33 +333,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jPuwQ/uR4iPmARL1j6ZVZCbAz4c=
+			9rwsXm4NCYi5oYKic2PEZrhSwlw=
 			</data>
 			<key>hash2</key>
 			<data>
-			sKDd1uX40GR6hg2Ro9CBuEcPNA/lLx1hXZMjTF8GCS0=
+			u5cAc0FGC/refwj7EsIYurVSKYIZq2xmC5xL4S2BcS0=
 			</data>
 		</dict>
 		<key>Modules/native_channel.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tTXY+6gHK11aU5h0i4zuOFd9qss=
+			chQ5YwsYg1/2Qv2kBJM9qTWM9aM=
 			</data>
 			<key>hash2</key>
 			<data>
-			wCuOzA2R6gwW/f+ybSneQZFH4BmKbrcxrn2n4Q5yTJQ=
+			prSaastz9mp0T4V7q2WwjEb1uSqF0dMjHl5Cgb0KMTU=
 			</data>
 		</dict>
 		<key>Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5VPZuyq2BmpESK/nuFTo4oTj2AQ=
+			BW+xvlx30wUi3NXsedqiJ+eV6rQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			6anVSG8eEKYbfOH5IwGOQLBXJXKK454s6C0zYrITKls=
+			tN9G8TTQZcRVwot9DwKeCFyY/B2YExHK1Es24hgR0wo=
 			</data>
 		</dict>
 		<key>Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -287,11 +377,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uG22cNt0Ain66TLpBDDbiYjJN20=
+			AfeX2rjCt+b1cDBob6/MrgW+CkI=
 			</data>
 			<key>hash2</key>
 			<data>
-			l/0tZg25t5+L2+d1G1LhdR2098Vg/EFr0opmin7nkn8=
+			AtL79qosXFu2tCgV9gZWEOzIuV1iFxZ8CjKC4hAviEo=
 			</data>
 		</dict>
 		<key>Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
@@ -309,22 +399,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			c9P/zBzmmeq1X49Nsxm1vLdaE+Y=
+			ZTxbqdtuOoIqze2vdSIZwK+eez4=
 			</data>
 			<key>hash2</key>
 			<data>
-			w4ckyBwaVQWhRHE6NJsUpeIeG98GN7J769E8lX920xE=
+			eTn2H1PIvg2xsRRpjtmbI3YMPngD240Avfee4QlSBC8=
 			</data>
 		</dict>
 		<key>Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5VPZuyq2BmpESK/nuFTo4oTj2AQ=
+			BW+xvlx30wUi3NXsedqiJ+eV6rQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			6anVSG8eEKYbfOH5IwGOQLBXJXKK454s6C0zYrITKls=
+			tN9G8TTQZcRVwot9DwKeCFyY/B2YExHK1Es24hgR0wo=
 			</data>
 		</dict>
 		<key>Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -342,11 +432,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t5mcb5TYobhBEdoTFiCsISFWe+4=
+			k3Q+wqZ2SnJlSlf/3+4E0W92wFY=
 			</data>
 			<key>hash2</key>
 			<data>
-			+VK6wjNirDMrnZTJyAm0uyUS5gVlM1owzQBhc+KEsRc=
+			AfdWLoXgxzudz4aX22ywmnM6WuqB5KKqABK6tiD+Q24=
 			</data>
 		</dict>
 		<key>Modules/native_channel.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
@@ -364,11 +454,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9fGJslJMPymByLpxDnvH4I5Gugg=
+			sXAD2fl6b4+RcLaLLEellb8ztKc=
 			</data>
 			<key>hash2</key>
 			<data>
-			4f3Pmqfk+sXwPzZ/nq/MADwwW3it7DzvwQS133+x/44=
+			Zlvr3Bxh6K5E8nXFhCeaC/J5foo5GHanNwxH4DMo5tQ=
 			</data>
 		</dict>
 	</dict>

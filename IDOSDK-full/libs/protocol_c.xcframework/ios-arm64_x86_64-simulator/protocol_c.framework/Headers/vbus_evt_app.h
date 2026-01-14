@@ -430,7 +430,8 @@ typedef enum
     VBUS_EVT_FUNC_V3_PHYSIOLOGICAL_RECORD                  = 5102,  //女性生理日常记录
     VBUS_EVT_FUNC_V3_GLUCOSE_INFORMATION                   = 5104,  //v3血糖数据下发
     VBUS_EVT_FUNC_V3_ALGORITHM_RAW_DATA                    = 5105,  //算法原始数据采集
-    VBUS_EVT_FUNC_V3_ALGORITHM_RAW_DATA_OPERATE_02         = 5106,  //算法原始数据采集 操作0x02为数据采集中 这个操作的事件号
+    VBUS_EVT_FUNC_V3_BIKE_LOCK                             = 5107,  //车锁管理
+    VBUS_EVT_FUNC_V3_OFFLINE_MAP                           = 5109,  //离线地图
 
 
 
@@ -490,7 +491,8 @@ typedef enum
 	VBUS_EVT_TRAN_JSON_V3_RESPIR_RATE 		               = 7012,  //呼吸率数据回调
 	VBUS_EVT_TRAN_JSON_V3_BODY_POWER 		               = 7013,  //身体电量数据回调
 	VBUS_EVT_TRAN_JSON_V3_HRV 				               = 7014,  //HRV数据回调
-    VBUS_EVT_TRAN_JSON_V3_EMOTION_HEALTH = 7018,    //情绪健康数据回调
+    VBUS_EVT_TRAN_JSON_V3_EMOTION_HEALTH                   = 7018,    //情绪健康数据回调
+    VBUS_EVT_TRAN_JSON_V3_MULTI_ACTIVITY_NEW               = 7019,//同步多运动/游泳/跑步课程/跑步计划/跑后拉伸数据回调
 	VBUS_EVT_TRAN_JSON_V3_TEST_SYNC_PLAN_SPORT             = 7113,	//计划多运动模拟测试接口
     VBUS_EVT_TRAN_JSON_V3_RESPIR_RATE_INFO                 = 7114,	//呼吸率数据同步发送
     
