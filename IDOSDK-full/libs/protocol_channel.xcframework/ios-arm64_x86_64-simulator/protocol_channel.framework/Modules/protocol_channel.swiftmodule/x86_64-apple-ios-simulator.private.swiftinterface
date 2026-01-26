@@ -3476,7 +3476,8 @@ extension protocol_channel.IDOBaseModel {
   @objc public var gluIntervals: Swift.Int
   @objc public var initTime: Swift.UInt32
   @objc public var deviceType: Swift.Int
-  @objc public init(sn: Swift.String, mac: Swift.String, intactSn: Swift.String, connectId: Swift.String, startTime: Swift.UInt32, endTime: Swift.UInt32, isTesting: Swift.Int, monitoringDays: Swift.Int, gluIntervals: Swift.Int, initTime: Swift.UInt32, deviceType: Swift.Int)
+  @objc public var deviceRunTime: Swift.UInt32
+  @objc public init(sn: Swift.String, mac: Swift.String, intactSn: Swift.String, connectId: Swift.String, startTime: Swift.UInt32, endTime: Swift.UInt32, isTesting: Swift.Int, monitoringDays: Swift.Int, gluIntervals: Swift.Int, initTime: Swift.UInt32, deviceType: Swift.Int, deviceRunTime: Swift.UInt32)
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case sn
     case mac
@@ -3489,6 +3490,7 @@ extension protocol_channel.IDOBaseModel {
     case gluIntervals
     case initTime
     case deviceType
+    case deviceRunTime
     public init?(rawValue: Swift.String)
     public init?(stringValue: Swift.String)
     public init?(intValue: Swift.Int)
@@ -3542,12 +3544,14 @@ extension protocol_channel.IDOBaseModel {
 }
 @objc @objcMembers public class IDOBloodGlucoseInfoReplyV1 : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var operate: Swift.Int
+  @objc public var errCode: Swift.Int
   @objc public var replyInfo: protocol_channel.IDOBloodGlucoseReplyInfoV1?
   @objc public var dataInfo: protocol_channel.IDOBloodGlucoseDataInfoV1?
-  @objc public init(operate: Swift.Int, replyInfo: protocol_channel.IDOBloodGlucoseReplyInfoV1? = nil, dataInfo: protocol_channel.IDOBloodGlucoseDataInfoV1? = nil)
+  @objc public init(errCode: Swift.Int, operate: Swift.Int, replyInfo: protocol_channel.IDOBloodGlucoseReplyInfoV1? = nil, dataInfo: protocol_channel.IDOBloodGlucoseDataInfoV1? = nil)
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case version
     case operate
+    case errCode
     case replyInfo
     case dataInfo
     public init?(rawValue: Swift.String)
@@ -3569,11 +3573,9 @@ extension protocol_channel.IDOBaseModel {
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOBloodGlucoseReplyInfoV1 : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var errCode: Swift.Int
-  @objc public init(errCode: Swift.Int, allItemsNum: Swift.Int, finishItemsNum: Swift.Int, curItemsNum: Swift.Int)
+  @objc public init(allItemsNum: Swift.Int, finishItemsNum: Swift.Int, curItemsNum: Swift.Int)
   required public init(from decoder: any Swift.Decoder) throws
   public enum CodingKeys : Swift.String, Swift.CodingKey {
-    case errCode
     case allItemsNum
     case finishItemsNum
     case curItemsNum

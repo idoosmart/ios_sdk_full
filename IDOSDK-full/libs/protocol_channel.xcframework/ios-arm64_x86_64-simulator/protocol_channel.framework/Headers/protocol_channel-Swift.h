@@ -2556,14 +2556,6 @@ SWIFT_CLASS("_TtC16protocol_channel26IDOBloodGlucoseCurrentInfo")
 /// 血糖单位 1: mmol/L 2: mg/DL
 @property (nonatomic) NSInteger targetUnit;
 /// 血糖趋势
-/// 0：无效
-/// 1: rapidlyfalling
-/// 2: falling
-/// 3: slowlyfalling
-/// 4: steady
-/// 5: slowlyrising
-/// 6: rising
-/// 7: rapidlyrising
 @property (nonatomic) NSInteger trendVal;
 /// 传感器状态
 /// 0：无效
@@ -2700,11 +2692,13 @@ SWIFT_CLASS("_TtC16protocol_channel26IDOBloodGlucoseInfoReplyV1")
 @interface IDOBloodGlucoseInfoReplyV1 : NSObject
 /// 操作码 1:发送  2:获取 3:设备结束监测
 @property (nonatomic) NSInteger operate;
+/// 错误码 0成功，非0失败
+@property (nonatomic) NSInteger errCode;
 /// 操作码 1有效 3有效
 @property (nonatomic, strong) IDOBloodGlucoseReplyInfoV1 * _Nullable replyInfo;
 /// 操作码 2有效
 @property (nonatomic, strong) IDOBloodGlucoseDataInfoV1 * _Nullable dataInfo;
-- (nonnull instancetype)initWithOperate:(NSInteger)operate replyInfo:(IDOBloodGlucoseReplyInfoV1 * _Nullable)replyInfo dataInfo:(IDOBloodGlucoseDataInfoV1 * _Nullable)dataInfo OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode operate:(NSInteger)operate replyInfo:(IDOBloodGlucoseReplyInfoV1 * _Nullable)replyInfo dataInfo:(IDOBloodGlucoseDataInfoV1 * _Nullable)dataInfo OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2712,9 +2706,7 @@ SWIFT_CLASS("_TtC16protocol_channel26IDOBloodGlucoseInfoReplyV1")
 
 SWIFT_CLASS("_TtC16protocol_channel26IDOBloodGlucoseReplyInfoV1")
 @interface IDOBloodGlucoseReplyInfoV1 : NSObject
-/// 错误码 0成功，非0是错误码
-@property (nonatomic) NSInteger errCode;
-- (nonnull instancetype)initWithErrCode:(NSInteger)errCode allItemsNum:(NSInteger)allItemsNum finishItemsNum:(NSInteger)finishItemsNum curItemsNum:(NSInteger)curItemsNum OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithAllItemsNum:(NSInteger)allItemsNum finishItemsNum:(NSInteger)finishItemsNum curItemsNum:(NSInteger)curItemsNum OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2773,7 +2765,9 @@ SWIFT_CLASS("_TtC16protocol_channel27IDOBloodGlucoseSensorInfoV1")
 - (uint32_t)initTime SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
 /// 设备类型
 @property (nonatomic) NSInteger deviceType;
-- (nonnull instancetype)initWithSn:(NSString * _Nonnull)sn mac:(NSString * _Nonnull)mac intactSn:(NSString * _Nonnull)intactSn connectId:(NSString * _Nonnull)connectId startTime:(uint32_t)startTime endTime:(uint32_t)endTime isTesting:(NSInteger)isTesting monitoringDays:(NSInteger)monitoringDays gluIntervals:(NSInteger)gluIntervals initTime:(uint32_t)initTime deviceType:(NSInteger)deviceType OBJC_DESIGNATED_INITIALIZER;
+/// 设备运行时间（单位：秒）
+@property (nonatomic) uint32_t deviceRunTime;
+- (nonnull instancetype)initWithSn:(NSString * _Nonnull)sn mac:(NSString * _Nonnull)mac intactSn:(NSString * _Nonnull)intactSn connectId:(NSString * _Nonnull)connectId startTime:(uint32_t)startTime endTime:(uint32_t)endTime isTesting:(NSInteger)isTesting monitoringDays:(NSInteger)monitoringDays gluIntervals:(NSInteger)gluIntervals initTime:(uint32_t)initTime deviceType:(NSInteger)deviceType deviceRunTime:(uint32_t)deviceRunTime OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13572,14 +13566,6 @@ SWIFT_CLASS("_TtC16protocol_channel26IDOBloodGlucoseCurrentInfo")
 /// 血糖单位 1: mmol/L 2: mg/DL
 @property (nonatomic) NSInteger targetUnit;
 /// 血糖趋势
-/// 0：无效
-/// 1: rapidlyfalling
-/// 2: falling
-/// 3: slowlyfalling
-/// 4: steady
-/// 5: slowlyrising
-/// 6: rising
-/// 7: rapidlyrising
 @property (nonatomic) NSInteger trendVal;
 /// 传感器状态
 /// 0：无效
@@ -13716,11 +13702,13 @@ SWIFT_CLASS("_TtC16protocol_channel26IDOBloodGlucoseInfoReplyV1")
 @interface IDOBloodGlucoseInfoReplyV1 : NSObject
 /// 操作码 1:发送  2:获取 3:设备结束监测
 @property (nonatomic) NSInteger operate;
+/// 错误码 0成功，非0失败
+@property (nonatomic) NSInteger errCode;
 /// 操作码 1有效 3有效
 @property (nonatomic, strong) IDOBloodGlucoseReplyInfoV1 * _Nullable replyInfo;
 /// 操作码 2有效
 @property (nonatomic, strong) IDOBloodGlucoseDataInfoV1 * _Nullable dataInfo;
-- (nonnull instancetype)initWithOperate:(NSInteger)operate replyInfo:(IDOBloodGlucoseReplyInfoV1 * _Nullable)replyInfo dataInfo:(IDOBloodGlucoseDataInfoV1 * _Nullable)dataInfo OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode operate:(NSInteger)operate replyInfo:(IDOBloodGlucoseReplyInfoV1 * _Nullable)replyInfo dataInfo:(IDOBloodGlucoseDataInfoV1 * _Nullable)dataInfo OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13728,9 +13716,7 @@ SWIFT_CLASS("_TtC16protocol_channel26IDOBloodGlucoseInfoReplyV1")
 
 SWIFT_CLASS("_TtC16protocol_channel26IDOBloodGlucoseReplyInfoV1")
 @interface IDOBloodGlucoseReplyInfoV1 : NSObject
-/// 错误码 0成功，非0是错误码
-@property (nonatomic) NSInteger errCode;
-- (nonnull instancetype)initWithErrCode:(NSInteger)errCode allItemsNum:(NSInteger)allItemsNum finishItemsNum:(NSInteger)finishItemsNum curItemsNum:(NSInteger)curItemsNum OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithAllItemsNum:(NSInteger)allItemsNum finishItemsNum:(NSInteger)finishItemsNum curItemsNum:(NSInteger)curItemsNum OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13789,7 +13775,9 @@ SWIFT_CLASS("_TtC16protocol_channel27IDOBloodGlucoseSensorInfoV1")
 - (uint32_t)initTime SWIFT_METHOD_FAMILY(none) SWIFT_WARN_UNUSED_RESULT;
 /// 设备类型
 @property (nonatomic) NSInteger deviceType;
-- (nonnull instancetype)initWithSn:(NSString * _Nonnull)sn mac:(NSString * _Nonnull)mac intactSn:(NSString * _Nonnull)intactSn connectId:(NSString * _Nonnull)connectId startTime:(uint32_t)startTime endTime:(uint32_t)endTime isTesting:(NSInteger)isTesting monitoringDays:(NSInteger)monitoringDays gluIntervals:(NSInteger)gluIntervals initTime:(uint32_t)initTime deviceType:(NSInteger)deviceType OBJC_DESIGNATED_INITIALIZER;
+/// 设备运行时间（单位：秒）
+@property (nonatomic) uint32_t deviceRunTime;
+- (nonnull instancetype)initWithSn:(NSString * _Nonnull)sn mac:(NSString * _Nonnull)mac intactSn:(NSString * _Nonnull)intactSn connectId:(NSString * _Nonnull)connectId startTime:(uint32_t)startTime endTime:(uint32_t)endTime isTesting:(NSInteger)isTesting monitoringDays:(NSInteger)monitoringDays gluIntervals:(NSInteger)gluIntervals initTime:(uint32_t)initTime deviceType:(NSInteger)deviceType deviceRunTime:(uint32_t)deviceRunTime OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
