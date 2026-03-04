@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/flutter_bluetooth.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		H8M3rrytJRY/y3hK6mS9n0ppgOI=
+		93xdz3LYsA8EBoDgv07YVzIgHMI=
 		</data>
 		<key>Modules/flutter_bluetooth.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		2ebWk8TrkTOIs4BHcF4NesZn4i4=
+		OTh0jKDLFbK530lI/526vDO/KDc=
 		</data>
 		<key>Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		enm1AlQbl5kQnT3Uri3J512mouw=
+		Ztb26IaRXdFMGPVDvp2rdlpQL7I=
 		</data>
 		<key>Modules/flutter_bluetooth.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Modules/flutter_bluetooth.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		NTZSftqxh63r+wZd/KVuYk3mU3k=
+		k+asNkE5A5Y0++YrGqXy+2bFkuQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -119,14 +119,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uAJ6EGJ9HJisJ0UUlytQAfb28ZQXR887sdUQW0DydM4=
+			Iaj7rBaBHtOQijgD0GMYsUmfFjZkj4VBNlJ1yZ3u5bY=
 			</data>
 		</dict>
 		<key>Modules/flutter_bluetooth.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			as+gM1dAuP9DHZ7gZOfJ4TUNQN4dOlhGyq+Sl8ZGI5o=
+			jDIMMuUZhB0JSOjBPtznHycnnTMs1ly5kR5XNKTDcco=
 			</data>
 		</dict>
 		<key>Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -161,7 +161,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			vf0E3JPOIsZbF7UtMLvRU4WeOIc9s9XEFAzEP6nLA4Q=
+			rpbT7b8YTfM52Ziubn13ii8o/EBFuBmwSAwIYrPSkk0=
 			</data>
 		</dict>
 		<key>Modules/flutter_bluetooth.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -196,7 +196,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5Xc2VmSJwVr/Si5bdrMWP02DUpAf0QZGuLAPUi3nTBU=
+			Qg4+GRAVh4Rlaty29bTDpRX3nSsx5NQRD34TqhUjAmE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

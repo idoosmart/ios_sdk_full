@@ -22,7 +22,7 @@
 		</data>
 		<key>ios-arm64/protocol_c.framework/Info.plist</key>
 		<data>
-		xses1vOrifcTWLrZOV15yF4t02c=
+		3FjbVopwuV8LUyBASF6d1n/Egjk=
 		</data>
 		<key>ios-arm64/protocol_c.framework/Modules/module.modulemap</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>ios-arm64/protocol_c.framework/protocol_c</key>
 		<data>
-		+vmqZTQGKzSAq2W/TM5vH/9sMBk=
+		ItvwMXK6EyRmysfmaE7b5+4XEAo=
 		</data>
 		<key>ios-arm64/protocol_c.framework/protocol_c.bundle/Info.plist</key>
 		<data>
-		rQoAb2ikptLygg/8RwdQUjkS+M0=
+		uCX2Nkipe1XqeU4ePMkGT5Sdmo0=
 		</data>
 		<key>ios-arm64/protocol_c.framework/protocol_c.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/protocol_c.framework/Info.plist</key>
 		<data>
-		YjqnEGK1012lJo8rxZkgHXYI39c=
+		nCB9SCmtxGiurjglzT4C0IFH5Qw=
 		</data>
 		<key>ios-arm64_x86_64-simulator/protocol_c.framework/Modules/module.modulemap</key>
 		<data>
@@ -66,39 +66,19 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/protocol_c.framework/_CodeSignature/CodeResources</key>
 		<data>
-		brfOBszyXeFdCq4lcmaqLCDhI/E=
+		giNscqH7B3wcVgEF0pefa1xi1Hs=
 		</data>
 		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c</key>
 		<data>
-		tjAo83G5rA1CsIsP2cxli0tutoQ=
+		tlsJgU0WJn4ySvJ+bPwrs9ewFNc=
 		</data>
 		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/Info.plist</key>
 		<data>
-		BJFEptZuKmjtGTtMsF+RI+ejnY8=
+		kz+LfCjUUZSufZhY2TugODb21T4=
 		</data>
 		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
 		dbfnQxZShl0R/qqw3Fx5ixCX/VU=
-		</data>
-		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/_CodeSignature/CodeDirectory</key>
-		<data>
-		irXjDDNgY+a+UuS2T558aq/Hep4=
-		</data>
-		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/_CodeSignature/CodeRequirements</key>
-		<data>
-		OnX22wWFKRSOFN1+obRynMCeyXM=
-		</data>
-		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/_CodeSignature/CodeRequirements-1</key>
-		<data>
-		9M5V8dt1CXK5ux/+FRMIZiPI18U=
-		</data>
-		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/_CodeSignature/CodeResources</key>
-		<data>
-		h5qUKlQlnUVlSWxyil33pWHUHZ4=
-		</data>
-		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/_CodeSignature/CodeSignature</key>
-		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -151,11 +131,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xses1vOrifcTWLrZOV15yF4t02c=
+			3FjbVopwuV8LUyBASF6d1n/Egjk=
 			</data>
 			<key>hash2</key>
 			<data>
-			Cc46YjPF0CKrf8KIfw6UGSOFxVsyHwZpAvYENg3SHSc=
+			ZyCqYY3H44Q+Ele7HDy5XndZiVaOIwwRWpxBpIaaroE=
 			</data>
 		</dict>
 		<key>ios-arm64/protocol_c.framework/Modules/module.modulemap</key>
@@ -173,22 +153,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+vmqZTQGKzSAq2W/TM5vH/9sMBk=
+			ItvwMXK6EyRmysfmaE7b5+4XEAo=
 			</data>
 			<key>hash2</key>
 			<data>
-			lLIrS/3LXEvZEylVpRhgjOSk6UBgNvbZd6jFoy9hyCA=
+			hHtm+ERlZ5S5gNgO5vy8LhFBrSGluGA9180lxTPvBbU=
 			</data>
 		</dict>
 		<key>ios-arm64/protocol_c.framework/protocol_c.bundle/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			rQoAb2ikptLygg/8RwdQUjkS+M0=
+			uCX2Nkipe1XqeU4ePMkGT5Sdmo0=
 			</data>
 			<key>hash2</key>
 			<data>
-			p/YXxo7FJeoLDUn7JXrdZ/XAjpvE9k21nV4JjwD777s=
+			hwQ8T5JNMBYsPHeSzzc+SosHsgDOby/zITF3EQhkSxE=
 			</data>
 		</dict>
 		<key>ios-arm64/protocol_c.framework/protocol_c.bundle/PrivacyInfo.xcprivacy</key>
@@ -250,11 +230,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YjqnEGK1012lJo8rxZkgHXYI39c=
+			nCB9SCmtxGiurjglzT4C0IFH5Qw=
 			</data>
 			<key>hash2</key>
 			<data>
-			szLiIIkMqWvgWlXRM6U3ykwZ6YFI38cblamr0akp8T4=
+			RUSKA74UBYHM3/vbs62l5hkqMf9nskK34SViEh+RK6s=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/protocol_c.framework/Modules/module.modulemap</key>
@@ -272,33 +252,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			brfOBszyXeFdCq4lcmaqLCDhI/E=
+			giNscqH7B3wcVgEF0pefa1xi1Hs=
 			</data>
 			<key>hash2</key>
 			<data>
-			h1UtBwYQpxMfYX9kbd/+sn8XEM8eLmivkscxMWT+lJ0=
+			6g+Xw07MAbudpwMRZvB0x4YN5UkK5diOEt+G0SgcmC0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tjAo83G5rA1CsIsP2cxli0tutoQ=
+			tlsJgU0WJn4ySvJ+bPwrs9ewFNc=
 			</data>
 			<key>hash2</key>
 			<data>
-			6BXwQ/KXrsz+wNcge8COvFu7HuP+EUP7HUUBCLmtVf0=
+			oEOOZ8vCtMONXXckInGdEqICRcvpiCG4vbe2Qvl0tiw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BJFEptZuKmjtGTtMsF+RI+ejnY8=
+			kz+LfCjUUZSufZhY2TugODb21T4=
 			</data>
 			<key>hash2</key>
 			<data>
-			MKP7uy6kJ5RYq6qzSupliqBSTwyttoyzov1xHcHeY1o=
+			ppk8k5uV0EI5Qt/pxroBWxUkLzaiZl7Rh76DJ57MYck=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/PrivacyInfo.xcprivacy</key>
@@ -310,61 +290,6 @@
 			<key>hash2</key>
 			<data>
 			QgWVkY3Skk8ohkV7zYlHOyjQry8E76F4rgyddR29I14=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/_CodeSignature/CodeDirectory</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			irXjDDNgY+a+UuS2T558aq/Hep4=
-			</data>
-			<key>hash2</key>
-			<data>
-			rMBK8t6RQsivHFoKlf0x3SsYhgUJ+EX7kGtQMnzjoQY=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/_CodeSignature/CodeRequirements</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			OnX22wWFKRSOFN1+obRynMCeyXM=
-			</data>
-			<key>hash2</key>
-			<data>
-			mHkgkE6rZQ51eIwFSqCwUk5qgL/HGqMt+NI3phdD+YY=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/_CodeSignature/CodeRequirements-1</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			9M5V8dt1CXK5ux/+FRMIZiPI18U=
-			</data>
-			<key>hash2</key>
-			<data>
-			+tM97a1balVPtwPjRBlBVP25mZRJDUH/TxZ3k06MPRY=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			h5qUKlQlnUVlSWxyil33pWHUHZ4=
-			</data>
-			<key>hash2</key>
-			<data>
-			SHyu2XK2viEP8e9vO+HdyUEz+yPx7WjDpjTIFezkdqo=
-			</data>
-		</dict>
-		<key>ios-arm64_x86_64-simulator/protocol_c.framework/protocol_c.bundle/_CodeSignature/CodeSignature</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
-			</data>
-			<key>hash2</key>
-			<data>
-			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
 			</data>
 		</dict>
 	</dict>
