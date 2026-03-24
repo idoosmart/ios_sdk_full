@@ -519,6 +519,18 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOActivitySwitchModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOActivitySwitchModel
   }
+  public struct getBatteryReminderSwitch : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOBatteryReminderSwitchModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOBatteryReminderSwitchModel
+  }
+  public struct getPetInfo : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOPetInfoModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOPetInfoModel
+  }
   public struct getUnreadAppReminder : protocol_channel.IDOCmdProtocol {
     public init()
     @discardableResult
@@ -1239,6 +1251,18 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
+  public struct setBatteryReminderSwitch : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOBatteryReminderSwitchParamModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOBatteryReminderSwitchReplyModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOBatteryReminderSwitchReplyModel
+  }
+  public struct setPetInfo : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOPetInfoParamModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOPetInfoReplyModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOPetInfoReplyModel
+  }
   public struct musicStart : protocol_channel.IDOCmdProtocol {
     public init()
     @discardableResult
@@ -1479,6 +1503,24 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
+  public struct setGestureControl : protocol_channel.IDOCmdProtocol {
+    public init(_ model: protocol_channel.IDOGestureControlModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
+  }
+  public struct getGestureControl : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOGestureControlModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOGestureControlModel
+  }
+  public struct getGestureControlSupportConfigs : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOGestureControlModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOGestureControlModel
+  }
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class Cmdoc : ObjectiveC.NSObject {
   @objc @discardableResult
@@ -1505,6 +1547,10 @@ public struct Cmds {
   public static func getUnerasableMeunList(_ completion: @escaping (_ err: protocol_channel.CmdError, _ menuList: protocol_channel.IDOUnerasableMeunListModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func getActivitySwitch(_ completion: @escaping (_ err: protocol_channel.CmdError, _ switchModel: protocol_channel.IDOActivitySwitchModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getBatteryReminderSwitch(_ completion: @escaping (_ err: protocol_channel.CmdError, _ switchModel: protocol_channel.IDOBatteryReminderSwitchModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getPetInfo(_ completion: @escaping (_ err: protocol_channel.CmdError, _ petInfo: protocol_channel.IDOPetInfoModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func getUnreadAppReminder(_ completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdGetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
@@ -1747,6 +1793,10 @@ public struct Cmds {
   public static func getBtConnectPhoneModel(_ completion: @escaping (_ err: protocol_channel.CmdError, _ phoneModel: Swift.String?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setActivitySwitch(_ switchParam: protocol_channel.IDOActivitySwitchParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setBatteryReminderSwitch(_ switchParam: protocol_channel.IDOBatteryReminderSwitchParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOBatteryReminderSwitchReplyModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setPetInfo(_ petInfoParam: protocol_channel.IDOPetInfoParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOPetInfoReplyModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func musicStart(_ completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
@@ -3024,6 +3074,30 @@ extension protocol_channel.IDOBaseModel {
   @objc public var lastChargingSecond: Swift.Int
   @objc public var mode: Swift.Int
   @objc public init(type: Swift.Int, voltage: Swift.Int, status: Swift.Int, level: Swift.Int, lastChargingYear: Swift.Int, lastChargingMonth: Swift.Int, lastChargingDay: Swift.Int, lastChargingHour: Swift.Int, lastChargingMinute: Swift.Int, lastChargingSecond: Swift.Int, mode: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBatteryReminderSwitchModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var lowBatteryOnOff: Swift.Int
+  @objc public init(lowBatteryOnOff: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBatteryReminderSwitchParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var lowBatteryOnOff: Swift.Int
+  @objc public init(lowBatteryOnOff: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOBatteryReminderSwitchReplyModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var retCode: Swift.Int
+  @objc public init(retCode: Swift.Int)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -4553,6 +4627,8 @@ public protocol IDOCmdProtocol {
   @objc var setWeatherSunTime: Swift.Bool { get }
   @objc var setWeatherAirGrade: Swift.Bool { get }
   @objc var setDrinkWaterReminder: Swift.Bool { get }
+  @objc var supportBatteryReminderSwitch: Swift.Bool { get }
+  @objc var supportPetInfo: Swift.Bool { get }
   @objc var setRespirationRate: Swift.Bool { get }
   @objc var setMaxBloodOxygen: Swift.Bool { get }
   @objc var setBleControlMusic: Swift.Bool { get }
@@ -4719,6 +4795,117 @@ public protocol IDOCmdProtocol {
   @objc var supportBikeLockManager: Swift.Bool { get }
   @objc var supportAlgorithmRawDataCollect: Swift.Bool { get }
   @objc func printProperties() -> Swift.String?
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class IDOGestureTypeItemModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var gestureType: Swift.Int
+  @objc override dynamic public init()
+  @objc public init(gestureType: Swift.Int)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case gestureType
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class IDOGestureSubFunctionItemModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var subFunctionType: Swift.Int
+  @objc public var gestureTypeItems: [protocol_channel.IDOGestureTypeItemModel]?
+  @objc override dynamic public init()
+  @objc public init(subFunctionType: Swift.Int, gestureTypeItems: [protocol_channel.IDOGestureTypeItemModel]? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case subFunctionType
+    case gestureItemCount
+    case gestureTypeItems
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class IDOGestureFunctionItemModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var functionSwitch: Swift.Int
+  @objc public var functionType: Swift.Int
+  @objc public var gestureSubFunctionItems: [protocol_channel.IDOGestureSubFunctionItemModel]?
+  @objc override dynamic public init()
+  @objc public init(functionSwitch: Swift.Int, functionType: Swift.Int, gestureSubFunctionItems: [protocol_channel.IDOGestureSubFunctionItemModel]? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case functionSwitch
+    case functionType
+    case gestureSubFunctionCount
+    case gestureSubFunctionItems
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class IDOGestureControlModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var errCode: Swift.Int
+  @objc public var gestureControlOnOff: Swift.Int
+  @objc public var gestureFunctionItems: [protocol_channel.IDOGestureFunctionItemModel]?
+  @objc override dynamic public init()
+  @objc public init(operate: Swift.Int, gestureControlOnOff: Swift.Int = 0, gestureFunctionItems: [protocol_channel.IDOGestureFunctionItemModel]? = nil)
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case version
+    case operate
+    case errCode
+    case gestureControlOnOff
+    case gestureFunctionItemCount
+    case gestureFunctionItems
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOGpsControlModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var type: Swift.Int
@@ -5192,6 +5379,96 @@ public protocol IDOCmdProtocol {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
+@objc public enum IDOMeasureType : Swift.Int {
+  case bloodPressure = 0
+  case heartRate = 1
+  case spo2 = 2
+  case stress = 3
+  case oneClick = 4
+  case temperature = 5
+  case bodyComposition = 6
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum IDOMeasureStatus : Swift.Int {
+  case notSupport = 0
+  case measuring = 1
+  case success = 2
+  case failed = 3
+  case deviceInSportMode = 4
+  case measuringData = 5
+  case timeout = 6
+  case stopped = 7
+  case disconnected = 8
+  case unworn = 9
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class IDOMeasureResult : ObjectiveC.NSObject {
+  @objc public var status: protocol_channel.IDOMeasureStatus
+  @objc public var systolicBp: Swift.Int
+  @objc public var diastolicBp: Swift.Int
+  @objc public var value: Swift.Int
+  @objc public var oneClickHr: Swift.Int
+  @objc public var oneClickStress: Swift.Int
+  @objc public var oneClickSpo2: Swift.Int
+  @objc public var temperatureValue: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objcMembers public class IDOMeasureManager {
+  public static let shared: protocol_channel.IDOMeasureManager
+  @objc public func listenProcessMeasureData(callback: @escaping (protocol_channel.IDOMeasureResult) -> Swift.Void)
+  @objc public func startMeasure(type: protocol_channel.IDOMeasureType, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func stopMeasure(type: protocol_channel.IDOMeasureType, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc public func getMeasureData(type: protocol_channel.IDOMeasureType, completion: @escaping (protocol_channel.IDOMeasureResult) -> Swift.Void)
+  @objc deinit
+}
+@objc public enum IDOMeasurementType : Swift.Int {
+  case bloodPressure
+  case spo2
+  case heartRate
+  case bodyComposition
+  case stress
+  case oneClick
+  case temperature
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum IDOMeasurementAction : Swift.Int {
+  case start = 1
+  case stop = 2
+  case getData = 3
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @objcMembers public class IDOMeasurementModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var status: Swift.Int
+  @objc public var systolicBp: Swift.Int
+  @objc public var diastolicBp: Swift.Int
+  @objc public var value: Swift.Int
+  @objc public var oneClickHr: Swift.Int
+  @objc public var oneClickStress: Swift.Int
+  @objc public var oneClickSpo2: Swift.Int
+  @objc public var temperature: Swift.Float
+  @objc public init(status: Swift.Int = 0, systolicBp: Swift.Int = 0, diastolicBp: Swift.Int = 0, value: Swift.Int = 0, oneClickHr: Swift.Int = 0, oneClickStress: Swift.Int = 0, oneClickSpo2: Swift.Int = 0, temperature: Swift.Float = 0)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 @objc @objcMembers public class IDOMenstruationModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var onOff: Swift.Int
   @objc public var menstrualLength: Swift.Int
@@ -5620,6 +5897,40 @@ public protocol IDOCmdProtocol {
 @objc @objcMembers public class IDONotificationStatusParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var notifyFlag: Swift.Int
   @objc public init(notifyFlag: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOPetInfoModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var petType: Swift.Int
+  @objc public var weight: Swift.Int
+  @objc public var gender: Swift.Int
+  @objc public var year: Swift.Int
+  @objc public var month: Swift.Int
+  @objc public var day: Swift.Int
+  @objc public init(petType: Swift.Int, weight: Swift.Int, gender: Swift.Int, year: Swift.Int, month: Swift.Int, day: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOPetInfoParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var petType: Swift.Int
+  @objc public var weight: Swift.Int
+  @objc public var gender: Swift.Int
+  @objc public var year: Swift.Int
+  @objc public var month: Swift.Int
+  @objc public var day: Swift.Int
+  @objc public init(petType: Swift.Int, weight: Swift.Int, gender: Swift.Int, year: Swift.Int, month: Swift.Int, day: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOPetInfoReplyModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var retCode: Swift.Int
+  @objc public init(retCode: Swift.Int)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -6109,6 +6420,7 @@ public protocol IDOCmdProtocol {
   case sportTypeSki = 27
   case sportTypeRoller = 28
   case sportTypeDancing = 29
+  case sportTypeCageTennis = 30
   case sportTypeRollerMachine = 31
   case sportTypePilates = 32
   case sportTypeCrossTrain = 33
@@ -7182,6 +7494,9 @@ public typealias BlockDataSyncCompleted = (_ errorCode: Swift.Int) -> Swift.Void
   case activity = 12
   case gPS = 13
   case swim = 14
+  case emotionHealth = 21
+  case activityMerge = 22
+  case petSleep = 23
   public var description: Swift.String {
     get
   }
@@ -7367,9 +7682,33 @@ extension protocol_channel.IDODefaultMessageItem.CodingKeys : Swift.RawRepresent
 extension protocol_channel.IDOEpoUpgradeStatus : Swift.Equatable {}
 extension protocol_channel.IDOEpoUpgradeStatus : Swift.Hashable {}
 extension protocol_channel.IDOEpoUpgradeStatus : Swift.RawRepresentable {}
+extension protocol_channel.IDOGestureTypeItemModel.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOGestureTypeItemModel.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOGestureTypeItemModel.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOGestureSubFunctionItemModel.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOGestureSubFunctionItemModel.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOGestureSubFunctionItemModel.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOGestureFunctionItemModel.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOGestureFunctionItemModel.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOGestureFunctionItemModel.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOGestureControlModel.CodingKeys : Swift.Equatable {}
+extension protocol_channel.IDOGestureControlModel.CodingKeys : Swift.Hashable {}
+extension protocol_channel.IDOGestureControlModel.CodingKeys : Swift.RawRepresentable {}
 extension protocol_channel.IDOLanguageType : Swift.Equatable {}
 extension protocol_channel.IDOLanguageType : Swift.Hashable {}
 extension protocol_channel.IDOLanguageType : Swift.RawRepresentable {}
+extension protocol_channel.IDOMeasureType : Swift.Equatable {}
+extension protocol_channel.IDOMeasureType : Swift.Hashable {}
+extension protocol_channel.IDOMeasureType : Swift.RawRepresentable {}
+extension protocol_channel.IDOMeasureStatus : Swift.Equatable {}
+extension protocol_channel.IDOMeasureStatus : Swift.Hashable {}
+extension protocol_channel.IDOMeasureStatus : Swift.RawRepresentable {}
+extension protocol_channel.IDOMeasurementType : Swift.Equatable {}
+extension protocol_channel.IDOMeasurementType : Swift.Hashable {}
+extension protocol_channel.IDOMeasurementType : Swift.RawRepresentable {}
+extension protocol_channel.IDOMeasurementAction : Swift.Equatable {}
+extension protocol_channel.IDOMeasurementAction : Swift.Hashable {}
+extension protocol_channel.IDOMeasurementAction : Swift.RawRepresentable {}
 extension protocol_channel.IDONoticeNotifySwitchState : Swift.Equatable {}
 extension protocol_channel.IDONoticeNotifySwitchState : Swift.Hashable {}
 extension protocol_channel.IDONoticeNotifySwitchState : Swift.RawRepresentable {}

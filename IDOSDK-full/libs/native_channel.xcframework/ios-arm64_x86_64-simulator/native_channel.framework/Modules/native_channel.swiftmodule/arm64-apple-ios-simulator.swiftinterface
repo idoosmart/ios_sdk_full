@@ -4,15 +4,42 @@
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import CommonCrypto
 import CoreBluetooth
+import Dispatch
 import Flutter
 import Foundation
+import OSLog
 import Swift
+import SwiftCBOR
 import UIKit
+import UniformTypeIdentifiers
 import ZIPFoundation
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+import os.log
 @_exported import native_channel
+import os
+@objc public class BasicManager : native_channel.McuManager {
+  public static let MAX_ECHO_MESSAGE_SIZE_BYTES: Swift.Int
+  public init(transport: any native_channel.McuMgrTransport)
+  public func eraseAppSettings(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  @objc deinit
+}
+public enum BasicManagerError : Swift.UInt64, Swift.Error, Foundation.LocalizedError {
+  case noError
+  case unknown
+  case flashOpenFailed
+  case flashConfigQueryFailed
+  case flashEraseFailed
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init?(rawValue: Swift.UInt64)
+  public typealias RawValue = Swift.UInt64
+  public var rawValue: Swift.UInt64 {
+    get
+  }
+}
 @objc public enum BleCoreManagerState : Swift.Int {
   case unknown = 0
   case resetting = 1
@@ -25,6 +52,390 @@ import _SwiftConcurrencyShims
   public var rawValue: Swift.Int {
     get
   }
+}
+open class CBORMappable {
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+#if compiler(>=5.3) && $RetroactiveAttribute
+extension SwiftCBOR.CBOR : @retroactive Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+#else
+extension SwiftCBOR.CBOR : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+#endif
+extension Swift.Dictionary where Key == SwiftCBOR.CBOR, Value == SwiftCBOR.CBOR {
+  public var description: Swift.String {
+    get
+  }
+}
+#if compiler(>=5.3) && $RetroactiveAttribute
+extension SwiftCBOR.CBOR.Tag : @retroactive Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+#else
+extension SwiftCBOR.CBOR.Tag : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+#endif
+@objc public class CrashManager : native_channel.McuManager {
+  public enum CrashTest : Swift.String {
+    case div0
+    case jump0
+    case ref0
+    case assert
+    case wdog
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public init(transport: any native_channel.McuMgrTransport)
+  public func test(crash: native_channel.CrashManager.CrashTest, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  @objc deinit
+}
+extension Foundation.Data {
+  public init<T>(from value: T)
+  public func read<T>(offset: Swift.Int = 0) -> T where T : Swift.FixedWidthInteger
+  public func readBigEndian<R>(offset: Swift.Int = 0) -> R where R : Swift.FixedWidthInteger
+  public struct HexEncodingOptions : Swift.OptionSet {
+    public static let upperCase: Foundation.Data.HexEncodingOptions
+    public static let byteSpacing: Foundation.Data.HexEncodingOptions
+    public static let prepend0x: Foundation.Data.HexEncodingOptions
+    public static let twoByteSpacing: Foundation.Data.HexEncodingOptions
+    public static let reverseEndianness: Foundation.Data.HexEncodingOptions
+    public let rawValue: Swift.Int
+    public init(rawValue: Swift.Int)
+    @available(iOS 8.0, tvOS 9.0, watchOS 2.0, macOS 10.10, *)
+    public typealias ArrayLiteralElement = Foundation.Data.HexEncodingOptions
+    @available(iOS 8.0, tvOS 9.0, watchOS 2.0, macOS 10.10, *)
+    public typealias Element = Foundation.Data.HexEncodingOptions
+    @available(iOS 8.0, tvOS 9.0, watchOS 2.0, macOS 10.10, *)
+    public typealias RawValue = Swift.Int
+  }
+  public func hexEncodedString(options: Foundation.Data.HexEncodingOptions = []) -> Swift.String
+  public func fragment(size: Swift.Int) -> [Foundation.Data]
+  public func sha256() -> [Swift.UInt8]
+}
+@objc public class DefaultManager : native_channel.McuManager {
+  public enum ResetBootMode : Swift.UInt8, Swift.CustomStringConvertible, Swift.CaseIterable {
+    case normal
+    case bootloader
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.UInt8)
+    public typealias AllCases = [native_channel.DefaultManager.ResetBootMode]
+    public typealias RawValue = Swift.UInt8
+    nonisolated public static var allCases: [native_channel.DefaultManager.ResetBootMode] {
+      get
+    }
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+  }
+  public enum ApplicationInfoFormat : Swift.String {
+    case kernelName
+    case nodeName
+    case kernelRelease
+    case kernelVersion
+    case buildDateTime
+    case machine
+    case processor
+    case hardwarePlatform
+    case operatingSystem
+    case all
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum BootloaderInfoQuery : Swift.String {
+    case name
+    case mode
+    case slot
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public init(transport: any native_channel.McuMgrTransport)
+  public func echo(_ echo: Swift.String, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrEchoResponse>)
+  public func consoleEcho(_ echoOn: Swift.Bool, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func taskStats(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrTaskStatsResponse>)
+  public func memoryPoolStats(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrMemoryPoolStatsResponse>)
+  public func readDatetime(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrDateTimeResponse>)
+  public func writeDatetime(date: Foundation.Date = Date(), timeZone: Foundation.TimeZone? = nil, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func reset(bootMode: native_channel.DefaultManager.ResetBootMode = .normal, force: Swift.Bool = false, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func params(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrParametersResponse>)
+  public func applicationInfo(format: Swift.Set<native_channel.DefaultManager.ApplicationInfoFormat>, callback: @escaping native_channel.McuMgrCallback<native_channel.AppInfoResponse>)
+  public func bootloaderInfo(query: native_channel.DefaultManager.BootloaderInfoQuery, callback: @escaping native_channel.McuMgrCallback<native_channel.BootloaderInfoResponse>)
+  @objc deinit
+}
+public enum OSManagerError : Swift.UInt64, Swift.Error, Foundation.LocalizedError {
+  case noError
+  case unknown
+  case invalidFormat
+  case queryNotRecognized
+  case rtcNotSet
+  case rtcCommandFailed
+  case queryNoValidResponse
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init?(rawValue: Swift.UInt64)
+  public typealias RawValue = Swift.UInt64
+  public var rawValue: Swift.UInt64 {
+    get
+  }
+}
+@objc public class FileSystemManager : native_channel.McuManager {
+  public static let SMP_SVR_BT_L2CAP_MTU: Swift.Int
+  public init(transport: any native_channel.McuMgrTransport)
+  public func download(name: Swift.String, offset: Swift.UInt, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrFsDownloadResponse>)
+  public func upload(name: Swift.String, data: Foundation.Data, offset: Swift.UInt, using configuration: native_channel.FirmwareUpgradeConfiguration? = nil, delegate uploadDelegate: (any native_channel.FileUploadDelegate)? = nil, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrFsUploadResponse>)
+  public func download(name: Swift.String, delegate: (any native_channel.FileDownloadDelegate)?) -> Swift.Bool
+  public func upload(name: Swift.String, data: Foundation.Data, using configuration: native_channel.FirmwareUpgradeConfiguration = FirmwareUpgradeConfiguration(), delegate: any native_channel.FileUploadDelegate) -> Swift.Bool
+  public func status(name: Swift.String, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrFilesystemStatusResponse>)
+  public func crc32(name: Swift.String, offset: Swift.UInt64, length: Swift.UInt64, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrFilesystemCrc32Response>)
+  public func sha256(name: Swift.String, offset: Swift.UInt64, length: Swift.UInt64, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrFilesystemSha256Response>)
+  public func closeAll(name: Swift.String, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public enum UploadState : Swift.UInt8 {
+    case none
+    case mcuMgrParameters
+    case uploading
+    case downloading
+    case paused
+    public init?(rawValue: Swift.UInt8)
+    public typealias RawValue = Swift.UInt8
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+  }
+  public func cancelTransfer(error: (any Swift.Error)? = nil)
+  public func pauseTransfer()
+  public func continueTransfer()
+  @objc deinit
+}
+public enum FileTransferError : Swift.Error, Foundation.LocalizedError {
+  case missingUploadConfiguration
+  case invalidPayload
+  case invalidData
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public static func == (a: native_channel.FileTransferError, b: native_channel.FileTransferError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum FileSystemManagerError : Swift.UInt64, Swift.Error, Foundation.LocalizedError {
+  case noError
+  case unknown
+  case invalidName
+  case notFound
+  case isDirectory
+  case openFailed
+  case seekFailed
+  case readFailed
+  case truncateFailed
+  case deleteFailed
+  case writeFailed
+  case invalidOffset
+  case offsetLargerThanFile
+  case checksumHashNotFound
+  case mountingPointNotFound
+  case readOnlyFilesystem
+  case emptyFile
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init?(rawValue: Swift.UInt64)
+  public typealias RawValue = Swift.UInt64
+  public var rawValue: Swift.UInt64 {
+    get
+  }
+}
+public protocol FileUploadDelegate : AnyObject {
+  func uploadProgressDidChange(bytesSent: Swift.Int, fileSize: Swift.Int, timestamp: Foundation.Date)
+  func uploadDidFail(with error: any Swift.Error)
+  func uploadDidCancel()
+  func uploadDidFinish()
+}
+public protocol FileDownloadDelegate : AnyObject {
+  func downloadProgressDidChange(bytesDownloaded: Swift.Int, fileSize: Swift.Int, timestamp: Foundation.Date)
+  func downloadDidFail(with error: any Swift.Error)
+  func downloadDidCancel()
+  func download(of name: Swift.String, didFinish data: Foundation.Data)
+}
+public protocol FirmwareUpgradeController : AnyObject {
+  func pause()
+  func resume()
+  func cancel()
+  func isPaused() -> Swift.Bool
+  func isInProgress() -> Swift.Bool
+  func uploadResource(_ resource: native_channel.FirmwareUpgradeResource, data: Foundation.Data)
+}
+public enum FirmwareUpgradeResource : Swift.CustomStringConvertible {
+  case file(name: Swift.String)
+  public init?(_ resourceID: Swift.String)
+  public var description: Swift.String {
+    get
+  }
+}
+public class FirmwareUpgradeManager : native_channel.FirmwareUpgradeController, native_channel.ConnectionObserver {
+  weak public var logDelegate: (any native_channel.McuMgrLogDelegate)? {
+    get
+    set
+  }
+  public init(transport: any native_channel.McuMgrTransport, delegate: (any native_channel.FirmwareUpgradeDelegate)?)
+  public func start(package: native_channel.McuMgrPackage, using configuration: native_channel.FirmwareUpgradeConfiguration = FirmwareUpgradeConfiguration())
+  @available(*, deprecated, message: "start(package:using:) is now a far more convenient call. Therefore this API is henceforth marked as deprecated and will be removed in a future release.")
+  public func start(hash: Foundation.Data, data: Foundation.Data, using configuration: native_channel.FirmwareUpgradeConfiguration = FirmwareUpgradeConfiguration())
+  public func start(images: [native_channel.ImageManager.Image], using configuration: native_channel.FirmwareUpgradeConfiguration = FirmwareUpgradeConfiguration())
+  public func uploadResource(_ resource: native_channel.FirmwareUpgradeResource, data: Foundation.Data)
+  public func cancel()
+  public func pause()
+  public func resume()
+  public func isPaused() -> Swift.Bool
+  public func isInProgress() -> Swift.Bool
+  public func setUploadMtu(mtu: Swift.Int) throws
+  public func transport(_ transport: any native_channel.McuMgrTransport, didChangeStateTo state: native_channel.McuMgrTransportState)
+  @objc deinit
+}
+public struct FirmwareUpgradeConfiguration : Swift.Codable {
+  public var estimatedSwapTime: Foundation.TimeInterval
+  public var eraseAppSettings: Swift.Bool
+  public var pipelineDepth: Swift.Int
+  public var byteAlignment: native_channel.ImageUploadAlignment
+  public var reassemblyBufferSize: Swift.UInt64
+  public var upgradeMode: native_channel.FirmwareUpgradeMode
+  public var bootloaderMode: native_channel.BootloaderInfoResponse.Mode
+  public var pipeliningEnabled: Swift.Bool {
+    get
+  }
+  public init(estimatedSwapTime: Foundation.TimeInterval = 0.0, eraseAppSettings: Swift.Bool = false, pipelineDepth: Swift.Int = 1, byteAlignment: native_channel.ImageUploadAlignment = .disabled, reassemblyBufferSize: Swift.UInt64 = 0, upgradeMode: native_channel.FirmwareUpgradeMode = .confirmOnly, bootloaderMode: native_channel.BootloaderInfoResponse.Mode = .unknown)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension native_channel.FirmwareUpgradeManager : native_channel.ImageUploadDelegate {
+  public func uploadProgressDidChange(bytesSent: Swift.Int, imageSize: Swift.Int, timestamp: Foundation.Date)
+  public func uploadDidFail(with error: any Swift.Error)
+  public func uploadDidCancel()
+  public func uploadDidFinish()
+}
+extension native_channel.FirmwareUpgradeManager : native_channel.SuitManagerDelegate {
+  public func uploadRequestsResource(_ resource: native_channel.FirmwareUpgradeResource)
+}
+public enum FirmwareUpgradeError : Swift.Error, Foundation.LocalizedError {
+  case unknown(Swift.String)
+  case invalidResponse(native_channel.McuMgrResponse)
+  case connectionFailedAfterReset
+  case untestedImageFound(image: Swift.Int, slot: Swift.Int)
+  case resetIntoBootloaderModeNeeded
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum FirmwareUpgradeState {
+  case none
+  case requestMcuMgrParameters, bootloaderInfo, eraseAppSettings
+  case upload, success
+  case validate, test, confirm, reset
+  public static func == (a: native_channel.FirmwareUpgradeState, b: native_channel.FirmwareUpgradeState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum FirmwareUpgradeMode : Swift.Codable, Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible, Swift.CaseIterable {
+  case testOnly
+  case confirmOnly
+  case testAndConfirm
+  case uploadOnly
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+  public static func == (a: native_channel.FirmwareUpgradeMode, b: native_channel.FirmwareUpgradeMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [native_channel.FirmwareUpgradeMode]
+  nonisolated public static var allCases: [native_channel.FirmwareUpgradeMode] {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol FirmwareUpgradeDelegate : AnyObject {
+  func upgradeDidStart(controller: any native_channel.FirmwareUpgradeController)
+  func upgradeStateDidChange(from previousState: native_channel.FirmwareUpgradeState, to newState: native_channel.FirmwareUpgradeState)
+  func upgradeDidComplete()
+  func upgradeDidFail(inState state: native_channel.FirmwareUpgradeState, with error: any Swift.Error)
+  func upgradeDidCancel(state: native_channel.FirmwareUpgradeState)
+  func uploadProgressDidChange(bytesSent: Swift.Int, imageSize: Swift.Int, timestamp: Foundation.Date)
+}
+public protocol SuitFirmwareUpgradeDelegate : native_channel.FirmwareUpgradeDelegate {
+  func uploadRequestsResource(_ resource: native_channel.FirmwareUpgradeResource)
+}
+@objc public protocol IDONordicDFUManagerDelegate : ObjectiveC.NSObjectProtocol {
+  @objc func upgradeDidStart()
+  @objc func upgradeDidComplete()
+  @objc func upgradeDidFail(error: any Swift.Error)
+  @objc func upgradeDidCancel()
+  @objc func uploadProgressDidChange(speed: Swift.String, progress: Swift.Float, bytesSent: Swift.Int, imageSize: Swift.Int, timestamp: Foundation.Date)
+  @objc func nativeLog(logMsg: Swift.String)
+}
+@_inheritsConvenienceInitializers @objc public class IDONordicDFUManager : ObjectiveC.NSObject {
+  @objc public static let share: native_channel.IDONordicDFUManager
+  @objc weak public var delegate: (any native_channel.IDONordicDFUManagerDelegate)?
+  @objc public func startDFU(targetIdentifier: Swift.String, from url: Foundation.URL, mtu: Swift.Int)
+  @objc public func stopDFU()
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension native_channel.IDONordicDFUManager : native_channel.FirmwareUpgradeDelegate {
+  public func upgradeDidStart(controller: any native_channel.FirmwareUpgradeController)
+  public func upgradeStateDidChange(from previousState: native_channel.FirmwareUpgradeState, to newState: native_channel.FirmwareUpgradeState)
+  public func upgradeDidComplete()
+  public func upgradeDidFail(inState state: native_channel.FirmwareUpgradeState, with error: any Swift.Error)
+  public func upgradeDidCancel(state: native_channel.FirmwareUpgradeState)
+  public func uploadProgressDidChange(bytesSent: Swift.Int, imageSize: Swift.Int, timestamp: Foundation.Date)
+}
+extension native_channel.IDONordicDFUManager : native_channel.McuMgrLogDelegate {
+  public func log(_ msg: Swift.String, ofCategory category: native_channel.McuMgrLogCategory, atLevel level: native_channel.McuMgrLogLevel)
+  public func minLogLevel() -> native_channel.McuMgrLogLevel
+}
+@objc @_inheritsConvenienceInitializers public class IdoNordicPlugin : ObjectiveC.NSObject, Flutter.FlutterPlugin, native_channel.ApiNordicHost, native_channel.IDONordicDFUManagerDelegate {
+  @objc public static func register(with registrar: any Flutter.FlutterPluginRegistrar)
+  @objc public func startDFUDeviceIdentifier(_ deviceIdentifier: Swift.String, filePath: Swift.String, mtu: Foundation.NSNumber, error: Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>)
+  @objc public func stopDFUWithError(_ error: Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>)
+  @objc public func upgradeDidStart()
+  @objc public func upgradeDidComplete()
+  @objc public func upgradeDidFail(error: any Swift.Error)
+  @objc public func upgradeDidCancel()
+  @objc public func uploadProgressDidChange(speed: Swift.String, progress: Swift.Float, bytesSent: Swift.Int, imageSize: Swift.Int, timestamp: Foundation.Date)
+  @objc public func nativeLog(logMsg: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class IdoSifliPlugin : ObjectiveC.NSObject, Flutter.FlutterPlugin, native_channel.ApiSifliHost, native_channel.IDOUpdateSFManagerDelegate {
   @objc public func checkOtaDoing(completion: @escaping (Foundation.NSNumber?, Flutter.FlutterError?) -> Swift.Void)
@@ -40,6 +451,1169 @@ import _SwiftConcurrencyShims
   @objc public func stopWithError(_ error: Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>)
   @objc override dynamic public init()
   @objc deinit
+}
+@objc public class ImageManager : native_channel.McuManager {
+  public struct Image {
+    public let name: Swift.String?
+    public let image: Swift.Int
+    public let slot: Swift.Int
+    public let content: native_channel.McuMgrManifest.File.ContentType
+    public let hash: Foundation.Data
+    public let data: Foundation.Data
+    public init(image: Swift.Int, slot: Swift.Int = 1, content: native_channel.McuMgrManifest.File.ContentType = .unknown, hash: Foundation.Data, data: Foundation.Data)
+    public init(_ manifest: native_channel.McuMgrManifest.File, hash: Foundation.Data, data: Foundation.Data)
+    public func imageName() -> Swift.String
+  }
+  public init(transport: any native_channel.McuMgrTransport)
+  public func list(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrImageStateResponse>)
+  public func upload(data: Foundation.Data, image: Swift.Int, offset: Swift.UInt64, alignment: native_channel.ImageUploadAlignment, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrUploadResponse>)
+  public func test(hash: [Swift.UInt8], callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrImageStateResponse>)
+  public func confirm(hash: [Swift.UInt8]? = nil, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrImageStateResponse>)
+  public func upload(images: [native_channel.ImageManager.Image], using configuration: native_channel.FirmwareUpgradeConfiguration = FirmwareUpgradeConfiguration(), delegate: (any native_channel.ImageUploadDelegate)?) -> Swift.Bool
+  public func erase(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func coreList(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func coreLoad(offset: Swift.UInt, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrCoreLoadResponse>)
+  public func coreErase(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func slotInfo(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrSlotInfoResponse>)
+  public enum UploadState : Swift.UInt8 {
+    case none
+    case uploading
+    case paused
+    public init?(rawValue: Swift.UInt8)
+    public typealias RawValue = Swift.UInt8
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+  }
+  public func cancelUpload(error: (any Swift.Error)? = nil)
+  public func pauseUpload()
+  public func continueUpload()
+  @objc deinit
+}
+public enum ImageUploadAlignment : Swift.UInt64, Swift.Codable, Swift.CaseIterable, Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  case disabled
+  case twoByte
+  case fourByte
+  case eightByte
+  case sixteenByte
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.UInt64)
+  public typealias AllCases = [native_channel.ImageUploadAlignment]
+  public typealias RawValue = Swift.UInt64
+  nonisolated public static var allCases: [native_channel.ImageUploadAlignment] {
+    get
+  }
+  public var rawValue: Swift.UInt64 {
+    get
+  }
+}
+public enum ImageUploadError : Swift.Error, Foundation.LocalizedError {
+  case invalidPayload
+  case invalidData
+  case offsetMismatch
+  case invalidUploadSequenceNumber(native_channel.McuSequenceNumber)
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum ImageManagerError : Swift.UInt64, Swift.Error, Foundation.LocalizedError {
+  case noError
+  case unknown
+  case flashConfigurationQueryFailure
+  case noImage
+  case noTLVs
+  case invalidTLV
+  case tlvHashCollision
+  case tlvInvalidSize
+  case hashNotFound
+  case fullSlots
+  case flashOpenFailed
+  case flashReadFailed
+  case flashWriteFailed
+  case flashEraseFailed
+  case invalidSlot
+  case mallocFailed
+  case flashContextAlreadySet
+  case flashContextNotSet
+  case flashAreaNull
+  case invalidPageOffset
+  case missingOffset
+  case missingLength
+  case invalidImageHeader
+  case invalidImageHeaderMagic
+  case invalidHash
+  case invalidFlashAddress
+  case versionGetFailed
+  case newerCurrentVersion
+  case imageAlreadyPending
+  case invalidImageVectorTable
+  case invalidImageTooLarge
+  case invalidImageDataOverrun
+  case imageConfirmationDenied
+  case imageSettingTestToActiveDenied
+  case activeSlotNotKnown
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init?(rawValue: Swift.UInt64)
+  public typealias RawValue = Swift.UInt64
+  public var rawValue: Swift.UInt64 {
+    get
+  }
+}
+public protocol ImageUploadDelegate : AnyObject {
+  func uploadProgressDidChange(bytesSent: Swift.Int, imageSize: Swift.Int, timestamp: Foundation.Date)
+  func uploadDidFail(with error: any Swift.Error)
+  func uploadDidCancel()
+  func uploadDidFinish()
+}
+@objc public class LogManager : native_channel.McuManager {
+  public init(transport: any native_channel.McuMgrTransport)
+  public func show(log: Swift.String? = nil, minIndex: Swift.UInt64? = nil, minTimestamp: Foundation.Date? = nil, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrLogResponse>)
+  public func clear(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func moduleList(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func levelList(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrLevelListResponse>)
+  public func logsList(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrLogListResponse>)
+  @objc deinit
+}
+public typealias McuSequenceNumber = Swift.UInt8
+@objc open class McuManager : ObjectiveC.NSObject {
+  public static let COAP_PATH: Swift.String
+  public static let HEADER_KEY: Swift.String
+  public static let DEFAULT_SEND_TIMEOUT_SECONDS: Swift.Int
+  public static let FAST_TIMEOUT: Swift.Int
+  final public let transport: any native_channel.McuMgrTransport
+  final public let group: native_channel.McuMgrGroup
+  weak public var logDelegate: (any native_channel.McuMgrLogDelegate)?
+  public init(group: native_channel.McuMgrGroup, transport: any native_channel.McuMgrTransport)
+  public func send<T, R>(op: native_channel.McuMgrOperation, commandId: R, payload: [Swift.String : SwiftCBOR.CBOR]?, timeout: Swift.Int = DEFAULT_SEND_TIMEOUT_SECONDS, callback: @escaping native_channel.McuMgrCallback<T>) where T : native_channel.McuMgrResponse, R : Swift.RawRepresentable, R.RawValue == Swift.UInt8
+  public func send<T, R>(op: native_channel.McuMgrOperation, flags: Swift.UInt8, commandId: R, payload: [Swift.String : SwiftCBOR.CBOR]?, timeout: Swift.Int = DEFAULT_SEND_TIMEOUT_SECONDS, callback: @escaping native_channel.McuMgrCallback<T>) where T : native_channel.McuMgrResponse, R : Swift.RawRepresentable, R.RawValue == Swift.UInt8
+  public func send<T>(data: Foundation.Data, timeout: Swift.Int, callback: @escaping native_channel.McuMgrCallback<T>) where T : native_channel.McuMgrResponse
+  public static func buildPacket<R>(scheme: native_channel.McuMgrScheme, version: native_channel.McuMgrVersion, op: native_channel.McuMgrOperation, flags: Swift.UInt8, group: Swift.UInt16, sequenceNumber: native_channel.McuSequenceNumber, commandId: R, payload: [Swift.String : SwiftCBOR.CBOR]?) -> Foundation.Data where R : Swift.RawRepresentable, R.RawValue == Swift.UInt8
+  public static func dateToString(date: Foundation.Date, timeZone: Foundation.TimeZone? = nil) -> Swift.String
+  public func setMtu(_ mtu: Swift.Int) throws
+  public static func getDefaultMtu(scheme: native_channel.McuMgrScheme) -> Swift.Int
+  @objc deinit
+}
+public typealias McuMgrCallback<T> = (T?, (any Swift.Error)?) -> Swift.Void where T : native_channel.McuMgrResponse
+public enum McuManagerError : Swift.Error, Foundation.LocalizedError {
+  case mtuValueOutsideOfValidRange(_: Swift.Int)
+  case mtuValueHasNotChanged(_: Swift.Int)
+  case returnCode(_: native_channel.McuMgrReturnCode)
+  case returnCodeValue(_: Swift.UInt64)
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum McuMgrGroup : Swift.UInt16 {
+  case OS
+  case image
+  case statistics
+  case settings
+  case logs
+  case crash
+  case split
+  case run
+  case filesystem
+  case shell
+  case perUser
+  case suit
+  case basic
+  public init?(rawValue: Swift.UInt16)
+  public typealias RawValue = Swift.UInt16
+  public var rawValue: Swift.UInt16 {
+    get
+  }
+}
+public enum McuMgrVersion : Swift.UInt8, Swift.CustomDebugStringConvertible {
+  case SMPv1
+  case SMPv2
+  public var debugDescription: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum McuMgrOperation : Swift.UInt8 {
+  case read
+  case readResponse
+  case write
+  case writeResponse
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum McuMgrError : Swift.Error, Foundation.LocalizedError {
+  case returnCode(_: native_channel.McuMgrReturnCode)
+  case groupCode(_: native_channel.McuMgrGroupReturnCode)
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@_inheritsConvenienceInitializers public class McuMgrGroupReturnCode : native_channel.CBORMappable {
+  public var group: Swift.UInt64
+  public var rc: native_channel.McuMgrReturnCode
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  public init(map: [SwiftCBOR.CBOR : SwiftCBOR.CBOR]) throws
+  public func groupError() -> (any Foundation.LocalizedError)?
+  @objc deinit
+}
+public enum McuMgrReturnCode : Swift.UInt64, Swift.Error {
+  case ok
+  case unknown
+  case noMemory
+  case inValue
+  case timeout
+  case noEntry
+  case badState
+  case responseIsTooLong
+  case unsupported
+  case corruptPayload
+  case busy
+  case accessDenied
+  case unsupportedTooOld
+  case unsupportedTooNew
+  case userDefinedError
+  case unrecognized
+  public func isSuccess() -> Swift.Bool
+  public func isSupported() -> Swift.Bool
+  public func isError() -> Swift.Bool
+  public init?(rawValue: Swift.UInt64)
+  public typealias RawValue = Swift.UInt64
+  public var rawValue: Swift.UInt64 {
+    get
+  }
+}
+extension native_channel.McuMgrReturnCode : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension native_channel.McuMgrReturnCode : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+public enum PeripheralState {
+  case connecting
+  case initializing
+  case connected
+  case disconnecting
+  case disconnected
+  public static func == (a: native_channel.PeripheralState, b: native_channel.PeripheralState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol PeripheralDelegate : AnyObject {
+  func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didChangeStateTo state: native_channel.PeripheralState)
+}
+@objc @_hasMissingDesignatedInitializers public class McuMgrBleTransport : ObjectiveC.NSObject {
+  public var mtu: Swift.Int! {
+    get
+    set
+  }
+  weak public var delegate: (any native_channel.PeripheralDelegate)? {
+    get
+    set
+  }
+  weak public var logDelegate: (any native_channel.McuMgrLogDelegate)?
+  public var numberOfParallelWrites: Swift.Int {
+    get
+    set
+  }
+  public var chunkSendDataToMtuSize: Swift.Bool
+  public var state: native_channel.PeripheralState {
+    get
+  }
+  convenience public init(_ peripheral: CoreBluetooth.CBPeripheral, _ configuration: (any native_channel.McuMgrBleTransport.Configuration)? = nil)
+  convenience public init(_ targetIdentifier: Foundation.UUID, _ configuration: (any native_channel.McuMgrBleTransport.Configuration)? = nil)
+  public var name: Swift.String? {
+    get
+  }
+  public var identifier: Foundation.UUID {
+    get
+  }
+  @objc deinit
+}
+extension native_channel.McuMgrBleTransport : native_channel.McuMgrTransport {
+  public func getScheme() -> native_channel.McuMgrScheme
+  public func send<T>(data: Foundation.Data, timeout: Swift.Int, callback: @escaping native_channel.McuMgrCallback<T>) where T : native_channel.McuMgrResponse
+  public func connect(_ callback: @escaping native_channel.ConnectionCallback)
+  public func close()
+  public func addObserver(_ observer: any native_channel.ConnectionObserver)
+  public func removeObserver(_ observer: any native_channel.ConnectionObserver)
+}
+public enum McuMgrBleTransportConstant {
+}
+public enum McuMgrBleTransportError : Swift.Error, Foundation.LocalizedError {
+  case centralManagerPoweredOff
+  case centralManagerNotReady
+  case missingService
+  case missingCharacteristic
+  case missingNotifyProperty
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public static func == (a: native_channel.McuMgrBleTransportError, b: native_channel.McuMgrBleTransportError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension native_channel.McuMgrBleTransport : CoreBluetooth.CBCentralManagerDelegate {
+  @objc dynamic public func centralManagerDidUpdateState(_ central: CoreBluetooth.CBCentralManager)
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, didConnect peripheral: CoreBluetooth.CBPeripheral)
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, didDisconnectPeripheral peripheral: CoreBluetooth.CBPeripheral, error: (any Swift.Error)?)
+  @objc dynamic public func centralManager(_ central: CoreBluetooth.CBCentralManager, didFailToConnect peripheral: CoreBluetooth.CBPeripheral, error: (any Swift.Error)?)
+}
+extension native_channel.McuMgrBleTransport : CoreBluetooth.CBPeripheralDelegate {
+  @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverServices error: (any Swift.Error)?)
+  @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverCharacteristicsFor service: CoreBluetooth.CBService, error: (any Swift.Error)?)
+  @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateNotificationStateFor characteristic: CoreBluetooth.CBCharacteristic, error: (any Swift.Error)?)
+  @objc dynamic public func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateValueFor characteristic: CoreBluetooth.CBCharacteristic, error: (any Swift.Error)?)
+  @objc dynamic public func peripheralIsReady(toSendWriteWithoutResponse peripheral: CoreBluetooth.CBPeripheral)
+}
+extension native_channel.McuMgrBleTransport {
+  public protocol Configuration {
+    var serviceUUID: CoreBluetooth.CBUUID { get }
+    var characteristicUUUID: CoreBluetooth.CBUUID { get }
+  }
+}
+public struct DefaultTransportConfiguration : native_channel.McuMgrBleTransport.Configuration {
+  public init()
+  public let serviceUUID: CoreBluetooth.CBUUID
+  public let characteristicUUUID: CoreBluetooth.CBUUID
+}
+public struct McuMgrCallbackOoOBuffer<Key, Value> where Key : Swift.Comparable, Key : Swift.Hashable {
+  weak public var logDelegate: (any native_channel.McuMgrLogDelegate)?
+}
+public class McuMgrHeader {
+  public static let HEADER_LENGTH: Swift.Int
+  final public let version: Swift.UInt8!
+  final public let op: Swift.UInt8!
+  final public let flags: Swift.UInt8!
+  final public let length: Swift.UInt16!
+  final public let groupId: Swift.UInt16!
+  final public let sequenceNumber: native_channel.McuSequenceNumber!
+  final public let commandId: Swift.UInt8!
+  public init(data: Foundation.Data) throws
+  public init(version: Swift.UInt8, op: Swift.UInt8, flags: Swift.UInt8, length: Swift.UInt16, groupId: Swift.UInt16, sequenceNumber: native_channel.McuSequenceNumber, commandId: Swift.UInt8)
+  public func toData() -> Foundation.Data
+  public static func build(version: Swift.UInt8, op: Swift.UInt8, flags: Swift.UInt8, len: Swift.UInt16, group: Swift.UInt16, seq: native_channel.McuSequenceNumber, id: Swift.UInt8) -> [Swift.UInt8]
+  @objc deinit
+}
+extension native_channel.McuMgrHeader : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+public enum McuMgrHeaderParseError : Swift.Error, Foundation.LocalizedError {
+  case invalidSize(Swift.Int)
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public class McuMgrImage {
+  public static let IMG_HASH_LEN: Swift.Int
+  final public let header: native_channel.McuMgrImageHeader
+  final public let tlv: native_channel.McuMgrImageTlv
+  final public let data: Foundation.Data
+  final public let hash: Foundation.Data
+  public init(data: Foundation.Data) throws
+  @objc deinit
+}
+public class McuMgrImageHeader {
+  public static let IMG_HEADER_LEN: Swift.Int
+  public static let IMG_HEADER_MAGIC: Swift.UInt32
+  public static let IMG_HEADER_MAGIC_V1: Swift.UInt32
+  public static let MAGIC_OFFSET: Swift.Int
+  public static let LOAD_ADDR_OFFSET: Swift.Int
+  public static let HEADER_SIZE_OFFSET: Swift.Int
+  public static let IMAGE_SIZE_OFFSET: Swift.Int
+  public static let FLAGS_OFFSET: Swift.Int
+  final public let magic: Swift.UInt32
+  final public let loadAddr: Swift.UInt32
+  final public let headerSize: Swift.UInt16
+  final public let imageSize: Swift.UInt32
+  final public let flags: Swift.UInt32
+  final public let version: native_channel.McuMgrImageVersion
+  public init(data: Foundation.Data) throws
+  public func isLegacy() -> Swift.Bool
+  @objc deinit
+}
+public class McuMgrImageVersion {
+  public static let VERSION_OFFSET: Swift.Int
+  final public let major: Swift.UInt8
+  final public let minor: Swift.UInt8
+  final public let revision: Swift.UInt16
+  final public let build: Swift.UInt32
+  public init(data: Foundation.Data, offset: Swift.Int = VERSION_OFFSET)
+  @objc deinit
+}
+public struct McuMgrImageTlv {
+  public static let IMG_TLV_SHA256_V1: Swift.UInt8
+  public static let IMG_TLV_SHA256: Swift.UInt8
+  public static let IMG_TLV_SHA384: Swift.Int
+  public static let IMG_TLV_SHA512: Swift.Int
+  public static let IMG_TLV_RSA2048_PSS: Swift.UInt8
+  public static let IMG_TLV_ECDSA224: Swift.UInt8
+  public static let IMG_TLV_ECDSA256: Swift.UInt8
+  public static let IMG_TLV_RSA3072_PSS: Swift.UInt8
+  public static let IMG_TLV_ED25519: Swift.UInt8
+  public static let IMG_TLV_ENC_RSA2048: Swift.UInt8
+  public static let IMG_TLV_ENC_KW128: Swift.UInt8
+  public static let IMG_TLV_ENC_EC256: Swift.UInt8
+  public static let IMG_TLV_DEPENDENCY: Swift.Int
+  public static let IMG_TLV_UNPROTECTED_INFO_MAGIC: Swift.UInt16
+  public static let IMG_TLV_PROTECTED_INFO_MAGIC: Swift.UInt16
+  public var tlvInfo: native_channel.McuMgrImageTlvInfo?
+  public var trailerTlvEntries: [native_channel.McuMgrImageTlvTrailerEntry]
+  public var hash: Foundation.Data?
+  public init(data: Foundation.Data, imageHeader: native_channel.McuMgrImageHeader, at offset: Swift.Int) throws
+}
+public struct McuMgrImageTlvInfo {
+  public let magic: Swift.UInt16
+  public let total: Swift.UInt16
+  public init(data: Foundation.Data, offset: Swift.Int) throws
+  public var isProtected: Swift.Bool {
+    get
+  }
+}
+public class McuMgrImageTlvTrailerEntry {
+  public static let MIN_SIZE: Swift.Int
+  final public let type: Swift.UInt8
+  final public let length: Swift.UInt16
+  final public let value: Foundation.Data
+  final public let size: Swift.Int
+  public init(data: Foundation.Data, offset: Swift.Int) throws
+  @objc deinit
+}
+public enum McuMgrImageParseError : Swift.Error {
+  case invalidHeaderMagic
+  case invalidTlvInfoMagic
+  case insufficientData
+  case hashNotFound
+  public static func == (a: native_channel.McuMgrImageParseError, b: native_channel.McuMgrImageParseError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension native_channel.McuMgrImageParseError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public enum McuMgrLogLevel : Swift.Int {
+  case debug
+  case verbose
+  case info
+  case application
+  case warning
+  case error
+  public var name: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension native_channel.McuMgrLogLevel : Swift.Comparable {
+  public static func < (lhs: native_channel.McuMgrLogLevel, rhs: native_channel.McuMgrLogLevel) -> Swift.Bool
+}
+public enum McuMgrLogCategory : Swift.String {
+  case transport
+  case settings
+  case crash
+  case `default`
+  case filesystemManager
+  case image
+  case log
+  case runTest
+  case stats
+  case dfu
+  case basic
+  case shell
+  case suit
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol McuMgrLogDelegate : AnyObject {
+  func log(_ msg: Swift.String, ofCategory category: native_channel.McuMgrLogCategory, atLevel level: native_channel.McuMgrLogLevel)
+  func minLogLevel() -> native_channel.McuMgrLogLevel
+}
+extension native_channel.McuMgrLogDelegate {
+  public func minLogLevel() -> native_channel.McuMgrLogLevel
+}
+public struct McuMgrManifest : Swift.Codable {
+  public let formatVersion: Swift.Int
+  public let time: Swift.Int
+  public let files: [native_channel.McuMgrManifest.File]
+  public let name: Swift.String?
+  public init(from url: Foundation.URL) throws
+  public func envelopeFile() -> native_channel.McuMgrManifest.File?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension native_channel.McuMgrManifest {
+  public struct File : Swift.Codable {
+    public let size: Swift.Int
+    public let file: Swift.String
+    public let modTime: Swift.Int
+    public let mcuBootVersion: Swift.String?
+    public let slot: Swift.Int
+    public let type: Swift.String
+    public let content: native_channel.McuMgrManifest.File.ContentType
+    public let board: Swift.String
+    public let soc: Swift.String
+    public let loadAddress: Swift.Int
+    public let bootloader: native_channel.BootloaderInfoResponse.Bootloader
+    public var image: Swift.Int {
+      get
+    }
+    public var supportsDirectXIP: Swift.Bool {
+      get
+    }
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
+  }
+}
+extension native_channel.McuMgrManifest.File {
+  public enum ContentType : Swift.String, Swift.RawRepresentable, Swift.Codable, Swift.CustomStringConvertible {
+    case unknown
+    case suitCache
+    case suitEnvelope
+    case bin
+    case application
+    case mcuboot
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+public struct McuMgrPackage {
+  public let images: [native_channel.ImageManager.Image]
+  public let manifest: native_channel.McuMgrManifest?
+  public let envelope: native_channel.McuMgrSuitEnvelope?
+  public init(from url: Foundation.URL) throws
+  public var isForSUIT: Swift.Bool {
+    get
+  }
+  public func image(forResource resource: native_channel.FirmwareUpgradeResource) -> native_channel.ImageManager.Image?
+  public func sizeString() -> Swift.String
+  public func hashString() -> Swift.String
+}
+extension native_channel.McuMgrPackage {
+  public enum Error : Swift.Error, Foundation.LocalizedError {
+    case deniedAccessToScopedResource, notAValidDocument, unableToAccessCacheDirectory
+    case manifestFileNotFound, manifestImageNotFound
+    case resourceNotFound(_: native_channel.FirmwareUpgradeResource)
+    public var errorDescription: Swift.String? {
+      get
+    }
+  }
+}
+@_inheritsConvenienceInitializers open class McuMgrResponse : native_channel.CBORMappable {
+  public var rc: native_channel.McuMgrReturnCode
+  public var groupRC: native_channel.McuMgrGroupReturnCode?
+  public var scheme: native_channel.McuMgrScheme!
+  public var rawData: Foundation.Data?
+  public var header: native_channel.McuMgrHeader!
+  public var payload: SwiftCBOR.CBOR?
+  public var payloadData: Foundation.Data?
+  public var result: Swift.Result<Swift.Void, native_channel.McuMgrError>
+  public var coapCode: Swift.Int
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  public func getError() -> (any Foundation.LocalizedError)?
+  public static func buildResponse<T>(scheme: native_channel.McuMgrScheme, response: Foundation.Data?, coapPayload: Foundation.Data? = nil, coapCode: Swift.Int = 0) throws -> T where T : native_channel.McuMgrResponse
+  public static func buildResponse<T>(scheme: native_channel.McuMgrScheme, data: Foundation.Data?) throws -> T where T : native_channel.McuMgrResponse
+  public static func buildCoapResponse<T>(scheme: native_channel.McuMgrScheme, data: Foundation.Data, coapPayload: Foundation.Data, codeClass: Swift.Int, codeDetail: Swift.Int) throws -> T? where T : native_channel.McuMgrResponse
+  public static func getExpectedLength(scheme: native_channel.McuMgrScheme, responseData: Foundation.Data) -> Swift.Int?
+  @objc deinit
+}
+extension native_channel.McuMgrResponse : Swift.CustomDebugStringConvertible {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+public enum McuMgrResponseParseError : Swift.Error {
+  case invalidDataSize
+  case invalidPayload
+  public static func == (a: native_channel.McuMgrResponseParseError, b: native_channel.McuMgrResponseParseError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension native_channel.McuMgrResponseParseError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@_inheritsConvenienceInitializers public class McuMgrEchoResponse : native_channel.McuMgrResponse {
+  public var response: Swift.String?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrTaskStatsResponse : native_channel.McuMgrResponse {
+  public var tasks: [Swift.String : native_channel.McuMgrTaskStatsResponse.TaskStatistics]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @_inheritsConvenienceInitializers public class TaskStatistics : native_channel.CBORMappable {
+    public var priority: Swift.UInt64!
+    public var taskId: Swift.UInt64!
+    public var state: Swift.UInt64!
+    public var stackUse: Swift.UInt64!
+    public var stackSize: Swift.UInt64!
+    public var contextSwitchCount: Swift.UInt64!
+    public var runtime: Swift.UInt64!
+    public var lastCheckin: Swift.UInt64!
+    public var nextCheckin: Swift.UInt64!
+    required public init(cbor: SwiftCBOR.CBOR?) throws
+    @objc deinit
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrExecResponse : native_channel.McuMgrResponse {
+  public var output: Swift.String?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  override public func getError() -> (any Foundation.LocalizedError)?
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrMemoryPoolStatsResponse : native_channel.McuMgrResponse {
+  public var mpools: [Swift.String : native_channel.McuMgrMemoryPoolStatsResponse.MemoryPoolStatistics]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @_inheritsConvenienceInitializers public class MemoryPoolStatistics : native_channel.CBORMappable {
+    public var blockSize: Swift.UInt64!
+    public var numBlocks: Swift.UInt64!
+    public var numFree: Swift.UInt64!
+    public var minFree: Swift.UInt64!
+    required public init(cbor: SwiftCBOR.CBOR?) throws
+    @objc deinit
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrDateTimeResponse : native_channel.McuMgrResponse {
+  public var datetime: Swift.String?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class McuMgrParametersResponse : native_channel.McuMgrResponse {
+  final public var bufferSize: Swift.UInt64!
+  final public var bufferCount: Swift.UInt64!
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class McuMgrManifestListResponse : native_channel.McuMgrResponse {
+  @_inheritsConvenienceInitializers public class Manifest : native_channel.CBORMappable {
+    public enum Role : Swift.UInt64, Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+      case unknown
+      case secTop
+      case secSDFW
+      case secSYSCTRL
+      case appRoot
+      case appRecovery
+      case appLocalOne
+      case appLocalTwo
+      case appLocalThree
+      case radioRecovery
+      case radioLocalOne
+      case radioLocalTwo
+      public var description: Swift.String {
+        get
+      }
+      public var debugDescription: Swift.String {
+        get
+      }
+      public init?(rawValue: Swift.UInt64)
+      public typealias RawValue = Swift.UInt64
+      public var rawValue: Swift.UInt64 {
+        get
+      }
+    }
+    public var role: native_channel.McuMgrManifestListResponse.Manifest.Role?
+    required public init(cbor: SwiftCBOR.CBOR?) throws
+    @objc deinit
+  }
+  final public var manifests: [native_channel.McuMgrManifestListResponse.Manifest]
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class McuMgrManifestStateResponse : native_channel.McuMgrResponse {
+  final public var classID: [Swift.UInt8]?
+  final public var vendorID: [Swift.UInt8]?
+  final public var downgradePreventionPolicy: native_channel.McuMgrManifestStateResponse.DowngradePreventionPolicy?
+  final public var independentUpdateabilityPolicy: native_channel.McuMgrManifestStateResponse.IndependentUpdateabilityPolicy?
+  final public var signatureVerificationPolicy: native_channel.McuMgrManifestStateResponse.SignatureVerificationPolicy?
+  final public var digest: [Swift.UInt8]?
+  final public var digestAlgorithm: native_channel.McuMgrManifestStateResponse.DigestAlgorithm?
+  final public var signatureCheck: native_channel.McuMgrManifestStateResponse.SignatureVerification?
+  final public var sequenceNumber: Swift.UInt64?
+  final public var semanticVersion: [Swift.Int]?
+  final public func classUUID() throws -> Foundation.UUID?
+  final public func vendorUUID() throws -> Foundation.UUID?
+  final public func sequenceNumberHexString() -> Swift.String?
+  final public func semanticVersionString() -> Swift.String?
+  public enum DigestAlgorithm : Swift.Int, Swift.RawRepresentable, Swift.Codable, Swift.CustomStringConvertible {
+    case sha256
+    case sha512
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public enum SignatureVerification : Swift.UInt64, Swift.RawRepresentable, Swift.Codable, Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+    case notChecked
+    case failed
+    case passed
+    public var description: Swift.String {
+      get
+    }
+    public var debugDescription: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.UInt64)
+    public typealias RawValue = Swift.UInt64
+    public var rawValue: Swift.UInt64 {
+      get
+    }
+  }
+  public enum DowngradePreventionPolicy : Swift.UInt64, Swift.RawRepresentable, Swift.Codable, Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+    case disabled
+    case enabled
+    case unknown
+    public var description: Swift.String {
+      get
+    }
+    public var debugDescription: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.UInt64)
+    public typealias RawValue = Swift.UInt64
+    public var rawValue: Swift.UInt64 {
+      get
+    }
+  }
+  public enum IndependentUpdateabilityPolicy : Swift.UInt64, Swift.RawRepresentable, Swift.Codable, Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+    case denied
+    case allowed
+    case unknown
+    public var description: Swift.String {
+      get
+    }
+    public var debugDescription: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.UInt64)
+    public typealias RawValue = Swift.UInt64
+    public var rawValue: Swift.UInt64 {
+      get
+    }
+  }
+  public enum SignatureVerificationPolicy : Swift.UInt64, Swift.RawRepresentable, Swift.Codable, Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+    case disabled
+    case enabledOnUpdate
+    case enabledOnUpdateAndBoot
+    case unknown
+    public var description: Swift.String {
+      get
+    }
+    public var debugDescription: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.UInt64)
+    public typealias RawValue = Swift.UInt64
+    public var rawValue: Swift.UInt64 {
+      get
+    }
+  }
+  public enum ReleaseType : Swift.Int, Swift.RawRepresentable, Swift.Codable, Swift.CustomStringConvertible {
+    case normal
+    case releaseCandidate
+    case beta
+    case alpha
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class SuitListResponse : native_channel.McuMgrResponse {
+  final public var roles: [native_channel.McuMgrManifestListResponse.Manifest.Role]?
+  final public var states: [native_channel.McuMgrManifestStateResponse]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class McuMgrPollResponse : native_channel.McuMgrResponse {
+  final public var sessionID: Swift.UInt64?
+  final public var resourceID: Swift.String?
+  final public var isRequestingResource: Swift.Bool {
+    get
+  }
+  final public var resource: native_channel.FirmwareUpgradeResource? {
+    get
+  }
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class AppInfoResponse : native_channel.McuMgrResponse {
+  final public var response: Swift.String!
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers final public class BootloaderInfoResponse : native_channel.McuMgrResponse {
+  public enum Bootloader : Swift.String, Swift.Codable, Swift.CustomDebugStringConvertible {
+    case unknown
+    case mcuboot
+    case suit
+    public var description: Swift.String {
+      get
+    }
+    public var debugDescription: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum Mode : Swift.Int, Swift.Codable, Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+    case unknown
+    case singleApplication
+    case swapUsingScratch
+    case overwrite
+    case swapNoScratch
+    case directXIPNoRevert
+    case directXIPWithRevert
+    case RAMLoader
+    case firmwareLoader
+    public var isDirectXIP: Swift.Bool {
+      get
+    }
+    public var isBareMetal: Swift.Bool {
+      get
+    }
+    public var description: Swift.String {
+      get
+    }
+    public var debugDescription: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  final public var bootloader: native_channel.BootloaderInfoResponse.Bootloader?
+  final public var mode: native_channel.BootloaderInfoResponse.Mode?
+  final public var noDowngrade: Swift.Bool?
+  final public var activeSlot: Swift.UInt64?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrImageStateResponse : native_channel.McuMgrResponse {
+  public var images: [native_channel.McuMgrImageStateResponse.ImageSlot]?
+  public var splitStatus: Swift.UInt64?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+extension native_channel.McuMgrImageStateResponse {
+  @_inheritsConvenienceInitializers public class ImageSlot : native_channel.CBORMappable, Swift.CustomDebugStringConvertible {
+    public var image: Swift.UInt64 {
+      get
+    }
+    public var slot: Swift.UInt64 {
+      get
+    }
+    public var version: Swift.String? {
+      get
+    }
+    public var hash: [Swift.UInt8] {
+      get
+    }
+    public var bootable: Swift.Bool {
+      get
+    }
+    public var pending: Swift.Bool {
+      get
+    }
+    public var confirmed: Swift.Bool {
+      get
+    }
+    public var active: Swift.Bool {
+      get
+    }
+    public var permanent: Swift.Bool {
+      get
+    }
+    public var compressed: Swift.Bool {
+      get
+    }
+    public var debugDescription: Swift.String {
+      get
+    }
+    required public init(cbor: SwiftCBOR.CBOR?) throws
+    @objc deinit
+  }
+}
+@_inheritsConvenienceInitializers public class McuMgrUploadResponse : native_channel.McuMgrResponse {
+  public var off: Swift.UInt64?
+  public var match: Swift.Bool?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrCoreLoadResponse : native_channel.McuMgrResponse {
+  public var off: Swift.UInt64?
+  public var len: Swift.UInt64?
+  public var data: [Swift.UInt8]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrSlotInfoResponse : native_channel.McuMgrResponse {
+  public var images: [native_channel.McuMgrSlotInfoResponse.SlotInfoImage]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @_inheritsConvenienceInitializers public class SlotInfoImage : native_channel.CBORMappable {
+    public var image: Swift.UInt64?
+    public var slots: [native_channel.McuMgrSlotInfoResponse.SlotInfoSlot]?
+    public var maxImageSize: Swift.UInt64?
+    required public init(cbor: SwiftCBOR.CBOR?) throws
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers public class SlotInfoSlot : native_channel.CBORMappable {
+    public var slot: Swift.UInt64?
+    public var size: Swift.UInt64?
+    public var uploadImageID: Swift.UInt64?
+    required public init(cbor: SwiftCBOR.CBOR?) throws
+    @objc deinit
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrFsUploadResponse : native_channel.McuMgrResponse {
+  public var off: Swift.UInt64?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrFsDownloadResponse : native_channel.McuMgrResponse {
+  public var off: Swift.UInt64?
+  public var len: Swift.UInt64?
+  public var data: [Swift.UInt8]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrFilesystemCrc32Response : native_channel.McuMgrResponse {
+  public var type: Swift.String?
+  public var off: Swift.UInt64?
+  public var len: Swift.UInt64?
+  public var output: Swift.UInt64?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrFilesystemSha256Response : native_channel.McuMgrResponse {
+  public var type: Swift.String?
+  public var off: Swift.UInt64?
+  public var len: Swift.UInt64?
+  public var output: [Swift.UInt8]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrFilesystemStatusResponse : native_channel.McuMgrResponse {
+  public var len: Swift.UInt64?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrLevelListResponse : native_channel.McuMgrResponse {
+  public var logLevelNames: [Swift.String]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrLogListResponse : native_channel.McuMgrResponse {
+  public var logNames: [Swift.String]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrLogResponse : native_channel.McuMgrResponse {
+  public var next_index: Swift.UInt64?
+  public var logs: [native_channel.McuMgrLogResponse.LogResult]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @_inheritsConvenienceInitializers public class LogResult : native_channel.CBORMappable {
+    public var name: Swift.String?
+    public var type: Swift.UInt64?
+    public var entries: [native_channel.McuMgrLogResponse.LogEntry]?
+    required public init(cbor: SwiftCBOR.CBOR?) throws
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers public class LogEntry : native_channel.CBORMappable {
+    public var msg: [Swift.UInt8]?
+    public var ts: Swift.UInt64?
+    public var level: Swift.UInt64?
+    public var index: Swift.UInt64?
+    public var module: Swift.UInt64?
+    public var type: Swift.String?
+    required public init(cbor: SwiftCBOR.CBOR?) throws
+    public func getMessage() -> Swift.String?
+    @objc deinit
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrStatsResponse : native_channel.McuMgrResponse {
+  public var name: Swift.String?
+  public var fields: [Swift.String : Swift.Int]?
+  public var group: Swift.String?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrStatsListResponse : native_channel.McuMgrResponse {
+  public var names: [Swift.String]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class McuMgrConfigResponse : native_channel.McuMgrResponse {
+  public var val: [Swift.UInt8]?
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  @objc deinit
+}
+public struct McuMgrSuitEnvelope {
+  public let digest: native_channel.McuMgrSuitDigest
+  public let data: Foundation.Data
+  public init(from url: Foundation.URL) throws
+  public func image() -> native_channel.ImageManager.Image?
+  public func sizeString() -> Swift.String
+}
+@_inheritsConvenienceInitializers public class McuMgrSuitDigest : native_channel.CBORMappable {
+  required public init(cbor: SwiftCBOR.CBOR?) throws
+  public func hash(for algorithm: native_channel.McuMgrSuitDigest.Algorithm) -> Foundation.Data?
+  public func hashString() -> Swift.String
+  @objc deinit
+}
+extension native_channel.McuMgrSuitDigest {
+  public enum Algorithm : Swift.Int, Swift.RawRepresentable, Swift.CustomStringConvertible {
+    case sha256
+    case shake128
+    case sha384
+    case sha512
+    case shake256
+    public var description: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+public enum McuMgrSuitParseError : Foundation.LocalizedError {
+  case invalidDataSize
+  case digestMapNotFound
+  case digestArrayNotFound
+  case digestTypeNotFound
+  case digestValueNotFound
+  case unableToParseDigest
+  case supportedAlgorithmNotFound
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public static func == (a: native_channel.McuMgrSuitParseError, b: native_channel.McuMgrSuitParseError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum McuMgrScheme {
+  case ble, coapBle, coapUdp
+  public static func == (a: native_channel.McuMgrScheme, b: native_channel.McuMgrScheme) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum McuMgrTransportState {
+  case connected, disconnected
+  public static func == (a: native_channel.McuMgrTransportState, b: native_channel.McuMgrTransportState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol ConnectionObserver : AnyObject {
+  func transport(_ transport: any native_channel.McuMgrTransport, didChangeStateTo state: native_channel.McuMgrTransportState)
+}
+public enum ConnectionResult {
+  case connected
+  case deferred
+  case failed(any Swift.Error)
+}
+public typealias ConnectionCallback = (native_channel.ConnectionResult) -> Swift.Void
+public enum McuMgrTransportError : Swift.Error, Swift.Hashable {
+  case connectionTimeout
+  case connectionFailed
+  case disconnected
+  case sendTimeout
+  case sendFailed
+  case insufficientMtu(mtu: Swift.Int)
+  case badChunking
+  case badHeader
+  case badResponse
+  case waitAndRetry
+  case peripheralNotReadyForWriteWithoutResponse
+  public static func == (a: native_channel.McuMgrTransportError, b: native_channel.McuMgrTransportError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension native_channel.McuMgrTransportError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public protocol McuMgrTransport : AnyObject {
+  var mtu: Swift.Int! { get set }
+  func getScheme() -> native_channel.McuMgrScheme
+  func send<T>(data: Foundation.Data, timeout: Swift.Int, callback: @escaping native_channel.McuMgrCallback<T>) where T : native_channel.McuMgrResponse
+  func connect(_ callback: @escaping native_channel.ConnectionCallback)
+  func close()
+  func addObserver(_ observer: any native_channel.ConnectionObserver)
+  func removeObserver(_ observer: any native_channel.ConnectionObserver)
+}
+public struct McuMgrUploadPipeline {
+  public init(adopting configuration: native_channel.FirmwareUpgradeConfiguration, over transport: any native_channel.McuMgrTransport)
+  public mutating func pipelinedSend(ofSize imageSize: Swift.Int, using sendFrom: @escaping (_ offset: Swift.UInt64) -> Swift.UInt64)
+  public mutating func receivedData(with offset: Swift.UInt64)
+  public func allPacketsReceived() -> Swift.Bool
 }
 @objc public enum NandImageID : Swift.UInt16 {
   case HCPU = 0
@@ -95,6 +1669,54 @@ extension Foundation.NSData {
   public static func SplitData(data: Foundation.Data, upperlimit: Swift.Int) -> Swift.Array<Foundation.Data>
   public static func Reverse(srcData: Foundation.Data) -> Foundation.Data
   @objc deinit
+}
+public typealias ResultLockKey = Swift.String
+public class ResultLock {
+  public var isOpen: Swift.Bool
+  public var error: (any Swift.Error)?
+  public var key: native_channel.ResultLockKey?
+  public init(isOpen: Swift.Bool)
+  public func block() -> Swift.Result<Swift.Void, any Swift.Error>
+  public func block(timeout: Dispatch.DispatchTime) -> Swift.Result<Swift.Void, any Swift.Error>
+  public func open(key: native_channel.ResultLockKey)
+  public func open(_ error: (any Swift.Error)? = nil)
+  public func close(key: native_channel.ResultLockKey)
+  public func close()
+  @objc deinit
+}
+@objc public class RunTestManager : native_channel.McuManager {
+  public init(transport: any native_channel.McuMgrTransport)
+  public func test(name: Swift.String? = nil, token: Swift.String? = nil, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func list(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  @objc deinit
+}
+@objc public class SettingsManager : native_channel.McuManager {
+  public init(transport: any native_channel.McuMgrTransport)
+  public func read(name: Swift.String, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrConfigResponse>)
+  public func write(name: Swift.String, value: [Swift.UInt8], callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func delete(name: Swift.String, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func commit(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func load(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func save(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  @objc deinit
+}
+public enum SettingsManagerError : Swift.UInt64, Swift.Error, Foundation.LocalizedError {
+  case noError
+  case unknown
+  case keyTooLong
+  case keyNotFound
+  case readNotSupported
+  case rootKeyNotFound
+  case writeNotSupported
+  case deleteNotSupported
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init?(rawValue: Swift.UInt64)
+  public typealias RawValue = Swift.UInt64
+  public var rawValue: Swift.UInt64 {
+    get
+  }
 }
 @objc public enum SFOTAErrorType : Swift.Int {
   case Unknown = 0
@@ -246,15 +1868,182 @@ extension Foundation.NSData {
     get
   }
 }
+@objc public class ShellManager : native_channel.McuManager {
+  public init(transport: any native_channel.McuMgrTransport)
+  public func execute(command: Swift.String, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrExecResponse>)
+  public func execute(command: Swift.String, arguments: [Swift.String], callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrExecResponse>)
+  @objc deinit
+}
+public enum ShellManagerError : Swift.UInt64, Swift.Error, Foundation.LocalizedError {
+  case noError
+  case unknown
+  case commandTooLong
+  case emptyCommand
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init?(rawValue: Swift.UInt64)
+  public typealias RawValue = Swift.UInt64
+  public var rawValue: Swift.UInt64 {
+    get
+  }
+}
+@objc public class StatsManager : native_channel.McuManager {
+  public init(transport: any native_channel.McuMgrTransport)
+  public func read(module: Swift.String, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrStatsResponse>)
+  public func list(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrStatsListResponse>)
+  @objc deinit
+}
+public enum StatsManagerError : Swift.UInt64, Swift.Error, Foundation.LocalizedError {
+  case noError
+  case unknown
+  case invalidGroup
+  case invalidStatName
+  case invalidStatSize
+  case abortedWalk
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init?(rawValue: Swift.UInt64)
+  public typealias RawValue = Swift.UInt64
+  public var rawValue: Swift.UInt64 {
+    get
+  }
+}
+@objc public class SuitManager : native_channel.McuManager {
+  public init(transport: any native_channel.McuMgrTransport)
+  public func listManifest(callback: @escaping native_channel.McuMgrCallback<native_channel.SuitListResponse>)
+  public func getManifestState(for role: native_channel.McuMgrManifestListResponse.Manifest.Role, callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrManifestStateResponse>)
+  public func cleanup(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func poll(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrPollResponse>)
+  public func upload(_ images: [native_channel.ImageManager.Image], using configuration: native_channel.FirmwareUpgradeConfiguration, delegate: (any native_channel.SuitManagerDelegate)?)
+  public func processRecentlyUploadedEnvelope(callback: @escaping native_channel.McuMgrCallback<native_channel.McuMgrResponse>)
+  public func uploadResource(_ resourceData: Foundation.Data)
+  public func pause()
+  public func continueUpload()
+  public func cancel(with error: (any Swift.Error)? = nil)
+  @objc deinit
+}
+extension native_channel.SuitManager : native_channel.ConnectionObserver {
+  public func transport(_ transport: any native_channel.McuMgrTransport, didChangeStateTo state: native_channel.McuMgrTransportState)
+}
+public enum SuitManagerError : Swift.Error, Foundation.LocalizedError {
+  case suitDelegateRequiredForResource(_: native_channel.FirmwareUpgradeResource)
+  case listRoleResponseMismatch(roleCount: Swift.Int, responseCount: Swift.Int)
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public protocol SuitManagerDelegate : native_channel.ImageUploadDelegate {
+  func uploadRequestsResource(_ resource: native_channel.FirmwareUpgradeResource)
+}
+extension native_channel.BasicManagerError : Swift.Equatable {}
+extension native_channel.BasicManagerError : Swift.Hashable {}
+extension native_channel.BasicManagerError : Swift.RawRepresentable {}
 extension native_channel.BleCoreManagerState : Swift.Equatable {}
 extension native_channel.BleCoreManagerState : Swift.Hashable {}
 extension native_channel.BleCoreManagerState : Swift.RawRepresentable {}
+extension native_channel.CrashManager.CrashTest : Swift.Equatable {}
+extension native_channel.CrashManager.CrashTest : Swift.Hashable {}
+extension native_channel.CrashManager.CrashTest : Swift.RawRepresentable {}
+extension native_channel.DefaultManager.ResetBootMode : Swift.Equatable {}
+extension native_channel.DefaultManager.ResetBootMode : Swift.Hashable {}
+extension native_channel.DefaultManager.ResetBootMode : Swift.RawRepresentable {}
+extension native_channel.DefaultManager.ApplicationInfoFormat : Swift.Equatable {}
+extension native_channel.DefaultManager.ApplicationInfoFormat : Swift.Hashable {}
+extension native_channel.DefaultManager.ApplicationInfoFormat : Swift.RawRepresentable {}
+extension native_channel.DefaultManager.BootloaderInfoQuery : Swift.Equatable {}
+extension native_channel.DefaultManager.BootloaderInfoQuery : Swift.Hashable {}
+extension native_channel.DefaultManager.BootloaderInfoQuery : Swift.RawRepresentable {}
+extension native_channel.OSManagerError : Swift.Equatable {}
+extension native_channel.OSManagerError : Swift.Hashable {}
+extension native_channel.OSManagerError : Swift.RawRepresentable {}
+extension native_channel.FileSystemManager.UploadState : Swift.Equatable {}
+extension native_channel.FileSystemManager.UploadState : Swift.Hashable {}
+extension native_channel.FileSystemManager.UploadState : Swift.RawRepresentable {}
+extension native_channel.FileTransferError : Swift.Equatable {}
+extension native_channel.FileTransferError : Swift.Hashable {}
+extension native_channel.FileSystemManagerError : Swift.Equatable {}
+extension native_channel.FileSystemManagerError : Swift.Hashable {}
+extension native_channel.FileSystemManagerError : Swift.RawRepresentable {}
+extension native_channel.FirmwareUpgradeState : Swift.Equatable {}
+extension native_channel.FirmwareUpgradeState : Swift.Hashable {}
+extension native_channel.FirmwareUpgradeMode : Swift.Equatable {}
+extension native_channel.FirmwareUpgradeMode : Swift.Hashable {}
+extension native_channel.ImageManager.UploadState : Swift.Equatable {}
+extension native_channel.ImageManager.UploadState : Swift.Hashable {}
+extension native_channel.ImageManager.UploadState : Swift.RawRepresentable {}
+extension native_channel.ImageUploadAlignment : Swift.Equatable {}
+extension native_channel.ImageUploadAlignment : Swift.Hashable {}
+extension native_channel.ImageUploadAlignment : Swift.RawRepresentable {}
+extension native_channel.ImageManagerError : Swift.Equatable {}
+extension native_channel.ImageManagerError : Swift.Hashable {}
+extension native_channel.ImageManagerError : Swift.RawRepresentable {}
+extension native_channel.McuMgrGroup : Swift.Equatable {}
+extension native_channel.McuMgrGroup : Swift.Hashable {}
+extension native_channel.McuMgrGroup : Swift.RawRepresentable {}
+extension native_channel.McuMgrVersion : Swift.Equatable {}
+extension native_channel.McuMgrVersion : Swift.Hashable {}
+extension native_channel.McuMgrVersion : Swift.RawRepresentable {}
+extension native_channel.McuMgrOperation : Swift.Equatable {}
+extension native_channel.McuMgrOperation : Swift.Hashable {}
+extension native_channel.McuMgrOperation : Swift.RawRepresentable {}
+extension native_channel.McuMgrReturnCode : Swift.Equatable {}
+extension native_channel.McuMgrReturnCode : Swift.Hashable {}
+extension native_channel.McuMgrReturnCode : Swift.RawRepresentable {}
+extension native_channel.PeripheralState : Swift.Equatable {}
+extension native_channel.PeripheralState : Swift.Hashable {}
+extension native_channel.McuMgrBleTransportError : Swift.Equatable {}
+extension native_channel.McuMgrBleTransportError : Swift.Hashable {}
+extension native_channel.McuMgrImageParseError : Swift.Equatable {}
+extension native_channel.McuMgrImageParseError : Swift.Hashable {}
+extension native_channel.McuMgrLogLevel : Swift.Hashable {}
+extension native_channel.McuMgrLogLevel : Swift.RawRepresentable {}
+extension native_channel.McuMgrLogCategory : Swift.Equatable {}
+extension native_channel.McuMgrLogCategory : Swift.Hashable {}
+extension native_channel.McuMgrLogCategory : Swift.RawRepresentable {}
+extension native_channel.McuMgrManifest.File.ContentType : Swift.Equatable {}
+extension native_channel.McuMgrManifest.File.ContentType : Swift.Hashable {}
+extension native_channel.McuMgrResponseParseError : Swift.Equatable {}
+extension native_channel.McuMgrResponseParseError : Swift.Hashable {}
+extension native_channel.McuMgrManifestListResponse.Manifest.Role : Swift.Equatable {}
+extension native_channel.McuMgrManifestListResponse.Manifest.Role : Swift.Hashable {}
+extension native_channel.McuMgrManifestListResponse.Manifest.Role : Swift.RawRepresentable {}
+extension native_channel.McuMgrManifestStateResponse.DigestAlgorithm : Swift.Equatable {}
+extension native_channel.McuMgrManifestStateResponse.DigestAlgorithm : Swift.Hashable {}
+extension native_channel.McuMgrManifestStateResponse.SignatureVerification : Swift.Equatable {}
+extension native_channel.McuMgrManifestStateResponse.SignatureVerification : Swift.Hashable {}
+extension native_channel.McuMgrManifestStateResponse.DowngradePreventionPolicy : Swift.Equatable {}
+extension native_channel.McuMgrManifestStateResponse.DowngradePreventionPolicy : Swift.Hashable {}
+extension native_channel.McuMgrManifestStateResponse.IndependentUpdateabilityPolicy : Swift.Equatable {}
+extension native_channel.McuMgrManifestStateResponse.IndependentUpdateabilityPolicy : Swift.Hashable {}
+extension native_channel.McuMgrManifestStateResponse.SignatureVerificationPolicy : Swift.Equatable {}
+extension native_channel.McuMgrManifestStateResponse.SignatureVerificationPolicy : Swift.Hashable {}
+extension native_channel.McuMgrManifestStateResponse.ReleaseType : Swift.Equatable {}
+extension native_channel.McuMgrManifestStateResponse.ReleaseType : Swift.Hashable {}
+extension native_channel.BootloaderInfoResponse.Bootloader : Swift.Equatable {}
+extension native_channel.BootloaderInfoResponse.Bootloader : Swift.Hashable {}
+extension native_channel.BootloaderInfoResponse.Bootloader : Swift.RawRepresentable {}
+extension native_channel.BootloaderInfoResponse.Mode : Swift.Equatable {}
+extension native_channel.BootloaderInfoResponse.Mode : Swift.Hashable {}
+extension native_channel.BootloaderInfoResponse.Mode : Swift.RawRepresentable {}
+extension native_channel.McuMgrSuitDigest.Algorithm : Swift.Equatable {}
+extension native_channel.McuMgrSuitDigest.Algorithm : Swift.Hashable {}
+extension native_channel.McuMgrSuitParseError : Swift.Equatable {}
+extension native_channel.McuMgrSuitParseError : Swift.Hashable {}
+extension native_channel.McuMgrScheme : Swift.Equatable {}
+extension native_channel.McuMgrScheme : Swift.Hashable {}
+extension native_channel.McuMgrTransportState : Swift.Equatable {}
+extension native_channel.McuMgrTransportState : Swift.Hashable {}
 extension native_channel.NandImageID : Swift.Equatable {}
 extension native_channel.NandImageID : Swift.Hashable {}
 extension native_channel.NandImageID : Swift.RawRepresentable {}
 extension native_channel.NorImageID : Swift.Equatable {}
 extension native_channel.NorImageID : Swift.Hashable {}
 extension native_channel.NorImageID : Swift.RawRepresentable {}
+extension native_channel.SettingsManagerError : Swift.Equatable {}
+extension native_channel.SettingsManagerError : Swift.Hashable {}
+extension native_channel.SettingsManagerError : Swift.RawRepresentable {}
 extension native_channel.SFOTAErrorType : Swift.Equatable {}
 extension native_channel.SFOTAErrorType : Swift.Hashable {}
 extension native_channel.SFOTAErrorType : Swift.RawRepresentable {}
@@ -273,3 +2062,9 @@ extension native_channel.SFOTAProgressStage : Swift.RawRepresentable {}
 extension native_channel.NorV1TriggerMode : Swift.Equatable {}
 extension native_channel.NorV1TriggerMode : Swift.Hashable {}
 extension native_channel.NorV1TriggerMode : Swift.RawRepresentable {}
+extension native_channel.ShellManagerError : Swift.Equatable {}
+extension native_channel.ShellManagerError : Swift.Hashable {}
+extension native_channel.ShellManagerError : Swift.RawRepresentable {}
+extension native_channel.StatsManagerError : Swift.Equatable {}
+extension native_channel.StatsManagerError : Swift.Hashable {}
+extension native_channel.StatsManagerError : Swift.RawRepresentable {}

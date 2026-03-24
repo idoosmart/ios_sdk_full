@@ -38323,70 +38323,105 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1456,
+      "offset": 1465,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1513,
+      "offset": 1536,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1586,
+      "offset": 1604,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1663,
+      "offset": 1677,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1744,
+      "offset": 1754,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1812,
+      "offset": 1835,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1903,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
+      "kind": "FloatLiteral",
+      "offset": 2005,
+      "length": 4,
+      "value": "30.0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1955,
+      "offset": 3110,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1990,
+      "offset": 3145,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2023,
+      "offset": 3178,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 2069,
+      "offset": 3224,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3305,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3410,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work2.0\/ido_workspace\/bluetooth_sdk\/ios\/Classes\/Manager\/BluetoothManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3470,
       "length": 1,
       "value": "0"
     },

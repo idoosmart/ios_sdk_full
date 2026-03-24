@@ -22,6 +22,7 @@
 #import "PlacementSelectModel.h"
 #import "native_channel.h"
 #import "Alexa.g.h"
+#import "Nordic.g.h"
 #import "Sifli.g.h"
 #import "IDOUpdateSFManager.h"
 #import "SifliOTAManagerSDK.h"

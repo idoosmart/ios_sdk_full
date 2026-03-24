@@ -280,6 +280,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreBluetooth;
 @import Flutter;
 @import Foundation;
 @import ObjectiveC;
@@ -306,6 +307,19 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+
+SWIFT_CLASS("_TtC14native_channel10McuManager")
+@interface McuManager : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Sends commands belonging to the Basic Group.
+SWIFT_CLASS("_TtC14native_channel12BasicManager")
+@interface BasicManager : McuManager
+@end
+
 typedef SWIFT_ENUM(NSInteger, BleCoreManagerState, open) {
   BleCoreManagerStateUnknown = 0,
   BleCoreManagerStateResetting = 1,
@@ -317,10 +331,91 @@ typedef SWIFT_ENUM(NSInteger, BleCoreManagerState, open) {
 
 
 
+
+SWIFT_CLASS("_TtC14native_channel12CrashManager")
+@interface CrashManager : McuManager
+@end
+
+
+SWIFT_CLASS("_TtC14native_channel14DefaultManager")
+@interface DefaultManager : McuManager
+@end
+
+
+SWIFT_CLASS("_TtC14native_channel17FileSystemManager")
+@interface FileSystemManager : McuManager
+@end
+
+
+@protocol IDONordicDFUManagerDelegate;
+@class NSString;
+@class NSURL;
+
+SWIFT_CLASS("_TtC14native_channel19IDONordicDFUManager")
+@interface IDONordicDFUManager : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IDONordicDFUManager * _Nonnull share;)
++ (IDONordicDFUManager * _Nonnull)share SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, weak) id <IDONordicDFUManagerDelegate> _Nullable delegate;
+- (void)startDFUWithTargetIdentifier:(NSString * _Nonnull)targetIdentifier from:(NSURL * _Nonnull)url mtu:(NSInteger)mtu;
+- (void)stopDFU;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class NSDate;
+
+/// Callbacks for firmware upgrades started using FirmwareUpgradeManager
+SWIFT_PROTOCOL("_TtP14native_channel27IDONordicDFUManagerDelegate_")
+@protocol IDONordicDFUManagerDelegate <NSObject>
+- (void)upgradeDidStart;
+/// Called when the firmware upgrade has succeeded.
+- (void)upgradeDidComplete;
+/// Called when the firmware upgrade has failed.
+/// \param state The state in which the upgrade has failed.
+///
+/// \param error The error.
+///
+- (void)upgradeDidFailWithError:(NSError * _Nonnull)error;
+/// Called when the firmware upgrade has been cancelled using cancel()
+/// method. The upgrade may be cancelled only during uploading the image.
+/// When the image is uploaded, the test and/or confirm commands will be
+/// sent depending on the mode.
+- (void)upgradeDidCancel;
+/// Called when the upload progress has changed.
+/// \param bytesSent Number of bytes sent so far.
+///
+/// \param imageSize Total number of bytes to be sent.
+///
+/// \param timestamp The time that the successful response packet for
+/// the progress was received.
+///
+- (void)uploadProgressDidChangeWithSpeed:(NSString * _Nonnull)speed progress:(float)progress bytesSent:(NSInteger)bytesSent imageSize:(NSInteger)imageSize timestamp:(NSDate * _Nonnull)timestamp;
+/// 记录日志
+- (void)nativeLogWithLogMsg:(NSString * _Nonnull)logMsg;
+@end
+
+@protocol FlutterPluginRegistrar;
 @class NSNumber;
 @class FlutterError;
-@protocol FlutterPluginRegistrar;
-@class NSString;
+
+SWIFT_CLASS("_TtC14native_channel15IdoNordicPlugin")
+@interface IdoNordicPlugin : NSObject <FlutterPlugin, ApiNordicHost, IDONordicDFUManagerDelegate>
++ (void)registerWithRegistrar:(id <FlutterPluginRegistrar> _Nonnull)registrar;
+/// 开始 Nordic DFU 升级 | Start Nordic DFU upgrade
+- (void)startDFUDeviceIdentifier:(NSString * _Nonnull)deviceIdentifier filePath:(NSString * _Nonnull)filePath mtu:(NSNumber * _Nonnull)mtu error:(FlutterError * _Nullable * _Nonnull)error;
+/// 停止 Nordic DFU 升级 | Stop Nordic DFU upgrade
+- (void)stopDFUWithError:(FlutterError * _Nullable * _Nonnull)error;
+- (void)upgradeDidStart;
+- (void)upgradeDidComplete;
+- (void)upgradeDidFailWithError:(NSError * _Nonnull)error;
+- (void)upgradeDidCancel;
+- (void)uploadProgressDidChangeWithSpeed:(NSString * _Nonnull)speed progress:(float)progress bytesSent:(NSInteger)bytesSent imageSize:(NSInteger)imageSize timestamp:(NSDate * _Nonnull)timestamp;
+- (void)nativeLogWithLogMsg:(NSString * _Nonnull)logMsg;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @class FlutterStandardTypedData;
 
 SWIFT_CLASS("_TtC14native_channel14IdoSifliPlugin")
@@ -337,6 +432,48 @@ SWIFT_CLASS("_TtC14native_channel14IdoSifliPlugin")
 - (void)startOTANorFiles:(NSArray * _Nonnull)files deviceUUID:(NSString * _Nonnull)deviceUUID platform:(NSNumber * _Nonnull)platform isIndfu:(NSNumber * _Nonnull)isIndfu error:(FlutterError * _Nullable * _Nonnull)error;
 - (void)stopWithError:(FlutterError * _Nullable * _Nonnull)error;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+SWIFT_CLASS("_TtC14native_channel12ImageManager")
+@interface ImageManager : McuManager
+@end
+
+
+SWIFT_CLASS("_TtC14native_channel10LogManager")
+@interface LogManager : McuManager
+@end
+
+
+
+
+SWIFT_CLASS("_TtC14native_channel18McuMgrBleTransport")
+@interface McuMgrBleTransport : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@class CBCentralManager;
+@class CBPeripheral;
+
+@interface McuMgrBleTransport (SWIFT_EXTENSION(native_channel)) <CBCentralManagerDelegate>
+- (void)centralManagerDidUpdateState:(CBCentralManager * _Nonnull)central;
+- (void)centralManager:(CBCentralManager * _Nonnull)central didConnectPeripheral:(CBPeripheral * _Nonnull)peripheral;
+- (void)centralManager:(CBCentralManager * _Nonnull)central didDisconnectPeripheral:(CBPeripheral * _Nonnull)peripheral error:(NSError * _Nullable)error;
+- (void)centralManager:(CBCentralManager * _Nonnull)central didFailToConnectPeripheral:(CBPeripheral * _Nonnull)peripheral error:(NSError * _Nullable)error;
+@end
+
+@class CBService;
+@class CBCharacteristic;
+
+@interface McuMgrBleTransport (SWIFT_EXTENSION(native_channel)) <CBPeripheralDelegate>
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverServices:(NSError * _Nullable)error;
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverCharacteristicsForService:(CBService * _Nonnull)service error:(NSError * _Nullable)error;
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didUpdateValueForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
+- (void)peripheralIsReadyToSendWriteWithoutResponse:(CBPeripheral * _Nonnull)peripheral;
 @end
 
 
@@ -403,7 +540,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QBleLogManag
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSURL;
+
+SWIFT_CLASS("_TtC14native_channel14RunTestManager")
+@interface RunTestManager : McuManager
+@end
+
 
 SWIFT_CLASS("_TtC14native_channel19SFNandImageFileInfo")
 @interface SFNandImageFileInfo : NSObject
@@ -648,6 +789,31 @@ typedef SWIFT_ENUM(NSInteger, SFOTAType, open) {
   SFOTATypeNorV2 = 2,
   SFOTATypeNorV1 = 3,
 };
+
+
+SWIFT_CLASS("_TtC14native_channel15SettingsManager")
+@interface SettingsManager : McuManager
+@end
+
+
+/// Enables remote execution of McuMgr Shell commands over BLE.
+SWIFT_CLASS("_TtC14native_channel12ShellManager")
+@interface ShellManager : McuManager
+@end
+
+
+/// Displays statistics from a device.
+/// Stats manager can read the list of stats modules from a device and read the
+/// statistics from a specific module.
+SWIFT_CLASS("_TtC14native_channel12StatsManager")
+@interface StatsManager : McuManager
+@end
+
+
+SWIFT_CLASS("_TtC14native_channel11SuitManager")
+@interface SuitManager : McuManager
+@end
+
 
 #endif
 #if __has_attribute(external_source_symbol)
@@ -939,6 +1105,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreBluetooth;
 @import Flutter;
 @import Foundation;
 @import ObjectiveC;
@@ -965,6 +1132,19 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+
+SWIFT_CLASS("_TtC14native_channel10McuManager")
+@interface McuManager : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// Sends commands belonging to the Basic Group.
+SWIFT_CLASS("_TtC14native_channel12BasicManager")
+@interface BasicManager : McuManager
+@end
+
 typedef SWIFT_ENUM(NSInteger, BleCoreManagerState, open) {
   BleCoreManagerStateUnknown = 0,
   BleCoreManagerStateResetting = 1,
@@ -976,10 +1156,91 @@ typedef SWIFT_ENUM(NSInteger, BleCoreManagerState, open) {
 
 
 
+
+SWIFT_CLASS("_TtC14native_channel12CrashManager")
+@interface CrashManager : McuManager
+@end
+
+
+SWIFT_CLASS("_TtC14native_channel14DefaultManager")
+@interface DefaultManager : McuManager
+@end
+
+
+SWIFT_CLASS("_TtC14native_channel17FileSystemManager")
+@interface FileSystemManager : McuManager
+@end
+
+
+@protocol IDONordicDFUManagerDelegate;
+@class NSString;
+@class NSURL;
+
+SWIFT_CLASS("_TtC14native_channel19IDONordicDFUManager")
+@interface IDONordicDFUManager : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) IDONordicDFUManager * _Nonnull share;)
++ (IDONordicDFUManager * _Nonnull)share SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, weak) id <IDONordicDFUManagerDelegate> _Nullable delegate;
+- (void)startDFUWithTargetIdentifier:(NSString * _Nonnull)targetIdentifier from:(NSURL * _Nonnull)url mtu:(NSInteger)mtu;
+- (void)stopDFU;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+@class NSDate;
+
+/// Callbacks for firmware upgrades started using FirmwareUpgradeManager
+SWIFT_PROTOCOL("_TtP14native_channel27IDONordicDFUManagerDelegate_")
+@protocol IDONordicDFUManagerDelegate <NSObject>
+- (void)upgradeDidStart;
+/// Called when the firmware upgrade has succeeded.
+- (void)upgradeDidComplete;
+/// Called when the firmware upgrade has failed.
+/// \param state The state in which the upgrade has failed.
+///
+/// \param error The error.
+///
+- (void)upgradeDidFailWithError:(NSError * _Nonnull)error;
+/// Called when the firmware upgrade has been cancelled using cancel()
+/// method. The upgrade may be cancelled only during uploading the image.
+/// When the image is uploaded, the test and/or confirm commands will be
+/// sent depending on the mode.
+- (void)upgradeDidCancel;
+/// Called when the upload progress has changed.
+/// \param bytesSent Number of bytes sent so far.
+///
+/// \param imageSize Total number of bytes to be sent.
+///
+/// \param timestamp The time that the successful response packet for
+/// the progress was received.
+///
+- (void)uploadProgressDidChangeWithSpeed:(NSString * _Nonnull)speed progress:(float)progress bytesSent:(NSInteger)bytesSent imageSize:(NSInteger)imageSize timestamp:(NSDate * _Nonnull)timestamp;
+/// 记录日志
+- (void)nativeLogWithLogMsg:(NSString * _Nonnull)logMsg;
+@end
+
+@protocol FlutterPluginRegistrar;
 @class NSNumber;
 @class FlutterError;
-@protocol FlutterPluginRegistrar;
-@class NSString;
+
+SWIFT_CLASS("_TtC14native_channel15IdoNordicPlugin")
+@interface IdoNordicPlugin : NSObject <FlutterPlugin, ApiNordicHost, IDONordicDFUManagerDelegate>
++ (void)registerWithRegistrar:(id <FlutterPluginRegistrar> _Nonnull)registrar;
+/// 开始 Nordic DFU 升级 | Start Nordic DFU upgrade
+- (void)startDFUDeviceIdentifier:(NSString * _Nonnull)deviceIdentifier filePath:(NSString * _Nonnull)filePath mtu:(NSNumber * _Nonnull)mtu error:(FlutterError * _Nullable * _Nonnull)error;
+/// 停止 Nordic DFU 升级 | Stop Nordic DFU upgrade
+- (void)stopDFUWithError:(FlutterError * _Nullable * _Nonnull)error;
+- (void)upgradeDidStart;
+- (void)upgradeDidComplete;
+- (void)upgradeDidFailWithError:(NSError * _Nonnull)error;
+- (void)upgradeDidCancel;
+- (void)uploadProgressDidChangeWithSpeed:(NSString * _Nonnull)speed progress:(float)progress bytesSent:(NSInteger)bytesSent imageSize:(NSInteger)imageSize timestamp:(NSDate * _Nonnull)timestamp;
+- (void)nativeLogWithLogMsg:(NSString * _Nonnull)logMsg;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @class FlutterStandardTypedData;
 
 SWIFT_CLASS("_TtC14native_channel14IdoSifliPlugin")
@@ -996,6 +1257,48 @@ SWIFT_CLASS("_TtC14native_channel14IdoSifliPlugin")
 - (void)startOTANorFiles:(NSArray * _Nonnull)files deviceUUID:(NSString * _Nonnull)deviceUUID platform:(NSNumber * _Nonnull)platform isIndfu:(NSNumber * _Nonnull)isIndfu error:(FlutterError * _Nullable * _Nonnull)error;
 - (void)stopWithError:(FlutterError * _Nullable * _Nonnull)error;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+SWIFT_CLASS("_TtC14native_channel12ImageManager")
+@interface ImageManager : McuManager
+@end
+
+
+SWIFT_CLASS("_TtC14native_channel10LogManager")
+@interface LogManager : McuManager
+@end
+
+
+
+
+SWIFT_CLASS("_TtC14native_channel18McuMgrBleTransport")
+@interface McuMgrBleTransport : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+@class CBCentralManager;
+@class CBPeripheral;
+
+@interface McuMgrBleTransport (SWIFT_EXTENSION(native_channel)) <CBCentralManagerDelegate>
+- (void)centralManagerDidUpdateState:(CBCentralManager * _Nonnull)central;
+- (void)centralManager:(CBCentralManager * _Nonnull)central didConnectPeripheral:(CBPeripheral * _Nonnull)peripheral;
+- (void)centralManager:(CBCentralManager * _Nonnull)central didDisconnectPeripheral:(CBPeripheral * _Nonnull)peripheral error:(NSError * _Nullable)error;
+- (void)centralManager:(CBCentralManager * _Nonnull)central didFailToConnectPeripheral:(CBPeripheral * _Nonnull)peripheral error:(NSError * _Nullable)error;
+@end
+
+@class CBService;
+@class CBCharacteristic;
+
+@interface McuMgrBleTransport (SWIFT_EXTENSION(native_channel)) <CBPeripheralDelegate>
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverServices:(NSError * _Nullable)error;
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverCharacteristicsForService:(CBService * _Nonnull)service error:(NSError * _Nullable)error;
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
+- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didUpdateValueForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
+- (void)peripheralIsReadyToSendWriteWithoutResponse:(CBPeripheral * _Nonnull)peripheral;
 @end
 
 
@@ -1062,7 +1365,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QBleLogManag
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSURL;
+
+SWIFT_CLASS("_TtC14native_channel14RunTestManager")
+@interface RunTestManager : McuManager
+@end
+
 
 SWIFT_CLASS("_TtC14native_channel19SFNandImageFileInfo")
 @interface SFNandImageFileInfo : NSObject
@@ -1307,6 +1614,31 @@ typedef SWIFT_ENUM(NSInteger, SFOTAType, open) {
   SFOTATypeNorV2 = 2,
   SFOTATypeNorV1 = 3,
 };
+
+
+SWIFT_CLASS("_TtC14native_channel15SettingsManager")
+@interface SettingsManager : McuManager
+@end
+
+
+/// Enables remote execution of McuMgr Shell commands over BLE.
+SWIFT_CLASS("_TtC14native_channel12ShellManager")
+@interface ShellManager : McuManager
+@end
+
+
+/// Displays statistics from a device.
+/// Stats manager can read the list of stats modules from a device and read the
+/// statistics from a specific module.
+SWIFT_CLASS("_TtC14native_channel12StatsManager")
+@interface StatsManager : McuManager
+@end
+
+
+SWIFT_CLASS("_TtC14native_channel11SuitManager")
+@interface SuitManager : McuManager
+@end
+
 
 #endif
 #if __has_attribute(external_source_symbol)

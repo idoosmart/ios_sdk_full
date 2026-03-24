@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/vbus_evt_app.h</key>
 		<data>
-		nq7io6msq798C4YLaOF5L8EmQt0=
+		srnwEpH4t2AZEHACijSt6OIOmW0=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -76,11 +76,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nq7io6msq798C4YLaOF5L8EmQt0=
+			srnwEpH4t2AZEHACijSt6OIOmW0=
 			</data>
 			<key>hash2</key>
 			<data>
-			T0cE8cQ678JrTSJLzofZdSw4582lemKWMqpfdJRVJmA=
+			2N0F9gvLrU71NwVzp7WXTTTT+nU28oLKCP7R5eJ4h90=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

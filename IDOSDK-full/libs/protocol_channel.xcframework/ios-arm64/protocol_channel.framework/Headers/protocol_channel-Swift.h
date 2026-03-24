@@ -366,6 +366,8 @@ SWIFT_CLASS("_TtC16protocol_channel8CmdError")
 @class IDOGpsStatusModel;
 @class IDOUnerasableMeunListModel;
 @class IDOActivitySwitchModel;
+@class IDOBatteryReminderSwitchModel;
+@class IDOPetInfoModel;
 @class IDOCmdGetResponseModel;
 @class IDOFlashBinInfoModel;
 @class IDOBtNoticeModel;
@@ -477,6 +479,10 @@ enum IDOCmdPriority : NSInteger;
 @class IDOMenuListParamModel;
 @class IDOSportParamModel;
 @class IDOActivitySwitchParamModel;
+@class IDOBatteryReminderSwitchParamModel;
+@class IDOBatteryReminderSwitchReplyModel;
+@class IDOPetInfoParamModel;
+@class IDOPetInfoReplyModel;
 @class IDOUnitModel;
 @class IDOGpsHotStartParamModel;
 @class IDOHeartRateModeSmartModel;
@@ -553,6 +559,12 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 运动模式自动识别开关获取
 /// Get event number for activity switch
 + (id <IDOCancellable> _Nonnull)getActivitySwitch:(void (^ _Nonnull)(CmdError * _Nonnull, IDOActivitySwitchModel * _Nullable))completion;
+/// 设备电量提醒开关获取
+/// Get event number for battery reminder switch
++ (id <IDOCancellable> _Nonnull)getBatteryReminderSwitch:(void (^ _Nonnull)(CmdError * _Nonnull, IDOBatteryReminderSwitchModel * _Nullable))completion;
+/// 获取宠物信息
+/// Get pet info event number
++ (id <IDOCancellable> _Nonnull)getPetInfo:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPetInfoModel * _Nullable))completion;
 /// 获取红点提醒开关
 /// Get unread app reminder switch event number
 + (id <IDOCancellable> _Nonnull)getUnreadAppReminder:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdGetResponseModel * _Nullable))completion;
@@ -924,6 +936,12 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 设置运动模式识别开关
 /// Set the sports mode recognition switch
 + (id <IDOCancellable> _Nonnull)setActivitySwitch:(IDOActivitySwitchParamModel * _Nonnull)switchParam completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
+/// 设备电量提醒开关设置
+/// Battery reminder switch event number
++ (id <IDOCancellable> _Nonnull)setBatteryReminderSwitch:(IDOBatteryReminderSwitchParamModel * _Nonnull)switchParam completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOBatteryReminderSwitchReplyModel * _Nullable))completion;
+/// 设置宠物信息
+/// Set pet info event number
++ (id <IDOCancellable> _Nonnull)setPetInfo:(IDOPetInfoParamModel * _Nonnull)petInfoParam completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPetInfoReplyModel * _Nullable))completion;
 /// 控制音乐开始
 /// Control music start
 + (id <IDOCancellable> _Nonnull)musicStart:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
@@ -2175,6 +2193,42 @@ SWIFT_CLASS("_TtC16protocol_channel19IDOBatteryInfoModel")
 /// 2: Power saving mode
 @property (nonatomic) NSInteger mode;
 - (nonnull instancetype)initWithType:(NSInteger)type voltage:(NSInteger)voltage status:(NSInteger)status level:(NSInteger)level lastChargingYear:(NSInteger)lastChargingYear lastChargingMonth:(NSInteger)lastChargingMonth lastChargingDay:(NSInteger)lastChargingDay lastChargingHour:(NSInteger)lastChargingHour lastChargingMinute:(NSInteger)lastChargingMinute lastChargingSecond:(NSInteger)lastChargingSecond mode:(NSInteger)mode OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 设备电量提醒开关获取返回
+SWIFT_CLASS("_TtC16protocol_channel29IDOBatteryReminderSwitchModel")
+@interface IDOBatteryReminderSwitchModel : NSObject
+/// 1：开启；0：关闭；0xFF：无效/未知
+@property (nonatomic) NSInteger lowBatteryOnOff;
+- (nonnull instancetype)initWithLowBatteryOnOff:(NSInteger)lowBatteryOnOff OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 设备电量提醒开关设置入参
+SWIFT_CLASS("_TtC16protocol_channel34IDOBatteryReminderSwitchParamModel")
+@interface IDOBatteryReminderSwitchParamModel : NSObject
+/// 1：开启；0：关闭；0xFF：无效（标准化对外值）
+@property (nonatomic) NSInteger lowBatteryOnOff;
+- (nonnull instancetype)initWithLowBatteryOnOff:(NSInteger)lowBatteryOnOff OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 设备电量提醒开关设置返回
+SWIFT_CLASS("_TtC16protocol_channel34IDOBatteryReminderSwitchReplyModel")
+@interface IDOBatteryReminderSwitchReplyModel : NSObject
+/// 0：成功；其他：失败
+@property (nonatomic) NSInteger retCode;
+- (nonnull instancetype)initWithRetCode:(NSInteger)retCode OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -5380,6 +5434,10 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL setWeatherAirGrade;
 /// 支持设置喝水提醒
 @property (nonatomic, readonly) BOOL setDrinkWaterReminder;
+/// 支持设备电量提醒开关
+@property (nonatomic, readonly) BOOL supportBatteryReminderSwitch;
+/// 支持宠物信息设置获取（SET:03 0A / GET:02 0A）
+@property (nonatomic, readonly) BOOL supportPetInfo;
 /// 呼吸率开关设置
 @property (nonatomic, readonly) BOOL setRespirationRate;
 /// 最大摄氧量
@@ -5722,6 +5780,59 @@ SWIFT_CLASS("_TtC16protocol_channel13IDOFutureItem")
 - (nonnull instancetype)initWithWeatherType:(NSInteger)weatherType maxTemp:(NSInteger)maxTemp minTemp:(NSInteger)minTemp OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class IDOGestureFunctionItemModel;
+
+/// 15.82 手势控制参数模型 (设置/获取/获取配置项)
+SWIFT_CLASS("_TtC16protocol_channel22IDOGestureControlModel")
+@interface IDOGestureControlModel : NSObject
+/// 错误码
+@property (nonatomic) NSInteger errCode;
+/// 总开关 1 开 0 关
+@property (nonatomic) NSInteger gestureControlOnOff;
+/// 功能列表 (IDOGestureFunctionItemModel 数组)
+@property (nonatomic, copy) NSArray<IDOGestureFunctionItemModel *> * _Nullable gestureFunctionItems;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithOperate:(NSInteger)operate gestureControlOnOff:(NSInteger)gestureControlOnOff gestureFunctionItems:(NSArray<IDOGestureFunctionItemModel *> * _Nullable)gestureFunctionItems OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class IDOGestureSubFunctionItemModel;
+
+/// 15.82 手势控制 功能项
+SWIFT_CLASS("_TtC16protocol_channel27IDOGestureFunctionItemModel")
+@interface IDOGestureFunctionItemModel : NSObject
+/// 功能开关: 1 为开，0 为关
+@property (nonatomic) NSInteger functionSwitch;
+/// 功能类型
+@property (nonatomic) NSInteger functionType;
+/// 子功能列表 (IDOGestureSubFunctionItemModel 数组)
+@property (nonatomic, copy) NSArray<IDOGestureSubFunctionItemModel *> * _Nullable gestureSubFunctionItems;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFunctionSwitch:(NSInteger)functionSwitch functionType:(NSInteger)functionType gestureSubFunctionItems:(NSArray<IDOGestureSubFunctionItemModel *> * _Nullable)gestureSubFunctionItems OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class IDOGestureTypeItemModel;
+
+/// 15.82 手势控制 子功能项
+SWIFT_CLASS("_TtC16protocol_channel30IDOGestureSubFunctionItemModel")
+@interface IDOGestureSubFunctionItemModel : NSObject
+/// 子功能类型
+@property (nonatomic) NSInteger subFunctionType;
+/// 手势类型列表 (IDOGestureTypeItemModel 数组)
+@property (nonatomic, copy) NSArray<IDOGestureTypeItemModel *> * _Nullable gestureTypeItems;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithSubFunctionType:(NSInteger)subFunctionType gestureTypeItems:(NSArray<IDOGestureTypeItemModel *> * _Nullable)gestureTypeItems OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// 15.82 手势控制 手势类型细项
+SWIFT_CLASS("_TtC16protocol_channel23IDOGestureTypeItemModel")
+@interface IDOGestureTypeItemModel : NSObject
+/// 手势类型
+@property (nonatomic) NSInteger gestureType;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithGestureType:(NSInteger)gestureType OBJC_DESIGNATED_INITIALIZER;
 @end
 
 /// 健康数据类型
@@ -6728,6 +6839,126 @@ SWIFT_CLASS("_TtC16protocol_channel24IDOMainUISortSupportItem")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+enum IDOMeasureStatus : NSInteger;
+
+/// 测量结果模型
+SWIFT_CLASS("_TtC16protocol_channel16IDOMeasureResult")
+@interface IDOMeasureResult : NSObject
+/// 状态
+@property (nonatomic) enum IDOMeasureStatus status;
+/// 收缩压 (高压)
+@property (nonatomic) NSInteger systolicBp;
+/// 舒张压 (低压)
+@property (nonatomic) NSInteger diastolicBp;
+/// 值 (心率/血氧/压力)
+@property (nonatomic) NSInteger value;
+/// 一键测量-心率
+@property (nonatomic) NSInteger oneClickHr;
+/// 一键测量-压力
+@property (nonatomic) NSInteger oneClickStress;
+/// 一键测量-血氧
+@property (nonatomic) NSInteger oneClickSpo2;
+/// 体温值 (单位摄氏度,该值扩大了10倍, 如 366 表示 36.6度)
+@property (nonatomic) NSInteger temperatureValue;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+/// 测量状态
+typedef SWIFT_ENUM(NSInteger, IDOMeasureStatus, open) {
+/// 不支持
+  IDOMeasureStatusNotSupport = 0,
+/// 正在测量
+  IDOMeasureStatusMeasuring = 1,
+/// 测量成功
+  IDOMeasureStatusSuccess = 2,
+/// 测量失败
+  IDOMeasureStatusFailed = 3,
+/// 设备正在运动模式
+  IDOMeasureStatusDeviceInSportMode = 4,
+/// 返回测量中数据
+  IDOMeasureStatusMeasuringData = 5,
+/// 超时 (APP)
+  IDOMeasureStatusTimeout = 6,
+/// 停止 (APP)
+  IDOMeasureStatusStopped = 7,
+/// 断连 (APP)
+  IDOMeasureStatusDisconnected = 8,
+/// 未佩戴 (设备通知 72)
+  IDOMeasureStatusUnworn = 9,
+};
+
+/// 测量类型
+typedef SWIFT_ENUM(NSInteger, IDOMeasureType, open) {
+/// 血压
+  IDOMeasureTypeBloodPressure = 0,
+/// 心率
+  IDOMeasureTypeHeartRate = 1,
+/// 血氧
+  IDOMeasureTypeSpo2 = 2,
+/// 压力
+  IDOMeasureTypeStress = 3,
+/// 一键测量
+  IDOMeasureTypeOneClick = 4,
+/// 体温
+  IDOMeasureTypeTemperature = 5,
+/// 身体成分
+  IDOMeasureTypeBodyComposition = 6,
+};
+
+/// 测量操作 | Measurement Action
+typedef SWIFT_ENUM(NSInteger, IDOMeasurementAction, open) {
+/// 开始 | Start
+  IDOMeasurementActionStart = 1,
+/// 停止 | Stop
+  IDOMeasurementActionStop = 2,
+/// 获取数据 | Get Data
+  IDOMeasurementActionGetData = 3,
+};
+
+
+/// 通用测量结果模型 | General Measurement Model
+SWIFT_CLASS("_TtC16protocol_channel19IDOMeasurementModel")
+@interface IDOMeasurementModel : NSObject
+/// 0:不支持 1:进行中 2:成功 3:失败 4:设备在运动模式 | 0:Not support 1:In progress 2:Success 3:Fail 4:Exercise mode
+@property (nonatomic) NSInteger status;
+/// 高压（收缩压），<code>bloodPressure</code>类型获取有效 | Systolic blood pressure, valid for <code>bloodPressure</code>
+@property (nonatomic) NSInteger systolicBp;
+/// 低压（舒张压），<code>bloodPressure</code>类型获取有效 | Diastolic blood pressure, valid for <code>bloodPressure</code>
+@property (nonatomic) NSInteger diastolicBp;
+/// 心率/血氧值/压力值，对应<code>heartRate</code> / <code>spo2</code> / <code>stress</code>类型获取有效 | Value (HR/SpO2/Stress), valid for <code>heartRate</code>/<code>spo2</code>/<code>stress</code>
+@property (nonatomic) NSInteger value;
+/// 心率，<code>oneClick</code>一键测量类型获取有效 | Heart rate, valid for <code>oneClick</code>
+@property (nonatomic) NSInteger oneClickHr;
+/// 压力，<code>oneClick</code>一键测量类型获取有效 | Stress, valid for <code>oneClick</code>
+@property (nonatomic) NSInteger oneClickStress;
+/// 血氧，<code>oneClick</code>一键测量类型获取有效 | SpO2, valid for <code>oneClick</code>
+@property (nonatomic) NSInteger oneClickSpo2;
+/// 体温值，<code>temperature</code>类型获取有效（乘以10倍的整数值）| Temperature, valid for <code>temperature</code> (multiplied by 10)
+@property (nonatomic) float temperature;
+- (nonnull instancetype)initWithStatus:(NSInteger)status systolicBp:(NSInteger)systolicBp diastolicBp:(NSInteger)diastolicBp value:(NSInteger)value oneClickHr:(NSInteger)oneClickHr oneClickStress:(NSInteger)oneClickStress oneClickSpo2:(NSInteger)oneClickSpo2 temperature:(float)temperature OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// 测量类型 | Measurement Type
+typedef SWIFT_ENUM(NSInteger, IDOMeasurementType, open) {
+/// 血压 | Blood Pressure
+  IDOMeasurementTypeBloodPressure = 0,
+/// 血氧 | SpO2
+  IDOMeasurementTypeSpo2 = 1,
+/// 心率 | Heart Rate
+  IDOMeasurementTypeHeartRate = 2,
+/// 体成分 | Body Composition
+  IDOMeasurementTypeBodyComposition = 3,
+/// 压力 | Stress
+  IDOMeasurementTypeStress = 4,
+/// 一键测量 | One-click Measurement
+  IDOMeasurementTypeOneClick = 5,
+/// 体温 | Temperature
+  IDOMeasurementTypeTemperature = 6,
+};
+
 
 SWIFT_CLASS("_TtC16protocol_channel20IDOMenstruationModel")
 @interface IDOMenstruationModel : NSObject
@@ -7525,6 +7756,62 @@ typedef SWIFT_ENUM(NSInteger, IDOOtaType, open) {
 /// nordic设备OTA
   IDOOtaTypeNordic = 2,
 };
+
+
+/// 获取宠物信息返回
+SWIFT_CLASS("_TtC16protocol_channel15IDOPetInfoModel")
+@interface IDOPetInfoModel : NSObject
+/// 0x00无效 0x01猫 0x02狗
+@property (nonatomic) NSInteger petType;
+/// 体重x100，单位kg
+@property (nonatomic) NSInteger weight;
+/// 性别 0x0 公 0x1 母
+@property (nonatomic) NSInteger gender;
+/// 生日年
+@property (nonatomic) NSInteger year;
+/// 生日月
+@property (nonatomic) NSInteger month;
+/// 生日日
+@property (nonatomic) NSInteger day;
+- (nonnull instancetype)initWithPetType:(NSInteger)petType weight:(NSInteger)weight gender:(NSInteger)gender year:(NSInteger)year month:(NSInteger)month day:(NSInteger)day OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 设置宠物信息入参
+SWIFT_CLASS("_TtC16protocol_channel20IDOPetInfoParamModel")
+@interface IDOPetInfoParamModel : NSObject
+/// 0x00无效 0x01猫 0x02狗
+@property (nonatomic) NSInteger petType;
+/// 体重x100，单位kg
+@property (nonatomic) NSInteger weight;
+/// 性别 0x0 公 0x1 母
+@property (nonatomic) NSInteger gender;
+/// 生日年
+@property (nonatomic) NSInteger year;
+/// 生日月
+@property (nonatomic) NSInteger month;
+/// 生日日
+@property (nonatomic) NSInteger day;
+- (nonnull instancetype)initWithPetType:(NSInteger)petType weight:(NSInteger)weight gender:(NSInteger)gender year:(NSInteger)year month:(NSInteger)month day:(NSInteger)day OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 设置宠物信息返回
+SWIFT_CLASS("_TtC16protocol_channel20IDOPetInfoReplyModel")
+@interface IDOPetInfoReplyModel : NSObject
+/// 0：成功；其他：失败
+@property (nonatomic) NSInteger retCode;
+- (nonnull instancetype)initWithRetCode:(NSInteger)retCode OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 SWIFT_CLASS("_TtC16protocol_channel14IDOPpgDataItem")
@@ -8624,6 +8911,8 @@ typedef SWIFT_ENUM(NSInteger, IDOSportType, open) {
   IDOSportTypeSportTypeRoller = 28,
 /// 跳舞
   IDOSportTypeSportTypeDancing = 29,
+/// 笼式网球
+  IDOSportTypeSportTypeCageTennis = 30,
 /// 滚轮训练机/室内划船
   IDOSportTypeSportTypeRollerMachine = 31,
 /// 普拉提
@@ -9330,6 +9619,12 @@ typedef SWIFT_ENUM(NSInteger, IDOSyncDataType, open) {
   IDOSyncDataTypeGPS = 13,
 /// 游泳
   IDOSyncDataTypeSwim = 14,
+/// 情绪健康
+  IDOSyncDataTypeEmotionHealth = 21,
+/// 多运动/游泳/跑步课程/跑步计划/跑后拉伸数据回调
+  IDOSyncDataTypeActivityMerge = 22,
+/// 宠物睡眠数据
+  IDOSyncDataTypePetSleep = 23,
 };
 
 
