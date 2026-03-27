@@ -5238,6 +5238,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL getSupportSetVoiceAssistantStatus;
 /// 支持获取flash log size
 @property (nonatomic, readonly) BOOL getSupportFlashLogSize;
+/// 设备是否支持返回正在测量的值
+@property (nonatomic, readonly) BOOL supportDevReturnMeasuringValue;
 /// 支持获取单位
 @property (nonatomic, readonly) BOOL getSupportGetUnit;
 /// 通知支持Ryze Connect
@@ -5616,6 +5618,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL languageHebrew;
 /// 塞尔维亚语
 @property (nonatomic, readonly) BOOL languageSerbian;
+/// 保加利亚
+@property (nonatomic, readonly) BOOL languageBulgaria;
 /// v3 心率
 @property (nonatomic, readonly) BOOL syncV3Hr;
 /// v3 游泳
@@ -5628,6 +5632,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL syncV3Activity;
 /// v3 睡眠
 @property (nonatomic, readonly) BOOL syncV3Sleep;
+/// v3 宠物睡眠
+@property (nonatomic, readonly) BOOL syncV3PetSleep;
 /// v3 步数
 @property (nonatomic, readonly) BOOL syncV3Sports;
 /// v3 gps
@@ -5768,6 +5774,32 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL supportBikeLockManager;
 /// 支持算法数据的采集
 @property (nonatomic, readonly) BOOL supportAlgorithmRawDataCollect;
+/// 支持离线地图
+@property (nonatomic, readonly) BOOL supportOfflineMapInformation;
+/// 开启则⽀持储备⼼率区间,关闭默认⽀持的最⼤⼼率区间
+@property (nonatomic, readonly) BOOL supportHeartRateReserveZones;
+/// 开启则⽀持⼼率区间⼼率最⼤值设置
+@property (nonatomic, readonly) BOOL supportHeartRateZonesHrMaxSet;
+/// 支持新的同步多运动数据（同步多运动/游泳/跑步课程/跑步计划/跑后拉伸数据）
+@property (nonatomic, readonly) BOOL supportSyncMultiActivityNew;
+/// 联系人存储支持使用固件返回大小
+@property (nonatomic, readonly) BOOL supportContactFileUseFirmwareReturnSize;
+/// 控制APP是否显示相机入口
+@property (nonatomic, readonly) BOOL supportDisplayCameraEntry;
+/// 支持家庭关心提醒设置
+@property (nonatomic, readonly) BOOL supportOperateFamilyCareReminder3376;
+/// 支持设置获取经期配置，使用v3长包指令
+@property (nonatomic, readonly) BOOL supportProtocolV3MenstruationConfig3377;
+/// 支持习惯养成设置
+@property (nonatomic, readonly) BOOL supportOperateHabitFormation;
+/// 支持版本v01习惯养成设置
+@property (nonatomic, readonly) BOOL supportOperateHabitFormationV01;
+/// 支持家庭步数下发
+@property (nonatomic, readonly) BOOL supportOperateFamilySteps;
+/// 支持游戏设置
+@property (nonatomic, readonly) BOOL supportOperateSetGame;
+/// 支持手势控制功能
+@property (nonatomic, readonly) BOOL supportOperateGestureControl;
 - (NSString * _Nullable)printProperties SWIFT_WARN_UNUSED_RESULT;
 @end
 

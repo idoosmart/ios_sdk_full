@@ -280,7 +280,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import CoreBluetooth;
 @import Flutter;
 @import Foundation;
 @import ObjectiveC;
@@ -307,19 +306,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
-
-SWIFT_CLASS("_TtC14native_channel10McuManager")
-@interface McuManager : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-/// Sends commands belonging to the Basic Group.
-SWIFT_CLASS("_TtC14native_channel12BasicManager")
-@interface BasicManager : McuManager
-@end
-
 typedef SWIFT_ENUM(NSInteger, BleCoreManagerState, open) {
   BleCoreManagerStateUnknown = 0,
   BleCoreManagerStateResetting = 1,
@@ -329,22 +315,6 @@ typedef SWIFT_ENUM(NSInteger, BleCoreManagerState, open) {
   BleCoreManagerStatePoweredOn = 5,
 };
 
-
-
-
-SWIFT_CLASS("_TtC14native_channel12CrashManager")
-@interface CrashManager : McuManager
-@end
-
-
-SWIFT_CLASS("_TtC14native_channel14DefaultManager")
-@interface DefaultManager : McuManager
-@end
-
-
-SWIFT_CLASS("_TtC14native_channel17FileSystemManager")
-@interface FileSystemManager : McuManager
-@end
 
 
 @protocol IDONordicDFUManagerDelegate;
@@ -436,47 +406,6 @@ SWIFT_CLASS("_TtC14native_channel14IdoSifliPlugin")
 
 
 
-SWIFT_CLASS("_TtC14native_channel12ImageManager")
-@interface ImageManager : McuManager
-@end
-
-
-SWIFT_CLASS("_TtC14native_channel10LogManager")
-@interface LogManager : McuManager
-@end
-
-
-
-
-SWIFT_CLASS("_TtC14native_channel18McuMgrBleTransport")
-@interface McuMgrBleTransport : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-@class CBCentralManager;
-@class CBPeripheral;
-
-@interface McuMgrBleTransport (SWIFT_EXTENSION(native_channel)) <CBCentralManagerDelegate>
-- (void)centralManagerDidUpdateState:(CBCentralManager * _Nonnull)central;
-- (void)centralManager:(CBCentralManager * _Nonnull)central didConnectPeripheral:(CBPeripheral * _Nonnull)peripheral;
-- (void)centralManager:(CBCentralManager * _Nonnull)central didDisconnectPeripheral:(CBPeripheral * _Nonnull)peripheral error:(NSError * _Nullable)error;
-- (void)centralManager:(CBCentralManager * _Nonnull)central didFailToConnectPeripheral:(CBPeripheral * _Nonnull)peripheral error:(NSError * _Nullable)error;
-@end
-
-@class CBService;
-@class CBCharacteristic;
-
-@interface McuMgrBleTransport (SWIFT_EXTENSION(native_channel)) <CBPeripheralDelegate>
-- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverServices:(NSError * _Nullable)error;
-- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didDiscoverCharacteristicsForService:(CBService * _Nonnull)service error:(NSError * _Nullable)error;
-- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
-- (void)peripheral:(CBPeripheral * _Nonnull)peripheral didUpdateValueForCharacteristic:(CBCharacteristic * _Nonnull)characteristic error:(NSError * _Nullable)error;
-- (void)peripheralIsReadyToSendWriteWithoutResponse:(CBPeripheral * _Nonnull)peripheral;
-@end
-
-
 
 typedef SWIFT_ENUM(uint16_t, NandImageID, open) {
   NandImageIDHCPU = 0,
@@ -538,11 +467,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) QBleLogManag
 @property (nonatomic) BOOL openLog;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-SWIFT_CLASS("_TtC14native_channel14RunTestManager")
-@interface RunTestManager : McuManager
 @end
 
 
@@ -789,31 +713,6 @@ typedef SWIFT_ENUM(NSInteger, SFOTAType, open) {
   SFOTATypeNorV2 = 2,
   SFOTATypeNorV1 = 3,
 };
-
-
-SWIFT_CLASS("_TtC14native_channel15SettingsManager")
-@interface SettingsManager : McuManager
-@end
-
-
-/// Enables remote execution of McuMgr Shell commands over BLE.
-SWIFT_CLASS("_TtC14native_channel12ShellManager")
-@interface ShellManager : McuManager
-@end
-
-
-/// Displays statistics from a device.
-/// Stats manager can read the list of stats modules from a device and read the
-/// statistics from a specific module.
-SWIFT_CLASS("_TtC14native_channel12StatsManager")
-@interface StatsManager : McuManager
-@end
-
-
-SWIFT_CLASS("_TtC14native_channel11SuitManager")
-@interface SuitManager : McuManager
-@end
-
 
 #endif
 #if __has_attribute(external_source_symbol)

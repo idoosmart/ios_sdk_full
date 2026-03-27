@@ -4529,6 +4529,7 @@ public protocol IDOCmdProtocol {
   @objc var getSupportOnekeyDoubleContact: Swift.Bool { get }
   @objc var getSupportSetVoiceAssistantStatus: Swift.Bool { get }
   @objc var getSupportFlashLogSize: Swift.Bool { get }
+  @objc var supportDevReturnMeasuringValue: Swift.Bool { get }
   @objc var getSupportGetUnit: Swift.Bool { get }
   @objc var getSupportRyzeConnect: Swift.Bool { get }
   @objc var getSupportLoopsFit: Swift.Bool { get }
@@ -4718,12 +4719,14 @@ public protocol IDOCmdProtocol {
   @objc var languageBrazilianPortuguese: Swift.Bool { get }
   @objc var languageHebrew: Swift.Bool { get }
   @objc var languageSerbian: Swift.Bool { get }
+  @objc var languageBulgaria: Swift.Bool { get }
   @objc var syncV3Hr: Swift.Bool { get }
   @objc var syncV3Swim: Swift.Bool { get }
   @objc var syncV3Spo2: Swift.Bool { get }
   @objc var syncV3Pressure: Swift.Bool { get }
   @objc var syncV3Activity: Swift.Bool { get }
   @objc var syncV3Sleep: Swift.Bool { get }
+  @objc var syncV3PetSleep: Swift.Bool { get }
   @objc var syncV3Sports: Swift.Bool { get }
   @objc var syncV3Gps: Swift.Bool { get }
   @objc var syncV3SyncAlarm: Swift.Bool { get }
@@ -4794,6 +4797,19 @@ public protocol IDOCmdProtocol {
   @objc var supportBloodGlucoseV01: Swift.Bool { get }
   @objc var supportBikeLockManager: Swift.Bool { get }
   @objc var supportAlgorithmRawDataCollect: Swift.Bool { get }
+  @objc var supportOfflineMapInformation: Swift.Bool { get }
+  @objc var supportHeartRateReserveZones: Swift.Bool { get }
+  @objc var supportHeartRateZonesHrMaxSet: Swift.Bool { get }
+  @objc var supportSyncMultiActivityNew: Swift.Bool { get }
+  @objc var supportContactFileUseFirmwareReturnSize: Swift.Bool { get }
+  @objc var supportDisplayCameraEntry: Swift.Bool { get }
+  @objc var supportOperateFamilyCareReminder3376: Swift.Bool { get }
+  @objc var supportProtocolV3MenstruationConfig3377: Swift.Bool { get }
+  @objc var supportOperateHabitFormation: Swift.Bool { get }
+  @objc var supportOperateHabitFormationV01: Swift.Bool { get }
+  @objc var supportOperateFamilySteps: Swift.Bool { get }
+  @objc var supportOperateSetGame: Swift.Bool { get }
+  @objc var supportOperateGestureControl: Swift.Bool { get }
   @objc func printProperties() -> Swift.String?
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class IDOGestureTypeItemModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
@@ -4881,7 +4897,7 @@ public protocol IDOCmdProtocol {
   @objc public var gestureControlOnOff: Swift.Int
   @objc public var gestureFunctionItems: [protocol_channel.IDOGestureFunctionItemModel]?
   @objc override dynamic public init()
-  @objc public init(operate: Swift.Int, gestureControlOnOff: Swift.Int = 0, gestureFunctionItems: [protocol_channel.IDOGestureFunctionItemModel]? = nil)
+  @objc public init(operate: Swift.Int = 1, gestureControlOnOff: Swift.Int = 0, gestureFunctionItems: [protocol_channel.IDOGestureFunctionItemModel]? = nil)
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case version
     case operate
