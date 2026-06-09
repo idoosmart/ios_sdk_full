@@ -525,6 +525,30 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOBatteryReminderSwitchModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOBatteryReminderSwitchModel
   }
+  public struct getFindPhoneSwitch : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOFindPhoneSwitchModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOFindPhoneSwitchModel
+  }
+  public struct getDeviceStatusInfo : protocol_channel.IDOCmdProtocol {
+    public init(getType: Swift.Int = 1)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDODeviceStatusInfoModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDODeviceStatusInfoModel
+  }
+  public struct getSportTypesRequiringWristSideSetting : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOSportTypesRequiringWristSideSettingModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOSportTypesRequiringWristSideSettingModel
+  }
+  public struct deviceVibrationRingtone : protocol_channel.IDOCmdProtocol {
+    public init(_ model: protocol_channel.IDODeviceVibrationRingtoneModel = IDODeviceVibrationRingtoneModel(operate: 1))
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDODeviceVibrationRingtoneModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDODeviceVibrationRingtoneModel
+  }
   public struct getPetInfo : protocol_channel.IDOCmdProtocol {
     public init()
     @discardableResult
@@ -1503,6 +1527,30 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
+  public struct setCgmKeyAndDevice : protocol_channel.IDOCmdProtocol {
+    public init(key: Swift.String, deviceName: Swift.String)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCgmPhoneCommandModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCgmPhoneCommandModel
+  }
+  public struct deleteCgmKeyAndDevice : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCgmPhoneCommandModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCgmPhoneCommandModel
+  }
+  public struct connectCgm : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCgmPhoneCommandModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCgmPhoneCommandModel
+  }
+  public struct disconnectCgm : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCgmPhoneCommandModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOCgmPhoneCommandModel
+  }
   public struct setGestureControl : protocol_channel.IDOCmdProtocol {
     public init(_ model: protocol_channel.IDOGestureControlModel)
     @discardableResult
@@ -1549,6 +1597,16 @@ public struct Cmds {
   public static func getActivitySwitch(_ completion: @escaping (_ err: protocol_channel.CmdError, _ switchModel: protocol_channel.IDOActivitySwitchModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func getBatteryReminderSwitch(_ completion: @escaping (_ err: protocol_channel.CmdError, _ switchModel: protocol_channel.IDOBatteryReminderSwitchModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getFindPhoneSwitch(_ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDOFindPhoneSwitchModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getDeviceStatusInfo(getType: Swift.Int = 1, _ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDODeviceStatusInfoModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func getSportTypesRequiringWristSideSetting(_ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDOSportTypesRequiringWristSideSettingModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @discardableResult
+  public static func getDeviceVibrationRingtone(type: Swift.Int? = nil, _ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDODeviceVibrationRingtoneModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func setDeviceVibrationRingtone(_ model: protocol_channel.IDODeviceVibrationRingtoneModel, _ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDODeviceVibrationRingtoneModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func getPetInfo(_ completion: @escaping (_ err: protocol_channel.CmdError, _ petInfo: protocol_channel.IDOPetInfoModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
@@ -2176,11 +2234,39 @@ public enum IDOBleReplyType {
   @objc public init(baseModel: protocol_channel.IDOExchangeBaseModel? = nil, version: Swift.Int, heartRate: Swift.Int, distance: Swift.Int, duration: Swift.Int, realTimeCalories: Swift.Int, realTimeSpeed: Swift.Int, kmSpeed: Swift.Int, steps: Swift.Int, swimPosture: Swift.Int, status: Swift.Int, realTimeSpeedPace: Swift.Int, trainingEffect: Swift.Int, anaerobicTrainingEffect: Swift.Int, actionType: Swift.Int, countHour: Swift.Int, countMinute: Swift.Int, countSecond: Swift.Int)
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @objcMembers public class IDOActivitySwimmingLapItem : ObjectiveC.NSObject {
+  @objc public var swolf: Swift.Int
+  @objc public var swimmingPosture: Swift.Int
+  @objc public var strokesNumber: Swift.Int
+  @objc public var duration: Swift.Int
+  @objc public var distance: Swift.Int
+  @objc public var frequency: Swift.Int
+  @objc public var pace: Swift.Int
+  @objc public var stopTime: Swift.Int
+  @objc public var differenceTime: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class IDOActivityRopeSkipItem : ObjectiveC.NSObject {
+  @objc public var ropeSkipCount: Swift.Int
+  @objc public var duration: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class IDOActivitySegmentItem : ObjectiveC.NSObject {
+  @objc public var index: Swift.Int
+  @objc public var time: Swift.Int
+  @objc public var distance: Swift.Int
+  @objc public var pace: Swift.Int
+  @objc public var avgHr: Swift.Int
+  @objc public var avgStepFrequency: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc @objcMembers public class IDOAppActivityDataV3ExchangeModel : ObjectiveC.NSObject {
   @objc public var baseModel: protocol_channel.IDOExchangeBaseModel?
   @objc public var year: Swift.Int
   @objc public var month: Swift.Int
-  @objc public var version: Swift.Int
   @objc public var hrInterval: Swift.Int
   @objc public var step: Swift.Int
   @objc public var durations: Swift.Int
@@ -2228,7 +2314,96 @@ public enum IDOBleReplyType {
   @objc public var itemRealSpeed: [Swift.Int]?
   @objc public var paceSpeedItems: [Swift.Int]?
   @objc public var actionData: [[Swift.String : Any]]?
-  @objc public init(baseModel: protocol_channel.IDOExchangeBaseModel? = nil, year: Swift.Int, month: Swift.Int, version: Swift.Int, hrInterval: Swift.Int, step: Swift.Int, durations: Swift.Int, calories: Swift.Int, distance: Swift.Int, burnFatMins: Swift.Int, aerobicMins: Swift.Int, limitMins: Swift.Int, warmUp: Swift.Int, fatBurning: Swift.Int, aerobicExercise: Swift.Int, anaerobicExercise: Swift.Int, extremeExercise: Swift.Int, warmUpTime: Swift.Int, fatBurningTime: Swift.Int, aerobicExerciseTime: Swift.Int, anaerobicExerciseTime: Swift.Int, extremeExerciseTime: Swift.Int, avgSpeed: Swift.Int, maxSpeed: Swift.Int, avgStepStride: Swift.Int, maxStepStride: Swift.Int, kmSpeed: Swift.Int, fastKmSpeed: Swift.Int, avgStepFrequency: Swift.Int, maxStepFrequency: Swift.Int, avgHrValue: Swift.Int, maxHrValue: Swift.Int, recoverTime: Swift.Int, vo2max: Swift.Int, trainingEffect: Swift.Int, grade: Swift.Int, stepsFrequencyCount: Swift.Int, miSpeedCount: Swift.Int, realSpeedCount: Swift.Int, paceSpeedCount: Swift.Int, kmSpeedCount: Swift.Int, actionDataCount: Swift.Int, inClassCalories: Swift.Int, completionRate: Swift.Int, hrCompletionRate: Swift.Int, kmSpeeds: [Swift.Int]? = nil, stepsFrequency: [Swift.Int]? = nil, itemsMiSpeed: [Swift.Int]? = nil, itemRealSpeed: [Swift.Int]? = nil, paceSpeedItems: [Swift.Int]? = nil, actionData: [[Swift.String : Any]]? = nil)
+  @objc public var segmentItemNum: Swift.Int
+  @objc public var segmentTotalTime: Swift.Int
+  @objc public var segmentTotalDistance: Swift.Int
+  @objc public var segmentTotalPace: Swift.Int
+  @objc public var segmentTotalAvgHr: Swift.Int
+  @objc public var segmentTotalAvgStepFrequency: Swift.Int
+  @objc public var paceHiit: Swift.Int
+  @objc public var paceAnaerobic: Swift.Int
+  @objc public var paceLacticAcidThreshold: Swift.Int
+  @objc public var paceMarathon: Swift.Int
+  @objc public var paceEasyRun: Swift.Int
+  @objc public var segmentItems: [protocol_channel.IDOActivitySegmentItem]?
+  @objc public var cumulativeClimb: Swift.Int
+  @objc public var cumulativeDecline: Swift.Int
+  @objc public var minStepStride: Swift.Int
+  @objc public var minStepFrequency: Swift.Int
+  @objc public var slowestKmPace: Swift.Int
+  @objc public var heartRateZonesMode: Swift.Int
+  @objc public var minSpeed: Swift.Int
+  @objc public var easyZoneTime: Swift.Int
+  @objc public var marathonZoneTime: Swift.Int
+  @objc public var thresholdZoneTime: Swift.Int
+  @objc public var anaerobicZoneTime: Swift.Int
+  @objc public var intervalZoneTime: Swift.Int
+  @objc public var actType: Swift.Int
+  @objc public var trainingOffset: Swift.Int
+  @objc public var distance3d: Swift.Int
+  @objc public var avg3dSpeed: Swift.Int
+  @objc public var avgVerticalSpeed: Swift.Int
+  @objc public var avgSlope: Swift.Int
+  @objc public var maxAltitude: Swift.Int
+  @objc public var minAltitude: Swift.Int
+  @objc public var avgAltitude: Swift.Int
+  @objc public var altitudeCount: Swift.Int
+  @objc public var altitudeItem: [Swift.Int]?
+  @objc public var gpsStatus: Swift.Int
+  @objc public var anaerobicTrainingEffect: Swift.Int
+  @objc public var load: Swift.Int
+  @objc public var runningEconomy: Swift.Int
+  @objc public var maxRunningPower: Swift.Int
+  @objc public var minRunningPower: Swift.Int
+  @objc public var avgRunningPower: Swift.Int
+  @objc public var runningPowerCount: Swift.Int
+  @objc public var rtpeCount: Swift.Int
+  @objc public var maxRtoc: Swift.Int
+  @objc public var minRtoc: Swift.Int
+  @objc public var avgRtoc: Swift.Int
+  @objc public var rtocCount: Swift.Int
+  @objc public var maxRopeFrequency: Swift.Int
+  @objc public var minRopeFrequency: Swift.Int
+  @objc public var avgRopeFrequency: Swift.Int
+  @objc public var maxRopeSkipCount: Swift.Int
+  @objc public var ropeTripCount: Swift.Int
+  @objc public var totalRopeCount: Swift.Int
+  @objc public var ropeItemCount: Swift.Int
+  @objc public var kmPace: Swift.Int
+  @objc public var fastKmPace: Swift.Int
+  @objc public var kmPaceCount: Swift.Int
+  @objc public var miPaceCount: Swift.Int
+  @objc public var paceRealTimeCount: Swift.Int
+  @objc public var aerobicPowerInterval: Swift.Int
+  @objc public var mixedOxygenPowerInterval: Swift.Int
+  @objc public var thresholdRunningPowerInterval: Swift.Int
+  @objc public var intermittentRunPowerInterval: Swift.Int
+  @objc public var sprintRunPowerInterval: Swift.Int
+  @objc public var strideCount: Swift.Int
+  @objc public var strideItems: [Swift.Int]?
+  @objc public var itemRunningPower: [Swift.Int]?
+  @objc public var itemRtpe: [Swift.Int]?
+  @objc public var itemRtoc: [Swift.Int]?
+  @objc public var itemRopeInfo: [protocol_channel.IDOActivityRopeSkipItem]?
+  @objc public var smartCompetitor: Swift.Int
+  @objc public var aiImageId: Swift.Int
+  @objc public var userImageId: Swift.Int
+  @objc public var bgImageId: Swift.Int
+  @objc public var smartCompetitorPace: Swift.Int
+  @objc public var tennisServeCount: Swift.Int
+  @objc public var tennisForeheadCount: Swift.Int
+  @objc public var tennisBackhandCount: Swift.Int
+  @objc public var trips: Swift.Int
+  @objc public var averageSwolf: Swift.Int
+  @objc public var totalStrokesNumber: Swift.Int
+  @objc public var swimmingPosture: Swift.Int
+  @objc public var swimmingAvgPace: Swift.Int
+  @objc public var avgFrequency: Swift.Int
+  @objc public var bodyAge: Swift.Int
+  @objc public var swimmingPoolDistance: Swift.Double
+  @objc public var swimmingItemCount: Swift.Int
+  @objc public var swimmingItems: [protocol_channel.IDOActivitySwimmingLapItem]?
+  @objc public init(baseModel: protocol_channel.IDOExchangeBaseModel? = nil, year: Swift.Int, month: Swift.Int, hrInterval: Swift.Int, step: Swift.Int, durations: Swift.Int, calories: Swift.Int, distance: Swift.Int, burnFatMins: Swift.Int, aerobicMins: Swift.Int, limitMins: Swift.Int, warmUp: Swift.Int, fatBurning: Swift.Int, aerobicExercise: Swift.Int, anaerobicExercise: Swift.Int, extremeExercise: Swift.Int, warmUpTime: Swift.Int, fatBurningTime: Swift.Int, aerobicExerciseTime: Swift.Int, anaerobicExerciseTime: Swift.Int, extremeExerciseTime: Swift.Int, avgSpeed: Swift.Int, maxSpeed: Swift.Int, avgStepStride: Swift.Int, maxStepStride: Swift.Int, kmSpeed: Swift.Int, fastKmSpeed: Swift.Int, avgStepFrequency: Swift.Int, maxStepFrequency: Swift.Int, avgHrValue: Swift.Int, maxHrValue: Swift.Int, recoverTime: Swift.Int, vo2max: Swift.Int, trainingEffect: Swift.Int, grade: Swift.Int, stepsFrequencyCount: Swift.Int, miSpeedCount: Swift.Int, realSpeedCount: Swift.Int, paceSpeedCount: Swift.Int, kmSpeedCount: Swift.Int, actionDataCount: Swift.Int, inClassCalories: Swift.Int, completionRate: Swift.Int, hrCompletionRate: Swift.Int, kmSpeeds: [Swift.Int]? = nil, stepsFrequency: [Swift.Int]? = nil, itemsMiSpeed: [Swift.Int]? = nil, itemRealSpeed: [Swift.Int]? = nil, paceSpeedItems: [Swift.Int]? = nil, actionData: [[Swift.String : Any]]? = nil)
   @objc deinit
 }
 @objc @objcMembers public class IDOAppBlePauseExchangeModel : ObjectiveC.NSObject {
@@ -3776,6 +3951,44 @@ extension protocol_channel.IDOBaseModel {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
+@objc @_inheritsConvenienceInitializers @objcMembers public class IDOCgmPhoneCommandModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var version: Swift.Int
+  @objc public var operate: Swift.Int
+  @objc public var errCode: Swift.Int
+  @objc public var error: Swift.String?
+  @objc public var isSuccess: Swift.Bool {
+    @objc get
+  }
+  public var errCodeEnum: protocol_channel.IDOCgmPhoneCommandErrCode? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc public enum IDOCgmPhoneCommandErrCode : Swift.Int {
+  case success = 0
+  case invalidKey = 1
+  case invalidDeviceName = 2
+  case storageFail = 3
+  case noKey = 4
+  case busy = 5
+  case scanTimeout = 6
+  case pairFlag = 7
+  case connectFail = 8
+  case keyReadFail = 9
+  case protocolFail = 10
+  case disconnectFail = 11
+  public var symbolName: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc @objcMembers public class IDOCmdGetResponseModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var onOff: Swift.Int
   @objc public init(onOff: Swift.Int)
@@ -3845,6 +4058,7 @@ public protocol IDOCmdProtocol {
   @objc func appExec(model: ObjectiveC.NSObject)
   @objc func appReplyExec(model: ObjectiveC.NSObject)
   @objc func getLastActivityData()
+  @objc func getActivityExchangeFullSnapshot(completion: @escaping (_ json: Swift.String?) -> Swift.Void)
   @objc func getActivityHrData()
   @objc func getActivityGpsData()
 }
@@ -4032,6 +4246,30 @@ public protocol IDOCmdProtocol {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
+@objc @objcMembers public class IDODeviceStatusInfoModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var getType: Swift.Int
+  @objc public var hasSportStartType: Swift.Bool
+  public var sportStartType: Swift.Int?
+  @objc public init(getType: Swift.Int = 1)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDODeviceVibrationRingtoneModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  public var type: Swift.Int?
+  public var vibrationIntensity: Swift.Int?
+  @objc public var supportedVibrationIntensity: [Swift.Int]?
+  public var alarmVolume: Swift.Int?
+  public var callReminderVolume: Swift.Int?
+  public var errCode: Swift.Int?
+  public var retCode: Swift.Int?
+  public init(operate: Swift.Int = 1, type: Swift.Int? = nil, vibrationIntensity: Swift.Int? = nil, alarmVolume: Swift.Int? = nil, callReminderVolume: Swift.Int? = nil)
+  required public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+}
 @objc @objcMembers public class IDODisplayModeParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var mode: Swift.Int
   @objc public init(mode: Swift.Int)
@@ -4215,6 +4453,14 @@ public protocol IDOCmdProtocol {
 @objc @objcMembers public class IDOTransTypeClass : ObjectiveC.NSObject {
   @objc public init(type: protocol_channel.IDOTransType)
   @objc deinit
+}
+@objc @objcMembers public class IDOFindPhoneSwitchModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var onOff: Swift.Bool
+  @objc public init(onOff: Swift.Bool)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public class IDOFitnessGuidanceParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   public var mode: Swift.Int
@@ -4629,6 +4875,8 @@ public protocol IDOCmdProtocol {
   @objc var setWeatherAirGrade: Swift.Bool { get }
   @objc var setDrinkWaterReminder: Swift.Bool { get }
   @objc var supportBatteryReminderSwitch: Swift.Bool { get }
+  @objc var supportGetFindPhoneSwitch: Swift.Bool { get }
+  @objc var supportSyncHealthDataUseUtcTime: Swift.Bool { get }
   @objc var supportPetInfo: Swift.Bool { get }
   @objc var setRespirationRate: Swift.Bool { get }
   @objc var setMaxBloodOxygen: Swift.Bool { get }
@@ -4663,6 +4911,8 @@ public protocol IDOCmdProtocol {
   @objc var getSupportMorningEdition: Swift.Bool { get }
   @objc var getSupportGetSpo2SwitchInfo: Swift.Bool { get }
   @objc var getSupportSyncHealthHrUseVersionCompatible: Swift.Bool { get }
+  @objc var getSupportSyncSpo2UseVersionCompatible: Swift.Bool { get }
+  @objc var getSupportSyncPressureUseVersionCompatible: Swift.Bool { get }
   @objc var getSupportSetV3Add48HourWeatherData: Swift.Bool { get }
   @objc var getNotSupportIndoorRunGetVo2max: Swift.Bool { get }
   @objc var getSupportSetEcgReminder: Swift.Bool { get }
@@ -4796,6 +5046,7 @@ public protocol IDOCmdProtocol {
   @objc var supportBloodGlucose: Swift.Bool { get }
   @objc var supportBloodGlucoseV01: Swift.Bool { get }
   @objc var supportBikeLockManager: Swift.Bool { get }
+  @objc var supportCgmPhoneCommand: Swift.Bool { get }
   @objc var supportAlgorithmRawDataCollect: Swift.Bool { get }
   @objc var supportOfflineMapInformation: Swift.Bool { get }
   @objc var supportHeartRateReserveZones: Swift.Bool { get }
@@ -4810,6 +5061,7 @@ public protocol IDOCmdProtocol {
   @objc var supportOperateFamilySteps: Swift.Bool { get }
   @objc var supportOperateSetGame: Swift.Bool { get }
   @objc var supportOperateGestureControl: Swift.Bool { get }
+  @objc var supportTakeMedicineReminder: Swift.Bool { get }
   @objc func printProperties() -> Swift.String?
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class IDOGestureTypeItemModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
@@ -5163,7 +5415,8 @@ public protocol IDOCmdProtocol {
   @objc public var startMinute: Swift.Int
   @objc public var endHour: Swift.Int
   @objc public var endMinute: Swift.Int
-  @objc public init(mode: Swift.Int, notifyFlag: Swift.Int, highHeartMode: Swift.Int, lowHeartMode: Swift.Int, highHeartValue: Swift.Int, lowHeartValue: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int)
+  @objc public var measurementInterval: Swift.Int
+  @objc public init(mode: Swift.Int, notifyFlag: Swift.Int, highHeartMode: Swift.Int, lowHeartMode: Swift.Int, highHeartValue: Swift.Int, lowHeartValue: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, measurementInterval: Swift.Int = 0)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -5180,7 +5433,8 @@ public protocol IDOCmdProtocol {
   @objc public var startMinute: Swift.Int
   @objc public var endHour: Swift.Int
   @objc public var endMinute: Swift.Int
-  @objc public init(mode: Swift.Int, notifyFlag: Swift.Int, highHeartMode: Swift.Int, lowHeartMode: Swift.Int, highHeartValue: Swift.Int, lowHeartValue: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int)
+  @objc public var measurementInterval: Swift.Int
+  @objc public init(mode: Swift.Int, notifyFlag: Swift.Int, highHeartMode: Swift.Int, lowHeartMode: Swift.Int, highHeartValue: Swift.Int, lowHeartValue: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, measurementInterval: Swift.Int = 0)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -6198,7 +6452,8 @@ public protocol IDOCmdProtocol {
   @objc public var lowSpo2OnOff: Swift.Int
   @objc public var lowSpo2Value: Swift.Int
   @objc public var notifyFlag: Swift.Int
-  @objc public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, lowSpo2OnOff: Swift.Int = 0, lowSpo2Value: Swift.Int = 0, notifyFlag: Swift.Int = 0)
+  @objc public var measurementInterval: Swift.Int
+  @objc public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, lowSpo2OnOff: Swift.Int = 0, lowSpo2Value: Swift.Int = 0, notifyFlag: Swift.Int = 0, measurementInterval: Swift.Int = 0)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -6213,7 +6468,8 @@ public protocol IDOCmdProtocol {
   @objc public var lowSpo2OnOff: Swift.Int
   @objc public var lowSpo2Value: Swift.Int
   @objc public var notifyFlag: Swift.Int
-  @objc public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, lowSpo2OnOff: Swift.Int = 0, lowSpo2Value: Swift.Int = 0, notifyFlag: Swift.Int = 0)
+  @objc public var measurementInterval: Swift.Int
+  @objc public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, lowSpo2OnOff: Swift.Int = 0, lowSpo2Value: Swift.Int = 0, notifyFlag: Swift.Int = 0, measurementInterval: Swift.Int = 0)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -6774,6 +7030,16 @@ public protocol IDOCmdProtocol {
     get
   }
 }
+@objc @_inheritsConvenienceInitializers @objcMembers public class IDOSportTypesRequiringWristSideSettingModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var errorCode: Swift.Int
+  @objc public var typeCount: Swift.Int
+  @objc public var sportTypes: [Swift.Int]?
+  @objc override dynamic public init()
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 @objc @objcMembers public class IDOStepGoalModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var step: Swift.Int
   @objc public var stepWeek: Swift.Int
@@ -6811,8 +7077,9 @@ public protocol IDOCmdProtocol {
   public var highThreshold: Swift.Int
   public var stressThreshold: Swift.Int
   public var notifyFlag: Swift.Int
+  public var measurementInterval: Swift.Int
   public var repeats: Swift.Set<protocol_channel.IDOWeek>
-  public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, remindOnOff: Swift.Int, interval: Swift.Int, highThreshold: Swift.Int, stressThreshold: Swift.Int = 0, notifyFlag: Swift.Int, repeats: Swift.Set<protocol_channel.IDOWeek> = [.monday])
+  public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, remindOnOff: Swift.Int, interval: Swift.Int, highThreshold: Swift.Int, stressThreshold: Swift.Int = 0, notifyFlag: Swift.Int, repeats: Swift.Set<protocol_channel.IDOWeek> = [.monday], measurementInterval: Swift.Int = 0)
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   public func toJsonString() -> Swift.String?
@@ -6829,8 +7096,9 @@ public protocol IDOCmdProtocol {
   @objc public var highThreshold: Swift.Int
   @objc public var stressThreshold: Swift.Int
   @objc public var notifyFlag: Swift.Int
+  @objc public var measurementInterval: Swift.Int
   @objc public var repeats: [protocol_channel.IDOWeekObjc]
-  @objc public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, remindOnOff: Swift.Int, interval: Swift.Int, highThreshold: Swift.Int, stressThreshold: Swift.Int = 0, notifyFlag: Swift.Int, repeats: [protocol_channel.IDOWeekObjc])
+  @objc public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, remindOnOff: Swift.Int, interval: Swift.Int, highThreshold: Swift.Int, stressThreshold: Swift.Int = 0, notifyFlag: Swift.Int, repeats: [protocol_channel.IDOWeekObjc], measurementInterval: Swift.Int = 0)
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc public func toJsonString() -> Swift.String?
@@ -6847,8 +7115,9 @@ public protocol IDOCmdProtocol {
   public var highThreshold: Swift.Int
   public var stressThreshold: Swift.Int
   public var notifyFlag: Swift.Int
+  public var measurementInterval: Swift.Int
   public var repeats: Swift.Set<protocol_channel.IDOWeek>
-  public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, remindOnOff: Swift.Int, interval: Swift.Int, highThreshold: Swift.Int, stressThreshold: Swift.Int = 0, notifyFlag: Swift.Int, repeats: Swift.Set<protocol_channel.IDOWeek> = [.monday])
+  public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, remindOnOff: Swift.Int, interval: Swift.Int, highThreshold: Swift.Int, stressThreshold: Swift.Int = 0, notifyFlag: Swift.Int, repeats: Swift.Set<protocol_channel.IDOWeek> = [.monday], measurementInterval: Swift.Int = 0)
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   public func toJsonString() -> Swift.String?
@@ -6865,8 +7134,9 @@ public protocol IDOCmdProtocol {
   @objc public var highThreshold: Swift.Int
   @objc public var stressThreshold: Swift.Int
   @objc public var notifyFlag: Swift.Int
+  @objc public var measurementInterval: Swift.Int
   @objc public var repeats: [protocol_channel.IDOWeekObjc]
-  @objc public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, remindOnOff: Swift.Int, interval: Swift.Int, highThreshold: Swift.Int, stressThreshold: Swift.Int = 0, notifyFlag: Swift.Int, repeats: [protocol_channel.IDOWeekObjc])
+  @objc public init(onOff: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, remindOnOff: Swift.Int, interval: Swift.Int, highThreshold: Swift.Int, stressThreshold: Swift.Int = 0, notifyFlag: Swift.Int, repeats: [protocol_channel.IDOWeekObjc], measurementInterval: Swift.Int = 0)
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc public func toJsonString() -> Swift.String?
@@ -7683,6 +7953,9 @@ extension protocol_channel.IDOBloodGlucoseReplyInfoV1.CodingKeys : Swift.RawRepr
 extension protocol_channel.IDOBloodGlucoseDataInfoV1.CodingKeys : Swift.Equatable {}
 extension protocol_channel.IDOBloodGlucoseDataInfoV1.CodingKeys : Swift.Hashable {}
 extension protocol_channel.IDOBloodGlucoseDataInfoV1.CodingKeys : Swift.RawRepresentable {}
+extension protocol_channel.IDOCgmPhoneCommandErrCode : Swift.Equatable {}
+extension protocol_channel.IDOCgmPhoneCommandErrCode : Swift.Hashable {}
+extension protocol_channel.IDOCgmPhoneCommandErrCode : Swift.RawRepresentable {}
 extension protocol_channel.IDOCmdPriority : Swift.Equatable {}
 extension protocol_channel.IDOCmdPriority : Swift.Hashable {}
 extension protocol_channel.IDOCmdPriority : Swift.RawRepresentable {}

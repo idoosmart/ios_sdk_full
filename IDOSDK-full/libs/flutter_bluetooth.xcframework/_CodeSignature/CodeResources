@@ -26,11 +26,11 @@
 		</data>
 		<key>ios-arm64/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		ABNJkhjQk9BsDYn0pjeDFlO6Fvs=
+		eXT5VRtU+ocBz/G5jh11KIstjbU=
 		</data>
 		<key>ios-arm64/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		JBOS2+z35zZyOS1sBGuqm79VelI=
+		DIQDeaWfas1z1AjaY+FldAHR3N4=
 		</data>
 		<key>ios-arm64/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>ios-arm64/flutter_bluetooth.framework/flutter_bluetooth</key>
 		<data>
-		Am7JRVo65NbHhQ8O8uPM2VMxIzU=
+		JATn0d7/lx+BFtEB5qF1wVYXaEU=
 		</data>
 		<key>ios-arm64/flutter_bluetooth.framework/flutter_bluetooth.bundle/Info.plist</key>
 		<data>
@@ -82,15 +82,15 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		GB9v1tjLbxHsqVgaWkwaxOz2IHw=
+		iqKK7iDhmTSpApIymH1MiARsu3Q=
 		</data>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		BT4QOb5iukVsg7fMdQsnk3iQ3d0=
+		Oj74XOgs38CmeCvO7Rgk7zJeyR8=
 		</data>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		MZbLDcquhb0Zud0wI1g0oHuQJZA=
+		9DmH7xUMC8JXPvf6+PCpFCXIKfM=
 		</data>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		MZbLDcquhb0Zud0wI1g0oHuQJZA=
+		9DmH7xUMC8JXPvf6+PCpFCXIKfM=
 		</data>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -126,11 +126,11 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/_CodeSignature/CodeResources</key>
 		<data>
-		B9vwKGPPmF6JqPsSIe+SUTnfMKo=
+		wlK/iYzJbvEt/F9aD5bmYS7va68=
 		</data>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/flutter_bluetooth</key>
 		<data>
-		anWGOh+dVKkmH2SoTiKRFbVTQqM=
+		MST4/N1+ptfOvLKpldxH394HSyU=
 		</data>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/flutter_bluetooth.bundle/Info.plist</key>
 		<data>
@@ -202,22 +202,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ABNJkhjQk9BsDYn0pjeDFlO6Fvs=
+			eXT5VRtU+ocBz/G5jh11KIstjbU=
 			</data>
 			<key>hash2</key>
 			<data>
-			5ojxmH+6bPEtkGKxhk4BDq+8K1V4EfG0gDH6UedgtVo=
+			NUrQAGS7+buaqvLVAiD9sF6ti4N4kq38rESnK1R8A9Y=
 			</data>
 		</dict>
 		<key>ios-arm64/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JBOS2+z35zZyOS1sBGuqm79VelI=
+			DIQDeaWfas1z1AjaY+FldAHR3N4=
 			</data>
 			<key>hash2</key>
 			<data>
-			i2SwxGJxNX0NKsqzvmxjrVQe/kyw7iigCuAp5IZp3xA=
+			3XhmvCNhZ2xzkZWbUj+FND5JxJK7uG3PIbcIxHRHr/k=
 			</data>
 		</dict>
 		<key>ios-arm64/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -268,11 +268,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Am7JRVo65NbHhQ8O8uPM2VMxIzU=
+			JATn0d7/lx+BFtEB5qF1wVYXaEU=
 			</data>
 			<key>hash2</key>
 			<data>
-			QErgQUhtrz0sPLxiP/Cmckld0cVNiC32yVf+XaISQiQ=
+			SBDDPoyq9l4kAeEGPKL1Co43Oi74hskFVxgU3dXYPdU=
 			</data>
 		</dict>
 		<key>ios-arm64/flutter_bluetooth.framework/flutter_bluetooth.bundle/Info.plist</key>
@@ -356,33 +356,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GB9v1tjLbxHsqVgaWkwaxOz2IHw=
+			iqKK7iDhmTSpApIymH1MiARsu3Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			KzB9qQ6fAEKRGA+/hvXK1EnzCSHHIOPTszxs4Az+Zxg=
+			GRsYD/P/vF+QS/IsZ5cSyp2ayCa5pXqOSVq4H9KHamg=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BT4QOb5iukVsg7fMdQsnk3iQ3d0=
+			Oj74XOgs38CmeCvO7Rgk7zJeyR8=
 			</data>
 			<key>hash2</key>
 			<data>
-			tjkTXoU7JudK2JHjRe2G/tNny8vtbh217LLjOk9NNGo=
+			eRMR+SX6KrfSrHOQavWLq0+8MVKjdIWbJFdbhjJMxYc=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MZbLDcquhb0Zud0wI1g0oHuQJZA=
+			9DmH7xUMC8JXPvf6+PCpFCXIKfM=
 			</data>
 			<key>hash2</key>
 			<data>
-			hAZDGqxW20s2nvwTgI9u5XY1NHernAPKFOUm299S24s=
+			SinqifhsMqgeEC3Dl74HCLLhaodOVq32GwZPpgxv4Qw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -422,11 +422,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MZbLDcquhb0Zud0wI1g0oHuQJZA=
+			9DmH7xUMC8JXPvf6+PCpFCXIKfM=
 			</data>
 			<key>hash2</key>
 			<data>
-			hAZDGqxW20s2nvwTgI9u5XY1NHernAPKFOUm299S24s=
+			SinqifhsMqgeEC3Dl74HCLLhaodOVq32GwZPpgxv4Qw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/Modules/flutter_bluetooth.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -477,22 +477,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			B9vwKGPPmF6JqPsSIe+SUTnfMKo=
+			wlK/iYzJbvEt/F9aD5bmYS7va68=
 			</data>
 			<key>hash2</key>
 			<data>
-			LslxvRaysdD6d8YoPXm1b3+hjvrHrJNdupGKtf0Usho=
+			ScM0xagzZf9K71f/i12txtSBrmdHkbN6IQPMO48ZScg=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/flutter_bluetooth</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			anWGOh+dVKkmH2SoTiKRFbVTQqM=
+			MST4/N1+ptfOvLKpldxH394HSyU=
 			</data>
 			<key>hash2</key>
 			<data>
-			6LU76JliL3ChVDiqj3B/lVh95DhgzM2fqvgjtdl4yW0=
+			juFJOx9xJorU+vTNP4NQbl6n7JUYXQyJYbuQSBVcAbA=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/flutter_bluetooth.framework/flutter_bluetooth.bundle/Info.plist</key>
