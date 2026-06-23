@@ -2205,6 +2205,70 @@ SWIFT_CLASS("_TtC16protocol_channel31IDOAppRestoreReplyExchangeModel")
 @end
 
 
+/// 睡眠模式获取返回 | Get app sleep mode reply
+SWIFT_CLASS("_TtC16protocol_channel20IDOAppSleepModeModel")
+@interface IDOAppSleepModeModel : NSObject
+/// 1：开启；0：关闭；0xFF：无效/未知
+@property (nonatomic) NSInteger sleepModeSwitch;
+/// 入睡时 0~23
+@property (nonatomic) NSInteger sleepHour;
+/// 入睡分 0~59
+@property (nonatomic) NSInteger sleepMinute;
+/// 起床时 0~23
+@property (nonatomic) NSInteger awakeHour;
+/// 起床分 0~59
+@property (nonatomic) NSInteger awakeMinute;
+/// 重复周期 bit0无效 bit1~bit7周一周日
+@property (nonatomic) NSInteger repeat;
+/// 清醒闹钟重复次数 0~3
+@property (nonatomic) NSInteger wakeAlarmRepeatCnt;
+/// 清醒闹钟提醒延迟 1~15分钟
+@property (nonatomic) NSInteger wakeAlarmDelayTime;
+- (nonnull instancetype)initWithSleepModeSwitch:(NSInteger)sleepModeSwitch sleepHour:(NSInteger)sleepHour sleepMinute:(NSInteger)sleepMinute awakeHour:(NSInteger)awakeHour awakeMinute:(NSInteger)awakeMinute repeat:(NSInteger)repeat wakeAlarmRepeatCnt:(NSInteger)wakeAlarmRepeatCnt wakeAlarmDelayTime:(NSInteger)wakeAlarmDelayTime OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 睡眠模式设置入参 | Set app sleep mode param
+SWIFT_CLASS("_TtC16protocol_channel25IDOAppSleepModeParamModel")
+@interface IDOAppSleepModeParamModel : NSObject
+/// 1：开启；0：关闭
+@property (nonatomic) NSInteger sleepModeSwitch;
+/// 入睡时 0~23
+@property (nonatomic) NSInteger sleepHour;
+/// 入睡分 0~59
+@property (nonatomic) NSInteger sleepMinute;
+/// 起床时 0~23
+@property (nonatomic) NSInteger awakeHour;
+/// 起床分 0~59
+@property (nonatomic) NSInteger awakeMinute;
+/// 重复周期 bit0无效 bit1~bit7周一周日
+@property (nonatomic) NSInteger repeat;
+/// 清醒闹钟重复次数 0~3
+@property (nonatomic) NSInteger wakeAlarmRepeatCnt;
+/// 清醒闹钟提醒延迟 1~15分钟
+@property (nonatomic) NSInteger wakeAlarmDelayTime;
+- (nonnull instancetype)initWithSleepModeSwitch:(NSInteger)sleepModeSwitch sleepHour:(NSInteger)sleepHour sleepMinute:(NSInteger)sleepMinute awakeHour:(NSInteger)awakeHour awakeMinute:(NSInteger)awakeMinute repeat:(NSInteger)repeat wakeAlarmRepeatCnt:(NSInteger)wakeAlarmRepeatCnt wakeAlarmDelayTime:(NSInteger)wakeAlarmDelayTime OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 睡眠模式设置返回 | Set app sleep mode reply
+SWIFT_CLASS("_TtC16protocol_channel25IDOAppSleepModeReplyModel")
+@interface IDOAppSleepModeReplyModel : NSObject
+/// 0：成功；非0：失败
+@property (nonatomic) NSInteger errCode;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 /// app 开始发起运动
 SWIFT_CLASS("_TtC16protocol_channel24IDOAppStartExchangeModel")
 @interface IDOAppStartExchangeModel : NSObject
@@ -5895,6 +5959,10 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) NSInteger alarmCount;
 /// 刷牙
 @property (nonatomic, readonly) BOOL alarmBrushTeeth;
+@property (nonatomic, readonly) BOOL alarmBath;
+@property (nonatomic, readonly) BOOL alarmCourse;
+@property (nonatomic, readonly) BOOL alarmLearn;
+@property (nonatomic, readonly) BOOL alarmPlayTime;
 /// 约会
 @property (nonatomic, readonly) BOOL alarmDating;
 /// 吃饭
@@ -6017,6 +6085,101 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL supportOperateGestureControl;
 /// 设置吃药提醒
 @property (nonatomic, readonly) BOOL supportTakeMedicineReminder;
+/// 通知支持 Zoom Workplace，type 0x82（table71 BIT_5）
+@property (nonatomic, readonly) BOOL reminderZoomWorkplace;
+/// 支持设置运动记录名称（15.108，table71 BIT_6）
+@property (nonatomic, readonly) BOOL supportSetSportRecordName;
+/// app 不显示运动类型设置入口（table71 BIT_7）
+@property (nonatomic, readonly) BOOL supportAppNotDisplaySportTypeSetting;
+/// 通知支持 BUZUD，type 0x83（table72 BIT_0）
+@property (nonatomic, readonly) BOOL reminderBuzud;
+/// 支持手机日历提醒文件下发（02 4B，table71 BIT_4）
+@property (nonatomic, readonly) BOOL v2SupportPhoneCalendarReminder;
+/// 支持获取设备状态（V2 02 49，table71 BIT_0）
+@property (nonatomic, readonly) BOOL supportGetDeviceStatus;
+/// 支持获取设备运动状态（V2 02 49，table71 BIT_1）
+@property (nonatomic, readonly) BOOL supportGetDeviceSportStatus;
+/// 支持睡前故事（table71 BIT_2）
+@property (nonatomic, readonly) BOOL supportBedtimeStory;
+/// 支持第三套运动图标（table71 BIT_3）
+@property (nonatomic, readonly) BOOL supportThirdSportIcon;
+/// 控制测量血压（06 06，table70 BIT_0）
+@property (nonatomic, readonly) BOOL supportControlMeasureBp;
+/// 控制测量心率（06 06，table70 BIT_1）
+@property (nonatomic, readonly) BOOL supportControlMeasureHr;
+/// 控制测量血氧（06 06，table70 BIT_2）
+@property (nonatomic, readonly) BOOL supportControlMeasureSpo2;
+/// 控制测量体成分（06 06，table70 BIT_3）
+@property (nonatomic, readonly) BOOL supportControlMeasureBodyComposition;
+/// 控制测量压力（06 06，table70 BIT_4）
+@property (nonatomic, readonly) BOOL supportControlMeasureStress;
+/// 控制一键测量（06 06，table70 BIT_5）
+@property (nonatomic, readonly) BOOL supportControlMeasureOneClick;
+/// 控制测量体温（06 06，table70 BIT_6）
+@property (nonatomic, readonly) BOOL supportControlMeasureTemperature;
+/// 睡眠模式设置获取（SET:03 4C / GET:02 4C，table70 BIT_7）
+@property (nonatomic, readonly) BOOL supportAppSleepMode;
+/// 多运动同步 body_age（table69 BIT_0）
+@property (nonatomic, readonly) BOOL supportSyncActivityDataBodyAge;
+/// idb05 步数目标用本地时间（table69 BIT_1）
+@property (nonatomic, readonly) BOOL supportIdb05UseLocaltimeForStepGoalCmd;
+/// 查询需设置佩戴手的运动类型（table69 BIT_2）
+@property (nonatomic, readonly) BOOL supportGetSportTypesRequiringWristSideSetting;
+/// 支持训练计划同步（table69 BIT_3）
+@property (nonatomic, readonly) BOOL supportTrainingPlan;
+/// 多运动交互使用 v21（table69 BIT_4）
+@property (nonatomic, readonly) BOOL supportExchangeActivityUseV21;
+/// 设备振动与铃声（table69 BIT_5）
+@property (nonatomic, readonly) BOOL supportDeviceVibrationRingtone;
+/// V3闹钟不支持延时分钟（table68 BIT_0）
+@property (nonatomic, readonly) BOOL v3AlarmNotSupportDelayMin;
+/// 三环目标基于固件（table68 BIT_1）
+@property (nonatomic, readonly) BOOL supportThreeRingGoalBasedOnFirmware;
+/// 健康数据同步含时区字段（table68 BIT_3）
+@property (nonatomic, readonly) BOOL supportSyncHealthDataWithTimeZone;
+/// 获取固件配置上限（table68 BIT_6）
+@property (nonatomic, readonly) BOOL supportGetFirmwareSupportedConfig;
+/// 运动中全量快照（table68 BIT_7）
+@property (nonatomic, readonly) BOOL supportV3ActivityExchangeFullSnapshot;
+/// 通知支持 Google Messages，type 0x7B（table62 BIT_3）
+@property (nonatomic, readonly) BOOL reminderGoogleMessages;
+/// 通知支持 Apple Calendar，type 0x7C（table62 BIT_4）
+@property (nonatomic, readonly) BOOL reminderAppleCalendar;
+/// 通知支持 Apple Mail，type 0x7D（table62 BIT_5）
+@property (nonatomic, readonly) BOOL reminderAppleMail;
+/// 通知支持 Google Calendar，type 0x52（table62 BIT_6）
+@property (nonatomic, readonly) BOOL reminderGoogleCalendar;
+/// 支持 Health-U 通知，type 0x7F（table62 BIT_7）
+@property (nonatomic, readonly) BOOL reminderHealthU;
+/// 支持宠物设备（table66）
+@property (nonatomic, readonly) BOOL supportPetDevice;
+/// 支持 Zalo 通知（table66）
+@property (nonatomic, readonly) BOOL reminderZalo;
+/// 支持滴滴打车通知（table67）
+@property (nonatomic, readonly) BOOL reminderDidiTaxi;
+/// 支持抬腕亮屏时间段（table67）
+@property (nonatomic, readonly) BOOL supportUpHandGestureTimeRange;
+/// 支持查询自定义壁纸表盘状态（table67）
+@property (nonatomic, readonly) BOOL supportQueryCustomWallpaperDialState;
+/// 支持 APP 节拍器（table67）
+@property (nonatomic, readonly) BOOL supportAppMetronome;
+/// 支持振动设置（table67）
+@property (nonatomic, readonly) BOOL supportVibrationSetting;
+/// 支持闹钟音量设置（table67）
+@property (nonatomic, readonly) BOOL supportAlarmVolumeSetting;
+/// 支持来电提醒音量设置（table67）
+@property (nonatomic, readonly) BOOL supportCallReminderVolumeSetting;
+/// V3闹钟不支持重复（table67）
+@property (nonatomic, readonly) BOOL v3AlarmNotSupportRepeat;
+@property (nonatomic, readonly) BOOL mountaineering;
+@property (nonatomic, readonly) BOOL squat;
+@property (nonatomic, readonly) BOOL surfing;
+@property (nonatomic, readonly) BOOL footvolley;
+@property (nonatomic, readonly) BOOL parachuting;
+@property (nonatomic, readonly) BOOL orienteering;
+@property (nonatomic, readonly) BOOL pickleball;
+@property (nonatomic, readonly) BOOL snowboard;
+@property (nonatomic, readonly) BOOL lunge;
 - (NSString * _Nullable)printProperties SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -8615,6 +8778,56 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOSetNoticeStatusModel")
 @property (nonatomic) BOOL isOnAlipay;
 /// 今日头条(Toutiao)
 @property (nonatomic) BOOL isOnToutiao;
+/// 天猫(TMail) | TMail reminder (0x59)
+@property (nonatomic) BOOL isOnTmail;
+/// 京东(JD) | JD reminder (0x5A)
+@property (nonatomic) BOOL isOnJD;
+/// 拼多多 | Pinduoduo reminder (0x5B)
+@property (nonatomic) BOOL isOnPinduoduo;
+/// 百度 | Baidu reminder (0x5C)
+@property (nonatomic) BOOL isOnBaidu;
+/// 美团 | Meituan reminder (0x5D)
+@property (nonatomic) BOOL isOnMeituan;
+/// 饿了么 | ele.me reminder (0x5E)
+@property (nonatomic) BOOL isOnEleme;
+/// 抖音 | Douyin reminder (0x5F)
+@property (nonatomic) BOOL isOnDouyin;
+/// 新浪微博 | Weibo reminder (0x60)
+@property (nonatomic) BOOL isOnHomeWeibo;
+/// Titan Smart World reminder (0x61)
+@property (nonatomic) BOOL isOnTitanSmartWorld;
+/// Ryze Connect reminder (0x62)
+@property (nonatomic) BOOL isOnRyzeConnect;
+/// LOOPS FIT reminder (0x63)
+@property (nonatomic) BOOL isOnLoopsFit;
+/// 小红书(rednote) reminder (0x64)
+@property (nonatomic) BOOL isOnRedNote;
+/// Facebook Messenger reminder (0x65)
+@property (nonatomic) BOOL isOnFacebookMessenger;
+/// Nubank reminder (0x66)
+@property (nonatomic) BOOL isOnNubank;
+/// Bradesco reminder (0x67)
+@property (nonatomic) BOOL isOnBradesco;
+/// Itaú reminder (0x68)
+@property (nonatomic) BOOL isOnItau;
+/// Google Messages reminder (0x7B)
+@property (nonatomic) BOOL isOnGoogleMessages;
+/// Apple Calendar reminder (0x7C)
+@property (nonatomic) BOOL isOnAppleCalendar;
+/// Apple Mail reminder (0x7D)
+@property (nonatomic) BOOL isOnAppleMail;
+/// Google Calendar reminder (0x7E)
+@property (nonatomic) BOOL isOnGoogleCalendar;
+/// Health &U reminder (0x7F)
+@property (nonatomic) BOOL isOnHealthU;
+/// Zalo reminder V3 (0x80)
+@property (nonatomic) BOOL isOnZalo;
+/// 滴滴打车(DiDi Taxi) reminder (0x81)
+@property (nonatomic) BOOL isOnDidiTaxi;
+/// Zoom Workplace reminder (0x82)
+@property (nonatomic) BOOL isOnZoomWorkplace;
+/// BUZUD reminder (0x83)
+@property (nonatomic) BOOL isOnBuzud;
 + (IDOSetNoticeStatusModel * _Nonnull)createDefaultModel SWIFT_WARN_UNUSED_RESULT;
 + (IDOSetNoticeStatusModel * _Nonnull)createAllOffModel SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;

@@ -525,6 +525,12 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOBatteryReminderSwitchModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOBatteryReminderSwitchModel
   }
+  public struct getAppSleepMode : protocol_channel.IDOCmdProtocol {
+    public init()
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOAppSleepModeModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOAppSleepModeModel
+  }
   public struct getFindPhoneSwitch : protocol_channel.IDOCmdProtocol {
     public init()
     @discardableResult
@@ -1280,6 +1286,12 @@ public struct Cmds {
     @discardableResult
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOBatteryReminderSwitchReplyModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOBatteryReminderSwitchReplyModel
+  }
+  public struct setAppSleepMode : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOAppSleepModeParamModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOAppSleepModeReplyModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOAppSleepModeReplyModel
   }
   public struct setPetInfo : protocol_channel.IDOCmdProtocol {
     public init(_ param: protocol_channel.IDOPetInfoParamModel)
@@ -3230,6 +3242,44 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
+@objc @objcMembers public class IDOAppSleepModeModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var sleepModeSwitch: Swift.Int
+  @objc public var sleepHour: Swift.Int
+  @objc public var sleepMinute: Swift.Int
+  @objc public var awakeHour: Swift.Int
+  @objc public var awakeMinute: Swift.Int
+  @objc public var `repeat`: Swift.Int
+  @objc public var wakeAlarmRepeatCnt: Swift.Int
+  @objc public var wakeAlarmDelayTime: Swift.Int
+  @objc public init(sleepModeSwitch: Swift.Int = 0, sleepHour: Swift.Int = 22, sleepMinute: Swift.Int = 0, awakeHour: Swift.Int = 7, awakeMinute: Swift.Int = 0, repeat: Swift.Int = 0x3E, wakeAlarmRepeatCnt: Swift.Int = 3, wakeAlarmDelayTime: Swift.Int = 10)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOAppSleepModeParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var sleepModeSwitch: Swift.Int
+  @objc public var sleepHour: Swift.Int
+  @objc public var sleepMinute: Swift.Int
+  @objc public var awakeHour: Swift.Int
+  @objc public var awakeMinute: Swift.Int
+  @objc public var `repeat`: Swift.Int
+  @objc public var wakeAlarmRepeatCnt: Swift.Int
+  @objc public var wakeAlarmDelayTime: Swift.Int
+  @objc public init(sleepModeSwitch: Swift.Int, sleepHour: Swift.Int = 22, sleepMinute: Swift.Int = 0, awakeHour: Swift.Int = 7, awakeMinute: Swift.Int = 0, repeat: Swift.Int = 0x3E, wakeAlarmRepeatCnt: Swift.Int = 3, wakeAlarmDelayTime: Swift.Int = 10)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOAppSleepModeReplyModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var errCode: Swift.Int
+  @objc public init(errCode: Swift.Int)
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
 public protocol IDOBaseModel : Swift.Decodable, Swift.Encodable {
   func toJsonString() -> Swift.String?
 }
@@ -5001,6 +5051,10 @@ public protocol IDOCmdProtocol {
   @objc var getSupportAppBaseInformation: Swift.Bool { get }
   @objc var alarmCount: Swift.Int { get }
   @objc var alarmBrushTeeth: Swift.Bool { get }
+  @objc var alarmBath: Swift.Bool { get }
+  @objc var alarmCourse: Swift.Bool { get }
+  @objc var alarmLearn: Swift.Bool { get }
+  @objc var alarmPlayTime: Swift.Bool { get }
   @objc var alarmDating: Swift.Bool { get }
   @objc var alarmDinner: Swift.Bool { get }
   @objc var alarmMedicine: Swift.Bool { get }
@@ -5062,6 +5116,58 @@ public protocol IDOCmdProtocol {
   @objc var supportOperateSetGame: Swift.Bool { get }
   @objc var supportOperateGestureControl: Swift.Bool { get }
   @objc var supportTakeMedicineReminder: Swift.Bool { get }
+  @objc var reminderZoomWorkplace: Swift.Bool { get }
+  @objc var supportSetSportRecordName: Swift.Bool { get }
+  @objc var supportAppNotDisplaySportTypeSetting: Swift.Bool { get }
+  @objc var reminderBuzud: Swift.Bool { get }
+  @objc var v2SupportPhoneCalendarReminder: Swift.Bool { get }
+  @objc var supportGetDeviceStatus: Swift.Bool { get }
+  @objc var supportGetDeviceSportStatus: Swift.Bool { get }
+  @objc var supportBedtimeStory: Swift.Bool { get }
+  @objc var supportThirdSportIcon: Swift.Bool { get }
+  @objc var supportControlMeasureBp: Swift.Bool { get }
+  @objc var supportControlMeasureHr: Swift.Bool { get }
+  @objc var supportControlMeasureSpo2: Swift.Bool { get }
+  @objc var supportControlMeasureBodyComposition: Swift.Bool { get }
+  @objc var supportControlMeasureStress: Swift.Bool { get }
+  @objc var supportControlMeasureOneClick: Swift.Bool { get }
+  @objc var supportControlMeasureTemperature: Swift.Bool { get }
+  @objc var supportAppSleepMode: Swift.Bool { get }
+  @objc var supportSyncActivityDataBodyAge: Swift.Bool { get }
+  @objc var supportIdb05UseLocaltimeForStepGoalCmd: Swift.Bool { get }
+  @objc var supportGetSportTypesRequiringWristSideSetting: Swift.Bool { get }
+  @objc var supportTrainingPlan: Swift.Bool { get }
+  @objc var supportExchangeActivityUseV21: Swift.Bool { get }
+  @objc var supportDeviceVibrationRingtone: Swift.Bool { get }
+  @objc var v3AlarmNotSupportDelayMin: Swift.Bool { get }
+  @objc var supportThreeRingGoalBasedOnFirmware: Swift.Bool { get }
+  @objc var supportSyncHealthDataWithTimeZone: Swift.Bool { get }
+  @objc var supportGetFirmwareSupportedConfig: Swift.Bool { get }
+  @objc var supportV3ActivityExchangeFullSnapshot: Swift.Bool { get }
+  @objc var reminderGoogleMessages: Swift.Bool { get }
+  @objc var reminderAppleCalendar: Swift.Bool { get }
+  @objc var reminderAppleMail: Swift.Bool { get }
+  @objc var reminderGoogleCalendar: Swift.Bool { get }
+  @objc var reminderHealthU: Swift.Bool { get }
+  @objc var supportPetDevice: Swift.Bool { get }
+  @objc var reminderZalo: Swift.Bool { get }
+  @objc var reminderDidiTaxi: Swift.Bool { get }
+  @objc var supportUpHandGestureTimeRange: Swift.Bool { get }
+  @objc var supportQueryCustomWallpaperDialState: Swift.Bool { get }
+  @objc var supportAppMetronome: Swift.Bool { get }
+  @objc var supportVibrationSetting: Swift.Bool { get }
+  @objc var supportAlarmVolumeSetting: Swift.Bool { get }
+  @objc var supportCallReminderVolumeSetting: Swift.Bool { get }
+  @objc var v3AlarmNotSupportRepeat: Swift.Bool { get }
+  @objc var mountaineering: Swift.Bool { get }
+  @objc var squat: Swift.Bool { get }
+  @objc var surfing: Swift.Bool { get }
+  @objc var footvolley: Swift.Bool { get }
+  @objc var parachuting: Swift.Bool { get }
+  @objc var orienteering: Swift.Bool { get }
+  @objc var pickleball: Swift.Bool { get }
+  @objc var snowboard: Swift.Bool { get }
+  @objc var lunge: Swift.Bool { get }
   @objc func printProperties() -> Swift.String?
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class IDOGestureTypeItemModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
@@ -6114,6 +6220,31 @@ public protocol IDOCmdProtocol {
   @objc public var isOnDingTalk: Swift.Bool
   @objc public var isOnAlipay: Swift.Bool
   @objc public var isOnToutiao: Swift.Bool
+  @objc public var isOnTmail: Swift.Bool
+  @objc public var isOnJD: Swift.Bool
+  @objc public var isOnPinduoduo: Swift.Bool
+  @objc public var isOnBaidu: Swift.Bool
+  @objc public var isOnMeituan: Swift.Bool
+  @objc public var isOnEleme: Swift.Bool
+  @objc public var isOnDouyin: Swift.Bool
+  @objc public var isOnHomeWeibo: Swift.Bool
+  @objc public var isOnTitanSmartWorld: Swift.Bool
+  @objc public var isOnRyzeConnect: Swift.Bool
+  @objc public var isOnLoopsFit: Swift.Bool
+  @objc public var isOnRedNote: Swift.Bool
+  @objc public var isOnFacebookMessenger: Swift.Bool
+  @objc public var isOnNubank: Swift.Bool
+  @objc public var isOnBradesco: Swift.Bool
+  @objc public var isOnItau: Swift.Bool
+  @objc public var isOnGoogleMessages: Swift.Bool
+  @objc public var isOnAppleCalendar: Swift.Bool
+  @objc public var isOnAppleMail: Swift.Bool
+  @objc public var isOnGoogleCalendar: Swift.Bool
+  @objc public var isOnHealthU: Swift.Bool
+  @objc public var isOnZalo: Swift.Bool
+  @objc public var isOnDidiTaxi: Swift.Bool
+  @objc public var isOnZoomWorkplace: Swift.Bool
+  @objc public var isOnBuzud: Swift.Bool
   @objc public static func createDefaultModel() -> protocol_channel.IDOSetNoticeStatusModel
   @objc public static func createAllOffModel() -> protocol_channel.IDOSetNoticeStatusModel
   required public init(from decoder: any Swift.Decoder) throws
