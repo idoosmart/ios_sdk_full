@@ -369,8 +369,15 @@ SWIFT_CLASS("_TtC16protocol_channel8CmdError")
 @class IDOBatteryReminderSwitchModel;
 @class IDOFindPhoneSwitchModel;
 @class IDODeviceStatusInfoModel;
+@class IDOFirmwareDisplayVersionModel;
 @class IDOSportTypesRequiringWristSideSettingModel;
 @class IDODeviceVibrationRingtoneModel;
+@class IDOPhoneCalendarSyncSwitchModel;
+@class IDOPhoneCalendarSyncSetModel;
+@class IDOPhoneCalendarSyncSetReplyModel;
+@class IDOPhoneCalendarDeleteListModel;
+@class IDOPhoneCalendarSyncDeleteModel;
+@class IDOPhoneCalendarSyncDeleteReplyModel;
 @class IDOPetInfoModel;
 @class IDOCmdGetResponseModel;
 @class IDOFlashBinInfoModel;
@@ -570,10 +577,20 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 + (id <IDOCancellable> _Nonnull)getFindPhoneSwitch:(void (^ _Nonnull)(CmdError * _Nonnull, IDOFindPhoneSwitchModel * _Nullable))completion;
 /// 获取设备状态（GET:0x02/0x49）
 + (id <IDOCancellable> _Nonnull)getDeviceStatusInfoWithGetType:(NSInteger)getType :(void (^ _Nonnull)(CmdError * _Nonnull, IDODeviceStatusInfoModel * _Nullable))completion;
+/// 获取固件显示版本号（GET:0x02/0x4B）
++ (id <IDOCancellable> _Nonnull)getFirmwareDisplayVersion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOFirmwareDisplayVersionModel * _Nullable))completion;
 /// 查询需设置左右手佩戴类型的运动类型列表（V3 15.104）
 + (id <IDOCancellable> _Nonnull)getSportTypesRequiringWristSideSetting:(void (^ _Nonnull)(CmdError * _Nonnull, IDOSportTypesRequiringWristSideSettingModel * _Nullable))completion;
 /// 设备振动与铃声设置（V3 15.106，operate=2）
 + (id <IDOCancellable> _Nonnull)setDeviceVibrationRingtone:(IDODeviceVibrationRingtoneModel * _Nonnull)model :(void (^ _Nonnull)(CmdError * _Nonnull, IDODeviceVibrationRingtoneModel * _Nullable))completion;
+/// 查询手机日历同步开关
++ (id <IDOCancellable> _Nonnull)getPhoneCalendarSyncSwitch:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPhoneCalendarSyncSwitchModel * _Nullable))completion;
+/// 设置手机日历同步开关与权限
++ (id <IDOCancellable> _Nonnull)setPhoneCalendarSync:(IDOPhoneCalendarSyncSetModel * _Nonnull)model :(void (^ _Nonnull)(CmdError * _Nonnull, IDOPhoneCalendarSyncSetReplyModel * _Nullable))completion;
+/// 查询手机日历待删列表
++ (id <IDOCancellable> _Nonnull)getPhoneCalendarDeleteList:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPhoneCalendarDeleteListModel * _Nullable))completion;
+/// 增量同步删除手机日历条目
++ (id <IDOCancellable> _Nonnull)setPhoneCalendarSyncDelete:(IDOPhoneCalendarSyncDeleteModel * _Nonnull)model :(void (^ _Nonnull)(CmdError * _Nonnull, IDOPhoneCalendarSyncDeleteReplyModel * _Nullable))completion;
 /// 获取宠物信息
 /// Get pet info event number
 + (id <IDOCancellable> _Nonnull)getPetInfo:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPetInfoModel * _Nullable))completion;
@@ -836,6 +853,9 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 获取表盘列表 v3
 /// Getting watch face list for V3 (New)
 + (id <IDOCancellable> _Nonnull)getWatchListV3:(void (^ _Nonnull)(CmdError * _Nonnull, IDOWatchListModel * _Nullable))completion;
+/// 获取表盘列表 v3（按 state bitmask 查询，仅 <code>supportWatchFileListUseVersion</code> 有效）
+/// Getting watch face list for V3 with query state flags
++ (id <IDOCancellable> _Nonnull)getWatchListV3:(NSInteger)state completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOWatchListModel * _Nullable))completion;
 /// 获取表盘列表 v2
 /// Get Watch Face List in V2
 + (id <IDOCancellable> _Nonnull)getWatchListV2:(void (^ _Nonnull)(CmdError * _Nonnull, IDOWatchListV2Model * _Nullable))completion;
@@ -1782,6 +1802,17 @@ SWIFT_CLASS("_TtC16protocol_channel34IDOAppBleRestoreReplyExchangeModel")
 @end
 
 
+/// APP设置下载状态（15.92，0x33/0x88）
+SWIFT_CLASS("_TtC16protocol_channel29IDOAppDownloadStatusInfoModel")
+@interface IDOAppDownloadStatusInfoModel : NSObject
+@property (nonatomic) NSInteger operate;
+@property (nonatomic, copy) NSString * _Nullable id;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 /// app 发起运动结束
 /// Generated class from Pigeon that represents data sent in messages.
 SWIFT_CLASS("_TtC16protocol_channel22IDOAppEndExchangeModel")
@@ -1936,11 +1967,18 @@ SWIFT_CLASS("_TtC16protocol_channel15IDOAppInfoModel")
 @property (nonatomic, copy) NSString * _Nonnull userName;
 /// 1：发送
 @property (nonatomic) NSInteger operate;
+@property (nonatomic, copy) NSString * _Nullable userId;
+@property (nonatomic, copy) NSString * _Nullable token;
+@property (nonatomic, copy) NSString * _Nullable domainName;
+@property (nonatomic, copy) NSString * _Nullable appVersion;
+@property (nonatomic, copy) NSString * _Nullable appKey;
+@property (nonatomic, copy) NSString * _Nullable appFaceVersion;
 - (nonnull instancetype)initWithUserName:(NSString * _Nonnull)userName operate:(NSInteger)operate OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 /// app 交换运动数据
@@ -2069,16 +2107,16 @@ SWIFT_CLASS("_TtC16protocol_channel29IDOAppIngV3ReplyExchangeModel")
 @end
 
 
-/// Application list style parameter model
+/// 应用列表样式入参（设置 / 查询 / 删除）
 SWIFT_CLASS("_TtC16protocol_channel25IDOAppListStyleParamModel")
 @interface IDOAppListStyleParamModel : NSObject
-/// Operation type: 1:Set 2:Query 3:Delete
+/// 操作：1 设置，2 查询，3 删除
 @property (nonatomic) NSInteger operate;
-/// Font color
+/// 字体颜色（operate=1 时有效）
 @property (nonatomic) NSInteger fontColor;
-/// Wallpaper name
+/// 壁纸名称（operate=1/3 时有效）
 @property (nonatomic, copy) NSString * _Nonnull name;
-/// Wallpaper version
+/// 背景壁纸版本（operate=1 时有效）
 @property (nonatomic) NSInteger wallpaperVersion;
 - (nonnull instancetype)initWithOperate:(NSInteger)operate fontColor:(NSInteger)fontColor name:(NSString * _Nonnull)name wallpaperVersion:(NSInteger)wallpaperVersion OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
@@ -2088,22 +2126,22 @@ SWIFT_CLASS("_TtC16protocol_channel25IDOAppListStyleParamModel")
 
 @class IDOApplicationListItem;
 
-/// Application list style reply model
+/// 应用列表样式回复
 SWIFT_CLASS("_TtC16protocol_channel25IDOAppListStyleReplyModel")
 @interface IDOAppListStyleReplyModel : NSObject
-/// Operation type: 1:Set 2:Query 3:Delete
+/// 操作：1 设置，2 查询，3 删除
 @property (nonatomic) NSInteger operate;
-/// Error code: 0:Success 1:Failure
+/// 错误码：0 成功，1 失败
 @property (nonatomic) NSInteger errorCode;
-/// Total number of application list wallpapers
+/// 应用列表壁纸总个数
 @property (nonatomic) NSInteger applicationListTotalNum;
-/// Number of application list wallpapers already used, max 20
+/// 已使用个数（最大 20）
 @property (nonatomic) NSInteger userApplicationListItemNum;
-/// Total capacity of application list wallpapers, unit: Byte
+/// 总容量，单位 Byte
 @property (nonatomic) NSInteger applicationListCapacitySize;
-/// Used capacity of application list wallpapers, unit: Byte
+/// 已使用容量，单位 Byte
 @property (nonatomic) NSInteger userApplicationListCapacitySize;
-/// Application list wallpaper items, controlled by used count, valid for query operation
+/// 已使用列表项（查询有效；对齐协议库 JSON key <code>p_list_item</code>）
 @property (nonatomic, copy) NSArray<IDOApplicationListItem *> * _Nullable listItems;
 - (nonnull instancetype)initWithOperate:(NSInteger)operate errorCode:(NSInteger)errorCode applicationListTotalNum:(NSInteger)applicationListTotalNum userApplicationListItemNum:(NSInteger)userApplicationListItemNum applicationListCapacitySize:(NSInteger)applicationListCapacitySize userApplicationListCapacitySize:(NSInteger)userApplicationListCapacitySize listItems:(NSArray<IDOApplicationListItem *> * _Nullable)listItems OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
@@ -2310,9 +2348,8 @@ SWIFT_CLASS("_TtC16protocol_channel21IDOAppletControlModel")
 @interface IDOAppletControlModel : NSObject
 /// 0:无效 1:启动小程序 2:删除小程序 3:获取已安装的小程序列表
 @property (nonatomic) NSInteger operate;
-/// 小程序名称 operate=0/operate=3无效,获取操作不需要下发名称，最大29个字节
+/// 小程序名称 operate=1/2 有效；operate=3 无需传
 @property (nonatomic, copy) NSString * _Nullable appName;
-- (nonnull instancetype)initWithOperate:(NSInteger)operate appName:(NSString * _Nullable)appName OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -2325,9 +2362,13 @@ SWIFT_CLASS("_TtC16protocol_channel17IDOAppletInfoItem")
 @property (nonatomic, copy) NSString * _Nonnull appName;
 /// 小程序大小 单位Byte
 @property (nonatomic) NSInteger size;
-/// 小程序版本号
+/// 小程序版本号：默认版为三级版本字符串；v0x30 为 <code>0.0.{mini_program_version}</code> 格式
 @property (nonatomic, copy) NSString * _Nonnull version;
-- (nonnull instancetype)initWithAppName:(NSString * _Nonnull)appName size:(NSInteger)size version:(NSString * _Nonnull)version OBJC_DESIGNATED_INITIALIZER;
+/// v0x30：版本展示名 <code>mini_program_version_name</code>
+@property (nonatomic, copy) NSString * _Nullable versionName;
+/// v0x30：单条状态，见 <code>IDOAppletItemState</code>
+@property (nonatomic) NSInteger state;
+- (nonnull instancetype)initWithAppName:(NSString * _Nonnull)appName size:(NSInteger)size version:(NSString * _Nonnull)version state:(NSInteger)state versionName:(NSString * _Nullable)versionName OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -2342,20 +2383,45 @@ SWIFT_CLASS("_TtC16protocol_channel18IDOAppletInfoModel")
 @property (nonatomic, copy) NSArray<IDOAppletInfoItem *> * _Nullable infoItem;
 /// 0:无效 1:启动小程序 2:删除小程序 3:获取已安装的小程序列表
 @property (nonatomic) NSInteger operate;
-/// 剩余空间 单位Byte
-@property (nonatomic) NSInteger residualSpace;
-/// 总空间 单位Byte
-@property (nonatomic) NSInteger totalSpace;
-- (nonnull instancetype)initWithErrorCode:(NSInteger)errorCode infoItem:(NSArray<IDOAppletInfoItem *> * _Nonnull)infoItem miniProgramNum:(NSInteger)miniProgramNum operate:(NSInteger)operate residualSpace:(NSInteger)residualSpace totalSpace:(NSInteger)totalSpace OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+/// Single mini program state in <code>IDOAppletInfoItem.state</code> (response, not a bitmask).
+typedef SWIFT_ENUM(NSInteger, IDOAppletItemState, open) {
+  IDOAppletItemStateUnknown = 0,
+  IDOAppletItemStateDownloading = 1,
+  IDOAppletItemStateInstalling = 2,
+  IDOAppletItemStateInstalled = 3,
+};
 
-/// Application list wallpaper item
+/// Query scope bitmask for <code>setAppletControl</code> list query (<code>operate=3</code>).
+/// Valid when firmware enables <code>setSupportControlMiniProgramVersion30</code>.
+typedef SWIFT_ENUM(NSInteger, IDOAppletListQueryType, open) {
+/// bit0: mini programs currently downloading
+  IDOAppletListQueryTypeDownloading = 1,
+/// bit1: mini programs currently installing
+  IDOAppletListQueryTypeInstalling = 2,
+/// bit2: installed mini programs
+  IDOAppletListQueryTypeInstalled = 4,
+};
+
+
+/// 应用列表壁纸项
 SWIFT_CLASS("_TtC16protocol_channel22IDOApplicationListItem")
 @interface IDOApplicationListItem : NSObject
+/// 序号，从 0 开始
+@property (nonatomic) NSInteger sortNumber;
+/// 字体颜色
+@property (nonatomic) NSInteger fontColor;
+/// 占用空间，单位 byte
+@property (nonatomic) NSInteger size;
+/// 壁纸名称
+@property (nonatomic, copy) NSString * _Nonnull name;
+/// 背景壁纸版本
+@property (nonatomic) NSInteger wallpaperVersion;
+- (nonnull instancetype)initWithSortNumber:(NSInteger)sortNumber fontColor:(NSInteger)fontColor size:(NSInteger)size name:(NSString * _Nonnull)name wallpaperVersion:(NSInteger)wallpaperVersion OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -3699,6 +3765,21 @@ SWIFT_CLASS("_TtC16protocol_channel22IDODataTranConfigModel")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+/// 文件传输配置获取（GET:0x02/0xE9）请求
+SWIFT_CLASS("_TtC16protocol_channel27IDODataTranConfigParamModel")
+@interface IDODataTranConfigParamModel : NSObject
+@property (nonatomic) NSInteger type;
+@property (nonatomic) NSInteger evtType;
+@property (nonatomic) NSInteger sportType;
+@property (nonatomic) NSInteger medicineType;
+@property (nonatomic) NSInteger photoEffectType;
+- (nonnull instancetype)initWithType:(NSInteger)type evtType:(NSInteger)evtType sportType:(NSInteger)sportType medicineType:(NSInteger)medicineType photoEffectType:(NSInteger)photoEffectType OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// 数据项类型
 typedef SWIFT_ENUM(NSInteger, IDODataType, open) {
   IDODataTypeNone = 0x00,
@@ -4853,6 +4934,17 @@ SWIFT_CLASS("_TtC16protocol_channel18IDOExchangeV3Model")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+/// 跌倒监测开关（GET/SET:0x02/0x58 · 0x03/0x58）
+SWIFT_CLASS("_TtC16protocol_channel28IDOFallMonitoringSwitchModel")
+@interface IDOFallMonitoringSwitchModel : NSObject
+/// 1 开 / 0 关 / 0xFF 无效（GET 回复）
+@property (nonatomic) NSInteger fallMonitoringSwitch;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @class IDOTransTypeClass;
 @class IDOTransBaseModel;
 enum IDOTransStatus : NSInteger;
@@ -4898,6 +4990,79 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOFindPhoneSwitchModel")
 /// 是否开启寻找手机（对应协议 status == 0xAA）
 @property (nonatomic) BOOL onOff;
 - (nonnull instancetype)initOnOff:(BOOL)onOff OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 获取固件显示版本号（GET:0x02/0x4B）回复
+SWIFT_CLASS("_TtC16protocol_channel30IDOFirmwareDisplayVersionModel")
+@interface IDOFirmwareDisplayVersionModel : NSObject
+/// 错误码；0 表示成功
+@property (nonatomic) NSInteger errCode;
+/// 固件 UI 显示版本号，如 “1_00_09”
+@property (nonatomic, copy) NSString * _Nonnull displayVersion;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode displayVersion:(NSString * _Nonnull)displayVersion OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 固件上报定位基站项
+SWIFT_CLASS("_TtC16protocol_channel39IDOFirmwarePositionBaseStationItemModel")
+@interface IDOFirmwarePositionBaseStationItemModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// 固件上报定位 GPS 项
+SWIFT_CLASS("_TtC16protocol_channel31IDOFirmwarePositionGpsItemModel")
+@interface IDOFirmwarePositionGpsItemModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class IDOFirmwarePositionWifiItemModel;
+
+/// 固件上报定位详情项
+SWIFT_CLASS("_TtC16protocol_channel32IDOFirmwarePositionInfoItemModel")
+@interface IDOFirmwarePositionInfoItemModel : NSObject
+@property (nonatomic, strong) IDOFirmwarePositionGpsItemModel * _Nullable gpsInfoItem;
+@property (nonatomic, copy) NSArray<IDOFirmwarePositionBaseStationItemModel *> * _Nullable stationInfoItems;
+@property (nonatomic, copy) NSArray<IDOFirmwarePositionWifiItemModel *> * _Nullable wifiInfoItems;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// 固件上报定位信息（15.93，0x33/0x89）
+SWIFT_CLASS("_TtC16protocol_channel28IDOFirmwarePositionInfoModel")
+@interface IDOFirmwarePositionInfoModel : NSObject
+@property (nonatomic) NSInteger operate;
+@property (nonatomic, strong) IDOFirmwarePositionInfoItemModel * _Nullable positionInfoItem;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 固件上报定位 WiFi 项
+SWIFT_CLASS("_TtC16protocol_channel32IDOFirmwarePositionWifiItemModel")
+@interface IDOFirmwarePositionWifiItemModel : NSObject
+@property (nonatomic, copy) NSString * _Nullable ssid;
+@property (nonatomic, copy) NSString * _Nullable mac;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// 固件状态信息查询（GET:0x02/0x48）回复
+SWIFT_CLASS("_TtC16protocol_channel26IDOFirmwareStatusInfoModel")
+@interface IDOFirmwareStatusInfoModel : NSObject
+/// 智能模式：1 全智能 / 2 轻智能
+@property (nonatomic) NSInteger intelligentMode;
+/// 网络状态位掩码：bit0 WIFI / bit1 4G
+@property (nonatomic) NSInteger networkStatus;
+- (nonnull instancetype)initWithIntelligentMode:(NSInteger)intelligentMode networkStatus:(NSInteger)networkStatus OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -6094,11 +6259,13 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 /// 通知支持 BUZUD，type 0x83（table72 BIT_0）
 @property (nonatomic, readonly) BOOL reminderBuzud;
 /// 支持手机日历提醒文件下发（02 4B，table71 BIT_4）
-@property (nonatomic, readonly) BOOL v2SupportPhoneCalendarReminder;
+@property (nonatomic, readonly) BOOL supportPhoneCalendarReminder;
 /// 支持获取设备状态（V2 02 49，table71 BIT_0）
 @property (nonatomic, readonly) BOOL supportGetDeviceStatus;
 /// 支持获取设备运动状态（V2 02 49，table71 BIT_1）
 @property (nonatomic, readonly) BOOL supportGetDeviceSportStatus;
+/// 支持获取固件显示版本号（V2 02 4B，table72 BIT_3）
+@property (nonatomic, readonly) BOOL supportGetFirmwareDisplayVersion;
 /// 支持睡前故事（table71 BIT_2）
 @property (nonatomic, readonly) BOOL supportBedtimeStory;
 /// 支持第三套运动图标（table71 BIT_3）
@@ -6673,38 +6840,38 @@ SWIFT_CLASS("_TtC16protocol_channel25IDOHeartRateIntervalModel")
 /// Unit: times/minute
 @property (nonatomic) NSInteger userMaxHr;
 /// 热身运动心率区间
-/// 计算规则：(200-年龄) * 50
+/// 计算规则：(220-年龄) * 50
 /// 单位:次/分钟
 /// Warm-up exercise heart rate zone
-/// Calculation rule: (200-age) * 50
+/// Calculation rule: (220-age) * 50
 /// Unit: times/minute
 @property (nonatomic) NSInteger range1;
 /// 脂肪燃烧心率区间
-/// 计算规则：(200-年龄) * 60
+/// 计算规则：(220-年龄) * 60
 /// 单位:次/分钟
 /// Fat burning heart rate zone
-/// Calculation rule: (200-age) * 60
+/// Calculation rule: (220-age) * 60
 /// Unit: times/minute
 @property (nonatomic) NSInteger range2;
 /// 有氧运动心率区间
-/// 计算规则：(200-年龄) * 70
+/// 计算规则：(220-年龄) * 70
 /// 单位:次/分钟
 /// Aerobic exercise heart rate zones
-/// Calculation rule: (200-age) * 70
+/// Calculation rule: (220-age) * 70
 /// Unit: times/minute
 @property (nonatomic) NSInteger range3;
 /// 无氧运动心率区间
-/// 计算规则：(200-年龄) * 80
+/// 计算规则：(220-年龄) * 80
 /// 单位:次/分钟
 /// Anaerobic exercise heart rate zone
-/// Calculation rule: (200-age) * 80
+/// Calculation rule: (220-age) * 80
 /// Unit: times/minute
 @property (nonatomic) NSInteger range4;
 /// 极限锻炼心率区间
-/// 计算规则：(200-年龄) * 90
+/// 计算规则：(220-年龄) * 90
 /// 单位:次/分钟
 /// Extreme exercise heart rate zone
-/// Calculation rule: (200-age) * 90
+/// Calculation rule: (220-age) * 90
 /// Unit: times/minute
 @property (nonatomic) NSInteger range5;
 /// 心率最小值
@@ -7063,6 +7230,18 @@ SWIFT_CLASS("_TtC16protocol_channel16IDOLiveDataModel")
 /// Heart rate data (in beats per minute)
 @property (nonatomic) NSInteger heartRate;
 - (nonnull instancetype)initWithTotalStep:(NSInteger)totalStep totalCalories:(NSInteger)totalCalories totalDistances:(NSInteger)totalDistances totalActiveTime:(NSInteger)totalActiveTime heartRate:(NSInteger)heartRate OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 位置信息通知（SET:0x05/0x07）请求
+SWIFT_CLASS("_TtC16protocol_channel26IDOLocationInfoNotifyModel")
+@interface IDOLocationInfoNotifyModel : NSObject
+/// 位置状态；1（0x01）表示围栏外
+@property (nonatomic) NSInteger status;
+- (nonnull instancetype)initWithStatus:(NSInteger)status OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -8232,6 +8411,89 @@ SWIFT_CLASS("_TtC16protocol_channel20IDOPetInfoReplyModel")
 @end
 
 
+/// 手机日历待删条目
+SWIFT_CLASS("_TtC16protocol_channel31IDOPhoneCalendarDeleteItemModel")
+@interface IDOPhoneCalendarDeleteItemModel : NSObject
+@property (nonatomic, copy) NSString * _Nullable eventId;
+@property (nonatomic, copy) NSString * _Nullable calendarId;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 查询手机日历待删列表 — 回复
+SWIFT_CLASS("_TtC16protocol_channel31IDOPhoneCalendarDeleteListModel")
+@interface IDOPhoneCalendarDeleteListModel : NSObject
+/// 待删列表
+@property (nonatomic, copy) NSArray<IDOPhoneCalendarDeleteItemModel *> * _Nullable items;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+/// 增量同步删除手机日历条目 — 请求
+SWIFT_CLASS("_TtC16protocol_channel31IDOPhoneCalendarSyncDeleteModel")
+@interface IDOPhoneCalendarSyncDeleteModel : NSObject
+/// 待删列表
+@property (nonatomic, copy) NSArray<IDOPhoneCalendarDeleteItemModel *> * _Nonnull items;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 增量同步删除手机日历条目 — 回复
+SWIFT_CLASS("_TtC16protocol_channel36IDOPhoneCalendarSyncDeleteReplyModel")
+@interface IDOPhoneCalendarSyncDeleteReplyModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+/// 设置手机日历同步开关与权限 — 请求
+SWIFT_CLASS("_TtC16protocol_channel28IDOPhoneCalendarSyncSetModel")
+@interface IDOPhoneCalendarSyncSetModel : NSObject
+/// 1 开启同步；0 关闭同步
+@property (nonatomic) NSInteger syncOnOff;
+/// 1 有日历权限；0 无日历权限
+@property (nonatomic) NSInteger calendarPermissionStatus;
+- (nonnull instancetype)initWithSyncOnOff:(NSInteger)syncOnOff calendarPermissionStatus:(NSInteger)calendarPermissionStatus OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 设置手机日历同步开关与权限 — 回复
+SWIFT_CLASS("_TtC16protocol_channel33IDOPhoneCalendarSyncSetReplyModel")
+@interface IDOPhoneCalendarSyncSetReplyModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+/// 查询手机日历同步开关 — 回复
+SWIFT_CLASS("_TtC16protocol_channel31IDOPhoneCalendarSyncSwitchModel")
+@interface IDOPhoneCalendarSyncSwitchModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+/// Positioning switch mode (GET/SET:0x02/0x5A · 0x03/0x59)
+/// 定位开关模式
+SWIFT_CLASS("_TtC16protocol_channel26IDOPositionSwitchModeModel")
+@interface IDOPositionSwitchModeModel : NSObject
+/// 0 关闭 / 1 全天 / 2 定时
+@property (nonatomic) NSInteger switchMode;
+@property (nonatomic) NSInteger startHour;
+@property (nonatomic) NSInteger startMinute;
+@property (nonatomic) NSInteger endHour;
+@property (nonatomic) NSInteger endMinute;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC16protocol_channel14IDOPpgDataItem")
 @interface IDOPpgDataItem : NSObject
 @property (nonatomic) uint32_t green;
@@ -8266,6 +8528,19 @@ SWIFT_CLASS("_TtC16protocol_channel16IDOProtocolState")
 /// 当前连接的设备MAC地址
 /// 注意：未标记为已连接时，将固定返回”UNKNOWN”
 @property (nonatomic, readonly, copy) NSString * _Nonnull macAddress;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 已购表盘信息下发（15.91，0x33/0x87；线格式 JSON key 不变）
+SWIFT_CLASS("_TtC16protocol_channel30IDOPurchasedWatchFaceInfoModel")
+@interface IDOPurchasedWatchFaceInfoModel : NSObject
+@property (nonatomic) NSInteger operate;
+@property (nonatomic, copy) NSString * _Nullable userId;
+/// 表盘 ID；对应 C <code>watch_id</code>
+@property (nonatomic, copy) NSString * _Nullable watchId;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10012,15 +10287,61 @@ SWIFT_CLASS("_TtC16protocol_channel14IDOSunriseItem")
 
 
 /// Get maximum number of settings supported by firmware event number
+/// 获取固件支持的配置信息（2.38 / 15.102，事件号 339）
 SWIFT_CLASS("_TtC16protocol_channel29IDOSupportMaxSetItemsNumModel")
 @interface IDOSupportMaxSetItemsNumModel : NSObject
 /// Maximum number of frequently contacted persons that firmware supports for app to set (default is 10)
+/// 常用联系人最大数量；<code>0</code> → 默认 10
 @property (nonatomic) NSInteger contactMaxSetNum;
 /// Maximum number of schedule reminders that firmware supports for app to set(default is 30)
+/// 日程提醒最大条数；<code>0</code> → 默认 30
 @property (nonatomic) NSInteger reminderMaxSetNum;
 /// Maximum sending buffer size of message reminders (default is 250 bytes)
+/// 消息提醒最大缓存（字节）；<code>0</code> → 默认 250
 @property (nonatomic) NSInteger msgMaxBuffSize;
-- (nonnull instancetype)initWithContactMaxSetNum:(NSInteger)contactMaxSetNum reminderMaxSetNum:(NSInteger)reminderMaxSetNum msgMaxBuffSize:(NSInteger)msgMaxBuffSize OBJC_DESIGNATED_INITIALIZER;
+/// Minimum menstrual length in days; <code>0</code> → default 1
+/// 最小经期长度（天）；<code>0</code> → 默认 1
+@property (nonatomic) NSInteger menstrualLengthMin;
+/// Maximum menstrual length in days; <code>0</code> → default 14
+/// 最大经期长度（天）；<code>0</code> → 默认 14
+@property (nonatomic) NSInteger menstrualLengthMax;
+/// Minimum menstrual cycle in days; <code>0</code> → default 20
+/// 最小经期周期（天）；<code>0</code> → 默认 20
+@property (nonatomic) NSInteger menstrualCycleMin;
+/// Maximum menstrual cycle in days; <code>0</code> → default 90
+/// 最大经期周期（天）；<code>0</code> → 默认 90
+@property (nonatomic) NSInteger menstrualCycleMax;
+/// BLE max PRN; invalid <code>0x00</code>, max <code>0x32</code>
+/// BLE prn 最大值；无效 <code>0x00</code>，最大 <code>0x32</code>
+@property (nonatomic) NSInteger bleGetMaxPrn;
+/// Alarm snooze delay in minutes; default 10
+/// 闹钟延时（分钟）；默认 10
+@property (nonatomic) NSInteger alarmDelayMin;
+/// Alarm repeat times; default 3
+/// 闹钟重复次数；默认 3
+@property (nonatomic) NSInteger alarmRepeatTimes;
+/// Minimum OTA battery level; <code>0</code> → default 30
+/// 最小 OTA 电量；<code>0</code> → 默认 30
+@property (nonatomic) NSInteger otaBatteryMin;
+/// Max days for physiological daily records; <code>0</code> → default 30~180
+/// 女性日常记录最大天数；<code>0</code> → 默认 30~180
+@property (nonatomic) NSInteger physiologicalRecordMaxDay;
+/// Daily step goal min (steps); <code>0</code> invalid; valid when <code>supportGetFirmwareSupportedConfig</code>
+/// 全天步数目标最小值（步）；<code>0</code> 无效；固件开启 <code>supportGetFirmwareSupportedConfig</code> 时有效
+@property (nonatomic) NSInteger dailyStepGoalMin;
+/// Daily step goal max (steps); <code>0</code> invalid; valid when <code>supportGetFirmwareSupportedConfig</code>
+/// 全天步数目标最大值（步）；<code>0</code> 无效；固件开启 <code>supportGetFirmwareSupportedConfig</code> 时有效
+@property (nonatomic) NSInteger dailyStepGoalMax;
+/// Daily step goal step span (steps); <code>0</code> invalid; valid when <code>supportGetFirmwareSupportedConfig</code>
+/// 全天步数目标调节步长（步）；<code>0</code> 无效；固件开启 <code>supportGetFirmwareSupportedConfig</code> 时有效
+@property (nonatomic) NSInteger dailyStepGoalSpan;
+/// Exercise BLE reconnect timeout (seconds); <code>0</code> invalid; valid when <code>supportGetFirmwareSupportedConfig</code>
+/// 运动中蓝牙断连回连超时（秒）；<code>0</code> 无效；固件开启 <code>supportGetFirmwareSupportedConfig</code> 时有效
+@property (nonatomic) NSInteger exerciseReconnectTimeout;
+/// Min battery required for factory reset; <code>0</code> invalid; valid when <code>supportGetFirmwareSupportedConfig</code>
+/// 恢复出厂最低电量；<code>0</code> 无效；固件开启 <code>supportGetFirmwareSupportedConfig</code> 时有效
+@property (nonatomic) NSInteger factoryResetMinBatteryRequire;
+- (nonnull instancetype)initWithContactMaxSetNum:(NSInteger)contactMaxSetNum reminderMaxSetNum:(NSInteger)reminderMaxSetNum msgMaxBuffSize:(NSInteger)msgMaxBuffSize menstrualLengthMin:(NSInteger)menstrualLengthMin menstrualLengthMax:(NSInteger)menstrualLengthMax menstrualCycleMin:(NSInteger)menstrualCycleMin menstrualCycleMax:(NSInteger)menstrualCycleMax bleGetMaxPrn:(NSInteger)bleGetMaxPrn alarmDelayMin:(NSInteger)alarmDelayMin alarmRepeatTimes:(NSInteger)alarmRepeatTimes otaBatteryMin:(NSInteger)otaBatteryMin physiologicalRecordMaxDay:(NSInteger)physiologicalRecordMaxDay dailyStepGoalMin:(NSInteger)dailyStepGoalMin dailyStepGoalMax:(NSInteger)dailyStepGoalMax dailyStepGoalSpan:(NSInteger)dailyStepGoalSpan exerciseReconnectTimeout:(NSInteger)exerciseReconnectTimeout factoryResetMinBatteryRequire:(NSInteger)factoryResetMinBatteryRequire OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -10145,6 +10466,39 @@ typedef SWIFT_ENUM(NSInteger, IDOSyncStatus, open) {
 /// 同步超时
   IDOSyncStatusError = 6,
 };
+
+@class IDOTakeMedicineRemindTimeItemModel;
+
+/// 吃药提醒 V3 提醒项
+SWIFT_CLASS("_TtC16protocol_channel34IDOTakeMedicineRemindInfoItemModel")
+@interface IDOTakeMedicineRemindInfoItemModel : NSObject
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic, copy) NSArray<IDOTakeMedicineRemindTimeItemModel *> * _Nullable timeItems;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// 吃药提醒 V3（15.90，0x33/0x86）
+SWIFT_CLASS("_TtC16protocol_channel26IDOTakeMedicineRemindModel")
+@interface IDOTakeMedicineRemindModel : NSObject
+@property (nonatomic) NSInteger operate;
+@property (nonatomic) NSInteger medicineShowOnOff;
+@property (nonatomic) NSInteger takeMedicineInfoCount;
+@property (nonatomic) NSInteger index;
+@property (nonatomic, strong) IDOTakeMedicineRemindInfoItemModel * _Nullable takeMedicineInfoItem;
+@property (nonatomic, copy) NSArray<IDOTakeMedicineRemindInfoItemModel *> * _Nullable takeMedicineInfoItems;
+- (nonnull instancetype)initWithOperate:(NSInteger)operate medicineShowOnOff:(NSInteger)medicineShowOnOff takeMedicineInfoCount:(NSInteger)takeMedicineInfoCount index:(NSInteger)index takeMedicineInfoItem:(IDOTakeMedicineRemindInfoItemModel * _Nullable)takeMedicineInfoItem OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 吃药提醒 V3（15.90，0x33/0x86）时间项
+SWIFT_CLASS("_TtC16protocol_channel34IDOTakeMedicineRemindTimeItemModel")
+@interface IDOTakeMedicineRemindTimeItemModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 /// Set Taking Medicine Reminder Event Code
@@ -10307,6 +10661,15 @@ SWIFT_CLASS("_TtC16protocol_channel17IDOTransBaseModel")
 @end
 
 
+/// 吃药提醒图标 <code>.medic</code>
+/// fileSize：源图字节数，由调用方传入
+SWIFT_CLASS("_TtC16protocol_channel18IDOTransMedicModel")
+@interface IDOTransMedicModel : IDOTransBaseModel
+- (nonnull instancetype)initWithFilePath:(NSString * _Nonnull)filePath fileName:(NSString * _Nonnull)fileName fileSize:(NSInteger)fileSize OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFileType:(enum IDOTransType)fileType filePath:(NSString * _Nonnull)filePath fileName:(NSString * _Nonnull)fileName fileSize:(NSInteger)fileSize SWIFT_UNAVAILABLE;
+@end
+
+
 /// 消息图标
 SWIFT_CLASS("_TtC16protocol_channel20IDOTransMessageModel") SWIFT_DEPRECATED_MSG("已弃用")
 @interface IDOTransMessageModel : IDOTransBaseModel
@@ -10400,6 +10763,9 @@ SWIFT_CLASS("_TtC16protocol_channel18IDOTransMusicModel")
 /// <ul>
 ///   <li>
 ///     消息图标 - 使用 IDOTransMessageModel类
+///   </li>
+///   <li>
+///     吃药提醒图标 - 使用 IDOTransMedicModel
 ///   </li>
 ///   <li>
 ///     音乐 - 使用 IDOTransMusicModel
@@ -10685,13 +11051,23 @@ typedef SWIFT_ENUM(NSInteger, IDOTransType, open) {
   IDOTransTypeTon = 19,
 /// 小程序
   IDOTransTypeApp = 20,
+/// 离线地图
+  IDOTransTypeMap = 21,
+/// 轨迹文件
+  IDOTransTypeGpx = 22,
+/// 吃药提醒图标 <code>.medic</code>（请使用 IDOTransMedicModel）
+  IDOTransTypeMedic = 23,
+/// 手机日历 phone_calendar.cal
+  IDOTransTypeCal = 24,
 /// 其它类型：不限后缀，不对文件二次加工，直接上传到设备
 /// \code
 /// hid: 检测引导程序hid更新(android专用)
 /// xx: xxxxx
 ///
 /// \endcode
-  IDOTransTypeOther = 21,
+  IDOTransTypeOther = 25,
+/// 设备壁纸（.alwf / .alwfs）
+  IDOTransTypeWallpaperDevice = 26,
 };
 
 
@@ -11381,10 +11757,21 @@ SWIFT_CLASS("_TtC16protocol_channel12IDOWatchItem")
 /// Size of the watch face, in bytes
 /// Applies only if the firmware enables <code>v3SupportGetWatchSize</code>, otherwise the field is invalid
 @property (nonatomic) NSInteger size;
-- (nonnull instancetype)initWithType:(NSInteger)type watchVersion:(NSInteger)watchVersion sortNumber:(NSInteger)sortNumber name:(NSString * _Nonnull)name size:(NSInteger)size OBJC_DESIGNATED_INITIALIZER;
+/// Watch face transfer/install state (<code>IDOWatchItemState</code>)
+/// Valid when firmware enables supportWatchFileListUseVersion
+@property (nonatomic) NSInteger state;
+- (nonnull instancetype)initWithType:(NSInteger)type watchVersion:(NSInteger)watchVersion sortNumber:(NSInteger)sortNumber name:(NSString * _Nonnull)name size:(NSInteger)size state:(NSInteger)state OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+/// Single watch face state in <code>IDOWatchItem.state</code> (response, not a bitmask).
+typedef SWIFT_ENUM(NSInteger, IDOWatchItemState, open) {
+  IDOWatchItemStateUnknown = 0,
+  IDOWatchItemStateDownloading = 1,
+  IDOWatchItemStateInstalling = 2,
+  IDOWatchItemStateInstalled = 3,
+};
 
 
 SWIFT_CLASS("_TtC16protocol_channel17IDOWatchListModel")
@@ -11423,6 +11810,17 @@ SWIFT_CLASS("_TtC16protocol_channel17IDOWatchListModel")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+/// Query scope bitmask for <code>getWatchListV3</code> request.
+/// Valid when firmware enables <code>supportWatchFileListUseVersion</code>.
+typedef SWIFT_ENUM(NSInteger, IDOWatchListQueryType, open) {
+/// bit0: watch faces currently downloading
+  IDOWatchListQueryTypeDownloading = 1,
+/// bit1: watch faces currently installing
+  IDOWatchListQueryTypeInstalling = 2,
+/// bit2: installed watch faces
+  IDOWatchListQueryTypeInstalled = 4,
+};
 
 
 SWIFT_CLASS("_TtC16protocol_channel18IDOWatchListV2Item")
@@ -12167,8 +12565,15 @@ SWIFT_CLASS("_TtC16protocol_channel8CmdError")
 @class IDOBatteryReminderSwitchModel;
 @class IDOFindPhoneSwitchModel;
 @class IDODeviceStatusInfoModel;
+@class IDOFirmwareDisplayVersionModel;
 @class IDOSportTypesRequiringWristSideSettingModel;
 @class IDODeviceVibrationRingtoneModel;
+@class IDOPhoneCalendarSyncSwitchModel;
+@class IDOPhoneCalendarSyncSetModel;
+@class IDOPhoneCalendarSyncSetReplyModel;
+@class IDOPhoneCalendarDeleteListModel;
+@class IDOPhoneCalendarSyncDeleteModel;
+@class IDOPhoneCalendarSyncDeleteReplyModel;
 @class IDOPetInfoModel;
 @class IDOCmdGetResponseModel;
 @class IDOFlashBinInfoModel;
@@ -12368,10 +12773,20 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 + (id <IDOCancellable> _Nonnull)getFindPhoneSwitch:(void (^ _Nonnull)(CmdError * _Nonnull, IDOFindPhoneSwitchModel * _Nullable))completion;
 /// 获取设备状态（GET:0x02/0x49）
 + (id <IDOCancellable> _Nonnull)getDeviceStatusInfoWithGetType:(NSInteger)getType :(void (^ _Nonnull)(CmdError * _Nonnull, IDODeviceStatusInfoModel * _Nullable))completion;
+/// 获取固件显示版本号（GET:0x02/0x4B）
++ (id <IDOCancellable> _Nonnull)getFirmwareDisplayVersion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOFirmwareDisplayVersionModel * _Nullable))completion;
 /// 查询需设置左右手佩戴类型的运动类型列表（V3 15.104）
 + (id <IDOCancellable> _Nonnull)getSportTypesRequiringWristSideSetting:(void (^ _Nonnull)(CmdError * _Nonnull, IDOSportTypesRequiringWristSideSettingModel * _Nullable))completion;
 /// 设备振动与铃声设置（V3 15.106，operate=2）
 + (id <IDOCancellable> _Nonnull)setDeviceVibrationRingtone:(IDODeviceVibrationRingtoneModel * _Nonnull)model :(void (^ _Nonnull)(CmdError * _Nonnull, IDODeviceVibrationRingtoneModel * _Nullable))completion;
+/// 查询手机日历同步开关
++ (id <IDOCancellable> _Nonnull)getPhoneCalendarSyncSwitch:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPhoneCalendarSyncSwitchModel * _Nullable))completion;
+/// 设置手机日历同步开关与权限
++ (id <IDOCancellable> _Nonnull)setPhoneCalendarSync:(IDOPhoneCalendarSyncSetModel * _Nonnull)model :(void (^ _Nonnull)(CmdError * _Nonnull, IDOPhoneCalendarSyncSetReplyModel * _Nullable))completion;
+/// 查询手机日历待删列表
++ (id <IDOCancellable> _Nonnull)getPhoneCalendarDeleteList:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPhoneCalendarDeleteListModel * _Nullable))completion;
+/// 增量同步删除手机日历条目
++ (id <IDOCancellable> _Nonnull)setPhoneCalendarSyncDelete:(IDOPhoneCalendarSyncDeleteModel * _Nonnull)model :(void (^ _Nonnull)(CmdError * _Nonnull, IDOPhoneCalendarSyncDeleteReplyModel * _Nullable))completion;
 /// 获取宠物信息
 /// Get pet info event number
 + (id <IDOCancellable> _Nonnull)getPetInfo:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPetInfoModel * _Nullable))completion;
@@ -12634,6 +13049,9 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 获取表盘列表 v3
 /// Getting watch face list for V3 (New)
 + (id <IDOCancellable> _Nonnull)getWatchListV3:(void (^ _Nonnull)(CmdError * _Nonnull, IDOWatchListModel * _Nullable))completion;
+/// 获取表盘列表 v3（按 state bitmask 查询，仅 <code>supportWatchFileListUseVersion</code> 有效）
+/// Getting watch face list for V3 with query state flags
++ (id <IDOCancellable> _Nonnull)getWatchListV3:(NSInteger)state completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOWatchListModel * _Nullable))completion;
 /// 获取表盘列表 v2
 /// Get Watch Face List in V2
 + (id <IDOCancellable> _Nonnull)getWatchListV2:(void (^ _Nonnull)(CmdError * _Nonnull, IDOWatchListV2Model * _Nullable))completion;
@@ -13580,6 +13998,17 @@ SWIFT_CLASS("_TtC16protocol_channel34IDOAppBleRestoreReplyExchangeModel")
 @end
 
 
+/// APP设置下载状态（15.92，0x33/0x88）
+SWIFT_CLASS("_TtC16protocol_channel29IDOAppDownloadStatusInfoModel")
+@interface IDOAppDownloadStatusInfoModel : NSObject
+@property (nonatomic) NSInteger operate;
+@property (nonatomic, copy) NSString * _Nullable id;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 /// app 发起运动结束
 /// Generated class from Pigeon that represents data sent in messages.
 SWIFT_CLASS("_TtC16protocol_channel22IDOAppEndExchangeModel")
@@ -13734,11 +14163,18 @@ SWIFT_CLASS("_TtC16protocol_channel15IDOAppInfoModel")
 @property (nonatomic, copy) NSString * _Nonnull userName;
 /// 1：发送
 @property (nonatomic) NSInteger operate;
+@property (nonatomic, copy) NSString * _Nullable userId;
+@property (nonatomic, copy) NSString * _Nullable token;
+@property (nonatomic, copy) NSString * _Nullable domainName;
+@property (nonatomic, copy) NSString * _Nullable appVersion;
+@property (nonatomic, copy) NSString * _Nullable appKey;
+@property (nonatomic, copy) NSString * _Nullable appFaceVersion;
 - (nonnull instancetype)initWithUserName:(NSString * _Nonnull)userName operate:(NSInteger)operate OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 /// app 交换运动数据
@@ -13867,16 +14303,16 @@ SWIFT_CLASS("_TtC16protocol_channel29IDOAppIngV3ReplyExchangeModel")
 @end
 
 
-/// Application list style parameter model
+/// 应用列表样式入参（设置 / 查询 / 删除）
 SWIFT_CLASS("_TtC16protocol_channel25IDOAppListStyleParamModel")
 @interface IDOAppListStyleParamModel : NSObject
-/// Operation type: 1:Set 2:Query 3:Delete
+/// 操作：1 设置，2 查询，3 删除
 @property (nonatomic) NSInteger operate;
-/// Font color
+/// 字体颜色（operate=1 时有效）
 @property (nonatomic) NSInteger fontColor;
-/// Wallpaper name
+/// 壁纸名称（operate=1/3 时有效）
 @property (nonatomic, copy) NSString * _Nonnull name;
-/// Wallpaper version
+/// 背景壁纸版本（operate=1 时有效）
 @property (nonatomic) NSInteger wallpaperVersion;
 - (nonnull instancetype)initWithOperate:(NSInteger)operate fontColor:(NSInteger)fontColor name:(NSString * _Nonnull)name wallpaperVersion:(NSInteger)wallpaperVersion OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
@@ -13886,22 +14322,22 @@ SWIFT_CLASS("_TtC16protocol_channel25IDOAppListStyleParamModel")
 
 @class IDOApplicationListItem;
 
-/// Application list style reply model
+/// 应用列表样式回复
 SWIFT_CLASS("_TtC16protocol_channel25IDOAppListStyleReplyModel")
 @interface IDOAppListStyleReplyModel : NSObject
-/// Operation type: 1:Set 2:Query 3:Delete
+/// 操作：1 设置，2 查询，3 删除
 @property (nonatomic) NSInteger operate;
-/// Error code: 0:Success 1:Failure
+/// 错误码：0 成功，1 失败
 @property (nonatomic) NSInteger errorCode;
-/// Total number of application list wallpapers
+/// 应用列表壁纸总个数
 @property (nonatomic) NSInteger applicationListTotalNum;
-/// Number of application list wallpapers already used, max 20
+/// 已使用个数（最大 20）
 @property (nonatomic) NSInteger userApplicationListItemNum;
-/// Total capacity of application list wallpapers, unit: Byte
+/// 总容量，单位 Byte
 @property (nonatomic) NSInteger applicationListCapacitySize;
-/// Used capacity of application list wallpapers, unit: Byte
+/// 已使用容量，单位 Byte
 @property (nonatomic) NSInteger userApplicationListCapacitySize;
-/// Application list wallpaper items, controlled by used count, valid for query operation
+/// 已使用列表项（查询有效；对齐协议库 JSON key <code>p_list_item</code>）
 @property (nonatomic, copy) NSArray<IDOApplicationListItem *> * _Nullable listItems;
 - (nonnull instancetype)initWithOperate:(NSInteger)operate errorCode:(NSInteger)errorCode applicationListTotalNum:(NSInteger)applicationListTotalNum userApplicationListItemNum:(NSInteger)userApplicationListItemNum applicationListCapacitySize:(NSInteger)applicationListCapacitySize userApplicationListCapacitySize:(NSInteger)userApplicationListCapacitySize listItems:(NSArray<IDOApplicationListItem *> * _Nullable)listItems OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
@@ -14108,9 +14544,8 @@ SWIFT_CLASS("_TtC16protocol_channel21IDOAppletControlModel")
 @interface IDOAppletControlModel : NSObject
 /// 0:无效 1:启动小程序 2:删除小程序 3:获取已安装的小程序列表
 @property (nonatomic) NSInteger operate;
-/// 小程序名称 operate=0/operate=3无效,获取操作不需要下发名称，最大29个字节
+/// 小程序名称 operate=1/2 有效；operate=3 无需传
 @property (nonatomic, copy) NSString * _Nullable appName;
-- (nonnull instancetype)initWithOperate:(NSInteger)operate appName:(NSString * _Nullable)appName OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -14123,9 +14558,13 @@ SWIFT_CLASS("_TtC16protocol_channel17IDOAppletInfoItem")
 @property (nonatomic, copy) NSString * _Nonnull appName;
 /// 小程序大小 单位Byte
 @property (nonatomic) NSInteger size;
-/// 小程序版本号
+/// 小程序版本号：默认版为三级版本字符串；v0x30 为 <code>0.0.{mini_program_version}</code> 格式
 @property (nonatomic, copy) NSString * _Nonnull version;
-- (nonnull instancetype)initWithAppName:(NSString * _Nonnull)appName size:(NSInteger)size version:(NSString * _Nonnull)version OBJC_DESIGNATED_INITIALIZER;
+/// v0x30：版本展示名 <code>mini_program_version_name</code>
+@property (nonatomic, copy) NSString * _Nullable versionName;
+/// v0x30：单条状态，见 <code>IDOAppletItemState</code>
+@property (nonatomic) NSInteger state;
+- (nonnull instancetype)initWithAppName:(NSString * _Nonnull)appName size:(NSInteger)size version:(NSString * _Nonnull)version state:(NSInteger)state versionName:(NSString * _Nullable)versionName OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -14140,20 +14579,45 @@ SWIFT_CLASS("_TtC16protocol_channel18IDOAppletInfoModel")
 @property (nonatomic, copy) NSArray<IDOAppletInfoItem *> * _Nullable infoItem;
 /// 0:无效 1:启动小程序 2:删除小程序 3:获取已安装的小程序列表
 @property (nonatomic) NSInteger operate;
-/// 剩余空间 单位Byte
-@property (nonatomic) NSInteger residualSpace;
-/// 总空间 单位Byte
-@property (nonatomic) NSInteger totalSpace;
-- (nonnull instancetype)initWithErrorCode:(NSInteger)errorCode infoItem:(NSArray<IDOAppletInfoItem *> * _Nonnull)infoItem miniProgramNum:(NSInteger)miniProgramNum operate:(NSInteger)operate residualSpace:(NSInteger)residualSpace totalSpace:(NSInteger)totalSpace OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+/// Single mini program state in <code>IDOAppletInfoItem.state</code> (response, not a bitmask).
+typedef SWIFT_ENUM(NSInteger, IDOAppletItemState, open) {
+  IDOAppletItemStateUnknown = 0,
+  IDOAppletItemStateDownloading = 1,
+  IDOAppletItemStateInstalling = 2,
+  IDOAppletItemStateInstalled = 3,
+};
 
-/// Application list wallpaper item
+/// Query scope bitmask for <code>setAppletControl</code> list query (<code>operate=3</code>).
+/// Valid when firmware enables <code>setSupportControlMiniProgramVersion30</code>.
+typedef SWIFT_ENUM(NSInteger, IDOAppletListQueryType, open) {
+/// bit0: mini programs currently downloading
+  IDOAppletListQueryTypeDownloading = 1,
+/// bit1: mini programs currently installing
+  IDOAppletListQueryTypeInstalling = 2,
+/// bit2: installed mini programs
+  IDOAppletListQueryTypeInstalled = 4,
+};
+
+
+/// 应用列表壁纸项
 SWIFT_CLASS("_TtC16protocol_channel22IDOApplicationListItem")
 @interface IDOApplicationListItem : NSObject
+/// 序号，从 0 开始
+@property (nonatomic) NSInteger sortNumber;
+/// 字体颜色
+@property (nonatomic) NSInteger fontColor;
+/// 占用空间，单位 byte
+@property (nonatomic) NSInteger size;
+/// 壁纸名称
+@property (nonatomic, copy) NSString * _Nonnull name;
+/// 背景壁纸版本
+@property (nonatomic) NSInteger wallpaperVersion;
+- (nonnull instancetype)initWithSortNumber:(NSInteger)sortNumber fontColor:(NSInteger)fontColor size:(NSInteger)size name:(NSString * _Nonnull)name wallpaperVersion:(NSInteger)wallpaperVersion OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -15497,6 +15961,21 @@ SWIFT_CLASS("_TtC16protocol_channel22IDODataTranConfigModel")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+/// 文件传输配置获取（GET:0x02/0xE9）请求
+SWIFT_CLASS("_TtC16protocol_channel27IDODataTranConfigParamModel")
+@interface IDODataTranConfigParamModel : NSObject
+@property (nonatomic) NSInteger type;
+@property (nonatomic) NSInteger evtType;
+@property (nonatomic) NSInteger sportType;
+@property (nonatomic) NSInteger medicineType;
+@property (nonatomic) NSInteger photoEffectType;
+- (nonnull instancetype)initWithType:(NSInteger)type evtType:(NSInteger)evtType sportType:(NSInteger)sportType medicineType:(NSInteger)medicineType photoEffectType:(NSInteger)photoEffectType OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 /// 数据项类型
 typedef SWIFT_ENUM(NSInteger, IDODataType, open) {
   IDODataTypeNone = 0x00,
@@ -16651,6 +17130,17 @@ SWIFT_CLASS("_TtC16protocol_channel18IDOExchangeV3Model")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+/// 跌倒监测开关（GET/SET:0x02/0x58 · 0x03/0x58）
+SWIFT_CLASS("_TtC16protocol_channel28IDOFallMonitoringSwitchModel")
+@interface IDOFallMonitoringSwitchModel : NSObject
+/// 1 开 / 0 关 / 0xFF 无效（GET 回复）
+@property (nonatomic) NSInteger fallMonitoringSwitch;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 @class IDOTransTypeClass;
 @class IDOTransBaseModel;
 enum IDOTransStatus : NSInteger;
@@ -16696,6 +17186,79 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOFindPhoneSwitchModel")
 /// 是否开启寻找手机（对应协议 status == 0xAA）
 @property (nonatomic) BOOL onOff;
 - (nonnull instancetype)initOnOff:(BOOL)onOff OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 获取固件显示版本号（GET:0x02/0x4B）回复
+SWIFT_CLASS("_TtC16protocol_channel30IDOFirmwareDisplayVersionModel")
+@interface IDOFirmwareDisplayVersionModel : NSObject
+/// 错误码；0 表示成功
+@property (nonatomic) NSInteger errCode;
+/// 固件 UI 显示版本号，如 “1_00_09”
+@property (nonatomic, copy) NSString * _Nonnull displayVersion;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode displayVersion:(NSString * _Nonnull)displayVersion OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 固件上报定位基站项
+SWIFT_CLASS("_TtC16protocol_channel39IDOFirmwarePositionBaseStationItemModel")
+@interface IDOFirmwarePositionBaseStationItemModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// 固件上报定位 GPS 项
+SWIFT_CLASS("_TtC16protocol_channel31IDOFirmwarePositionGpsItemModel")
+@interface IDOFirmwarePositionGpsItemModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class IDOFirmwarePositionWifiItemModel;
+
+/// 固件上报定位详情项
+SWIFT_CLASS("_TtC16protocol_channel32IDOFirmwarePositionInfoItemModel")
+@interface IDOFirmwarePositionInfoItemModel : NSObject
+@property (nonatomic, strong) IDOFirmwarePositionGpsItemModel * _Nullable gpsInfoItem;
+@property (nonatomic, copy) NSArray<IDOFirmwarePositionBaseStationItemModel *> * _Nullable stationInfoItems;
+@property (nonatomic, copy) NSArray<IDOFirmwarePositionWifiItemModel *> * _Nullable wifiInfoItems;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// 固件上报定位信息（15.93，0x33/0x89）
+SWIFT_CLASS("_TtC16protocol_channel28IDOFirmwarePositionInfoModel")
+@interface IDOFirmwarePositionInfoModel : NSObject
+@property (nonatomic) NSInteger operate;
+@property (nonatomic, strong) IDOFirmwarePositionInfoItemModel * _Nullable positionInfoItem;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 固件上报定位 WiFi 项
+SWIFT_CLASS("_TtC16protocol_channel32IDOFirmwarePositionWifiItemModel")
+@interface IDOFirmwarePositionWifiItemModel : NSObject
+@property (nonatomic, copy) NSString * _Nullable ssid;
+@property (nonatomic, copy) NSString * _Nullable mac;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// 固件状态信息查询（GET:0x02/0x48）回复
+SWIFT_CLASS("_TtC16protocol_channel26IDOFirmwareStatusInfoModel")
+@interface IDOFirmwareStatusInfoModel : NSObject
+/// 智能模式：1 全智能 / 2 轻智能
+@property (nonatomic) NSInteger intelligentMode;
+/// 网络状态位掩码：bit0 WIFI / bit1 4G
+@property (nonatomic) NSInteger networkStatus;
+- (nonnull instancetype)initWithIntelligentMode:(NSInteger)intelligentMode networkStatus:(NSInteger)networkStatus OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -17892,11 +18455,13 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 /// 通知支持 BUZUD，type 0x83（table72 BIT_0）
 @property (nonatomic, readonly) BOOL reminderBuzud;
 /// 支持手机日历提醒文件下发（02 4B，table71 BIT_4）
-@property (nonatomic, readonly) BOOL v2SupportPhoneCalendarReminder;
+@property (nonatomic, readonly) BOOL supportPhoneCalendarReminder;
 /// 支持获取设备状态（V2 02 49，table71 BIT_0）
 @property (nonatomic, readonly) BOOL supportGetDeviceStatus;
 /// 支持获取设备运动状态（V2 02 49，table71 BIT_1）
 @property (nonatomic, readonly) BOOL supportGetDeviceSportStatus;
+/// 支持获取固件显示版本号（V2 02 4B，table72 BIT_3）
+@property (nonatomic, readonly) BOOL supportGetFirmwareDisplayVersion;
 /// 支持睡前故事（table71 BIT_2）
 @property (nonatomic, readonly) BOOL supportBedtimeStory;
 /// 支持第三套运动图标（table71 BIT_3）
@@ -18471,38 +19036,38 @@ SWIFT_CLASS("_TtC16protocol_channel25IDOHeartRateIntervalModel")
 /// Unit: times/minute
 @property (nonatomic) NSInteger userMaxHr;
 /// 热身运动心率区间
-/// 计算规则：(200-年龄) * 50
+/// 计算规则：(220-年龄) * 50
 /// 单位:次/分钟
 /// Warm-up exercise heart rate zone
-/// Calculation rule: (200-age) * 50
+/// Calculation rule: (220-age) * 50
 /// Unit: times/minute
 @property (nonatomic) NSInteger range1;
 /// 脂肪燃烧心率区间
-/// 计算规则：(200-年龄) * 60
+/// 计算规则：(220-年龄) * 60
 /// 单位:次/分钟
 /// Fat burning heart rate zone
-/// Calculation rule: (200-age) * 60
+/// Calculation rule: (220-age) * 60
 /// Unit: times/minute
 @property (nonatomic) NSInteger range2;
 /// 有氧运动心率区间
-/// 计算规则：(200-年龄) * 70
+/// 计算规则：(220-年龄) * 70
 /// 单位:次/分钟
 /// Aerobic exercise heart rate zones
-/// Calculation rule: (200-age) * 70
+/// Calculation rule: (220-age) * 70
 /// Unit: times/minute
 @property (nonatomic) NSInteger range3;
 /// 无氧运动心率区间
-/// 计算规则：(200-年龄) * 80
+/// 计算规则：(220-年龄) * 80
 /// 单位:次/分钟
 /// Anaerobic exercise heart rate zone
-/// Calculation rule: (200-age) * 80
+/// Calculation rule: (220-age) * 80
 /// Unit: times/minute
 @property (nonatomic) NSInteger range4;
 /// 极限锻炼心率区间
-/// 计算规则：(200-年龄) * 90
+/// 计算规则：(220-年龄) * 90
 /// 单位:次/分钟
 /// Extreme exercise heart rate zone
-/// Calculation rule: (200-age) * 90
+/// Calculation rule: (220-age) * 90
 /// Unit: times/minute
 @property (nonatomic) NSInteger range5;
 /// 心率最小值
@@ -18861,6 +19426,18 @@ SWIFT_CLASS("_TtC16protocol_channel16IDOLiveDataModel")
 /// Heart rate data (in beats per minute)
 @property (nonatomic) NSInteger heartRate;
 - (nonnull instancetype)initWithTotalStep:(NSInteger)totalStep totalCalories:(NSInteger)totalCalories totalDistances:(NSInteger)totalDistances totalActiveTime:(NSInteger)totalActiveTime heartRate:(NSInteger)heartRate OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 位置信息通知（SET:0x05/0x07）请求
+SWIFT_CLASS("_TtC16protocol_channel26IDOLocationInfoNotifyModel")
+@interface IDOLocationInfoNotifyModel : NSObject
+/// 位置状态；1（0x01）表示围栏外
+@property (nonatomic) NSInteger status;
+- (nonnull instancetype)initWithStatus:(NSInteger)status OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -20030,6 +20607,89 @@ SWIFT_CLASS("_TtC16protocol_channel20IDOPetInfoReplyModel")
 @end
 
 
+/// 手机日历待删条目
+SWIFT_CLASS("_TtC16protocol_channel31IDOPhoneCalendarDeleteItemModel")
+@interface IDOPhoneCalendarDeleteItemModel : NSObject
+@property (nonatomic, copy) NSString * _Nullable eventId;
+@property (nonatomic, copy) NSString * _Nullable calendarId;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 查询手机日历待删列表 — 回复
+SWIFT_CLASS("_TtC16protocol_channel31IDOPhoneCalendarDeleteListModel")
+@interface IDOPhoneCalendarDeleteListModel : NSObject
+/// 待删列表
+@property (nonatomic, copy) NSArray<IDOPhoneCalendarDeleteItemModel *> * _Nullable items;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+/// 增量同步删除手机日历条目 — 请求
+SWIFT_CLASS("_TtC16protocol_channel31IDOPhoneCalendarSyncDeleteModel")
+@interface IDOPhoneCalendarSyncDeleteModel : NSObject
+/// 待删列表
+@property (nonatomic, copy) NSArray<IDOPhoneCalendarDeleteItemModel *> * _Nonnull items;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 增量同步删除手机日历条目 — 回复
+SWIFT_CLASS("_TtC16protocol_channel36IDOPhoneCalendarSyncDeleteReplyModel")
+@interface IDOPhoneCalendarSyncDeleteReplyModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+/// 设置手机日历同步开关与权限 — 请求
+SWIFT_CLASS("_TtC16protocol_channel28IDOPhoneCalendarSyncSetModel")
+@interface IDOPhoneCalendarSyncSetModel : NSObject
+/// 1 开启同步；0 关闭同步
+@property (nonatomic) NSInteger syncOnOff;
+/// 1 有日历权限；0 无日历权限
+@property (nonatomic) NSInteger calendarPermissionStatus;
+- (nonnull instancetype)initWithSyncOnOff:(NSInteger)syncOnOff calendarPermissionStatus:(NSInteger)calendarPermissionStatus OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 设置手机日历同步开关与权限 — 回复
+SWIFT_CLASS("_TtC16protocol_channel33IDOPhoneCalendarSyncSetReplyModel")
+@interface IDOPhoneCalendarSyncSetReplyModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+/// 查询手机日历同步开关 — 回复
+SWIFT_CLASS("_TtC16protocol_channel31IDOPhoneCalendarSyncSwitchModel")
+@interface IDOPhoneCalendarSyncSwitchModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+/// Positioning switch mode (GET/SET:0x02/0x5A · 0x03/0x59)
+/// 定位开关模式
+SWIFT_CLASS("_TtC16protocol_channel26IDOPositionSwitchModeModel")
+@interface IDOPositionSwitchModeModel : NSObject
+/// 0 关闭 / 1 全天 / 2 定时
+@property (nonatomic) NSInteger switchMode;
+@property (nonatomic) NSInteger startHour;
+@property (nonatomic) NSInteger startMinute;
+@property (nonatomic) NSInteger endHour;
+@property (nonatomic) NSInteger endMinute;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC16protocol_channel14IDOPpgDataItem")
 @interface IDOPpgDataItem : NSObject
 @property (nonatomic) uint32_t green;
@@ -20064,6 +20724,19 @@ SWIFT_CLASS("_TtC16protocol_channel16IDOProtocolState")
 /// 当前连接的设备MAC地址
 /// 注意：未标记为已连接时，将固定返回”UNKNOWN”
 @property (nonatomic, readonly, copy) NSString * _Nonnull macAddress;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 已购表盘信息下发（15.91，0x33/0x87；线格式 JSON key 不变）
+SWIFT_CLASS("_TtC16protocol_channel30IDOPurchasedWatchFaceInfoModel")
+@interface IDOPurchasedWatchFaceInfoModel : NSObject
+@property (nonatomic) NSInteger operate;
+@property (nonatomic, copy) NSString * _Nullable userId;
+/// 表盘 ID；对应 C <code>watch_id</code>
+@property (nonatomic, copy) NSString * _Nullable watchId;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -21810,15 +22483,61 @@ SWIFT_CLASS("_TtC16protocol_channel14IDOSunriseItem")
 
 
 /// Get maximum number of settings supported by firmware event number
+/// 获取固件支持的配置信息（2.38 / 15.102，事件号 339）
 SWIFT_CLASS("_TtC16protocol_channel29IDOSupportMaxSetItemsNumModel")
 @interface IDOSupportMaxSetItemsNumModel : NSObject
 /// Maximum number of frequently contacted persons that firmware supports for app to set (default is 10)
+/// 常用联系人最大数量；<code>0</code> → 默认 10
 @property (nonatomic) NSInteger contactMaxSetNum;
 /// Maximum number of schedule reminders that firmware supports for app to set(default is 30)
+/// 日程提醒最大条数；<code>0</code> → 默认 30
 @property (nonatomic) NSInteger reminderMaxSetNum;
 /// Maximum sending buffer size of message reminders (default is 250 bytes)
+/// 消息提醒最大缓存（字节）；<code>0</code> → 默认 250
 @property (nonatomic) NSInteger msgMaxBuffSize;
-- (nonnull instancetype)initWithContactMaxSetNum:(NSInteger)contactMaxSetNum reminderMaxSetNum:(NSInteger)reminderMaxSetNum msgMaxBuffSize:(NSInteger)msgMaxBuffSize OBJC_DESIGNATED_INITIALIZER;
+/// Minimum menstrual length in days; <code>0</code> → default 1
+/// 最小经期长度（天）；<code>0</code> → 默认 1
+@property (nonatomic) NSInteger menstrualLengthMin;
+/// Maximum menstrual length in days; <code>0</code> → default 14
+/// 最大经期长度（天）；<code>0</code> → 默认 14
+@property (nonatomic) NSInteger menstrualLengthMax;
+/// Minimum menstrual cycle in days; <code>0</code> → default 20
+/// 最小经期周期（天）；<code>0</code> → 默认 20
+@property (nonatomic) NSInteger menstrualCycleMin;
+/// Maximum menstrual cycle in days; <code>0</code> → default 90
+/// 最大经期周期（天）；<code>0</code> → 默认 90
+@property (nonatomic) NSInteger menstrualCycleMax;
+/// BLE max PRN; invalid <code>0x00</code>, max <code>0x32</code>
+/// BLE prn 最大值；无效 <code>0x00</code>，最大 <code>0x32</code>
+@property (nonatomic) NSInteger bleGetMaxPrn;
+/// Alarm snooze delay in minutes; default 10
+/// 闹钟延时（分钟）；默认 10
+@property (nonatomic) NSInteger alarmDelayMin;
+/// Alarm repeat times; default 3
+/// 闹钟重复次数；默认 3
+@property (nonatomic) NSInteger alarmRepeatTimes;
+/// Minimum OTA battery level; <code>0</code> → default 30
+/// 最小 OTA 电量；<code>0</code> → 默认 30
+@property (nonatomic) NSInteger otaBatteryMin;
+/// Max days for physiological daily records; <code>0</code> → default 30~180
+/// 女性日常记录最大天数；<code>0</code> → 默认 30~180
+@property (nonatomic) NSInteger physiologicalRecordMaxDay;
+/// Daily step goal min (steps); <code>0</code> invalid; valid when <code>supportGetFirmwareSupportedConfig</code>
+/// 全天步数目标最小值（步）；<code>0</code> 无效；固件开启 <code>supportGetFirmwareSupportedConfig</code> 时有效
+@property (nonatomic) NSInteger dailyStepGoalMin;
+/// Daily step goal max (steps); <code>0</code> invalid; valid when <code>supportGetFirmwareSupportedConfig</code>
+/// 全天步数目标最大值（步）；<code>0</code> 无效；固件开启 <code>supportGetFirmwareSupportedConfig</code> 时有效
+@property (nonatomic) NSInteger dailyStepGoalMax;
+/// Daily step goal step span (steps); <code>0</code> invalid; valid when <code>supportGetFirmwareSupportedConfig</code>
+/// 全天步数目标调节步长（步）；<code>0</code> 无效；固件开启 <code>supportGetFirmwareSupportedConfig</code> 时有效
+@property (nonatomic) NSInteger dailyStepGoalSpan;
+/// Exercise BLE reconnect timeout (seconds); <code>0</code> invalid; valid when <code>supportGetFirmwareSupportedConfig</code>
+/// 运动中蓝牙断连回连超时（秒）；<code>0</code> 无效；固件开启 <code>supportGetFirmwareSupportedConfig</code> 时有效
+@property (nonatomic) NSInteger exerciseReconnectTimeout;
+/// Min battery required for factory reset; <code>0</code> invalid; valid when <code>supportGetFirmwareSupportedConfig</code>
+/// 恢复出厂最低电量；<code>0</code> 无效；固件开启 <code>supportGetFirmwareSupportedConfig</code> 时有效
+@property (nonatomic) NSInteger factoryResetMinBatteryRequire;
+- (nonnull instancetype)initWithContactMaxSetNum:(NSInteger)contactMaxSetNum reminderMaxSetNum:(NSInteger)reminderMaxSetNum msgMaxBuffSize:(NSInteger)msgMaxBuffSize menstrualLengthMin:(NSInteger)menstrualLengthMin menstrualLengthMax:(NSInteger)menstrualLengthMax menstrualCycleMin:(NSInteger)menstrualCycleMin menstrualCycleMax:(NSInteger)menstrualCycleMax bleGetMaxPrn:(NSInteger)bleGetMaxPrn alarmDelayMin:(NSInteger)alarmDelayMin alarmRepeatTimes:(NSInteger)alarmRepeatTimes otaBatteryMin:(NSInteger)otaBatteryMin physiologicalRecordMaxDay:(NSInteger)physiologicalRecordMaxDay dailyStepGoalMin:(NSInteger)dailyStepGoalMin dailyStepGoalMax:(NSInteger)dailyStepGoalMax dailyStepGoalSpan:(NSInteger)dailyStepGoalSpan exerciseReconnectTimeout:(NSInteger)exerciseReconnectTimeout factoryResetMinBatteryRequire:(NSInteger)factoryResetMinBatteryRequire OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -21943,6 +22662,39 @@ typedef SWIFT_ENUM(NSInteger, IDOSyncStatus, open) {
 /// 同步超时
   IDOSyncStatusError = 6,
 };
+
+@class IDOTakeMedicineRemindTimeItemModel;
+
+/// 吃药提醒 V3 提醒项
+SWIFT_CLASS("_TtC16protocol_channel34IDOTakeMedicineRemindInfoItemModel")
+@interface IDOTakeMedicineRemindInfoItemModel : NSObject
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic, copy) NSArray<IDOTakeMedicineRemindTimeItemModel *> * _Nullable timeItems;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// 吃药提醒 V3（15.90，0x33/0x86）
+SWIFT_CLASS("_TtC16protocol_channel26IDOTakeMedicineRemindModel")
+@interface IDOTakeMedicineRemindModel : NSObject
+@property (nonatomic) NSInteger operate;
+@property (nonatomic) NSInteger medicineShowOnOff;
+@property (nonatomic) NSInteger takeMedicineInfoCount;
+@property (nonatomic) NSInteger index;
+@property (nonatomic, strong) IDOTakeMedicineRemindInfoItemModel * _Nullable takeMedicineInfoItem;
+@property (nonatomic, copy) NSArray<IDOTakeMedicineRemindInfoItemModel *> * _Nullable takeMedicineInfoItems;
+- (nonnull instancetype)initWithOperate:(NSInteger)operate medicineShowOnOff:(NSInteger)medicineShowOnOff takeMedicineInfoCount:(NSInteger)takeMedicineInfoCount index:(NSInteger)index takeMedicineInfoItem:(IDOTakeMedicineRemindInfoItemModel * _Nullable)takeMedicineInfoItem OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 吃药提醒 V3（15.90，0x33/0x86）时间项
+SWIFT_CLASS("_TtC16protocol_channel34IDOTakeMedicineRemindTimeItemModel")
+@interface IDOTakeMedicineRemindTimeItemModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 /// Set Taking Medicine Reminder Event Code
@@ -22105,6 +22857,15 @@ SWIFT_CLASS("_TtC16protocol_channel17IDOTransBaseModel")
 @end
 
 
+/// 吃药提醒图标 <code>.medic</code>
+/// fileSize：源图字节数，由调用方传入
+SWIFT_CLASS("_TtC16protocol_channel18IDOTransMedicModel")
+@interface IDOTransMedicModel : IDOTransBaseModel
+- (nonnull instancetype)initWithFilePath:(NSString * _Nonnull)filePath fileName:(NSString * _Nonnull)fileName fileSize:(NSInteger)fileSize OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithFileType:(enum IDOTransType)fileType filePath:(NSString * _Nonnull)filePath fileName:(NSString * _Nonnull)fileName fileSize:(NSInteger)fileSize SWIFT_UNAVAILABLE;
+@end
+
+
 /// 消息图标
 SWIFT_CLASS("_TtC16protocol_channel20IDOTransMessageModel") SWIFT_DEPRECATED_MSG("已弃用")
 @interface IDOTransMessageModel : IDOTransBaseModel
@@ -22198,6 +22959,9 @@ SWIFT_CLASS("_TtC16protocol_channel18IDOTransMusicModel")
 /// <ul>
 ///   <li>
 ///     消息图标 - 使用 IDOTransMessageModel类
+///   </li>
+///   <li>
+///     吃药提醒图标 - 使用 IDOTransMedicModel
 ///   </li>
 ///   <li>
 ///     音乐 - 使用 IDOTransMusicModel
@@ -22483,13 +23247,23 @@ typedef SWIFT_ENUM(NSInteger, IDOTransType, open) {
   IDOTransTypeTon = 19,
 /// 小程序
   IDOTransTypeApp = 20,
+/// 离线地图
+  IDOTransTypeMap = 21,
+/// 轨迹文件
+  IDOTransTypeGpx = 22,
+/// 吃药提醒图标 <code>.medic</code>（请使用 IDOTransMedicModel）
+  IDOTransTypeMedic = 23,
+/// 手机日历 phone_calendar.cal
+  IDOTransTypeCal = 24,
 /// 其它类型：不限后缀，不对文件二次加工，直接上传到设备
 /// \code
 /// hid: 检测引导程序hid更新(android专用)
 /// xx: xxxxx
 ///
 /// \endcode
-  IDOTransTypeOther = 21,
+  IDOTransTypeOther = 25,
+/// 设备壁纸（.alwf / .alwfs）
+  IDOTransTypeWallpaperDevice = 26,
 };
 
 
@@ -23179,10 +23953,21 @@ SWIFT_CLASS("_TtC16protocol_channel12IDOWatchItem")
 /// Size of the watch face, in bytes
 /// Applies only if the firmware enables <code>v3SupportGetWatchSize</code>, otherwise the field is invalid
 @property (nonatomic) NSInteger size;
-- (nonnull instancetype)initWithType:(NSInteger)type watchVersion:(NSInteger)watchVersion sortNumber:(NSInteger)sortNumber name:(NSString * _Nonnull)name size:(NSInteger)size OBJC_DESIGNATED_INITIALIZER;
+/// Watch face transfer/install state (<code>IDOWatchItemState</code>)
+/// Valid when firmware enables supportWatchFileListUseVersion
+@property (nonatomic) NSInteger state;
+- (nonnull instancetype)initWithType:(NSInteger)type watchVersion:(NSInteger)watchVersion sortNumber:(NSInteger)sortNumber name:(NSString * _Nonnull)name size:(NSInteger)size state:(NSInteger)state OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+/// Single watch face state in <code>IDOWatchItem.state</code> (response, not a bitmask).
+typedef SWIFT_ENUM(NSInteger, IDOWatchItemState, open) {
+  IDOWatchItemStateUnknown = 0,
+  IDOWatchItemStateDownloading = 1,
+  IDOWatchItemStateInstalling = 2,
+  IDOWatchItemStateInstalled = 3,
+};
 
 
 SWIFT_CLASS("_TtC16protocol_channel17IDOWatchListModel")
@@ -23221,6 +24006,17 @@ SWIFT_CLASS("_TtC16protocol_channel17IDOWatchListModel")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+/// Query scope bitmask for <code>getWatchListV3</code> request.
+/// Valid when firmware enables <code>supportWatchFileListUseVersion</code>.
+typedef SWIFT_ENUM(NSInteger, IDOWatchListQueryType, open) {
+/// bit0: watch faces currently downloading
+  IDOWatchListQueryTypeDownloading = 1,
+/// bit1: watch faces currently installing
+  IDOWatchListQueryTypeInstalling = 2,
+/// bit2: installed watch faces
+  IDOWatchListQueryTypeInstalled = 4,
+};
 
 
 SWIFT_CLASS("_TtC16protocol_channel18IDOWatchListV2Item")
