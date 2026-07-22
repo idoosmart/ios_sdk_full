@@ -543,36 +543,6 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDODeviceStatusInfoModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDODeviceStatusInfoModel
   }
-  public struct getFirmwareDisplayVersion : protocol_channel.IDOCmdProtocol {
-    public init()
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOFirmwareDisplayVersionModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOFirmwareDisplayVersionModel
-  }
-  public struct getFirmwareStatusInfo : protocol_channel.IDOCmdProtocol {
-    public init()
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOFirmwareStatusInfoModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOFirmwareStatusInfoModel
-  }
-  public struct getFallMonitoringSwitch : protocol_channel.IDOCmdProtocol {
-    public init()
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOFallMonitoringSwitchModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOFallMonitoringSwitchModel
-  }
-  public struct getPositionSwitchMode : protocol_channel.IDOCmdProtocol {
-    public init()
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOPositionSwitchModeModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOPositionSwitchModeModel
-  }
-  public struct getDataTranConfig : protocol_channel.IDOCmdProtocol {
-    public init(_ param: protocol_channel.IDODataTranConfigParamModel = IDODataTranConfigParamModel())
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDODataTranConfigModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDODataTranConfigModel
-  }
   public struct getSportTypesRequiringWristSideSetting : protocol_channel.IDOCmdProtocol {
     public init()
     @discardableResult
@@ -584,30 +554,6 @@ public struct Cmds {
     @discardableResult
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDODeviceVibrationRingtoneModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDODeviceVibrationRingtoneModel
-  }
-  public struct getPhoneCalendarSyncSwitch : protocol_channel.IDOCmdProtocol {
-    public init()
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOPhoneCalendarSyncSwitchModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOPhoneCalendarSyncSwitchModel
-  }
-  public struct setPhoneCalendarSync : protocol_channel.IDOCmdProtocol {
-    public init(_ model: protocol_channel.IDOPhoneCalendarSyncSetModel)
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOPhoneCalendarSyncSetReplyModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOPhoneCalendarSyncSetReplyModel
-  }
-  public struct getPhoneCalendarDeleteList : protocol_channel.IDOCmdProtocol {
-    public init()
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOPhoneCalendarDeleteListModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOPhoneCalendarDeleteListModel
-  }
-  public struct setPhoneCalendarSyncDelete : protocol_channel.IDOCmdProtocol {
-    public init(_ model: protocol_channel.IDOPhoneCalendarSyncDeleteModel)
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOPhoneCalendarSyncDeleteReplyModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOPhoneCalendarSyncDeleteReplyModel
   }
   public struct getPetInfo : protocol_channel.IDOCmdProtocol {
     public init()
@@ -1084,8 +1030,7 @@ public struct Cmds {
     public typealias DataType = protocol_channel.IDOSyncContactModel
   }
   public struct getWatchListV3 : protocol_channel.IDOCmdProtocol {
-    public init(state: Swift.Int = 0)
-    public init(queryTypes: [protocol_channel.IDOWatchListQueryType])
+    public init()
     @discardableResult
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOWatchListModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOWatchListModel
@@ -1348,24 +1293,6 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOAppSleepModeReplyModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOAppSleepModeReplyModel
   }
-  public struct setLocationInfoNotify : protocol_channel.IDOCmdProtocol {
-    public init(_ param: protocol_channel.IDOLocationInfoNotifyModel)
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
-  }
-  public struct setFallMonitoringSwitch : protocol_channel.IDOCmdProtocol {
-    public init(_ param: protocol_channel.IDOFallMonitoringSwitchModel)
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
-  }
-  public struct setPositionSwitchMode : protocol_channel.IDOCmdProtocol {
-    public init(_ param: protocol_channel.IDOPositionSwitchModeModel)
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOCmdSetResponseModel
-  }
   public struct setPetInfo : protocol_channel.IDOCmdProtocol {
     public init(_ param: protocol_channel.IDOPetInfoParamModel)
     @discardableResult
@@ -1428,7 +1355,6 @@ public struct Cmds {
   }
   public struct setAppleControl : protocol_channel.IDOCmdProtocol {
     public init(_ param: protocol_channel.IDOAppletControlModel)
-    public init(queryTypes: [protocol_channel.IDOAppletListQueryType])
     @discardableResult
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOAppletInfoModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOAppletInfoModel
@@ -1613,30 +1539,6 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
-  public struct getFirmwarePositionInfo : protocol_channel.IDOCmdProtocol {
-    public init(_ param: protocol_channel.IDOFirmwarePositionInfoModel)
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOFirmwarePositionInfoModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOFirmwarePositionInfoModel
-  }
-  public struct takeMedicineRemind : protocol_channel.IDOCmdProtocol {
-    public init(_ param: protocol_channel.IDOTakeMedicineRemindModel)
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOTakeMedicineRemindModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOTakeMedicineRemindModel
-  }
-  public struct setPurchasedWatchFaceInfo : protocol_channel.IDOCmdProtocol {
-    public init(_ param: protocol_channel.IDOPurchasedWatchFaceInfoModel)
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOPurchasedWatchFaceInfoModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOPurchasedWatchFaceInfoModel
-  }
-  public struct setAppDownloadStatusInfo : protocol_channel.IDOCmdProtocol {
-    public init(_ param: protocol_channel.IDOAppDownloadStatusInfoModel)
-    @discardableResult
-    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOAppDownloadStatusInfoModel>) -> any protocol_channel.IDOCancellable
-    public typealias DataType = protocol_channel.IDOAppDownloadStatusInfoModel
-  }
   public struct setCgmKeyAndDevice : protocol_channel.IDOCmdProtocol {
     public init(key: Swift.String, deviceName: Swift.String)
     @discardableResult
@@ -1712,21 +1614,11 @@ public struct Cmds {
   @objc @discardableResult
   public static func getDeviceStatusInfo(getType: Swift.Int = 1, _ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDODeviceStatusInfoModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
-  public static func getFirmwareDisplayVersion(_ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDOFirmwareDisplayVersionModel?) -> ()) -> any protocol_channel.IDOCancellable
-  @objc @discardableResult
   public static func getSportTypesRequiringWristSideSetting(_ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDOSportTypesRequiringWristSideSettingModel?) -> ()) -> any protocol_channel.IDOCancellable
   @discardableResult
   public static func getDeviceVibrationRingtone(type: Swift.Int? = nil, _ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDODeviceVibrationRingtoneModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setDeviceVibrationRingtone(_ model: protocol_channel.IDODeviceVibrationRingtoneModel, _ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDODeviceVibrationRingtoneModel?) -> ()) -> any protocol_channel.IDOCancellable
-  @objc @discardableResult
-  public static func getPhoneCalendarSyncSwitch(_ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDOPhoneCalendarSyncSwitchModel?) -> ()) -> any protocol_channel.IDOCancellable
-  @objc @discardableResult
-  public static func setPhoneCalendarSync(_ model: protocol_channel.IDOPhoneCalendarSyncSetModel, _ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDOPhoneCalendarSyncSetReplyModel?) -> ()) -> any protocol_channel.IDOCancellable
-  @objc @discardableResult
-  public static func getPhoneCalendarDeleteList(_ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDOPhoneCalendarDeleteListModel?) -> ()) -> any protocol_channel.IDOCancellable
-  @objc @discardableResult
-  public static func setPhoneCalendarSyncDelete(_ model: protocol_channel.IDOPhoneCalendarSyncDeleteModel, _ completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDOPhoneCalendarSyncDeleteReplyModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func getPetInfo(_ completion: @escaping (_ err: protocol_channel.CmdError, _ petInfo: protocol_channel.IDOPetInfoModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
@@ -1889,8 +1781,6 @@ public struct Cmds {
   public static func setSyncContact(_ syncContactParam: protocol_channel.IDOSyncContactParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ syncContactModel: protocol_channel.IDOSyncContactModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func getWatchListV3(_ completion: @escaping (_ err: protocol_channel.CmdError, _ watchListModel: protocol_channel.IDOWatchListModel?) -> ()) -> any protocol_channel.IDOCancellable
-  @objc @discardableResult
-  public static func getWatchListV3(_ state: Swift.Int, completion: @escaping (_ err: protocol_channel.CmdError, _ watchListModel: protocol_channel.IDOWatchListModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func getWatchListV2(_ completion: @escaping (_ err: protocol_channel.CmdError, _ watchList: protocol_channel.IDOWatchListV2Model?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
@@ -2772,12 +2662,7 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
   case voice = 18
   case ton = 19
   case app = 20
-  case map = 21
-  case gpx = 22
-  case medic = 23
-  case cal = 24
-  case other = 25
-  case wallpaperDevice = 26
+  case other = 21
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -2818,10 +2703,6 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
   @objc final public let evtType: Swift.Int
   @objc final public let packName: Swift.String
   @objc public init(filePath: Swift.String, fileName: Swift.String, fileSize: Swift.Int = 0, evtType: Swift.Int, packName: Swift.String)
-  @objc deinit
-}
-@objc @objcMembers public class IDOTransMedicModel : protocol_channel.IDOTransBaseModel {
-  @objc public init(filePath: Swift.String, fileName: Swift.String, fileSize: Swift.Int)
   @objc deinit
 }
 @objc @objcMembers public class IDOTransMusicModel : protocol_channel.IDOTransBaseModel {
@@ -3244,35 +3125,10 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-@objc public enum IDOAppletListQueryType : Swift.Int {
-  case downloading = 1
-  case installing = 2
-  case installed = 4
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-extension protocol_channel.IDOAppletListQueryType {
-  public static func combine(_ types: [protocol_channel.IDOAppletListQueryType]) -> Swift.Int
-}
-@objc public enum IDOAppletItemState : Swift.Int {
-  case unknown = 0
-  case downloading = 1
-  case installing = 2
-  case installed = 3
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
 @objc @objcMembers public class IDOAppletControlModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var operate: Swift.Int
   @objc public var appName: Swift.String?
-  public var state: Swift.Int?
-  public init(operate: Swift.Int, appName: Swift.String? = nil, state: Swift.Int? = nil)
+  @objc public init(operate: Swift.Int, appName: Swift.String? = nil)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -3283,10 +3139,8 @@ extension protocol_channel.IDOAppletListQueryType {
   @objc public var infoItem: [protocol_channel.IDOAppletInfoItem]?
   public var appletNum: Swift.Int?
   @objc public var operate: Swift.Int
-  public var residualSpace: Swift.Int?
-  public var totalSpace: Swift.Int?
-  public var supportGetMiniProgramMaxNum: Swift.Int?
-  public var supportMiniProgramNameMaxLen: Swift.Int?
+  @objc public var residualSpace: Swift.Int
+  @objc public var totalSpace: Swift.Int
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case errorCode
     case infoItem
@@ -3295,8 +3149,6 @@ extension protocol_channel.IDOAppletListQueryType {
     case residualSpace
     case totalSpace
     case version
-    case supportGetMiniProgramMaxNum
-    case supportMiniProgramNameMaxLen
     public init?(rawValue: Swift.String)
     public init?(stringValue: Swift.String)
     public init?(intValue: Swift.Int)
@@ -3311,7 +3163,7 @@ extension protocol_channel.IDOAppletListQueryType {
       get
     }
   }
-  public init(errorCode: Swift.Int, infoItem: [protocol_channel.IDOAppletInfoItem]? = nil, miniProgramNum: Swift.Int? = nil, operate: Swift.Int, residualSpace: Swift.Int? = nil, totalSpace: Swift.Int? = nil, supportGetMiniProgramMaxNum: Swift.Int? = nil, supportMiniProgramNameMaxLen: Swift.Int? = nil)
+  @objc public init(errorCode: Swift.Int, infoItem: [protocol_channel.IDOAppletInfoItem], miniProgramNum: Swift.Int, operate: Swift.Int, residualSpace: Swift.Int, totalSpace: Swift.Int)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -3321,14 +3173,10 @@ extension protocol_channel.IDOAppletListQueryType {
   @objc public var appName: Swift.String
   @objc public var size: Swift.Int
   @objc public var version: Swift.String
-  @objc public var versionName: Swift.String?
-  @objc public var state: Swift.Int
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case appName
     case size
     case version
-    case versionName
-    case state
     public init?(rawValue: Swift.String)
     public init?(stringValue: Swift.String)
     public init?(intValue: Swift.Int)
@@ -3343,43 +3191,20 @@ extension protocol_channel.IDOAppletListQueryType {
       get
     }
   }
-  @objc public init(appName: Swift.String, size: Swift.Int, version: Swift.String, state: Swift.Int = 0, versionName: Swift.String? = nil)
-  required public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  @objc public init(appName: Swift.String, size: Swift.Int, version: Swift.String)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
-}
-@objc @objcMembers public class IDOAppDownloadStatusInfoModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var operate: Swift.Int
-  public var type: Swift.Int?
-  public var status: Swift.Int?
-  public var progress: Swift.Int?
-  @objc public var id: Swift.String?
-  public var errorCode: Swift.Int?
-  public init(operate: Swift.Int = 1, type: Swift.Int? = nil, status: Swift.Int? = nil, progress: Swift.Int? = nil, id: Swift.String? = nil, errorCode: Swift.Int? = nil)
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
 }
 @objc @objcMembers public class IDOAppInfoModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var userName: Swift.String
   @objc public var operate: Swift.Int
-  @objc public var userId: Swift.String?
-  @objc public var token: Swift.String?
-  @objc public var domainName: Swift.String?
-  @objc public var appVersion: Swift.String?
-  public var phoneSystem: Swift.Int?
-  public var isFilterWatch: Swift.Int?
-  @objc public var appKey: Swift.String?
-  @objc public var appFaceVersion: Swift.String?
   @objc public init(userName: Swift.String, operate: Swift.Int = 1)
-  public func encode(to encoder: any Swift.Encoder) throws
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
-}
-extension protocol_channel.IDOAppInfoModel : Swift.Encodable {
 }
 @objc @objcMembers public class IDOAppListStyleParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var operate: Swift.Int
@@ -3387,18 +3212,18 @@ extension protocol_channel.IDOAppInfoModel : Swift.Encodable {
   @objc public var name: Swift.String
   @objc public var wallpaperVersion: Swift.Int
   @objc public init(operate: Swift.Int, fontColor: Swift.Int = 0, name: Swift.String = "", wallpaperVersion: Swift.Int = 0)
-  required public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
-@objc @objcMembers public class IDOApplicationListItem : ObjectiveC.NSObject, Swift.Codable {
-  @objc public var sortNumber: Swift.Int
-  @objc public var fontColor: Swift.Int
-  @objc public var size: Swift.Int
-  @objc public var name: Swift.String
-  @objc public var wallpaperVersion: Swift.Int
-  @objc public init(sortNumber: Swift.Int = 0, fontColor: Swift.Int = 0, size: Swift.Int = 0, name: Swift.String = "", wallpaperVersion: Swift.Int = 0)
+@objc public class IDOApplicationListItem : ObjectiveC.NSObject, Swift.Codable {
+  public var sortNumber: Swift.Int
+  public var fontColor: Swift.Int
+  public var size: Swift.Int
+  public var name: Swift.String
+  public var wallpaperVersion: Swift.Int
+  public init(sortNumber: Swift.Int, fontColor: Swift.Int, size: Swift.Int, name: Swift.String, wallpaperVersion: Swift.Int)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -3411,11 +3236,11 @@ extension protocol_channel.IDOAppInfoModel : Swift.Encodable {
   @objc public var applicationListCapacitySize: Swift.Int
   @objc public var userApplicationListCapacitySize: Swift.Int
   @objc public var listItems: [protocol_channel.IDOApplicationListItem]?
-  @objc public init(operate: Swift.Int = 0, errorCode: Swift.Int = 0, applicationListTotalNum: Swift.Int = 0, userApplicationListItemNum: Swift.Int = 0, applicationListCapacitySize: Swift.Int = 0, userApplicationListCapacitySize: Swift.Int = 0, listItems: [protocol_channel.IDOApplicationListItem]? = nil)
-  required public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  @objc public init(operate: Swift.Int, errorCode: Swift.Int, applicationListTotalNum: Swift.Int = 0, userApplicationListItemNum: Swift.Int = 0, applicationListCapacitySize: Swift.Int = 0, userApplicationListCapacitySize: Swift.Int = 0, listItems: [protocol_channel.IDOApplicationListItem]? = nil)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOAppSleepModeModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var sleepModeSwitch: Swift.Int
@@ -4306,18 +4131,6 @@ public protocol IDOCmdProtocol {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-@objc @objcMembers public class IDODataTranConfigParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var type: Swift.Int
-  @objc public var evtType: Swift.Int
-  @objc public var sportType: Swift.Int
-  @objc public var medicineType: Swift.Int
-  @objc public var photoEffectType: Swift.Int
-  @objc public init(type: Swift.Int = 0, evtType: Swift.Int = 0, sportType: Swift.Int = 0, medicineType: Swift.Int = 0, photoEffectType: Swift.Int = 0)
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
 @objc @objcMembers public class IDODateTimeParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var year: Swift.Int, monuth: Swift.Int, day: Swift.Int, hour: Swift.Int
   @objc public var minute: Swift.Int, second: Swift.Int
@@ -4678,15 +4491,6 @@ public protocol IDOCmdProtocol {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-@objc @objcMembers public class IDOFallMonitoringSwitchModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var fallMonitoringSwitch: Swift.Int
-  public var errCode: Swift.Int?
-  public init(fallMonitoringSwitch: Swift.Int, errCode: Swift.Int? = nil)
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
 @objc public protocol IDOFileTransferInterface {
   @objc var isTransmitting: Swift.Bool { get }
   @objc var transFileType: protocol_channel.IDOTransTypeClass? { get }
@@ -4703,84 +4507,6 @@ public protocol IDOCmdProtocol {
 @objc @objcMembers public class IDOFindPhoneSwitchModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var onOff: Swift.Bool
   @objc public init(onOff: Swift.Bool)
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @objcMembers public class IDOFirmwareDisplayVersionModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var errCode: Swift.Int
-  @objc public var displayVersion: Swift.String
-  @objc public init(errCode: Swift.Int = 0, displayVersion: Swift.String = "")
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class IDOFirmwarePositionGpsItemModel : ObjectiveC.NSObject, Swift.Codable {
-  public var longitude: Swift.Int?
-  public var latitude: Swift.Int?
-  public var height: Swift.Int?
-  public var satelliteNum: Swift.Int?
-  public var gsm: Swift.Int?
-  public var type: Swift.Int?
-  public var accuracy: Swift.Int?
-  @objc override dynamic public init()
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class IDOFirmwarePositionBaseStationItemModel : ObjectiveC.NSObject, Swift.Codable {
-  public var mcc: Swift.Int?
-  public var mnc: Swift.Int?
-  public var lac: Swift.Int?
-  public var ci: Swift.Int?
-  public var rxlev: Swift.Int?
-  public var sid: Swift.Int?
-  public var bid: Swift.Int?
-  public var nid: Swift.Int?
-  @objc override dynamic public init()
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class IDOFirmwarePositionWifiItemModel : ObjectiveC.NSObject, Swift.Codable {
-  public var signal: Swift.Int?
-  @objc public var ssid: Swift.String?
-  @objc public var mac: Swift.String?
-  @objc override dynamic public init()
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class IDOFirmwarePositionInfoItemModel : ObjectiveC.NSObject, Swift.Codable {
-  public var timestamp: Swift.Int?
-  public var networkType: Swift.Int?
-  @objc public var gpsInfoItem: protocol_channel.IDOFirmwarePositionGpsItemModel?
-  @objc public var stationInfoItems: [protocol_channel.IDOFirmwarePositionBaseStationItemModel]?
-  @objc public var wifiInfoItems: [protocol_channel.IDOFirmwarePositionWifiItemModel]?
-  @objc override dynamic public init()
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @objcMembers public class IDOFirmwarePositionInfoModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var operate: Swift.Int
-  public var timestamp: Swift.Int?
-  public var errorCode: Swift.Int?
-  public var positionInfoCount: Swift.Int?
-  public var isNextData: Swift.Int?
-  @objc public var positionInfoItem: protocol_channel.IDOFirmwarePositionInfoItemModel?
-  public init(operate: Swift.Int = 1, timestamp: Swift.Int? = nil)
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-}
-@objc @objcMembers public class IDOFirmwareStatusInfoModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var intelligentMode: Swift.Int
-  @objc public var networkStatus: Swift.Int
-  @objc public init(intelligentMode: Swift.Int = 0, networkStatus: Swift.Int = 0)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -5394,10 +5120,9 @@ public protocol IDOCmdProtocol {
   @objc var supportSetSportRecordName: Swift.Bool { get }
   @objc var supportAppNotDisplaySportTypeSetting: Swift.Bool { get }
   @objc var reminderBuzud: Swift.Bool { get }
-  @objc var supportPhoneCalendarReminder: Swift.Bool { get }
+  @objc var v2SupportPhoneCalendarReminder: Swift.Bool { get }
   @objc var supportGetDeviceStatus: Swift.Bool { get }
   @objc var supportGetDeviceSportStatus: Swift.Bool { get }
-  @objc var supportGetFirmwareDisplayVersion: Swift.Bool { get }
   @objc var supportBedtimeStory: Swift.Bool { get }
   @objc var supportThirdSportIcon: Swift.Bool { get }
   @objc var supportControlMeasureBp: Swift.Bool { get }
@@ -5942,14 +5667,6 @@ public protocol IDOCmdProtocol {
   @objc public var totalActiveTime: Swift.Int
   @objc public var heartRate: Swift.Int
   @objc public init(totalStep: Swift.Int, totalCalories: Swift.Int, totalDistances: Swift.Int, totalActiveTime: Swift.Int, heartRate: Swift.Int)
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @objcMembers public class IDOLocationInfoNotifyModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var status: Swift.Int
-  @objc public init(status: Swift.Int)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -6619,87 +6336,6 @@ public protocol IDOCmdProtocol {
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class IDOPhoneCalendarSyncSwitchModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  public var errCode: Swift.Int?
-  public var syncOnOff: Swift.Int?
-  @objc override dynamic public init()
-  required public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-}
-@objc @objcMembers public class IDOPhoneCalendarSyncSetModel : ObjectiveC.NSObject {
-  @objc public var syncOnOff: Swift.Int
-  @objc public var calendarPermissionStatus: Swift.Int
-  @objc public init(syncOnOff: Swift.Int, calendarPermissionStatus: Swift.Int)
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class IDOPhoneCalendarSyncSetReplyModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  public var errCode: Swift.Int?
-  @objc override dynamic public init()
-  required public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-}
-@objc @objcMembers public class IDOPhoneCalendarDeleteItemModel : ObjectiveC.NSObject, Swift.Codable {
-  @objc public var eventId: Swift.String?
-  @objc public var calendarId: Swift.String?
-  public var startTime: Swift.Int?
-  public init(eventId: Swift.String? = nil, calendarId: Swift.String? = nil, startTime: Swift.Int? = nil)
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class IDOPhoneCalendarDeleteListModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  public var errCode: Swift.Int?
-  public var itemCount: Swift.Int?
-  @objc public var items: [protocol_channel.IDOPhoneCalendarDeleteItemModel]?
-  @objc override dynamic public init()
-  required public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-}
-@objc @objcMembers public class IDOPhoneCalendarSyncDeleteModel : ObjectiveC.NSObject {
-  public var itemCount: Swift.Int?
-  @objc public var items: [protocol_channel.IDOPhoneCalendarDeleteItemModel]
-  public init(items: [protocol_channel.IDOPhoneCalendarDeleteItemModel], itemCount: Swift.Int? = nil)
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class IDOPhoneCalendarSyncDeleteReplyModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  public var errCode: Swift.Int?
-  @objc override dynamic public init()
-  required public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-}
-@objc @objcMembers public class IDOPositionSwitchModeModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var switchMode: Swift.Int
-  @objc public var startHour: Swift.Int
-  @objc public var startMinute: Swift.Int
-  @objc public var endHour: Swift.Int
-  @objc public var endMinute: Swift.Int
-  public var errCode: Swift.Int?
-  public init(switchMode: Swift.Int = 0, startHour: Swift.Int = 0, startMinute: Swift.Int = 0, endHour: Swift.Int = 0, endMinute: Swift.Int = 0, errCode: Swift.Int? = nil)
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @objcMembers public class IDOPurchasedWatchFaceInfoModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var operate: Swift.Int
-  public var paymentStatus: Swift.Int?
-  @objc public var userId: Swift.String?
-  @objc public var watchId: Swift.String?
-  public var errorCode: Swift.Int?
-  public init(operate: Swift.Int = 1, paymentStatus: Swift.Int? = nil, userId: Swift.String? = nil, watchId: Swift.String? = nil, errorCode: Swift.Int? = nil)
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
 }
 @objc @objcMembers public class IDORunPlanParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var verison: Swift.Int
@@ -7650,25 +7286,11 @@ public protocol IDOCmdProtocol {
   @objc public var contactMaxSetNum: Swift.Int
   @objc public var reminderMaxSetNum: Swift.Int
   @objc public var msgMaxBuffSize: Swift.Int
-  @objc public var menstrualLengthMin: Swift.Int
-  @objc public var menstrualLengthMax: Swift.Int
-  @objc public var menstrualCycleMin: Swift.Int
-  @objc public var menstrualCycleMax: Swift.Int
-  @objc public var bleGetMaxPrn: Swift.Int
-  @objc public var alarmDelayMin: Swift.Int
-  @objc public var alarmRepeatTimes: Swift.Int
-  @objc public var otaBatteryMin: Swift.Int
-  @objc public var physiologicalRecordMaxDay: Swift.Int
-  @objc public var dailyStepGoalMin: Swift.Int
-  @objc public var dailyStepGoalMax: Swift.Int
-  @objc public var dailyStepGoalSpan: Swift.Int
-  @objc public var exerciseReconnectTimeout: Swift.Int
-  @objc public var factoryResetMinBatteryRequire: Swift.Int
-  @objc public init(contactMaxSetNum: Swift.Int = 0, reminderMaxSetNum: Swift.Int = 0, msgMaxBuffSize: Swift.Int = 0, menstrualLengthMin: Swift.Int = 0, menstrualLengthMax: Swift.Int = 0, menstrualCycleMin: Swift.Int = 0, menstrualCycleMax: Swift.Int = 0, bleGetMaxPrn: Swift.Int = 0, alarmDelayMin: Swift.Int = 0, alarmRepeatTimes: Swift.Int = 0, otaBatteryMin: Swift.Int = 0, physiologicalRecordMaxDay: Swift.Int = 0, dailyStepGoalMin: Swift.Int = 0, dailyStepGoalMax: Swift.Int = 0, dailyStepGoalSpan: Swift.Int = 0, exerciseReconnectTimeout: Swift.Int = 0, factoryResetMinBatteryRequire: Swift.Int = 0)
-  required public init(from decoder: any Swift.Decoder) throws
+  @objc public init(contactMaxSetNum: Swift.Int, reminderMaxSetNum: Swift.Int, msgMaxBuffSize: Swift.Int)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOSyncContactParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var operat: Swift.Int
@@ -7708,45 +7330,6 @@ public protocol IDOCmdProtocol {
   @objc final public let syncDataType: protocol_channel.IDOSyncDataType
   @objc public init(type: protocol_channel.IDOSyncDataType)
   @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class IDOTakeMedicineRemindTimeItemModel : ObjectiveC.NSObject, Swift.Codable {
-  public var hour: Swift.Int?
-  public var minute: Swift.Int?
-  public var reminderStatus: Swift.Int?
-  @objc override dynamic public init()
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @_inheritsConvenienceInitializers @objcMembers public class IDOTakeMedicineRemindInfoItemModel : ObjectiveC.NSObject, Swift.Codable {
-  public var index: Swift.Int?
-  public var year: Swift.Int?
-  public var month: Swift.Int?
-  public var day: Swift.Int?
-  public var `repeat`: Swift.Int?
-  @objc public var name: Swift.String?
-  public var dailyTimes: Swift.Int?
-  public var timeCount: Swift.Int?
-  @objc public var timeItems: [protocol_channel.IDOTakeMedicineRemindTimeItemModel]?
-  @objc override dynamic public init()
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
-}
-@objc @objcMembers public class IDOTakeMedicineRemindModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
-  @objc public var operate: Swift.Int
-  @objc public var medicineShowOnOff: Swift.Int
-  @objc public var takeMedicineInfoCount: Swift.Int
-  @objc public var index: Swift.Int
-  @objc public var takeMedicineInfoItem: protocol_channel.IDOTakeMedicineRemindInfoItemModel?
-  @objc public var takeMedicineInfoItems: [protocol_channel.IDOTakeMedicineRemindInfoItemModel]?
-  public var errorCode: Swift.Int?
-  public var maxSupportItemsNum: Swift.Int?
-  @objc public init(operate: Swift.Int = 2, medicineShowOnOff: Swift.Int = 255, takeMedicineInfoCount: Swift.Int = 0, index: Swift.Int = 0, takeMedicineInfoItem: protocol_channel.IDOTakeMedicineRemindInfoItemModel? = nil)
-  required public init(from decoder: any Swift.Decoder) throws
-  @objc public func toJsonString() -> Swift.String?
-  @objc deinit
-  public func encode(to encoder: any Swift.Encoder) throws
 }
 @objc public class IDOTakingMedicineReminderParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   public var takingMedicineId: Swift.Int
@@ -8110,30 +7693,6 @@ public protocol IDOCmdProtocol {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-@objc public enum IDOWatchListQueryType : Swift.Int {
-  case downloading = 1
-  case installing = 2
-  case installed = 4
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-extension protocol_channel.IDOWatchListQueryType {
-  public static func combine(_ types: [protocol_channel.IDOWatchListQueryType]) -> Swift.Int
-}
-@objc public enum IDOWatchItemState : Swift.Int {
-  case unknown = 0
-  case downloading = 1
-  case installing = 2
-  case installed = 3
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
 @objc @objcMembers public class IDOWatchListModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var localWatchNum: Swift.Int
   @objc public var cloudWatchNum: Swift.Int
@@ -8148,10 +7707,10 @@ extension protocol_channel.IDOWatchListQueryType {
   @objc public var usableMaxDownloadSpaceSize: Swift.Int
   @objc public var items: [protocol_channel.IDOWatchItem]
   @objc public init(localWatchNum: Swift.Int, cloudWatchNum: Swift.Int, wallpaperWatchNum: Swift.Int, userCloudWatchNum: Swift.Int, userWallpaperWatchNum: Swift.Int, nowShowWatchName: Swift.String, watchFrameMainVersion: Swift.Int, fileMaxSize: Swift.Int, watchCapacitySize: Swift.Int, userWatchCapacitySize: Swift.Int, usableMaxDownloadSpaceSize: Swift.Int, items: [protocol_channel.IDOWatchItem])
-  required public init(from decoder: any Swift.Decoder) throws
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOWatchItem : ObjectiveC.NSObject, Swift.Codable {
   @objc public var type: Swift.Int
@@ -8159,8 +7718,7 @@ extension protocol_channel.IDOWatchListQueryType {
   @objc public var sortNumber: Swift.Int
   @objc public var name: Swift.String
   @objc public var size: Swift.Int
-  @objc public var state: Swift.Int
-  @objc public init(type: Swift.Int, watchVersion: Swift.Int, sortNumber: Swift.Int, name: Swift.String, size: Swift.Int, state: Swift.Int = 0)
+  @objc public init(type: Swift.Int, watchVersion: Swift.Int, sortNumber: Swift.Int, name: Swift.String, size: Swift.Int)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -8469,12 +8027,6 @@ extension protocol_channel.IDORawDataSensorConfigReply.CodingKeys : Swift.RawRep
 extension protocol_channel.IDOAlgorithmSensorSwitch : Swift.Equatable {}
 extension protocol_channel.IDOAlgorithmSensorSwitch : Swift.Hashable {}
 extension protocol_channel.IDOAlgorithmSensorSwitch : Swift.RawRepresentable {}
-extension protocol_channel.IDOAppletListQueryType : Swift.Equatable {}
-extension protocol_channel.IDOAppletListQueryType : Swift.Hashable {}
-extension protocol_channel.IDOAppletListQueryType : Swift.RawRepresentable {}
-extension protocol_channel.IDOAppletItemState : Swift.Equatable {}
-extension protocol_channel.IDOAppletItemState : Swift.Hashable {}
-extension protocol_channel.IDOAppletItemState : Swift.RawRepresentable {}
 extension protocol_channel.IDOAppletInfoModel.CodingKeys : Swift.Equatable {}
 extension protocol_channel.IDOAppletInfoModel.CodingKeys : Swift.Hashable {}
 extension protocol_channel.IDOAppletInfoModel.CodingKeys : Swift.RawRepresentable {}
@@ -8595,12 +8147,6 @@ extension protocol_channel.IDODataType : Swift.RawRepresentable {}
 extension protocol_channel.IDODataSubType : Swift.Equatable {}
 extension protocol_channel.IDODataSubType : Swift.Hashable {}
 extension protocol_channel.IDODataSubType : Swift.RawRepresentable {}
-extension protocol_channel.IDOWatchListQueryType : Swift.Equatable {}
-extension protocol_channel.IDOWatchListQueryType : Swift.Hashable {}
-extension protocol_channel.IDOWatchListQueryType : Swift.RawRepresentable {}
-extension protocol_channel.IDOWatchItemState : Swift.Equatable {}
-extension protocol_channel.IDOWatchItemState : Swift.Hashable {}
-extension protocol_channel.IDOWatchItemState : Swift.RawRepresentable {}
 extension protocol_channel.IDOSyncDataType : Swift.Equatable {}
 extension protocol_channel.IDOSyncDataType : Swift.Hashable {}
 extension protocol_channel.IDOSyncDataType : Swift.RawRepresentable {}
