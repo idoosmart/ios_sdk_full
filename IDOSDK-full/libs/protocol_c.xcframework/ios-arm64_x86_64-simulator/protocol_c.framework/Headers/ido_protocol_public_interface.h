@@ -1119,6 +1119,13 @@ extern int ProtocolV2StopCallEvt(void);
  * */
 extern int ProtocolV2MissedCallEvt(void);
 
+/**
+ * @brief v2发送来电提醒状态为通话中挂断, 告诉设备停止提醒用户(部分设备实现)
+ * @note 需功能表 v2_set_notice_hang_up_in_call 为 true
+ * @return SUCCESS(0)成功
+ * */
+extern int ProtocolV2HangUpInCallEvt(void);
+
 /******************************** 日志接口 ********************************/
 
 /**

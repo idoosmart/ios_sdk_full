@@ -2268,7 +2268,66 @@ public enum IDOBleReplyType {
   @objc public var paceSpeeds: [Swift.Int]?
   @objc public var realSpeedCount: Swift.Int
   @objc public var realSpeeds: [Swift.Int]?
-  @objc public init(baseModel: protocol_channel.IDOExchangeBaseModel? = nil, year: Swift.Int, month: Swift.Int, planType: Swift.Int, actionType: Swift.Int, version: Swift.Int, operate: Swift.Int, targetValue: Swift.Int, targetType: Swift.Int, forceStart: Swift.Int, retCode: Swift.Int, calories: Swift.Int, distance: Swift.Int, durations: Swift.Int, step: Swift.Int, swimPosture: Swift.Int, status: Swift.Int, signalFlag: Swift.Int, isSave: Swift.Bool, realTimeSpeed: Swift.Int, realTimePace: Swift.Int, interval: Swift.Int, hrCount: Swift.Int, burnFatMins: Swift.Int, aerobicMins: Swift.Int, limitMins: Swift.Int, hrValues: [Swift.Int]? = nil, warmUpSecond: Swift.Int, anaeroicSecond: Swift.Int, fatBurnSecond: Swift.Int, aerobicSecond: Swift.Int, limitSecond: Swift.Int, avgHr: Swift.Int, maxHr: Swift.Int, curHr: Swift.Int, warmUpValue: Swift.Int, fatBurnValue: Swift.Int, aerobicValue: Swift.Int, limitValue: Swift.Int, anaerobicValue: Swift.Int, avgSpeed: Swift.Int, maxSpeed: Swift.Int, avgStepFrequency: Swift.Int, maxStepFrequency: Swift.Int, avgStepStride: Swift.Int, maxStepStride: Swift.Int, kmSpeed: Swift.Int, fastKmSpeed: Swift.Int, kmSpeedCount: Swift.Int, kmSpeeds: [Swift.Int]? = nil, mileCount: Swift.Int, mileSpeeds: [Swift.Int]? = nil, stepsFrequencyCount: Swift.Int, stepsFrequencys: [Swift.Int]? = nil, trainingEffect: Swift.Int, anaerobicTrainingEffect: Swift.Int, vo2Max: Swift.Int, actionDataCount: Swift.Int, inClassCalories: Swift.Int, completionRate: Swift.Int, hrCompletionRate: Swift.Int, recoverTime: Swift.Int, avgWeekActivityTime: Swift.Int, grade: Swift.Int, actionData: [[Swift.String : Any]]? = nil, trainingOffset: Swift.Int, countHour: Swift.Int, countMinute: Swift.Int, countSecond: Swift.Int, time: Swift.Int, lowHeart: Swift.Int, heightHeart: Swift.Int, paceSpeedCount: Swift.Int, paceSpeeds: [Swift.Int]? = nil, realSpeedCount: Swift.Int, realSpeeds: [Swift.Int]? = nil)
+  @objc public var totalSwingsNum: Swift.Int
+  @objc public var totalSitUpCount: Swift.Int
+  @objc public var load: Swift.Int
+  @objc public var bodyAge: Swift.Int
+  @objc public var distance3d: Swift.Int
+  @objc public var avg3dSpeed: Swift.Int
+  @objc public var avgVerticalSpeed: Swift.Int
+  @objc public var avgSlope: Swift.Int
+  @objc public var gpsStatus: Swift.Int
+  @objc public var runningEconomy: Swift.Int
+  @objc public var maxRunningPower: Swift.Int
+  @objc public var minRunningPower: Swift.Int
+  @objc public var avgRunningPower: Swift.Int
+  @objc public var runningPowerCount: Swift.Int
+  @objc public var rtpeCount: Swift.Int
+  @objc public var maxRtoc: Swift.Int
+  @objc public var minRtoc: Swift.Int
+  @objc public var avgRtoc: Swift.Int
+  @objc public var rtocCount: Swift.Int
+  @objc public var maxRopeFrequency: Swift.Int
+  @objc public var minRopeFrequency: Swift.Int
+  @objc public var avgRopeFrequency: Swift.Int
+  @objc public var maxRopeSkipCount: Swift.Int
+  @objc public var ropeTripCount: Swift.Int
+  @objc public var totalRopeCount: Swift.Int
+  @objc public var ropeItemCount: Swift.Int
+  @objc public var kmPace: Swift.Int
+  @objc public var fastKmPace: Swift.Int
+  @objc public var kmPaceCount: Swift.Int
+  @objc public var miPaceCount: Swift.Int
+  @objc public var paceRealTimeCount: Swift.Int
+  @objc public var aerobicPowerInterval: Swift.Int
+  @objc public var mixedOxygenPowerInterval: Swift.Int
+  @objc public var thresholdRunningPowerInterval: Swift.Int
+  @objc public var intermittentRunPowerInterval: Swift.Int
+  @objc public var sprintRunPowerInterval: Swift.Int
+  @objc public var strideCount: Swift.Int
+  @objc public var strideItems: [Swift.Int]?
+  @objc public var itemRunningPower: [Swift.Int]?
+  @objc public var itemRtpe: [Swift.Int]?
+  @objc public var itemRtoc: [Swift.Int]?
+  @objc public var itemRopeInfo: [protocol_channel.IDOActivityRopeSkipItem]?
+  @objc public var smartCompetitor: Swift.Int
+  @objc public var aiImageId: Swift.Int
+  @objc public var userImageId: Swift.Int
+  @objc public var bgImageId: Swift.Int
+  @objc public var smartCompetitorPace: Swift.Int
+  @objc public var tennisServeCount: Swift.Int
+  @objc public var tennisForeheadCount: Swift.Int
+  @objc public var tennisBackhandCount: Swift.Int
+  @objc public var trips: Swift.Int
+  @objc public var averageSwolf: Swift.Int
+  @objc public var totalStrokesNumber: Swift.Int
+  @objc public var swimmingPosture: Swift.Int
+  @objc public var swimmingAvgPace: Swift.Int
+  @objc public var avgFrequency: Swift.Int
+  @objc public var swimmingPoolDistance: Swift.Double
+  @objc public var swimmingItemCount: Swift.Int
+  @objc public var swimmingItems: [protocol_channel.IDOActivitySwimmingLapItem]?
+  @objc public init(baseModel: protocol_channel.IDOExchangeBaseModel? = nil, year: Swift.Int, month: Swift.Int, planType: Swift.Int, actionType: Swift.Int, version: Swift.Int, operate: Swift.Int, targetValue: Swift.Int, targetType: Swift.Int, forceStart: Swift.Int, retCode: Swift.Int, calories: Swift.Int, distance: Swift.Int, durations: Swift.Int, step: Swift.Int, swimPosture: Swift.Int, status: Swift.Int, signalFlag: Swift.Int, isSave: Swift.Bool, realTimeSpeed: Swift.Int, realTimePace: Swift.Int, interval: Swift.Int, hrCount: Swift.Int, burnFatMins: Swift.Int, aerobicMins: Swift.Int, limitMins: Swift.Int, hrValues: [Swift.Int]? = nil, warmUpSecond: Swift.Int, anaeroicSecond: Swift.Int, fatBurnSecond: Swift.Int, aerobicSecond: Swift.Int, limitSecond: Swift.Int, avgHr: Swift.Int, maxHr: Swift.Int, curHr: Swift.Int, warmUpValue: Swift.Int, fatBurnValue: Swift.Int, aerobicValue: Swift.Int, limitValue: Swift.Int, anaerobicValue: Swift.Int, avgSpeed: Swift.Int, maxSpeed: Swift.Int, avgStepFrequency: Swift.Int, maxStepFrequency: Swift.Int, avgStepStride: Swift.Int, maxStepStride: Swift.Int, kmSpeed: Swift.Int, fastKmSpeed: Swift.Int, kmSpeedCount: Swift.Int, kmSpeeds: [Swift.Int]? = nil, mileCount: Swift.Int, mileSpeeds: [Swift.Int]? = nil, stepsFrequencyCount: Swift.Int, stepsFrequencys: [Swift.Int]? = nil, trainingEffect: Swift.Int, anaerobicTrainingEffect: Swift.Int, vo2Max: Swift.Int, actionDataCount: Swift.Int, inClassCalories: Swift.Int, completionRate: Swift.Int, hrCompletionRate: Swift.Int, recoverTime: Swift.Int, avgWeekActivityTime: Swift.Int, grade: Swift.Int, actionData: [[Swift.String : Any]]? = nil, trainingOffset: Swift.Int, countHour: Swift.Int, countMinute: Swift.Int, countSecond: Swift.Int, time: Swift.Int, lowHeart: Swift.Int, heightHeart: Swift.Int, paceSpeedCount: Swift.Int, paceSpeeds: [Swift.Int]? = nil, realSpeedCount: Swift.Int, realSpeeds: [Swift.Int]? = nil, totalSwingsNum: Swift.Int = 0, totalSitUpCount: Swift.Int = 0, load: Swift.Int = 0, bodyAge: Swift.Int = 0, distance3d: Swift.Int = 0, avg3dSpeed: Swift.Int = 0, avgVerticalSpeed: Swift.Int = 0, avgSlope: Swift.Int = 0, gpsStatus: Swift.Int = 0, runningEconomy: Swift.Int = 0, maxRunningPower: Swift.Int = 0, minRunningPower: Swift.Int = 0, avgRunningPower: Swift.Int = 0, runningPowerCount: Swift.Int = 0, rtpeCount: Swift.Int = 0, maxRtoc: Swift.Int = 0, minRtoc: Swift.Int = 0, avgRtoc: Swift.Int = 0, rtocCount: Swift.Int = 0, maxRopeFrequency: Swift.Int = 0, minRopeFrequency: Swift.Int = 0, avgRopeFrequency: Swift.Int = 0, maxRopeSkipCount: Swift.Int = 0, ropeTripCount: Swift.Int = 0, totalRopeCount: Swift.Int = 0, ropeItemCount: Swift.Int = 0, kmPace: Swift.Int = 0, fastKmPace: Swift.Int = 0, kmPaceCount: Swift.Int = 0, miPaceCount: Swift.Int = 0, paceRealTimeCount: Swift.Int = 0, aerobicPowerInterval: Swift.Int = 0, mixedOxygenPowerInterval: Swift.Int = 0, thresholdRunningPowerInterval: Swift.Int = 0, intermittentRunPowerInterval: Swift.Int = 0, sprintRunPowerInterval: Swift.Int = 0, strideCount: Swift.Int = 0, strideItems: [Swift.Int]? = nil, itemRunningPower: [Swift.Int]? = nil, itemRtpe: [Swift.Int]? = nil, itemRtoc: [Swift.Int]? = nil, itemRopeInfo: [protocol_channel.IDOActivityRopeSkipItem]? = nil, smartCompetitor: Swift.Int = 0, aiImageId: Swift.Int = 0, userImageId: Swift.Int = 0, bgImageId: Swift.Int = 0, smartCompetitorPace: Swift.Int = 0, tennisServeCount: Swift.Int = 0, tennisForeheadCount: Swift.Int = 0, tennisBackhandCount: Swift.Int = 0, trips: Swift.Int = 0, averageSwolf: Swift.Int = 0, totalStrokesNumber: Swift.Int = 0, swimmingPosture: Swift.Int = 0, swimmingAvgPace: Swift.Int = 0, avgFrequency: Swift.Int = 0, swimmingPoolDistance: Swift.Double = 0, swimmingItemCount: Swift.Int = 0, swimmingItems: [protocol_channel.IDOActivitySwimmingLapItem]? = nil)
   @objc deinit
 }
 @objc @objcMembers public class IDOAppStartExchangeModel : ObjectiveC.NSObject {
@@ -2279,7 +2338,8 @@ public enum IDOBleReplyType {
   @objc public var vo2max: Swift.Int
   @objc public var recoverTime: Swift.Int
   @objc public var avgWeekActivityTime: Swift.Int
-  @objc public init(baseModel: protocol_channel.IDOExchangeBaseModel? = nil, targetType: Swift.Int = 0, targetValue: Swift.Int = 0, forceStart: Swift.Int, vo2max: Swift.Int = 0, recoverTime: Swift.Int = 0, avgWeekActivityTime: Swift.Int = 0)
+  @objc public var swimPoolDistance: Swift.Double
+  @objc public init(baseModel: protocol_channel.IDOExchangeBaseModel? = nil, targetType: Swift.Int = 0, targetValue: Swift.Int = 0, forceStart: Swift.Int, vo2max: Swift.Int = 0, recoverTime: Swift.Int = 0, avgWeekActivityTime: Swift.Int = 0, swimPoolDistance: Swift.Double = 0)
   @objc deinit
 }
 @objc @objcMembers public class IDOAppStartReplyExchangeModel : ObjectiveC.NSObject {
@@ -2353,7 +2413,9 @@ public enum IDOBleReplyType {
   @objc public var countHour: Swift.Int
   @objc public var countMinute: Swift.Int
   @objc public var countSecond: Swift.Int
-  @objc public init(baseModel: protocol_channel.IDOExchangeBaseModel? = nil, version: Swift.Int, heartRate: Swift.Int, distance: Swift.Int, duration: Swift.Int, realTimeCalories: Swift.Int, realTimeSpeed: Swift.Int, kmSpeed: Swift.Int, steps: Swift.Int, swimPosture: Swift.Int, status: Swift.Int, realTimeSpeedPace: Swift.Int, trainingEffect: Swift.Int, anaerobicTrainingEffect: Swift.Int, actionType: Swift.Int, countHour: Swift.Int, countMinute: Swift.Int, countSecond: Swift.Int)
+  @objc public var totalSwingsNum: Swift.Int
+  @objc public var totalSitUpCount: Swift.Int
+  @objc public init(baseModel: protocol_channel.IDOExchangeBaseModel? = nil, version: Swift.Int, heartRate: Swift.Int, distance: Swift.Int, duration: Swift.Int, realTimeCalories: Swift.Int, realTimeSpeed: Swift.Int, kmSpeed: Swift.Int, steps: Swift.Int, swimPosture: Swift.Int, status: Swift.Int, realTimeSpeedPace: Swift.Int, trainingEffect: Swift.Int, anaerobicTrainingEffect: Swift.Int, actionType: Swift.Int, countHour: Swift.Int, countMinute: Swift.Int, countSecond: Swift.Int, totalSwingsNum: Swift.Int = 0, totalSitUpCount: Swift.Int = 0)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class IDOActivitySwimmingLapItem : ObjectiveC.NSObject {
@@ -2875,7 +2937,8 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
   @objc public var autoIdentifySportRowing: Swift.Int
   @objc public var autoIdentifySportSwim: Swift.Int
   @objc public var autoIdentifySportSmartRope: Swift.Int
-  @objc public init(errCode: Swift.Int, autoIdentifySportWalk: Swift.Int, autoIdentifySportRun: Swift.Int, autoIdentifySportBicycle: Swift.Int, autoPauseOnOff: Swift.Int, autoEndRemindOnOffOnOff: Swift.Int, autoIdentifySportElliptical: Swift.Int, autoIdentifySportRowing: Swift.Int, autoIdentifySportSwim: Swift.Int, autoIdentifySportSmartRope: Swift.Int)
+  public var autoIdentifyGeneralActivity: Swift.Int?
+  public init(errCode: Swift.Int, autoIdentifySportWalk: Swift.Int, autoIdentifySportRun: Swift.Int, autoIdentifySportBicycle: Swift.Int, autoPauseOnOff: Swift.Int, autoEndRemindOnOffOnOff: Swift.Int, autoIdentifySportElliptical: Swift.Int, autoIdentifySportRowing: Swift.Int, autoIdentifySportSwim: Swift.Int, autoIdentifySportSmartRope: Swift.Int, autoIdentifyGeneralActivity: Swift.Int? = nil)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -2891,7 +2954,8 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
   @objc public var autoIdentifySportRowing: Swift.Int
   @objc public var autoIdentifySportSwim: Swift.Int
   @objc public var autoIdentifySportSmartRope: Swift.Int
-  @objc public init(autoIdentifySportWalk: Swift.Int, autoIdentifySportRun: Swift.Int, autoIdentifySportBicycle: Swift.Int, autoPauseOnOff: Swift.Int, autoEndRemindOnOffOnOff: Swift.Int, autoIdentifySportElliptical: Swift.Int, autoIdentifySportRowing: Swift.Int, autoIdentifySportSwim: Swift.Int, autoIdentifySportSmartRope: Swift.Int)
+  public var autoIdentifyGeneralActivity: Swift.Int?
+  public init(autoIdentifySportWalk: Swift.Int, autoIdentifySportRun: Swift.Int, autoIdentifySportBicycle: Swift.Int, autoPauseOnOff: Swift.Int, autoEndRemindOnOffOnOff: Swift.Int, autoIdentifySportElliptical: Swift.Int, autoIdentifySportRowing: Swift.Int, autoIdentifySportSwim: Swift.Int, autoIdentifySportSmartRope: Swift.Int, autoIdentifyGeneralActivity: Swift.Int? = nil)
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -5408,9 +5472,11 @@ public protocol IDOCmdProtocol {
   @objc var supportControlMeasureOneClick: Swift.Bool { get }
   @objc var supportControlMeasureTemperature: Swift.Bool { get }
   @objc var supportAppSleepMode: Swift.Bool { get }
+  @objc var supportAppMenstrualOnly: Swift.Bool { get }
   @objc var supportSyncActivityDataBodyAge: Swift.Bool { get }
   @objc var supportIdb05UseLocaltimeForStepGoalCmd: Swift.Bool { get }
   @objc var supportGetSportTypesRequiringWristSideSetting: Swift.Bool { get }
+  @objc var supportGetSportAutoPauseEndTypes: Swift.Bool { get }
   @objc var supportTrainingPlan: Swift.Bool { get }
   @objc var supportExchangeActivityUseV21: Swift.Bool { get }
   @objc var supportDeviceVibrationRingtone: Swift.Bool { get }
@@ -5529,8 +5595,9 @@ public protocol IDOCmdProtocol {
   @objc public var errCode: Swift.Int
   @objc public var gestureControlOnOff: Swift.Int
   @objc public var gestureFunctionItems: [protocol_channel.IDOGestureFunctionItemModel]?
+  @objc public var needTipPowerConsumption: Swift.Int
   @objc override dynamic public init()
-  @objc public init(operate: Swift.Int = 1, gestureControlOnOff: Swift.Int = 0, gestureFunctionItems: [protocol_channel.IDOGestureFunctionItemModel]? = nil)
+  @objc public init(operate: Swift.Int = 1, gestureControlOnOff: Swift.Int = 0, gestureFunctionItems: [protocol_channel.IDOGestureFunctionItemModel]? = nil, needTipPowerConsumption: Swift.Int = 0)
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case version
     case operate
@@ -5538,6 +5605,7 @@ public protocol IDOCmdProtocol {
     case gestureControlOnOff
     case gestureFunctionItemCount
     case gestureFunctionItems
+    case needTipPowerConsumption
     public init?(rawValue: Swift.String)
     public init?(stringValue: Swift.String)
     public init?(intValue: Swift.Int)

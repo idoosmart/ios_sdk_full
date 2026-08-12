@@ -245,6 +245,7 @@ typedef enum
     VBUS_EVT_APP_SET_NOTICE_CALL_PROCESSING          = 413,    //处理中,内部事件
     VBUS_EVT_APP_SET_NOTICE_MSG_PROCESSING           = 414,
 	VBUS_EVT_APP_SET_NOTICE_CALL_TIME                = 415,    //来电接通完成后下发通话时间给固件
+	VBUS_EVT_APP_SET_NOTICE_HANG_UP_IN_CALL          = 416,    //通话中挂断（05 02 status=0x03）
 
 	VBUS_EVT_APP_SET_NOTICE_MISSED_CALL              = 420,	   //未接来电
     VBUS_EVT_APP_GET_HEART_RATE_MODE                 = 421,	   //获取心率监测模式
