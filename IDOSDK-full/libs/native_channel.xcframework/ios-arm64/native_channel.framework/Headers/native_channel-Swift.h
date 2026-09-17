@@ -366,8 +366,24 @@ SWIFT_PROTOCOL("_TtP14native_channel27IDONordicDFUManagerDelegate_")
 @end
 
 @protocol FlutterPluginRegistrar;
-@class NSNumber;
 @class FlutterError;
+
+SWIFT_CLASS("_TtC14native_channel16IdoActionsPlugin")
+@interface IdoActionsPlugin : NSObject <FlutterPlugin, ApiActionsHost, IDOActionsOTAManagerDelegate>
++ (void)registerWithRegistrar:(id <FlutterPluginRegistrar> _Nonnull)registrar;
+/// 开始 Actions OTA 升级 | Start Actions OTA upgrade
+- (void)startOTADeviceIdentifier:(NSString * _Nonnull)deviceIdentifier filePath:(NSString * _Nonnull)filePath error:(FlutterError * _Nullable * _Nonnull)error;
+/// 停止 Actions OTA 升级 | Stop Actions OTA upgrade
+- (void)stopOTAWithError:(FlutterError * _Nullable * _Nonnull)error;
+- (void)actionsOTADidComplete;
+- (void)actionsOTADidFailWithError:(NSError * _Nonnull)error;
+- (void)actionsOTAProgressDidChange:(float)progress;
+- (void)actionsOTADidLog:(NSString * _Nonnull)message;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class NSNumber;
 
 SWIFT_CLASS("_TtC14native_channel15IdoNordicPlugin")
 @interface IdoNordicPlugin : NSObject <FlutterPlugin, ApiNordicHost, IDONordicDFUManagerDelegate>

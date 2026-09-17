@@ -370,7 +370,10 @@ SWIFT_CLASS("_TtC16protocol_channel8CmdError")
 @class IDOFindPhoneSwitchModel;
 @class IDODeviceStatusInfoModel;
 @class IDOFirmwareDisplayVersionModel;
+@class IDOPillboxStateModel;
 @class IDOSportTypesRequiringWristSideSettingModel;
+@class IDOGetFindMyDeviceNameModel;
+@class IDOGetSportAutoPauseEndTypesModel;
 @class IDODeviceVibrationRingtoneModel;
 @class IDOPhoneCalendarSyncSwitchModel;
 @class IDOPhoneCalendarSyncSetModel;
@@ -492,6 +495,8 @@ enum IDOCmdPriority : NSInteger;
 @class IDOActivitySwitchParamModel;
 @class IDOBatteryReminderSwitchParamModel;
 @class IDOBatteryReminderSwitchReplyModel;
+@class IDOPillboxControlParamModel;
+@class IDOPillboxControlReplyModel;
 @class IDOPetInfoParamModel;
 @class IDOPetInfoReplyModel;
 @class IDOUnitModel;
@@ -579,8 +584,15 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 + (id <IDOCancellable> _Nonnull)getDeviceStatusInfoWithGetType:(NSInteger)getType :(void (^ _Nonnull)(CmdError * _Nonnull, IDODeviceStatusInfoModel * _Nullable))completion;
 /// 获取固件显示版本号（GET:0x02/0x4B）
 + (id <IDOCancellable> _Nonnull)getFirmwareDisplayVersion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOFirmwareDisplayVersionModel * _Nullable))completion;
+/// 获取药盒状态（GET:0x02/0x4D）
+/// Get pillbox state
++ (id <IDOCancellable> _Nonnull)getPillboxState:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPillboxStateModel * _Nullable))completion;
 /// 查询需设置左右手佩戴类型的运动类型列表（V3 15.104）
 + (id <IDOCancellable> _Nonnull)getSportTypesRequiringWristSideSetting:(void (^ _Nonnull)(CmdError * _Nonnull, IDOSportTypesRequiringWristSideSettingModel * _Nullable))completion;
+/// 获取 Find My 设备名称（V3 15.113）
++ (id <IDOCancellable> _Nonnull)getFindMyDeviceName:(void (^ _Nonnull)(CmdError * _Nonnull, IDOGetFindMyDeviceNameModel * _Nullable))completion;
+/// 查询运动自动暂停/结束支持的运动类型（V3 15.111）
++ (id <IDOCancellable> _Nonnull)getSportAutoPauseEndTypesWithOperate:(NSInteger)operate :(void (^ _Nonnull)(CmdError * _Nonnull, IDOGetSportAutoPauseEndTypesModel * _Nullable))completion;
 /// 设备振动与铃声设置（V3 15.106，operate=2）
 + (id <IDOCancellable> _Nonnull)setDeviceVibrationRingtone:(IDODeviceVibrationRingtoneModel * _Nonnull)model :(void (^ _Nonnull)(CmdError * _Nonnull, IDODeviceVibrationRingtoneModel * _Nullable))completion;
 /// 查询手机日历同步开关
@@ -971,6 +983,9 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 设备电量提醒开关设置
 /// Battery reminder switch event number
 + (id <IDOCancellable> _Nonnull)setBatteryReminderSwitch:(IDOBatteryReminderSwitchParamModel * _Nonnull)switchParam completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOBatteryReminderSwitchReplyModel * _Nullable))completion;
+/// 药盒控制（CONTROL:0x06/0x0A，解锁/亮灯/灭灯）
+/// Control pillbox (unlock / light on / light off)
++ (id <IDOCancellable> _Nonnull)controlPillbox:(IDOPillboxControlParamModel * _Nonnull)paramModel completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPillboxControlReplyModel * _Nullable))completion;
 /// 设置宠物信息
 /// Set pet info event number
 + (id <IDOCancellable> _Nonnull)setPetInfo:(IDOPetInfoParamModel * _Nonnull)petInfoParam completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPetInfoReplyModel * _Nullable))completion;
@@ -1138,6 +1153,7 @@ SWIFT_CLASS("_TtC16protocol_channel26IDOActivitySwimmingLapItem")
 @property (nonatomic) NSInteger pace;
 @property (nonatomic) NSInteger stopTime;
 @property (nonatomic) NSInteger differenceTime;
+@property (nonatomic) NSInteger avgHr;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1699,6 +1715,12 @@ SWIFT_CLASS("_TtC16protocol_channel33IDOAppActivityDataV3ExchangeModel")
 @property (nonatomic) double swimmingPoolDistance;
 @property (nonatomic) NSInteger swimmingItemCount;
 @property (nonatomic, copy) NSArray<IDOActivitySwimmingLapItem *> * _Nullable swimmingItems;
+/// 与 tennis_serve_count 同值（兼容旧 APP）
+@property (nonatomic) NSInteger serveCount;
+/// 与 tennis_forehead_count 同值（兼容旧 APP）
+@property (nonatomic) NSInteger forehandCount;
+/// 与 tennis_backhand_count 同值（兼容旧 APP）
+@property (nonatomic) NSInteger backhandCount;
 - (nonnull instancetype)initWithBaseModel:(IDOExchangeBaseModel * _Nullable)baseModel year:(NSInteger)year month:(NSInteger)month hrInterval:(NSInteger)hrInterval step:(NSInteger)step durations:(NSInteger)durations calories:(NSInteger)calories distance:(NSInteger)distance burnFatMins:(NSInteger)burnFatMins aerobicMins:(NSInteger)aerobicMins limitMins:(NSInteger)limitMins warmUp:(NSInteger)warmUp fatBurning:(NSInteger)fatBurning aerobicExercise:(NSInteger)aerobicExercise anaerobicExercise:(NSInteger)anaerobicExercise extremeExercise:(NSInteger)extremeExercise warmUpTime:(NSInteger)warmUpTime fatBurningTime:(NSInteger)fatBurningTime aerobicExerciseTime:(NSInteger)aerobicExerciseTime anaerobicExerciseTime:(NSInteger)anaerobicExerciseTime extremeExerciseTime:(NSInteger)extremeExerciseTime avgSpeed:(NSInteger)avgSpeed maxSpeed:(NSInteger)maxSpeed avgStepStride:(NSInteger)avgStepStride maxStepStride:(NSInteger)maxStepStride kmSpeed:(NSInteger)kmSpeed fastKmSpeed:(NSInteger)fastKmSpeed avgStepFrequency:(NSInteger)avgStepFrequency maxStepFrequency:(NSInteger)maxStepFrequency avgHrValue:(NSInteger)avgHrValue maxHrValue:(NSInteger)maxHrValue recoverTime:(NSInteger)recoverTime vo2max:(NSInteger)vo2max trainingEffect:(NSInteger)trainingEffect grade:(NSInteger)grade stepsFrequencyCount:(NSInteger)stepsFrequencyCount miSpeedCount:(NSInteger)miSpeedCount realSpeedCount:(NSInteger)realSpeedCount paceSpeedCount:(NSInteger)paceSpeedCount kmSpeedCount:(NSInteger)kmSpeedCount actionDataCount:(NSInteger)actionDataCount inClassCalories:(NSInteger)inClassCalories completionRate:(NSInteger)completionRate hrCompletionRate:(NSInteger)hrCompletionRate kmSpeeds:(NSArray<NSNumber *> * _Nullable)kmSpeeds stepsFrequency:(NSArray<NSNumber *> * _Nullable)stepsFrequency itemsMiSpeed:(NSArray<NSNumber *> * _Nullable)itemsMiSpeed itemRealSpeed:(NSArray<NSNumber *> * _Nullable)itemRealSpeed paceSpeedItems:(NSArray<NSNumber *> * _Nullable)paceSpeedItems actionData:(NSArray<NSDictionary<NSString *, id> *> * _Nullable)actionData OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -2103,7 +2125,19 @@ SWIFT_CLASS("_TtC16protocol_channel29IDOAppIngV3ReplyExchangeModel")
 @property (nonatomic) NSInteger totalSwingsNum;
 /// 总仰卧起坐次数（version=0x21）
 @property (nonatomic) NSInteger totalSitUpCount;
-- (nonnull instancetype)initWithBaseModel:(IDOExchangeBaseModel * _Nullable)baseModel version:(NSInteger)version heartRate:(NSInteger)heartRate distance:(NSInteger)distance duration:(NSInteger)duration realTimeCalories:(NSInteger)realTimeCalories realTimeSpeed:(NSInteger)realTimeSpeed kmSpeed:(NSInteger)kmSpeed steps:(NSInteger)steps swimPosture:(NSInteger)swimPosture status:(NSInteger)status realTimeSpeedPace:(NSInteger)realTimeSpeedPace trainingEffect:(NSInteger)trainingEffect anaerobicTrainingEffect:(NSInteger)anaerobicTrainingEffect actionType:(NSInteger)actionType countHour:(NSInteger)countHour countMinute:(NSInteger)countMinute countSecond:(NSInteger)countSecond totalSwingsNum:(NSInteger)totalSwingsNum totalSitUpCount:(NSInteger)totalSitUpCount OBJC_DESIGNATED_INITIALIZER;
+/// 总跳绳次数（version=0x21）
+@property (nonatomic) NSInteger totalRopeCount;
+/// 累计爬升（米，version=0x21）
+@property (nonatomic) NSInteger cumulativeClimb;
+/// 累计下降（米，version=0x21）
+@property (nonatomic) NSInteger cumulativeDecline;
+/// GPS 状态（version=0x21）
+@property (nonatomic) NSInteger gpsStatus;
+/// 平均速度，km/h ×100（version=0x21）
+@property (nonatomic) NSInteger avgSpeed;
+/// 游泳趟数（version=0x21）
+@property (nonatomic) NSInteger trips;
+- (nonnull instancetype)initWithBaseModel:(IDOExchangeBaseModel * _Nullable)baseModel version:(NSInteger)version heartRate:(NSInteger)heartRate distance:(NSInteger)distance duration:(NSInteger)duration realTimeCalories:(NSInteger)realTimeCalories realTimeSpeed:(NSInteger)realTimeSpeed kmSpeed:(NSInteger)kmSpeed steps:(NSInteger)steps swimPosture:(NSInteger)swimPosture status:(NSInteger)status realTimeSpeedPace:(NSInteger)realTimeSpeedPace trainingEffect:(NSInteger)trainingEffect anaerobicTrainingEffect:(NSInteger)anaerobicTrainingEffect actionType:(NSInteger)actionType countHour:(NSInteger)countHour countMinute:(NSInteger)countMinute countSecond:(NSInteger)countSecond totalSwingsNum:(NSInteger)totalSwingsNum totalSitUpCount:(NSInteger)totalSitUpCount totalRopeCount:(NSInteger)totalRopeCount cumulativeClimb:(NSInteger)cumulativeClimb cumulativeDecline:(NSInteger)cumulativeDecline gpsStatus:(NSInteger)gpsStatus avgSpeed:(NSInteger)avgSpeed trips:(NSInteger)trips OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -4998,7 +5032,13 @@ SWIFT_CLASS("_TtC16protocol_channel18IDOExchangeV3Model")
 @property (nonatomic) double swimmingPoolDistance;
 @property (nonatomic) NSInteger swimmingItemCount;
 @property (nonatomic, copy) NSArray<IDOActivitySwimmingLapItem *> * _Nullable swimmingItems;
-- (nonnull instancetype)initWithBaseModel:(IDOExchangeBaseModel * _Nullable)baseModel year:(NSInteger)year month:(NSInteger)month planType:(NSInteger)planType actionType:(NSInteger)actionType version:(NSInteger)version operate:(NSInteger)operate targetValue:(NSInteger)targetValue targetType:(NSInteger)targetType forceStart:(NSInteger)forceStart retCode:(NSInteger)retCode calories:(NSInteger)calories distance:(NSInteger)distance durations:(NSInteger)durations step:(NSInteger)step swimPosture:(NSInteger)swimPosture status:(NSInteger)status signalFlag:(NSInteger)signalFlag isSave:(BOOL)isSave realTimeSpeed:(NSInteger)realTimeSpeed realTimePace:(NSInteger)realTimePace interval:(NSInteger)interval hrCount:(NSInteger)hrCount burnFatMins:(NSInteger)burnFatMins aerobicMins:(NSInteger)aerobicMins limitMins:(NSInteger)limitMins hrValues:(NSArray<NSNumber *> * _Nullable)hrValues warmUpSecond:(NSInteger)warmUpSecond anaeroicSecond:(NSInteger)anaeroicSecond fatBurnSecond:(NSInteger)fatBurnSecond aerobicSecond:(NSInteger)aerobicSecond limitSecond:(NSInteger)limitSecond avgHr:(NSInteger)avgHr maxHr:(NSInteger)maxHr curHr:(NSInteger)curHr warmUpValue:(NSInteger)warmUpValue fatBurnValue:(NSInteger)fatBurnValue aerobicValue:(NSInteger)aerobicValue limitValue:(NSInteger)limitValue anaerobicValue:(NSInteger)anaerobicValue avgSpeed:(NSInteger)avgSpeed maxSpeed:(NSInteger)maxSpeed avgStepFrequency:(NSInteger)avgStepFrequency maxStepFrequency:(NSInteger)maxStepFrequency avgStepStride:(NSInteger)avgStepStride maxStepStride:(NSInteger)maxStepStride kmSpeed:(NSInteger)kmSpeed fastKmSpeed:(NSInteger)fastKmSpeed kmSpeedCount:(NSInteger)kmSpeedCount kmSpeeds:(NSArray<NSNumber *> * _Nullable)kmSpeeds mileCount:(NSInteger)mileCount mileSpeeds:(NSArray<NSNumber *> * _Nullable)mileSpeeds stepsFrequencyCount:(NSInteger)stepsFrequencyCount stepsFrequencys:(NSArray<NSNumber *> * _Nullable)stepsFrequencys trainingEffect:(NSInteger)trainingEffect anaerobicTrainingEffect:(NSInteger)anaerobicTrainingEffect vo2Max:(NSInteger)vo2Max actionDataCount:(NSInteger)actionDataCount inClassCalories:(NSInteger)inClassCalories completionRate:(NSInteger)completionRate hrCompletionRate:(NSInteger)hrCompletionRate recoverTime:(NSInteger)recoverTime avgWeekActivityTime:(NSInteger)avgWeekActivityTime grade:(NSInteger)grade actionData:(NSArray<NSDictionary<NSString *, id> *> * _Nullable)actionData trainingOffset:(NSInteger)trainingOffset countHour:(NSInteger)countHour countMinute:(NSInteger)countMinute countSecond:(NSInteger)countSecond time:(NSInteger)time lowHeart:(NSInteger)lowHeart heightHeart:(NSInteger)heightHeart paceSpeedCount:(NSInteger)paceSpeedCount paceSpeeds:(NSArray<NSNumber *> * _Nullable)paceSpeeds realSpeedCount:(NSInteger)realSpeedCount realSpeeds:(NSArray<NSNumber *> * _Nullable)realSpeeds totalSwingsNum:(NSInteger)totalSwingsNum totalSitUpCount:(NSInteger)totalSitUpCount load:(NSInteger)load bodyAge:(NSInteger)bodyAge distance3d:(NSInteger)distance3d avg3dSpeed:(NSInteger)avg3dSpeed avgVerticalSpeed:(NSInteger)avgVerticalSpeed avgSlope:(NSInteger)avgSlope gpsStatus:(NSInteger)gpsStatus runningEconomy:(NSInteger)runningEconomy maxRunningPower:(NSInteger)maxRunningPower minRunningPower:(NSInteger)minRunningPower avgRunningPower:(NSInteger)avgRunningPower runningPowerCount:(NSInteger)runningPowerCount rtpeCount:(NSInteger)rtpeCount maxRtoc:(NSInteger)maxRtoc minRtoc:(NSInteger)minRtoc avgRtoc:(NSInteger)avgRtoc rtocCount:(NSInteger)rtocCount maxRopeFrequency:(NSInteger)maxRopeFrequency minRopeFrequency:(NSInteger)minRopeFrequency avgRopeFrequency:(NSInteger)avgRopeFrequency maxRopeSkipCount:(NSInteger)maxRopeSkipCount ropeTripCount:(NSInteger)ropeTripCount totalRopeCount:(NSInteger)totalRopeCount ropeItemCount:(NSInteger)ropeItemCount kmPace:(NSInteger)kmPace fastKmPace:(NSInteger)fastKmPace kmPaceCount:(NSInteger)kmPaceCount miPaceCount:(NSInteger)miPaceCount paceRealTimeCount:(NSInteger)paceRealTimeCount aerobicPowerInterval:(NSInteger)aerobicPowerInterval mixedOxygenPowerInterval:(NSInteger)mixedOxygenPowerInterval thresholdRunningPowerInterval:(NSInteger)thresholdRunningPowerInterval intermittentRunPowerInterval:(NSInteger)intermittentRunPowerInterval sprintRunPowerInterval:(NSInteger)sprintRunPowerInterval strideCount:(NSInteger)strideCount strideItems:(NSArray<NSNumber *> * _Nullable)strideItems itemRunningPower:(NSArray<NSNumber *> * _Nullable)itemRunningPower itemRtpe:(NSArray<NSNumber *> * _Nullable)itemRtpe itemRtoc:(NSArray<NSNumber *> * _Nullable)itemRtoc itemRopeInfo:(NSArray<IDOActivityRopeSkipItem *> * _Nullable)itemRopeInfo smartCompetitor:(NSInteger)smartCompetitor aiImageId:(NSInteger)aiImageId userImageId:(NSInteger)userImageId bgImageId:(NSInteger)bgImageId smartCompetitorPace:(NSInteger)smartCompetitorPace tennisServeCount:(NSInteger)tennisServeCount tennisForeheadCount:(NSInteger)tennisForeheadCount tennisBackhandCount:(NSInteger)tennisBackhandCount trips:(NSInteger)trips averageSwolf:(NSInteger)averageSwolf totalStrokesNumber:(NSInteger)totalStrokesNumber swimmingPosture:(NSInteger)swimmingPosture swimmingAvgPace:(NSInteger)swimmingAvgPace avgFrequency:(NSInteger)avgFrequency swimmingPoolDistance:(double)swimmingPoolDistance swimmingItemCount:(NSInteger)swimmingItemCount swimmingItems:(NSArray<IDOActivitySwimmingLapItem *> * _Nullable)swimmingItems OBJC_DESIGNATED_INITIALIZER;
+/// 与 tennis_serve_count 同值（兼容旧 APP）
+@property (nonatomic) NSInteger serveCount;
+/// 与 tennis_forehead_count 同值（兼容旧 APP）
+@property (nonatomic) NSInteger forehandCount;
+/// 与 tennis_backhand_count 同值（兼容旧 APP）
+@property (nonatomic) NSInteger backhandCount;
+- (nonnull instancetype)initWithBaseModel:(IDOExchangeBaseModel * _Nullable)baseModel year:(NSInteger)year month:(NSInteger)month planType:(NSInteger)planType actionType:(NSInteger)actionType version:(NSInteger)version operate:(NSInteger)operate targetValue:(NSInteger)targetValue targetType:(NSInteger)targetType forceStart:(NSInteger)forceStart retCode:(NSInteger)retCode calories:(NSInteger)calories distance:(NSInteger)distance durations:(NSInteger)durations step:(NSInteger)step swimPosture:(NSInteger)swimPosture status:(NSInteger)status signalFlag:(NSInteger)signalFlag isSave:(BOOL)isSave realTimeSpeed:(NSInteger)realTimeSpeed realTimePace:(NSInteger)realTimePace interval:(NSInteger)interval hrCount:(NSInteger)hrCount burnFatMins:(NSInteger)burnFatMins aerobicMins:(NSInteger)aerobicMins limitMins:(NSInteger)limitMins hrValues:(NSArray<NSNumber *> * _Nullable)hrValues warmUpSecond:(NSInteger)warmUpSecond anaeroicSecond:(NSInteger)anaeroicSecond fatBurnSecond:(NSInteger)fatBurnSecond aerobicSecond:(NSInteger)aerobicSecond limitSecond:(NSInteger)limitSecond avgHr:(NSInteger)avgHr maxHr:(NSInteger)maxHr curHr:(NSInteger)curHr warmUpValue:(NSInteger)warmUpValue fatBurnValue:(NSInteger)fatBurnValue aerobicValue:(NSInteger)aerobicValue limitValue:(NSInteger)limitValue anaerobicValue:(NSInteger)anaerobicValue avgSpeed:(NSInteger)avgSpeed maxSpeed:(NSInteger)maxSpeed avgStepFrequency:(NSInteger)avgStepFrequency maxStepFrequency:(NSInteger)maxStepFrequency avgStepStride:(NSInteger)avgStepStride maxStepStride:(NSInteger)maxStepStride kmSpeed:(NSInteger)kmSpeed fastKmSpeed:(NSInteger)fastKmSpeed kmSpeedCount:(NSInteger)kmSpeedCount kmSpeeds:(NSArray<NSNumber *> * _Nullable)kmSpeeds mileCount:(NSInteger)mileCount mileSpeeds:(NSArray<NSNumber *> * _Nullable)mileSpeeds stepsFrequencyCount:(NSInteger)stepsFrequencyCount stepsFrequencys:(NSArray<NSNumber *> * _Nullable)stepsFrequencys trainingEffect:(NSInteger)trainingEffect anaerobicTrainingEffect:(NSInteger)anaerobicTrainingEffect vo2Max:(NSInteger)vo2Max actionDataCount:(NSInteger)actionDataCount inClassCalories:(NSInteger)inClassCalories completionRate:(NSInteger)completionRate hrCompletionRate:(NSInteger)hrCompletionRate recoverTime:(NSInteger)recoverTime avgWeekActivityTime:(NSInteger)avgWeekActivityTime grade:(NSInteger)grade actionData:(NSArray<NSDictionary<NSString *, id> *> * _Nullable)actionData trainingOffset:(NSInteger)trainingOffset countHour:(NSInteger)countHour countMinute:(NSInteger)countMinute countSecond:(NSInteger)countSecond time:(NSInteger)time lowHeart:(NSInteger)lowHeart heightHeart:(NSInteger)heightHeart paceSpeedCount:(NSInteger)paceSpeedCount paceSpeeds:(NSArray<NSNumber *> * _Nullable)paceSpeeds realSpeedCount:(NSInteger)realSpeedCount realSpeeds:(NSArray<NSNumber *> * _Nullable)realSpeeds totalSwingsNum:(NSInteger)totalSwingsNum totalSitUpCount:(NSInteger)totalSitUpCount load:(NSInteger)load bodyAge:(NSInteger)bodyAge distance3d:(NSInteger)distance3d avg3dSpeed:(NSInteger)avg3dSpeed avgVerticalSpeed:(NSInteger)avgVerticalSpeed avgSlope:(NSInteger)avgSlope gpsStatus:(NSInteger)gpsStatus runningEconomy:(NSInteger)runningEconomy maxRunningPower:(NSInteger)maxRunningPower minRunningPower:(NSInteger)minRunningPower avgRunningPower:(NSInteger)avgRunningPower runningPowerCount:(NSInteger)runningPowerCount rtpeCount:(NSInteger)rtpeCount maxRtoc:(NSInteger)maxRtoc minRtoc:(NSInteger)minRtoc avgRtoc:(NSInteger)avgRtoc rtocCount:(NSInteger)rtocCount maxRopeFrequency:(NSInteger)maxRopeFrequency minRopeFrequency:(NSInteger)minRopeFrequency avgRopeFrequency:(NSInteger)avgRopeFrequency maxRopeSkipCount:(NSInteger)maxRopeSkipCount ropeTripCount:(NSInteger)ropeTripCount totalRopeCount:(NSInteger)totalRopeCount ropeItemCount:(NSInteger)ropeItemCount kmPace:(NSInteger)kmPace fastKmPace:(NSInteger)fastKmPace kmPaceCount:(NSInteger)kmPaceCount miPaceCount:(NSInteger)miPaceCount paceRealTimeCount:(NSInteger)paceRealTimeCount aerobicPowerInterval:(NSInteger)aerobicPowerInterval mixedOxygenPowerInterval:(NSInteger)mixedOxygenPowerInterval thresholdRunningPowerInterval:(NSInteger)thresholdRunningPowerInterval intermittentRunPowerInterval:(NSInteger)intermittentRunPowerInterval sprintRunPowerInterval:(NSInteger)sprintRunPowerInterval strideCount:(NSInteger)strideCount strideItems:(NSArray<NSNumber *> * _Nullable)strideItems itemRunningPower:(NSArray<NSNumber *> * _Nullable)itemRunningPower itemRtpe:(NSArray<NSNumber *> * _Nullable)itemRtpe itemRtoc:(NSArray<NSNumber *> * _Nullable)itemRtoc itemRopeInfo:(NSArray<IDOActivityRopeSkipItem *> * _Nullable)itemRopeInfo smartCompetitor:(NSInteger)smartCompetitor aiImageId:(NSInteger)aiImageId userImageId:(NSInteger)userImageId bgImageId:(NSInteger)bgImageId smartCompetitorPace:(NSInteger)smartCompetitorPace tennisServeCount:(NSInteger)tennisServeCount tennisForeheadCount:(NSInteger)tennisForeheadCount tennisBackhandCount:(NSInteger)tennisBackhandCount trips:(NSInteger)trips averageSwolf:(NSInteger)averageSwolf totalStrokesNumber:(NSInteger)totalStrokesNumber swimmingPosture:(NSInteger)swimmingPosture swimmingAvgPace:(NSInteger)swimmingAvgPace avgFrequency:(NSInteger)avgFrequency swimmingPoolDistance:(double)swimmingPoolDistance swimmingItemCount:(NSInteger)swimmingItemCount swimmingItems:(NSArray<IDOActivitySwimmingLapItem *> * _Nullable)swimmingItems serveCount:(NSInteger)serveCount forehandCount:(NSInteger)forehandCount backhandCount:(NSInteger)backhandCount OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -5943,6 +5983,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL supportBatteryReminderSwitch;
 /// 支持获取寻找手机开关（GET:0x02/0x26）
 @property (nonatomic, readonly) BOOL supportGetFindPhoneSwitch;
+/// 支持获取 Find My 设备名称
+@property (nonatomic, readonly) BOOL supportGetFindMyDeviceName;
 /// 健康数据同步使用 UTC 时间
 @property (nonatomic, readonly) BOOL supportSyncHealthDataUseUtcTime;
 /// 支持宠物信息设置获取（SET:03 0A / GET:02 0A）
@@ -6355,6 +6397,16 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL supportControlMeasureTemperature;
 /// 睡眠模式设置获取（SET:03 4C / GET:02 4C，table70 BIT_7）
 @property (nonatomic, readonly) BOOL supportAppSleepMode;
+/// 智能药盒
+@property (nonatomic, readonly) BOOL supportSmartPillbox;
+/// 睡眠支持平均 HRV
+@property (nonatomic, readonly) BOOL syncV3HealthSleepStageAvgHrv;
+/// 急救信息支持更多字段（如其他信息）
+@property (nonatomic, readonly) BOOL supportEmergencyInfoVersion1;
+/// 支持设置/获取自定义表盘样式
+@property (nonatomic, readonly) BOOL supportCustomWatchFaceStyle;
+/// 总睡眠时长需扣除清醒时长
+@property (nonatomic, readonly) BOOL totalSleepDurationNeedsSubtractWakeDuration;
 /// 只支持 APP 经期单机功能，设备不支持经期功能
 @property (nonatomic, readonly) BOOL supportAppMenstrualOnly;
 /// 多运动同步 body_age（table69 BIT_0）
@@ -6487,6 +6539,47 @@ SWIFT_CLASS("_TtC16protocol_channel23IDOGestureTypeItemModel")
 @property (nonatomic) NSInteger gestureType;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)initWithGestureType:(NSInteger)gestureType OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+/// 获取 Find My 设备名称 | Get Find My device name
+SWIFT_CLASS("_TtC16protocol_channel27IDOGetFindMyDeviceNameModel")
+@interface IDOGetFindMyDeviceNameModel : NSObject
+/// 操作类型；获取时为 2 | Operate type; 2 for get
+@property (nonatomic) NSInteger operate;
+/// 错误码；0 成功 | Error code; 0 success
+@property (nonatomic) NSInteger errorCode;
+/// Find My 设备名称 | Find My device name
+@property (nonatomic, copy) NSString * _Nullable deviceName;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class IDOSportAutoPauseEndTypeItem;
+
+/// 查询运动自动暂停/结束支持的运动类型（V3 15.111） |
+/// Query sport types supporting auto-pause / auto-end
+SWIFT_CLASS("_TtC16protocol_channel33IDOGetSportAutoPauseEndTypesModel")
+@interface IDOGetSportAutoPauseEndTypesModel : NSObject
+/// bit0：获取自动暂停列表 | bit0: auto-pause list
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger operatePause;)
++ (NSInteger)operatePause SWIFT_WARN_UNUSED_RESULT;
+/// bit1：获取自动结束列表 | bit1: auto-end list
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger operateEnd;)
++ (NSInteger)operateEnd SWIFT_WARN_UNUSED_RESULT;
+/// 同时获取两侧列表 | Both lists
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger operateBoth;)
++ (NSInteger)operateBoth SWIFT_WARN_UNUSED_RESULT;
+/// 回显请求的 operate | Echo of request operate
+@property (nonatomic) NSInteger operate;
+/// 错误码；0 成功 | Error code; 0 success
+@property (nonatomic) NSInteger errorCode;
+/// 自动暂停支持的运动类型 | Sport types supporting auto-pause
+@property (nonatomic, copy) NSArray<IDOSportAutoPauseEndTypeItem *> * _Nullable autoPauseItems;
+/// 自动结束支持的运动类型 | Sport types supporting auto-end
+@property (nonatomic, copy) NSArray<IDOSportAutoPauseEndTypeItem *> * _Nullable autoEndItems;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
 @end
 
 /// 健康数据类型
@@ -8553,6 +8646,46 @@ SWIFT_CLASS("_TtC16protocol_channel31IDOPhoneCalendarSyncSwitchModel")
 @end
 
 
+/// 药盒控制入参 | Control pillbox param
+SWIFT_CLASS("_TtC16protocol_channel27IDOPillboxControlParamModel")
+@interface IDOPillboxControlParamModel : NSObject
+/// 1：解锁；2：亮灯；3：灭灯
+@property (nonatomic) NSInteger operate;
+/// 1：红；2：绿；3：蓝；4：白；operate=2（亮灯）时必填
+@property (nonatomic) NSInteger color;
+- (nonnull instancetype)initWithOperate:(NSInteger)operate color:(NSInteger)color OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 药盒控制返回 | Control pillbox reply
+SWIFT_CLASS("_TtC16protocol_channel27IDOPillboxControlReplyModel")
+@interface IDOPillboxControlReplyModel : NSObject
+/// 0：成功；非0：失败
+@property (nonatomic) NSInteger errCode;
+- (nonnull instancetype)initWithErrCode:(NSInteger)errCode OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 药盒状态获取返回 | Get pillbox state reply
+SWIFT_CLASS("_TtC16protocol_channel20IDOPillboxStateModel")
+@interface IDOPillboxStateModel : NSObject
+/// 1：已解锁；0：已锁定
+@property (nonatomic) NSInteger pillboxState;
+/// 1：已打开（开盖）；0：已关闭（合盖）
+@property (nonatomic) NSInteger openState;
+- (nonnull instancetype)initWithPillboxState:(NSInteger)pillboxState openState:(NSInteger)openState OBJC_DESIGNATED_INITIALIZER;
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 /// Positioning switch mode (GET/SET:0x02/0x5A · 0x03/0x59)
 /// 定位开关模式
 SWIFT_CLASS("_TtC16protocol_channel26IDOPositionSwitchModeModel")
@@ -9371,6 +9504,16 @@ SWIFT_CLASS("_TtC16protocol_channel25IDOSport100SortParamModel")
 @end
 
 
+/// 运动自动暂停/结束支持的运动类型条目 |
+/// Sport type entry supporting auto-pause / auto-end
+SWIFT_CLASS("_TtC16protocol_channel28IDOSportAutoPauseEndTypeItem")
+@interface IDOSportAutoPauseEndTypeItem : NSObject
+/// 运动类型编码 | Sport type code
+@property (nonatomic) NSInteger sportType;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 /// Set exercise goal event
 SWIFT_CLASS("_TtC16protocol_channel22IDOSportGoalParamModel")
 @interface IDOSportGoalParamModel : NSObject
@@ -9758,6 +9901,8 @@ typedef SWIFT_ENUM(NSInteger, IDOSportType, open) {
   IDOSportTypeSportTypeAbdominalAndCoreTraining = 40,
 /// 下肢训练
   IDOSportTypeSportTypeLowerBodyTraining = 41,
+/// 操场跑
+  IDOSportTypeSportTypePlaygroundRun = 42,
 /// 跳水
   IDOSportTypeSportTypeDiving = 43,
 /// 踏步训练
@@ -9794,8 +9939,22 @@ typedef SWIFT_ENUM(NSInteger, IDOSportType, open) {
   IDOSportTypeSportTypeSteppingTest = 59,
 /// 游戏模式
   IDOSportTypeSportTypeGameMode = 60,
+/// Tabata
+  IDOSportTypeSportTypeTabata = 61,
+/// EMOM
+  IDOSportTypeSportTypeEmom = 62,
+/// AMRAP
+  IDOSportTypeSportTypeAmrap = 63,
+/// Fitness Racing
+  IDOSportTypeSportTypeFitnessRacing = 64,
+/// 田径
+  IDOSportTypeSportTypeAthletics = 65,
+/// 力量训练
+  IDOSportTypeSportTypeStrengthTraining = 66,
 /// 板球运动
   IDOSportTypeSportTypeCricket = 75,
+/// 活动（通用）
+  IDOSportTypeSportTypeGeneralActivity = 99,
 /// 自由训练
   IDOSportTypeSportTypeFreeTraining = 100,
 /// 功能性力量训练
@@ -10036,7 +10195,7 @@ typedef SWIFT_ENUM(NSInteger, IDOSportType, open) {
   IDOSportTypeSwing = 233,
 /// 马术运动
   IDOSportTypeEquestrian = 234,
-/// 田径
+/// 田径场跑步
   IDOSportTypeTrackAndField = 235,
 /// 爬楼机
   IDOSportTypeStairClimber = 236,
@@ -10475,6 +10634,20 @@ SWIFT_PROTOCOL("_TtP16protocol_channel20IDOSyncDataInterface_")
 - (void)getSupportSyncDataTypeListWithCompletion:(void (^ _Nonnull)(NSArray<IDOSyncDataTypeClass *> * _Nonnull))completion;
 /// 停止同步所有数据
 - (void)stopSync;
+/// 开关数据同步可靠缓存（默认关闭）
+- (void)setReliableCacheEnableWithEnable:(BOOL)enable completion:(void (^ _Nonnull)(NSInteger))completion;
+/// 可靠缓存是否已开启
+- (void)isReliableCacheEnabledWithCompletion:(void (^ _Nonnull)(BOOL))completion;
+/// 消费一条已成功接收的可靠缓存记录
+/// \param type 与 startSync / 数据回调中的类型一致
+///
+/// \param hour/minute/second 按天类型传 0
+///
+/// \param completion 0 成功；5 未找到；7 类型无法映射
+///
+- (void)consumeReliableCacheRecordWithType:(enum IDOSyncDataType)type year:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second completion:(void (^ _Nonnull)(NSInteger))completion;
+/// 清理全部可靠缓存（不依赖开关）
+- (void)clearReliableCacheRecordsWithCompletion:(void (^ _Nonnull)(NSInteger))completion;
 @end
 
 /// 同步数据类型

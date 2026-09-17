@@ -10,6 +10,16 @@
 #endif
 #endif
 
+#import "ActVersion.h"
+#import "BitmapUtils.h"
+#import "ErrorCode.h"
+#import "Global.h"
+#import "LETransceiver.h"
+#import "OtaManager.h"
+#import "OTAStatus.h"
+#import "OtaUtils.h"
+#import "RemoteStatus.h"
+#import "IDOActionsOTAManager.h"
 #import "AlexaChannelImpl.h"
 #import "AlexaDownStream.h"
 #import "AlexaStreamManager.h"
@@ -21,6 +31,7 @@
 #import "FontSelectModel.h"
 #import "PlacementSelectModel.h"
 #import "native_channel.h"
+#import "Actions.g.h"
 #import "Alexa.g.h"
 #import "Nordic.g.h"
 #import "Sifli.g.h"

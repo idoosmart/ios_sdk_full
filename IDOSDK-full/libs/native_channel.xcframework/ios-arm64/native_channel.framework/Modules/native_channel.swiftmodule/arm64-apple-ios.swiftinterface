@@ -31,6 +31,17 @@ import os
     get
   }
 }
+@objc @_inheritsConvenienceInitializers public class IdoActionsPlugin : ObjectiveC.NSObject, Flutter.FlutterPlugin, native_channel.ApiActionsHost, native_channel.IDOActionsOTAManagerDelegate {
+  @objc public static func register(with registrar: any Flutter.FlutterPluginRegistrar)
+  @objc public func startOTADeviceIdentifier(_ deviceIdentifier: Swift.String, filePath: Swift.String, error: Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>)
+  @objc public func stopOTAWithError(_ error: Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>)
+  @objc public func actionsOTADidComplete()
+  @objc public func actionsOTADidFailWithError(_ error: any Swift.Error)
+  @objc public func actionsOTAProgressDidChange(_ progress: Swift.Float)
+  @objc public func actionsOTADidLog(_ message: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc public protocol IDONordicDFUManagerDelegate : ObjectiveC.NSObjectProtocol {
   @objc func upgradeDidStart()
   @objc func upgradeDidComplete()
