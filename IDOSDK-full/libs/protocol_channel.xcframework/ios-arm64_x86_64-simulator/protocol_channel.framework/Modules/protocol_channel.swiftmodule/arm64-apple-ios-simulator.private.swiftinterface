@@ -272,10 +272,16 @@ import _SwiftConcurrencyShims
   @objc final public let notifyType: Foundation.NSNumber?
   @objc final public let msgId: Foundation.NSNumber?
   @objc final public let msgNotice: Foundation.NSNumber?
+  @objc final public let taskId: Foundation.NSNumber?
+  @objc final public let taskCompletStatus: Foundation.NSNumber?
+  @objc final public let walkReminderStatus: Foundation.NSNumber?
+  @objc final public let walkReminderGoalValue: Foundation.NSNumber?
+  @objc final public let walkReminderAchievedValue: Foundation.NSNumber?
+  @objc final public let parameter: Foundation.NSNumber?
   @objc final public let errorIndex: Foundation.NSNumber?
   @objc final public let controlEvt: Foundation.NSNumber?
   @objc final public let controlJson: Swift.String?
-  @objc public init(dataType: Foundation.NSNumber?, notifyType: Foundation.NSNumber?, msgId: Foundation.NSNumber?, msgNotice: Foundation.NSNumber?, errorIndex: Foundation.NSNumber?, controlEvt: Foundation.NSNumber?, controlJson: Swift.String?)
+  @objc public init(dataType: Foundation.NSNumber?, notifyType: Foundation.NSNumber?, msgId: Foundation.NSNumber?, msgNotice: Foundation.NSNumber?, taskId: Foundation.NSNumber?, taskCompletStatus: Foundation.NSNumber?, walkReminderStatus: Foundation.NSNumber?, walkReminderGoalValue: Foundation.NSNumber?, walkReminderAchievedValue: Foundation.NSNumber?, parameter: Foundation.NSNumber?, errorIndex: Foundation.NSNumber?, controlEvt: Foundation.NSNumber?, controlJson: Swift.String?)
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class IDOProtocolState : ObjectiveC.NSObject {
@@ -1663,6 +1669,12 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOTakeMedicineRemindModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOTakeMedicineRemindModel
   }
+  public struct taskList : protocol_channel.IDOCmdProtocol {
+    public init(_ param: protocol_channel.IDOTaskListModel)
+    @discardableResult
+    public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOTaskListModel>) -> any protocol_channel.IDOCancellable
+    public typealias DataType = protocol_channel.IDOTaskListModel
+  }
   public struct setPurchasedWatchFaceInfo : protocol_channel.IDOCmdProtocol {
     public init(_ param: protocol_channel.IDOPurchasedWatchFaceInfoModel)
     @discardableResult
@@ -2021,6 +2033,8 @@ public struct Cmds {
   public static func setBatteryReminderSwitch(_ switchParam: protocol_channel.IDOBatteryReminderSwitchParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOBatteryReminderSwitchReplyModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func controlPillbox(_ paramModel: protocol_channel.IDOPillboxControlParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOPillboxControlReplyModel?) -> ()) -> any protocol_channel.IDOCancellable
+  @objc @discardableResult
+  public static func taskList(_ paramModel: protocol_channel.IDOTaskListModel, completion: @escaping (_ err: protocol_channel.CmdError, _ model: protocol_channel.IDOTaskListModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setPetInfo(_ petInfoParam: protocol_channel.IDOPetInfoParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOPetInfoReplyModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
@@ -5324,6 +5338,8 @@ public protocol IDOCmdProtocol {
   @objc var supportBatteryReminderSwitch: Swift.Bool { get }
   @objc var supportGetFindPhoneSwitch: Swift.Bool { get }
   @objc var supportGetFindMyDeviceName: Swift.Bool { get }
+  @objc var notSupportArmbandWearMode: Swift.Bool { get }
+  @objc var supportTaskList: Swift.Bool { get }
   @objc var supportSyncHealthDataUseUtcTime: Swift.Bool { get }
   @objc var supportPetInfo: Swift.Bool { get }
   @objc var setRespirationRate: Swift.Bool { get }
@@ -5425,6 +5441,7 @@ public protocol IDOCmdProtocol {
   @objc var syncV3Activity: Swift.Bool { get }
   @objc var syncV3Sleep: Swift.Bool { get }
   @objc var syncV3PetSleep: Swift.Bool { get }
+  @objc var syncV3ActivityAmount: Swift.Bool { get }
   @objc var syncV3Sports: Swift.Bool { get }
   @objc var syncV3Gps: Swift.Bool { get }
   @objc var syncV3SyncAlarm: Swift.Bool { get }
@@ -7990,6 +8007,36 @@ public protocol IDOCmdProtocol {
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
 }
+@objc @objcMembers public class IDOTaskListItemModel : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var taskId: Swift.Int
+  @objc public var remindTimestamp: Swift.Int
+  @objc public var taskDetail: Swift.String?
+  @objc public init(taskId: Swift.Int = 0, remindTimestamp: Swift.Int = 0, taskDetail: Swift.String? = nil)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOTaskListStatusItemModel : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var taskId: Swift.Int
+  @objc public var status: Swift.Int
+  @objc public var completeTimestamp: Swift.Int
+  @objc public init(taskId: Swift.Int = 0, status: Swift.Int = 0, completeTimestamp: Swift.Int = 0)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOTaskListModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+  @objc public var operate: Swift.Int
+  @objc public var items: [protocol_channel.IDOTaskListItemModel]?
+  public var errorCode: Swift.Int?
+  public var statusItemNum: Swift.Int?
+  @objc public var statusItems: [protocol_channel.IDOTaskListStatusItemModel]?
+  @objc public init(operate: Swift.Int = 2, items: [protocol_channel.IDOTaskListItemModel]? = nil)
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc public func toJsonString() -> Swift.String?
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 @objc @objcMembers public class IDOTemperatureSwitchParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var mode: Swift.Int
   @objc public var startHour: Swift.Int
@@ -8558,6 +8605,7 @@ public typealias BlockDataSyncCompleted = (_ errorCode: Swift.Int) -> Swift.Void
   case emotionHealth = 21
   case activityMerge = 22
   case petSleep = 23
+  case activityAmount = 24
   public var description: Swift.String {
     get
   }

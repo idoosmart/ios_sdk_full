@@ -464,6 +464,7 @@ typedef enum
     VBUS_EVT_FUNC_V3_APP_DOWNLOAD_STATUS_INFO             = 5112,  //APP设置下载状态（15.92 cmd=0x33 key=0x88）
     VBUS_EVT_FUNC_V3_PHONE_CALENDAR_REMINDER               = 5113,  //手机日历提醒（15.110 cmd=0x33 cmd_id=0x98）
     VBUS_EVT_FUNC_V3_ACTIVITY_EXCHANGE_FULL_SNAPSHOT       = 5114,  //15.103 V3 多运动运动中全量快照（cmd=0x33,cmd_id=0x1E，按字节分包）
+    VBUS_EVT_FUNC_V3_TASK_LIST                             = 5115,  //任务清单（15.114 cmd=0x33 cmd_id=0x9C）
 
 
 
@@ -524,6 +525,7 @@ typedef enum
 	VBUS_EVT_TRAN_JSON_V3_BODY_POWER 		               = 7013,  //身体电量数据回调
 	VBUS_EVT_TRAN_JSON_V3_HRV 				               = 7014,  //HRV数据回调
     VBUS_EVT_TRAN_JSON_V3_PET_SLEEP                      = 7015,  //宠物睡眠数据回调
+    VBUS_EVT_TRAN_JSON_V3_ACTIVITY_AMOUNT                = 7016,  //活动量数据回调（15.4.23，data_type=0x17）
     VBUS_EVT_TRAN_JSON_V3_EMOTION_HEALTH                   = 7018,    //情绪健康数据回调
     VBUS_EVT_TRAN_JSON_V3_MULTI_ACTIVITY_NEW               = 7019,//同步多运动/游泳/跑步课程/跑步计划/跑后拉伸数据回调
 	VBUS_EVT_TRAN_JSON_V3_TEST_SYNC_PLAN_SPORT             = 7113,	//计划多运动模拟测试接口

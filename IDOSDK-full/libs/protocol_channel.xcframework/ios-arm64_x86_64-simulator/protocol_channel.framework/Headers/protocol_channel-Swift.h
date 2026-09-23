@@ -497,6 +497,7 @@ enum IDOCmdPriority : NSInteger;
 @class IDOBatteryReminderSwitchReplyModel;
 @class IDOPillboxControlParamModel;
 @class IDOPillboxControlReplyModel;
+@class IDOTaskListModel;
 @class IDOPetInfoParamModel;
 @class IDOPetInfoReplyModel;
 @class IDOUnitModel;
@@ -986,6 +987,9 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 药盒控制（CONTROL:0x06/0x0A，解锁/亮灯/灭灯）
 /// Control pillbox (unlock / light on / light off)
 + (id <IDOCancellable> _Nonnull)controlPillbox:(IDOPillboxControlParamModel * _Nonnull)paramModel completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPillboxControlReplyModel * _Nullable))completion;
+/// 任务清单（全量设置 / 查询状态变更）
+/// Task list (full set / query status changes)
++ (id <IDOCancellable> _Nonnull)taskList:(IDOTaskListModel * _Nonnull)paramModel completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOTaskListModel * _Nullable))completion;
 /// 设置宠物信息
 /// Set pet info event number
 + (id <IDOCancellable> _Nonnull)setPetInfo:(IDOPetInfoParamModel * _Nonnull)petInfoParam completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPetInfoReplyModel * _Nullable))completion;
@@ -4236,10 +4240,22 @@ SWIFT_CLASS("_TtC16protocol_channel26IDODeviceNotificationModel")
 /// 1 闹钟已经修改 2 固件过热异常告警 4 亮屏参数有修改 8 抬腕参数有修改
 /// 16  勿擾模式获取 32 手机音量的下发
 @property (nonatomic, readonly, strong) NSNumber * _Nullable notifyType;
-/// 每个消息对应一个ID
+/// 每个消息对应一个ID（快速短信等场景）
 @property (nonatomic, readonly, strong) NSNumber * _Nullable msgId;
 /// 0 无效 1 自定义短信1（正在开会，稍后联系）2 自定义短信2
 @property (nonatomic, readonly, strong) NSNumber * _Nullable msgNotice;
+/// 任务清单状态变化通知（dataType == 133）的任务 ID
+@property (nonatomic, readonly, strong) NSNumber * _Nullable taskId;
+/// 任务清单状态变化通知（dataType == 133）的完成状态：0 未完成 / 1 已完成
+@property (nonatomic, readonly, strong) NSNumber * _Nullable taskCompletStatus;
+/// 走动提醒通知（dataType == 134）状态：0 未达成 / 1 已达成
+@property (nonatomic, readonly, strong) NSNumber * _Nullable walkReminderStatus;
+/// 走动提醒通知（dataType == 134）目标值
+@property (nonatomic, readonly, strong) NSNumber * _Nullable walkReminderGoalValue;
+/// 走动提醒通知（dataType == 134）达成值
+@property (nonatomic, readonly, strong) NSNumber * _Nullable walkReminderAchievedValue;
+/// 携带数据（数字，对应 Dart int / 原生 Long）：如 dataType 84、97、122～126 等；98～105、127、130、131、133、134 不使用本字段
+@property (nonatomic, readonly, strong) NSNumber * _Nullable parameter;
 /// 01 ACC  加速度 02 PPG  心率 03 TP   触摸 04 FLASH
 /// 05 过热（PPG）06 气压 07 GPS 08 地磁
 @property (nonatomic, readonly, strong) NSNumber * _Nullable errorIndex;
@@ -4276,7 +4292,7 @@ SWIFT_CLASS("_TtC16protocol_channel26IDODeviceNotificationModel")
 @property (nonatomic, readonly, strong) NSNumber * _Nullable controlEvt;
 /// 控制事件返回值（部分事件才有）
 @property (nonatomic, readonly, copy) NSString * _Nullable controlJson;
-- (nonnull instancetype)initWithDataType:(NSNumber * _Nullable)dataType notifyType:(NSNumber * _Nullable)notifyType msgId:(NSNumber * _Nullable)msgId msgNotice:(NSNumber * _Nullable)msgNotice errorIndex:(NSNumber * _Nullable)errorIndex controlEvt:(NSNumber * _Nullable)controlEvt controlJson:(NSString * _Nullable)controlJson OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithDataType:(NSNumber * _Nullable)dataType notifyType:(NSNumber * _Nullable)notifyType msgId:(NSNumber * _Nullable)msgId msgNotice:(NSNumber * _Nullable)msgNotice taskId:(NSNumber * _Nullable)taskId taskCompletStatus:(NSNumber * _Nullable)taskCompletStatus walkReminderStatus:(NSNumber * _Nullable)walkReminderStatus walkReminderGoalValue:(NSNumber * _Nullable)walkReminderGoalValue walkReminderAchievedValue:(NSNumber * _Nullable)walkReminderAchievedValue parameter:(NSNumber * _Nullable)parameter errorIndex:(NSNumber * _Nullable)errorIndex controlEvt:(NSNumber * _Nullable)controlEvt controlJson:(NSString * _Nullable)controlJson OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -5985,6 +6001,10 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL supportGetFindPhoneSwitch;
 /// 支持获取 Find My 设备名称
 @property (nonatomic, readonly) BOOL supportGetFindMyDeviceName;
+/// 功能表开启后：APP 佩戴方式不展示臂带选项
+@property (nonatomic, readonly) BOOL notSupportArmbandWearMode;
+/// 支持任务清单
+@property (nonatomic, readonly) BOOL supportTaskList;
 /// 健康数据同步使用 UTC 时间
 @property (nonatomic, readonly) BOOL supportSyncHealthDataUseUtcTime;
 /// 支持宠物信息设置获取（SET:03 0A / GET:02 0A）
@@ -6187,6 +6207,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL syncV3Sleep;
 /// v3 宠物睡眠
 @property (nonatomic, readonly) BOOL syncV3PetSleep;
+/// v3 活动量
+@property (nonatomic, readonly) BOOL syncV3ActivityAmount;
 /// v3 步数
 @property (nonatomic, readonly) BOOL syncV3Sports;
 /// v3 gps
@@ -10687,6 +10709,8 @@ typedef SWIFT_ENUM(NSInteger, IDOSyncDataType, open) {
   IDOSyncDataTypeActivityMerge = 22,
 /// 宠物睡眠数据
   IDOSyncDataTypePetSleep = 23,
+/// 活动量数据
+  IDOSyncDataTypeActivityAmount = 24,
 };
 
 
@@ -10793,6 +10817,51 @@ SWIFT_CLASS("_TtC16protocol_channel39IDOTakingMedicineReminderParamModelObjc")
 @property (nonatomic) NSInteger doNotDisturbEndMinute;
 - (nonnull instancetype)initWithTakingMedicineId:(NSInteger)takingMedicineId onOff:(NSInteger)onOff startHour:(NSInteger)startHour startMinute:(NSInteger)startMinute endHour:(NSInteger)endHour endMinute:(NSInteger)endMinute repeats:(NSArray<IDOWeekObjc *> * _Nonnull)repeats interval:(NSInteger)interval doNotDisturbOnOff:(NSInteger)doNotDisturbOnOff doNotDisturbStartHour:(NSInteger)doNotDisturbStartHour doNotDisturbStartMinute:(NSInteger)doNotDisturbStartMinute doNotDisturbEndHour:(NSInteger)doNotDisturbEndHour doNotDisturbEndMinute:(NSInteger)doNotDisturbEndMinute OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 任务清单条目（15.114）
+SWIFT_CLASS("_TtC16protocol_channel20IDOTaskListItemModel")
+@interface IDOTaskListItemModel : NSObject
+/// 任务 ID（协议 uint32_t：0…4294967295）
+@property (nonatomic) NSInteger taskId;
+/// 提醒时间：UTC 时间戳（秒，协议 uint32_t）
+@property (nonatomic) NSInteger remindTimestamp;
+@property (nonatomic, copy) NSString * _Nullable taskDetail;
+- (nonnull instancetype)initWithTaskId:(NSInteger)taskId remindTimestamp:(NSInteger)remindTimestamp taskDetail:(NSString * _Nullable)taskDetail OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class IDOTaskListStatusItemModel;
+
+/// 任务清单（15.114，0x33/0x9C）
+SWIFT_CLASS("_TtC16protocol_channel16IDOTaskListModel")
+@interface IDOTaskListModel : NSObject
+/// 1=全量设置；2=查询状态变更列表
+@property (nonatomic) NSInteger operate;
+@property (nonatomic, copy) NSArray<IDOTaskListItemModel *> * _Nullable items;
+@property (nonatomic, copy) NSArray<IDOTaskListStatusItemModel *> * _Nullable statusItems;
+- (nonnull instancetype)initWithOperate:(NSInteger)operate items:(NSArray<IDOTaskListItemModel *> * _Nullable)items OBJC_DESIGNATED_INITIALIZER;
+/// 按 operate 精简下发 JSON：不含 version / 分包字段
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 任务状态变更条目
+SWIFT_CLASS("_TtC16protocol_channel26IDOTaskListStatusItemModel")
+@interface IDOTaskListStatusItemModel : NSObject
+/// 任务 ID（协议 uint32_t）
+@property (nonatomic) NSInteger taskId;
+/// 0 未完成；1 已完成
+@property (nonatomic) NSInteger status;
+/// 完成时间：UTC 时间戳（秒，协议 uint32_t）；status=1 时有效，status=0 时为 0
+@property (nonatomic) NSInteger completeTimestamp;
+- (nonnull instancetype)initWithTaskId:(NSInteger)taskId status:(NSInteger)status completeTimestamp:(NSInteger)completeTimestamp OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12937,6 +13006,7 @@ enum IDOCmdPriority : NSInteger;
 @class IDOBatteryReminderSwitchReplyModel;
 @class IDOPillboxControlParamModel;
 @class IDOPillboxControlReplyModel;
+@class IDOTaskListModel;
 @class IDOPetInfoParamModel;
 @class IDOPetInfoReplyModel;
 @class IDOUnitModel;
@@ -13426,6 +13496,9 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 /// 药盒控制（CONTROL:0x06/0x0A，解锁/亮灯/灭灯）
 /// Control pillbox (unlock / light on / light off)
 + (id <IDOCancellable> _Nonnull)controlPillbox:(IDOPillboxControlParamModel * _Nonnull)paramModel completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPillboxControlReplyModel * _Nullable))completion;
+/// 任务清单（全量设置 / 查询状态变更）
+/// Task list (full set / query status changes)
++ (id <IDOCancellable> _Nonnull)taskList:(IDOTaskListModel * _Nonnull)paramModel completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOTaskListModel * _Nullable))completion;
 /// 设置宠物信息
 /// Set pet info event number
 + (id <IDOCancellable> _Nonnull)setPetInfo:(IDOPetInfoParamModel * _Nonnull)petInfoParam completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOPetInfoReplyModel * _Nullable))completion;
@@ -16676,10 +16749,22 @@ SWIFT_CLASS("_TtC16protocol_channel26IDODeviceNotificationModel")
 /// 1 闹钟已经修改 2 固件过热异常告警 4 亮屏参数有修改 8 抬腕参数有修改
 /// 16  勿擾模式获取 32 手机音量的下发
 @property (nonatomic, readonly, strong) NSNumber * _Nullable notifyType;
-/// 每个消息对应一个ID
+/// 每个消息对应一个ID（快速短信等场景）
 @property (nonatomic, readonly, strong) NSNumber * _Nullable msgId;
 /// 0 无效 1 自定义短信1（正在开会，稍后联系）2 自定义短信2
 @property (nonatomic, readonly, strong) NSNumber * _Nullable msgNotice;
+/// 任务清单状态变化通知（dataType == 133）的任务 ID
+@property (nonatomic, readonly, strong) NSNumber * _Nullable taskId;
+/// 任务清单状态变化通知（dataType == 133）的完成状态：0 未完成 / 1 已完成
+@property (nonatomic, readonly, strong) NSNumber * _Nullable taskCompletStatus;
+/// 走动提醒通知（dataType == 134）状态：0 未达成 / 1 已达成
+@property (nonatomic, readonly, strong) NSNumber * _Nullable walkReminderStatus;
+/// 走动提醒通知（dataType == 134）目标值
+@property (nonatomic, readonly, strong) NSNumber * _Nullable walkReminderGoalValue;
+/// 走动提醒通知（dataType == 134）达成值
+@property (nonatomic, readonly, strong) NSNumber * _Nullable walkReminderAchievedValue;
+/// 携带数据（数字，对应 Dart int / 原生 Long）：如 dataType 84、97、122～126 等；98～105、127、130、131、133、134 不使用本字段
+@property (nonatomic, readonly, strong) NSNumber * _Nullable parameter;
 /// 01 ACC  加速度 02 PPG  心率 03 TP   触摸 04 FLASH
 /// 05 过热（PPG）06 气压 07 GPS 08 地磁
 @property (nonatomic, readonly, strong) NSNumber * _Nullable errorIndex;
@@ -16716,7 +16801,7 @@ SWIFT_CLASS("_TtC16protocol_channel26IDODeviceNotificationModel")
 @property (nonatomic, readonly, strong) NSNumber * _Nullable controlEvt;
 /// 控制事件返回值（部分事件才有）
 @property (nonatomic, readonly, copy) NSString * _Nullable controlJson;
-- (nonnull instancetype)initWithDataType:(NSNumber * _Nullable)dataType notifyType:(NSNumber * _Nullable)notifyType msgId:(NSNumber * _Nullable)msgId msgNotice:(NSNumber * _Nullable)msgNotice errorIndex:(NSNumber * _Nullable)errorIndex controlEvt:(NSNumber * _Nullable)controlEvt controlJson:(NSString * _Nullable)controlJson OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithDataType:(NSNumber * _Nullable)dataType notifyType:(NSNumber * _Nullable)notifyType msgId:(NSNumber * _Nullable)msgId msgNotice:(NSNumber * _Nullable)msgNotice taskId:(NSNumber * _Nullable)taskId taskCompletStatus:(NSNumber * _Nullable)taskCompletStatus walkReminderStatus:(NSNumber * _Nullable)walkReminderStatus walkReminderGoalValue:(NSNumber * _Nullable)walkReminderGoalValue walkReminderAchievedValue:(NSNumber * _Nullable)walkReminderAchievedValue parameter:(NSNumber * _Nullable)parameter errorIndex:(NSNumber * _Nullable)errorIndex controlEvt:(NSNumber * _Nullable)controlEvt controlJson:(NSString * _Nullable)controlJson OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -18425,6 +18510,10 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL supportGetFindPhoneSwitch;
 /// 支持获取 Find My 设备名称
 @property (nonatomic, readonly) BOOL supportGetFindMyDeviceName;
+/// 功能表开启后：APP 佩戴方式不展示臂带选项
+@property (nonatomic, readonly) BOOL notSupportArmbandWearMode;
+/// 支持任务清单
+@property (nonatomic, readonly) BOOL supportTaskList;
 /// 健康数据同步使用 UTC 时间
 @property (nonatomic, readonly) BOOL supportSyncHealthDataUseUtcTime;
 /// 支持宠物信息设置获取（SET:03 0A / GET:02 0A）
@@ -18627,6 +18716,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL syncV3Sleep;
 /// v3 宠物睡眠
 @property (nonatomic, readonly) BOOL syncV3PetSleep;
+/// v3 活动量
+@property (nonatomic, readonly) BOOL syncV3ActivityAmount;
 /// v3 步数
 @property (nonatomic, readonly) BOOL syncV3Sports;
 /// v3 gps
@@ -23127,6 +23218,8 @@ typedef SWIFT_ENUM(NSInteger, IDOSyncDataType, open) {
   IDOSyncDataTypeActivityMerge = 22,
 /// 宠物睡眠数据
   IDOSyncDataTypePetSleep = 23,
+/// 活动量数据
+  IDOSyncDataTypeActivityAmount = 24,
 };
 
 
@@ -23233,6 +23326,51 @@ SWIFT_CLASS("_TtC16protocol_channel39IDOTakingMedicineReminderParamModelObjc")
 @property (nonatomic) NSInteger doNotDisturbEndMinute;
 - (nonnull instancetype)initWithTakingMedicineId:(NSInteger)takingMedicineId onOff:(NSInteger)onOff startHour:(NSInteger)startHour startMinute:(NSInteger)startMinute endHour:(NSInteger)endHour endMinute:(NSInteger)endMinute repeats:(NSArray<IDOWeekObjc *> * _Nonnull)repeats interval:(NSInteger)interval doNotDisturbOnOff:(NSInteger)doNotDisturbOnOff doNotDisturbStartHour:(NSInteger)doNotDisturbStartHour doNotDisturbStartMinute:(NSInteger)doNotDisturbStartMinute doNotDisturbEndHour:(NSInteger)doNotDisturbEndHour doNotDisturbEndMinute:(NSInteger)doNotDisturbEndMinute OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 任务清单条目（15.114）
+SWIFT_CLASS("_TtC16protocol_channel20IDOTaskListItemModel")
+@interface IDOTaskListItemModel : NSObject
+/// 任务 ID（协议 uint32_t：0…4294967295）
+@property (nonatomic) NSInteger taskId;
+/// 提醒时间：UTC 时间戳（秒，协议 uint32_t）
+@property (nonatomic) NSInteger remindTimestamp;
+@property (nonatomic, copy) NSString * _Nullable taskDetail;
+- (nonnull instancetype)initWithTaskId:(NSInteger)taskId remindTimestamp:(NSInteger)remindTimestamp taskDetail:(NSString * _Nullable)taskDetail OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class IDOTaskListStatusItemModel;
+
+/// 任务清单（15.114，0x33/0x9C）
+SWIFT_CLASS("_TtC16protocol_channel16IDOTaskListModel")
+@interface IDOTaskListModel : NSObject
+/// 1=全量设置；2=查询状态变更列表
+@property (nonatomic) NSInteger operate;
+@property (nonatomic, copy) NSArray<IDOTaskListItemModel *> * _Nullable items;
+@property (nonatomic, copy) NSArray<IDOTaskListStatusItemModel *> * _Nullable statusItems;
+- (nonnull instancetype)initWithOperate:(NSInteger)operate items:(NSArray<IDOTaskListItemModel *> * _Nullable)items OBJC_DESIGNATED_INITIALIZER;
+/// 按 operate 精简下发 JSON：不含 version / 分包字段
+- (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 任务状态变更条目
+SWIFT_CLASS("_TtC16protocol_channel26IDOTaskListStatusItemModel")
+@interface IDOTaskListStatusItemModel : NSObject
+/// 任务 ID（协议 uint32_t）
+@property (nonatomic) NSInteger taskId;
+/// 0 未完成；1 已完成
+@property (nonatomic) NSInteger status;
+/// 完成时间：UTC 时间戳（秒，协议 uint32_t）；status=1 时有效，status=0 时为 0
+@property (nonatomic) NSInteger completeTimestamp;
+- (nonnull instancetype)initWithTaskId:(NSInteger)taskId status:(NSInteger)status completeTimestamp:(NSInteger)completeTimestamp OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
