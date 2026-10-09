@@ -741,7 +741,7 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 + (id <IDOCancellable> _Nonnull)setSportModeSort:(NSArray<IDOSportModeSortParamModel *> * _Nonnull)items completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
 /// 设置久坐
 /// Set Long Sit Event
-+ (id <IDOCancellable> _Nonnull)setLongSit:(IDOLongSitParamModel * _Nonnull)longSit completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
++ (id <IDOCancellable> _Nonnull)setLongSit:(IDOLongSitParamModel * _Nonnull)longSit completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion SWIFT_DEPRECATED_MSG("已废弃，请使用 setWalkRemind / getWalkRemind");
 /// 设置心率模式
 /// Set Heart Rate Mode Event
 + (id <IDOCancellable> _Nonnull)setHeartRateMode:(IDOHeartRateModeParamModel * _Nonnull)heartRateMode completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
@@ -6038,7 +6038,7 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 /// 获取所有的健康监测开关
 @property (nonatomic, readonly) BOOL getHealthSwitchStateSupportV3;
 /// 久坐提醒
-@property (nonatomic, readonly) BOOL setSedentariness;
+@property (nonatomic, readonly) BOOL setSedentariness SWIFT_DEPRECATED_MSG("已废弃，请使用 setWalkReminder");
 /// 设置屏幕亮度
 @property (nonatomic, readonly) BOOL setScreenBrightness;
 /// 设置设备音乐音量
@@ -7449,7 +7449,8 @@ typedef SWIFT_ENUM(NSInteger, IDOLogType, open) {
 
 
 /// Set Long Sit Event
-SWIFT_CLASS("_TtC16protocol_channel20IDOLongSitParamModel")
+/// 字段与走动提醒 <code>IDOWalkRemindModel</code> 不同，需重新构造参数。
+SWIFT_CLASS("_TtC16protocol_channel20IDOLongSitParamModel") SWIFT_DEPRECATED_MSG("已废弃，请使用走动提醒 IDOWalkRemindModel（setWalkRemind / getWalkRemind）")
 @interface IDOLongSitParamModel : NSObject
 /// Start Time of Sedentary Reminder (hour)
 @property (nonatomic) NSInteger startHour;
@@ -9973,6 +9974,20 @@ typedef SWIFT_ENUM(NSInteger, IDOSportType, open) {
   IDOSportTypeSportTypeAthletics = 65,
 /// 力量训练
   IDOSportTypeSportTypeStrengthTraining = 66,
+/// 水中有氧
+  IDOSportTypeSportTypeWaterAerobics = 67,
+/// 庭院劳动
+  IDOSportTypeSportTypeYardWork = 68,
+/// 排舞
+  IDOSportTypeSportTypeLineDance = 69,
+/// 坐姿健身
+  IDOSportTypeSportTypeSeatedFitness = 70,
+/// 家务劳动
+  IDOSportTypeSportTypeHousework = 71,
+/// 水中走路
+  IDOSportTypeSportTypeWaterWalking = 72,
+/// 北欧式健走
+  IDOSportTypeSportTypeNordicWalking = 73,
 /// 板球运动
   IDOSportTypeSportTypeCricket = 75,
 /// 活动（通用）
@@ -13250,7 +13265,7 @@ SWIFT_CLASS("_TtC16protocol_channel5Cmdoc")
 + (id <IDOCancellable> _Nonnull)setSportModeSort:(NSArray<IDOSportModeSortParamModel *> * _Nonnull)items completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
 /// 设置久坐
 /// Set Long Sit Event
-+ (id <IDOCancellable> _Nonnull)setLongSit:(IDOLongSitParamModel * _Nonnull)longSit completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
++ (id <IDOCancellable> _Nonnull)setLongSit:(IDOLongSitParamModel * _Nonnull)longSit completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion SWIFT_DEPRECATED_MSG("已废弃，请使用 setWalkRemind / getWalkRemind");
 /// 设置心率模式
 /// Set Heart Rate Mode Event
 + (id <IDOCancellable> _Nonnull)setHeartRateMode:(IDOHeartRateModeParamModel * _Nonnull)heartRateMode completion:(void (^ _Nonnull)(CmdError * _Nonnull, IDOCmdSetResponseModel * _Nullable))completion;
@@ -18547,7 +18562,7 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 /// 获取所有的健康监测开关
 @property (nonatomic, readonly) BOOL getHealthSwitchStateSupportV3;
 /// 久坐提醒
-@property (nonatomic, readonly) BOOL setSedentariness;
+@property (nonatomic, readonly) BOOL setSedentariness SWIFT_DEPRECATED_MSG("已废弃，请使用 setWalkReminder");
 /// 设置屏幕亮度
 @property (nonatomic, readonly) BOOL setScreenBrightness;
 /// 设置设备音乐音量
@@ -19958,7 +19973,8 @@ typedef SWIFT_ENUM(NSInteger, IDOLogType, open) {
 
 
 /// Set Long Sit Event
-SWIFT_CLASS("_TtC16protocol_channel20IDOLongSitParamModel")
+/// 字段与走动提醒 <code>IDOWalkRemindModel</code> 不同，需重新构造参数。
+SWIFT_CLASS("_TtC16protocol_channel20IDOLongSitParamModel") SWIFT_DEPRECATED_MSG("已废弃，请使用走动提醒 IDOWalkRemindModel（setWalkRemind / getWalkRemind）")
 @interface IDOLongSitParamModel : NSObject
 /// Start Time of Sedentary Reminder (hour)
 @property (nonatomic) NSInteger startHour;
@@ -22482,6 +22498,20 @@ typedef SWIFT_ENUM(NSInteger, IDOSportType, open) {
   IDOSportTypeSportTypeAthletics = 65,
 /// 力量训练
   IDOSportTypeSportTypeStrengthTraining = 66,
+/// 水中有氧
+  IDOSportTypeSportTypeWaterAerobics = 67,
+/// 庭院劳动
+  IDOSportTypeSportTypeYardWork = 68,
+/// 排舞
+  IDOSportTypeSportTypeLineDance = 69,
+/// 坐姿健身
+  IDOSportTypeSportTypeSeatedFitness = 70,
+/// 家务劳动
+  IDOSportTypeSportTypeHousework = 71,
+/// 水中走路
+  IDOSportTypeSportTypeWaterWalking = 72,
+/// 北欧式健走
+  IDOSportTypeSportTypeNordicWalking = 73,
 /// 板球运动
   IDOSportTypeSportTypeCricket = 75,
 /// 活动（通用）

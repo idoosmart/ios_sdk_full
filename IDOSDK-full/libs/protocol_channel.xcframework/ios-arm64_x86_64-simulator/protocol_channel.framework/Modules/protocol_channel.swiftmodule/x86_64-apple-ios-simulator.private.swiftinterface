@@ -905,10 +905,12 @@ public struct Cmds {
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
+  @available(*, deprecated, message: "已废弃，请使用 setWalkRemind / getWalkRemind")
   public struct setLongSit : protocol_channel.IDOCmdProtocol {
     public init(_ param: protocol_channel.IDOLongSitParamModel)
     @discardableResult
     public func send(completion: @escaping protocol_channel.IDOCmdResponse<protocol_channel.IDOCmdSetResponseModel>) -> any protocol_channel.IDOCancellable
+    @available(*, deprecated, message: "已废弃，请使用 setWalkRemind / getWalkRemind")
     public typealias DataType = protocol_channel.IDOCmdSetResponseModel
   }
   public struct setHeartRateMode : protocol_channel.IDOCmdProtocol {
@@ -1869,7 +1871,8 @@ public struct Cmds {
   public static func setSportModeSelect(_ sportModeSelect: protocol_channel.IDOSportModeSelectParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setSportModeSort(_ items: [protocol_channel.IDOSportModeSortParamModel], completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
-  @objc @discardableResult
+  @objc @available(*, deprecated, message: "已废弃，请使用 setWalkRemind / getWalkRemind")
+  @discardableResult
   public static func setLongSit(_ longSit: protocol_channel.IDOLongSitParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
   @objc @discardableResult
   public static func setHeartRateMode(_ heartRateMode: protocol_channel.IDOHeartRateModeParamModel, completion: @escaping (_ err: protocol_channel.CmdError, _ response: protocol_channel.IDOCmdSetResponseModel?) -> ()) -> any protocol_channel.IDOCancellable
@@ -5356,7 +5359,8 @@ public protocol IDOCmdProtocol {
   @objc var setNoticeMissedCallV2: Swift.Bool { get }
   @objc var setOverFindPhone: Swift.Bool { get }
   @objc var getHealthSwitchStateSupportV3: Swift.Bool { get }
-  @objc var setSedentariness: Swift.Bool { get }
+  @objc @available(*, deprecated, message: "已废弃，请使用 setWalkReminder")
+  var setSedentariness: Swift.Bool { get }
   @objc var setScreenBrightness: Swift.Bool { get }
   @objc var setSetPhoneVoice: Swift.Bool { get }
   @objc var setSupportSetCallQuickReplyOnOff: Swift.Bool { get }
@@ -5910,10 +5914,10 @@ public protocol IDOCmdProtocol {
   @objc public var highHeartValue: Swift.Int
   @objc public var lowHeartValue: Swift.Int
   @objc public init(updateTime: Swift.Int, mode: Swift.Int, hasTimeRange: Swift.Int, getMinMode: Swift.Int, getSECMode: Swift.Int, startHour: Swift.Int, startMinute: Swift.Int, endHour: Swift.Int, endMinute: Swift.Int, measurementInterval: Swift.Int, notifyFlag: Swift.Int, highHeartMode: Swift.Int, lowHeartMode: Swift.Int, highHeartValue: Swift.Int, lowHeartValue: Swift.Int)
+  required public init(from decoder: any Swift.Decoder) throws
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOHeartRateIntervalModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var burnFatThreshold: Swift.Int
@@ -6136,7 +6140,8 @@ public protocol IDOCmdProtocol {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-@objc @objcMembers public class IDOLongSitParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
+@objc @available(*, deprecated, message: "已废弃，请使用走动提醒 IDOWalkRemindModel（setWalkRemind / getWalkRemind）")
+@objcMembers public class IDOLongSitParamModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var startHour: Swift.Int
   @objc public var startMinute: Swift.Int
   @objc public var endHour: Swift.Int
@@ -7431,6 +7436,13 @@ public protocol IDOCmdProtocol {
   case sportTypeFitnessRacing = 64
   case sportTypeAthletics = 65
   case sportTypeStrengthTraining = 66
+  case sportTypeWaterAerobics = 67
+  case sportTypeYardWork = 68
+  case sportTypeLineDance = 69
+  case sportTypeSeatedFitness = 70
+  case sportTypeHousework = 71
+  case sportTypeWaterWalking = 72
+  case sportTypeNordicWalking = 73
   case sportTypeCricket = 75
   case sportTypeGeneralActivity = 99
   case sportTypeFreeTraining = 100
