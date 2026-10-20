@@ -1400,7 +1400,7 @@ extern uint32_t SyncV3HealthDataCustomResource(int data_type);
  * @param minute 分（按天类型传 0）
  * @param second 秒（按天类型传 0）
  * @return SUCCESS(0)；其它为失败
- * @note 仅当 setReliableCacheEnable(1) 后有效；未开启时为 no-op。可在 JSON 回调内立即调用（文件尚未落盘时记 pending，随后 save 会跳过写盘）。未 consume 时缓存最多约保留 7 天（TTL）。落盘失败错误码见 ERROR_HEALTH_PERSIST_FAIL(28)。
+ * @note 仅当 setReliableCacheEnable(1) 后有效；未开启时为 no-op。可在 JSON 回调内立即调用（文件尚未落盘时记 pending，随后 save 会跳过写盘）。未 consume 时缓存最多约保留 7 天（TTL）。落盘失败不阻断健康同步主流程。
  */
 extern int consumeReliableCacheRecord(int data_type,
                                      int year,

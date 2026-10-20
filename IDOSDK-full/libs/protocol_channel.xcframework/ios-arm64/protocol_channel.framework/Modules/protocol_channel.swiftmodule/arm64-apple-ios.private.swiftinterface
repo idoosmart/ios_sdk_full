@@ -3040,10 +3040,10 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
 @objc public class IDOAlarmModel : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   public var items: [protocol_channel.IDOAlarmItem]
   public init(items: [protocol_channel.IDOAlarmItem])
+  required public init(from decoder: any Swift.Decoder) throws
   public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public class IDOAlarmItem : ObjectiveC.NSObject, Swift.Codable {
   public var alarmID: Swift.Int
@@ -3099,10 +3099,10 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
 @objc @objcMembers public class IDOAlarmModelObjc : ObjectiveC.NSObject, protocol_channel.IDOBaseModel {
   @objc public var items: [protocol_channel.IDOAlarmItemObjc]
   @objc public init(items: [protocol_channel.IDOAlarmItemObjc])
+  required public init(from decoder: any Swift.Decoder) throws
   @objc public func toJsonString() -> Swift.String?
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
-  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @objcMembers public class IDOAlarmItemObjc : ObjectiveC.NSObject, Swift.Codable {
   @objc public var alarmID: Swift.Int
@@ -3126,6 +3126,10 @@ public typealias BlockDeviceFileToAppTask = (_ task: protocol_channel.IDODeviceF
   @objc public var week: protocol_channel.IDOWeek
   @objc public init(week: protocol_channel.IDOWeek)
   @objc deinit
+}
+public enum IDOAlarmNameCompat {
+  public static func sanitizeReplyJson(_ json: Swift.String) -> Swift.String
+  public static func repairIllegalNameEscapes(_ json: Swift.String) -> Swift.String
 }
 @objc public protocol IDOAlexaInterface {
   @objc func onNetworkChanged(hasNetwork: Swift.Bool)
@@ -4382,10 +4386,13 @@ public protocol IDOCmdProtocol {
 @objc public protocol IDOCmdInterface {
   @objc var isBinding: Swift.Bool { get }
   @objc func bind(osVersion: Swift.Int, onDeviceInfo: ((any protocol_channel.IDODeviceInterface) -> Swift.Void)?, onFuncTable: ((any protocol_channel.IDOFuncTableInterface) -> Swift.Void)?, completion: @escaping (protocol_channel.IDOBindStatus) -> Swift.Void)
+  @objc func bind(osVersion: Swift.Int, onDeviceInfo: ((any protocol_channel.IDODeviceInterface) -> Swift.Void)?, onFuncTable: ((any protocol_channel.IDOFuncTableInterface) -> Swift.Void)?, onEncryptedAuthData: ((protocol_channel.IDOEncryptedAuthData) -> Swift.Void)?, completion: @escaping (protocol_channel.IDOBindStatus) -> Swift.Void)
   @objc func cancelBind()
   @objc func appMarkBindResult(success: Swift.Bool)
   @objc func unbind(macAddress: Swift.String, isForceRemove: Swift.Bool, completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc func setAuthCode(code: Swift.String, osVersion: Swift.Int, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc func setEncryptedAuthData(macAddress: Swift.String, data: protocol_channel.IDOEncryptedAuthData, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc func getEncryptedAuthData(macAddress: Swift.String, completion: @escaping (protocol_channel.IDOEncryptedAuthData?) -> Swift.Void)
   @objc func setV2CallEvt(contactText: Swift.String, phoneNumber: Swift.String, completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc func setV2NoticeEvt(type: protocol_channel.NoticeMessageType, contactText: Swift.String, phoneNumber: Swift.String, dataText: Swift.String, completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc func stopV2CallEvt(completion: @escaping (Swift.Bool) -> Swift.Void)
@@ -4759,6 +4766,13 @@ public protocol IDOCmdProtocol {
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
+}
+@objc @objcMembers public class IDOEncryptedAuthData : ObjectiveC.NSObject {
+  @objc public var authData: [Swift.UInt8]
+  @objc public var encryptedVersion: Swift.Int
+  @objc public var authLength: Swift.Int
+  @objc public init(authData: [Swift.UInt8], encryptedVersion: Swift.Int, authLength: Swift.Int)
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers @objcMembers public class IDOEpoManager {
   public static let shared: protocol_channel.IDOEpoManager
@@ -6025,7 +6039,8 @@ public protocol IDOCmdProtocol {
   @objc public var ovulationIntervalDay: Swift.Int
   @objc public var ovulationBeforeDay: Swift.Int
   @objc public var ovulationAfterDay: Swift.Int
-  @objc public init(year: Swift.Int, mon: Swift.Int, day: Swift.Int, menstrualDay: Swift.Int, cycleDay: Swift.Int, ovulationIntervalDay: Swift.Int, ovulationBeforeDay: Swift.Int, ovulationAfterDay: Swift.Int)
+  @objc public var isMenstrualEnd: Swift.Int
+  @objc public init(year: Swift.Int, mon: Swift.Int, day: Swift.Int, menstrualDay: Swift.Int, cycleDay: Swift.Int, ovulationIntervalDay: Swift.Int, ovulationBeforeDay: Swift.Int, ovulationAfterDay: Swift.Int, isMenstrualEnd: Swift.Int = 0)
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws

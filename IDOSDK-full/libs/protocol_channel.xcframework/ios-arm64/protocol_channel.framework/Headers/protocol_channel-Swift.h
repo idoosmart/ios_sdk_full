@@ -3488,6 +3488,7 @@ SWIFT_CLASS("_TtC16protocol_channel22IDOCmdGetResponseModel")
 
 @protocol IDODeviceInterface;
 @protocol IDOFuncTableInterface;
+@class IDOEncryptedAuthData;
 enum NoticeMessageType : NSInteger;
 @class IDORawDataSensorInfoReply;
 
@@ -3497,7 +3498,27 @@ SWIFT_PROTOCOL("_TtP16protocol_channel15IDOCmdInterface_")
 /// 是否在绑定中 (绑定中，切换设备将受到限制）
 @property (nonatomic, readonly) BOOL isBinding;
 /// 设备绑定
+/// \param osVersion 系统版本 (取主版本号)
+///
+/// \param onDeviceInfo 设备信息回调（可选）
+///
+/// \param onFuncTable 功能表回调（可选）
+///
+/// \param completion 绑定结果
+///
 - (void)bindWithOsVersion:(NSInteger)osVersion onDeviceInfo:(void (^ _Nullable)(id <IDODeviceInterface> _Nonnull))onDeviceInfo onFuncTable:(void (^ _Nullable)(id <IDOFuncTableInterface> _Nonnull))onFuncTable completion:(void (^ _Nonnull)(enum IDOBindStatus))completion;
+/// 设备绑定（支持加密授权数据回调）
+/// \param osVersion 系统版本 (取主版本号)
+///
+/// \param onDeviceInfo 设备信息回调（可选）
+///
+/// \param onFuncTable 功能表回调（可选）
+///
+/// \param onEncryptedAuthData 加密授权数据回调（可选；仅支持设备触发，无换机绑定场景可忽略）
+///
+/// \param completion 绑定结果
+///
+- (void)bindWithOsVersion:(NSInteger)osVersion onDeviceInfo:(void (^ _Nullable)(id <IDODeviceInterface> _Nonnull))onDeviceInfo onFuncTable:(void (^ _Nullable)(id <IDOFuncTableInterface> _Nonnull))onFuncTable onEncryptedAuthData:(void (^ _Nullable)(IDOEncryptedAuthData * _Nonnull))onEncryptedAuthData completion:(void (^ _Nonnull)(enum IDOBindStatus))completion;
 /// 取消当前绑定请求（仅限需要app确认绑定结果的设备使用）
 - (void)cancelBind;
 /// APP下发绑定结果（仅限需要app确认绑定结果的设备使用）
@@ -3511,6 +3532,15 @@ SWIFT_PROTOCOL("_TtP16protocol_channel15IDOCmdInterface_")
 /// code 配对码
 /// osVersion: 系统版本 (取主版本号)
 - (void)setAuthCodeWithCode:(NSString * _Nonnull)code osVersion:(NSInteger)osVersion completion:(void (^ _Nonnull)(BOOL))completion;
+/// 设置加密授权数据（仅限支持设备有效）
+/// Set encrypted authorization data (valid only for supported devices)
+/// 须在该设备连接前调用（连接过程会用到）
+/// Must be called before connecting the device (used during the connection process)
+- (void)setEncryptedAuthDataWithMacAddress:(NSString * _Nonnull)macAddress data:(IDOEncryptedAuthData * _Nonnull)data completion:(void (^ _Nonnull)(BOOL))completion;
+/// 获取已缓存的加密授权数据（仅限支持设备有效）
+/// Get cached encrypted authorization data (valid only for supported devices)
+/// 无缓存或不存在时回调 nil
+- (void)getEncryptedAuthDataWithMacAddress:(NSString * _Nonnull)macAddress completion:(void (^ _Nonnull)(IDOEncryptedAuthData * _Nullable))completion;
 /// v2发送来电提醒以及来电电话号码和来电联系人(部分设备实现)
 /// \param contactText 联系人名称
 ///
@@ -4542,6 +4572,25 @@ SWIFT_CLASS("_TtC16protocol_channel34IDOEmotionHealthReminderReplyModel")
 @property (nonatomic, strong) IDOUnpleasantRemindConfig * _Nullable unpleasantRemind;
 - (nonnull instancetype)initWithOperate:(NSInteger)operate errorCode:(NSInteger)errorCode notifyType:(NSInteger)notifyType emotionalHealthSwitch:(NSInteger)emotionalHealthSwitch pressureRemind:(IDOPressureRemindConfig * _Nullable)pressureRemind unpleasantRemind:(IDOUnpleasantRemindConfig * _Nullable)unpleasantRemind OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nullable)toJsonString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+/// 加密授权数据
+/// Encrypted authorization data
+SWIFT_CLASS("_TtC16protocol_channel20IDOEncryptedAuthData")
+@interface IDOEncryptedAuthData : NSObject
+/// 授权数据（通常 12 字节）
+/// Auth data (usually 12 bytes)
+@property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull authData;
+/// 加密方式版本（0: 原有，0x10: 新版）
+/// Encryption version (0: legacy, 0x10: new)
+@property (nonatomic) NSInteger encryptedVersion;
+/// 授权数据长度
+/// Auth data length
+@property (nonatomic) NSInteger authLength;
+- (nonnull instancetype)initWithAuthData:(NSArray<NSNumber *> * _Nonnull)authData encryptedVersion:(NSInteger)encryptedVersion authLength:(NSInteger)authLength OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -7248,7 +7297,9 @@ SWIFT_CLASS("_TtC16protocol_channel34IDOHistoricalMenstruationParamItem")
 @property (nonatomic) NSInteger ovulationBeforeDay;
 /// The number of days of fertility after the ovulation day is usually 5 when the Function
 @property (nonatomic) NSInteger ovulationAfterDay;
-- (nonnull instancetype)initWithYear:(NSInteger)year mon:(NSInteger)mon day:(NSInteger)day menstrualDay:(NSInteger)menstrualDay cycleDay:(NSInteger)cycleDay ovulationIntervalDay:(NSInteger)ovulationIntervalDay ovulationBeforeDay:(NSInteger)ovulationBeforeDay ovulationAfterDay:(NSInteger)ovulationAfterDay OBJC_DESIGNATED_INITIALIZER;
+/// 0：无效 1：已结束 2：未结束
+@property (nonatomic) NSInteger isMenstrualEnd;
+- (nonnull instancetype)initWithYear:(NSInteger)year mon:(NSInteger)mon day:(NSInteger)day menstrualDay:(NSInteger)menstrualDay cycleDay:(NSInteger)cycleDay ovulationIntervalDay:(NSInteger)ovulationIntervalDay ovulationBeforeDay:(NSInteger)ovulationBeforeDay ovulationAfterDay:(NSInteger)ovulationAfterDay isMenstrualEnd:(NSInteger)isMenstrualEnd OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

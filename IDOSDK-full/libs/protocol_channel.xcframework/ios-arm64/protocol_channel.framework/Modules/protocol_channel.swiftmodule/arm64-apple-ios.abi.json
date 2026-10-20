@@ -1383,6 +1383,16 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "protocol_channel",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "IDODeviceStateType",
         "printedName": "IDODeviceStateType",
@@ -126077,6 +126087,35 @@
             "init_kind": "Designated"
           },
           {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IDOAlarmModel",
+                "printedName": "protocol_channel.IDOAlarmModel",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOAlarmModel"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:16protocol_channel13IDOAlarmModelC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s16protocol_channel13IDOAlarmModelC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "protocol_channel",
+            "declAttributes": [
+              "Required",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
             "kind": "Function",
             "name": "toJsonString",
             "printedName": "toJsonString()",
@@ -126129,35 +126168,6 @@
               "ObjC",
               "Override"
             ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(from:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "IDOAlarmModel",
-                "printedName": "protocol_channel.IDOAlarmModel",
-                "usr": "c:@M@protocol_channel@objc(cs)IDOAlarmModel"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Decoder",
-                "printedName": "any Swift.Decoder",
-                "usr": "s:s7DecoderP"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:16protocol_channel13IDOAlarmModelC4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s16protocol_channel13IDOAlarmModelC4fromACs7Decoder_p_tKcfc",
-            "moduleName": "protocol_channel",
-            "implicit": true,
-            "declAttributes": [
-              "Required"
-            ],
-            "throwing": true,
             "init_kind": "Designated"
           },
           {
@@ -128936,6 +128946,35 @@
             "init_kind": "Designated"
           },
           {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IDOAlarmModelObjc",
+                "printedName": "protocol_channel.IDOAlarmModelObjc",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOAlarmModelObjc"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:16protocol_channel17IDOAlarmModelObjcC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s16protocol_channel17IDOAlarmModelObjcC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "protocol_channel",
+            "declAttributes": [
+              "Required",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
             "kind": "Function",
             "name": "toJsonString",
             "printedName": "toJsonString()",
@@ -128989,35 +129028,6 @@
               "ObjC",
               "Override"
             ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(from:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "IDOAlarmModelObjc",
-                "printedName": "protocol_channel.IDOAlarmModelObjc",
-                "usr": "c:@M@protocol_channel@objc(cs)IDOAlarmModelObjc"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Decoder",
-                "printedName": "any Swift.Decoder",
-                "usr": "s:s7DecoderP"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:16protocol_channel17IDOAlarmModelObjcC4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s16protocol_channel17IDOAlarmModelObjcC4fromACs7Decoder_p_tKcfc",
-            "moduleName": "protocol_channel",
-            "implicit": true,
-            "declAttributes": [
-              "Required"
-            ],
-            "throwing": true,
             "init_kind": "Designated"
           },
           {
@@ -130795,6 +130805,95 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IDOAlarmNameCompat",
+        "printedName": "IDOAlarmNameCompat",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "sanitizeReplyJson",
+            "printedName": "sanitizeReplyJson(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16protocol_channel18IDOAlarmNameCompatO17sanitizeReplyJsonyS2SFZ",
+            "mangledName": "$s16protocol_channel18IDOAlarmNameCompatO17sanitizeReplyJsonyS2SFZ",
+            "moduleName": "protocol_channel",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "repairIllegalNameEscapes",
+            "printedName": "repairIllegalNameEscapes(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16protocol_channel18IDOAlarmNameCompatO013repairIllegalD7EscapesyS2SFZ",
+            "mangledName": "$s16protocol_channel18IDOAlarmNameCompatO013repairIllegalD7EscapesyS2SFZ",
+            "moduleName": "protocol_channel",
+            "static": true,
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:16protocol_channel18IDOAlarmNameCompatO",
+        "mangledName": "$s16protocol_channel18IDOAlarmNameCompatO",
+        "moduleName": "protocol_channel",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
           }
         ]
       },
@@ -185874,6 +185973,133 @@
           },
           {
             "kind": "Function",
+            "name": "bind",
+            "printedName": "bind(osVersion:onDeviceInfo:onFuncTable:onEncryptedAuthData:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((any protocol_channel.IDODeviceInterface) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any protocol_channel.IDODeviceInterface) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IDODeviceInterface",
+                        "printedName": "any protocol_channel.IDODeviceInterface",
+                        "usr": "c:@M@protocol_channel@objc(pl)IDODeviceInterface"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((any protocol_channel.IDOFuncTableInterface) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any protocol_channel.IDOFuncTableInterface) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IDOFuncTableInterface",
+                        "printedName": "any protocol_channel.IDOFuncTableInterface",
+                        "usr": "c:@M@protocol_channel@objc(pl)IDOFuncTableInterface"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((protocol_channel.IDOEncryptedAuthData) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(protocol_channel.IDOEncryptedAuthData) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IDOEncryptedAuthData",
+                        "printedName": "protocol_channel.IDOEncryptedAuthData",
+                        "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(protocol_channel.IDOBindStatus) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "IDOBindStatus",
+                    "printedName": "protocol_channel.IDOBindStatus",
+                    "usr": "c:@M@protocol_channel@E@IDOBindStatus"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@protocol_channel@objc(pl)IDOCmdInterface(im)bindWithOsVersion:onDeviceInfo:onFuncTable:onEncryptedAuthData:completion:",
+            "mangledName": "$s16protocol_channel15IDOCmdInterfaceP4bind9osVersion12onDeviceInfo0H9FuncTable0H17EncryptedAuthData10completionySi_yAA09IDODeviceD0_pcSgyAA07IDOFunclD0_pcSgyAA012IDOEncryptednO0CcSgyAA13IDOBindStatusOctF",
+            "moduleName": "protocol_channel",
+            "genericSig": "<τ_0_0 where τ_0_0 : protocol_channel.IDOCmdInterface>",
+            "sugared_genericSig": "<Self where Self : protocol_channel.IDOCmdInterface>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "cancelBind",
             "printedName": "cancelBind()",
             "children": [
@@ -186027,6 +186253,118 @@
             "declKind": "Func",
             "usr": "c:@M@protocol_channel@objc(pl)IDOCmdInterface(im)setAuthCodeWithCode:osVersion:completion:",
             "mangledName": "$s16protocol_channel15IDOCmdInterfaceP11setAuthCode4code9osVersion10completionySS_SiySbctF",
+            "moduleName": "protocol_channel",
+            "genericSig": "<τ_0_0 where τ_0_0 : protocol_channel.IDOCmdInterface>",
+            "sugared_genericSig": "<Self where Self : protocol_channel.IDOCmdInterface>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setEncryptedAuthData",
+            "printedName": "setEncryptedAuthData(macAddress:data:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IDOEncryptedAuthData",
+                "printedName": "protocol_channel.IDOEncryptedAuthData",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@protocol_channel@objc(pl)IDOCmdInterface(im)setEncryptedAuthDataWithMacAddress:data:completion:",
+            "mangledName": "$s16protocol_channel15IDOCmdInterfaceP20setEncryptedAuthData10macAddress4data10completionySS_AA012IDOEncryptedgH0CySbctF",
+            "moduleName": "protocol_channel",
+            "genericSig": "<τ_0_0 where τ_0_0 : protocol_channel.IDOCmdInterface>",
+            "sugared_genericSig": "<Self where Self : protocol_channel.IDOCmdInterface>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getEncryptedAuthData",
+            "printedName": "getEncryptedAuthData(macAddress:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(protocol_channel.IDOEncryptedAuthData?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "protocol_channel.IDOEncryptedAuthData?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "IDOEncryptedAuthData",
+                        "printedName": "protocol_channel.IDOEncryptedAuthData",
+                        "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@protocol_channel@objc(pl)IDOCmdInterface(im)getEncryptedAuthDataWithMacAddress:completion:",
+            "mangledName": "$s16protocol_channel15IDOCmdInterfaceP20getEncryptedAuthData10macAddress10completionySS_yAA012IDOEncryptedgH0CSgctF",
             "moduleName": "protocol_channel",
             "genericSig": "<τ_0_0 where τ_0_0 : protocol_channel.IDOCmdInterface>",
             "sugared_genericSig": "<Self where Self : protocol_channel.IDOCmdInterface>",
@@ -206549,6 +206887,476 @@
             "printedName": "Encodable",
             "usr": "s:SE",
             "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "protocol_channel"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IDOEncryptedAuthData",
+        "printedName": "IDOEncryptedAuthData",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "authData",
+            "printedName": "authData",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData(py)authData",
+            "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC04authE0Says5UInt8VGvp",
+            "moduleName": "protocol_channel",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.UInt8]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData(im)authData",
+                "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC04authE0Says5UInt8VGvg",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.UInt8]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt8",
+                        "printedName": "Swift.UInt8",
+                        "usr": "s:s5UInt8V"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData(im)setAuthData:",
+                "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC04authE0Says5UInt8VGvs",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16protocol_channel20IDOEncryptedAuthDataC04authE0Says5UInt8VGvM",
+                "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC04authE0Says5UInt8VGvM",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "encryptedVersion",
+            "printedName": "encryptedVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData(py)encryptedVersion",
+            "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC16encryptedVersionSivp",
+            "moduleName": "protocol_channel",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData(im)encryptedVersion",
+                "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC16encryptedVersionSivg",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData(im)setEncryptedVersion:",
+                "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC16encryptedVersionSivs",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16protocol_channel20IDOEncryptedAuthDataC16encryptedVersionSivM",
+                "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC16encryptedVersionSivM",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "authLength",
+            "printedName": "authLength",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData(py)authLength",
+            "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC10authLengthSivp",
+            "moduleName": "protocol_channel",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData(im)authLength",
+                "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC10authLengthSivg",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData(im)setAuthLength:",
+                "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC10authLengthSivs",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16protocol_channel20IDOEncryptedAuthDataC10authLengthSivM",
+                "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC10authLengthSivM",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(authData:encryptedVersion:authLength:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IDOEncryptedAuthData",
+                "printedName": "protocol_channel.IDOEncryptedAuthData",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt8]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt8",
+                    "printedName": "Swift.UInt8",
+                    "usr": "s:s5UInt8V"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData(im)initWithAuthData:encryptedVersion:authLength:",
+            "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC04authE016encryptedVersion0F6LengthACSays5UInt8VG_S2itcfc",
+            "moduleName": "protocol_channel",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IDOEncryptedAuthData",
+                "printedName": "protocol_channel.IDOEncryptedAuthData",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData(im)init",
+            "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataCACycfc",
+            "moduleName": "protocol_channel",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@protocol_channel@objc(cs)IDOEncryptedAuthData",
+        "mangledName": "$s16protocol_channel20IDOEncryptedAuthDataC",
+        "moduleName": "protocol_channel",
+        "declAttributes": [
+          "AccessControl",
+          "ObjCMembers",
+          "RawDocComment",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
       },
@@ -274621,9 +275429,102 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "isMenstrualEnd",
+            "printedName": "isMenstrualEnd",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@protocol_channel@objc(cs)IDOHistoricalMenstruationParamItem(py)isMenstrualEnd",
+            "mangledName": "$s16protocol_channel34IDOHistoricalMenstruationParamItemC14isMenstrualEndSivp",
+            "moduleName": "protocol_channel",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOHistoricalMenstruationParamItem(im)isMenstrualEnd",
+                "mangledName": "$s16protocol_channel34IDOHistoricalMenstruationParamItemC14isMenstrualEndSivg",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@protocol_channel@objc(cs)IDOHistoricalMenstruationParamItem(im)setIsMenstrualEnd:",
+                "mangledName": "$s16protocol_channel34IDOHistoricalMenstruationParamItemC14isMenstrualEndSivs",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16protocol_channel34IDOHistoricalMenstruationParamItemC14isMenstrualEndSivM",
+                "mangledName": "$s16protocol_channel34IDOHistoricalMenstruationParamItemC14isMenstrualEndSivM",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(year:mon:day:menstrualDay:cycleDay:ovulationIntervalDay:ovulationBeforeDay:ovulationAfterDay:)",
+            "printedName": "init(year:mon:day:menstrualDay:cycleDay:ovulationIntervalDay:ovulationBeforeDay:ovulationAfterDay:isMenstrualEnd:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -274678,11 +275579,18 @@
                 "name": "Int",
                 "printedName": "Swift.Int",
                 "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "hasDefaultArg": true,
+                "usr": "s:Si"
               }
             ],
             "declKind": "Constructor",
-            "usr": "c:@M@protocol_channel@objc(cs)IDOHistoricalMenstruationParamItem(im)initWithYear:mon:day:menstrualDay:cycleDay:ovulationIntervalDay:ovulationBeforeDay:ovulationAfterDay:",
-            "mangledName": "$s16protocol_channel34IDOHistoricalMenstruationParamItemC4year3mon3day12menstrualDay05cycleK0017ovulationIntervalK00m6BeforeK00m5AfterK0ACSi_S7itcfc",
+            "usr": "c:@M@protocol_channel@objc(cs)IDOHistoricalMenstruationParamItem(im)initWithYear:mon:day:menstrualDay:cycleDay:ovulationIntervalDay:ovulationBeforeDay:ovulationAfterDay:isMenstrualEnd:",
+            "mangledName": "$s16protocol_channel34IDOHistoricalMenstruationParamItemC4year3mon3day12menstrualDay05cycleK0017ovulationIntervalK00m6BeforeK00m5AfterK014isMenstrualEndACSi_S8itcfc",
             "moduleName": "protocol_channel",
             "declAttributes": [
               "AccessControl",
@@ -430911,875 +431819,875 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 5224,
+      "offset": 6711,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 5259,
+      "offset": 6746,
       "length": 2,
       "value": "-2"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 7494,
+      "offset": 8981,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 7902,
+      "offset": 9389,
       "length": 4,
       "value": "0x01"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 7924,
+      "offset": 9411,
       "length": 4,
       "value": "0x02"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 7943,
+      "offset": 9430,
       "length": 4,
       "value": "0x03"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 7962,
+      "offset": 9449,
       "length": 4,
       "value": "0x04"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 7984,
+      "offset": 9471,
       "length": 4,
       "value": "0x05"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8009,
+      "offset": 9496,
       "length": 4,
       "value": "0x06"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8033,
+      "offset": 9520,
       "length": 4,
       "value": "0x07"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8058,
+      "offset": 9545,
       "length": 4,
       "value": "0x08"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8084,
+      "offset": 9571,
       "length": 4,
       "value": "0x09"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8110,
+      "offset": 9597,
       "length": 4,
       "value": "0x0a"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8135,
+      "offset": 9622,
       "length": 4,
       "value": "0x0b"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8160,
+      "offset": 9647,
       "length": 4,
       "value": "0x0c"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8182,
+      "offset": 9669,
       "length": 4,
       "value": "0x0d"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8204,
+      "offset": 9691,
       "length": 4,
       "value": "0x0e"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8230,
+      "offset": 9717,
       "length": 4,
       "value": "0x10"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8251,
+      "offset": 9738,
       "length": 4,
       "value": "0x11"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8273,
+      "offset": 9760,
       "length": 4,
       "value": "0x12"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8300,
+      "offset": 9787,
       "length": 4,
       "value": "0x13"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8322,
+      "offset": 9809,
       "length": 4,
       "value": "0x14"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8346,
+      "offset": 9833,
       "length": 4,
       "value": "0x15"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8371,
+      "offset": 9858,
       "length": 4,
       "value": "0x16"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8396,
+      "offset": 9883,
       "length": 4,
       "value": "0x17"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8421,
+      "offset": 9908,
       "length": 4,
       "value": "0x20"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8443,
+      "offset": 9930,
       "length": 4,
       "value": "0x21"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8466,
+      "offset": 9953,
       "length": 4,
       "value": "0x23"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8490,
+      "offset": 9977,
       "length": 4,
       "value": "0x24"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8522,
+      "offset": 10009,
       "length": 4,
       "value": "0x25"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8545,
+      "offset": 10032,
       "length": 4,
       "value": "0x26"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8568,
+      "offset": 10055,
       "length": 4,
       "value": "0x27"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8594,
+      "offset": 10081,
       "length": 4,
       "value": "0x28"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8618,
+      "offset": 10105,
       "length": 4,
       "value": "0x29"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8643,
+      "offset": 10130,
       "length": 4,
       "value": "0x2a"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8665,
+      "offset": 10152,
       "length": 4,
       "value": "0x2b"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8688,
+      "offset": 10175,
       "length": 4,
       "value": "0x2c"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8713,
+      "offset": 10200,
       "length": 4,
       "value": "0x2d"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8735,
+      "offset": 10222,
       "length": 4,
       "value": "0x2e"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8759,
+      "offset": 10246,
       "length": 4,
       "value": "0x2f"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8780,
+      "offset": 10267,
       "length": 4,
       "value": "0x30"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8803,
+      "offset": 10290,
       "length": 4,
       "value": "0x31"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8826,
+      "offset": 10313,
       "length": 4,
       "value": "0x32"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8849,
+      "offset": 10336,
       "length": 4,
       "value": "0x33"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8876,
+      "offset": 10363,
       "length": 4,
       "value": "0x34"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8898,
+      "offset": 10385,
       "length": 4,
       "value": "0x35"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 8919,
+      "offset": 10406,
       "length": 4,
       "value": "0x36"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 9555,
+      "offset": 11042,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 10336,
+      "offset": 11823,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 12478,
+      "offset": 13965,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 13273,
+      "offset": 14760,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 13728,
+      "offset": 15215,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 14172,
+      "offset": 15659,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 14675,
+      "offset": 16162,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 15127,
+      "offset": 16614,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 15641,
+      "offset": 17128,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 16131,
+      "offset": 17618,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 16633,
+      "offset": 18120,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 17074,
+      "offset": 18561,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 17506,
+      "offset": 18993,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 17956,
+      "offset": 19443,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 18432,
+      "offset": 19919,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 18964,
+      "offset": 20451,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 19424,
+      "offset": 20911,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 19884,
+      "offset": 21371,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 20342,
+      "offset": 21829,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 21420,
+      "offset": 22907,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 21888,
+      "offset": 23375,
       "length": 17,
       "value": "\"{\"operate\":2}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 24370,
+      "offset": 25857,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 26956,
+      "offset": 28443,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 27436,
+      "offset": 28923,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 27905,
+      "offset": 29392,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 28530,
+      "offset": 30017,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 28992,
+      "offset": 30479,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 29438,
+      "offset": 30925,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 29920,
+      "offset": 31407,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 31126,
+      "offset": 32613,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 31594,
+      "offset": 33081,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 32066,
+      "offset": 33553,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 32603,
+      "offset": 34090,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 33064,
+      "offset": 34551,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 33518,
+      "offset": 35005,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 33964,
+      "offset": 35451,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 34845,
+      "offset": 36332,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 35319,
+      "offset": 36806,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 35765,
+      "offset": 37252,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 36239,
+      "offset": 37726,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 36700,
+      "offset": 38187,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 37171,
+      "offset": 38658,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 46485,
+      "offset": 47972,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 47464,
+      "offset": 48951,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 54087,
+      "offset": 55574,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 59838,
+      "offset": 61330,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 64368,
+      "offset": 65860,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 69444,
+      "offset": 70936,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 72014,
+      "offset": 73506,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 72839,
+      "offset": 74331,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 75604,
+      "offset": 77096,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 76097,
+      "offset": 77589,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 80632,
+      "offset": 82124,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 81138,
+      "offset": 82630,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 81573,
+      "offset": 83065,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 81983,
+      "offset": 83475,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 82444,
+      "offset": 83936,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 82903,
+      "offset": 84395,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 83360,
+      "offset": 84852,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 83812,
+      "offset": 85304,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 85371,
+      "offset": 86863,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 88034,
+      "offset": 89526,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 92942,
+      "offset": 94434,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 93430,
+      "offset": 94922,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 98535,
+      "offset": 100027,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 98969,
+      "offset": 100461,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 99982,
+      "offset": 101474,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 100985,
+      "offset": 102477,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 101436,
+      "offset": 102928,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 101883,
+      "offset": 103375,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 102362,
+      "offset": 103854,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 103921,
+      "offset": 105413,
       "length": 42,
       "value": "\"{\"operate\":1,\"type\":0,\"version\":0}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 111338,
+      "offset": 112830,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 111795,
+      "offset": 113287,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 114008,
+      "offset": 115500,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "StringLiteral",
-      "offset": 114430,
+      "offset": 115922,
       "length": 4,
       "value": "\"{}\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 147508,
+      "offset": 151669,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/CmdImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 312787,
+      "offset": 316953,
       "length": 5,
       "value": "false"
     },
@@ -441334,217 +442242,217 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 1641,
+      "offset": 2030,
       "length": 10,
       "value": "\"alarm_id\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 1676,
+      "offset": 2065,
       "length": 11,
       "value": "\"delay_min\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 1767,
+      "offset": 2156,
       "length": 8,
       "value": "\"repeat\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 1803,
+      "offset": 2192,
       "length": 14,
       "value": "\"repeat_times\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 1844,
+      "offset": 2233,
       "length": 14,
       "value": "\"shock_on_off\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 1910,
+      "offset": 2299,
       "length": 18,
       "value": "\"tsnooze_duration\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5002,
+      "offset": 5417,
       "length": 4,
       "value": "0x00"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5024,
+      "offset": 5439,
       "length": 4,
       "value": "0x01"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5049,
+      "offset": 5464,
       "length": 4,
       "value": "0x02"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5076,
+      "offset": 5491,
       "length": 4,
       "value": "0x03"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5097,
+      "offset": 5512,
       "length": 4,
       "value": "0x04"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5123,
+      "offset": 5538,
       "length": 4,
       "value": "0x05"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5147,
+      "offset": 5562,
       "length": 4,
       "value": "0x06"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5169,
+      "offset": 5584,
       "length": 4,
       "value": "0x07"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5228,
+      "offset": 5643,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5231,
+      "offset": 5646,
       "length": 7,
       "value": "1"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5240,
+      "offset": 5655,
       "length": 9,
       "value": "2"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5251,
+      "offset": 5666,
       "length": 8,
       "value": "3"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5261,
+      "offset": 5676,
       "length": 6,
       "value": "4"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5269,
+      "offset": 5684,
       "length": 8,
       "value": "5"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5279,
+      "offset": 5694,
       "length": 6,
       "value": "6"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5348,
+      "offset": 5763,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5369,
+      "offset": 5784,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 5392,
+      "offset": 5807,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 5626,
+      "offset": 6041,
       "length": 6,
       "value": "\"item\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 6975,
+      "offset": 7783,
       "length": 10,
       "value": "\"alarm_id\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 7010,
+      "offset": 7818,
       "length": 11,
       "value": "\"delay_min\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 7101,
+      "offset": 7909,
       "length": 8,
       "value": "\"repeat\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 7137,
+      "offset": 7945,
       "length": 14,
       "value": "\"repeat_times\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 7178,
+      "offset": 7986,
       "length": 14,
       "value": "\"shock_on_off\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOAlarmModel.swift",
       "kind": "StringLiteral",
-      "offset": 7244,
+      "offset": 8052,
       "length": 18,
       "value": "\"tsnooze_duration\""
     },
@@ -446570,37 +447478,51 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOHistoricalMenstruationParamModel.swift",
       "kind": "StringLiteral",
-      "offset": 2111,
+      "offset": 2193,
       "length": 15,
       "value": "\"menstrual_day\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOHistoricalMenstruationParamModel.swift",
       "kind": "StringLiteral",
-      "offset": 2151,
+      "offset": 2233,
       "length": 11,
       "value": "\"cycle_day\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOHistoricalMenstruationParamModel.swift",
       "kind": "StringLiteral",
-      "offset": 2199,
+      "offset": 2281,
       "length": 24,
       "value": "\"ovulation_interval_day\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOHistoricalMenstruationParamModel.swift",
       "kind": "StringLiteral",
-      "offset": 2258,
+      "offset": 2340,
       "length": 22,
       "value": "\"ovulation_before_day\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOHistoricalMenstruationParamModel.swift",
       "kind": "StringLiteral",
-      "offset": 2314,
+      "offset": 2396,
       "length": 21,
       "value": "\"ovulation_after_day\""
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOHistoricalMenstruationParamModel.swift",
+      "kind": "StringLiteral",
+      "offset": 2448,
+      "length": 18,
+      "value": "\"is_menstrual_end\""
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOHistoricalMenstruationParamModel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2653,
+      "length": 1,
+      "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/Model\/IDOHotStartParamModel.swift",
@@ -450267,34 +451189,34 @@
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/IDOSDK.swift",
       "kind": "StringLiteral",
       "offset": 1838,
-      "length": 7,
-      "value": "\"4.5.9\""
+      "length": 8,
+      "value": "\"4.5.10\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/IDOSDK.swift",
       "kind": "StringLiteral",
-      "offset": 1903,
+      "offset": 1904,
       "length": 21,
-      "value": "\"2026-10-08 14:30:38\""
+      "value": "\"2026-10-20 09:10:39\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/IDOSDK.swift",
       "kind": "StringLiteral",
-      "offset": 2001,
+      "offset": 2002,
       "length": 8,
       "value": "\"4.0.16\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/IDOSDK.swift",
       "kind": "StringLiteral",
-      "offset": 2090,
+      "offset": 2091,
       "length": 7,
       "value": "\"2.0.9\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/IDOSDK.swift",
       "kind": "StringLiteral",
-      "offset": 2173,
+      "offset": 2174,
       "length": 8,
       "value": "\"3.7.12\""
     },
