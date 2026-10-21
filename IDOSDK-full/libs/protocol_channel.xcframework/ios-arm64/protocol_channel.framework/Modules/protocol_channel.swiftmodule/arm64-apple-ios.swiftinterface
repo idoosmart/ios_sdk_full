@@ -4772,6 +4772,8 @@ public protocol IDOCmdProtocol {
   @objc public var encryptedVersion: Swift.Int
   @objc public var authLength: Swift.Int
   @objc public init(authData: [Swift.UInt8], encryptedVersion: Swift.Int, authLength: Swift.Int)
+  @objc convenience public init?(jsonString: Swift.String)
+  @objc public func jsonString() -> Swift.String?
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @objcMembers public class IDOEpoManager {
@@ -5503,6 +5505,7 @@ public protocol IDOCmdProtocol {
   @objc var supportOperateSetSportScreen: Swift.Bool { get }
   @objc var supportOperateListStyle: Swift.Bool { get }
   @objc var supportEmotionHealth: Swift.Bool { get }
+  @objc var supportGetContinuedSportData: Swift.Bool { get }
   @objc var supportV3SyncContactVersion20: Swift.Bool { get }
   @objc var supportGetSosCallRecord: Swift.Bool { get }
   @objc var alexaReminderAddSecV3: Swift.Bool { get }

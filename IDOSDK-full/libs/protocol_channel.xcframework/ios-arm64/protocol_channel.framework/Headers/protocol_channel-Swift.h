@@ -4591,6 +4591,10 @@ SWIFT_CLASS("_TtC16protocol_channel20IDOEncryptedAuthData")
 /// Auth data length
 @property (nonatomic) NSInteger authLength;
 - (nonnull instancetype)initWithAuthData:(NSArray<NSNumber *> * _Nonnull)authData encryptedVersion:(NSInteger)encryptedVersion authLength:(NSInteger)authLength OBJC_DESIGNATED_INITIALIZER;
+/// Parse JSON from Pigeon / cloud（keys: auth_data / encrypted_version / auth_length；兼容 autu_data）
+- (nullable instancetype)initWithJsonString:(NSString * _Nonnull)jsonString;
+/// Serialize to JSON string for Pigeon / cloud
+- (NSString * _Nullable)jsonString SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -6340,6 +6344,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL supportOperateListStyle;
 /// 支持情绪健康
 @property (nonatomic, readonly) BOOL supportEmotionHealth;
+/// 支持APP发起的运动，暂停后需要继续获取运动中数据
+@property (nonatomic, readonly) BOOL supportGetContinuedSportData;
 /// 支持v3同步通讯录版本20
 @property (nonatomic, readonly) BOOL supportV3SyncContactVersion20;
 /// 支持SOS通话记录查询
