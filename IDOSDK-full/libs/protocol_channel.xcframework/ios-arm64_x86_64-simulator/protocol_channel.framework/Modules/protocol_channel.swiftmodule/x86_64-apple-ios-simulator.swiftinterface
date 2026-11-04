@@ -5462,6 +5462,7 @@ public protocol IDOCmdProtocol {
   @objc var syncV3Sleep: Swift.Bool { get }
   @objc var syncV3PetSleep: Swift.Bool { get }
   @objc var syncV3ActivityAmount: Swift.Bool { get }
+  @objc var syncV3SportUseVersion20: Swift.Bool { get }
   @objc var syncV3Sports: Swift.Bool { get }
   @objc var syncV3Gps: Swift.Bool { get }
   @objc var syncV3SyncAlarm: Swift.Bool { get }

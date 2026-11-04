@@ -242402,6 +242402,55 @@
           },
           {
             "kind": "Var",
+            "name": "syncV3SportUseVersion20",
+            "printedName": "syncV3SportUseVersion20",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@protocol_channel@objc(pl)IDOFuncTableInterface(py)syncV3SportUseVersion20",
+            "mangledName": "$s16protocol_channel21IDOFuncTableInterfaceP23syncV3SportUseVersion20Sbvp",
+            "moduleName": "protocol_channel",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@protocol_channel@objc(pl)IDOFuncTableInterface(im)syncV3SportUseVersion20",
+                "mangledName": "$s16protocol_channel21IDOFuncTableInterfaceP23syncV3SportUseVersion20Sbvg",
+                "moduleName": "protocol_channel",
+                "genericSig": "<τ_0_0 where τ_0_0 : protocol_channel.IDOFuncTableInterface>",
+                "sugared_genericSig": "<Self where Self : protocol_channel.IDOFuncTableInterface>",
+                "protocolReq": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "syncV3Sports",
             "printedName": "syncV3Sports",
             "children": [
@@ -441163,266 +441212,266 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 42883,
+      "offset": 42905,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 42954,
+      "offset": 42982,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43037,
+      "offset": 43053,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43120,
+      "offset": 43136,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43203,
+      "offset": 43219,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43290,
+      "offset": 43302,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43365,
+      "offset": 43389,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43452,
+      "offset": 43464,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43519,
+      "offset": 43551,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43624,
+      "offset": 43618,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43703,
+      "offset": 43723,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43796,
+      "offset": 43802,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43881,
+      "offset": 43895,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43958,
+      "offset": 43980,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44051,
+      "offset": 44057,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44128,
+      "offset": 44150,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44201,
+      "offset": 44227,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44282,
+      "offset": 44300,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44421,
+      "offset": 44381,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44556,
+      "offset": 44520,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44681,
+      "offset": 44655,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44790,
+      "offset": 44780,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
+      "kind": "BooleanLiteral",
+      "offset": 44889,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 44862,
+      "offset": 44961,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44941,
+      "offset": 45040,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45012,
+      "offset": 45111,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45087,
+      "offset": 45186,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45160,
+      "offset": 45259,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45239,
+      "offset": 45338,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45314,
+      "offset": 45413,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45389,
+      "offset": 45488,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45468,
+      "offset": 45567,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45545,
+      "offset": 45644,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45618,
+      "offset": 45717,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45689,
+      "offset": 45788,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45762,
+      "offset": 45861,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45835,
+      "offset": 45934,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45910,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
-      "kind": "BooleanLiteral",
-      "offset": 45999,
+      "offset": 46009,
       "length": 5,
       "value": "false"
     },
@@ -441436,14 +441485,14 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46201,
+      "offset": 46197,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46310,
+      "offset": 46300,
       "length": 5,
       "value": "false"
     },
@@ -441457,21 +441506,21 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46502,
+      "offset": 46508,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46611,
+      "offset": 46601,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46722,
+      "offset": 46710,
       "length": 5,
       "value": "false"
     },
@@ -441485,14 +441534,14 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46916,
+      "offset": 46920,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47011,
+      "offset": 47015,
       "length": 5,
       "value": "false"
     },
@@ -441506,70 +441555,70 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47205,
+      "offset": 47209,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47290,
+      "offset": 47304,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47387,
+      "offset": 47389,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47474,
+      "offset": 47486,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47555,
+      "offset": 47573,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47666,
+      "offset": 47654,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47795,
+      "offset": 47765,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47896,
+      "offset": 47894,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48005,
+      "offset": 47995,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48116,
+      "offset": 48104,
       "length": 5,
       "value": "false"
     },
@@ -441583,280 +441632,280 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48324,
+      "offset": 48314,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48431,
+      "offset": 48423,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48536,
+      "offset": 48530,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48641,
+      "offset": 48635,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48760,
+      "offset": 48740,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48881,
+      "offset": 48859,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48992,
+      "offset": 48980,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49081,
+      "offset": 49091,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49198,
+      "offset": 49180,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49309,
+      "offset": 49297,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49404,
+      "offset": 49408,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49495,
+      "offset": 49503,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49592,
+      "offset": 49594,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49689,
+      "offset": 49691,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49786,
+      "offset": 49788,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49899,
+      "offset": 49885,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50008,
+      "offset": 49998,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50117,
+      "offset": 50107,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50228,
+      "offset": 50216,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50335,
+      "offset": 50327,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50466,
+      "offset": 50434,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50569,
+      "offset": 50565,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50694,
+      "offset": 50668,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50825,
+      "offset": 50793,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50934,
+      "offset": 50924,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51049,
+      "offset": 51033,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51152,
+      "offset": 51148,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51247,
+      "offset": 51251,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51356,
+      "offset": 51346,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51463,
+      "offset": 51455,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51558,
+      "offset": 51562,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51661,
+      "offset": 51657,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51786,
+      "offset": 51760,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51865,
+      "offset": 51885,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51974,
+      "offset": 51964,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52071,
+      "offset": 52073,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52178,
+      "offset": 52170,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52295,
+      "offset": 52277,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52386,
+      "offset": 52394,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52481,
+      "offset": 52485,
       "length": 5,
       "value": "false"
     },
@@ -441877,77 +441926,77 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52782,
+      "offset": 52778,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52907,
+      "offset": 52881,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53014,
+      "offset": 53006,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53125,
+      "offset": 53113,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53242,
+      "offset": 53224,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53332,
+      "offset": 53341,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53423,
+      "offset": 53431,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53532,
+      "offset": 53522,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53641,
+      "offset": 53631,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53748,
+      "offset": 53740,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53887,
+      "offset": 53847,
       "length": 5,
       "value": "false"
     },
@@ -441961,161 +442010,161 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54099,
+      "offset": 54085,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54228,
+      "offset": 54198,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54371,
+      "offset": 54327,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54488,
+      "offset": 54470,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54579,
+      "offset": 54587,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54690,
+      "offset": 54678,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54803,
+      "offset": 54789,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54906,
+      "offset": 54902,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55029,
+      "offset": 55005,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55148,
+      "offset": 55128,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55267,
+      "offset": 55247,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55394,
+      "offset": 55366,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55491,
+      "offset": 55493,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55586,
+      "offset": 55590,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55673,
+      "offset": 55685,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55770,
+      "offset": 55772,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55853,
+      "offset": 55869,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55938,
+      "offset": 55952,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56015,
+      "offset": 56037,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56100,
+      "offset": 56114,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56211,
+      "offset": 56199,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56336,
+      "offset": 56310,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56427,
+      "offset": 56435,
       "length": 5,
       "value": "false"
     },
@@ -442129,14 +442178,14 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56629,
+      "offset": 56625,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56746,
+      "offset": 56728,
       "length": 5,
       "value": "false"
     },
@@ -442150,63 +442199,70 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56926,
+      "offset": 56944,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56989,
+      "offset": 57025,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57056,
+      "offset": 57088,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57129,
+      "offset": 57155,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57204,
+      "offset": 57228,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57281,
+      "offset": 57303,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57354,
+      "offset": 57380,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57425,
+      "offset": 57453,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57488,
+      "offset": 57524,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
+      "kind": "BooleanLiteral",
+      "offset": 57587,
       "length": 5,
       "value": "false"
     },
@@ -451315,14 +451371,14 @@
       "kind": "StringLiteral",
       "offset": 1838,
       "length": 8,
-      "value": "\"4.5.11\""
+      "value": "\"4.5.12\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/IDOSDK.swift",
       "kind": "StringLiteral",
       "offset": 1904,
       "length": 21,
-      "value": "\"2026-10-21 10:10:14\""
+      "value": "\"2026-11-04 10:26:35\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/IDOSDK.swift",

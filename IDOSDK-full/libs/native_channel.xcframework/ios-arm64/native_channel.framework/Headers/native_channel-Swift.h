@@ -388,6 +388,8 @@ SWIFT_CLASS("_TtC14native_channel16IdoActionsPlugin")
 SWIFT_CLASS("_TtC14native_channel15IdoNordicPlugin")
 @interface IdoNordicPlugin : NSObject <FlutterPlugin, ApiNordicHost, IDONordicDFUManagerDelegate>
 + (void)registerWithRegistrar:(id <FlutterPluginRegistrar> _Nonnull)registrar;
+/// 打开/关闭 Nordic DFU 详细诊断日志（默认关闭）
+- (void)setDebugEnable:(NSNumber * _Nonnull)enable error:(FlutterError * _Nullable * _Nonnull)error;
 /// 开始 Nordic DFU 升级 | Start Nordic DFU upgrade
 - (void)startDFUDeviceIdentifier:(NSString * _Nonnull)deviceIdentifier filePath:(NSString * _Nonnull)filePath mtu:(NSNumber * _Nonnull)mtu error:(FlutterError * _Nullable * _Nonnull)error;
 /// 停止 Nordic DFU 升级 | Stop Nordic DFU upgrade

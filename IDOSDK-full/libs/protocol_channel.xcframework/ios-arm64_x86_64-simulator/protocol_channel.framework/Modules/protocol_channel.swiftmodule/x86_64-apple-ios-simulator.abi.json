@@ -333520,6 +333520,53 @@
           },
           {
             "kind": "Var",
+            "name": "syncV3SportUseVersion20",
+            "printedName": "syncV3SportUseVersion20",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16protocol_channel13FuncTableImplC23syncV3SportUseVersion20Sbvp",
+            "mangledName": "$s16protocol_channel13FuncTableImplC23syncV3SportUseVersion20Sbvp",
+            "moduleName": "protocol_channel",
+            "isOpen": true,
+            "objc_name": "syncV3SportUseVersion20",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16protocol_channel13FuncTableImplC23syncV3SportUseVersion20Sbvg",
+                "mangledName": "$s16protocol_channel13FuncTableImplC23syncV3SportUseVersion20Sbvg",
+                "moduleName": "protocol_channel",
+                "isOpen": true,
+                "objc_name": "syncV3SportUseVersion20",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "syncV3Sports",
             "printedName": "syncV3Sports",
             "children": [
@@ -362500,6 +362547,54 @@
           },
           {
             "kind": "Var",
+            "name": "syncV3SportUseVersion20",
+            "printedName": "syncV3SportUseVersion20",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16protocol_channel18FunctionTableModelV23syncV3SportUseVersion20Sbvp",
+            "mangledName": "$s16protocol_channel18FunctionTableModelV23syncV3SportUseVersion20Sbvp",
+            "moduleName": "protocol_channel",
+            "declAttributes": [
+              "HasStorage",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 200,
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16protocol_channel18FunctionTableModelV23syncV3SportUseVersion20Sbvg",
+                "mangledName": "$s16protocol_channel18FunctionTableModelV23syncV3SportUseVersion20Sbvg",
+                "moduleName": "protocol_channel",
+                "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "syncV3Sports",
             "printedName": "syncV3Sports",
             "children": [
@@ -362518,7 +362613,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 200,
+            "fixedbinaryorder": 201,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -362566,7 +362661,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 201,
+            "fixedbinaryorder": 202,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -362614,7 +362709,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 202,
+            "fixedbinaryorder": 203,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -362662,7 +362757,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 203,
+            "fixedbinaryorder": 204,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -362710,7 +362805,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 204,
+            "fixedbinaryorder": 205,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -362758,7 +362853,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 205,
+            "fixedbinaryorder": 206,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -362806,7 +362901,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 206,
+            "fixedbinaryorder": 207,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -362854,7 +362949,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 207,
+            "fixedbinaryorder": 208,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -362902,7 +362997,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 208,
+            "fixedbinaryorder": 209,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -362950,7 +363045,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 209,
+            "fixedbinaryorder": 210,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -362998,7 +363093,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 210,
+            "fixedbinaryorder": 211,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363046,7 +363141,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 211,
+            "fixedbinaryorder": 212,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363094,7 +363189,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 212,
+            "fixedbinaryorder": 213,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363142,7 +363237,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 213,
+            "fixedbinaryorder": 214,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363190,7 +363285,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 214,
+            "fixedbinaryorder": 215,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363238,7 +363333,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 215,
+            "fixedbinaryorder": 216,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363286,7 +363381,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 216,
+            "fixedbinaryorder": 217,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363334,7 +363429,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 217,
+            "fixedbinaryorder": 218,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363382,7 +363477,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 218,
+            "fixedbinaryorder": 219,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363430,7 +363525,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 219,
+            "fixedbinaryorder": 220,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363478,7 +363573,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 220,
+            "fixedbinaryorder": 221,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363526,7 +363621,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 221,
+            "fixedbinaryorder": 222,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363574,7 +363669,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 222,
+            "fixedbinaryorder": 223,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363622,7 +363717,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 223,
+            "fixedbinaryorder": 224,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363669,7 +363764,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 224,
+            "fixedbinaryorder": 225,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363716,7 +363811,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 225,
+            "fixedbinaryorder": 226,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363763,7 +363858,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 226,
+            "fixedbinaryorder": 227,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363810,7 +363905,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 227,
+            "fixedbinaryorder": 228,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363858,7 +363953,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 228,
+            "fixedbinaryorder": 229,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363906,7 +364001,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 229,
+            "fixedbinaryorder": 230,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -363954,7 +364049,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 230,
+            "fixedbinaryorder": 231,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364002,7 +364097,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 231,
+            "fixedbinaryorder": 232,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364050,7 +364145,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 232,
+            "fixedbinaryorder": 233,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364098,7 +364193,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 233,
+            "fixedbinaryorder": 234,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364146,7 +364241,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 234,
+            "fixedbinaryorder": 235,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364194,7 +364289,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 235,
+            "fixedbinaryorder": 236,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364242,7 +364337,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 236,
+            "fixedbinaryorder": 237,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364290,7 +364385,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 237,
+            "fixedbinaryorder": 238,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364338,7 +364433,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 238,
+            "fixedbinaryorder": 239,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364386,7 +364481,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 239,
+            "fixedbinaryorder": 240,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364434,7 +364529,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 240,
+            "fixedbinaryorder": 241,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364482,7 +364577,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 241,
+            "fixedbinaryorder": 242,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364530,7 +364625,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 242,
+            "fixedbinaryorder": 243,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364578,7 +364673,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 243,
+            "fixedbinaryorder": 244,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364626,7 +364721,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 244,
+            "fixedbinaryorder": 245,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364674,7 +364769,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 245,
+            "fixedbinaryorder": 246,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364722,7 +364817,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 246,
+            "fixedbinaryorder": 247,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364770,7 +364865,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 247,
+            "fixedbinaryorder": 248,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364818,7 +364913,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 248,
+            "fixedbinaryorder": 249,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364866,7 +364961,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 249,
+            "fixedbinaryorder": 250,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364914,7 +365009,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 250,
+            "fixedbinaryorder": 251,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -364962,7 +365057,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 251,
+            "fixedbinaryorder": 252,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365010,7 +365105,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 252,
+            "fixedbinaryorder": 253,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365058,7 +365153,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 253,
+            "fixedbinaryorder": 254,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365106,7 +365201,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 254,
+            "fixedbinaryorder": 255,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365154,7 +365249,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 255,
+            "fixedbinaryorder": 0,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365202,7 +365297,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 0,
+            "fixedbinaryorder": 1,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365250,7 +365345,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 1,
+            "fixedbinaryorder": 2,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365298,7 +365393,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 2,
+            "fixedbinaryorder": 3,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365346,7 +365441,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 3,
+            "fixedbinaryorder": 4,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365394,7 +365489,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 4,
+            "fixedbinaryorder": 5,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365442,7 +365537,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 5,
+            "fixedbinaryorder": 6,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365490,7 +365585,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 6,
+            "fixedbinaryorder": 7,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365538,7 +365633,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 7,
+            "fixedbinaryorder": 8,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365586,7 +365681,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 8,
+            "fixedbinaryorder": 9,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365634,7 +365729,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 9,
+            "fixedbinaryorder": 10,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365682,7 +365777,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 10,
+            "fixedbinaryorder": 11,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365730,7 +365825,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 11,
+            "fixedbinaryorder": 12,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365778,7 +365873,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 12,
+            "fixedbinaryorder": 13,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365826,7 +365921,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 13,
+            "fixedbinaryorder": 14,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365874,7 +365969,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 14,
+            "fixedbinaryorder": 15,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365922,7 +366017,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 15,
+            "fixedbinaryorder": 16,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -365970,7 +366065,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 16,
+            "fixedbinaryorder": 17,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366018,7 +366113,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 17,
+            "fixedbinaryorder": 18,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366066,7 +366161,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 18,
+            "fixedbinaryorder": 19,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366114,7 +366209,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 19,
+            "fixedbinaryorder": 20,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366162,7 +366257,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 20,
+            "fixedbinaryorder": 21,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366210,7 +366305,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 21,
+            "fixedbinaryorder": 22,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366258,7 +366353,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 22,
+            "fixedbinaryorder": 23,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366306,7 +366401,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 23,
+            "fixedbinaryorder": 24,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366354,7 +366449,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 24,
+            "fixedbinaryorder": 25,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366402,7 +366497,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 25,
+            "fixedbinaryorder": 26,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366450,7 +366545,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 26,
+            "fixedbinaryorder": 27,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366498,7 +366593,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 27,
+            "fixedbinaryorder": 28,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366546,7 +366641,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 28,
+            "fixedbinaryorder": 29,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366594,7 +366689,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 29,
+            "fixedbinaryorder": 30,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366642,7 +366737,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 30,
+            "fixedbinaryorder": 31,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366690,7 +366785,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 31,
+            "fixedbinaryorder": 32,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366738,7 +366833,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 32,
+            "fixedbinaryorder": 33,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366786,7 +366881,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 33,
+            "fixedbinaryorder": 34,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366834,7 +366929,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 34,
+            "fixedbinaryorder": 35,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366882,7 +366977,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 35,
+            "fixedbinaryorder": 36,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366930,7 +367025,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 36,
+            "fixedbinaryorder": 37,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -366978,7 +367073,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 37,
+            "fixedbinaryorder": 38,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367026,7 +367121,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 38,
+            "fixedbinaryorder": 39,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367074,7 +367169,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 39,
+            "fixedbinaryorder": 40,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367122,7 +367217,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 40,
+            "fixedbinaryorder": 41,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367170,7 +367265,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 41,
+            "fixedbinaryorder": 42,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367218,7 +367313,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 42,
+            "fixedbinaryorder": 43,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367266,7 +367361,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 43,
+            "fixedbinaryorder": 44,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367314,7 +367409,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 44,
+            "fixedbinaryorder": 45,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367362,7 +367457,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 45,
+            "fixedbinaryorder": 46,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367410,7 +367505,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 46,
+            "fixedbinaryorder": 47,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367458,7 +367553,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 47,
+            "fixedbinaryorder": 48,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367506,7 +367601,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 48,
+            "fixedbinaryorder": 49,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367554,7 +367649,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 49,
+            "fixedbinaryorder": 50,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367602,7 +367697,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 50,
+            "fixedbinaryorder": 51,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367650,7 +367745,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 51,
+            "fixedbinaryorder": 52,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367698,7 +367793,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 52,
+            "fixedbinaryorder": 53,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367746,7 +367841,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 53,
+            "fixedbinaryorder": 54,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367794,7 +367889,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 54,
+            "fixedbinaryorder": 55,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367842,7 +367937,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 55,
+            "fixedbinaryorder": 56,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367890,7 +367985,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 56,
+            "fixedbinaryorder": 57,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367938,7 +368033,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 57,
+            "fixedbinaryorder": 58,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -367986,7 +368081,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 58,
+            "fixedbinaryorder": 59,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368034,7 +368129,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 59,
+            "fixedbinaryorder": 60,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368082,7 +368177,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 60,
+            "fixedbinaryorder": 61,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368130,7 +368225,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 61,
+            "fixedbinaryorder": 62,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368178,7 +368273,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 62,
+            "fixedbinaryorder": 63,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368226,7 +368321,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 63,
+            "fixedbinaryorder": 64,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368274,7 +368369,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 64,
+            "fixedbinaryorder": 65,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368322,7 +368417,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 65,
+            "fixedbinaryorder": 66,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368370,7 +368465,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 66,
+            "fixedbinaryorder": 67,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368418,7 +368513,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 67,
+            "fixedbinaryorder": 68,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368466,7 +368561,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 68,
+            "fixedbinaryorder": 69,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368514,7 +368609,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 69,
+            "fixedbinaryorder": 70,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368562,7 +368657,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 70,
+            "fixedbinaryorder": 71,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368610,7 +368705,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 71,
+            "fixedbinaryorder": 72,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368658,7 +368753,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 72,
+            "fixedbinaryorder": 73,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368706,7 +368801,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 73,
+            "fixedbinaryorder": 74,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368754,7 +368849,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 74,
+            "fixedbinaryorder": 75,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368802,7 +368897,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 75,
+            "fixedbinaryorder": 76,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368850,7 +368945,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 76,
+            "fixedbinaryorder": 77,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368898,7 +368993,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 77,
+            "fixedbinaryorder": 78,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368946,7 +369041,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 78,
+            "fixedbinaryorder": 79,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -368994,7 +369089,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 79,
+            "fixedbinaryorder": 80,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369042,7 +369137,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 80,
+            "fixedbinaryorder": 81,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369090,7 +369185,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 81,
+            "fixedbinaryorder": 82,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369138,7 +369233,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 82,
+            "fixedbinaryorder": 83,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369186,7 +369281,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 83,
+            "fixedbinaryorder": 84,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369234,7 +369329,7 @@
               "HasStorage",
               "RawDocComment"
             ],
-            "fixedbinaryorder": 84,
+            "fixedbinaryorder": 85,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369281,7 +369376,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 85,
+            "fixedbinaryorder": 86,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369328,7 +369423,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 86,
+            "fixedbinaryorder": 87,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369375,7 +369470,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 87,
+            "fixedbinaryorder": 88,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369422,7 +369517,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 88,
+            "fixedbinaryorder": 89,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369469,7 +369564,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 89,
+            "fixedbinaryorder": 90,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369516,7 +369611,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 90,
+            "fixedbinaryorder": 91,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369563,7 +369658,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 91,
+            "fixedbinaryorder": 92,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369610,7 +369705,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 92,
+            "fixedbinaryorder": 93,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369657,7 +369752,7 @@
             "declAttributes": [
               "HasStorage"
             ],
-            "fixedbinaryorder": 93,
+            "fixedbinaryorder": 94,
             "isLet": true,
             "hasStorage": true,
             "accessors": [
@@ -369688,7 +369783,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(reminderAncs:reminderSnapchat:reminderLine:reminderOutlook:reminderTelegram:reminderViber:reminderVkontakte:reminderChatwork:reminderSlack:reminderTumblr:reminderYahooMail:reminderYahooPinterest:reminderYoutube:reminderGmail:reminderKakaoTalk:reminderOnlyGoogleGmail:reminderOnlyOutlookEmail:reminderOnlyYahooEmail:reminderTiktok:reminderRedbus:reminderDailyhunt:reminderHotstar:reminderInshorts:reminderPaytm:reminderAmazon:reminderFlipkart:reminderNhnEmail:reminderInstantEmail:reminderZohoEmail:reminderExchangeEmail:reminder189Email:reminderVeryFit:reminderGeneral:reminderOther:reminderMattersRemind:reminderMicrosoft:reminderMissedCall:reminderGetAllContact:reminderWhatsappBusiness:reminderEmail:reminderFacebook:reminderMessage:reminderQq:reminderTwitter:reminderWeixin:reminderCalendarGoogle:reminderInstagram:reminderLinkedIn:reminderMessengre:reminderSkype:reminderCalendar:reminderWhatsapp:reminderAlarmClock:reminderSinaWeibo:reminderWeibo:reminderCalling:reminderCallContact:reminderCallNum:reminderPrime:reminderNetflix:reminderGpay:reminderPhonpe:reminderSwiggy:reminderZomato:reminderMakemytrip:reminderJioTv:reminderNiosefit:reminderYtmusic:reminderUber:reminderOla:reminderGoogleMeet:reminderMormaiiSmartwatch:reminderTechnosConnect:reminderEnjoei:reminderAliexpress:reminderShopee:reminderTeams:reminder99Taxi:reminderUberEats:reminderLfood:reminderRappi:reminderMercadoLivre:reminderMagalu:reminderAmericanas:reminderYahoo:reminderMessageIcon:reminderTaobao:reminderDingding:reminderAlipay:reminderToutiao:reminderDouyin:reminderTmall:reminderJd:reminderPinduoduo:reminderBaidu:reminderMeituan:reminderEleme:sportWalk:sportRun:sportByBike:sportOnFoot:sportSwim:sportMountainClimbing:sportBadminton:sportOther:sportFitness:sportSpinning:sportEllipsoid:sportTreadmill:sportSitUp:sportPushUp:sportDumbbell:sportWeightlifting:sportBodybuildingExercise:sportYoga:sportRopeSkipping:sportTableTennis:sportBasketball:sportFootballl:sportVolleyball:sportTennis:sportGolf:sportBaseball:sportSkiing:sportRollerSkating:sportDance:sportStrengthTraining:sportCoreTraining:sportTidyUpRelax:sportTraditionalStrengthTraining:sportOutdoorRun:sportIndoorRun:sportOutdoorCycle:sportIndoorCycle:sportOutdoorWalk:sportIndoorWalk:sportPoolSwim:sportOpenWaterSwim:sportElliptical:sportRower:sportHiit:sportCricket:sportPilates:sportOutdoorFun:sportOtherActivity:sportZumba:sportSurfing:sportFootvolley:sportStandWaterSkiing:sportBattlingRope:sportSkateboard:sportNoticeStepper:sportShowNum:sportAerobicsBodybuildingExercise:sportPullUp:sportHighBar:sportParallelBars:sportTrailRunning:sportPickleBall:sportSnowboard:sportCrossCountrySkiing:getRealtimeData:getLangLibraryV3:getFindPhone:getFindDevice:getUpHandGestureEx:getUpHandGesture:getWeather:getDownloadLanguage:getFactoryReset:getFlashLog:getMultiActivityNoUseApp:getMultiDial:getMenuList:getDoNotDisturbMain3:getVoiceTransmission:setDrinkWaterAddNotifyFlag:setSpo2LowValueRemindAddNotifyFlag:notSupportSmartHeartNotifyFlag:getDeviceLogState:getNewWatchList:getNotifyIconAdaptive:getPressureNotifyFlagMode:getScientificSleep:getSpo2NotifyFlag:getV3Log:getWatchID:getDeviceName:getBatteryLog:getBatteryInfo:getHeatLog:getWalkReminderV3:getSupportV3BleMusic:getSupportGetBleBeepV3:getVeryFitNotSupportPhotoWallpaperV3:getSupportUpdateGps:getUbloxModel:getSupportGetBleMusicInfoVerV3:getBtVersion:getSportsTypeV3:getActivitySwitch:getNoticeIconInformation:getSetMaxItemsNum:getNotifyMsgV3:getScreenBrightnessMain9:getNotice128byte:getNotice250byte:getDeletableMenuListV2:getSupportPairEachConnect:getSupportGetMainSportGoalV3:getBtAddrV2:getSupportBpSetOrMeasurementV2:getMenstrualAddNotifyFlagV3:getSupportSetGetTimeGoalTypeV2:getOxygenDataSupportGradeV3:getSupportSyncActivityDataAltitudeInfo:getBindCodeAuth:getSpo2OffChangeV3:getLevel5HrInterval:getFiveHRInterval:getBleAndBtVersion:getSupportSetGetEmergencyContactV3:getSupportSetRepeatWeekTypeOnScheduleReminderV3:getSupportSetRepeatTypeOnScheduleReminderV3:getSupportSetMenstrualReminderOnOff:getVersionInfo:getMtu:getDeviceUpdateState:getHeartRateModeV2:getStepDataTypeV2:getFastMsgDataV3:getSupportCallingQuickReply:getSupportDataTranGetNewErrorCodeV3:getAutoActivityEndSwitchNotDisplay:getAutoActivityPauseSwitchNotDisplay:getV3AutoActivitySwitch:getAutoActivitySwitchAddBicycle:getAutoActivitySwitchAddSmartRope:getAutoActivitySetGetUseNewStructExchange:getSupportSetGetNoReminderOnWalkReminderV2:getSupportGetSnInfo:getScheduleReminderNotDisplayTitle:getSupportV3LongCityName:getSupportAddNightLevelV2:getSupportDialFrameEncodeFormatArgb6666:getSupportAppSendPhoneSystemInfo:getDeviceControlFastModeAlone:getSupportOnekeyDoubleContact:getSupportSetVoiceAssistantStatus:getSupportFlashLogSize:supportDevReturnMeasuringValue:getSupportGetUnit:getSupportRyzeConnect:getSupportLoopsFit:getSupportTasSmart:getNotSupportSetOvulation:getSupportWalkGoalSteps:getNotSupportDeleteAddSportSort:getSupportSedentaryTensileHabitInfo:getSupportSendGpsLongitudeAndLatitude:getSupportGetV3DeviceBtConnectPhoneModel:getSupportBloodPressureModelFileUpdate:getSupportDisturbHaveRangRepeat:getSupportCalendarReminder:getWatchDailSetAddSize:getSupportSyncOverHighLowHeartData:getSupportPerMinuteOne:getSupportAchievedRemindOnOff:getSupportDrinkPlan:getSupportMakeWatchDialDecodeJpg:getSupportSleepPlan:getSupportDeviceOperateAlgFile:getSupportSportRecordShowConfig:setNoticeMessageStateUseVersion0x20:setScientificSleepSwitch:setTemperatureSwitchHealth:setHeartRateMonitor:setNoReminderOnDrinkReminder:setAgpsOffLine:setAgpsOnLine:setSetV3HeartInterval:setWeatherCity:setDoNotDisturb:setCalorieGoal:setMenstruation:setPressureData:setSpo2Data:setSportModeSort:setActivitySwitch:setNightAutoBrightness:setScreenBrightness5Level:setWalkReminder:setScreenBrightness3Level:setHandWashReminder:setLocalDial:setNotSupportHrHighAlarm:setNotSupportPhotoWallpaper:setPressureHighReminder:setWallpaperOnlyTimeColor:setWallpaperDial:setSupportBreathRate:setSupportCalorieUnit:setSupportSportPlan:setSupportSwimPoolUnit:setSupportV3Bp:setV3GetSportSortField:setWatchDialSort:setGetCalorieDistanceGoal:setMidHighTimeGoal:setNewRetainData:setScheduleReminder:setSet100SportSort:setSet20SportParamSort:setSetMainUiSort:setSetStressCalibration:setSmartHeartRate:setSpo2AllDayOnOff:setSupportAppSendVoiceToBle:setSupportCyclingUnit:setSupportWalkRunUnit:setWalkReminderTimeGoal:setWatchCapacitySizeDisplay:setWatchPhotoPositionMove:setMenuListMain7:setHistoryMenstrual:supportHistoricalMenstruationExchange:supportSetHistoricalMenstruationExchangeVersion21:supportHistoricalMenstruationExchangeVersion31:supportPhysiologicalRecord:setMenstrualAddPregnancy:setNotSurportCalling3SDelay:setSetFitnessGuidance:setSetNotificationStatus:setSetUnreadAppReminder:setSetV3Weather:setSetV3WeatherSunrise:setSetV3WorldTime:setSyncContact:setSyncV3ActivityAddParam:setTransferMusicFile:setWalkReminderAddNotify:setSupportFahrenheit:setGetAlarmSpecify:setAirohaGpsChip:setSupportSecondSportIcon:setSportMediumIcon:setWeatherSunTime:setWeatherAirGrade:setDrinkWaterReminder:supportBatteryReminderSwitch:supportGetFindPhoneSwitch:supportGetFindMyDeviceName:notSupportArmbandWearMode:supportTaskList:supportSyncHealthDataUseUtcTime:supportPetInfo:setRespirationRate:setMaxBloodOxygen:setBleControlMusic:setMainPressure:setNoDisturbAllDayOnOff:setOnlyNoDisturbAllDayOnOff:setOnlyNoDisturbSmartOnOff:setTimeZoneFloat:setTemperatureSwitchSupport:setMsgAllSwitch:setNotSupperCall3Delay:setNoticeMissedCallV2:setOverFindPhone:getHealthSwitchStateSupportV3:setSedentariness:setScreenBrightness:setSetPhoneVoice:setSupportSetCallQuickReplyOnOff:setSupportExchangeSetGpsCoordinates:setSupportV3WeatherAddAtmosphericPressure:setSupportSetV3WeatcherAddSnowDepth:setSupportSetV3WeatcherAddSnowfall:setSupportSetV3WeatcherSendStructVersion04:setSendCalibrationThreshold:getNotSupportAppSendRunPlan:getSupportDisplayNapSleep:getSupportGetSmartHeartRate:getSupportGetPressureSwitchInfo:getSupportECardOperate:getSupportVoiceMemoOperate:getSupportMorningEdition:getSupportGetSpo2SwitchInfo:getSupportSyncHealthHrUseVersionCompatible:getSupportSyncSpo2UseVersionCompatible:getSupportSyncPressureUseVersionCompatible:getSupportSetV3Add48HourWeatherData:getNotSupportIndoorRunGetVo2max:getSupportSetEcgReminder:getSupportSyncEcg:getSupportSetGameTimeReminder:getSupportConfigDefaultMegApplicationList:getSupportSetEciReminder:setSupportNoiseSetNotifyFlag:setSupportNoiseSetOverWarning:setSupportSetVersionInformation:setSupportControlMiniProgram:getSupportSetWeatherHistoryFutureAqi:setBrightScreenTime:setHeartSetRateModeCustom:supportProtocolV3MenuList:languageCh:languageCzech:languageEnglish:languageFrench:languageGerman:languageItalian:languageJapanese:languageSpanish:languageArabic:languageBurmese:languageFilipino:languageGreek:languageThai:languageTraditionalChinese:languageVietnamese:languageDutch:languageHungarian:languageLithuanian:languagePolish:languageRomanian:languageRussian:languageSlovenian:languageUkrainian:languageCroatian:languageDanish:languageHindi:languageIndonesian:languageKorean:languagePortuguese:languageSlovak:languageTurkish:languagePersia:languageSweden:languageNorwegian:languageFinland:languageBengali:languageKhmer:languageMalay:languageBrazilianPortuguese:languageHebrew:languageSerbian:languageBulgaria:syncV3Hr:syncV3Swim:syncV3Spo2:syncV3Pressure:syncV3Activity:syncV3Sleep:syncV3PetSleep:syncV3ActivityAmount:syncV3Sports:syncV3Gps:syncV3SyncAlarm:syncV3BodyPower:getSupportHrvV3:getSupportPerBpV3:syncV3Noise:syncV3Temperature:syncGps:syncV3ActivityExchangeData:syncHeartRate:syncHeartRateMonitor:syncSleepMonitor:syncFastSync:syncActivityTimeSync:syncTimeLine:syncNeedV2:syncRealTimeV3:syncExchangeDataReplyAddRealTimeSpeedPaceV3:syncHealthSyncV3ActivityEndTimeUseUtcMode:syncSupportSetFastModeWhenSyncConfig:getSupportAppBaseInformation:alarmCount:alarmBrushTeeth:alarmBath:alarmCourse:alarmLearn:alarmPlayTime:alarmDating:alarmDinner:alarmMedicine:alarmMeeting:alarmParty:alarmRest:alarmSleep:alarmSport:alarmWakeUp:supportSetAntilost:supportSetWeatherDataV2:supportSetOnetouchCalling:supportOperateSetSportScreen:supportOperateListStyle:supportEmotionHealth:supportGetContinuedSportData:supportV3SyncContactVersion20:supportGetSosCallRecord:alexaReminderAddSecV3:alexaSetEasyOperateV3:alexaSetGetAlexaAlarmV3:alexaSetJumpSportUiV3:alexaSetJumpUiV3:alexaSetSetOnOffTypeV3:alexaSetWeatherV3:alexaTimeNewV3:setAlexaControll100brightness:alexaGetSupportGetAlexaDefaultLanguage:alexaGetUIControllSports:getLeftRightHandWearSettings:supportSettingsDuringExercise:supportHeightLengthUnit:supportSportingRemindSetting:supportSportGetAutoPauseEnd:supportSetStrideLengthUnit:supportSimpleHrZoneSetting:notSupportSmartLowHeartReatRemind:notSupportSmartHighHeartReatRemind:notSupportPhotoPreviewControl:supportGetUserInfo:supportMissedCallMsgTypeUseFixed:supportAppNotDisplayAlarmName:supportSetSleepRemind:supportBloodGlucose:supportBloodGlucoseV01:supportBikeLockManager:supportCgmPhoneCommand:supportAlgorithmRawDataCollect:supportOfflineMapInformation:supportHeartRateReserveZones:supportHeartRateZonesHrMaxSet:supportSyncMultiActivityNew:supportContactFileUseFirmwareReturnSize:supportDisplayCameraEntry:supportOperateFamilyCareReminder3376:supportProtocolV3MenstruationConfig3377:supportOperateHabitFormation:supportOperateHabitFormationV01:supportOperateFamilySteps:supportOperateSetGame:supportOperateGestureControl:supportTakeMedicineReminder:reminderZoomWorkplace:supportSetSportRecordName:supportAppNotDisplaySportTypeSetting:reminderBuzud:supportPhoneCalendarReminder:supportGetDeviceStatus:supportGetDeviceSportStatus:supportGetFirmwareDisplayVersion:supportBedtimeStory:supportThirdSportIcon:supportControlMeasureBp:supportControlMeasureHr:supportControlMeasureSpo2:supportControlMeasureBodyComposition:supportControlMeasureStress:supportControlMeasureOneClick:supportControlMeasureTemperature:supportAppSleepMode:supportSmartPillbox:syncV3HealthSleepStageAvgHrv:supportEmergencyInfoVersion1:supportCustomWatchFaceStyle:totalSleepDurationNeedsSubtractWakeDuration:supportAppMenstrualOnly:supportSyncActivityDataBodyAge:supportIdb05UseLocaltimeForStepGoalCmd:supportGetSportTypesRequiringWristSideSetting:supportGetSportAutoPauseEndTypes:supportTrainingPlan:supportExchangeActivityUseV21:supportDeviceVibrationRingtone:v3AlarmNotSupportDelayMin:supportThreeRingGoalBasedOnFirmware:supportSyncHealthDataWithTimeZone:supportGetFirmwareSupportedConfig:supportV3ActivityExchangeFullSnapshot:reminderGoogleMessages:reminderAppleCalendar:reminderAppleMail:reminderGoogleCalendar:reminderHealthU:supportPetDevice:reminderZalo:reminderDidiTaxi:supportUpHandGestureTimeRange:supportQueryCustomWallpaperDialState:supportAppMetronome:supportVibrationSetting:supportAlarmVolumeSetting:supportCallReminderVolumeSetting:v3AlarmNotSupportRepeat:mountaineering:squat:surfing:footvolley:parachuting:orienteering:pickleball:snowboard:lunge:)",
+            "printedName": "init(reminderAncs:reminderSnapchat:reminderLine:reminderOutlook:reminderTelegram:reminderViber:reminderVkontakte:reminderChatwork:reminderSlack:reminderTumblr:reminderYahooMail:reminderYahooPinterest:reminderYoutube:reminderGmail:reminderKakaoTalk:reminderOnlyGoogleGmail:reminderOnlyOutlookEmail:reminderOnlyYahooEmail:reminderTiktok:reminderRedbus:reminderDailyhunt:reminderHotstar:reminderInshorts:reminderPaytm:reminderAmazon:reminderFlipkart:reminderNhnEmail:reminderInstantEmail:reminderZohoEmail:reminderExchangeEmail:reminder189Email:reminderVeryFit:reminderGeneral:reminderOther:reminderMattersRemind:reminderMicrosoft:reminderMissedCall:reminderGetAllContact:reminderWhatsappBusiness:reminderEmail:reminderFacebook:reminderMessage:reminderQq:reminderTwitter:reminderWeixin:reminderCalendarGoogle:reminderInstagram:reminderLinkedIn:reminderMessengre:reminderSkype:reminderCalendar:reminderWhatsapp:reminderAlarmClock:reminderSinaWeibo:reminderWeibo:reminderCalling:reminderCallContact:reminderCallNum:reminderPrime:reminderNetflix:reminderGpay:reminderPhonpe:reminderSwiggy:reminderZomato:reminderMakemytrip:reminderJioTv:reminderNiosefit:reminderYtmusic:reminderUber:reminderOla:reminderGoogleMeet:reminderMormaiiSmartwatch:reminderTechnosConnect:reminderEnjoei:reminderAliexpress:reminderShopee:reminderTeams:reminder99Taxi:reminderUberEats:reminderLfood:reminderRappi:reminderMercadoLivre:reminderMagalu:reminderAmericanas:reminderYahoo:reminderMessageIcon:reminderTaobao:reminderDingding:reminderAlipay:reminderToutiao:reminderDouyin:reminderTmall:reminderJd:reminderPinduoduo:reminderBaidu:reminderMeituan:reminderEleme:sportWalk:sportRun:sportByBike:sportOnFoot:sportSwim:sportMountainClimbing:sportBadminton:sportOther:sportFitness:sportSpinning:sportEllipsoid:sportTreadmill:sportSitUp:sportPushUp:sportDumbbell:sportWeightlifting:sportBodybuildingExercise:sportYoga:sportRopeSkipping:sportTableTennis:sportBasketball:sportFootballl:sportVolleyball:sportTennis:sportGolf:sportBaseball:sportSkiing:sportRollerSkating:sportDance:sportStrengthTraining:sportCoreTraining:sportTidyUpRelax:sportTraditionalStrengthTraining:sportOutdoorRun:sportIndoorRun:sportOutdoorCycle:sportIndoorCycle:sportOutdoorWalk:sportIndoorWalk:sportPoolSwim:sportOpenWaterSwim:sportElliptical:sportRower:sportHiit:sportCricket:sportPilates:sportOutdoorFun:sportOtherActivity:sportZumba:sportSurfing:sportFootvolley:sportStandWaterSkiing:sportBattlingRope:sportSkateboard:sportNoticeStepper:sportShowNum:sportAerobicsBodybuildingExercise:sportPullUp:sportHighBar:sportParallelBars:sportTrailRunning:sportPickleBall:sportSnowboard:sportCrossCountrySkiing:getRealtimeData:getLangLibraryV3:getFindPhone:getFindDevice:getUpHandGestureEx:getUpHandGesture:getWeather:getDownloadLanguage:getFactoryReset:getFlashLog:getMultiActivityNoUseApp:getMultiDial:getMenuList:getDoNotDisturbMain3:getVoiceTransmission:setDrinkWaterAddNotifyFlag:setSpo2LowValueRemindAddNotifyFlag:notSupportSmartHeartNotifyFlag:getDeviceLogState:getNewWatchList:getNotifyIconAdaptive:getPressureNotifyFlagMode:getScientificSleep:getSpo2NotifyFlag:getV3Log:getWatchID:getDeviceName:getBatteryLog:getBatteryInfo:getHeatLog:getWalkReminderV3:getSupportV3BleMusic:getSupportGetBleBeepV3:getVeryFitNotSupportPhotoWallpaperV3:getSupportUpdateGps:getUbloxModel:getSupportGetBleMusicInfoVerV3:getBtVersion:getSportsTypeV3:getActivitySwitch:getNoticeIconInformation:getSetMaxItemsNum:getNotifyMsgV3:getScreenBrightnessMain9:getNotice128byte:getNotice250byte:getDeletableMenuListV2:getSupportPairEachConnect:getSupportGetMainSportGoalV3:getBtAddrV2:getSupportBpSetOrMeasurementV2:getMenstrualAddNotifyFlagV3:getSupportSetGetTimeGoalTypeV2:getOxygenDataSupportGradeV3:getSupportSyncActivityDataAltitudeInfo:getBindCodeAuth:getSpo2OffChangeV3:getLevel5HrInterval:getFiveHRInterval:getBleAndBtVersion:getSupportSetGetEmergencyContactV3:getSupportSetRepeatWeekTypeOnScheduleReminderV3:getSupportSetRepeatTypeOnScheduleReminderV3:getSupportSetMenstrualReminderOnOff:getVersionInfo:getMtu:getDeviceUpdateState:getHeartRateModeV2:getStepDataTypeV2:getFastMsgDataV3:getSupportCallingQuickReply:getSupportDataTranGetNewErrorCodeV3:getAutoActivityEndSwitchNotDisplay:getAutoActivityPauseSwitchNotDisplay:getV3AutoActivitySwitch:getAutoActivitySwitchAddBicycle:getAutoActivitySwitchAddSmartRope:getAutoActivitySetGetUseNewStructExchange:getSupportSetGetNoReminderOnWalkReminderV2:getSupportGetSnInfo:getScheduleReminderNotDisplayTitle:getSupportV3LongCityName:getSupportAddNightLevelV2:getSupportDialFrameEncodeFormatArgb6666:getSupportAppSendPhoneSystemInfo:getDeviceControlFastModeAlone:getSupportOnekeyDoubleContact:getSupportSetVoiceAssistantStatus:getSupportFlashLogSize:supportDevReturnMeasuringValue:getSupportGetUnit:getSupportRyzeConnect:getSupportLoopsFit:getSupportTasSmart:getNotSupportSetOvulation:getSupportWalkGoalSteps:getNotSupportDeleteAddSportSort:getSupportSedentaryTensileHabitInfo:getSupportSendGpsLongitudeAndLatitude:getSupportGetV3DeviceBtConnectPhoneModel:getSupportBloodPressureModelFileUpdate:getSupportDisturbHaveRangRepeat:getSupportCalendarReminder:getWatchDailSetAddSize:getSupportSyncOverHighLowHeartData:getSupportPerMinuteOne:getSupportAchievedRemindOnOff:getSupportDrinkPlan:getSupportMakeWatchDialDecodeJpg:getSupportSleepPlan:getSupportDeviceOperateAlgFile:getSupportSportRecordShowConfig:setNoticeMessageStateUseVersion0x20:setScientificSleepSwitch:setTemperatureSwitchHealth:setHeartRateMonitor:setNoReminderOnDrinkReminder:setAgpsOffLine:setAgpsOnLine:setSetV3HeartInterval:setWeatherCity:setDoNotDisturb:setCalorieGoal:setMenstruation:setPressureData:setSpo2Data:setSportModeSort:setActivitySwitch:setNightAutoBrightness:setScreenBrightness5Level:setWalkReminder:setScreenBrightness3Level:setHandWashReminder:setLocalDial:setNotSupportHrHighAlarm:setNotSupportPhotoWallpaper:setPressureHighReminder:setWallpaperOnlyTimeColor:setWallpaperDial:setSupportBreathRate:setSupportCalorieUnit:setSupportSportPlan:setSupportSwimPoolUnit:setSupportV3Bp:setV3GetSportSortField:setWatchDialSort:setGetCalorieDistanceGoal:setMidHighTimeGoal:setNewRetainData:setScheduleReminder:setSet100SportSort:setSet20SportParamSort:setSetMainUiSort:setSetStressCalibration:setSmartHeartRate:setSpo2AllDayOnOff:setSupportAppSendVoiceToBle:setSupportCyclingUnit:setSupportWalkRunUnit:setWalkReminderTimeGoal:setWatchCapacitySizeDisplay:setWatchPhotoPositionMove:setMenuListMain7:setHistoryMenstrual:supportHistoricalMenstruationExchange:supportSetHistoricalMenstruationExchangeVersion21:supportHistoricalMenstruationExchangeVersion31:supportPhysiologicalRecord:setMenstrualAddPregnancy:setNotSurportCalling3SDelay:setSetFitnessGuidance:setSetNotificationStatus:setSetUnreadAppReminder:setSetV3Weather:setSetV3WeatherSunrise:setSetV3WorldTime:setSyncContact:setSyncV3ActivityAddParam:setTransferMusicFile:setWalkReminderAddNotify:setSupportFahrenheit:setGetAlarmSpecify:setAirohaGpsChip:setSupportSecondSportIcon:setSportMediumIcon:setWeatherSunTime:setWeatherAirGrade:setDrinkWaterReminder:supportBatteryReminderSwitch:supportGetFindPhoneSwitch:supportGetFindMyDeviceName:notSupportArmbandWearMode:supportTaskList:supportSyncHealthDataUseUtcTime:supportPetInfo:setRespirationRate:setMaxBloodOxygen:setBleControlMusic:setMainPressure:setNoDisturbAllDayOnOff:setOnlyNoDisturbAllDayOnOff:setOnlyNoDisturbSmartOnOff:setTimeZoneFloat:setTemperatureSwitchSupport:setMsgAllSwitch:setNotSupperCall3Delay:setNoticeMissedCallV2:setOverFindPhone:getHealthSwitchStateSupportV3:setSedentariness:setScreenBrightness:setSetPhoneVoice:setSupportSetCallQuickReplyOnOff:setSupportExchangeSetGpsCoordinates:setSupportV3WeatherAddAtmosphericPressure:setSupportSetV3WeatcherAddSnowDepth:setSupportSetV3WeatcherAddSnowfall:setSupportSetV3WeatcherSendStructVersion04:setSendCalibrationThreshold:getNotSupportAppSendRunPlan:getSupportDisplayNapSleep:getSupportGetSmartHeartRate:getSupportGetPressureSwitchInfo:getSupportECardOperate:getSupportVoiceMemoOperate:getSupportMorningEdition:getSupportGetSpo2SwitchInfo:getSupportSyncHealthHrUseVersionCompatible:getSupportSyncSpo2UseVersionCompatible:getSupportSyncPressureUseVersionCompatible:getSupportSetV3Add48HourWeatherData:getNotSupportIndoorRunGetVo2max:getSupportSetEcgReminder:getSupportSyncEcg:getSupportSetGameTimeReminder:getSupportConfigDefaultMegApplicationList:getSupportSetEciReminder:setSupportNoiseSetNotifyFlag:setSupportNoiseSetOverWarning:setSupportSetVersionInformation:setSupportControlMiniProgram:getSupportSetWeatherHistoryFutureAqi:setBrightScreenTime:setHeartSetRateModeCustom:supportProtocolV3MenuList:languageCh:languageCzech:languageEnglish:languageFrench:languageGerman:languageItalian:languageJapanese:languageSpanish:languageArabic:languageBurmese:languageFilipino:languageGreek:languageThai:languageTraditionalChinese:languageVietnamese:languageDutch:languageHungarian:languageLithuanian:languagePolish:languageRomanian:languageRussian:languageSlovenian:languageUkrainian:languageCroatian:languageDanish:languageHindi:languageIndonesian:languageKorean:languagePortuguese:languageSlovak:languageTurkish:languagePersia:languageSweden:languageNorwegian:languageFinland:languageBengali:languageKhmer:languageMalay:languageBrazilianPortuguese:languageHebrew:languageSerbian:languageBulgaria:syncV3Hr:syncV3Swim:syncV3Spo2:syncV3Pressure:syncV3Activity:syncV3Sleep:syncV3PetSleep:syncV3ActivityAmount:syncV3SportUseVersion20:syncV3Sports:syncV3Gps:syncV3SyncAlarm:syncV3BodyPower:getSupportHrvV3:getSupportPerBpV3:syncV3Noise:syncV3Temperature:syncGps:syncV3ActivityExchangeData:syncHeartRate:syncHeartRateMonitor:syncSleepMonitor:syncFastSync:syncActivityTimeSync:syncTimeLine:syncNeedV2:syncRealTimeV3:syncExchangeDataReplyAddRealTimeSpeedPaceV3:syncHealthSyncV3ActivityEndTimeUseUtcMode:syncSupportSetFastModeWhenSyncConfig:getSupportAppBaseInformation:alarmCount:alarmBrushTeeth:alarmBath:alarmCourse:alarmLearn:alarmPlayTime:alarmDating:alarmDinner:alarmMedicine:alarmMeeting:alarmParty:alarmRest:alarmSleep:alarmSport:alarmWakeUp:supportSetAntilost:supportSetWeatherDataV2:supportSetOnetouchCalling:supportOperateSetSportScreen:supportOperateListStyle:supportEmotionHealth:supportGetContinuedSportData:supportV3SyncContactVersion20:supportGetSosCallRecord:alexaReminderAddSecV3:alexaSetEasyOperateV3:alexaSetGetAlexaAlarmV3:alexaSetJumpSportUiV3:alexaSetJumpUiV3:alexaSetSetOnOffTypeV3:alexaSetWeatherV3:alexaTimeNewV3:setAlexaControll100brightness:alexaGetSupportGetAlexaDefaultLanguage:alexaGetUIControllSports:getLeftRightHandWearSettings:supportSettingsDuringExercise:supportHeightLengthUnit:supportSportingRemindSetting:supportSportGetAutoPauseEnd:supportSetStrideLengthUnit:supportSimpleHrZoneSetting:notSupportSmartLowHeartReatRemind:notSupportSmartHighHeartReatRemind:notSupportPhotoPreviewControl:supportGetUserInfo:supportMissedCallMsgTypeUseFixed:supportAppNotDisplayAlarmName:supportSetSleepRemind:supportBloodGlucose:supportBloodGlucoseV01:supportBikeLockManager:supportCgmPhoneCommand:supportAlgorithmRawDataCollect:supportOfflineMapInformation:supportHeartRateReserveZones:supportHeartRateZonesHrMaxSet:supportSyncMultiActivityNew:supportContactFileUseFirmwareReturnSize:supportDisplayCameraEntry:supportOperateFamilyCareReminder3376:supportProtocolV3MenstruationConfig3377:supportOperateHabitFormation:supportOperateHabitFormationV01:supportOperateFamilySteps:supportOperateSetGame:supportOperateGestureControl:supportTakeMedicineReminder:reminderZoomWorkplace:supportSetSportRecordName:supportAppNotDisplaySportTypeSetting:reminderBuzud:supportPhoneCalendarReminder:supportGetDeviceStatus:supportGetDeviceSportStatus:supportGetFirmwareDisplayVersion:supportBedtimeStory:supportThirdSportIcon:supportControlMeasureBp:supportControlMeasureHr:supportControlMeasureSpo2:supportControlMeasureBodyComposition:supportControlMeasureStress:supportControlMeasureOneClick:supportControlMeasureTemperature:supportAppSleepMode:supportSmartPillbox:syncV3HealthSleepStageAvgHrv:supportEmergencyInfoVersion1:supportCustomWatchFaceStyle:totalSleepDurationNeedsSubtractWakeDuration:supportAppMenstrualOnly:supportSyncActivityDataBodyAge:supportIdb05UseLocaltimeForStepGoalCmd:supportGetSportTypesRequiringWristSideSetting:supportGetSportAutoPauseEndTypes:supportTrainingPlan:supportExchangeActivityUseV21:supportDeviceVibrationRingtone:v3AlarmNotSupportDelayMin:supportThreeRingGoalBasedOnFirmware:supportSyncHealthDataWithTimeZone:supportGetFirmwareSupportedConfig:supportV3ActivityExchangeFullSnapshot:reminderGoogleMessages:reminderAppleCalendar:reminderAppleMail:reminderGoogleCalendar:reminderHealthU:supportPetDevice:reminderZalo:reminderDidiTaxi:supportUpHandGestureTimeRange:supportQueryCustomWallpaperDialState:supportAppMetronome:supportVibrationSetting:supportAlarmVolumeSetting:supportCallReminderVolumeSetting:v3AlarmNotSupportRepeat:mountaineering:squat:surfing:footvolley:parachuting:orienteering:pickleball:snowboard:lunge:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -372566,6 +372661,12 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "Int",
                 "printedName": "Swift.Int",
                 "usr": "s:Si"
@@ -373334,8 +373435,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:16protocol_channel18FunctionTableModelV12reminderAncs0F8Snapchat0F4Line0F7Outlook0F8Telegram0F5Viber0F9Vkontakte0F8Chatwork0F5Slack0F6Tumblr0F9YahooMail0fQ9Pinterest0F7Youtube0F5Gmail0F9KakaoTalk0f10OnlyGoogleU00fxJ5Email0fxqZ00F6Tiktok0F6Redbus0F9Dailyhunt0F7Hotstar0F8Inshorts0F5Paytm0F6Amazon0F8Flipkart0f3NhnZ00f7InstantZ00f4ZohoZ00f8ExchangeZ0011reminder189Z00F7VeryFit0F7General0F5Other0F13MattersRemind0F9Microsoft0F10MissedCall0F13GetAllContact0F16WhatsappBusiness0fZ00F8Facebook0F7Message0F2Qq0F7Twitter0F6Weixin0f8CalendarY00F9Instagram0F8LinkedIn0F9Messengre0F5Skype0F8Calendar0F8Whatsapp0F10AlarmClock0F9SinaWeibo0F5Weibo0F7Calling0F11CallContact0F7CallNum0F5Prime0F7Netflix0F4Gpay0F6Phonpe0F6Swiggy0F6Zomato0F10Makemytrip0F5JioTv0F8Niosefit0F7Ytmusic0F4Uber0F3Ola0fY4Meet0F17MormaiiSmartwatch0F14TechnosConnect0F6Enjoei0F10Aliexpress0F6Shopee0F5Teams14reminder99Taxi0F8UberEats0F5Lfood0F5Rappi0F12MercadoLivre0F6Magalu0F10Americanas0fQ00F11MessageIcon0F6Taobao0F8Dingding0F6Alipay0F7Toutiao0F6Douyin0F5Tmall0F2Jd0F9Pinduoduo0F5Baidu0F7Meituan0F5Eleme9sportWalk8sportRun11sportByBike11sportOnFoot9sportSwim21sportMountainClimbing14sportBadminton10sportOther12sportFitness13sportSpinning14sportEllipsoid14sportTreadmill10sportSitUp11sportPushUp13sportDumbbell18sportWeightlifting25sportBodybuildingExercise9sportYoga17sportRopeSkipping05sportD6Tennis15sportBasketball14sportFootballl15sportVolleyball11sportTennis9sportGolf13sportBaseball11sportSkiing18sportRollerSkating10sportDance21sportStrengthTraining17sportCoreTraining16sportTidyUpRelax32sportTraditionalStrengthTraining15sportOutdoorRun14sportIndoorRun17sportOutdoorCycle16sportIndoorCycle16sportOutdoorWalk15sportIndoorWalk13sportPoolSwim18sportOpenWaterSwim15sportElliptical10sportRower9sportHiit12sportCricket12sportPilates15sportOutdoorFun18sportOtherActivity10sportZumba12sportSurfing15sportFootvolley21sportStandWaterSkiing17sportBattlingRope15sportSkateboard18sportNoticeStepper12sportShowNum33sportAerobicsBodybuildingExercise11sportPullUp12sportHighBar17sportParallelBars17sportTrailRunning15sportPickleBall14sportSnowboard23sportCrossCountrySkiing15getRealtimeData16getLangLibraryV312getFindPhone13getFindDevice18getUpHandGestureEx16getUpHandGesture10getWeather19getDownloadLanguage15getFactoryReset11getFlashLog24getMultiActivityNoUseApp12getMultiDial11getMenuList20getDoNotDisturbMain320getVoiceTransmission26setDrinkWaterAddNotifyFlag34setSpo2LowValueRemindAddNotifyFlag30notSupportSmartHeartNotifyFlag17getDeviceLogState15getNewWatchList21getNotifyIconAdaptive25getPressureNotifyFlagMode18getScientificSleep17getSpo2NotifyFlag8getV3Log10getWatchID13getDeviceName13getBatteryLog14getBatteryInfo10getHeatLog17getWalkReminderV320getSupportV3BleMusic22getSupportGetBleBeepV336getVeryFitNotSupportPhotoWallpaperV319getSupportUpdateGps08getUbloxE030getSupportGetBleMusicInfoVerV312getBtVersion15getSportsTypeV317getActivitySwitch24getNoticeIconInformation17getSetMaxItemsNum14getNotifyMsgV324getScreenBrightnessMain916getNotice128byte16getNotice250byte22getDeletableMenuListV225getSupportPairEachConnect28getSupportGetMainSportGoalV311getBtAddrV230getSupportBpSetOrMeasurementV227getMenstrualAddNotifyFlagV330getSupportSetGetTimeGoalTypeV227getOxygenDataSupportGradeV338getSupportSyncActivityDataAltitudeInfo15getBindCodeAuth18getSpo2OffChangeV319getLevel5HrInterval17getFiveHRInterval18getBleAndBtVersion34getSupportSetGetEmergencyContactV347getSupportSetRepeatWeekTypeOnScheduleReminderV343getSupportSetRepeatTypeOnScheduleReminderV335getSupportSetMenstrualReminderOnOff14getVersionInfo6getMtu20getDeviceUpdateState18getHeartRateModeV217getStepDataTypeV216getFastMsgDataV327getSupportCallingQuickReply35getSupportDataTranGetNewErrorCodeV334getAutoActivityEndSwitchNotDisplay36getAutoActivityPauseSwitchNotDisplay23getV3AutoActivitySwitch31getAutoActivitySwitchAddBicycle33getAutoActivitySwitchAddSmartRope41getAutoActivitySetGetUseNewStructExchange42getSupportSetGetNoReminderOnWalkReminderV219getSupportGetSnInfo34getScheduleReminderNotDisplayTitle24getSupportV3LongCityName25getSupportAddNightLevelV239getSupportDialFrameEncodeFormatArgb666632getSupportAppSendPhoneSystemInfo29getDeviceControlFastModeAlone29getSupportOnekeyDoubleContact33getSupportSetVoiceAssistantStatus22getSupportFlashLogSize30supportDevReturnMeasuringValue17getSupportGetUnit21getSupportRyzeConnect18getSupportLoopsFit18getSupportTasSmart25getNotSupportSetOvulation23getSupportWalkGoalSteps31getNotSupportDeleteAddSportSort35getSupportSedentaryTensileHabitInfo37getSupportSendGpsLongitudeAndLatitude035getSupportGetV3DeviceBtConnectPhoneE0023getSupportBloodPressureE10FileUpdate31getSupportDisturbHaveRangRepeat26getSupportCalendarReminder22getWatchDailSetAddSize34getSupportSyncOverHighLowHeartData22getSupportPerMinuteOne29getSupportAchievedRemindOnOff19getSupportDrinkPlan32getSupportMakeWatchDialDecodeJpg19getSupportSleepPlan30getSupportDeviceOperateAlgFile31getSupportSportRecordShowConfig35setNoticeMessageStateUseVersion0x2024setScientificSleepSwitch26setTemperatureSwitchHealth19setHeartRateMonitor28setNoReminderOnDrinkReminder010setAgpsOffI009setAgpsOnI021setSetV3HeartInterval14setWeatherCity15setDoNotDisturb14setCalorieGoal15setMenstruation15setPressureData11setSpo2Data16setSportModeSort17setActivitySwitch22setNightAutoBrightness25setScreenBrightness5Level15setWalkReminder25setScreenBrightness3Level19setHandWashReminder12setLocalDial24setNotSupportHrHighAlarm27setNotSupportPhotoWallpaper23setPressureHighReminder012setWallpaperX9TimeColor16setWallpaperDial20setSupportBreathRate21setSupportCalorieUnit19setSupportSportPlan22setSupportSwimPoolUnit14setSupportV3Bp22setV3GetSportSortField16setWatchDialSort25setGetCalorieDistanceGoal18setMidHighTimeGoal16setNewRetainData19setScheduleReminder18setSet100SportSort22setSet20SportParamSort16setSetMainUiSort23setSetStressCalibration17setSmartHeartRate18setSpo2AllDayOnOff27setSupportAppSendVoiceToBle21setSupportCyclingUnit21setSupportWalkRunUnit23setWalkReminderTimeGoal27setWatchCapacitySizeDisplay25setWatchPhotoPositionMove16setMenuListMain719setHistoryMenstrual37supportHistoricalMenstruationExchange49supportSetHistoricalMenstruationExchangeVersion2146supportHistoricalMenstruationExchangeVersion3126supportPhysiologicalRecord24setMenstrualAddPregnancy27setNotSurportCalling3SDelay21setSetFitnessGuidance24setSetNotificationStatus23setSetUnreadAppReminder15setSetV3Weather22setSetV3WeatherSunrise17setSetV3WorldTime14setSyncContact25setSyncV3ActivityAddParam20setTransferMusicFile24setWalkReminderAddNotify20setSupportFahrenheit18setGetAlarmSpecify16setAirohaGpsChip25setSupportSecondSportIcon18setSportMediumIcon17setWeatherSunTime18setWeatherAirGrade21setDrinkWaterReminder28supportBatteryReminderSwitch25supportGetFindPhoneSwitch26supportGetFindMyDeviceName25notSupportArmbandWearMode15supportTaskList31supportSyncHealthDataUseUtcTime14supportPetInfo18setRespirationRate17setMaxBloodOxygen18setBleControlMusic15setMainPressure23setNoDisturbAllDayOnOff03setX20NoDisturbAllDayOnOff03setX19NoDisturbSmartOnOff16setTimeZoneFloat27setTemperatureSwitchSupport15setMsgAllSwitch22setNotSupperCall3Delay21setNoticeMissedCallV216setOverFindPhone29getHealthSwitchStateSupportV316setSedentariness19setScreenBrightness16setSetPhoneVoice32setSupportSetCallQuickReplyOnOff35setSupportExchangeSetGpsCoordinates41setSupportV3WeatherAddAtmosphericPressure35setSupportSetV3WeatcherAddSnowDepth34setSupportSetV3WeatcherAddSnowfall42setSupportSetV3WeatcherSendStructVersion0427setSendCalibrationThreshold27getNotSupportAppSendRunPlan25getSupportDisplayNapSleep27getSupportGetSmartHeartRate31getSupportGetPressureSwitchInfo22getSupportECardOperate26getSupportVoiceMemoOperate24getSupportMorningEdition27getSupportGetSpo2SwitchInfo42getSupportSyncHealthHrUseVersionCompatible38getSupportSyncSpo2UseVersionCompatible42getSupportSyncPressureUseVersionCompatible35getSupportSetV3Add48HourWeatherData31getNotSupportIndoorRunGetVo2max24getSupportSetEcgReminder17getSupportSyncEcg29getSupportSetGameTimeReminder41getSupportConfigDefaultMegApplicationList24getSupportSetEciReminder28setSupportNoiseSetNotifyFlag29setSupportNoiseSetOverWarning31setSupportSetVersionInformation28setSupportControlMiniProgram36getSupportSetWeatherHistoryFutureAqi19setBrightScreenTime25setHeartSetRateModeCustom25supportProtocolV3MenuList10languageCh13languageCzech15languageEnglish14languageFrench14languageGerman15languageItalian16languageJapanese15languageSpanish14languageArabic15languageBurmese16languageFilipino13languageGreek12languageThai26languageTraditionalChinese18languageVietnamese13languageDutch17languageHungarian18languageLithuanian14languagePolish16languageRomanian15languageRussian17languageSlovenian17languageUkrainian16languageCroatian14languageDanish13languageHindi18languageIndonesian14languageKorean18languagePortuguese14languageSlovak15languageTurkish14languagePersia14languageSweden17languageNorwegian15languageFinland15languageBengali13languageKhmer13languageMalay27languageBrazilianPortuguese14languageHebrew15languageSerbian16languageBulgaria8syncV3Hr10syncV3Swim10syncV3Spo214syncV3Pressure14syncV3Activity11syncV3Sleep14syncV3PetSleep20syncV3ActivityAmount12syncV3Sports9syncV3Gps15syncV3SyncAlarm15syncV3BodyPower15getSupportHrvV317getSupportPerBpV311syncV3Noise17syncV3Temperature7syncGps26syncV3ActivityExchangeData13syncHeartRate20syncHeartRateMonitor16syncSleepMonitor12syncFastSync20syncActivityTimeSync08syncTimeI010syncNeedV214syncRealTimeV343syncExchangeDataReplyAddRealTimeSpeedPaceV341syncHealthSyncV3ActivityEndTimeUseUtcMode36syncSupportSetFastModeWhenSyncConfig28getSupportAppBaseInformation10alarmCount15alarmBrushTeeth9alarmBath11alarmCourse10alarmLearn13alarmPlayTime11alarmDating11alarmDinner13alarmMedicine12alarmMeeting10alarmParty9alarmRest10alarmSleep10alarmSport11alarmWakeUp18supportSetAntilost23supportSetWeatherDataV225supportSetOnetouchCalling28supportOperateSetSportScreen23supportOperateListStyle20supportEmotionHealth28supportGetContinuedSportData29supportV3SyncContactVersion2023supportGetSosCallRecord21alexaReminderAddSecV321alexaSetEasyOperateV323alexaSetGetAlexaAlarmV321alexaSetJumpSportUiV316alexaSetJumpUiV322alexaSetSetOnOffTypeV317alexaSetWeatherV314alexaTimeNewV329setAlexaControll100brightness38alexaGetSupportGetAlexaDefaultLanguage24alexaGetUIControllSports28getLeftRightHandWearSettings29supportSettingsDuringExercise23supportHeightLengthUnit28supportSportingRemindSetting27supportSportGetAutoPauseEnd26supportSetStrideLengthUnit26supportSimpleHrZoneSetting33notSupportSmartLowHeartReatRemind34notSupportSmartHighHeartReatRemind29notSupportPhotoPreviewControl18supportGetUserInfo32supportMissedCallMsgTypeUseFixed29supportAppNotDisplayAlarmName21supportSetSleepRemind19supportBloodGlucose22supportBloodGlucoseV0122supportBikeLockManager22supportCgmPhoneCommand30supportAlgorithmRawDataCollect28supportOfflineMapInformation28supportHeartRateReserveZones29supportHeartRateZonesHrMaxSet27supportSyncMultiActivityNew39supportContactFileUseFirmwareReturnSize25supportDisplayCameraEntry36supportOperateFamilyCareReminder337639supportProtocolV3MenstruationConfig337728supportOperateHabitFormation31supportOperateHabitFormationV0125supportOperateFamilySteps21supportOperateSetGame28supportOperateGestureControl27supportTakeMedicineReminder0F13ZoomWorkplace25supportSetSportRecordName36supportAppNotDisplaySportTypeSetting0F5Buzud28supportPhoneCalendarReminder22supportGetDeviceStatus27supportGetDeviceSportStatus32supportGetFirmwareDisplayVersion19supportBedtimeStory21supportThirdSportIcon23supportControlMeasureBp23supportControlMeasureHr25supportControlMeasureSpo236supportControlMeasureBodyComposition27supportControlMeasureStress29supportControlMeasureOneClick32supportControlMeasureTemperature19supportAppSleepMode19supportSmartPillbox28syncV3HealthSleepStageAvgHrv28supportEmergencyInfoVersion127supportCustomWatchFaceStyle43totalSleepDurationNeedsSubtractWakeDuration019supportAppMenstrualX030supportSyncActivityDataBodyAge38supportIdb05UseLocaltimeForStepGoalCmd45supportGetSportTypesRequiringWristSideSetting32supportGetSportAutoPauseEndTypes19supportTrainingPlan29supportExchangeActivityUseV2130supportDeviceVibrationRingtone25v3AlarmNotSupportDelayMin35supportThreeRingGoalBasedOnFirmware33supportSyncHealthDataWithTimeZone33supportGetFirmwareSupportedConfig37supportV3ActivityExchangeFullSnapshot0fY8Messages0F13AppleCalendar0f5AppleR00fY8Calendar0F7HealthU16supportPetDevice0F4Zalo0F8DidiTaxi29supportUpHandGestureTimeRange36supportQueryCustomWallpaperDialState19supportAppMetronome23supportVibrationSetting25supportAlarmVolumeSetting32supportCallReminderVolumeSetting23v3AlarmNotSupportRepeat14mountaineering5squat7surfing10footvolley11parachuting12orienteering10pickleball9snowboard5lungeACSb_S151bSiS325bSiS127btcfc",
-            "mangledName": "$s16protocol_channel18FunctionTableModelV12reminderAncs0F8Snapchat0F4Line0F7Outlook0F8Telegram0F5Viber0F9Vkontakte0F8Chatwork0F5Slack0F6Tumblr0F9YahooMail0fQ9Pinterest0F7Youtube0F5Gmail0F9KakaoTalk0f10OnlyGoogleU00fxJ5Email0fxqZ00F6Tiktok0F6Redbus0F9Dailyhunt0F7Hotstar0F8Inshorts0F5Paytm0F6Amazon0F8Flipkart0f3NhnZ00f7InstantZ00f4ZohoZ00f8ExchangeZ0011reminder189Z00F7VeryFit0F7General0F5Other0F13MattersRemind0F9Microsoft0F10MissedCall0F13GetAllContact0F16WhatsappBusiness0fZ00F8Facebook0F7Message0F2Qq0F7Twitter0F6Weixin0f8CalendarY00F9Instagram0F8LinkedIn0F9Messengre0F5Skype0F8Calendar0F8Whatsapp0F10AlarmClock0F9SinaWeibo0F5Weibo0F7Calling0F11CallContact0F7CallNum0F5Prime0F7Netflix0F4Gpay0F6Phonpe0F6Swiggy0F6Zomato0F10Makemytrip0F5JioTv0F8Niosefit0F7Ytmusic0F4Uber0F3Ola0fY4Meet0F17MormaiiSmartwatch0F14TechnosConnect0F6Enjoei0F10Aliexpress0F6Shopee0F5Teams14reminder99Taxi0F8UberEats0F5Lfood0F5Rappi0F12MercadoLivre0F6Magalu0F10Americanas0fQ00F11MessageIcon0F6Taobao0F8Dingding0F6Alipay0F7Toutiao0F6Douyin0F5Tmall0F2Jd0F9Pinduoduo0F5Baidu0F7Meituan0F5Eleme9sportWalk8sportRun11sportByBike11sportOnFoot9sportSwim21sportMountainClimbing14sportBadminton10sportOther12sportFitness13sportSpinning14sportEllipsoid14sportTreadmill10sportSitUp11sportPushUp13sportDumbbell18sportWeightlifting25sportBodybuildingExercise9sportYoga17sportRopeSkipping05sportD6Tennis15sportBasketball14sportFootballl15sportVolleyball11sportTennis9sportGolf13sportBaseball11sportSkiing18sportRollerSkating10sportDance21sportStrengthTraining17sportCoreTraining16sportTidyUpRelax32sportTraditionalStrengthTraining15sportOutdoorRun14sportIndoorRun17sportOutdoorCycle16sportIndoorCycle16sportOutdoorWalk15sportIndoorWalk13sportPoolSwim18sportOpenWaterSwim15sportElliptical10sportRower9sportHiit12sportCricket12sportPilates15sportOutdoorFun18sportOtherActivity10sportZumba12sportSurfing15sportFootvolley21sportStandWaterSkiing17sportBattlingRope15sportSkateboard18sportNoticeStepper12sportShowNum33sportAerobicsBodybuildingExercise11sportPullUp12sportHighBar17sportParallelBars17sportTrailRunning15sportPickleBall14sportSnowboard23sportCrossCountrySkiing15getRealtimeData16getLangLibraryV312getFindPhone13getFindDevice18getUpHandGestureEx16getUpHandGesture10getWeather19getDownloadLanguage15getFactoryReset11getFlashLog24getMultiActivityNoUseApp12getMultiDial11getMenuList20getDoNotDisturbMain320getVoiceTransmission26setDrinkWaterAddNotifyFlag34setSpo2LowValueRemindAddNotifyFlag30notSupportSmartHeartNotifyFlag17getDeviceLogState15getNewWatchList21getNotifyIconAdaptive25getPressureNotifyFlagMode18getScientificSleep17getSpo2NotifyFlag8getV3Log10getWatchID13getDeviceName13getBatteryLog14getBatteryInfo10getHeatLog17getWalkReminderV320getSupportV3BleMusic22getSupportGetBleBeepV336getVeryFitNotSupportPhotoWallpaperV319getSupportUpdateGps08getUbloxE030getSupportGetBleMusicInfoVerV312getBtVersion15getSportsTypeV317getActivitySwitch24getNoticeIconInformation17getSetMaxItemsNum14getNotifyMsgV324getScreenBrightnessMain916getNotice128byte16getNotice250byte22getDeletableMenuListV225getSupportPairEachConnect28getSupportGetMainSportGoalV311getBtAddrV230getSupportBpSetOrMeasurementV227getMenstrualAddNotifyFlagV330getSupportSetGetTimeGoalTypeV227getOxygenDataSupportGradeV338getSupportSyncActivityDataAltitudeInfo15getBindCodeAuth18getSpo2OffChangeV319getLevel5HrInterval17getFiveHRInterval18getBleAndBtVersion34getSupportSetGetEmergencyContactV347getSupportSetRepeatWeekTypeOnScheduleReminderV343getSupportSetRepeatTypeOnScheduleReminderV335getSupportSetMenstrualReminderOnOff14getVersionInfo6getMtu20getDeviceUpdateState18getHeartRateModeV217getStepDataTypeV216getFastMsgDataV327getSupportCallingQuickReply35getSupportDataTranGetNewErrorCodeV334getAutoActivityEndSwitchNotDisplay36getAutoActivityPauseSwitchNotDisplay23getV3AutoActivitySwitch31getAutoActivitySwitchAddBicycle33getAutoActivitySwitchAddSmartRope41getAutoActivitySetGetUseNewStructExchange42getSupportSetGetNoReminderOnWalkReminderV219getSupportGetSnInfo34getScheduleReminderNotDisplayTitle24getSupportV3LongCityName25getSupportAddNightLevelV239getSupportDialFrameEncodeFormatArgb666632getSupportAppSendPhoneSystemInfo29getDeviceControlFastModeAlone29getSupportOnekeyDoubleContact33getSupportSetVoiceAssistantStatus22getSupportFlashLogSize30supportDevReturnMeasuringValue17getSupportGetUnit21getSupportRyzeConnect18getSupportLoopsFit18getSupportTasSmart25getNotSupportSetOvulation23getSupportWalkGoalSteps31getNotSupportDeleteAddSportSort35getSupportSedentaryTensileHabitInfo37getSupportSendGpsLongitudeAndLatitude035getSupportGetV3DeviceBtConnectPhoneE0023getSupportBloodPressureE10FileUpdate31getSupportDisturbHaveRangRepeat26getSupportCalendarReminder22getWatchDailSetAddSize34getSupportSyncOverHighLowHeartData22getSupportPerMinuteOne29getSupportAchievedRemindOnOff19getSupportDrinkPlan32getSupportMakeWatchDialDecodeJpg19getSupportSleepPlan30getSupportDeviceOperateAlgFile31getSupportSportRecordShowConfig35setNoticeMessageStateUseVersion0x2024setScientificSleepSwitch26setTemperatureSwitchHealth19setHeartRateMonitor28setNoReminderOnDrinkReminder010setAgpsOffI009setAgpsOnI021setSetV3HeartInterval14setWeatherCity15setDoNotDisturb14setCalorieGoal15setMenstruation15setPressureData11setSpo2Data16setSportModeSort17setActivitySwitch22setNightAutoBrightness25setScreenBrightness5Level15setWalkReminder25setScreenBrightness3Level19setHandWashReminder12setLocalDial24setNotSupportHrHighAlarm27setNotSupportPhotoWallpaper23setPressureHighReminder012setWallpaperX9TimeColor16setWallpaperDial20setSupportBreathRate21setSupportCalorieUnit19setSupportSportPlan22setSupportSwimPoolUnit14setSupportV3Bp22setV3GetSportSortField16setWatchDialSort25setGetCalorieDistanceGoal18setMidHighTimeGoal16setNewRetainData19setScheduleReminder18setSet100SportSort22setSet20SportParamSort16setSetMainUiSort23setSetStressCalibration17setSmartHeartRate18setSpo2AllDayOnOff27setSupportAppSendVoiceToBle21setSupportCyclingUnit21setSupportWalkRunUnit23setWalkReminderTimeGoal27setWatchCapacitySizeDisplay25setWatchPhotoPositionMove16setMenuListMain719setHistoryMenstrual37supportHistoricalMenstruationExchange49supportSetHistoricalMenstruationExchangeVersion2146supportHistoricalMenstruationExchangeVersion3126supportPhysiologicalRecord24setMenstrualAddPregnancy27setNotSurportCalling3SDelay21setSetFitnessGuidance24setSetNotificationStatus23setSetUnreadAppReminder15setSetV3Weather22setSetV3WeatherSunrise17setSetV3WorldTime14setSyncContact25setSyncV3ActivityAddParam20setTransferMusicFile24setWalkReminderAddNotify20setSupportFahrenheit18setGetAlarmSpecify16setAirohaGpsChip25setSupportSecondSportIcon18setSportMediumIcon17setWeatherSunTime18setWeatherAirGrade21setDrinkWaterReminder28supportBatteryReminderSwitch25supportGetFindPhoneSwitch26supportGetFindMyDeviceName25notSupportArmbandWearMode15supportTaskList31supportSyncHealthDataUseUtcTime14supportPetInfo18setRespirationRate17setMaxBloodOxygen18setBleControlMusic15setMainPressure23setNoDisturbAllDayOnOff03setX20NoDisturbAllDayOnOff03setX19NoDisturbSmartOnOff16setTimeZoneFloat27setTemperatureSwitchSupport15setMsgAllSwitch22setNotSupperCall3Delay21setNoticeMissedCallV216setOverFindPhone29getHealthSwitchStateSupportV316setSedentariness19setScreenBrightness16setSetPhoneVoice32setSupportSetCallQuickReplyOnOff35setSupportExchangeSetGpsCoordinates41setSupportV3WeatherAddAtmosphericPressure35setSupportSetV3WeatcherAddSnowDepth34setSupportSetV3WeatcherAddSnowfall42setSupportSetV3WeatcherSendStructVersion0427setSendCalibrationThreshold27getNotSupportAppSendRunPlan25getSupportDisplayNapSleep27getSupportGetSmartHeartRate31getSupportGetPressureSwitchInfo22getSupportECardOperate26getSupportVoiceMemoOperate24getSupportMorningEdition27getSupportGetSpo2SwitchInfo42getSupportSyncHealthHrUseVersionCompatible38getSupportSyncSpo2UseVersionCompatible42getSupportSyncPressureUseVersionCompatible35getSupportSetV3Add48HourWeatherData31getNotSupportIndoorRunGetVo2max24getSupportSetEcgReminder17getSupportSyncEcg29getSupportSetGameTimeReminder41getSupportConfigDefaultMegApplicationList24getSupportSetEciReminder28setSupportNoiseSetNotifyFlag29setSupportNoiseSetOverWarning31setSupportSetVersionInformation28setSupportControlMiniProgram36getSupportSetWeatherHistoryFutureAqi19setBrightScreenTime25setHeartSetRateModeCustom25supportProtocolV3MenuList10languageCh13languageCzech15languageEnglish14languageFrench14languageGerman15languageItalian16languageJapanese15languageSpanish14languageArabic15languageBurmese16languageFilipino13languageGreek12languageThai26languageTraditionalChinese18languageVietnamese13languageDutch17languageHungarian18languageLithuanian14languagePolish16languageRomanian15languageRussian17languageSlovenian17languageUkrainian16languageCroatian14languageDanish13languageHindi18languageIndonesian14languageKorean18languagePortuguese14languageSlovak15languageTurkish14languagePersia14languageSweden17languageNorwegian15languageFinland15languageBengali13languageKhmer13languageMalay27languageBrazilianPortuguese14languageHebrew15languageSerbian16languageBulgaria8syncV3Hr10syncV3Swim10syncV3Spo214syncV3Pressure14syncV3Activity11syncV3Sleep14syncV3PetSleep20syncV3ActivityAmount12syncV3Sports9syncV3Gps15syncV3SyncAlarm15syncV3BodyPower15getSupportHrvV317getSupportPerBpV311syncV3Noise17syncV3Temperature7syncGps26syncV3ActivityExchangeData13syncHeartRate20syncHeartRateMonitor16syncSleepMonitor12syncFastSync20syncActivityTimeSync08syncTimeI010syncNeedV214syncRealTimeV343syncExchangeDataReplyAddRealTimeSpeedPaceV341syncHealthSyncV3ActivityEndTimeUseUtcMode36syncSupportSetFastModeWhenSyncConfig28getSupportAppBaseInformation10alarmCount15alarmBrushTeeth9alarmBath11alarmCourse10alarmLearn13alarmPlayTime11alarmDating11alarmDinner13alarmMedicine12alarmMeeting10alarmParty9alarmRest10alarmSleep10alarmSport11alarmWakeUp18supportSetAntilost23supportSetWeatherDataV225supportSetOnetouchCalling28supportOperateSetSportScreen23supportOperateListStyle20supportEmotionHealth28supportGetContinuedSportData29supportV3SyncContactVersion2023supportGetSosCallRecord21alexaReminderAddSecV321alexaSetEasyOperateV323alexaSetGetAlexaAlarmV321alexaSetJumpSportUiV316alexaSetJumpUiV322alexaSetSetOnOffTypeV317alexaSetWeatherV314alexaTimeNewV329setAlexaControll100brightness38alexaGetSupportGetAlexaDefaultLanguage24alexaGetUIControllSports28getLeftRightHandWearSettings29supportSettingsDuringExercise23supportHeightLengthUnit28supportSportingRemindSetting27supportSportGetAutoPauseEnd26supportSetStrideLengthUnit26supportSimpleHrZoneSetting33notSupportSmartLowHeartReatRemind34notSupportSmartHighHeartReatRemind29notSupportPhotoPreviewControl18supportGetUserInfo32supportMissedCallMsgTypeUseFixed29supportAppNotDisplayAlarmName21supportSetSleepRemind19supportBloodGlucose22supportBloodGlucoseV0122supportBikeLockManager22supportCgmPhoneCommand30supportAlgorithmRawDataCollect28supportOfflineMapInformation28supportHeartRateReserveZones29supportHeartRateZonesHrMaxSet27supportSyncMultiActivityNew39supportContactFileUseFirmwareReturnSize25supportDisplayCameraEntry36supportOperateFamilyCareReminder337639supportProtocolV3MenstruationConfig337728supportOperateHabitFormation31supportOperateHabitFormationV0125supportOperateFamilySteps21supportOperateSetGame28supportOperateGestureControl27supportTakeMedicineReminder0F13ZoomWorkplace25supportSetSportRecordName36supportAppNotDisplaySportTypeSetting0F5Buzud28supportPhoneCalendarReminder22supportGetDeviceStatus27supportGetDeviceSportStatus32supportGetFirmwareDisplayVersion19supportBedtimeStory21supportThirdSportIcon23supportControlMeasureBp23supportControlMeasureHr25supportControlMeasureSpo236supportControlMeasureBodyComposition27supportControlMeasureStress29supportControlMeasureOneClick32supportControlMeasureTemperature19supportAppSleepMode19supportSmartPillbox28syncV3HealthSleepStageAvgHrv28supportEmergencyInfoVersion127supportCustomWatchFaceStyle43totalSleepDurationNeedsSubtractWakeDuration019supportAppMenstrualX030supportSyncActivityDataBodyAge38supportIdb05UseLocaltimeForStepGoalCmd45supportGetSportTypesRequiringWristSideSetting32supportGetSportAutoPauseEndTypes19supportTrainingPlan29supportExchangeActivityUseV2130supportDeviceVibrationRingtone25v3AlarmNotSupportDelayMin35supportThreeRingGoalBasedOnFirmware33supportSyncHealthDataWithTimeZone33supportGetFirmwareSupportedConfig37supportV3ActivityExchangeFullSnapshot0fY8Messages0F13AppleCalendar0f5AppleR00fY8Calendar0F7HealthU16supportPetDevice0F4Zalo0F8DidiTaxi29supportUpHandGestureTimeRange36supportQueryCustomWallpaperDialState19supportAppMetronome23supportVibrationSetting25supportAlarmVolumeSetting32supportCallReminderVolumeSetting23v3AlarmNotSupportRepeat14mountaineering5squat7surfing10footvolley11parachuting12orienteering10pickleball9snowboard5lungeACSb_S151bSiS325bSiS127btcfc",
+            "usr": "s:16protocol_channel18FunctionTableModelV12reminderAncs0F8Snapchat0F4Line0F7Outlook0F8Telegram0F5Viber0F9Vkontakte0F8Chatwork0F5Slack0F6Tumblr0F9YahooMail0fQ9Pinterest0F7Youtube0F5Gmail0F9KakaoTalk0f10OnlyGoogleU00fxJ5Email0fxqZ00F6Tiktok0F6Redbus0F9Dailyhunt0F7Hotstar0F8Inshorts0F5Paytm0F6Amazon0F8Flipkart0f3NhnZ00f7InstantZ00f4ZohoZ00f8ExchangeZ0011reminder189Z00F7VeryFit0F7General0F5Other0F13MattersRemind0F9Microsoft0F10MissedCall0F13GetAllContact0F16WhatsappBusiness0fZ00F8Facebook0F7Message0F2Qq0F7Twitter0F6Weixin0f8CalendarY00F9Instagram0F8LinkedIn0F9Messengre0F5Skype0F8Calendar0F8Whatsapp0F10AlarmClock0F9SinaWeibo0F5Weibo0F7Calling0F11CallContact0F7CallNum0F5Prime0F7Netflix0F4Gpay0F6Phonpe0F6Swiggy0F6Zomato0F10Makemytrip0F5JioTv0F8Niosefit0F7Ytmusic0F4Uber0F3Ola0fY4Meet0F17MormaiiSmartwatch0F14TechnosConnect0F6Enjoei0F10Aliexpress0F6Shopee0F5Teams14reminder99Taxi0F8UberEats0F5Lfood0F5Rappi0F12MercadoLivre0F6Magalu0F10Americanas0fQ00F11MessageIcon0F6Taobao0F8Dingding0F6Alipay0F7Toutiao0F6Douyin0F5Tmall0F2Jd0F9Pinduoduo0F5Baidu0F7Meituan0F5Eleme9sportWalk8sportRun11sportByBike11sportOnFoot9sportSwim21sportMountainClimbing14sportBadminton10sportOther12sportFitness13sportSpinning14sportEllipsoid14sportTreadmill10sportSitUp11sportPushUp13sportDumbbell18sportWeightlifting25sportBodybuildingExercise9sportYoga17sportRopeSkipping05sportD6Tennis15sportBasketball14sportFootballl15sportVolleyball11sportTennis9sportGolf13sportBaseball11sportSkiing18sportRollerSkating10sportDance21sportStrengthTraining17sportCoreTraining16sportTidyUpRelax32sportTraditionalStrengthTraining15sportOutdoorRun14sportIndoorRun17sportOutdoorCycle16sportIndoorCycle16sportOutdoorWalk15sportIndoorWalk13sportPoolSwim18sportOpenWaterSwim15sportElliptical10sportRower9sportHiit12sportCricket12sportPilates15sportOutdoorFun18sportOtherActivity10sportZumba12sportSurfing15sportFootvolley21sportStandWaterSkiing17sportBattlingRope15sportSkateboard18sportNoticeStepper12sportShowNum33sportAerobicsBodybuildingExercise11sportPullUp12sportHighBar17sportParallelBars17sportTrailRunning15sportPickleBall14sportSnowboard23sportCrossCountrySkiing15getRealtimeData16getLangLibraryV312getFindPhone13getFindDevice18getUpHandGestureEx16getUpHandGesture10getWeather19getDownloadLanguage15getFactoryReset11getFlashLog24getMultiActivityNoUseApp12getMultiDial11getMenuList20getDoNotDisturbMain320getVoiceTransmission26setDrinkWaterAddNotifyFlag34setSpo2LowValueRemindAddNotifyFlag30notSupportSmartHeartNotifyFlag17getDeviceLogState15getNewWatchList21getNotifyIconAdaptive25getPressureNotifyFlagMode18getScientificSleep17getSpo2NotifyFlag8getV3Log10getWatchID13getDeviceName13getBatteryLog14getBatteryInfo10getHeatLog17getWalkReminderV320getSupportV3BleMusic22getSupportGetBleBeepV336getVeryFitNotSupportPhotoWallpaperV319getSupportUpdateGps08getUbloxE030getSupportGetBleMusicInfoVerV312getBtVersion15getSportsTypeV317getActivitySwitch24getNoticeIconInformation17getSetMaxItemsNum14getNotifyMsgV324getScreenBrightnessMain916getNotice128byte16getNotice250byte22getDeletableMenuListV225getSupportPairEachConnect28getSupportGetMainSportGoalV311getBtAddrV230getSupportBpSetOrMeasurementV227getMenstrualAddNotifyFlagV330getSupportSetGetTimeGoalTypeV227getOxygenDataSupportGradeV338getSupportSyncActivityDataAltitudeInfo15getBindCodeAuth18getSpo2OffChangeV319getLevel5HrInterval17getFiveHRInterval18getBleAndBtVersion34getSupportSetGetEmergencyContactV347getSupportSetRepeatWeekTypeOnScheduleReminderV343getSupportSetRepeatTypeOnScheduleReminderV335getSupportSetMenstrualReminderOnOff14getVersionInfo6getMtu20getDeviceUpdateState18getHeartRateModeV217getStepDataTypeV216getFastMsgDataV327getSupportCallingQuickReply35getSupportDataTranGetNewErrorCodeV334getAutoActivityEndSwitchNotDisplay36getAutoActivityPauseSwitchNotDisplay23getV3AutoActivitySwitch31getAutoActivitySwitchAddBicycle33getAutoActivitySwitchAddSmartRope41getAutoActivitySetGetUseNewStructExchange42getSupportSetGetNoReminderOnWalkReminderV219getSupportGetSnInfo34getScheduleReminderNotDisplayTitle24getSupportV3LongCityName25getSupportAddNightLevelV239getSupportDialFrameEncodeFormatArgb666632getSupportAppSendPhoneSystemInfo29getDeviceControlFastModeAlone29getSupportOnekeyDoubleContact33getSupportSetVoiceAssistantStatus22getSupportFlashLogSize30supportDevReturnMeasuringValue17getSupportGetUnit21getSupportRyzeConnect18getSupportLoopsFit18getSupportTasSmart25getNotSupportSetOvulation23getSupportWalkGoalSteps31getNotSupportDeleteAddSportSort35getSupportSedentaryTensileHabitInfo37getSupportSendGpsLongitudeAndLatitude035getSupportGetV3DeviceBtConnectPhoneE0023getSupportBloodPressureE10FileUpdate31getSupportDisturbHaveRangRepeat26getSupportCalendarReminder22getWatchDailSetAddSize34getSupportSyncOverHighLowHeartData22getSupportPerMinuteOne29getSupportAchievedRemindOnOff19getSupportDrinkPlan32getSupportMakeWatchDialDecodeJpg19getSupportSleepPlan30getSupportDeviceOperateAlgFile31getSupportSportRecordShowConfig35setNoticeMessageStateUseVersion0x2024setScientificSleepSwitch26setTemperatureSwitchHealth19setHeartRateMonitor28setNoReminderOnDrinkReminder010setAgpsOffI009setAgpsOnI021setSetV3HeartInterval14setWeatherCity15setDoNotDisturb14setCalorieGoal15setMenstruation15setPressureData11setSpo2Data16setSportModeSort17setActivitySwitch22setNightAutoBrightness25setScreenBrightness5Level15setWalkReminder25setScreenBrightness3Level19setHandWashReminder12setLocalDial24setNotSupportHrHighAlarm27setNotSupportPhotoWallpaper23setPressureHighReminder012setWallpaperX9TimeColor16setWallpaperDial20setSupportBreathRate21setSupportCalorieUnit19setSupportSportPlan22setSupportSwimPoolUnit14setSupportV3Bp22setV3GetSportSortField16setWatchDialSort25setGetCalorieDistanceGoal18setMidHighTimeGoal16setNewRetainData19setScheduleReminder18setSet100SportSort22setSet20SportParamSort16setSetMainUiSort23setSetStressCalibration17setSmartHeartRate18setSpo2AllDayOnOff27setSupportAppSendVoiceToBle21setSupportCyclingUnit21setSupportWalkRunUnit23setWalkReminderTimeGoal27setWatchCapacitySizeDisplay25setWatchPhotoPositionMove16setMenuListMain719setHistoryMenstrual37supportHistoricalMenstruationExchange49supportSetHistoricalMenstruationExchangeVersion2146supportHistoricalMenstruationExchangeVersion3126supportPhysiologicalRecord24setMenstrualAddPregnancy27setNotSurportCalling3SDelay21setSetFitnessGuidance24setSetNotificationStatus23setSetUnreadAppReminder15setSetV3Weather22setSetV3WeatherSunrise17setSetV3WorldTime14setSyncContact25setSyncV3ActivityAddParam20setTransferMusicFile24setWalkReminderAddNotify20setSupportFahrenheit18setGetAlarmSpecify16setAirohaGpsChip25setSupportSecondSportIcon18setSportMediumIcon17setWeatherSunTime18setWeatherAirGrade21setDrinkWaterReminder28supportBatteryReminderSwitch25supportGetFindPhoneSwitch26supportGetFindMyDeviceName25notSupportArmbandWearMode15supportTaskList31supportSyncHealthDataUseUtcTime14supportPetInfo18setRespirationRate17setMaxBloodOxygen18setBleControlMusic15setMainPressure23setNoDisturbAllDayOnOff03setX20NoDisturbAllDayOnOff03setX19NoDisturbSmartOnOff16setTimeZoneFloat27setTemperatureSwitchSupport15setMsgAllSwitch22setNotSupperCall3Delay21setNoticeMissedCallV216setOverFindPhone29getHealthSwitchStateSupportV316setSedentariness19setScreenBrightness16setSetPhoneVoice32setSupportSetCallQuickReplyOnOff35setSupportExchangeSetGpsCoordinates41setSupportV3WeatherAddAtmosphericPressure35setSupportSetV3WeatcherAddSnowDepth34setSupportSetV3WeatcherAddSnowfall42setSupportSetV3WeatcherSendStructVersion0427setSendCalibrationThreshold27getNotSupportAppSendRunPlan25getSupportDisplayNapSleep27getSupportGetSmartHeartRate31getSupportGetPressureSwitchInfo22getSupportECardOperate26getSupportVoiceMemoOperate24getSupportMorningEdition27getSupportGetSpo2SwitchInfo42getSupportSyncHealthHrUseVersionCompatible38getSupportSyncSpo2UseVersionCompatible42getSupportSyncPressureUseVersionCompatible35getSupportSetV3Add48HourWeatherData31getNotSupportIndoorRunGetVo2max24getSupportSetEcgReminder17getSupportSyncEcg29getSupportSetGameTimeReminder41getSupportConfigDefaultMegApplicationList24getSupportSetEciReminder28setSupportNoiseSetNotifyFlag29setSupportNoiseSetOverWarning31setSupportSetVersionInformation28setSupportControlMiniProgram36getSupportSetWeatherHistoryFutureAqi19setBrightScreenTime25setHeartSetRateModeCustom25supportProtocolV3MenuList10languageCh13languageCzech15languageEnglish14languageFrench14languageGerman15languageItalian16languageJapanese15languageSpanish14languageArabic15languageBurmese16languageFilipino13languageGreek12languageThai26languageTraditionalChinese18languageVietnamese13languageDutch17languageHungarian18languageLithuanian14languagePolish16languageRomanian15languageRussian17languageSlovenian17languageUkrainian16languageCroatian14languageDanish13languageHindi18languageIndonesian14languageKorean18languagePortuguese14languageSlovak15languageTurkish14languagePersia14languageSweden17languageNorwegian15languageFinland15languageBengali13languageKhmer13languageMalay27languageBrazilianPortuguese14languageHebrew15languageSerbian16languageBulgaria8syncV3Hr10syncV3Swim10syncV3Spo214syncV3Pressure14syncV3Activity11syncV3Sleep14syncV3PetSleep20syncV3ActivityAmount23syncV3SportUseVersion2012syncV3Sports9syncV3Gps15syncV3SyncAlarm15syncV3BodyPower15getSupportHrvV317getSupportPerBpV311syncV3Noise17syncV3Temperature7syncGps26syncV3ActivityExchangeData13syncHeartRate20syncHeartRateMonitor16syncSleepMonitor12syncFastSync20syncActivityTimeSync08syncTimeI010syncNeedV214syncRealTimeV343syncExchangeDataReplyAddRealTimeSpeedPaceV341syncHealthSyncV3ActivityEndTimeUseUtcMode36syncSupportSetFastModeWhenSyncConfig28getSupportAppBaseInformation10alarmCount15alarmBrushTeeth9alarmBath11alarmCourse10alarmLearn13alarmPlayTime11alarmDating11alarmDinner13alarmMedicine12alarmMeeting10alarmParty9alarmRest10alarmSleep10alarmSport11alarmWakeUp18supportSetAntilost23supportSetWeatherDataV225supportSetOnetouchCalling28supportOperateSetSportScreen23supportOperateListStyle20supportEmotionHealth28supportGetContinuedSportData29supportV3SyncContactVersion2023supportGetSosCallRecord21alexaReminderAddSecV321alexaSetEasyOperateV323alexaSetGetAlexaAlarmV321alexaSetJumpSportUiV316alexaSetJumpUiV322alexaSetSetOnOffTypeV317alexaSetWeatherV314alexaTimeNewV329setAlexaControll100brightness38alexaGetSupportGetAlexaDefaultLanguage24alexaGetUIControllSports28getLeftRightHandWearSettings29supportSettingsDuringExercise23supportHeightLengthUnit28supportSportingRemindSetting27supportSportGetAutoPauseEnd26supportSetStrideLengthUnit26supportSimpleHrZoneSetting33notSupportSmartLowHeartReatRemind34notSupportSmartHighHeartReatRemind29notSupportPhotoPreviewControl18supportGetUserInfo32supportMissedCallMsgTypeUseFixed29supportAppNotDisplayAlarmName21supportSetSleepRemind19supportBloodGlucose22supportBloodGlucoseV0122supportBikeLockManager22supportCgmPhoneCommand30supportAlgorithmRawDataCollect28supportOfflineMapInformation28supportHeartRateReserveZones29supportHeartRateZonesHrMaxSet27supportSyncMultiActivityNew39supportContactFileUseFirmwareReturnSize25supportDisplayCameraEntry36supportOperateFamilyCareReminder337639supportProtocolV3MenstruationConfig337728supportOperateHabitFormation31supportOperateHabitFormationV0125supportOperateFamilySteps21supportOperateSetGame28supportOperateGestureControl27supportTakeMedicineReminder0F13ZoomWorkplace25supportSetSportRecordName36supportAppNotDisplaySportTypeSetting0F5Buzud28supportPhoneCalendarReminder22supportGetDeviceStatus27supportGetDeviceSportStatus32supportGetFirmwareDisplayVersion19supportBedtimeStory21supportThirdSportIcon23supportControlMeasureBp23supportControlMeasureHr25supportControlMeasureSpo236supportControlMeasureBodyComposition27supportControlMeasureStress29supportControlMeasureOneClick32supportControlMeasureTemperature19supportAppSleepMode19supportSmartPillbox28syncV3HealthSleepStageAvgHrv28supportEmergencyInfoVersion127supportCustomWatchFaceStyle43totalSleepDurationNeedsSubtractWakeDuration019supportAppMenstrualX030supportSyncActivityDataBodyAge38supportIdb05UseLocaltimeForStepGoalCmd45supportGetSportTypesRequiringWristSideSetting32supportGetSportAutoPauseEndTypes19supportTrainingPlan29supportExchangeActivityUseV2130supportDeviceVibrationRingtone25v3AlarmNotSupportDelayMin35supportThreeRingGoalBasedOnFirmware33supportSyncHealthDataWithTimeZone33supportGetFirmwareSupportedConfig37supportV3ActivityExchangeFullSnapshot0fY8Messages0F13AppleCalendar0f5AppleR00fY8Calendar0F7HealthU16supportPetDevice0F4Zalo0F8DidiTaxi29supportUpHandGestureTimeRange36supportQueryCustomWallpaperDialState19supportAppMetronome23supportVibrationSetting25supportAlarmVolumeSetting32supportCallReminderVolumeSetting23v3AlarmNotSupportRepeat14mountaineering5squat7surfing10footvolley11parachuting12orienteering10pickleball9snowboard5lungeACSb_S151bSiS326bSiS127btcfc",
+            "mangledName": "$s16protocol_channel18FunctionTableModelV12reminderAncs0F8Snapchat0F4Line0F7Outlook0F8Telegram0F5Viber0F9Vkontakte0F8Chatwork0F5Slack0F6Tumblr0F9YahooMail0fQ9Pinterest0F7Youtube0F5Gmail0F9KakaoTalk0f10OnlyGoogleU00fxJ5Email0fxqZ00F6Tiktok0F6Redbus0F9Dailyhunt0F7Hotstar0F8Inshorts0F5Paytm0F6Amazon0F8Flipkart0f3NhnZ00f7InstantZ00f4ZohoZ00f8ExchangeZ0011reminder189Z00F7VeryFit0F7General0F5Other0F13MattersRemind0F9Microsoft0F10MissedCall0F13GetAllContact0F16WhatsappBusiness0fZ00F8Facebook0F7Message0F2Qq0F7Twitter0F6Weixin0f8CalendarY00F9Instagram0F8LinkedIn0F9Messengre0F5Skype0F8Calendar0F8Whatsapp0F10AlarmClock0F9SinaWeibo0F5Weibo0F7Calling0F11CallContact0F7CallNum0F5Prime0F7Netflix0F4Gpay0F6Phonpe0F6Swiggy0F6Zomato0F10Makemytrip0F5JioTv0F8Niosefit0F7Ytmusic0F4Uber0F3Ola0fY4Meet0F17MormaiiSmartwatch0F14TechnosConnect0F6Enjoei0F10Aliexpress0F6Shopee0F5Teams14reminder99Taxi0F8UberEats0F5Lfood0F5Rappi0F12MercadoLivre0F6Magalu0F10Americanas0fQ00F11MessageIcon0F6Taobao0F8Dingding0F6Alipay0F7Toutiao0F6Douyin0F5Tmall0F2Jd0F9Pinduoduo0F5Baidu0F7Meituan0F5Eleme9sportWalk8sportRun11sportByBike11sportOnFoot9sportSwim21sportMountainClimbing14sportBadminton10sportOther12sportFitness13sportSpinning14sportEllipsoid14sportTreadmill10sportSitUp11sportPushUp13sportDumbbell18sportWeightlifting25sportBodybuildingExercise9sportYoga17sportRopeSkipping05sportD6Tennis15sportBasketball14sportFootballl15sportVolleyball11sportTennis9sportGolf13sportBaseball11sportSkiing18sportRollerSkating10sportDance21sportStrengthTraining17sportCoreTraining16sportTidyUpRelax32sportTraditionalStrengthTraining15sportOutdoorRun14sportIndoorRun17sportOutdoorCycle16sportIndoorCycle16sportOutdoorWalk15sportIndoorWalk13sportPoolSwim18sportOpenWaterSwim15sportElliptical10sportRower9sportHiit12sportCricket12sportPilates15sportOutdoorFun18sportOtherActivity10sportZumba12sportSurfing15sportFootvolley21sportStandWaterSkiing17sportBattlingRope15sportSkateboard18sportNoticeStepper12sportShowNum33sportAerobicsBodybuildingExercise11sportPullUp12sportHighBar17sportParallelBars17sportTrailRunning15sportPickleBall14sportSnowboard23sportCrossCountrySkiing15getRealtimeData16getLangLibraryV312getFindPhone13getFindDevice18getUpHandGestureEx16getUpHandGesture10getWeather19getDownloadLanguage15getFactoryReset11getFlashLog24getMultiActivityNoUseApp12getMultiDial11getMenuList20getDoNotDisturbMain320getVoiceTransmission26setDrinkWaterAddNotifyFlag34setSpo2LowValueRemindAddNotifyFlag30notSupportSmartHeartNotifyFlag17getDeviceLogState15getNewWatchList21getNotifyIconAdaptive25getPressureNotifyFlagMode18getScientificSleep17getSpo2NotifyFlag8getV3Log10getWatchID13getDeviceName13getBatteryLog14getBatteryInfo10getHeatLog17getWalkReminderV320getSupportV3BleMusic22getSupportGetBleBeepV336getVeryFitNotSupportPhotoWallpaperV319getSupportUpdateGps08getUbloxE030getSupportGetBleMusicInfoVerV312getBtVersion15getSportsTypeV317getActivitySwitch24getNoticeIconInformation17getSetMaxItemsNum14getNotifyMsgV324getScreenBrightnessMain916getNotice128byte16getNotice250byte22getDeletableMenuListV225getSupportPairEachConnect28getSupportGetMainSportGoalV311getBtAddrV230getSupportBpSetOrMeasurementV227getMenstrualAddNotifyFlagV330getSupportSetGetTimeGoalTypeV227getOxygenDataSupportGradeV338getSupportSyncActivityDataAltitudeInfo15getBindCodeAuth18getSpo2OffChangeV319getLevel5HrInterval17getFiveHRInterval18getBleAndBtVersion34getSupportSetGetEmergencyContactV347getSupportSetRepeatWeekTypeOnScheduleReminderV343getSupportSetRepeatTypeOnScheduleReminderV335getSupportSetMenstrualReminderOnOff14getVersionInfo6getMtu20getDeviceUpdateState18getHeartRateModeV217getStepDataTypeV216getFastMsgDataV327getSupportCallingQuickReply35getSupportDataTranGetNewErrorCodeV334getAutoActivityEndSwitchNotDisplay36getAutoActivityPauseSwitchNotDisplay23getV3AutoActivitySwitch31getAutoActivitySwitchAddBicycle33getAutoActivitySwitchAddSmartRope41getAutoActivitySetGetUseNewStructExchange42getSupportSetGetNoReminderOnWalkReminderV219getSupportGetSnInfo34getScheduleReminderNotDisplayTitle24getSupportV3LongCityName25getSupportAddNightLevelV239getSupportDialFrameEncodeFormatArgb666632getSupportAppSendPhoneSystemInfo29getDeviceControlFastModeAlone29getSupportOnekeyDoubleContact33getSupportSetVoiceAssistantStatus22getSupportFlashLogSize30supportDevReturnMeasuringValue17getSupportGetUnit21getSupportRyzeConnect18getSupportLoopsFit18getSupportTasSmart25getNotSupportSetOvulation23getSupportWalkGoalSteps31getNotSupportDeleteAddSportSort35getSupportSedentaryTensileHabitInfo37getSupportSendGpsLongitudeAndLatitude035getSupportGetV3DeviceBtConnectPhoneE0023getSupportBloodPressureE10FileUpdate31getSupportDisturbHaveRangRepeat26getSupportCalendarReminder22getWatchDailSetAddSize34getSupportSyncOverHighLowHeartData22getSupportPerMinuteOne29getSupportAchievedRemindOnOff19getSupportDrinkPlan32getSupportMakeWatchDialDecodeJpg19getSupportSleepPlan30getSupportDeviceOperateAlgFile31getSupportSportRecordShowConfig35setNoticeMessageStateUseVersion0x2024setScientificSleepSwitch26setTemperatureSwitchHealth19setHeartRateMonitor28setNoReminderOnDrinkReminder010setAgpsOffI009setAgpsOnI021setSetV3HeartInterval14setWeatherCity15setDoNotDisturb14setCalorieGoal15setMenstruation15setPressureData11setSpo2Data16setSportModeSort17setActivitySwitch22setNightAutoBrightness25setScreenBrightness5Level15setWalkReminder25setScreenBrightness3Level19setHandWashReminder12setLocalDial24setNotSupportHrHighAlarm27setNotSupportPhotoWallpaper23setPressureHighReminder012setWallpaperX9TimeColor16setWallpaperDial20setSupportBreathRate21setSupportCalorieUnit19setSupportSportPlan22setSupportSwimPoolUnit14setSupportV3Bp22setV3GetSportSortField16setWatchDialSort25setGetCalorieDistanceGoal18setMidHighTimeGoal16setNewRetainData19setScheduleReminder18setSet100SportSort22setSet20SportParamSort16setSetMainUiSort23setSetStressCalibration17setSmartHeartRate18setSpo2AllDayOnOff27setSupportAppSendVoiceToBle21setSupportCyclingUnit21setSupportWalkRunUnit23setWalkReminderTimeGoal27setWatchCapacitySizeDisplay25setWatchPhotoPositionMove16setMenuListMain719setHistoryMenstrual37supportHistoricalMenstruationExchange49supportSetHistoricalMenstruationExchangeVersion2146supportHistoricalMenstruationExchangeVersion3126supportPhysiologicalRecord24setMenstrualAddPregnancy27setNotSurportCalling3SDelay21setSetFitnessGuidance24setSetNotificationStatus23setSetUnreadAppReminder15setSetV3Weather22setSetV3WeatherSunrise17setSetV3WorldTime14setSyncContact25setSyncV3ActivityAddParam20setTransferMusicFile24setWalkReminderAddNotify20setSupportFahrenheit18setGetAlarmSpecify16setAirohaGpsChip25setSupportSecondSportIcon18setSportMediumIcon17setWeatherSunTime18setWeatherAirGrade21setDrinkWaterReminder28supportBatteryReminderSwitch25supportGetFindPhoneSwitch26supportGetFindMyDeviceName25notSupportArmbandWearMode15supportTaskList31supportSyncHealthDataUseUtcTime14supportPetInfo18setRespirationRate17setMaxBloodOxygen18setBleControlMusic15setMainPressure23setNoDisturbAllDayOnOff03setX20NoDisturbAllDayOnOff03setX19NoDisturbSmartOnOff16setTimeZoneFloat27setTemperatureSwitchSupport15setMsgAllSwitch22setNotSupperCall3Delay21setNoticeMissedCallV216setOverFindPhone29getHealthSwitchStateSupportV316setSedentariness19setScreenBrightness16setSetPhoneVoice32setSupportSetCallQuickReplyOnOff35setSupportExchangeSetGpsCoordinates41setSupportV3WeatherAddAtmosphericPressure35setSupportSetV3WeatcherAddSnowDepth34setSupportSetV3WeatcherAddSnowfall42setSupportSetV3WeatcherSendStructVersion0427setSendCalibrationThreshold27getNotSupportAppSendRunPlan25getSupportDisplayNapSleep27getSupportGetSmartHeartRate31getSupportGetPressureSwitchInfo22getSupportECardOperate26getSupportVoiceMemoOperate24getSupportMorningEdition27getSupportGetSpo2SwitchInfo42getSupportSyncHealthHrUseVersionCompatible38getSupportSyncSpo2UseVersionCompatible42getSupportSyncPressureUseVersionCompatible35getSupportSetV3Add48HourWeatherData31getNotSupportIndoorRunGetVo2max24getSupportSetEcgReminder17getSupportSyncEcg29getSupportSetGameTimeReminder41getSupportConfigDefaultMegApplicationList24getSupportSetEciReminder28setSupportNoiseSetNotifyFlag29setSupportNoiseSetOverWarning31setSupportSetVersionInformation28setSupportControlMiniProgram36getSupportSetWeatherHistoryFutureAqi19setBrightScreenTime25setHeartSetRateModeCustom25supportProtocolV3MenuList10languageCh13languageCzech15languageEnglish14languageFrench14languageGerman15languageItalian16languageJapanese15languageSpanish14languageArabic15languageBurmese16languageFilipino13languageGreek12languageThai26languageTraditionalChinese18languageVietnamese13languageDutch17languageHungarian18languageLithuanian14languagePolish16languageRomanian15languageRussian17languageSlovenian17languageUkrainian16languageCroatian14languageDanish13languageHindi18languageIndonesian14languageKorean18languagePortuguese14languageSlovak15languageTurkish14languagePersia14languageSweden17languageNorwegian15languageFinland15languageBengali13languageKhmer13languageMalay27languageBrazilianPortuguese14languageHebrew15languageSerbian16languageBulgaria8syncV3Hr10syncV3Swim10syncV3Spo214syncV3Pressure14syncV3Activity11syncV3Sleep14syncV3PetSleep20syncV3ActivityAmount23syncV3SportUseVersion2012syncV3Sports9syncV3Gps15syncV3SyncAlarm15syncV3BodyPower15getSupportHrvV317getSupportPerBpV311syncV3Noise17syncV3Temperature7syncGps26syncV3ActivityExchangeData13syncHeartRate20syncHeartRateMonitor16syncSleepMonitor12syncFastSync20syncActivityTimeSync08syncTimeI010syncNeedV214syncRealTimeV343syncExchangeDataReplyAddRealTimeSpeedPaceV341syncHealthSyncV3ActivityEndTimeUseUtcMode36syncSupportSetFastModeWhenSyncConfig28getSupportAppBaseInformation10alarmCount15alarmBrushTeeth9alarmBath11alarmCourse10alarmLearn13alarmPlayTime11alarmDating11alarmDinner13alarmMedicine12alarmMeeting10alarmParty9alarmRest10alarmSleep10alarmSport11alarmWakeUp18supportSetAntilost23supportSetWeatherDataV225supportSetOnetouchCalling28supportOperateSetSportScreen23supportOperateListStyle20supportEmotionHealth28supportGetContinuedSportData29supportV3SyncContactVersion2023supportGetSosCallRecord21alexaReminderAddSecV321alexaSetEasyOperateV323alexaSetGetAlexaAlarmV321alexaSetJumpSportUiV316alexaSetJumpUiV322alexaSetSetOnOffTypeV317alexaSetWeatherV314alexaTimeNewV329setAlexaControll100brightness38alexaGetSupportGetAlexaDefaultLanguage24alexaGetUIControllSports28getLeftRightHandWearSettings29supportSettingsDuringExercise23supportHeightLengthUnit28supportSportingRemindSetting27supportSportGetAutoPauseEnd26supportSetStrideLengthUnit26supportSimpleHrZoneSetting33notSupportSmartLowHeartReatRemind34notSupportSmartHighHeartReatRemind29notSupportPhotoPreviewControl18supportGetUserInfo32supportMissedCallMsgTypeUseFixed29supportAppNotDisplayAlarmName21supportSetSleepRemind19supportBloodGlucose22supportBloodGlucoseV0122supportBikeLockManager22supportCgmPhoneCommand30supportAlgorithmRawDataCollect28supportOfflineMapInformation28supportHeartRateReserveZones29supportHeartRateZonesHrMaxSet27supportSyncMultiActivityNew39supportContactFileUseFirmwareReturnSize25supportDisplayCameraEntry36supportOperateFamilyCareReminder337639supportProtocolV3MenstruationConfig337728supportOperateHabitFormation31supportOperateHabitFormationV0125supportOperateFamilySteps21supportOperateSetGame28supportOperateGestureControl27supportTakeMedicineReminder0F13ZoomWorkplace25supportSetSportRecordName36supportAppNotDisplaySportTypeSetting0F5Buzud28supportPhoneCalendarReminder22supportGetDeviceStatus27supportGetDeviceSportStatus32supportGetFirmwareDisplayVersion19supportBedtimeStory21supportThirdSportIcon23supportControlMeasureBp23supportControlMeasureHr25supportControlMeasureSpo236supportControlMeasureBodyComposition27supportControlMeasureStress29supportControlMeasureOneClick32supportControlMeasureTemperature19supportAppSleepMode19supportSmartPillbox28syncV3HealthSleepStageAvgHrv28supportEmergencyInfoVersion127supportCustomWatchFaceStyle43totalSleepDurationNeedsSubtractWakeDuration019supportAppMenstrualX030supportSyncActivityDataBodyAge38supportIdb05UseLocaltimeForStepGoalCmd45supportGetSportTypesRequiringWristSideSetting32supportGetSportAutoPauseEndTypes19supportTrainingPlan29supportExchangeActivityUseV2130supportDeviceVibrationRingtone25v3AlarmNotSupportDelayMin35supportThreeRingGoalBasedOnFirmware33supportSyncHealthDataWithTimeZone33supportGetFirmwareSupportedConfig37supportV3ActivityExchangeFullSnapshot0fY8Messages0F13AppleCalendar0f5AppleR00fY8Calendar0F7HealthU16supportPetDevice0F4Zalo0F8DidiTaxi29supportUpHandGestureTimeRange36supportQueryCustomWallpaperDialState19supportAppMetronome23supportVibrationSetting25supportAlarmVolumeSetting32supportCallReminderVolumeSetting23v3AlarmNotSupportRepeat14mountaineering5squat7surfing10footvolley11parachuting12orienteering10pickleball9snowboard5lungeACSb_S151bSiS326bSiS127btcfc",
             "moduleName": "protocol_channel",
             "declAttributes": [
               "AccessControl"
@@ -536164,6 +536265,55 @@
                 "declKind": "Accessor",
                 "usr": "c:@M@protocol_channel@objc(pl)IDOFuncTableInterface(im)syncV3ActivityAmount",
                 "mangledName": "$s16protocol_channel21IDOFuncTableInterfaceP20syncV3ActivityAmountSbvg",
+                "moduleName": "protocol_channel",
+                "genericSig": "<τ_0_0 where τ_0_0 : protocol_channel.IDOFuncTableInterface>",
+                "sugared_genericSig": "<Self where Self : protocol_channel.IDOFuncTableInterface>",
+                "protocolReq": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "syncV3SportUseVersion20",
+            "printedName": "syncV3SportUseVersion20",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@protocol_channel@objc(pl)IDOFuncTableInterface(py)syncV3SportUseVersion20",
+            "mangledName": "$s16protocol_channel21IDOFuncTableInterfaceP23syncV3SportUseVersion20Sbvp",
+            "moduleName": "protocol_channel",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@protocol_channel@objc(pl)IDOFuncTableInterface(im)syncV3SportUseVersion20",
+                "mangledName": "$s16protocol_channel21IDOFuncTableInterfaceP23syncV3SportUseVersion20Sbvg",
                 "moduleName": "protocol_channel",
                 "genericSig": "<τ_0_0 where τ_0_0 : protocol_channel.IDOFuncTableInterface>",
                 "sugared_genericSig": "<Self where Self : protocol_channel.IDOFuncTableInterface>",
@@ -849645,266 +849795,266 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 42883,
+      "offset": 42905,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 42954,
+      "offset": 42982,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43037,
+      "offset": 43053,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43120,
+      "offset": 43136,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43203,
+      "offset": 43219,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43290,
+      "offset": 43302,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43365,
+      "offset": 43389,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43452,
+      "offset": 43464,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43519,
+      "offset": 43551,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43624,
+      "offset": 43618,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43703,
+      "offset": 43723,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43796,
+      "offset": 43802,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43881,
+      "offset": 43895,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 43958,
+      "offset": 43980,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44051,
+      "offset": 44057,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44128,
+      "offset": 44150,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44201,
+      "offset": 44227,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44282,
+      "offset": 44300,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44421,
+      "offset": 44381,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44556,
+      "offset": 44520,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44681,
+      "offset": 44655,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44790,
+      "offset": 44780,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
+      "kind": "BooleanLiteral",
+      "offset": 44889,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "IntegerLiteral",
-      "offset": 44862,
+      "offset": 44961,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 44941,
+      "offset": 45040,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45012,
+      "offset": 45111,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45087,
+      "offset": 45186,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45160,
+      "offset": 45259,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45239,
+      "offset": 45338,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45314,
+      "offset": 45413,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45389,
+      "offset": 45488,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45468,
+      "offset": 45567,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45545,
+      "offset": 45644,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45618,
+      "offset": 45717,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45689,
+      "offset": 45788,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45762,
+      "offset": 45861,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45835,
+      "offset": 45934,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 45910,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
-      "kind": "BooleanLiteral",
-      "offset": 45999,
+      "offset": 46009,
       "length": 5,
       "value": "false"
     },
@@ -849918,14 +850068,14 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46201,
+      "offset": 46197,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46310,
+      "offset": 46300,
       "length": 5,
       "value": "false"
     },
@@ -849939,21 +850089,21 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46502,
+      "offset": 46508,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46611,
+      "offset": 46601,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46722,
+      "offset": 46710,
       "length": 5,
       "value": "false"
     },
@@ -849967,14 +850117,14 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 46916,
+      "offset": 46920,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47011,
+      "offset": 47015,
       "length": 5,
       "value": "false"
     },
@@ -849988,70 +850138,70 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47205,
+      "offset": 47209,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47290,
+      "offset": 47304,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47387,
+      "offset": 47389,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47474,
+      "offset": 47486,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47555,
+      "offset": 47573,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47666,
+      "offset": 47654,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47795,
+      "offset": 47765,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 47896,
+      "offset": 47894,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48005,
+      "offset": 47995,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48116,
+      "offset": 48104,
       "length": 5,
       "value": "false"
     },
@@ -850065,280 +850215,280 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48324,
+      "offset": 48314,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48431,
+      "offset": 48423,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48536,
+      "offset": 48530,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48641,
+      "offset": 48635,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48760,
+      "offset": 48740,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48881,
+      "offset": 48859,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 48992,
+      "offset": 48980,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49081,
+      "offset": 49091,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49198,
+      "offset": 49180,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49309,
+      "offset": 49297,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49404,
+      "offset": 49408,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49495,
+      "offset": 49503,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49592,
+      "offset": 49594,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49689,
+      "offset": 49691,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49786,
+      "offset": 49788,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 49899,
+      "offset": 49885,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50008,
+      "offset": 49998,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50117,
+      "offset": 50107,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50228,
+      "offset": 50216,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50335,
+      "offset": 50327,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50466,
+      "offset": 50434,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50569,
+      "offset": 50565,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50694,
+      "offset": 50668,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50825,
+      "offset": 50793,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 50934,
+      "offset": 50924,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51049,
+      "offset": 51033,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51152,
+      "offset": 51148,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51247,
+      "offset": 51251,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51356,
+      "offset": 51346,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51463,
+      "offset": 51455,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51558,
+      "offset": 51562,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51661,
+      "offset": 51657,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51786,
+      "offset": 51760,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51865,
+      "offset": 51885,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 51974,
+      "offset": 51964,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52071,
+      "offset": 52073,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52178,
+      "offset": 52170,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52295,
+      "offset": 52277,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52386,
+      "offset": 52394,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52481,
+      "offset": 52485,
       "length": 5,
       "value": "false"
     },
@@ -850359,77 +850509,77 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52782,
+      "offset": 52778,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 52907,
+      "offset": 52881,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53014,
+      "offset": 53006,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53125,
+      "offset": 53113,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53242,
+      "offset": 53224,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53332,
+      "offset": 53341,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53423,
+      "offset": 53431,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53532,
+      "offset": 53522,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53641,
+      "offset": 53631,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53748,
+      "offset": 53740,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 53887,
+      "offset": 53847,
       "length": 5,
       "value": "false"
     },
@@ -850443,161 +850593,161 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54099,
+      "offset": 54085,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54228,
+      "offset": 54198,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54371,
+      "offset": 54327,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54488,
+      "offset": 54470,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54579,
+      "offset": 54587,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54690,
+      "offset": 54678,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54803,
+      "offset": 54789,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 54906,
+      "offset": 54902,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55029,
+      "offset": 55005,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55148,
+      "offset": 55128,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55267,
+      "offset": 55247,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55394,
+      "offset": 55366,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55491,
+      "offset": 55493,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55586,
+      "offset": 55590,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55673,
+      "offset": 55685,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55770,
+      "offset": 55772,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55853,
+      "offset": 55869,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 55938,
+      "offset": 55952,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56015,
+      "offset": 56037,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56100,
+      "offset": 56114,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56211,
+      "offset": 56199,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56336,
+      "offset": 56310,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56427,
+      "offset": 56435,
       "length": 5,
       "value": "false"
     },
@@ -850611,14 +850761,14 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56629,
+      "offset": 56625,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56746,
+      "offset": 56728,
       "length": 5,
       "value": "false"
     },
@@ -850632,63 +850782,70 @@
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56926,
+      "offset": 56944,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 56989,
+      "offset": 57025,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57056,
+      "offset": 57088,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57129,
+      "offset": 57155,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57204,
+      "offset": 57228,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57281,
+      "offset": 57303,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57354,
+      "offset": 57380,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57425,
+      "offset": 57453,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
       "kind": "BooleanLiteral",
-      "offset": 57488,
+      "offset": 57524,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/impl\/FuncTableImpl.swift",
+      "kind": "BooleanLiteral",
+      "offset": 57587,
       "length": 5,
       "value": "false"
     },
@@ -859797,14 +859954,14 @@
       "kind": "StringLiteral",
       "offset": 1838,
       "length": 8,
-      "value": "\"4.5.11\""
+      "value": "\"4.5.12\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/IDOSDK.swift",
       "kind": "StringLiteral",
       "offset": 1904,
       "length": 21,
-      "value": "\"2026-10-21 10:10:14\""
+      "value": "\"2026-11-04 10:26:35\""
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/protocol_channel\/ios\/Classes\/protocol_sdk\/IDOSDK.swift",

@@ -31,6 +31,9 @@ NSObject<FlutterMessageCodec> *ApiNordicHostGetCodec(void);
 
 /// Flutter 调用原生的 API | API for Flutter to call native
 @protocol ApiNordicHost
+/// 打开/关闭 Nordic DFU 详细诊断日志（默认关闭）
+/// Enable/disable verbose Nordic DFU diagnostic logs (default off)
+- (void)setDebugEnable:(NSNumber *)enable error:(FlutterError *_Nullable *_Nonnull)error;
 /// 开始 Nordic DFU 升级 | Start Nordic DFU upgrade
 /// deviceIdentifier: iOS 传 UUID，Android 传 MAC 地址 | iOS passes UUID, Android passes MAC address
 /// filePath: 固件文件路径 | Firmware file path

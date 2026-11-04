@@ -1686,6 +1686,57 @@
           },
           {
             "kind": "Function",
+            "name": "setDebugEnable",
+            "printedName": "setDebugEnable(_:error:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSNumber",
+                "printedName": "Foundation.NSNumber",
+                "usr": "c:objc(cs)NSNumber"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AutoreleasingUnsafeMutablePointer",
+                "printedName": "Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Flutter.FlutterError?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FlutterError",
+                        "printedName": "Flutter.FlutterError",
+                        "usr": "c:objc(cs)FlutterError"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "usr": "s:SA"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@native_channel@objc(cs)IdoNordicPlugin(im)setDebugEnable:error:",
+            "mangledName": "$s14native_channel15IdoNordicPluginC14setDebugEnable_5errorySo8NSNumberC_SAySo12FlutterErrorCSgGtF",
+            "moduleName": "native_channel",
+            "objc_name": "setDebugEnable:error:",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "startDFUDeviceIdentifier",
             "printedName": "startDFUDeviceIdentifier(_:filePath:mtu:error:)",
             "children": [
@@ -22129,6 +22180,13 @@
       "offset": 1684,
       "length": 1,
       "value": "0"
+    },
+    {
+      "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/plugins\/native_channel\/ios\/Classes\/nordic\/IdoNordicPlugin.swift",
+      "kind": "BooleanLiteral",
+      "offset": 126,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/hc\/Documents\/work3.0\/develop\/AIWorkspace\/protocol_c_source\/standard_proj_workspace\/protocol_sdk\/plugins\/native_channel\/ios\/Classes\/nordic\/iOSMcuManagerLibrary\/Managers\/ImageManager.swift",

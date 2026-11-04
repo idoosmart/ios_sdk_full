@@ -6262,6 +6262,8 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL syncV3PetSleep;
 /// v3 活动量
 @property (nonatomic, readonly) BOOL syncV3ActivityAmount;
+/// 当天运动同步 version 32
+@property (nonatomic, readonly) BOOL syncV3SportUseVersion20;
 /// v3 步数
 @property (nonatomic, readonly) BOOL syncV3Sports;
 /// v3 gps

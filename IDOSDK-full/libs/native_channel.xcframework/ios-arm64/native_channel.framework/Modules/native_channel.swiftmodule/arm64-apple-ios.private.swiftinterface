@@ -60,6 +60,7 @@ import os
 }
 @objc @_inheritsConvenienceInitializers public class IdoNordicPlugin : ObjectiveC.NSObject, Flutter.FlutterPlugin, native_channel.ApiNordicHost, native_channel.IDONordicDFUManagerDelegate {
   @objc public static func register(with registrar: any Flutter.FlutterPluginRegistrar)
+  @objc public func setDebugEnable(_ enable: Foundation.NSNumber, error: Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>)
   @objc public func startDFUDeviceIdentifier(_ deviceIdentifier: Swift.String, filePath: Swift.String, mtu: Foundation.NSNumber, error: Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>)
   @objc public func stopDFUWithError(_ error: Swift.AutoreleasingUnsafeMutablePointer<Flutter.FlutterError?>)
   @objc public func upgradeDidStart()
