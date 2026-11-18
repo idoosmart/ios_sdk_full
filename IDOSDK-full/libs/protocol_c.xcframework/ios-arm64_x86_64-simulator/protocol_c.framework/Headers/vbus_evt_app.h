@@ -528,6 +528,8 @@ typedef enum
     VBUS_EVT_TRAN_JSON_V3_ACTIVITY_AMOUNT                = 7016,  //活动量数据回调（15.4.23，data_type=0x17）
     VBUS_EVT_TRAN_JSON_V3_EMOTION_HEALTH                   = 7018,    //情绪健康数据回调
     VBUS_EVT_TRAN_JSON_V3_MULTI_ACTIVITY_NEW               = 7019,//同步多运动/游泳/跑步课程/跑步计划/跑后拉伸数据回调
+	VBUS_EVT_TRAN_JSON_V3_SPO2_TRACK                       = 7020,	//血氧埋点数据回调
+	VBUS_EVT_TRAN_JSON_V3_HRV_TRACK                        = 7021,	//HRV埋点数据回调
 	VBUS_EVT_TRAN_JSON_V3_TEST_SYNC_PLAN_SPORT             = 7113,	//计划多运动模拟测试接口
     VBUS_EVT_TRAN_JSON_V3_RESPIR_RATE_INFO                 = 7114,	//呼吸率数据同步发送
     

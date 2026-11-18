@@ -6262,6 +6262,10 @@ SWIFT_PROTOCOL("_TtP16protocol_channel21IDOFuncTableInterface_")
 @property (nonatomic, readonly) BOOL syncV3PetSleep;
 /// v3 活动量
 @property (nonatomic, readonly) BOOL syncV3ActivityAmount;
+/// v3 血氧埋点
+@property (nonatomic, readonly) BOOL syncV3Spo2Track;
+/// v3 HRV埋点
+@property (nonatomic, readonly) BOOL syncV3HrvTrack;
 /// 当天运动同步 version 32
 @property (nonatomic, readonly) BOOL syncV3SportUseVersion20;
 /// v3 步数
@@ -10785,6 +10789,10 @@ typedef SWIFT_ENUM(NSInteger, IDOSyncDataType, open) {
   IDOSyncDataTypePetSleep = 23,
 /// 活动量数据
   IDOSyncDataTypeActivityAmount = 24,
+/// 血氧埋点数据
+  IDOSyncDataTypeSpo2Track = 25,
+/// HRV埋点数据
+  IDOSyncDataTypeHrvTrack = 26,
 };
 
 

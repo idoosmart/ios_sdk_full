@@ -130,11 +130,11 @@
 		</data>
 		<key>Modules/native_channel.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		hfApeVTnsLkbt+61puCYrrg5Jds=
+		tPDij8E0dUlT3hEuJaSVWKmaKfE=
 		</data>
 		<key>Modules/native_channel.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		dA3oGoeIVb7Aab5CjctLm3cmsE8=
+		H/0xW8MqZ0KCfr/O4JMCXJiVPFU=
 		</data>
 		<key>Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -513,22 +513,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hfApeVTnsLkbt+61puCYrrg5Jds=
+			tPDij8E0dUlT3hEuJaSVWKmaKfE=
 			</data>
 			<key>hash2</key>
 			<data>
-			O6gBCMdkPaZ7AKz7sRjAHQa57OJAh4qtXHFhEVPg5l4=
+			fJdJrFsaqJUB7jsc8BUnRFtLYLQjia6UbvdOFwZIWu0=
 			</data>
 		</dict>
 		<key>Modules/native_channel.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			dA3oGoeIVb7Aab5CjctLm3cmsE8=
+			H/0xW8MqZ0KCfr/O4JMCXJiVPFU=
 			</data>
 			<key>hash2</key>
 			<data>
-			cERjzjmaq90RNpliAGiGxf1LqYX/c5sVxlVxAez3opc=
+			NLmEmf8yDLUJUBzNXnw0bu7MIEnq/V7X4H0GJnoaKJQ=
 			</data>
 		</dict>
 		<key>Modules/native_channel.swiftmodule/arm64-apple-ios-simulator.abi.json</key>

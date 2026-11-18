@@ -69094,6 +69094,47 @@
           },
           {
             "kind": "Function",
+            "name": "describeKeychainList",
+            "printedName": "describeKeychainList()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17flutter_bluetooth9LocalScanC20describeKeychainListSSyF",
+            "mangledName": "$s17flutter_bluetooth9LocalScanC20describeKeychainListSSyF",
+            "moduleName": "flutter_bluetooth",
+            "isOpen": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "readDiskKeychainSnapshot",
+            "printedName": "readDiskKeychainSnapshot()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:17flutter_bluetooth9LocalScanC24readDiskKeychainSnapshotSSyF",
+            "mangledName": "$s17flutter_bluetooth9LocalScanC24readDiskKeychainSnapshotSSyF",
+            "moduleName": "flutter_bluetooth",
+            "isOpen": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "isContainDevice",
             "printedName": "isContainDevice(_:)",
             "children": [

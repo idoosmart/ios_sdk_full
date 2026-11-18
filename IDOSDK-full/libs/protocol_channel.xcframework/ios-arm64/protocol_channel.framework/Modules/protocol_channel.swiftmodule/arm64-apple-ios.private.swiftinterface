@@ -5462,6 +5462,8 @@ public protocol IDOCmdProtocol {
   @objc var syncV3Sleep: Swift.Bool { get }
   @objc var syncV3PetSleep: Swift.Bool { get }
   @objc var syncV3ActivityAmount: Swift.Bool { get }
+  @objc var syncV3Spo2Track: Swift.Bool { get }
+  @objc var syncV3HrvTrack: Swift.Bool { get }
   @objc var syncV3SportUseVersion20: Swift.Bool { get }
   @objc var syncV3Sports: Swift.Bool { get }
   @objc var syncV3Gps: Swift.Bool { get }
@@ -8637,6 +8639,8 @@ public typealias BlockDataSyncCompleted = (_ errorCode: Swift.Int) -> Swift.Void
   case activityMerge = 22
   case petSleep = 23
   case activityAmount = 24
+  case spo2Track = 25
+  case hrvTrack = 26
   public var description: Swift.String {
     get
   }
